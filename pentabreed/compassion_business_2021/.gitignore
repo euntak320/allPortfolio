@@ -1,0 +1,21 @@
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+node_modules
+dist
+src/html/*
+src/assets/image/spr-*
+src/assets/css/*.css
+src/assets/css/*
+src/assets/js/*.js
+*.map
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+/src/assets/sass/style.scss

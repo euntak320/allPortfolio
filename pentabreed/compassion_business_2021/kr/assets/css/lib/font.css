@@ -1,0 +1,88 @@
+/* ==========================================================================
+   #FONTS
+   ========================================================================== */
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 300;
+  src: url("/assets/font/NanumSquareL.eot");
+  src: url("/assets/font/NanumSquareL.eot?#iefix") format("embedded-opentype"), url("/assets/font/NanumSquareL.woff") format("woff"), url("/assets/font/NanumSquareL.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 400;
+  src: url("/assets/font/NanumSquareR.eot");
+  src: url("/assets/font/NanumSquareR.eot?#iefix") format("embedded-opentype"), url("/assets/font/NanumSquareR.woff") format("woff"), url("/assets/font/NanumSquareR.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 700;
+  src: url("/assets/font/NanumSquareB.eot");
+  src: url("/assets/font/NanumSquareB.eot?#iefix") format("embedded-opentype"), url("/assets/font/NanumSquareB.woff") format("woff"), url("/assets/font/NanumSquareB.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 800;
+  src: url("/assets/font/NanumSquareEB.eot");
+  src: url("/assets/font/NanumSquareEB.eot?#iefix") format("embedded-opentype"), url("/assets/font/NanumSquareEB.woff") format("woff"), url("/assets/font/NanumSquareEB.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 100;
+  src: url("/assets/font/NotoSansCJKkr-Thin.eot");
+  src: url("/assets/font/NotoSansCJKkr-Thin.eot?#iefix") format("embedded-opentype"), url("/assets/font/NotoSansCJKkr-Thin.woff2") format("woff2"), url("/assets/font/NotoSansCJKkr-Thin.woff") format("woff"), url("/assets/font/NotoSansCJKkr-Thin.ttf") format("truetype"), url("/assets/font/NotoSansCJKkr-Thin.svg#NotoSansCJKkr-Thin") format("svg");
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/font/NotoSansCJKkr-Light.eot");
+  src: url("/assets/font/NotoSansCJKkr-Light.eot?#iefix") format("embedded-opentype"), url("/assets/font/NotoSansCJKkr-Light.woff2") format("woff2"), url("/assets/font/NotoSansCJKkr-Light.woff") format("woff"), url("/assets/font/NotoSansCJKkr-Light.ttf") format("truetype"), url("/assets/font/NotoSansCJKkr-Light.svg#NotoSansCJKkr-Light") format("svg");
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 350;
+  src: url("/assets/font/NotoSansCJKkr-DemiLight.eot");
+  src: url("/assets/font/NotoSansCJKkr-DemiLight.eot?#iefix") format("embedded-opentype"), url("/assets/font/NotoSansCJKkr-DemiLight.woff2") format("woff2"), url("/assets/font/NotoSansCJKkr-DemiLight.woff") format("woff"), url("/assets/font/NotoSansCJKkr-DemiLight.ttf") format("truetype"), url("/assets/font/NotoSansCJKkr-DemiLight.svg#NotoSansCJKkr-DemiLight") format("svg");
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/font/NotoSansCJKkr-Regular.eot");
+  src: url("/assets/font/NotoSansCJKkr-Regular.eot?#iefix") format("embedded-opentype"), url("/assets/font/NotoSansCJKkr-Regular.woff2") format("woff2"), url("/assets/font/NotoSansCJKkr-Regular.woff") format("woff"), url("/assets/font/NotoSansCJKkr-Regular.ttf") format("truetype"), url("/assets/font/NotoSansCJKkr-Regular.svg#NotoSansCJKkr-Regular") format("svg");
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/font/NotoSansCJKkr-Medium.eot");
+  src: url("/assets/font/NotoSansCJKkr-Medium.eot?#iefix") format("embedded-opentype"), url("/assets/font/NotoSansCJKkr-Medium.woff2") format("woff2"), url("/assets/font/NotoSansCJKkr-Medium.woff") format("woff"), url("/assets/font/NotoSansCJKkr-Medium.ttf") format("truetype"), url("/assets/font/NotoSansCJKkr-Medium.svg#NotoSansCJKkr-Medium") format("svg");
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/font/NotoSansCJKkr-Bold.eot");
+  src: url("/assets/font/NotoSansCJKkr-Bold.eot?#iefix") format("embedded-opentype"), url("/assets/font/NotoSansCJKkr-Bold.woff2") format("woff2"), url("/assets/font/NotoSansCJKkr-Bold.woff") format("woff"), url("/assets/font/NotoSansCJKkr-Bold.ttf") format("truetype"), url("/assets/font/NotoSansCJKkr-Bold.svg#NotoSansCJKkr-Bold") format("svg");
+}
+
+@font-face {
+  font-family: 'Noto Sans CJK KR';
+  font-style: normal;
+  font-weight: 900;
+  src: url("/assets/font/NotoSansCJKkr-Black.eot");
+  src: url("/assets/font/NotoSansCJKkr-Black.eot?#iefix") format("embedded-opentype"), url("/assets/font/NotoSansCJKkr-Black.woff2") format("woff2"), url("/assets/font/NotoSansCJKkr-Black.woff") format("woff"), url("/assets/font/NotoSansCJKkr-Black.ttf") format("truetype"), url("/assets/font/NotoSansCJKkr-Black.svg#NotoSansCJKkr-Black") format("svg");
+}
+
+/*# sourceMappingURL=font.css.map */

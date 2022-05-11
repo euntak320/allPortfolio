@@ -1,0 +1,295 @@
+.worldwide {
+  height: 1378px;
+
+  .worldwide__maintitle {
+    display: block;
+    font-size: 70px;
+    font-weight: 600;
+    color: #003c71;
+    text-align: center;
+  }
+
+  .worldwide__number-group {
+    margin-top: 40px;
+    text-align: center;
+
+    .worldwide__counting-item {
+      display: inline-block;
+      font-size: 30px;
+      color: #003c71;
+
+      &:first-child {
+        margin-right: 60px;
+      }
+
+      .text__number {
+        margin-left: 10px;
+        font-size: 46px;
+        color: #005eb8;
+        font-weight: 600;
+
+        .text__bold {
+          font-size: 26px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .worldwide__map-area {
+    position: relative;
+    margin-top: 110px;
+    height: 100%;
+
+    .map-area__bg {
+      display: block;
+      margin: 0 auto;
+    }
+
+    > div {
+      position: absolute;
+    }
+
+    .worldwide__africa-group {
+      left: 78px;
+      top: 256px;
+
+      .africa__list-group {
+        width: 100%;
+        margin-top: 223px;
+      }
+    }
+
+    .worldwide__asia-group {
+      left: 446px;
+      top: 227px;
+
+      .asia__list-group {
+        margin-top: 195px;
+        margin-left: 102px;
+      }
+    }
+
+    .worldwide__america-group {
+      left: 901px;
+      top: 201px;
+
+      .america__list-group {
+        margin-top: 150px;
+        margin-left: -40px;
+      }
+    }
+
+    .map-area__main-title {
+      position: relative;
+      display: inline-block;
+      font-size: 30px;
+      font-weight: bold;
+      letter-spacing: -0.025em;
+      line-height: 30px;
+      color: #003c71;
+    }
+
+    .map-area__text-group {
+      position: relative;
+
+      &::after {
+        display: block;
+        clear: both;
+        content: "";
+      }
+    }
+
+    .list__text-group {
+      margin-top: 25px;
+      line-height: 30px;
+
+      .list__now-stauts {
+        font-size: 16px;
+
+        > * {
+          display: inline-block;
+          vertical-align: middle;
+          color: #003c71;
+          font-weight: 500;
+        }
+
+        .list__counting-number {
+          width: 23px;
+          height: 23px;
+          margin-right: 5px;
+          border-radius: 50%;
+          background: #bbdde6;
+          color: #298bae;
+          text-align: center;
+          line-height: 23px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .content__worldwide-asia .list__text-group .list__now-stauts .list__counting-number {
+    background: #7fbace;
+    color: #fff;
+  }
+
+  .content__worldwide-america .list__text-group .list__now-stauts .list__counting-number {
+    background: #3e96b6;
+    color: #fff;
+  }
+
+  .africa__list-group .list__text-group {
+    float: left;
+    margin-right: 30px;
+
+    &:last-child {
+      float: right;
+      margin-right: 0;
+    }
+  }
+
+  .america__list-group .list__text-group {
+    float: left;
+    margin-right: 50px;
+
+    &:last-child {
+      float: right;
+      margin-right: 0;
+    }
+  }
+
+  .map-area__main-title:after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    height: 14px;
+    border-radius: 20px;
+    background: #e8edee;
+    z-index: -1;
+  }
+
+  .content__worldwide_bottomtxt {
+    position: absolute;
+    bottom: -20%;
+    left: 5%;
+    color: #003c71;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .js-scroll-item.is-seletecd .content__worldwide_bottomtxt {
+    opacity: 1;
+  }
+}
+
+.worldwide__africa-group img.heartbeat2 {
+  -webkit-animation: heartBeatv2 4s forwards alternate 2s;
+  animation: heartBeatv2 4s forwards alternate 2s;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  animation-delay: 6s;
+}
+
+.worldwide__asia-group img.heartbeat2 {
+  -webkit-animation: heartBeatv2 4s forwards alternate 2s;
+  animation: heartBeatv2 4s forwards alternate 2s;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  animation-delay: 8s;
+}
+
+.worldwide__america-group img.heartbeat2 {
+  -webkit-animation: heartBeatv2 4s forwards alternate 2s;
+  animation: heartBeatv2 4s forwards alternate 2s;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  animation-delay: 10s;
+}
+
+.content__worldwide .js-scroll-item.is-selected .js-fade-in {
+  -webkit-transition: opacity .4s ease-in, -webkit-transform .4s ease-in;
+  transition: opacity .4s ease-in, -webkit-transform .4s ease-in;
+  transition: (opacity 0.4s ease-in,);
+  transition: opacity .4s ease-in, -webkit-transform .4s ease-in;
+}
+
+.js-scroll-item.is-selected {
+  .worldwide__africa-group img.heartbeat2, .worldwide__asia-group img.heartbeat2, .worldwide__america-group img.heartbeat2 {
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+  }
+}
+
+@keyframes heartBeatv2 {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(1.13);
+    transform: scale(1.13);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes heartBeatv2 {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(1.13);
+    transform: scale(1.13);
+  }
+
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes heartBeat {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,27 @@
+.video {
+  background: #005eb8;
+  color: #fff;
+  min-height: 1080px;
+
+  .video__item-text {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: -0.06em;
+  }
+
+  .download__button {
+    display: table;
+    width: auto;
+    height: 90px;
+    line-height: 90px;
+    padding: 0 120px 0 60px;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff url(/assets/image/icon-btn-arrow.png) no-repeat 90% center;
+    font-size: 26px;
+    color: #005eb8;
+    font-weight: 600;
+  }
+}

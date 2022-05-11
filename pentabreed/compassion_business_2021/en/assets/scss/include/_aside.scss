@@ -1,0 +1,159 @@
+/* ==========================================================================
+	# aside
+	========================================================================== */
+
+.aside {
+  position: fixed;
+  width: 0;
+  bottom: 16px;
+  right: 40px;
+  height: 125px;
+  z-index: 1000;
+
+  .audio__inner {
+    position: absolute;
+    right: 125px;
+    bottom: 30px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    width: 165px;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .2s .3s;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  &.on .audio__inner {
+    opacity: 1;
+    transition-delay: 1.2s;
+  }
+
+  .audio__inner .audio__description {
+    display: inline-block;
+    position: relative;
+
+    .audio__description--text {
+      color: #6fb0c7;
+    }
+  }
+
+  .audio__button-group {
+    display: block;
+    position: absolute;
+    width: 125px;
+    height: 100%;
+    right: 0;
+    z-index: 100;
+    border-radius: 50%;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 3px 0 3px rgba(0, 0, 0, 0.5);
+
+    .audio__button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 25px;
+      transform: translate(-50%, -50%);
+      border: 0;
+      cursor: pointer;
+    }
+
+    .audio__button--play {
+      background: url(/assets/image/icon-sound-on.png) no-repeat center;
+      background-size: 100%;
+    }
+
+    .audio__button--pause {
+      display: none;
+      background: url(/assets/image/icon-sound-off.png) no-repeat center;
+      background-size: 100%;
+    }
+  }
+
+  .audio__inner .audio__description--text {
+    white-space: nowrap;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -10px;
+    line-height: 1;
+    opacity: 0;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-name: animateText;
+    animation-name: animateText;
+    animation-duration: 25s;
+    animation-delay: 1.5s;
+  }
+
+  .audio__button-group .audio__image {
+    position: relative;
+    animation: rotate_image 10s linear infinite;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* ==========================================================================
+	# aside animation
+	========================================================================== */
+
+@keyframes animateText {
+  0% {
+    -webkit-transform: translateX(70px);
+    transform: translateX(70px);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate_image {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

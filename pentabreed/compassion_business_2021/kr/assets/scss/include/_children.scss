@@ -1,0 +1,167 @@
+.children {
+  background: #0086bf;
+  color: #005eb8;
+  min-height: 1080px;
+
+  span {
+    display: block;
+  }
+
+  a {
+    display: table;
+    width: auto;
+    height: 90px;
+    line-height: 90px;
+    padding: 0 120px 0 60px;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff url(/assets/image/icon-btn-arrow.png) no-repeat 90% center;
+    font-size: 26px;
+    color: #005eb8;
+    font-weight: 600;
+  }
+
+  .children__text {
+    font-size: 70px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: -0.06em;
+    line-height: 80px;
+    text-align: center;
+  }
+
+  .children__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 100px 0 60px 0;
+    padding: 0 60px;
+    box-sizing: border-box;
+
+    .children__text-box {
+      width: 280px;
+      margin-right: 50px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .content__box {
+        padding: 0 0 43px;
+        background: #ecf4ff;
+        text-align: center;
+
+        img {
+          width: 100%;
+        }
+
+        .children__text {
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 1;
+
+          &.children__text--age {
+            margin-top: 30px;
+            color: #0f4478;
+          }
+
+          &.children__text--method {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #0f4478;
+          }
+
+          &.children__text--counting {
+            margin-top: 24px;
+            font-size: 40px;
+            color: #0067ca;
+            line-height: 45px;
+          }
+
+          &.children__text--name {
+            position: relative;
+            display: inline-block;
+            font-size: 26px;
+            margin-top: 40px;
+            padding: 0;
+            height: auto;
+            line-height: 32px;
+            font-weight: 600;
+            color: #0f4478;
+            background: none;
+            z-index: 1;
+
+            &:after {
+              content: "";
+              position: absolute;
+              bottom: -3px;
+              left: -5px;
+              right: -5px;
+              height: 12px;
+              background: #b5dbef;
+              border-radius: 15px;
+              z-index: -1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .children__infomation-text {
+    min-height: 600px;
+    margin-top: 60px;
+    padding: 60px 0;
+    border-top: 4px solid #80c3df;
+    border-bottom: 4px solid #80c3df;
+    color: #fff;
+
+    .information__item {
+      font-size: 20px;
+      line-height: 28px;
+      color: #b1e7fe;
+
+      &.information__item--main {
+        height: 111px;
+        font-size: 28px;
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: -0.05em;
+        line-height: normal;
+      }
+
+      &.information__item--sub {
+        color: #fff;
+      }
+
+      + .information__item {
+        margin-top: 37px;
+      }
+    }
+  }
+
+  .section__bg-item.section__bg-item {
+    position: absolute;
+    width: 1338px;
+    height: 1148px;
+    top: -30%;
+    left: 50%;
+    background: url("/assets/image//ico-circle-object-item3.png") no-repeat 50% 0;
+    background-size: cover;
+    opacity: 0;
+    transition: all 5s;
+    -webkit-animation: heartBeat 5s forwards alternate 3s;
+    animation: heartBeat 5s forwards alternate 3s;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+    margin-left: -669px;
+  }
+
+  .js-scroll-item.is-selected.section__bg-item.section__bg-item {
+    opacity: 1;
+    transition: all 5s;
+    -webkit-animation: heartBeat 5s infinite alternate 5s;
+    animation: heartBeat 5s infinite alternate 5s;
+    animation-delay: 3s;
+  }
+}

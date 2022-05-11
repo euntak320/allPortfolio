@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>컴포넌트</title>
+    <link rel="stylesheet" href="./html/assets/css/lib/common.css">
+    <style>
+        #wrap {position: relative; overflow: hidden; color: #000;}
+        .content {height: 100vh; background: #ccc;}
+        .content__textarea {padding: 30px 40px; border-bottom: 1px solid #000; font-size: 30px; font-weight: bold;}
+        .content__left {position: fixed; left:0; width:10%; height: 100%; border-right: 1px solid #000;}
+        .content__list {width:100%;}
+        .content__list-item {height: 50px; line-height: 50px; border-bottom: 1px solid #000; text-align: center; }
+        .content__list-item.on,
+        .content__list-item:hover {background: #000; color:#fff; cursor: pointer;}
+        .content__right {overflow-x: hidden; position: relative; overflow: auto; height: 90vh;  margin-left: 10%;}
+        .content__wrap {position: relative; width:100%;}
+        .content__wrap  + .content__wrap {margin-top:30px; border-top: 1px solid #000;}
+        .content__wrap::after {display: block; content: ""; clear: both;}
+        .content__area-item {float: left; width:49%; margin-right: 1%; margin-top: 30px;}
+        .content__area-item.w100 {width:100%;}
+        .content__area-item:nth-child(2n) {float: right; margin-right: 0;}
+        .content__area-title {display: block; width:100%; padding-bottom: 5px; font-size: 40px; border-bottom: 1px solid #000; color:#000}
+        .content__view {overflow: hidden; display: none; width:100%; padding:30px 50px; background: #fff;}
+        .content__view.on {display: block;}
+        .content__compontent-title {display: block; margin:30px 0; padding-bottom: 10px; font-size: 20px; color: #000; border-bottom: 1px solid #000;}
+        .view__source {width: 100%; padding:20px; margin-top:20px; background: #efefef;}
+        .view__source xmp {color: #000; font-weight: bold;}
+    </style>
+    <script src="./html/assets/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="./html/assets/js/lib/common.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="content">
+            <div class="content__textarea">
+                <div class="content__textarea-title">컴포넌트별 정리</div>
+            </div>
+            <div class="content__left">
+                <ul class="content__list">
+                    <li class="content__list-item on">Text</li>
+                    <li class="content__list-item">Form</li>
+                    <li class="content__list-item">Boxes</li>
+                    <li class="content__list-item">ETC</li>
+                </ul>
+            </div>
+            <div class="content__right">
+                <!-- text : S -->
+                <div class="content__view on">
+                    <div class="content__area">
+                        <span class="content__area-title">타이틀영역</span>
+                        <div class="content__wrap">
+                            <div class="content__area-item">
+                                <p class="main_title black">제목 메인 타이틀</p>
+                                <div class="view__source">
+                                    <xmp><p class="black">제목 메인 타이틀</p></xmp>
+                                </div>
+                            </div>
+                            <div class="content__area-item">
+                                <p class="sub_title black">제목 서브 타이틀</p>
+                                <div class="view__source">
+                                    <xmp><p class="black">제목 서브 타이틀</p></xmp>
+                                </div>
+                            </div>
+                            <div class="content__area-item">
+                                <span class="sub_title_01 black">서브타이틀1</span>
+                                <div class="view__source">
+                                    <xmp><span class="sub_title_01 black">서브타이틀1</span></xmp>
+                                </div>
+                            </div>
+                            <div class="content__area-item">
+                                <span class="sub_title_02 black">서브타이틀2</span>
+                                <div class="view__source">
+                                    <xmp><span class="sub_title_02 black">서브타이틀2</span></xmp>
+                                </div>
+                            </div>
+                            <div class="content__area-item">
+                                <span class="sub_title_03 black">서브타이틀3</span>
+                                <div class="view__source">
+                                    <xmp><span class="sub_title_03 black">서브타이틀3</span></xmp>
+                                </div>
+                            </div>
+                            <div class="content__area-item">
+                                <span class="sub_title_04 black">서브타이틀4</span>
+                                <div class="view__source">
+                                    <xmp><span class="sub_title_04 black">서브타이틀4</span></xmp>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content__wrap">
+                                <div class="content__area-item w100">
+                                    <div class="company_title">
+                                        <span class="eng">English name</span>
+                                        <p class="main_title black">사업소개 타이틀</p>
+                                        <p class="desc">사업소개 설명글</p>
+                                    </div>
+                                    <div class="view__source">
+                                        <xmp>
+                                            <div class="company_title">
+                                                <span class="eng">English name</span>
+                                                <p class="main_title black">사업소개 타이틀</p>
+                                                <p class="desc">사업소개 설명글</p>
+                                            </div>
+                                        </xmp>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <!-- text : E -->
+
+                <!-- Input : S -->
+                <div class="content__view ">
+                    <div class="content__area">
+                        <span class="content__area-title">Form 영역</span>
+                        <div class="content__wrap">
+                            <div class="content__area-item">
+                                <div class="com_btn_area">
+                                    <button type="button" class="btn">버튼 기본</button>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><div class="com_btn_area"><button type="button" class="btn">버튼 기본</button></div></xmp>
+                                </div>
+                            </div>
+                            <div class="content__area-item">
+                                <div class="com_btn_area">
+                                    <button type="button" class="btn plus">더보기</button>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><div class="com_btn_area"><button type="button" class="btn plus">더보기</button></div></xmp>
+                                </div>
+                            </div>
+                            <div class="content__area-item">
+                                <div class="com_btn_area">
+                                    <button type="button" class="btn pdf">PDF 다운로드</button>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><div class="com_btn_area"><button type="button" class="btn pdf">PDF 다운로드</button></div></xmp>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content__wrap">
+                            <div class="content__area-item">
+                                <div class="search_bar">
+                                    <input type="text" title="검색" placeholder="검색어를 입력해주세요">
+                                    <button type="button" class="search_icon">검색</button>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><button type="button" class="btn pdf">PDF 다운로드</button></xmp>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content__wrap">
+                            <div class="content__area-item w100">
+                                <div class="all_search_bar">
+                                    <div class="year_area">
+                                        <select name="" id="">
+                                            <option value="">년도</option>
+                                            <option value="">2022년</option>
+                                            <option value="">2021년</option>
+                                            <option value="">2020년</option>
+                                            <option value="">2019년</option>
+                                        </select>
+                                    </div>
+                                    <div class="month_area">
+                                        <select name="" id="">
+                                            <option value="">월</option>
+                                            <option value="">1월</option>
+                                            <option value="">2월</option>
+                                            <option value="">3월</option>
+                                            <option value="">4월</option>
+                                        </select>
+                                    </div>
+                                    <div class="search_bar">
+                                        <input type="text" title="검색" placeholder="검색어를 입력해주세요">
+                                        <button type="button" class="search_icon">검색</button>
+                                    </div>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><div class="all_search_bar">
+                                        <div class="year_area">
+                                            <select name="" id="">
+                                                <option value="">년도</option>
+                                                <option value="">2022년</option>
+                                                <option value="">2021년</option>
+                                                <option value="">2020년</option>
+                                                <option value="">2019년</option>
+                                            </select>
+                                        </div>
+                                        <div class="month_area">
+                                            <select name="" id="">
+                                                <option value="">월</option>
+                                                <option value="">1월</option>
+                                                <option value="">2월</option>
+                                                <option value="">3월</option>
+                                                <option value="">4월</option>
+                                            </select>
+                                        </div>
+                                        <div class="search_bar">
+                                            <input type="text" title="검색" placeholder="검색어를 입력해주세요">
+                                            <button type="button" class="search_icon">검색</button>
+                                        </div></xmp>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Input : E -->
+
+                <!-- Boxes : S -->
+                <div class="content__view">
+                    <div class="content__area">
+                        <span class="content__area-title">box 영역</span>
+                        <div class="content__wrap">
+                            <div class="content__area-item w100">
+                               <div class="box_list_area">
+                                    <div class="box_area blue">
+                                        <a href="" class="link">
+                                            <span class="number">31</span>
+                                            <span class="box_title">주요사항보고서</span>
+                                            <span class="etc_text">2021.07.16 <br>티에스케이코퍼레이션 제출</span>
+                                        </a>
+                                    </div>
+                                    <div class="box_area orange">
+                                        <a href="" class="download">
+                                            <span class="number">1</span>
+                                            <span class="box_title">제 10기 결산공고</span>
+                                            <span class="etc_text">2021.07.16</span>
+                                        </a>
+                                    </div>
+                                    <div class="box_area green">
+                                        <a href="" class="link">
+                                            <span class="number">31</span>
+                                            <span class="box_title">주요사항보고서</span>
+                                            <span class="etc_text">2021.07.16 <br>티에스케이코퍼레이션 제출</span>
+                                        </a>
+                                    </div> 
+                                    <div class="box_area lightgreen">
+                                        <a href="" class="link">
+                                            <span class="number">31</span>
+                                            <span class="box_title">주요사항보고서</span>
+                                            <span class="etc_text">2021.07.16 <br>티에스케이코퍼레이션 제출</span>
+                                        </a>
+                                    </div>
+                                    <div class="box_area purple">
+                                        <a href="" class="link">
+                                            <span class="number">31</span>
+                                            <span class="box_title">주요사항보고서</span>
+                                            <span class="etc_text">2021.07.16 <br>티에스케이코퍼레이션 제출</span>
+                                        </a>
+                                    </div>
+                               </div>
+                                <div class="view__source">
+                                    <xmp><div class="box_list_area">
+                                        <div class="box_area blue">
+                                            <a href="" class="link">
+                                                <span class="number">31</span>
+                                                <span class="box_title">주요사항보고서</span>
+                                                <span class="etc_text">2021.07.16 <br>티에스케이코퍼레이션 제출</span>
+                                            </a>
+                                        </div>
+                                        <div class="box_area orange">
+                                            <a href="" class="download">
+                                                <span class="number">1</span>
+                                                <span class="box_title">제 10기 결산공고</span>
+                                                <span class="etc_text">2021.07.16</span>
+                                            </a>
+                                        </div>
+                                        <div class="box_area green">
+                                            <a href="" class="link">
+                                                <span class="number">31</span>
+                                                <span class="box_title">주요사항보고서</span>
+                                                <span class="etc_text">2021.07.16 <br>티에스케이코퍼레이션 제출</span>
+                                            </a>
+                                        </div> 
+                                        <div class="box_area lightgreen">
+                                            <a href="" class="link">
+                                                <span class="number">31</span>
+                                                <span class="box_title">주요사항보고서</span>
+                                                <span class="etc_text">2021.07.16 <br>티에스케이코퍼레이션 제출</span>
+                                            </a>
+                                        </div>
+                                        <div class="box_area purple">
+                                            <a href="" class="link">
+                                                <span class="number">31</span>
+                                                <span class="box_title">주요사항보고서</span>
+                                                <span class="etc_text">2021.07.16 <br>티에스케이코퍼레이션 제출</span>
+                                            </a>
+                                        </div>
+                                    </xmp>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Boxes : E -->
+
+                <!-- etc : S -->
+                <div class="content__view">
+                    <div class="content__area">
+                        <span class="content__area-title">기타 영역</span>
+                        <div class="content__wrap">
+                            <div class="content__area-item w100">
+                                <span class="content__compontent-title">해시태그</span>
+                                <div class="hashtag_area">
+                                    <ul>
+                                        <li><button type="button">#전체</button></li>
+                                        <li><button type="button">#지속가능경영</button></li>
+                                        <li><button type="button">#사회공헌</button></li>
+                                        <li><button type="button">#R&amp;B</button></li>
+                                        <li><button type="button">#M&amp;A</button></li>
+                                        <li><button type="button">#소통</button></li>
+                                    </ul>
+                                </div>
+                                <div class="view__source">
+                                    <xmp> <div class="hashtag_area">
+                                        <ul>
+                                            <li><button type="button">#전체</button></li>
+                                            <li><button type="button">#지속가능경영</button></li>
+                                            <li><button type="button">#사회공헌</button></li>
+                                            <li><button type="button">#R&amp;B</button></li>
+                                            <li><button type="button">#M&amp;A</button></li>
+                                            <li><button type="button">#소통</button></li>
+                                        </ul>
+                                    </div></xmp>
+                                </div>
+                            </div>
+
+                            <div class="content__area-item w100">
+                                <span class="content__compontent-title">페이징</span>
+                                <div class="paging_area">
+                                    <ul>
+                                        <li><button type="button" class="first"></button></li>
+                                        <li class="mr35"><button type="button" class="prev"></button></li>
+                                        <li><button type="button">1</button></li>
+                                        <li><button type="button">2</button></li>
+                                        <li><button type="button">3</button></li>
+                                        <li><button type="button">4</button></li>
+                                        <li><button type="button">5</button></li>
+                                        <li class="ml35"><button type="button" class="next"></button></li>
+                                        <li><button type="button" class="last"></button></li>
+                                    </ul>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><div class="paging_area">
+                                        <ul>
+                                            <li><button type="button" class="first"></button></li>
+                                            <li><button type="button" class="prev"></button></li>
+                                            <li><button type="button">1</button></li>
+                                            <li><button type="button">2</button></li>
+                                            <li><button type="button">3</button></li>
+                                            <li><button type="button">4</button></li>
+                                            <li><button type="button">5</button></li>
+                                            <li><button type="button" class="next"></button></li>
+                                            <li><button type="button" class="last"></button></li>
+                                        </ul>
+                                    </div></xmp>
+                                </div>
+                            </div>
+
+                            <div class="content__area-item w100">
+                                <span class="content__compontent-title">탭영역</span>
+                                <div class="main_tab_area">
+                                    <ul>
+                                        <li class="green on"><a href="">의료폐기물 소각</a></li>
+                                        <li class="green"><a href="">산업폐기물 소각</a></li>
+                                        <li class="green"><a href="">신재생에너지</a></li>
+                                        <li class="green"><a href="">폐기물 수집 운반</a></li>
+                                        <li class="green"><a href="">멸균</a></li>
+                                    </ul>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><div class="main_tab_area">
+                                        <ul>
+                                            <li class="on"><a href="">의료폐기물 소각</a></li>
+                                            <li><a href="">산업폐기물 소각</a></li>
+                                            <li><a href="">신재생에너지</a></li>
+                                            <li><a href="">폐기물 수집 운반</a></li>
+                                            <li><a href="">멸균</a></li>
+                                        </ul>
+                                    </div></xmp>
+                                </div>
+                            </div>
+
+                            <div class="content__area-item w100">
+                                <span class="content__compontent-title">탭영역 + 하위 메뉴</span>
+                                <div class="meun_list_wrap">
+                                    <div class="main_tab_area">
+                                        <ul class="sub_tab">
+                                            <li class="green on"><a href="">에코비트</a></li>
+                                            <li class="blue"><a href="">워터</a>
+                                                <ul class="sub_meun_list">
+                                                    <li><a href="">에코비트 워터</a></li>
+                                                    <li><a href="">에코비트 M&amp;S</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="orange"><a href="">에너지</a>
+                                                <ul class="sub_meun_list">
+                                                    <li><a href="">에코비트 에너지</a></li>
+                                                    <li><a href="">에코비트 에너지 경산</a></li>
+                                                    <li><a href="">에코비트 에너지 경주</a></li>
+                                                    <li><a href="">에코비트 에너지 광주</a></li>
+                                                    <li><a href="">에코비트 에너지 명성</a></li>
+                                                    <li><a href="">에코비트 에너지 세종</a></li>
+                                                    <li><a href="">에코비트 에너지 울산</a></li>
+                                                    <li><a href="">에코비트 에너지 전주</a></li>
+                                                    <li><a href="">에코비트 에너지 정세</a></li>
+                                                    <li><a href="">에코비트 에너지 청원</a></li>
+                                                    <li><a href="">에코비트 로지스</a></li>
+                                                    <li><a href="">에코비트 엔솔 </a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="lightgreen"><a href="">그린</a>
+                                                <ul class="sub_meun_list">
+                                                    <li><a href="">에코비트 그린</a></li>
+                                                    <li><a href="">에코비트 그린 청주</a></li>
+                                                    <li><a href="">에코비트 그린 충주</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="purple"><a href="">미래사업</a>
+                                                <ul class="sub_meun_list">
+                                                    <li><a href="">에코비트 엔지니어링</a></li>
+                                                    <li><a href="">에코비트 프리텍</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <div class="menu_search_bar">
+                                            <button class="button_open" type="button">검색</button>
+                                            <div class="search_input">
+                                                <input type="text" placeholder="검색어를 입력해주세요 ">
+                                                <button class="button_search" type="button">검색</button>
+                                                <button class="button_close">닫기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="view__source">
+                                    <xmp> <div class="meun_list_wrap">
+                                        <div class="main_tab_area">
+                                            <ul class="sub_tab">
+                                                <li class="green on"><a href="">에코비트</a></li>
+                                                <li class="blue"><a href="">워터</a>
+                                                    <ul class="sub_meun_list">
+                                                        <li><a href="">에코비트 워터</a></li>
+                                                        <li><a href="">에코비트 M&amp;S</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="orange"><a href="">에너지</a>
+                                                    <ul class="sub_meun_list">
+                                                        <li><a href="">에코비트 에너지</a></li>
+                                                        <li><a href="">에코비트 에너지 경산</a></li>
+                                                        <li><a href="">에코비트 에너지 경주</a></li>
+                                                        <li><a href="">에코비트 에너지 광주</a></li>
+                                                        <li><a href="">에코비트 에너지 명성</a></li>
+                                                        <li><a href="">에코비트 에너지 세종</a></li>
+                                                        <li><a href="">에코비트 에너지 울산</a></li>
+                                                        <li><a href="">에코비트 에너지 전주</a></li>
+                                                        <li><a href="">에코비트 에너지 정세</a></li>
+                                                        <li><a href="">에코비트 에너지 청원</a></li>
+                                                        <li><a href="">에코비트 로지스</a></li>
+                                                        <li><a href="">에코비트 엔솔 </a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="lightgreen"><a href="">그린</a>
+                                                    <ul class="sub_meun_list">
+                                                        <li><a href="">에코비트 그린</a></li>
+                                                        <li><a href="">에코비트 그린 청주</a></li>
+                                                        <li><a href="">에코비트 그린 충주</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="purple"><a href="">미래사업</a>
+                                                    <ul class="sub_meun_list">
+                                                        <li><a href="">에코비트 엔지니어링</a></li>
+                                                        <li><a href="">에코비트 프리텍</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <div class="menu_search_bar">
+                                                <button class="button_open" type="button">검색</button>
+                                                <div class="search_input">
+                                                    <input type="text" placeholder="검색어를 입력해주세요 ">
+                                                    <button class="button_search" type="button">검색</button>
+                                                    <button class="button_close">닫기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div></xmp>
+                                </div>
+                            </div>
+
+                            <div class="content__area-item w100">
+                                <span class="content__compontent-title">서브탭영역</span>
+                                <div class="sub_tab_area">
+                                    <ul>
+                                        <li class="on"><button type="button">에코비트 에너지 세종</button></li>
+                                        <li><button type="button">에코비트 에너지 정세</button></li>
+                                    </ul>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><div class="sub_tab_area">
+                                        <ul>
+                                            <li class="on"><button type="button">에코비트 에너지 세종</button></li>
+                                            <li><button type="button">에코비트 에너지 정세</button></li>
+                                        </ul>
+                                    </div></xmp>
+                                </div>
+                            </div>
+
+                            <div class="content__area-item w100">
+                                <span class="content__compontent-title">서브탭영역(3개)</span>
+                                <div class="sub_tab_area">
+                                    <ul class="three">
+                                        <li class="on"><button type="button">SRF(Solid Refuse Fuel)</button></li>
+                                        <li><button type="button">스팀 공급/발전</button></li>
+                                        <li><button type="button">BGP(Bio Gas Plant)</button></li>
+                                    </ul>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><div class="sub_tab_area">
+                                        <ul class="three">
+                                            <li class="on"><button type="button">SRF(Solid Refuse Fuel)</button></li>
+                                            <li><button type="button">스팀 공급/발전</button></li>
+                                            <li><button type="button">BGP(Bio Gas Plant)</button></li>
+                                        </ul>
+                                    </div></xmp>
+                                </div>
+                            </div>
+
+                            <div class="content__area-item w100">
+                                <span class="content__compontent-title">서브탭영역(4개)</span>
+                                <div class="sub_tab_area">
+                                    <ul class="four">
+                                        <li class="on"><button type="button">SRF(Solid Refuse Fuel)</button></li>
+                                        <li><button type="button">스팀 공급/발전</button></li>
+                                        <li><button type="button">BGP(Bio Gas Plant)</button></li>
+                                        <li><button type="button">BGP(Bio Gas Plant)</button></li>
+                                    </ul>
+                                </div>
+                                <div class="view__source">
+                                    <xmp><div class="sub_tab_area">
+                                        <ul class="four">
+                                            <li class="on"><button type="button">SRF(Solid Refuse Fuel)</button></li>
+                                            <li><button type="button">스팀 공급/발전</button></li>
+                                            <li><button type="button">BGP(Bio Gas Plant)</button></li>
+                                            <li><button type="button">BGP(Bio Gas Plant)</button></li>
+                                        </ul>
+                                    </div></xmp>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- etc : E -->
+            </div>  
+        </div> 
+    </div>
+    <script>
+        $(function(){
+            $(".content__list-item").click(function(){
+                $(".content__list-item").removeClass("on");
+                $(".content__list-item").eq($(this).index()).addClass("on");
+                $(".content__view").removeClass("on");
+                $(".content__view").eq($(this).index()).addClass("on");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+.chart {
+  a {
+    display: table;
+    width: auto;
+    height: 90px;
+    line-height: 90px;
+    padding: 0 120px 0 60px;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff url(/assets/image/icon-btn-arrow.png) no-repeat 90% center;
+    font-size: 26px;
+    color: #005eb8;
+    font-weight: 600;
+  }
+
+  span {
+    display: block;
+    text-align: center;
+  }
+
+  .chart__item-maintitle {
+    font-size: 30px;
+    color: #003c71;
+    letter-spacing: -0.04em;
+  }
+
+  .chart__item-subtitle {
+    margin-top: 50px;
+    color: #005eb8;
+    font-size: 100px;
+    font-weight: 900;
+  }
+
+  .chart__animation-area {
+    position: relative;
+    margin: 95px 0 85px;
+    text-align: center;
+  }
+}
+
+.donut_value {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  width: 300px;
+  height: 300px;
+  font-size: 80px;
+  font-family: arial;
+}
+
+.chart {
+  .chart__animation-area {
+    svg {
+      overflow: visible;
+      transform: rotate(-117deg);
+    }
+
+    .chart__counting {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) !important;
+
+      span {
+        display: block;
+      }
+
+      .chart__number {
+        font-size: 70px;
+        line-height: 80px;
+        font-weight: 900;
+        color: #005eb8;
+      }
+
+      .chart__title {
+        margin-top: 40px;
+        font-size: 20px;
+        color: #0186bf;
+        line-height: 24px;
+        letter-spacing: -0.025em;
+      }
+    }
+
+    .chart__total-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) !important;
+      margin-top: -11%;
+      margin-left: -23%;
+    }
+  }
+
+  .js-scroll-item {
+    .chart__animation-fill {
+      stroke-dashoffset: 84;
+    }
+
+    &.is-selected .chart__animation-fill {
+      animation: countingchart 2s linear;
+      -ms-animation: countingchart 2s linear;
+      -webkit-animation: countingchart 2s linear;
+      -o-animation: countingchart 2s linear;
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+@keyframes countingchart {
+  to {
+    stroke-dashoffset: 0;
+  }
+
+  from {
+    stroke-dashoffset: 84;
+  }
+}
+
+@-webkit-keyframes countingchart {
+  to {
+    stroke-dashoffset: 0;
+  }
+
+  from {
+    stroke-dashoffset: 84;
+  }
+}

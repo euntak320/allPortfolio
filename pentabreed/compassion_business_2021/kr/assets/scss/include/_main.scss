@@ -1,0 +1,94 @@
+/* ==========================================================================
+	# main
+	=========================================================================*/
+
+  .main {
+    color: #005eb8;
+    min-height: 1080px;
+  
+    .content__inner {
+      padding-top: 205px;
+    }
+  
+    .main__text-list {
+      .main__item {
+        font-weight: 600;
+        display: block;
+        text-align: center;
+      }
+  
+      .main__subtitle {
+        font-size: 30px;
+        display: block;
+        text-align: center;
+      }
+  
+      .main__maintitle {
+        margin-top: 50px;
+        font-size: 130px;
+        display: block;
+        text-align: center;
+      }
+    }
+  
+    .main__description .main__description-item {
+      margin-top: 100px;
+      font-size: 30px;
+      text-align: center;
+      line-height: 42px;
+      letter-spacing: -0.04em;
+      color: #6fb0c7;
+    }
+  
+    .main__text-list {
+      .main__description .main__description-item + .main__description-item {
+        margin-top: 50px;
+      }
+  
+      .down-arrow {
+        position: absolute;
+        bottom: 13%;
+        left: 50%;
+        transform: translateX(-50%) !important;
+  
+        .down-arrow__image {
+          position: relative;
+        }
+      }
+    }
+  
+    .section__bg-item {
+      &.js-opacity-in {
+        opacity: 0;
+        -webkit-transition: opacity .5s ease-in;
+        transition: opacity .5s ease-in;
+      }
+  
+      &.js-scroll-item.is-selected .js-opacity-in {
+        opacity: 1;
+      }
+  
+      position: absolute;
+      width: 1363px;
+      height: 1311px;
+      top: -13%;
+      background: url(/assets/image/ico-circle-object-item1.png) no-repeat 50% 0;
+      transition: all 3s;
+      -webkit-animation: heartBeat 5s forwards alternate 3s;
+      animation: heartBeat 5s forwards alternate 3s;
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused;
+    }
+  
+    .js-scroll-item.is-selected.section__bg-item {
+      opacity: 1;
+      transition: all 3s;
+      -webkit-animation-play-state: running;
+      animation-play-state: running;
+      animation-delay: 3s;
+    }
+  }
+  
+  /* ==========================================================================
+    # 인터렉션
+    =========================================================================*/

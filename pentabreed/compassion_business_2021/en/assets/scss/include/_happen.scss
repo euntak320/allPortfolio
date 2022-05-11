@@ -1,0 +1,470 @@
+.happen {
+  .content__inner {
+    position: relative;
+    height: 100vh;
+    width: auto;
+    padding: 0 35px;
+    box-sizing: border-box;
+  }
+
+  .happen__button {
+    position: absolute;
+    left: 50%;
+    width: 145px;
+    height: 60px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    background: none;
+    text-align: center;
+
+    span {
+      display: block;
+      font-size: 22px;
+      color: #005eb8;
+      font-weight: 700;
+    }
+
+    .happen__button-txt {
+      display: none;
+
+      &.happen__button-txt--on {
+        display: block;
+      }
+    }
+
+    .happen__button-bg {
+      display: block;
+      margin: 0 auto;
+    }
+
+    span.none {
+      display: none;
+    }
+
+    &.happen__button--up {
+      top: 4%;
+      bottom: auto;
+
+      span {
+        margin-top: 12px;
+      }
+    }
+
+    &.happen__button--down {
+      top: auto;
+      bottom: 4%;
+
+      span {
+        margin-bottom: 12px;
+      }
+    }
+
+    &.happen__button--up {
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.5s;
+    }
+
+    &.happen__button-txt--on {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .content__inner .happen__swiper {
+    position: absolute;
+    height: 700px;
+    width: 97%;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    margin: 0 auto;
+
+    .happen__left-group {
+      overflow: hidden;
+      position: absolute;
+      left: 35px;
+      top: 50%;
+      width: 23%;
+      height: 550px;
+      transform: translateY(-50%) !important;
+      z-index: 100;
+      background: #fff;
+
+      a {
+        display: inline-block;
+        height: 110px;
+        padding: 20px 30px;
+        box-sizing: border-box;
+        background: #005eb8;
+        color: #fff;
+      }
+
+      span {
+        display: block;
+      }
+
+      .happen__left-maintext {
+        position: relative;
+        display: block;
+        padding-bottom: 55px;
+        font-size: 70px;
+        color: #003f77;
+        font-weight: 600;
+        background: #fff;
+        z-index: 1;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 80px;
+          height: 5px;
+          background: #005eb8;
+        }
+      }
+
+      .happen__sub-text {
+        font-size: 50px;
+        font-weight: 600;
+        color: #005eb8;
+      }
+
+      .happen__link-button {
+        margin-top: 40px;
+
+        > * {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+
+      .happen__link-text {
+        position: relative;
+        line-height: 32px;
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .content__happen-present img {
+        margin: 25px 0 0 10px;
+      }
+
+      .happen__text-group {
+        position: relative;
+        top: -50px;
+        padding-top: 100px;
+        transition: 2.5s;
+
+        &:first-child {
+          transform: none;
+        }
+      }
+    }
+  }
+
+  .happen__right-group {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    width: 70%;
+    height: 700px;
+    transform: translateY(-50%) !important;
+
+    .content__swiper-area {
+      transition: 2.5s;
+      padding-top: 100px;
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      .swiper-slide {
+        &:nth-child(even) {
+          margin-top: 65px;
+        }
+
+        &.swiper-slide-prev {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .happen--rightarea .swiper-wrapper {
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .swiper-button-prev:after, .swiper-button-next:after {
+    display: none;
+  }
+
+  .js-scroll-item {
+    .swiper-button-prev, .swiper-button-next {
+      top: -60px;
+      width: 60px;
+      height: 60px;
+      right: 0;
+      left: auto;
+      border: 1px solid #005eb8;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &.is-selected {
+      .swiper-button-prev, .swiper-button-next {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .swiper-button-prev {
+    right: 72px !important;
+    background: #fff url(/assets/image//icon-swiper-left-arrow.png) no-repeat center;
+  }
+
+  .swiper-button-next {
+    background: #fff url(/assets/image//icon-swiper-right-arrow.png) no-repeat center;
+  }
+
+  .happen__right-group {
+    .content__happen-box {
+      width: 100%;
+      min-height: 600px;
+      padding: 25px;
+      margin: 0 auto;
+      background: #fff;
+      box-sizing: border-box;
+      box-shadow: 3px 0 10px rgba(0, 0, 0, 0.12);
+      color: #005eb8;
+
+      .content__image-area {
+        position: relative;
+        height: 420px;
+        vertical-align: middle;
+        overflow: hidden;
+        width: 100%;
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .swiper-slide {
+      &:nth-child(even) .content__happen-box .content__image-area img {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
+
+    .content__happen-box {
+      > span {
+        display: block;
+        margin-top: 25px;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.05em;
+      }
+
+      p {
+        margin-top: 25px;
+        font-size: 18px;
+        line-height: 28px;
+        font-weight: 500;
+        letter-spacing: -0.025em;
+
+        .text__border {
+          display: inline-block;
+          position: relative;
+          z-index: 0;
+          font-weight: 600;
+
+          &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: -3px;
+            left: -3px;
+            height: 12px;
+            background: #ffe880;
+            z-index: -1;
+            border-radius: 15px;
+          }
+        }
+      }
+    }
+
+    .content__swiper-area {
+      &:first-child .swiper-slide:last-child .content__happen-box--text-area {
+        padding: 0 25px;
+        height: 600px;
+        background: url(/assets/image/img-corona-happen-6.jpg) no-repeat center;
+        background-size: cover;
+        color: #333;
+        text-align: center;
+        letter-spacing: -0.05em;
+        box-sizing: border-box;
+
+        > .sub__title {
+          display: block;
+          padding-top: 50px;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 60px;
+          margin-top: 0;
+        }
+
+        .counting__number {
+          margin-top: 0;
+          font-size: 26px;
+          font-weight: 400;
+
+          .text_bold {
+            font-size: 46px;
+            line-height: 60px;
+          }
+        }
+
+        > .normal__text {
+          margin-top: 0;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 50px;
+        }
+
+        .list_group {
+          margin-top: 35px;
+          text-align: left;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 24px;
+          letter-spacing: -0.025em;
+
+          li {
+            position: relative;
+            padding-left: 10px;
+          }
+
+          .list__item {
+            + .list__item {
+              margin-top: 30px;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              top: 13px;
+              left: 0;
+              width: 3px;
+              height: 3px;
+              background: #333;
+            }
+          }
+        }
+
+        .last-title {
+          text-align: left;
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+
+      &:last-child {
+        .content__happen-box {
+          padding: 0 0 25px 0;
+        }
+
+        .swiper-slide:nth-child(even) .content__happen-box .content__image-area img {
+          top: 0;
+          transform: translateX(-50%);
+        }
+
+        .content__happen-box {
+          span, p {
+            padding: 0 25px;
+          }
+
+          &.content__happen-box--text-area {
+            height: 600px;
+            background: url(/assets/image/img-compassion-happen-bg.jpg) no-repeat center;
+            background-size: cover;
+            text-align: center;
+            color: #333;
+
+            span {
+              margin-top: 0;
+              padding-top: 140px;
+              font-size: 24px;
+              letter-spacing: -0.05em;
+            }
+
+            strong {
+              font-size: 40px;
+              line-height: 60px;
+              letter-spacing: -0.04em;
+            }
+
+            p {
+              margin-top: 60px;
+              letter-spacing: -0.05em;
+              line-height: 30px;
+
+              &:nth-child(2) {
+                margin-top: 20px;
+                font-size: 26px;
+                padding: 0;
+              }
+
+              &:last-child {
+                font-weight: 600;
+                margin-top: 80px;
+              }
+            }
+          }
+        }
+
+        .content__happen-box--text-area {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  .section__bg-item {
+    position: absolute;
+    width: 1350px;
+    height: 1230px;
+    right: -145px;
+    top: -245px;
+    background: url("/assets/image/ico-circle-object-item2.png") no-repeat 50% 0;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: all 5s;
+    -webkit-animation: heartBeat 5s forwards alternate 3s;
+    animation: heartBeat 5s forwards alternate 3s;
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+
+  .js-scroll-item.is-selected .section__bg-item {
+    opacity: 1;
+    transition: all 5s;
+    -webkit-animation: heartBeat 5s infinite alternate 5s;
+    animation: heartBeat 5s infinite alternate 5s;
+    animation-delay: 3s;
+  }
+}

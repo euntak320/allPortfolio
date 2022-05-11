@@ -1,0 +1,74 @@
+<style>
+    
+/* 인트로 */
+.intro_play header {z-index:104; }
+.intro_play .menu_wrap {z-index:103; }
+.intro_area {z-index:102; position:fixed; left:0; top:0; display:none; width:100%; height:100%; }
+.intro_area.on {display:block; }
+.intro_area > div {z-index:9; position:absolute; left:0; top:0; width:100%; height:100%; opacity:0; transition:all 1.5s;}
+.intro_area > div:first-of-type {opacity:1; }
+.intro_area > div.on {z-index:10; opacity:1; }
+.intro_area .bg {width:100%; height:100%; transform:scale(1.2); transition:all 1.7s; }
+.intro_area > div.on .bg {transform:scale(1); }
+.intro_con01 .bg {background:url('../images/main/intro_bg01.jpg') no-repeat center center / cover; }
+.intro_con02 .bg {background:url('../images/main/intro_bg02.jpg') no-repeat center center / cover; }
+.intro_con03 .bg {background:url('../images/main/intro_bg03.jpg') no-repeat center center / cover; }
+.intro_con04 .bg {background:url('../images/main/intro_bg04.jpg') no-repeat center center / cover; }
+.intro_con05 .bg {background:url('../images/main/intro_bg05.jpg') no-repeat center center / cover; }
+.intro_area .txt_box {position:absolute; left:50%; top:50%; width:100%; max-width:1360px; transform:translate(-50%,-50%); }
+.intro_area p {overflow:hidden; }
+.intro_area p span {display:inline-block; font-size:60px; color:#fff; font-weight:300; text-align:left; word-break:keep-all; line-height:1.2; transform:translateY(100%); transition:all 1s; transition-delay:0.5s;}
+.intro_area p + p span {transition-delay:0.8s; }
+.intro_area > div.on p span {transform:translateY(0); }
+.intro_area .skip_btn {z-index:11; position:absolute; left:calc(50% - 50px); bottom:0; width:100px; padding-bottom:60px; font-size:16px; color:#fff; font-weight:700; text-align:center; cursor:pointer; }
+.intro_area .skip_btn:after {content:''; position:absolute; left:calc(50% - 1px); bottom:0; display:block; width:2px; height:50px; background-color:#fff; animation:skipheight infinite 1.6s;}
+
+</style>
+
+<!-- INTRO [S] -->
+<div class="intro_area on">
+    <div class="intro_con01">
+        <div class="bg"></div>
+        <div class="txt_box"><p><span>더 좋은 환경</span></p></div>
+    </div>
+    <div class="intro_con02">
+        <div class="bg"></div>
+        <div class="txt_box"><p><span>더 좋은 자연</span></p></div>
+    </div>
+    <div class="intro_con03">
+        <div class="bg"></div>
+        <div class="txt_box"><p><span>더 좋은 미래</span></p></div>
+    </div>
+    <div class="intro_con04">
+        <div class="bg"></div>
+        <div class="txt_box"><p><span>믿을 수 있는 환경기업 에코비트</span></p></div>
+    </div>
+    <div class="intro_con05">
+        <div class="bg"></div>
+        <div class="txt_box"><p><span>Wholesome Solution</span></p><p><span>For Our Earth</span></p></div>
+    </div>
+    <i class="skip_btn">SKIP</i>
+</div>
+<!-- INTRO [E] -->
+
+<script>
+    //인트로
+        /*
+        $('.intro_area .intro_con01').addClass('on').siblings().removeClass('on');
+        var timer = 1;
+        setInterval(function(){
+            if(timer<5){
+                $('.intro_area > div').eq(timer).addClass('on').prev().fadeOut(1300);
+                timer += 1;
+            }else{
+                $('.intro_area').fadeOut(800,function(){
+                    $(this).removeClass('on');
+                    $('#wrap').removeClass('intro_play');
+                    setTimeout(function(){
+                        $('#wrap').removeClass('transoff');
+                    },2000)
+                });
+            }
+        },3000);
+        */
+</script>
