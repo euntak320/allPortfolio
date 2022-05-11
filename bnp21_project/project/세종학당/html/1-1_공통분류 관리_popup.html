@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>코드 등록 / 수정</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+	<div id="popup">
+
+		<h1>코드 등록 / 수정</h1>
+
+		<form id="form_box">
+
+			<div class="pop_wrap">
+
+				<div class="table_wrap">
+					<table class="row_type">
+						<caption>코드 등록 / 수정여부로 구성된 테이블</caption>
+						<colgroup>
+							<col style="width: 25%;" />
+							<col style="width: 75%;" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="temp01">분류코드</label></th>
+								<td><input type="text" id="temp01" title="분류코드" class="basic" style="width:330px;" /></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="temp02">분류명</label></th>
+								<td><input type="text" id="temp02" title="분류명" class="basic" style="width:330px;" /></td>
+							</tr>
+							<tr>
+								<th scope="row">사용여부</th>
+								<td>
+									<input type="radio" id="temp03" name="use" /><label for="temp03">사용</label>
+									<input type="radio" id="temp04" name="use" /><label for="temp04">미사용</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> <!-- //table_wrap -->
+
+			</div>
+
+			<div class="pop_btn_area">
+				<div class="btn_right">
+					<input type="submit" id="submit_01" class="btn blue" value="저장" />
+					<button type="button" class="btn gray">닫기</button>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+
+</body>
+</html>

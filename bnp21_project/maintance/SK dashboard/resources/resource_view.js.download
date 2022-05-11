@@ -1,0 +1,917 @@
+
+/**
+ * created by eun. 
+ */
+
+var timerId = 1;
+var nodeId;
+var delayTime = 1000 * 30;	// long polling delay time(milliseconds * seconds * minutes)
+var selectedTable = "NODE";
+var podListData;
+var nodeListData;
+var workerDataList;
+var podServiceDataList;
+var alarmDataList;
+var selectedAlarmDetail;
+
+//getHtmlNodeName();
+
+$(function() {
+	//pollingDbData();
+	$('.form-control').change(function() {
+		selectedTable = "NODE";
+		podListData=null;
+		nodeListData=null;
+		workerDataList=null;
+		podServiceDataList=null;
+		alarmDataList=null;
+		selectedAlarmDetail = null;
+		getNodeIdWithNodeName();
+		$("#node_tables_btn").click();
+	});
+	
+	$('.alarm-model-close').click(function() {
+		selectedAlarmDetail = null;
+		$('#alarmListForm').modal('hide');
+	});
+});
+
+function display_pod_table(){
+	$(".resource_table_data").empty();
+	$("#podStatus").empty();
+	var htmlStr= "";
+	selectedTable = "POD";
+	$(".resource_table").html("<i class='fas fa-table' style='padding-top: 10px;'></i><span class='card_title bold'> POD Status</span>");
+	htmlStr += "<tr>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>No</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Name</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Worker</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>IP</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Ready</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Status</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Restarts</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Age</th>";
+	htmlStr += "</tr>";
+	$(".resource_table_data").append(htmlStr);
+	displayPodsInfo();
+}
+
+
+function display_node_table(){
+	$(".resource_table_data").empty();
+	$("#podStatus").empty();
+	var htmlStr= "";
+	selectedTable = "NODE";
+	$(".resource_table").html("<i class='fas fa-table' style='padding-top: 10px;'></i><span class='card_title bold'> NODE Status</span>");
+	htmlStr += "<tr>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>No</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Name</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Board</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>IP</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>CPU</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Memory</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Function</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Status</th>";
+	htmlStr += "</tr>";
+	$(".resource_table_data").append(htmlStr);
+	displayNodeInfo();
+}
+
+function display_worker_table(){
+	$(".resource_table_data").empty();
+	$("#podStatus").empty();
+	var htmlStr= "";
+	selectedTable = "WORKER";
+	$(".resource_table").html("<i class='fas fa-table' style='padding-top: 10px;'></i><span class='card_title bold'> Worker Status</span>");
+	htmlStr += "<tr>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>No</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Worker Name</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Status</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Roles</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Age</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Version</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Internal IP</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>External IP</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>OS Image</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Kernel Version</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Container Runtime</th>";
+	htmlStr += "</tr>";
+	$(".resource_table_data").append(htmlStr);
+	displayWorkerInfo();
+}
+
+function display_podservice_table(){
+	$(".resource_table_data").empty();
+	$("#podStatus").empty();
+	var htmlStr= "";
+	selectedTable = "SERVICE";
+	$(".resource_table").html("<i class='fas fa-table' style='padding-top: 10px;'></i><span class='card_title bold'> Pods Service Status</span>");
+	htmlStr += "<tr>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>No</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Service Name</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Namespace</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>type</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Cluster IP</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>External IP</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Port</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Age</th>";
+	htmlStr += "<th class='td_center_align key_color normal tableHead'>Selector</th>";
+	htmlStr += "</tr>";
+	$(".resource_table_data").append(htmlStr);
+	displayPodServiceInfo();
+}
+
+
+function checkLogin() {
+	var user_id = $.cookie("_USER_ID");
+	var user_group = $.cookie("_USER_GROUP");
+	
+	if (user_id != undefined && user_id !=='' && user_group != undefined && user_group !=='') {
+		if (window.location.pathname == '/login.html') {
+			location.replace('/');
+		}
+	}
+	else {
+		if (window.location.pathname != '/login.html') {
+			if( $("#loading_spinner").length > 0 ) {
+				$("#loading_spinner").css("display" , "none");
+			}
+			
+			alert("You are not logged in. Please log-in again.");
+			location.replace('/login.html');
+		}
+	}
+}
+
+function formatSizeUnits(bytes) {
+	if (bytes >= 1073741824) {
+		bytes = (bytes / 1073741824).toFixed(2) + " GB";
+	} else if (bytes >= 1048576) {
+		bytes = (bytes / 1048576).toFixed(2) + " MB";
+	} else if (bytes >= 1024) {
+		bytes = (bytes / 1024).toFixed(2) + " KB";
+	} else if (bytes > 1) {
+		bytes = bytes + " bytes";
+	} else if (bytes == 1) {
+		bytes = bytes + " byte";
+	} else {
+		bytes = "0 bytes";
+	}
+	return bytes;
+}
+
+
+function formatNumberSizeUnits(bytes) {
+	if (bytes >= 1073741824) {
+		bytes = (bytes / 1073741824).toFixed(2);
+	} else if (bytes >= 1048576) {
+		bytes = (bytes / 1048576).toFixed(2);
+	} else if (bytes >= 1024) {
+		bytes = (bytes / 1024).toFixed(2);
+	} else if (bytes > 1) {
+		bytes = bytes;
+	} else if (bytes == 1) {
+		bytes = bytes;
+	} else {
+		bytes = 0;
+	}
+	return bytes;
+}
+
+function getNodeIdWithNodeName(){
+	var name = $("select option:selected").val();
+
+	$.ajax({
+		url: "/api/node/nodeIdByName",
+		type: "POST",
+		data: { name : name },
+		dataType: "json",
+		cache : false,
+		success: function(dataStr) {
+			var resultObj = ( (typeof(dataStr) == 'object') ? dataStr : JSON.parse(dataStr) );
+			if (!resultObj.result) {
+				alert(resultObj.message);
+				return;
+			}
+			nodeId = resultObj.data;
+		},
+		error:function(xhr,status,error) {
+			console.log("getNodeIdWithNodeName() Server Error = " + "[ " + status + "," + xhr.status + " ]  " +  error);
+			ajaxError(xhr,status,error);
+		},
+		complete : function() {
+			console.log("getNodeIdWithNodeName() Server Complete");
+			checkLogin();
+			getPodList();
+			getNodeInfoList();
+			getWorkerList();
+			getPodServiceList();
+			getAlarmList();
+		}
+	});
+}
+
+function leadingZeros(n, digits) {
+	var zero = '';
+	n = n.toString();
+
+	if (n.length < digits) {
+		for (i = 0; i < digits - n.length; i++)
+			zero += '0';
+	}
+	return zero + n;
+}
+
+function pollingDbData(){
+	var d = new Date();
+	var date = leadingZeros(d.getFullYear(),4)+"-"+leadingZeros((d.getMonth() + 1),2)+"-"+leadingZeros(d.getDate(),2)
+	+" "+leadingZeros(d.getHours(),2)+":"+leadingZeros(d.getMinutes(),2)+":"+leadingZeros(d.getSeconds(),2);
+	$('.refresh-box').text(date);
+	
+	checkLogin();
+
+	getnodeList();
+	
+	if(timerId){
+		clearTimeout(timerId);
+	}
+	timerId = setTimeout(function() {
+		pollingDbData();
+	}, delayTime);
+}
+
+// node list 조회
+function getnodeList() {
+	var name = $("select option:selected").val();
+
+	$.ajax({
+		url: "/api/node/nodeList",
+		type: "GET",
+		dataType: "json",
+		cache : false,
+		success: function(dataStr) {
+			var resultObj = ( (typeof(dataStr) == 'object') ? dataStr : JSON.parse(dataStr) );
+			if (!resultObj.result) {
+				alert(resultObj.message);
+				return;
+			}
+
+			var nodelist = resultObj.data;
+			$('.form-control').empty();
+			for(var count = 0; count < nodelist.length; count++){
+				if(name === null || name === undefined){
+					var option = $("<option>" + nodelist[count].nodename + "</option>");
+					$('.form-control').append(option);
+				}else {
+					if(nodelist[count].nodename === name){
+						var option = $("<option selected>" + nodelist[count].nodename + "</option>");
+						$('.form-control').append(option);
+					}else{
+						var option = $("<option>" + nodelist[count].nodename + "</option>");
+						$('.form-control').append(option);
+					}
+				}
+			}
+		},
+		error:function(xhr,status,error) {
+			console.log("getnodeList() Server Error = " + "[ " + status + "," + xhr.status + " ]  " +  error);
+			ajaxError(xhr,status,error);
+		},
+		complete : function() {
+			checkLogin();
+			console.log("getnodeList() Server Complete");
+			getNodeIdWithNodeName();
+		}
+	});
+}
+
+//worker list 조회
+function getWorkerList() {
+	$.ajax({
+		url: "/api/worker/workerList",
+		type: "POST",
+		data : {'nodeid' : nodeId},
+		dataType: "json",
+		cache : false,
+		success: function(dataStr) {
+			var resultObj = ( (typeof(dataStr) == 'object') ? dataStr : JSON.parse(dataStr) );
+			if (!resultObj.result) {
+				alert(resultObj.message);
+				return;
+			}
+			workerDataList = resultObj;
+			displayWorkerInfo();
+		},
+		error:function(xhr,status,error) {
+			console.log("getWorkerList() Server Error = " + "[ " + status + "," + xhr.status + " ]  " +  error);
+			ajaxError(xhr,status,error);
+		},
+		complete : function() {
+			checkLogin();
+			console.log("getWorkerList() Server Complete");
+		}
+	});
+}
+
+function getPodServiceList() {
+	$.ajax({
+		url: "/api/pods/podServiceList",
+		type: "POST",
+		data : {'nodeid' : nodeId},
+		dataType: "json",
+		cache : false,
+		success: function(dataStr) {
+			var resultObj = ( (typeof(dataStr) == 'object') ? dataStr : JSON.parse(dataStr) );
+			if (!resultObj.result) {
+				alert(resultObj.message);
+				return;
+			}
+			podServiceDataList = resultObj;
+			displayPodServiceInfo();
+		},
+		error:function(xhr,status,error) {
+			console.log("getPodServiceList() Server Error = " + "[ " + status + "," + xhr.status + " ]  " +  error);
+			ajaxError(xhr,status,error);
+		},
+		complete : function() {
+			checkLogin();
+			console.log("getPodServiceList() Server Complete");
+		}
+	});
+}
+
+function displayPodServiceInfo() {
+	if(selectedTable === "SERVICE"){
+		$('#podStatus').empty();
+	}
+	if (podServiceDataList === undefined || podServiceDataList === null) {
+		return;
+	}
+	var htmlStr = '';
+	var index = 0;
+	if (podServiceDataList != undefined && podServiceDataList.data != undefined) {
+		podServiceDataList.data.forEach(function(item) {
+			index ++;
+			htmlStr += '<tr>';
+			htmlStr = htmlStr + '<td align="center">' + index + '</td>';
+			htmlStr = htmlStr + '<td align="left">' + item.servicename + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.namespace + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.type + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.clusterip + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.externalip + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.port + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.age + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.selector + '</td>';
+			htmlStr += '</tr>';
+		});
+	}
+	if(selectedTable === "SERVICE"){
+		$('#podStatus').append(htmlStr);
+	}
+}
+
+function displayWorkerInfo() {
+	if(selectedTable === "WORKER"){
+		$('#podStatus').empty();
+	}
+	if (workerDataList === undefined || workerDataList === null) {
+		return;
+	}
+	var htmlStr = '';
+	var index = 0;
+	if (workerDataList != undefined && workerDataList.data != undefined) {
+		workerDataList.data.forEach(function(item) {
+			index ++;
+			htmlStr += '<tr>';
+			htmlStr = htmlStr + '<td align="center">' + index + '</td>';
+			htmlStr = htmlStr + '<td align="left">' + item.workername + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.status + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.roles + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.age + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.version + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.internalip + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.externalip + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.osimage + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.kernelversion + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.containerruntime + '</td>';
+			htmlStr += '</tr>';
+		});
+	}
+	if(selectedTable === "WORKER"){
+		$('#podStatus').append(htmlStr);
+	}
+}
+
+//primary pod(node) list 조회
+function getNodeInfoList() {
+	$.ajax({
+		url: "/api/pods/nodeinfolist",
+		type: "POST",
+		data : {'nodeid' : nodeId},
+		dataType: "json",
+		cache : false,
+		success: function(dataStr) {
+			var resultObj = ( (typeof(dataStr) == 'object') ? dataStr : JSON.parse(dataStr) );
+			if (!resultObj.result) {
+				alert(resultObj.message);
+				return;
+			}
+			nodeListData = resultObj;
+			displayNodeInfo();
+		},
+		error:function(xhr,status,error) {
+			console.log("getNodeInfoList() Server Error = " + "[ " + status + "," + xhr.status + " ]  " +  error);
+			ajaxError(xhr,status,error);
+		},
+		complete : function() {
+			checkLogin();
+			console.log("getNodeInfoList() Server Complete");
+		}
+	});
+}
+
+function displayNodeInfo(){
+	if(selectedTable === "NODE"){
+		$('#podStatus').empty();
+	}
+	var chartModelArr = new Array();
+
+	if (nodeListData === undefined || nodeListData === null) {
+		return;
+	}
+	var htmlStr = '';
+	if (nodeListData != undefined && nodeListData.data != undefined) {
+		var index = 0;
+		nodeListData.data.forEach(function(item) {
+			index ++;
+			htmlStr += '<tr id='+ item.node +'><td align="center">'+ index +'</td>';
+			htmlStr = htmlStr + '<td align="left">' + item.podname + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.boardname + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.ip + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.peak + ' / ' + item.min + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + formatSizeUnits(item.totalMemory) + ' / ' + formatSizeUnits(item.usedMemory) + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.functionName + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.status + '</td>';
+			htmlStr += '</tr>';		
+			var chartModel = new Object();
+			chartModel.index = index;
+			chartModel.min = item.min;
+			chartModel.peak = item.peak;
+			chartModel.usedmemory = item.usedMemory;
+			chartModel.totalmemory = item.totalMemory;
+			chartModelArr.push(chartModel);
+		});
+	}
+	if(selectedTable === "NODE"){
+		$('#podStatus').append(htmlStr);
+	}
+	displayCpuChart(chartModelArr);
+	displayMemoryChart(chartModelArr);
+}
+
+
+function generateLabels(chartModelArr){
+	var labels = [];
+	chartModelArr.forEach(function(model) {
+		labels.push(model.index);
+	});
+	return labels;
+}
+
+function generateDataList(chartModelArr, colName){
+	var data = [];
+	chartModelArr.forEach(function(model) {
+		if(colName === 'Peak'){
+			data.push(model.peak);
+		}else if(colName === 'Min'){
+			data.push(model.min);
+		}else if(colName === 'Total'){
+			data.push(formatNumberSizeUnits(model.totalmemory));
+		}else if(colName === 'Used'){
+			data.push(formatNumberSizeUnits(model.usedmemory));
+		}
+	});
+	return data;
+}
+
+function displayCpuChart(chartModelArr){
+	// Set new default font family and font color to mimic Bootstrap's default styling
+	Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+	Chart.defaults.global.defaultFontColor = '#292b2c';
+	
+	$('#cpuChart').empty();
+	$('#cpuChart').append('<canvas id="cpuAreaChart" class="response-height" width="100%"></canvas>');
+	var ctx = $('#cpuAreaChart');
+	var cpuChart = new Chart(ctx, {
+		  type: 'line',
+		  data: {
+		    labels: generateLabels(chartModelArr),
+		    datasets: [{
+		      label: "Peak",
+		      lineTension: 0.3,
+		      backgroundColor: "rgba(216,4,4,0.2)",
+		      borderColor: "rgba(169,30,30,1)",
+		      pointRadius: 5,
+		      pointBackgroundColor: "rgba(169,30,30,1)",
+		      pointBorderColor: "rgba(169,30,30,0.8)",
+		      pointHoverRadius: 5,
+		      pointHoverBackgroundColor: "rgba(255,193,7,1)",
+		      pointHitRadius: 50,
+		      pointBorderWidth: 2,
+		      data: generateDataList(chartModelArr, 'Peak'),
+		    },
+		    {
+		        label: "Min",
+		        lineTension: 0.3,
+		        backgroundColor: "rgba(87,177,108,0.2)",
+		        borderColor: "rgba(55,136,73,1)",
+		        pointRadius: 5,
+		        pointBackgroundColor: "rgba(55,136,73,1)",
+		        pointBorderColor: "rgba(255,255,255,0.8)",
+		        pointHoverRadius: 5,
+		        pointHoverBackgroundColor: "rgba(2,117,216,1)",
+		        pointHitRadius: 50,
+		        pointBorderWidth: 2,
+		        data: generateDataList(chartModelArr, 'Min'),
+		      }],
+		  },
+		  options: {
+		    scales: {
+		      xAxes: [{
+		        time: {
+		          unit: 'date'
+		        },
+		        gridLines: {
+		          display: false
+		        },
+		        ticks: {
+		          maxTicksLimit: 7
+		        },
+		        scaleLabel: {
+		        	labelString: 'Pods Status Index',
+				    display: true
+				  }
+		      }],
+		      yAxes: [{
+		        ticks: {
+		          min: 0,
+		          max: 100,
+		          maxTicksLimit: 20
+		        },
+		        gridLines: {
+		          color: "rgba(0, 0, 0, .125)",
+		        },
+		        scaleLabel: {
+		        	labelString: 'CPU',
+				    display: true
+				  }
+		      }],
+		    },
+		    legend: {
+		      display: true,
+		      position: 'bottom'
+		    }
+		  }
+		});
+}
+
+function displayMemoryChart(chartModelArr){
+	Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
+	Chart.defaults.global.defaultFontColor = '#292b2c';
+	$('#memoryChart').empty();
+	$('#memoryChart').append('<canvas id="memoryAreaChart" class="response-height" width="100%"></canvas>');
+	var ctx = $('#memoryAreaChart');
+	var memoryAreaChart = new Chart(ctx, {
+	  type: 'line',
+	  data: {
+		labels: generateLabels(chartModelArr),
+	    datasets: [{
+	      label: "Total",
+	      lineTension: 0.3,
+	      backgroundColor: "rgba(2,117,216,0.2)",
+	      borderColor: "rgba(2,117,216,1)",
+	      pointRadius: 5,
+	      pointBackgroundColor: "rgba(2,117,216,1)",
+	      pointBorderColor: "rgba(255,255,255,0.8)",
+	      pointHoverRadius: 5,
+	      pointHoverBackgroundColor: "rgba(2,117,216,1)",
+	      pointHitRadius: 50,
+	      pointBorderWidth: 2,
+	      data: generateDataList(chartModelArr, 'Total'),
+	    },{
+	        label: "Used",
+	        lineTension: 0.3,
+	        backgroundColor: "rgba(108,117,125,0.2)",
+	        borderColor: "rgba(108,117,125,1)",
+	        pointRadius: 5,
+	        pointBackgroundColor: "rgba(108,117,125,1)",
+	        pointBorderColor: "rgba(255,255,255,0.8)",
+	        pointHoverRadius: 5,
+	        pointHoverBackgroundColor: "rgba(108,117,125,1)",
+	        pointHitRadius: 50,
+	        pointBorderWidth: 2,
+	        data: generateDataList(chartModelArr, 'Used'),
+	      }],
+	  },
+	  options: {
+	    scales: {
+	      xAxes: [{
+	        time: {
+	          unit: 'date'
+	        },
+	        gridLines: {
+	          display: false
+	        },
+	        ticks: {
+	          maxTicksLimit: 7
+	        },
+	        scaleLabel: {
+	        	labelString: 'Pods Status Index',
+			    display: true
+			  }
+	      }],
+	      yAxes: [{
+	        ticks: {
+	          min: 0,
+//	          max: 1000,
+	        },
+	        gridLines: {
+	          color: "rgba(0, 0, 0, .125)",
+	        },
+	        scaleLabel: {
+	        	labelString: 'Memory',
+			    display: true
+			  }
+	      }],
+	    },
+	    legend: {
+	      display: true,
+	      position: 'bottom'
+	    }
+	  }
+	});
+}
+
+
+//alarm list 조회
+function getAlarmList() {
+	$.ajax({
+		url: "/api/alarm/getAlarmList",
+		type: "POST",
+		data : {'nodeid' : nodeId},
+		dataType: "json",
+		cache : false,
+		success: function(dataStr) {
+			var resultObj = ( (typeof(dataStr) == 'object') ? dataStr : JSON.parse(dataStr) );
+			if (!resultObj.result) {
+				alert(resultObj.message);
+				return;
+			}
+			
+			alarmDataList = resultObj;
+			displayAlarmCount();
+			displayAlarmList(selectedAlarmDetail);
+		},
+		error:function(xhr,status,error) {
+			console.log("getAlarmList() Server Error = " + "[ " + status + "," + xhr.status + " ]  " +  error);
+			ajaxError(xhr,status,error);
+		},
+		complete : function() {
+			checkLogin();
+			console.log("getAlarmList() Server Complete");
+		}
+	});
+}
+
+function displayAlarmCount(){
+	$('.alarm-content').empty();
+	var htmlStr='';
+	if (alarmDataList === undefined || alarmDataList === null) {
+		htmlStr += '<div class="col-md-custom resource-alarm-critical-info" onclick="javascript:displayAlarmList(\'CRITICAL\');">';
+		htmlStr += '<h8><img class=severity-img src="images/main_critical_off.png"></h8>'; 
+		htmlStr += '<h8 class=critical-count severity-count>0</h8>';
+		htmlStr += '</div>';
+		htmlStr += '<div class="col-md-custom resource-alarm_major-info" onclick="javascript:displayAlarmList(\'MAJOR\');">';
+		htmlStr += '<h8><img class=severity-img src=images/main_major_off.png></h8>';
+		htmlStr += '<h8 class=major-count severity-count>0</h8>';
+		htmlStr += '</div>';
+		htmlStr += '<div class="col-md-custom resource-alarm_minor-info" onclick="javascript:displayAlarmList(\'MINOR\');">';
+		htmlStr += '<h8><img class=severity-img src=images/main_minor_off.png></h8>'; 
+		htmlStr += '<h8 class=minor-count severity-count>0</h8>';
+		htmlStr += '</div>';
+		$('.alarm-content').append(htmlStr);
+		return;
+	}
+	
+	if (alarmDataList != undefined && alarmDataList.data != undefined) {
+		var criSevCount = getSeverityCount("CRITICAL");
+		var majSevCount = getSeverityCount("MAJOR");
+		var minSevCount = getSeverityCount("MINOR");
+		
+		var criAckedCount = getSeverityAckCount("CRITICAL");
+		var majAckedCount = getSeverityAckCount("MAJOR");
+		var minAckedCount = getSeverityAckCount("MINOR");
+		console.log('criSevCount:' + criSevCount + ', majSevCount:' + majSevCount + ', minSevCount:' + minSevCount);
+		console.log('criAckedCount:' + criAckedCount + ', majAckedCount:' + majAckedCount + ', minAckedCount:' + minAckedCount);
+
+		//down : on, normal : off
+		if(criSevCount > 0) {
+			if(criSevCount > criAckedCount){
+				htmlStr += '<div class="col-md-custom resource-alarm-critical_info" onclick="javascript:displayAlarmList(\'CRITICAL\');">';
+				htmlStr += '<h8><img class=severity-img src="images/main_critical_ani.gif"></h8>'; 
+				htmlStr += '<h8 class=critical-count severity-count>'+ criSevCount +'</h8>'; 
+				htmlStr += '</div>';
+			} else {
+				htmlStr += '<div class="col-md-custom resource-alarm-critical-info" onclick="javascript:displayAlarmList(\'CRITICAL\');">';
+				htmlStr += '<h8><img class=severity-img src="images/main_critical_on.png"></h8>';
+				htmlStr += '<h8 class=critical-count severity-count>'+ criSevCount +'</h8>';
+				htmlStr += '</div>';
+			}
+		} else {
+			htmlStr += '<div class="col-md-custom resource-alarm-critical-info" onclick="javascript:displayAlarmList(\'CRITICAL\');">';
+			htmlStr += '<h8><img class=severity-img src="images/main_critical_off.png"></h8>';
+			htmlStr += '<h8 class=critical-count severity-count>'+ criSevCount +'</h8>';
+			htmlStr += '</div>';
+		}
+
+		if(majSevCount > 0) {
+			if(majSevCount > majAckedCount){
+				htmlStr += '<div class="col-md-custom resource-alarm-major-info" onclick="javascript:displayAlarmList(\'MAJOR\');">';
+				htmlStr += '<h8><img class=severity-img src="images/main_major_ani.gif"></h8>'; 
+				htmlStr += '<h8 class=major-count severity-count>'+ majSevCount +'</h8>'; 
+				htmlStr += '</div>';
+			} else {
+				htmlStr += '<div class="col-md-custom resource-alarm-major-info" onclick="javascript:displayAlarmList(\'MAJOR\');">';
+				htmlStr += '<h8><img class=severity-img src="images/main_major_on.png"></h8>'; 
+				htmlStr += '<h8 class=major-count severity-count>'+ majSevCount +'</h8>'; 
+				htmlStr += '</div>';
+			}
+		} else {
+			htmlStr += '<div class="col-md-custom resource-alarm-major-info" onclick="javascript:displayAlarmList(\'MAJOR\');">';
+			htmlStr += '<h8><img class=severity-img src="images/main_major_off.png"></h8>'; 
+			htmlStr += '<h8 class=major-count severity-count>'+ majSevCount +'</h8>'; 
+			htmlStr += '</div>';
+		}
+
+		if(minSevCount > 0) {
+			if(minSevCount > minAckedCount){
+				htmlStr += '<div class="col-md-custom resource-alarm-minor-info" onclick="javascript:displayAlarmList(\'MINOR\');">';
+				htmlStr += '<h8><img class=severity-img src="images/main_minor_ani.gif"></h8>'; 
+				htmlStr += '<h8 class=minor-count severity-count>'+ minSevCount +'</h8>'; 
+				htmlStr += '</div>';
+			} else {
+				htmlStr += '<div class="col-md-custom resource-alarm-minor-info" onclick="javascript:displayAlarmList(\'MINOR\');">';
+				htmlStr += '<h8><img class=severity-img src="images/main_minor_on.png"></h8>'; 
+				htmlStr += '<h8 class=minor-count severity-count>'+ minSevCount +'</h8>'; 
+				htmlStr += '</div>';
+			}
+		} else {
+			htmlStr += '<div class="col-md-custom resource-alarm-minor-info" onclick="javascript:displayAlarmList(\'MINOR\');">';
+			htmlStr += '<h8><img class=severity-img src="images/main_minor_off.png"></h8>'; 
+			htmlStr += '<h8 class=minor-count severity-count>'+ minSevCount +'</h8>'; 
+			htmlStr += '</div>';
+
+		}
+	}
+	
+	$('.alarm-content').append(htmlStr);
+}
+
+$('#resource-alarm-critical-info').on( 'click', function () {
+	selectedAlarmDetail = 'CRITICAL';
+	displayAlarmList('CRITICAL');
+});
+
+$('#resource-alarm-major-info').on( 'click', function () {
+	selectedAlarmDetail = 'MAJOR';
+	displayAlarmList('MAJOR');
+});
+
+$('#resource-alarm-major-info').on( 'click', function () {
+	selectedAlarmDetail = 'MINOR';
+	displayAlarmList('MINOR');
+});
+
+
+function displayAlarmList(severity){
+	selectedAlarmDetail = severity;
+			if(alarmDataList === null || alarmDataList.data.length == 0 || selectedAlarmDetail === null){
+				return;
+			}
+			
+			var alarmTrHtmlArr = new Array();
+			var alarmCnt = 0;
+			$("#alarm_list").html("");
+			alarmDataList.data.forEach(function(item, index) {
+				if(severity === item.severity){
+					var node_unique = $("select option:selected").val();
+					var blinkClass = "";
+					var alarmTrHtml = '<tr id="node_'+node_unique+'" class="'+ blinkClass+'" style="width:10%;">';
+					alarmTrHtml += '	<td id="nickname_'+node_unique+'" style="width:10%;">'+node_unique+'</td>';
+					alarmTrHtml += '	<td id="severity_'+node_unique+'" style="width:10%;">'+item.severity+'</td>';
+					alarmTrHtml += '	<td id="alarmcode_'+node_unique+'" style="width:10%;">'+item.alarmcode+'</td>';
+					alarmTrHtml += '	<td id="specification_'+node_unique+'" style="width:25%;">'+item.specificproblem+'</td>';
+					alarmTrHtml += '	<td id="location_'+node_unique+'" style="width:25%; word-break:break-all;white-space:pre-wrap;">'+item.location+'</td>';
+					alarmTrHtml += '	<td id="alarmtime_'+node_unique+'" style="width:13%; padding-left: 10px;" >'+item.alarmTimeStr+'</td>'; //alarmtime
+					alarmTrHtml += '	<td id="ackstate_'+node_unique+'" style="width:7%;">'+item.ackstate+'</td>';
+					alarmTrHtml += '</tr>';
+					alarmCnt++;
+					alarmTrHtmlArr.push($(alarmTrHtml));
+				}
+			});
+			
+			$('#alarm_cnt').text(alarmCnt);
+			if(alarmTrHtmlArr.length > 0){
+				for (var i = 0; i < alarmTrHtmlArr.length; i++) {
+					$("#alarm_list").append(alarmTrHtmlArr[i]);
+				}
+				$('#alarmListForm').modal('show');
+			}
+		}
+
+function getSeverityCount(severity){
+	var count = 0;
+	alarmDataList.data.forEach(function(item) {
+		if(item !== null && item !== undefined){
+			var sev = item.severity.toUpperCase();
+			if(severity.toUpperCase() === sev.toUpperCase()){
+				count++;
+			}
+		}
+	});
+	return count;
+}
+
+function getSeverityAckCount(severity){
+	var count = 0;
+	alarmDataList.data.forEach(function(item) {
+		if(item !== null && item !== undefined){
+			var sev = item.severity.toUpperCase();
+			if(severity.toUpperCase() === sev.toUpperCase()){
+				var ack = item.ackstate.toUpperCase();
+				if(ack === 'ACKED' || ack === ''){
+					count++;
+				}
+			}
+		}
+	});
+	return count;
+}
+
+//pod list 조회
+function getPodList() {
+	$.ajax({
+		url: "/api/pods/podList",
+		type: "POST",
+		data : {'nodeid' : nodeId},
+		dataType: "json",
+		cache : false,
+		success: function(dataStr) {
+			var resultObj = ( (typeof(dataStr) == 'object') ? dataStr : JSON.parse(dataStr) );
+			if (!resultObj.result) {
+				alert(resultObj.message);
+				return;
+			}
+			podListData = resultObj;
+			displayPodsInfo();
+		},
+		error:function(xhr,status,error) {
+			console.log("getPodList() Server Error = " + "[ " + status + "," + xhr.status + " ]  " +  error);
+			ajaxError(xhr,status,error);
+		},
+		complete : function() {
+			checkLogin();
+			console.log("getPodList() Server Complete");
+		}
+	});
+}
+
+
+function displayPodsInfo(){
+	if(selectedTable === "POD"){
+		$('#podStatus').empty();
+	}
+	if (podListData === undefined || podListData === null) {
+		return;
+	}
+	var htmlStr = '';
+	var index = 0;
+	if (podListData != undefined && podListData.data != undefined) {
+		podListData.data.forEach(function(item) {
+			index ++;
+			htmlStr += '<tr>';
+			htmlStr = htmlStr + '<td align="center">' + index + '</td>';
+			htmlStr = htmlStr + '<td align="left">' + item.podname + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.worker + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.ip + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.ready + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.status + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.restarts + '</td>';
+			htmlStr = htmlStr + '<td align="center">' + item.age + '</td>';
+			htmlStr += '</tr>';
+		});
+	}
+	if(selectedTable === "POD"){
+		$('#podStatus').append(htmlStr);
+	}
+}

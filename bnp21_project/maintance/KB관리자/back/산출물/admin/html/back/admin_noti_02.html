@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>공지사항 | 관리자 | KB스타게이트</title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="gnbWrap">
+				<div class="fl"><h1 class="logo"><a href="#">스타게이트<span>관리시스템</span></a></h1></div>
+				<div class="fr">
+					<ul class="menu">
+						<li>관리자명(ID)님</li>
+						<li><a href="#" class="btn logout">로그아웃</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- left menu -->
+		<div class="leftMenu">
+			<div class="inner">
+				<ul class="ul">
+					<li class="li">
+						<ul><!-- 개발 : 활성화 메뉴의 li에 클래스 on 추가 -->
+							<li><a href="#" class="mm">결제내역 조회</a></li>
+							<li><a href="#" class="mm">정산 조회</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">서비스관리</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">공지사항</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+							<li><a href="#" class="mm">FAQ</a></li>
+							<li><a href="#" class="mm">약관 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">관리자 계정 관리</a></li>
+							<li><a href="#" class="mm">(공통) 계정 관리</a></li>
+							<li><a href="#" class="mm">회원정보 조회</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">배너 관리</a></li>
+							<li><a href="#" class="mm">캐시백 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">코드 관리</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //left menu -->
+
+		<!-- content -->
+		<div class="content">
+			<h2 class="hTit">공지사항</h2>
+
+			<!-- table -->
+			<div class="tbw">
+				<table>
+					<caption></caption>
+					<colgroup>
+						<col style="width:220px;">
+						<col style="width:auto;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">기업</th>
+							<td>
+								<div class="formChkRdo">
+									<ul>
+										<li><label class="label"><input type="checkbox" class="chk"><span class="ico"></span><span class="lTxt">전체</span></label></li>
+										<li><label class="label"><input type="checkbox" class="chk"><span class="ico"></span><span class="lTxt">BBG</span></label></li>
+										<li><label class="label"><input type="checkbox" class="chk"><span class="ico"></span><span class="lTxt">기업1</span></label></li>
+										<li><label class="label"><input type="checkbox" class="chk"><span class="ico"></span><span class="lTxt">기업2</span></label></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">제목</th>
+							<td><input type="text" class="input"></td>
+						</tr>
+						<tr>
+							<th scope="row">내용</th>
+							<td>에디터 삽입하는 곳</td>
+						</tr>
+						<tr>
+							<th scope="row">노출여부</th>
+							<td>
+								<div class="formChkRdo">
+									<ul>
+										<li><label class="label"><input type="radio" class="rdo" name="viewRdo"><span class="ico"></span><span class="lTxt">Y</span></label></li>
+										<li><label class="label"><input type="radio" class="rdo" name="viewRdo"><span class="ico"></span><span class="lTxt">N</span></label></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
+
+			<!-- btmBtn -->
+			<div class="btmBtnWrap">
+				<div class="fl">
+					<a href="#" class="btn md de">삭제</a>
+				</div>
+
+				<div class="fr">
+					<a href="#" class="btn md de">취소</a><a href="#" class="btn md de">저장</a>
+				</div>
+			</div>
+			<!-- //btmBtn -->
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

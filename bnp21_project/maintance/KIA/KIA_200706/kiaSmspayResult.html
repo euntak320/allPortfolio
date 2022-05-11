@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="kr">
+    <head>
+        <title>기아자동차</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+        
+        <!-- 공통 Library 호출 -->
+        <script type="text/javascript" src="https://devpg.bluewalnut.co.kr/scripts/lib/jquery/jquery-1.11.1.min.js"></script>
+        <!-- //공통 Library 호출 -->
+        
+        <!-- 공통 StyleSheet 호출 -->
+        <link  rel="stylesheet" type="text/css" href="https://devpg.bluewalnut.co.kr//sms/css/base.css">
+        <link  rel="stylesheet" type="text/css" href="https://devpg.bluewalnut.co.kr//sms/css/kia.css">
+        <!-- //공통 StyleSheet 호출 -->
+
+        <!-- slide 부분 -->
+        <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css">
+        <script src="assets/js/swiper.min.js"></script>
+        
+        <script type="text/javascript">
+        
+        $(document).ready(function(){
+    
+    
+            $('.stn_ttl_type_1').text("현대"+"카드가 결제 되었습니다.");
+            $('#btnMain').text("계속 결제하기");
+
+            $("#btnMain").click(function() {
+                var formNm = document.regForm;
+                formNm.target = "";
+                formNm.action = "kiaSmsMainM.jsp";
+                formNm.submit();
+            });
+
+            var swiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+
+        });
+        </script>
+        <style>
+            .mb30{margin:0; padding-bottom:30px;}
+            .stn_ttl_type_1{margin:0;}
+            .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{bottom:0;}
+            .section_area_6{position: absolute; bottom:20px; height:auto;}
+            .swiper-pagination{left:50%; transform: translateX(-50%);}
+            .swiper-pagination-bullet{background: rgba(0,0,0,0.5); margin:0 5px;}
+            .swiper-pagination-bullet-active{background: #ad2b31;}
+        </style>
+    </head>
+    
+    <body class="wrap_bg">
+    <form name="regForm" method="post">
+		<input type="hidden" name="short_url" value="sQ2PFx5736" />
+		
+        <div class="header">
+            <div class="header_ttl"><img src="https://devpg.bluewalnut.co.kr//sms/images/logo_kia.png"></div>
+        </div>
+        <div class="wrap">
+            <div class="section_area_4">
+                <span class="q_mark"></span>
+                <div class="q_mark_area">
+                    <div class="ttl_h5_n">
+                        <span class="ttl_h5_n1">결제완료</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section_area">
+                <div class="stn_ttl_type_1">
+                    결제가 완료되었습니다.
+                </div>
+                <div class="mt40"></div>
+                <div class="section_area_6" id="divBtn">
+                    <button type="button" class="btn_type_1" id="btnMain">시작 페이지로 이동</button>
+                </div>
+                <div class="mb30">
+                <!-- 슬라이드 이미지 -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="assets/images/img1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/images/img1.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/images/img3.jpg" alt="">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <!-- 슬라이드 이미지 -->
+                </div>
+            </div>
+        </div>
+	</form>
+    </body>
+    
+</html>

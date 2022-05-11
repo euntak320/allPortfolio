@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no" />
+<title>휴대폰 본인인증 &lt; 회원가입 &lt; 디지털 헌금 바구니</title>
+<!-- //<![CDATA[ -->
+<link rel="stylesheet" href="../css/style.css" />
+<script src="../js/jquery-2.2.4.js"></script>
+<script src="../js/common.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- subHeader -->
+	<div id="subHeader">
+		<div class="inner">
+			<h1 class="v4"><a href=""><img src="../images/common/logo01.png" alt="사랑의 교회"></a></h1>
+			<!-- menuArea -->
+			<ul class="menuArea">
+				<li><button>헌금하기</li>
+				<li><button>설정</button></li>
+				<li><button>조회</button></li>
+			</ul>
+			<!--// menuArea -->
+		</div>
+		<h2>본인인증</h2>
+		<button class="btnBack">이전 페이지</button>
+	</div>
+	<!--// subHeader -->
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<p class="topTxt">디지털 헌금 바구니<strong><span>본인인증</span> 하기</strong></p><!-- 2020-05-28 -->
+			<!-- inputList -->
+			<div class="inputList">
+				<input type="text" title="이름 입력" placeholder="이름">
+				<input type="text" title="생년월일 숫자 6자리 입력" placeholder="생년월일 숫자 6자리 입력 해 주세요.">
+				<!-- selectBtn -->
+				<div class="selectBtn">
+					<span><input type="radio" name="chk01" id="chk0101" checked><label for="chk0101">남</label></span>
+					<span><input type="radio" name="chk01" id="chk0102"><label for="chk0102">여</label></span>
+				</div>
+				<!--// selectBtn -->
+				<!-- slideSelect -->
+				<div class="slideSelect">
+					<strong><span>통신사 선택</span> <button>리스트 보기</button></strong>
+					<ul>
+						<li><a href="">SKT</a></li>
+						<li><a href="">KT</a></li>
+						<li><a href="">LG U+</a></li>
+						<li><a href="">SKT 알뜰폰</a></li>
+						<li><a href="">KT 알뜰폰</a></li>
+						<li><a href="">LG U+ 알뜰폰</a></li>
+					</ul>
+				</div>
+				<!--// slideSelect -->
+				<input type="text" title="휴대폰 번호 입력" placeholder="휴대폰 번호 – 없이 숫자만 입력 해 주세요.">
+				<!-- selectBtn -->
+				<div class="selectBtn">
+					<span><input type="radio" name="chk02" id="chk0201" checked><label for="chk0201">내국인</label></span>
+					<span><input type="radio" name="chk02" id="chk0202"><label for="chk0202">외국인</label></span>
+				</div>
+				<!--// selectBtn -->
+				<!-- agreeCheck -->
+				<div class="agreeCheck">
+					<span class="check"><input type="checkbox" id="chkAll"><label for="chkAll">휴대폰 본인인증 전체 동의</label><button>리스트 보기</button></span>
+					<ul>
+						<li><span class="check"><input type="checkbox" id="chk01"><label for="chk01">개인(신용)정보 수집, 이용에 대한 동의</label><a href="">자세히 보기</a></span></li>
+						<li><span class="check"><input type="checkbox" id="chk02"><label for="chk02">개인(신용)정보 조회에 대한 동의</label><a href="">자세히 보기</a></span></li>
+						<li><span class="check"><input type="checkbox" id="chk03"><label for="chk03">고유식별정보의 처리에 대한 동의</label><a href="">자세히 보기</a></span></li>
+					</ul>
+				</div>
+				<!--// agreeCheck -->
+				<div class="certNum">
+					<input type="text" title="인증번호 입력" placeholder="인증번호 입력">
+					<span>인증완료 00:00</span>
+				</div>
+			</div>
+			<!--// inputList -->
+			<!-- btnFixed -->
+			<div class="btnFixed">
+				<button class="btn btnYellow">인증번호 요청</button>
+				<!-- <button class="btn btnYellow" disabled>인증번호 요청</button> -->
+			</div>
+			<!--// btnFixed -->
+		</div>
+	</div>
+	<!--// container -->
+</div>
+<!--// wrap -->
+</body>
+</html>

@@ -1,0 +1,128 @@
+$(document).ready(function() {
+	$("#liLogout").load("logout.html", function() {
+		$("#loginedUserId").text( $.cookie("_USER_ID") );
+	});
+});
+
+function logout() {
+	location.replace('/api/logout');
+}
+
+function checkEnter() {
+	if (getKeyCode(event) == 13) {
+		$("#login_btn").trigger('click');
+	}
+}
+
+function getKeyCode(evt) {
+	return (evt.charCode) ? evt.charCode : ((evt.which) ? evt.which : evt.keyCode);
+}
+
+function checkLogin() {
+	var user_id = $.cookie("_USER_ID");
+	var user_group = $.cookie("_USER_GROUP");
+	
+	if (user_id != undefined && user_id !=='' && user_group != undefined && user_group !=='') {
+		if (window.location.pathname == '/login.html') {
+			location.replace('/');
+		}
+	}
+	else {
+		if (window.location.pathname != '/login.html') {
+			if( $("#loading_spinner").length > 0 ) {
+				$("#loading_spinner").css("display" , "none");
+			}
+			
+			location.replace('/login.html');
+		}
+	}
+}
+
+// 사용자 편집 권한 체크
+function hasEditPermission() {
+	var user_id = $.cookie("_USER_ID");
+	var user_group = $.cookie("_USER_GROUP");
+	
+	if (user_id === '') {
+		return false;
+	}
+	
+	if (user_group == 'ADMIN' || user_group == 'MAINTENANCE') {
+		return true;
+	}
+	
+	return false;
+}
+
+function ajaxError(xhr,status,error){
+	if (xhr.status === 0) {
+		alert('Not connect. Verify Network.');
+		location.replace('/login.html');
+		return;
+	}
+	else if (xhr.status == 401) {
+		$.alert.open('error', 'Unauthorized access. [401]');
+		return;
+	}
+	else if (xhr.status == 403) {
+		$.alert.open('error', 'Forbidden resource can not be accessed. [403]');
+		return;
+	}
+	else if (xhr.status == 404) {
+		$.alert.open('error', 'Requested page not found. [404]');
+		return;
+	}
+	else if (xhr.status == 500) {
+		$.alert.open('error', 'Internal server error. [500]');
+		return;
+	}
+	else if (xhr.status == 503) {
+		$.alert.open('error', 'Service unavailable. [503]');
+		return;
+	}
+	else if (status === 'parsererror') {
+		$.alert.open('error', 'Requested JSON parse failed. [Failed]');
+		return;
+	}
+	else if (status === 'timeout') {
+		$.alert.open('error', 'Time out error. [Timeout]');
+		return;
+	}
+	else if (status === 'abort') {
+		$.alert.open('error', 'Ajax request aborted. [Aborted]');
+		return;
+	}
+	else {
+		var data = JSON.parse(xhr.responseText);
+		$.alert.open('error', data.message);
+		return;
+	}
+}
+//HTML 상단 Title에 Node Name 표시
+function getHtmlNodeName(){
+	$.ajax({
+		dataType: "json",
+		url: '/api/node/nodes',
+		async: false,
+		success: function(dataStr) {
+			var resultObj = ( (typeof(dataStr) == 'object') ? dataStr : JSON.parse(dataStr) );
+			if(!resultObj.result) {
+				$.alert.open('warning', resultObj.message);
+				return;
+			}
+			
+			var nodeData = resultObj.data[0];
+			setHtmlTitle(nodeData);
+		},
+		error:function(xhr,status,error) {
+			console.log("getNodeData() 서버 에러  = " + "[ " + status + "," + xhr.status + " ]  " +  error);
+			ajaxError(xhr,status,error);
+		},
+		complete : function() {
+			
+		}
+	});
+}
+function setHtmlTitle(nodeData){
+	document.title = "[Node Name : " + nodeData.nodeName + "]";
+}

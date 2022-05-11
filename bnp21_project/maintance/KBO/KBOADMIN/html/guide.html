@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/common.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li><a href="">대시보드</a></li>
+				<li><a href="">등록</a></li>
+				<li><a href="">조회</a></li>
+				<li><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">유형별 상세</a></li>
+						<li><a href="">심판별</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li><a href="">관리</a>
+					<ul>
+						<li><a href="">경기관리</a></li>
+						<li><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>등록</h2>
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>경기정보</h3>
+			</div>
+			<!--// titArea -->
+
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>항목, 항목, 항목으로 구성된 땡땡땡 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">제목</th>
+							<td colspan="3"></td>
+						</tr>
+						<tr>
+							<th scope="row">제목</th>
+							<td></td>
+							<th scope="row">제목</th>
+							<td></td>
+						</tr>
+						<tr>
+							<th scope="row">제목</th>
+							<td colspan="3"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- selectbox -->
+			<div class="selectbox">
+				<span>선택</span>
+				<select title="선택">
+					<option value="">선택</option>
+					<option value="">a</option>
+					<option value="">b</option>
+					<option value="">c</option>
+				</select>
+			</div>
+			<!--// selectbox -->
+
+			<input type="text" title="입력" placeholder="입력">
+
+			<textarea title="입력" placeholder="입력"></textarea>
+
+			<!-- checkBox -->
+			<div class="checkBox">
+				<span><input type="checkbox" id="chk01" checked><label for="chk01">체크박스1</label></span>
+				<span><input type="checkbox" id="chk02"><label for="chk02">체크박스2</label></span>
+			</div>
+			<!--// checkBox -->
+
+			<!-- checkBox -->
+			<div class="checkBox">
+				<span><input type="radio" name="chk01" id="chk0101" checked><label for="chk0101">라디오버튼1</label></span>
+				<span><input type="radio" name="chk01" id="chk0102"><label for="chk0102">라디오버튼2</label></span>
+			</div>
+			<!--// checkBox -->
+
+			<span class="date"><input type="text" title="날짜선택"></span>
+
+			<!-- btnBottom -->
+			<div class="btnBottom">
+				<button class="btn btnGray">취소</button>
+				<button class="btn btnBlue">저장</button>
+			</div>
+			<!--// btnBottom -->
+
+
+
+
+			<!-- searchArea -->
+			<div class="searchArea">
+				<div class="inBox">
+					<dl>
+						<dt>경기일자</dt>
+						<dd class="dateWrap">
+							<span class="date"><input type="text" title="시작날짜선택"></span>
+							<em>~</em>
+							<span class="date"><input type="text" title="종료날짜선택"></span>
+						</dd>
+					</dl>
+					<div class="btnArea">
+						<button class="btn btnYellowL"><span class="icoReset">초기화</span></button>
+						<button class="btn btnYellow"><span class="icoSearch">조회</span></button>
+					</div>
+				</div>
+			</div>
+			<!--// searchArea -->
+
+			<!-- tableTop -->
+			<div class="tableTop">
+				<div class="btnArea">
+					<button class="btn btnRedL"><span class="icoEx">엑셀다운로드</span></button>
+					<button class="btn btnRed"><span class="icoModi">수정</span></button>
+				</div>
+			</div>
+			<!--// tableTop -->
+
+			<!-- colTable -->
+			<div class="colTable v2">
+				<table>
+					<caption></caption>
+					<colgroup>
+						<col style="width:36px">
+						<col style="width:60px">
+						<col style="width:auto">
+						<col style="width:auto">
+						<col style="width:56px">
+						<col style="width:78px">
+						<col style="width:78px">
+						<col style="width:62px">
+						<col style="width:auto">
+						<col style="width:78px">
+						<col style="width:78px">
+						<col style="width:70px">
+						<col style="width:60px">
+						<col style="width:60px">
+						<col style="width:100px">
+						<col style="width:100px">
+						<col style="width:67px">
+						<col style="width:78px">
+						<col style="width:62px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2">&nbsp;</th>
+							<th scope="col" rowspan="2">날짜</th>
+							<th scope="col" colspan="2">경기</th>
+							<th scope="col" rowspan="2">장소</th>
+							<th scope="col" rowspan="2">경기정보</th>
+							<th scope="col" rowspan="2">방송사</th>
+							<th scope="col" colspan="4">영상판독</th>
+							<th scope="col" colspan="3">심판</th>
+							<th scope="col" rowspan="2">최종판전</th>
+							<th scope="col" rowspan="2">최종결과</th>
+							<th scope="col" rowspan="2">원심/번복</th>
+							<th scope="col" rowspan="2">유형</th>
+							<th scope="col" rowspan="2">판독내용<br />/근거</th>
+						</tr>
+						<tr>
+							<th scope="col">원정</th>
+							<th scope="col">홈</th>
+							<th scope="col">이닝</th>
+							<th scope="col">요청팀</th>
+							<th scope="col">소요시간</th>
+							<th scope="col">판독영상</th>
+							<th scope="col">이름</th>
+							<th scope="col">베이스</th>
+							<th scope="col">횟수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="radio" name="chk01" title="선택"></td>
+							<td>12.28</td>
+							<td><img src="../images/emblem_SK.png" alt=""></td>
+							<td><img src="../images/emblem_OB.png" alt=""></td>
+							<td>대구</td>
+							<td>DH1</td>
+							<td>SPOTV</td>
+							<td>3회말</td>
+							<td><img src="../images/emblem_OB.png" alt=""></td>
+							<td>72</td>
+							<td>KBO</td>
+							<td>홍길동</td>
+							<td>1루</td>
+							<td>1</td>
+							<td>2루타 인플레이</td>
+							<td>2루타 인플레이</td>
+							<td>원심</td>
+							<td>홈런</td>
+							<td><button class="btnPlay">재생</button></td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="chk01" title="선택"></td>
+							<td>12.28</td>
+							<td><img src="../images/emblem_SK.png" alt=""></td>
+							<td><img src="../images/emblem_OB.png" alt=""></td>
+							<td>대구</td>
+							<td>우천취소</td>
+							<td>SPOTV</td>
+							<td>3회말</td>
+							<td><img src="../images/emblem_OB.png" alt=""></td>
+							<td>72</td>
+							<td>KBO</td>
+							<td>홍길동</td>
+							<td>1루</td>
+							<td>1</td>
+							<td>2루타 인플레이</td>
+							<td>2루타 인플레이</td>
+							<td>원심</td>
+							<td>파울(외야)</td>
+							<td><button class="btnPlay">재생</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// colTable -->
+
+			<!-- paging -->
+			<div class="paging">
+				<div class="inner">
+					<a href="" class="btnFirst">처음 페이지</a>
+					<a href="" class="btnPrev">이전 페이지</a>
+					<div class="page">
+						<a href="">1</a>
+						<a href="">2</a>
+						<a href="">3</a>
+						<strong>4</strong>
+						<a href="">5</a>
+						<a href="">6</a>
+						<a href="">7</a>
+						<a href="">8</a>
+						<a href="">9</a>
+						<a href="">10</a>
+					</div>
+					<a href="" class="btnNext">다음 페이지</a>
+					<a href="" class="btnLast">마지막 페이지</a>
+				</div>
+			</div>
+			<!--// paging -->
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<p>Copyright&copy; KBO, All Rights Reserved.</p>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>Bluewalnut | 전자계약서 가입신청</title>
+    </title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
+
+</head>
+
+<body>
+    <div class="windowPopup">
+        <div class="title">
+            <span>신규계약 계약서 보기</span>
+        </div>
+        <div class="oneTable">
+            <table>
+                <colgroup>
+                    <col style="width:40%">
+                    <col style="width:60%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>사업자번호</th>
+                        <td>1108114794</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="normalTable">     
+            <span>파일명을 클릭하면 계약서 이미지를 볼 수 있습니다.</span>
+            <!-- 스크롤 값을 위한 테이블 높이값 계산 -->
+            <script> 
+                $(function(){
+                    var tableHeight =  $(".resultArea table").outerHeight() + 2;
+                    console.log(tableHeight);
+                    $(".resultArea").css({
+                        "height" : tableHeight + "px"
+                    })
+                });
+            </script>
+            <div class="resultArea">
+                <table>
+                    <colgroup>
+                        <col style="width:15%;">
+                        <col style="width:15%;">
+                        <col style="width:10%;">
+                        <col style="width:50%;">
+                        <col style="width:10%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>사업자 번호</th>
+                            <th>등록일자</th>
+                            <th>구분</th>
+                            <th>파일명</th>
+                            <th>작업자</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1108114794</td>
+                            <td>2020/07/01</td>
+                            <td>계약서</td>
+                            <td>
+                                <a href="" target="_blank">국민카드로고(20207111563121313).png</a>
+                            </td>
+                            <td>TESTER</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="close">닫기</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

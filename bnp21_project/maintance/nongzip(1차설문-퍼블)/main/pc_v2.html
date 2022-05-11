@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/mainRenew.css">
+	<link rel="stylesheet" type="text/css" href="../css/NotoSansKR.css">
+	<link rel="stylesheet" type="text/css" href="../css/Tmon.css">
+	<style>
+	div.layer_pop.v2 {position: relative; overflow: hidden; width: 1200px; margin: 0 auto; background-color: #fd6b00; font-family: "Noto Sans KR", sans-serif;}
+	strong.layer_title {display: block; width: 100%; height: 270px; margin:70px auto 30px; font-size: 0px; text-indent: -9999px; background: url('../img/pop_title02.png') no-repeat center center;}
+	a.close_btn {position: absolute; display: inline-block; width: 50px; height: 50px; top: 20px; right: 20px; font-size: 0px; text-indent: -9999px; background: url('../img/close_bg.png') no-repeat center center;}
+	div.layer_content {overflow: hidden; margin: 0 34px; border-radius: 50px 50px 0 0;}
+	div.layer_content > div {padding: 0 67px; border:6px solid #8c3c02; border-bottom:0; border-radius: 50px 50px 0 0; background-color: #fff;}
+	div.layer_content > div > ul {/*overflow-y: scroll; height: 300px;*/ margin: 80px 0;}
+	div.layer_content > div > ul > li {overflow: hidden; padding-bottom: 32px;}
+	div.layer_content > div > ul > li:last-child {background: none; padding-bottom: 0px;}
+	div.layer_content > div > ul > li + li {margin-top: 22px;}
+	div.layer_content > div > ul li span.q_num {float: left; display: block; width: 63px; height: 63px; margin: 36px 40px 0 0; font-family: "TmonMonsori", sans-serif; font-size: 24px; font-weight: bold; color: #fff; line-height: 68px; text-align: center; border-radius: 50%; background-color: #1dbfd7;}
+	div.layer_content > div > ul li div.q_con {overflow: hidden; margin-top: 22px;}
+	div.layer_content > div > ul li div.q_con p.q_txt {margin-bottom: 22px; font-size: 20px; font-weight: bold; color: #34383d}
+	div.layer_content > div > ul li div.q_con p.q_txt span {position: relative; display: inline-block; z-index: 0;}
+	div.layer_content > div > ul li div.q_con p.q_txt span:after {content: ""; position: absolute; bottom:0; left:0; width:100%; height:15px; background:#d2f2f7; z-index: -1;}
+	div.layer_content > div > ul li div.q_con p.q_txt2 {margin-bottom: 15px; font-size: 20px; font-weight: bold; color: #34383d}
+	div.layer_content > div > ul li div.q_con textarea {width: 100%; min-height: 123px; padding: 14px; font-size: 20px; font-weight: bold; color: #ababab; border: 1 px solid #eeeeee; outline: 0px; resize: none; box-sizing: border-box;}
+	div.layer_content > div > ul li div.q_con textarea::placeholder {font-size: 20px; font-weight: bold; color: #ababab; letter-spacing: -0.04em;}
+	div.layer_content ul.type01 {margin-left: 16px;}
+	div.layer_content ul.type01 li {float: left; width: 20%;}
+	div.layer_content ul.type02 {margin-bottom: 45px;}
+	div.layer_content ul.type02 li + li {margin-top: 30px;}
+		
+	.checks {position: relative;}
+	.checks input[type="radio"] { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }
+	.checks input[type="radio"] + label { display: inline-block; position: relative; padding-left: 38px; font-size: 20px; color: #34383d; line-height: 28px; letter-spacing: -0.04em; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+	.checks input[type="radio"] + label:before { content: ''; position: absolute; left: 0; top: 0px; width: 28px; height: 28px; text-align: center; background: #fff; border: 1px solid #b7b7b7; border-radius: 100%; box-sizing: border-box;}
+	.checks input[type="radio"] + label:active:before, .checks input[type="radio"]:checked + label:active:before { box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1); }
+	.checks input[type="radio"]:checked + label:before { background: #1dbfd7; border-color: transparent; }
+	.checks input[type="radio"]:checked + label:after { content: ''; position: absolute; top: 9px; left: 9px; width: 10px; height: 10px; background: #fff; border-radius: 100%;}
+	div.btn_area {text-align: center; padding-bottom: 135px;}
+	button.submit_btn {width: 304px; height: 70px; margin: 0 auto; font-size: 26px; font-weight: bold; color: #fff; border-radius: 50px; background-color: #1dbfd7;}
+	</style>
+</head>
+
+<body>
+	<!-- layer_pop -->
+	<div class="layer_pop v2">
+		<strong class="layer_title">2020 상반기 농집 홈페이지 이용자 만족도 설문조사</strong>
+		<a href="#" class="close_btn">닫기</a>
+		<!-- layer_content -->
+		<div class="layer_content">
+			<div>
+				<ul>
+					<li>
+						<span class="q_num">01</span>
+						<div class="q_con">
+							<p class="q_txt"><span>새롭게 바뀐 농집 홈페이지에 대해 얼마나 만족하십니까? (1 ~ 5점)</span></p>
+							<div class="">
+								<ul class="type01">
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd1_1" name="group01">
+											<label for="ex_rd1_1">1점</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd1_2" name="group01">
+											<label for="ex_rd1_2">2점</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd1_3" name="group01">
+											<label for="ex_rd1_3">3점</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd1_4" name="group01">
+											<label for="ex_rd1_4">4점</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd1_5" name="group01">
+											<label for="ex_rd1_5">5점</label> 
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<span class="q_num">02</span>
+						<div class="q_con">
+							<p class="q_txt"><span>새롭게 단장한 농집 메인화면에서 가장 좋아졌다고 생각되는 부분은 무엇입니까?</span></p>
+							<div class="">
+								<ul class="type02">
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd2_1" name="group02">
+											<label for="ex_rd2_1">전체적인 디자인</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd2_2" name="group02">
+											<label for="ex_rd2_2">각 그래드별 디자인</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd2_3" name="group02">
+											<label for="ex_rd2_3">글자의 크기</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd2_4" name="group02">
+											<label for="ex_rd2_4">콜센터 번호</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd2_5" name="group02">
+											<label for="ex_rd2_5">전체 단지와 농가 수 표기</label> 
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<span class="q_num">03</span>
+						<div class="q_con">
+							<p class="q_txt"><span>새롭게 바뀐 농집 메인화면 디자인(색상, 이미지 등)에 호감이 갑니까?</span></p>
+							<div class="">
+								<ul class="type01">
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd3_1" name="group03">
+											<label for="ex_rd3_1">일 1회 이상</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd3_2" name="group03">
+											<label for="ex_rd3_2">주 1회 이상</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd3_3" name="group03">
+											<label for="ex_rd3_3">월 1회 이상</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd3_4" name="group03">
+											<label for="ex_rd3_4">안함</label> 
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<span class="q_num">04</span>
+						<div class="q_con">
+							<p class="q_txt"><span>새롭게 바뀐 농집 메인화면의 정보 구성은 알아보기 쉽습니까?</span></p>
+							<div class="">
+								<ul class="type01">
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd4_1" name="group04">
+											<label for="ex_rd4_1">매우 그렇다</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd4_2" name="group04">
+											<label for="ex_rd4_2">그렇다</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd4_3" name="group04">
+											<label for="ex_rd4_3">보통이다</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd4_4" name="group04">
+											<label for="ex_rd4_4">그렇치않다</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd4_5" name="group04">
+											<label for="ex_rd4_5">전혀 그렇치 않다</label> 
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<span class="q_num">05</span>
+						<div class="q_con">
+							<p class="q_txt"><span>그래프 상세화면에서 정보 확인이 편리합니까?</span></p>
+							<div class="">
+								<ul class="type01">
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd5_1" name="group05">
+											<label for="ex_rd5_1">매우 그렇다</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd5_2" name="group05">
+											<label for="ex_rd5_2">그렇다</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd5_3" name="group05">
+											<label for="ex_rd5_3">보통이다</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd5_4" name="group05">
+											<label for="ex_rd5_4">그렇치않다</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd5_5" name="group05">
+											<label for="ex_rd5_5">전혀 그렇치 않다</label> 
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<span class="q_num">06</span>
+						<div class="q_con">
+							<p class="q_txt"><span>귀하의 나이는 어떻게 되십니까?</span></p>
+							<div class="">
+								<ul class="type01">
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd6_1" name="group06">
+											<label for="ex_rd6_1">40세 미만</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd6_2" name="group06">
+											<label for="ex_rd6_2">40대</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd6_3" name="group06">
+											<label for="ex_rd6_3">50대</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd6_4" name="group06">
+											<label for="ex_rd6_4">60대</label> 
+										</div>
+									</li>
+									<li>
+										<div class="checks">
+											<input type="radio" id="ex_rd6_5" name="group06">
+											<label for="ex_rd6_5">70세 이상</label> 
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<span class="q_num">07</span>
+						<div class="q_con">
+							<p class="q_txt"><span>농집에 바라는 사항이나 기타 의견이 있다면 적어주세요.</span></p>
+							<div class="">
+								<div>
+									<textarea placeholder="예) 농약 종류를 검색할 수 있게 해 주세요."></textarea>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+				<div class="btn_area">
+					<button class="submit_btn">제출하기</button>
+				</div>
+			</div>
+		</div>
+		<!--// layer_content -->
+	</div>
+	<!--// layer_pop -->
+</body>
+</html>

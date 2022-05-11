@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>일일진단평가 - 경기도 대기환경</title>
+    <script src="../assets/js/jquery-1.11.0.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+    <!-- 헤더부분 -->
+    <header>
+        <div class="top_area">
+            <h1>
+                <a href="#none">경기도대기환경 진단평가 시스템</a>
+            </h1>
+            <div class="login_area">
+                <a href="#none" class="admin">관리자</a>
+                <a href="#none" class="my_info">내 정보</a>
+                <a href="#none" class="login">로그아웃</a>
+                <!-- <a href="#none" class="login">로그인</a> -->
+            </div>
+        </div>
+        <div class="bottom_area">
+            <div class="menu_area">
+                <span class="menu_txt on">일일진단평가</span>
+                <span class="menu_txt">대기정보</span>
+                <span class="menu_txt ">기상현황</span>
+                <span class="menu_txt ">모델링결과</span>
+                <span class="menu_txt ">사이트맵</span>
+                <a href="#" class="menu_btn">햄버거 메뉴</a>
+            </div>
+        </div>
+    </header>
+    <!-- 헤더부분 -->
+    <section>
+        <div class="content_frame">
+            <div class="left_menu">
+                <span class="menu_title">일일진단평가</span>
+            </div>
+            <div class="content_area">
+                <div class="title_area">
+                    <span class="title">일일진단평가</span>
+                    <div class="nav_area">
+                        <span class="home">처음</span>
+                        <span class="left">일일진단평가</span>
+                    </div>
+                </div>
+                <!-- 일일 대기질 진단평가 결과 -->
+                <div class="table_area dayForm">
+                    <p class="tit_h3">일일 대기질 진단평가 결과 <small>2019년 06월 20일 (목) 경기도보건환경연구원</small></p>
+                    <table>
+                        <caption>진단평가 결과</caption>
+                        <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                            <col style="width: 10%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="10">진단평가 결과</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" rowspan="5">오늘(20일)</th>
+                                <td class="bgNavy">PM<sub>2.5</sub></td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bgNavy">PM<sub>10<sub></td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bgNavy">O<sub>3<sub></td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bgNavy">생활</td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="9">
+                                    <p class="txt">
+                                        [초미세먼지] 중부권과 남부권은 대체로 보통<br>
+                                        [미세먼지] 대체적으로 보통
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" rowspan="5">내일(21일)</th>
+                                <td class="bgNavy">PM<sub>2.5</sub></td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bgNavy">PM<sub>10<sub></td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bgNavy">O<sub>3<sub></td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bgNavy">생활</td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="9">
+                                    <p class="txt">
+                                        [초미세먼지] 중부권과 남부권은 대체로 보통<br>
+                                        [미세먼지] 대체적으로 보통
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th scope="row" rowspan="5">모레(22일)</th>
+                                <td class="bgNavy">PM<sub>2.5</sub></td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bgNavy">PM<sub>10<sub></td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bgNavy">O<sub>3<sub></td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bgNavy">생활</td>
+                                <td class="bgGray">남부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">중부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">북부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                                <td class="bgGray">동부권</td>
+                                <td>
+                                    <select title="상태선택">
+                                        <option>좋음</option>
+                                        <option>보통</option>
+                                        <option>나쁨</option>
+                                        <option>매우나쁨</option>
+                                        <option>자동</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="9">
+                                    <p class="txt">
+                                        [초미세먼지] 중부권과 남부권은 대체로 보통<br>
+                                        [미세먼지] 대체적으로 보통
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- // 일일 대기질 진단평가 결과 -->
+
+                <!-- 권역별 대기질 현황 -->
+                <div class="table_area center">
+                    <p class="tit_h3">권역별 대기질 현황(01~16시 누적평균)</p>
+                    <table>
+                        <caption>권역별 대기질 현황(01~16시 누적평균)</caption>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">PM<sub>2.5</sub>(㎍/㎥)</th>
+                                <th scope="col">PM<sub>10</sub>(㎍/㎥)</th>
+                                <th scope="col">O<sub>3</sub>(ppm)</th>
+                                <th scope="col">NO<sub>2</sub>(ppm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="bgGray">북부권역(01~15시)</th>
+                                <td>25</td>
+                                <td>52</td>
+                                <td>0.012</td>
+                                <td>0.010</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">남부권역(01~15시)</th>
+                                <td>25</td>
+                                <td>52</td>
+                                <td>0.012</td>
+                                <td>0.010</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">동부권역(01~15시)</th>
+                                <td>25</td>
+                                <td>52</td>
+                                <td>0.012</td>
+                                <td>0.010</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">중부권역(01~15시)</th>
+                                <td>25</td>
+                                <td>52</td>
+                                <td>0.012</td>
+                                <td>0.010</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                 </div>
+                 <!-- // 권역별 대기질 현황 -->
+
+                 <!-- 시도별 대기질 현황 -->
+                <div class="table_area center">
+                    <p class="tit_h3">시도별 대기질 현황(01~16시 누적평균)</p>
+                    <table>
+                        <caption>권역별 대기질 현황(01~16시 누적평균)</caption>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                            <col style="width: 20%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">PM<sub>2.5</sub>(㎍/㎥)</th>
+                                <th scope="col">PM<sub>10</sub>(㎍/㎥)</th>
+                                <th scope="col">O<sub>3</sub>(ppm)</th>
+                                <th scope="col">NO<sub>2</sub>(ppm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="bgGray">경기도(01~15시)</th>
+                                <td>25</td>
+                                <td>52</td>
+                                <td>0.012</td>
+                                <td>0.010</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">서울특별시(01~15시)</th>
+                                <td>25</td>
+                                <td>52</td>
+                                <td>0.012</td>
+                                <td>0.010</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">인천광역시(01~15시)</th>
+                                <td>25</td>
+                                <td>52</td>
+                                <td>0.012</td>
+                                <td>0.010</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">충청남도(01~15시)</th>
+                                <td>25</td>
+                                <td>52</td>
+                                <td>0.012</td>
+                                <td>0.010</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                 </div>
+                 <!-- // 시도별 대기질 현황 -->
+
+                <!-- 모델결과 -->
+                <div class="table_area center">
+                    <p class="tit_h3">모델결과(3km)</p>
+                    <table>
+                        <caption> PM2.5, PM10, O3의 모델결과(3km)</caption>
+                        <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width: 30%;">
+                            <col style="width: 30%;">
+                            <col style="width: 30%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">PM2.5</th>
+                                <th scope="col">PM10</th>
+                                <th scope="col">O3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="bgGray">오늘 9시</th>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">오늘 17시</th>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">오늘 21시</th>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //모델결과 -->
+
+                <div class="btn_area">
+                    <a href="#none" class="navy">완료</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+        <span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+    </footer>
+</body>
+
+</html>

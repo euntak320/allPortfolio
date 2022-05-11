@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>스타플랫폼 관리시스템 &gt; 교회서비스 &gt; 성경문구관리 &gt; 성경문구 상세</title>
+	<!-- 공통 웹자원 : 맨 위에 위치 -->
+	<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+	<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+	<!-- 해당페이지에서만 사용 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery.datetimepicker.css">
+	<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+	<!-- 공통 웹자원 : 맨 마지막 위치 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+	<script type="text/javascript" src="../common/js/extension.js"></script>
+	<script>
+		$(function () {
+			// 파일 업로드시 나오는 경로 텍스트
+			$("#file").on('change', function () {
+				var fileName = $("#file").val();
+				$(".upload-name").val(fileName);
+			});
+
+			// x버튼 클릭시 삭제
+			$(".addFileList .fileTxt a").click(function () {
+				$(this).closest("div").hide();
+			});
+
+			// 전화번호 입력시 "-" 자동 입력
+			$('.phoneHypen').keydown(function (event) {
+				var key = event.charCode || event.keyCode || 0;
+				$text = $(this);
+				if (key !== 8 && key !== 9) {
+					if ($text.val().length === 3) {
+						$text.val($text.val() + '-');
+					}
+					if ($text.val().length === 8) {
+						$text.val($text.val() + '-');
+					}
+				}
+
+				return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <=
+					105));
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap" class="sub">
+		<!-- header -->
+		<header id="header">
+			<div class="inner">
+				<div class="gnbWrap">
+					<div class="fl">
+						<h1 class="logo"><a href="#">스타플랫폼<span>관리 시스템</span></a></h1>
+					</div>
+
+				</div>
+			</div>
+		</header>
+		<!-- //header -->
+
+		<!-- left menu -->
+		<div class="leftMenu">
+			<div class="inner">
+				<ul class="ul">
+					<li class="li">
+						<ul>
+							<!-- 개발 : 페이지 진입시 해당 메뉴가 활성화되어야할때 li에 클래스 on 추가 -->
+							<li ><a href="#" class="mm">거래 관리</a></li>
+							<li><a href="#" class="mm">정산 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">고객 관리</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">회원정보 조회</a></li>
+									<li><a href="#">기업 관리</a></li>
+									<li><a href="#">가맹점 관리</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">서비스 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">운영 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li class="on"><a href="#" class="mm">교회 서비스</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">교회정보관리</a></li>
+									<li class="on"><a href="#">성경문구관리</a></li>
+									<li><a href="#">헌금종류관리</a></li>
+									<li><a href="#">성도관리</a></li>
+									<li><a href="#">헌금 기도내용 조회</a></li>
+									<li><a href="#">헌금 입금내역 조회</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //left menu -->
+		<!-- container -->
+		<div id="container">
+			<!-- content -->
+			<div class="content">
+				<h2 class="hTit">성경문구상세</h2>
+				<!-- table -->
+				<div class="tbw scroll-x"> 
+					<table>
+						<caption></caption>
+						<colgroup>
+							<col style="width:10%;">
+							<col style="width:auto;">
+						</colgroup>
+						 <tbody>
+							<tr>
+								<th scope="row">성경문구 일련번호</th>
+								<td class="txtL">256</td>
+							</tr>
+							<tr>
+								<th scope="row">* 성경문구 출처</th>
+								<td class="txtL">
+									<input type="text" class="input">
+									<span class="tdDesc">입력 예) 요한복음 3:2~4</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">* 성경문구 내용</th>
+								<td class="txtL">
+									<div class="areaList">
+										 <textarea title="" rows="6" class="txtArea" placeholder="텍스트영역 입니다"></textarea>		
+									</div>
+									<span class="tdDesc">(0/400 bytes)</span> 
+								</td> 
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //table -->
+				<!-- btmBtn -->
+				<div class="btmBtnWrap">
+					<div class="fr">
+						<a href="#" class="btn md de">목록</a><a href="#" class="btn md de">삭제</a><a href="#" class="btn md de">저장</a>
+					</div>
+				</div>
+				<!--// btmBtn -->
+			</div>
+			<!-- //content -->
+		</div>
+	</div>
+	<!-- //container -->
+	</div>
+	<!-- //wrap -->
+
+</body>
+
+</html>

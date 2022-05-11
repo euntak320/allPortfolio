@@ -1,0 +1,1752 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>퍼블리싱 작업목록 | 문화정보 다부처 연계서비스 플랫폼</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<style type="text/css">
+	@charset "utf-8";
+
+	a {text-decoration:none;color:#222;}
+	a:visited {color:#222;text-decoration:none;}
+
+	html {overflow-y:scroll;width:100%;height:100%;min-width:320px;}
+	body, pre {font-size:12px;line-height:1.5;color:#222;}
+	body, div, p, ul, ol, li, dl, dt, dd, table, th, td, h1, h2, h3, h4, h5, h6, address, blockquote, pre {margin:0;padding:0;}
+	h1 {text-align:center;font-size:28px;line-height:1.2;margin:0 0 40px 0;color:#333;}
+	h1 span {color:#2e55b1;}
+	h2 {display:none;}
+	h3 {margin:25px 0 10px;padding:7px 0 7px 10px;background:#555;font-size:12px;line-height:16px;color:#fff;}
+	h3.guide {background:#2e55b1;}
+	h3.toggle {position:relative;cursor:pointer;}
+	h3.toggle.open:after {-webkit-transform:rotate(-180deg);transform:rotate(-180deg);}
+	h4 {margin:25px 0 10px;padding:0 0 6px 10px;background:url(../img/bul_4x11_2489ce.gif) no-repeat 0 3px;font-size:14px;line-height:1;border-bottom:1px solid #ddd;}
+	h5 {margin:20px 0 0;padding:0 0 6px 10px;background:url(../img/dot_3x3_989898.gif) no-repeat 0 7px;font-size:12px;line-height:1;}
+	table {border-spacing:0;border-collapse:collapse;}
+	img {border:0;}
+	caption {overflow:hidden;visibility:hidden;font-size:0;line-height:0;height:0;}
+	pre {white-space:pre-wrap;}
+	ul {margin:0 0 0 15px;list-style:none;}
+	dt {font-weight:bold;}
+	button {padding:0;margin:0;border:0;cursor:pointer;}
+	#wrap {width:98%; margin:0 auto;padding:20px 0 50px;}
+	ul#gnb {*zoom:1;margin:0;border-bottom:1px solid #2e55b1;margin-bottom:30px;}
+	#gnb:after {content:'';display:block;clear:both;}
+	#gnb li {float:left;list-style:none;margin-right:2px;}
+	#gnb li a {display:block;padding:10px 12px;border:1px solid #ccc;border-bottom:none;font-size:14px;font-weight:bold;color:#333;text-decoration:none;}
+	#gnb li.on a {background:#2e55b1;padding:11px 12px 10px;border:none;color:#fff;}
+	.btn-top {position:fixed;right:0;bottom:15px;background:#2e55b1;}
+	.btn-top a {display:block;width:60px;padding:5px 0;text-align:center;color:#fff;text-decoration:none;}
+
+	/* 테이블 */
+	.section {overflow-x:scroll;}
+	.tbl-guide {min-width:800px;margin:0.5em 0;border-top: 2px solid #333;width:100%;}
+	.tbl-guide tr:nth-child(even) {background:#efefef;}
+	.tbl-guide th {background-color:#dddddd;font-weight:bold;}
+	.tbl-guide th, .tbl-guide td {border: 1px solid #aaaaaa;padding:4px;vertical-align:middle;}
+	.tbl-guide td > a.on {color:red;text-decoration:underline;}
+	.tbl-guide thead th.header span {display:block;padding-right:20px;background:url(../img/bg.gif) no-repeat 100% 50%;cursor:pointer;}
+	.tbl-guide thead th.header.headerSortDown span {background:url(../img/asc.gif) no-repeat 100% 50%;}
+	.tbl-guide thead th.header.headerSortUp span {background:url(../img/desc.gif) no-repeat 100% 50%;}
+	.tbl-guide tbody tr.line td {border-bottom:1px solid #333;}
+	.tbl-guide tbody tr.delete td {text-decoration:line-through;}
+	.tbl-guide tbody tr td.end, .tbl-guide tbody tr td.modify {padding:4px 0;}
+	.tbl-guide tbody tr td.flag, .tbl-guide tbody tr td.modify, .tbl-guide tbody tr td.end {text-align:center;}
+	.tbl-guide tbody tr td .blank {display:block;color:#999;text-decoration:line-through;}
+	.tbl-guide tbody tr.main.on {background:#ffec5c;}
+	.tbl-guide tbody tr.main.on > td:nth-child(3) {color:#ff0000;}
+	.tab-guide {margin:20px 0;padding:2px 0;overflow:hidden;width: 100%;border-top:1px solid #333;border-bottom:1px solid #333;}
+	.tab-guide > li {box-sizing:border-box;display:block;float:left;margin-bottom:2px;padding:0 1px;width:33.3%;}
+	.tab-guide > li a {position:relative;display:block;line-height:2;text-indent:0.5em;color:#333;background:#f2f2f2;text-decoration:none;}
+	.tab-guide > li a.on {background:#2e55b1;color: #fff;}
+	.tbl-guide th , .tbl-guide td {box-sizing:border-box;}
+	.tbl-guide th:nth-child(1) , .tbl-guide td:nth-child(1) {position:relative;width:5%;text-align:center;}
+	.tbl-guide th:nth-child(2) , .tbl-guide td:nth-child(2) {width:10%;text-align:center;}
+	.tbl-guide th:nth-child(3) , .tbl-guide td:nth-child(3) {width:10%;text-align:center;}
+	.tbl-guide th:nth-child(4) , .tbl-guide td:nth-child(4) {width:13%;text-align:center;}
+	.tbl-guide th:nth-child(5) {text-align:center;}
+	.tbl-guide th:nth-child(6) , .tbl-guide td:nth-child(6) {width:5%;text-align:center;}
+	.tbl-guide th:nth-child(7) , .tbl-guide td:nth-child(7) {width:7%;text-align:center;}
+	.tbl-guide a.toggle {position:absolute;left:4px;top:9px;width:10px;height:10px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAAgMAAAC+UIlYAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAOUAAADlAFKEakrAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAAlQTFRF////Job/JIj/rhsfRwAAAAJ0Uk5TAChDJmXCAAAAKUlEQVRYR+3QoQEAMAzDsDy5J3vlTkhRkYSNnAAAh16RKQTboK4GAA598XjpwfeHht8AAAAASUVORK5CYII=");background-size:10px 10px;text-decoration:none;}
+	.tbl-guide a.toggle.on {background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAAgMAAAC+UIlYAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAOUAAADlAFKEakrAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAAxQTFRF////JIj/JIj/JIj/F8uszQAAAAN0Uk5TAChJqCuTQAAAAENJREFUWMPt0qENACAQQ9E6JkSxNEswR9E1HAkJ6n95eao5KWr21CkAAAAAAABPoEfDXnmRiwC3oJyanwQAAAAA4CPYoUmgd4Kt47oAAAAASUVORK5CYII=");background-size:10px 10px;}
+	.menu-list {overflow:hidden;}
+	.menu-list a {float:left;display:inline-block;padding:0 15px;margin-right:5px;font-size:14px;line-height:26px;border:1px solid #ccc;}
+	.menu-list a.on {background:#02428a;font-weight:bold;color:#fff;}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+
+		$(".tbl-guide tr").each(function( index ){
+			$(this).find("td").eq(0).find(".num").text( index );
+		});
+
+	});
+</script>
+</head>
+<body>
+<div id="wrap">
+	<h1><span>문화정보 다부처 연계서비스 플랫폼</span> HTML 화면목록</h1>
+	<h2>작업목록</h2>
+	<h3 class="toggle open" id="M">페이지</h3>
+	<div class="section">
+		<table class="tbl-guide sorttable">
+			<thead>
+				<tr>
+					<th scope="col"><span>No</span></th>
+					<th scope="col"><span>1Depth</span></th>
+					<th scope="col"><span>2Depth</span></th>
+					<th scope="col"><span>3Depth</span></th>
+					<th scope="col"><span>명칭</span></th>
+					<th scope="col">반영일</th>
+					<th scope="col">기타</th>
+				</tr>
+			</thead>
+			<tbody>
+
+
+				<!-- 메인 대쉬보드 -->
+
+
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>대쉬보드</td>
+					<td></td>
+					<td><a href="./main.html" target="_blank">메인 대쉬보드</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+
+				<!-- // 메인 대쉬보드 -->
+
+
+				<!-- 회원 -->
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>신규로그인</td>
+					<td></td>
+					<td><a href="./join_new_1.html" target="_blank">신규로그인</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>로그인</td>
+					<td></td>
+					<td><a href="./join_1.html" target="_blank">로그인</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>회원가입</td>
+					<td>약관동의</td>
+					<td><a href="./join_2.html" target="_blank">회원가입 > 약관동의</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>회원가입</td>
+					<td>실명인증</td>
+					<td><a href="./join_3.html" target="_blank">회원가입 > 실명인증</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>회원가입</td>
+					<td>실명인증</td>
+					<td><a href="./join_4.html" target="_blank">회원가입 > 실명인증 (전문 보기 팝업)</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>회원가입</td>
+					<td>실명인증</td>
+					<td><a href="./join_5.html" target="_blank">회원가입 > SMS 실명인증</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>회원가입</td>
+					<td>회원정보입력</td>
+					<td><a href="./join_6.html" target="_blank">회원가입 > 회원정보입력</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>회원가입</td>
+					<td>회원정보입력</td>
+					<td><a href="./join_7.html" target="_blank">회원가입 > 회원정보입력 (아이디, 비번찾기 팝업)</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>회원가입</td>
+					<td>신청완료</td>
+					<td><a href="./join_8.html" target="_blank">회원가입 > 신청완료</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>아이디 찾기</td>
+					<td>정보입력</td>
+					<td><a href="./join_9.html" target="_blank">아이디 찾기 > 정보입력</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>아이디 찾기</td>
+					<td>찾기 실패</td>
+					<td><a href="./join_10.html" target="_blank">아이디 찾기 > 찾기 실패</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>아이디 찾기</td>
+					<td>찾기 성공</td>
+					<td><a href="./join_11.html" target="_blank">아이디 찾기 > 찾기 성공</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>비밀번호 찾기</td>
+					<td>정보입력</td>
+					<td><a href="./join_12.html" target="_blank">비밀번호 찾기 > 정보입력</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>비밀번호 찾기</td>
+					<td>찾기 실패</td>
+					<td><a href="./join_13.html" target="_blank">비밀번호 찾기 > 찾기 실패</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>회원접속</td>
+					<td>비밀번호 찾기</td>
+					<td>찾기 성공</td>
+					<td><a href="./join_14.html" target="_blank">비밀번호 찾기 > 찾기 성공</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+				<!-- // 회원 -->
+
+
+
+
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>내 정보수정</td>
+					<td></td>
+					<td><a href="./sub_4.html" target="_blank">내 정보수정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>내 정보수정</td>
+					<td>회원탈퇴</td>
+					<td><a href="./sub_5.html" target="_blank">내 정보수정 > 회원탈퇴</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>기관 정보수정</td>
+					<td>기관 정보수정</td>
+					<td><a href="./sub_6.html" target="_blank">기관정보수정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>기술지원요청</td>
+					<td>목록보기</td>
+					<td><a href="./sub_1.html" target="_blank">기술지원요청 > 목록보기</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>기술지원요청</td>
+					<td>상세보기</td>
+					<td><a href="./sub_2.html" target="_blank">기술지원요청 > 상세보기</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>기술지원요청</td>
+					<td>상세보기</td>
+					<td><a href="./sub_3.html" target="_blank">기술지원요청 > 등록/수정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>통합운영 알림</td>
+					<td>통합관리자, 내부담당자 등급 화면</td>
+					<td><a href="./sub_7_1.html" target="_blank">통합운영 알림 > 통합관리자, 담당자 등급</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>통합운영 알림</td>
+					<td>기관마스터 등급 화면</td>
+					<td><a href="./sub_7_2.html" target="_blank">통합운영 알림 > 기관마스터 등급</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>메인</td>
+					<td>통합운영 알림</td>
+					<td>기관담당자 등급 화면</td>
+					<td><a href="./sub_7_3.html" target="_blank">통합운영 알림 > 기관담당자 등급</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+
+				<!-- // 메인 -->
+
+
+				<!-- 운영관리 -->
+
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>메타데이터 수집기관 현황</td>
+					<td></td>
+					<td><a href="./management/sub_1_1_1.html" target="_blank">운영관리 > 메타데이터 수집기관 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>메타데이터 수집기관 현황</td>
+					<td>수집기관 상세현황</td>
+					<td><a href="./management/sub_1_1_2.html" target="_blank">운영관리 > 메타데이터 수집기관 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>메타데이터 수집기관 현황</td>
+					<td>수집기관 상세현황 > DB정보 상세</td>
+					<td><a href="./management/sub_1_1_3.html" target="_blank">운영관리 > 메타데이터 수집기관 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>메타데이터 수집기관 현황</td>
+					<td>수집기관 상세현황 > 서비스 세부항목</td>
+					<td><a href="./management/sub_1_1_4.html" target="_blank">운영관리 > 메타데이터 수집기관 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>메타데이터 수집정보 조회</td>
+					<td></td>
+					<td><a href="./management/sub_1_2_1.html" target="_blank">운영관리 > 메타데이터 수집정보 조회</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>메타데이터 수집정보 조회</td>
+					<td>수집정보 상세현황</td>
+					<td><a href="./management/sub_1_2_2.html" target="_blank">운영관리 > 메타데이터 수집정보 조회</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>메타데이터 수집정보 조회</td>
+					<td>수집정보 상세현황 > 수집데이터 상세조회</td>
+					<td><a href="./management/sub_1_2_3.html" target="_blank">운영관리 > 메타데이터 수집정보 조회</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>수집연계 운영이력관리</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_1_3_1.html" target="_blank">운영관리 > 수집연계 운영이력관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>수집연계 운영이력관리</td>
+					<td>등록하기</td>
+					<td><a href="./management/sub_1_3_2.html" target="_blank">운영관리 > 수집연계 운영이력관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>수집연계 운영이력관리</td>
+					<td>상세보기</td>
+					<td><a href="./management/sub_1_3_3.html" target="_blank">운영관리 > 수집연계 운영이력관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>수집연계 운영이력관리</td>
+					<td>상세보기 > 수정하기</td>
+					<td><a href="./management/sub_1_3_4.html" target="_blank">운영관리 > 수집연계 운영이력관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_2_1_1.html" target="_blank">운영지원 > 기술지원요청관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>상세보기</td>
+					<td><a href="./management/sub_2_1_2.html" target="_blank">운영지원 > 기술지원요청관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>상세보기 > 수정하기</td>
+					<td><a href="./management/sub_2_1_3.html" target="_blank">운영지원 > 기술지원요청관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>상세보기 > 수정하기</td>
+					<td><a href="./management/sub_2_1_3.html" target="_blank">운영지원 > 기술지원요청관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_2_2_1.html" target="_blank">운영지원 > 공지사항관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>수정하기</td>
+					<td><a href="./management/sub_2_2_2.html" target="_blank">운영지원 > 공지사항관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_2_3_1.html" target="_blank">운영지원 > QNA 관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>등록하기</td>
+					<td><a href="./management/sub_2_3_2.html" target="_blank">운영지원 > QNA 관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>등록/수정</td>
+					<td><a href="./management/sub_2_3_3.html" target="_blank">운영지원 > QNA</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_2_4_1.html" target="_blank">운영지원 > FAQ</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>등록하기</td>
+					<td><a href="./management/sub_2_4_2.html" target="_blank">운영지원 > FAQ</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영지원</td>
+					<td>수정하기</td>
+					<td><a href="./management/sub_2_4_3.html" target="_blank">운영지원 > FAQ</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>품질관리</td>
+					<td></td>
+					<td><a href="./management/sub_3_1_1.html" target="_blank">품질관리 > 메타데이터 데드링크 조회</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>품질관리</td>
+					<td>메타데이터 데드링크 조회 > 기관별 데드링크 현황</td>
+					<td><a href="./management/sub_3_1_2.html" target="_blank">품질관리 > 메타데이터 데드링크 조회</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>품질관리</td>
+					<td>기관별 데드링크 현황 > 상세</td>
+					<td><a href="./management/sub_3_1_3.html" target="_blank">품질관리 > 메타데이터 데드링크 조회</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>기타회원관리</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_4_1_1.html" target="_blank">기타회원관리 > 기관관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>기타회원관리</td>
+					<td>등록/수정</td>
+					<td><a href="./management/sub_4_1_2.html" target="_blank">기타회원관리 > 기관관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>기타회원관리</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_4_2_1.html" target="_blank">기타회원관리 > 회원관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>기타회원관리</td>
+					<td>등록하기</td>
+					<td><a href="./management/sub_4_2_2.html" target="_blank">기타회원관리 > 회원관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>기타회원관리</td>
+					<td>상세보기</td>
+					<td><a href="./management/sub_4_2_3.html" target="_blank">기타회원관리 > 회원관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>기타회원관리</td>
+					<td>상세보기 > 수정하기</td>
+					<td><a href="./management/sub_4_2_4.html" target="_blank">기타회원관리 > 회원관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 설정</td>
+					<td></td>
+					<td><a href="./management/sub_5_1_1.html" target="_blank">시스템 설정 > 메뉴관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 설정</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_5_2_1.html" target="_blank">시스템 설정 > 권한관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 설정</td>
+					<td>등록/수정 팝업</td>
+					<td><a href="./management/sub_5_2_2.html" target="_blank">시스템 설정 > 권한관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 설정</td>
+					<td>등록/수정 팝업</td>
+					<td><a href="./management/sub_5_2_2.html" target="_blank">시스템 설정 > 권한관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 설정</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_5_3_1.html" target="_blank">시스템 설정 > 권한별 회원관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 설정</td>
+					<td>회원조회 팝업</td>
+					<td><a href="./management/sub_5_3_2.html" target="_blank">시스템 설정 > 권한별 회원관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 설정</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_5_4_1.html" target="_blank">시스템 설정 > 그룹코드 관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 설정</td>
+					<td>등록/수정 팝업</td>
+					<td><a href="./management/sub_5_4_2.html" target="_blank">시스템 설정 > 그룹코드 관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 현황</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_6_1_1.html" target="_blank">시스템 현황 > 회원접속 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템 현황</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_6_2_1.html" target="_blank">시스템 현황 > 메뉴별 접속 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영성과관리</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_7_1_1.html" target="_blank">운영성과관리 > 성과지표설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영성과관리</td>
+					<td>등록하기</td>
+					<td><a href="./management/sub_7_1_2.html" target="_blank">운영성과관리 > 성과지표설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영성과관리</td>
+					<td>상세보기</td>
+					<td><a href="./management/sub_7_1_3.html" target="_blank">운영성과관리 > 성과지표설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영성과관리</td>
+					<td>상세보기 > 수정하기</td>
+					<td><a href="./management/sub_7_1_4.html" target="_blank">운영성과관리 > 성과지표설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영성과관리</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_7_2_1.html" target="_blank">운영성과관리 > 기능활용도 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영성과관리</td>
+					<td>상세보기</td>
+					<td><a href="./management/sub_7_2_2.html" target="_blank">운영성과관리 > 기능활용도 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영성과관리</td>
+					<td>목록보기</td>
+					<td><a href="./management/sub_7_3_1.html" target="_blank">운영성과관리 > 사용편의성 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영성과관리</td>
+					<td>상세보기</td>
+					<td><a href="./management/sub_7_3_2.html" target="_blank">운영성과관리 > 사용편의성 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>운영성과관리</td>
+					<td>팝업</td>
+					<td><a href="./management/sub_7_4_1.html" target="_blank">운영성과관리 > 만족도 조사</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템탐색 및 조회</td>
+					<td></td>
+					<td><a href="./management/sub_8_1_1.html" target="_blank">시스템탐색 및 조회 > 수집 및 연계시스템 통합검색</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템탐색 및 조회</td>
+					<td></td>
+					<td><a href="./management/sub_8_2_1.html" target="_blank">시스템탐색 및 조회 > 표준 및 규칙 관리 시스템 통합검색</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>시스템탐색 및 조회</td>
+					<td></td>
+					<td><a href="./management/sub_8_3_1.html" target="_blank">시스템탐색 및 조회 > 메인 데이터베이스 통합검색</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>운영관리</td>
+					<td>RDF 수집 데이터 현황</td>
+					<td></td>
+					<td><a href="./management/sub_9_1_1.html" target="_blank">RDF 수집 데이터 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+
+				<!-- // 운영관리 -->
+
+
+
+				<!-- 연계표준 규칙관리 -->
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타표준관리</td>
+					<td>조회/등록</td>
+					<td><a href="./rule/sub_1_1_1.html" target="_blank">메타표준관리 > 메타항목관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타표준관리</td>
+					<td>등록</td>
+					<td><a href="./rule/sub_1_1_2.html" target="_blank">메타표준관리 > 메타항목관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타표준관리</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_1_1_3.html" target="_blank">메타표준관리 > 메타항목관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>기타 메타항목 관리</td>
+					<td>조회</td>
+					<td><a href="./rule/sub_1_2_1.html" target="_blank">메타표준관리 > 기타 메타항목 관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>기타 메타항목 관리</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_1_2_2.html" target="_blank">메타표준관리 > 기타 메타항목 관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>기타 메타항목 관리</td>
+					<td>조회</td>
+					<td><a href="./rule/sub_1_2_3.html" target="_blank">메타표준관리 > 기타 메타항목 관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>기타 메타항목 관리</td>
+					<td>갱신요청</td>
+					<td><a href="./rule/sub_1_2_4.html" target="_blank">메타표준관리 > 기타 메타항목 관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>승인관리</td>
+					<td>조회</td>
+					<td><a href="./rule/sub_2_1_1.html" target="_blank">승인관리 > 승인요청조회</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>승인관리</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_2_1_2.html" target="_blank">승인관리 > 승인요청조회</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>품질관리</td>
+					<td>조회</td>
+					<td><a href="./rule/sub_3_1_1.html" target="_blank">품질관리 > 품질기준관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>품질관리</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_3_1_2.html" target="_blank">품질관리 > 품질기준관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>품질관리</td>
+					<td>등록</td>
+					<td><a href="./rule/sub_3_1_3.html" target="_blank">품질관리 > 품질기준관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>품질관리</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_3_1_4.html" target="_blank">품질관리 > 품질기준관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>현황</td>
+					<td><a href="./rule/sub_3_2_1_1.html" target="_blank">품질관리 > 분류별 품질진단 > 기관분야별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>조회</td>
+					<td><a href="./rule/sub_3_2_1_2.html" target="_blank">품질관리 > 분류별 품질진단 > 기관분야별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_3_2_1_3.html" target="_blank">품질관리 > 분류별 품질진단 > 기관분야별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>현황</td>
+					<td><a href="./rule/sub_3_2_2_1.html" target="_blank">품질관리 > 분류별 품질진단 > 서비스분야별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>조회</td>
+					<td><a href="./rule/sub_3_2_2_2.html" target="_blank">품질관리 > 분류별 품질진단 > 서비스분야별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_3_2_2_3.html" target="_blank">품질관리 > 분류별 품질진단 > 서비스분야별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>현황</td>
+					<td><a href="./rule/sub_3_2_3_1.html" target="_blank">품질관리 > 분류별 품질진단 > 자료유형별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>조회</td>
+					<td><a href="./rule/sub_3_2_3_2.html" target="_blank">품질관리 > 분류별 품질진단 > 자료유형별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_3_2_3_3.html" target="_blank">품질관리 > 분류별 품질진단 > 자료유형별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>현황</td>
+					<td><a href="./rule/sub_3_2_4_1.html" target="_blank">품질관리 > 분류별 품질진단 > 지역별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>조회</td>
+					<td><a href="./rule/sub_3_2_4_2.html" target="_blank">품질관리 > 분류별 품질진단 > 지역별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>분류별 품질진단</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_3_2_4_3.html" target="_blank">품질관리 > 분류별 품질진단 > 지역별</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>기관별 품질진단</td>
+					<td>조회</td>
+					<td><a href="./rule/sub_3_3_1.html" target="_blank">품질관리 > 기관별 품질진단</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>기관별 품질진단</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_3_3_2.html" target="_blank">품질관리 > 기관별 품질진단</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>기관 품질진단 현황</td>
+					<td>현황</td>
+					<td><a href="./rule/sub_3_4_1.html" target="_blank">품질관리 > 기관 품질진단 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>기관 품질진단 현황</td>
+					<td>팝업</td>
+					<td><a href="./rule/sub_3_4_2.html" target="_blank">품질관리 > 기관 품질진단 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타데이터 통계</td>
+					<td>현황</td>
+					<td><a href="./rule/sub_4_1_1.html" target="_blank">메타데이터 통계 > 기관별 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타데이터 통계</td>
+					<td>차트</td>
+					<td><a href="./rule/sub_4_1_2.html" target="_blank">메타데이터 통계 > 기관별 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타데이터 통계</td>
+					<td>현황</td>
+					<td><a href="./rule/sub_4_2_1.html" target="_blank">메타데이터 통계 > 분야별 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타데이터 통계</td>
+					<td>차트</td>
+					<td><a href="./rule/sub_4_2_2.html" target="_blank">메타데이터 통계 > 분야별 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타데이터 통계</td>
+					<td>현황</td>
+					<td><a href="./rule/sub_4_3_1.html" target="_blank">메타데이터 통계 > 지역별 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타데이터 통계</td>
+					<td>차트</td>
+					<td><a href="./rule/sub_4_3_2.html" target="_blank">메타데이터 통계 > 지역별 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타데이터 통계</td>
+					<td>차트</td>
+					<td><a href="./rule/sub_4_4_1.html" target="_blank">메타데이터 통계 > 자료유형별 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>연계표준규칙관리</td>
+					<td>메타데이터 통계</td>
+					<td>차트</td>
+					<td><a href="./rule/sub_4_5_1.html" target="_blank">메타데이터 통계 > 연계건수 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<!-- // 연계표준 규칙관리 -->
+
+
+
+
+				<!-- 수집연계 -->
+
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>목록보기</td>
+					<td><a href="./collection/sub_1_1_1.html" target="_blank">환경설정관리 > 기관연계 등록신청</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>등록하기</td>
+					<td><a href="./collection/sub_1_1_2.html" target="_blank">환경설정관리 > 기관연계 등록신청</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>상세보기</td>
+					<td><a href="./collection/sub_1_1_3.html" target="_blank">환경설정관리 > 기관연계 등록신청</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>수정하기</td>
+					<td><a href="./collection/sub_1_1_4.html" target="_blank">환경설정관리 > 기관연계 등록신청</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>목록보기</td>
+					<td><a href="./collection/sub_1_2_1.html" target="_blank">환경설정관리 > 연계대상 지원 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>등록하기</td>
+					<td><a href="./collection/sub_1_2_2.html" target="_blank">환경설정관리 > 연계대상 지원 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>상세보기</td>
+					<td><a href="./collection/sub_1_2_3.html" target="_blank">환경설정관리 > 연계대상 지원 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>수정하기</td>
+					<td><a href="./collection/sub_1_2_4.html" target="_blank">환경설정관리 > 연계대상 지원 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>목록보기</td>
+					<td><a href="./collection/sub_1_3_1.html" target="_blank">환경설정관리 > 연계 프로토콜 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>등록하기</td>
+					<td><a href="./collection/sub_1_3_2.html" target="_blank">환경설정관리 > 연계 프로토콜 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>수집키워드/패싯 설정 팝업</td>
+					<td><a href="./collection/sub_1_3_3.html" target="_blank">환경설정관리 > 연계 프로토콜 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>수집연계 인증 정보 설정 팝업</td>
+					<td><a href="./collection/sub_1_3_4.html" target="_blank">환경설정관리 > 연계 프로토콜 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>상세보기</td>
+					<td><a href="./collection/sub_1_3_5.html" target="_blank">환경설정관리 > 연계 프로토콜 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>수집키워드/패싯 보기 팝업</td>
+					<td><a href="./collection/sub_1_3_6.html" target="_blank">환경설정관리 > 연계 프로토콜 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>수집연계 인증 정보 보기 팝업</td>
+					<td><a href="./collection/sub_1_3_7.html" target="_blank">환경설정관리 > 연계 프로토콜 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>환경설정관리</td>
+					<td>수정하기</td>
+					<td><a href="./collection/sub_1_3_8.html" target="_blank">환경설정관리 > 연계 프로토콜 설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>목록보기</td>
+					<td><a href="./collection/sub_2_1_1.html" target="_blank">수집연계 실행관리 > 수집타겟 설정과 Seed 프로파일 작성</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>등록하기</td>
+					<td><a href="./collection/sub_2_1_2.html" target="_blank">수집연계 실행관리 > 수집타겟 설정과 Seed 프로파일 작성</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>수집 설정 정보 설정등록팝업</td>
+					<td><a href="./collection/sub_2_1_2_popup.html" target="_blank">수집연계 실행관리 > 수집타겟 설정과 Seed 프로파일 작성</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>상세보기</td>
+					<td><a href="./collection/sub_2_1_3.html" target="_blank">수집연계 실행관리 > 수집타겟 설정과 Seed 프로파일 작성</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>수집 설정 정보 상세보기 팝업</td>
+					<td><a href="./collection/sub_2_1_3_popup.html" target="_blank">수집연계 실행관리 > 수집타겟 설정과 Seed 프로파일 작성</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>수정하기</td>
+					<td><a href="./collection/sub_2_1_4.html" target="_blank">수집연계 실행관리 > 수집타겟 설정과 Seed 프로파일 작성</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>수집 설정 정보 설정변경 팝업</td>
+					<td><a href="./collection/sub_2_1_4_popup.html" target="_blank">수집연계 실행관리 > 수집타겟 설정과 Seed 프로파일 작성</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>목록보기</td>
+					<td><a href="./collection/sub_2_1_4.html" target="_blank">수집연계 실행관리 > 수집실행</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>목록보기</td>
+					<td><a href="./collection/sub_2_2_1.html" target="_blank">수집연계 실행관리 > 수집실행</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>등록하기</td>
+					<td><a href="./collection/sub_2_2_2.html" target="_blank">수집연계 실행관리 > 수집실행</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>상세보기</td>
+					<td><a href="./collection/sub_2_2_3.html" target="_blank">수집연계 실행관리 > 수집실행</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>수정하기</td>
+					<td><a href="./collection/sub_2_2_4.html" target="_blank">수집연계 실행관리 > 수집실행</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>목록보기</td>
+					<td><a href="./collection/sub_2_3_1.html" target="_blank">수집연계 실행관리 > 수집결과확인</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>상세보기</td>
+					<td><a href="./collection/sub_2_3_2.html" target="_blank">수집연계 실행관리 > 수집결과확인</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>수집결과 세부 상세 결과 보기 팝업</td>
+					<td><a href="./collection/sub_2_3_2_popup.html" target="_blank">수집연계 실행관리 > 수집결과확인</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>수집연계</td>
+					<td>수집연계 실행관리</td>
+					<td>목록보기</td>
+					<td><a href="./collection/sub_3_1_1.html" target="_blank">시스템설정 > 시스템설정관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+
+
+				<!-- // 수집연계 -->
+
+
+				<!-- 지식베이스 -->
+
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>지식베이스 기반 표제어 검색 팝업</td>
+					<td><a href="./base/popup.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>지식베이스 기반 표제어 검색 팝업 (이미 구축되어 있는 경우)</td>
+					<td><a href="./base/popup2.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>목록</td>
+					<td><a href="./base/sub_1_1_1.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>내부 지식베이스 기반 상세조회(한국향토문화전자대전)</td>
+					<td><a href="./base/sub_1_1_2.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>내부 지식베이스 기반 상세조회(한국영상자료원)</td>
+					<td><a href="./base/sub_1_1_3.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>내부 지식베이스 기반 상세조회(한국관광공사)</td>
+					<td><a href="./base/sub_1_1_4.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>내부 지식베이스 기반 상세조회(제주특별자치도인물)</td>
+					<td><a href="./base/sub_1_1_5.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>내부 지식베이스 기반 상세조회(한국어기초사전)</td>
+					<td><a href="./base/sub_1_1_6.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>내부 지식베이스 기반 상세조회(국립중앙도서관)</td>
+					<td><a href="./base/sub_1_1_7.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>내부 지식베이스 기반 상세조회(한국민속대백과사전)</td>
+					<td><a href="./base/sub_1_1_8.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>내부 지식베이스 기반 상세조회(문화융합키워드)</td>
+					<td><a href="./base/sub_1_1_9.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>외부 지식베이스 기항목 등록(한국향토문화전자대전)</td>
+					<td><a href="./base/sub_1_2_1.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>외부 지식베이스 기항목 등록(한국영상자료원)</td>
+					<td><a href="./base/sub_1_2_2.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>외부 지식베이스 기항목 등록(한국관광공사)</td>
+					<td><a href="./base/sub_1_2_3.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>외부 지식베이스 기항목 등록(제주특별자치도인물)</td>
+					<td><a href="./base/sub_1_2_4.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>외부 지식베이스 기항목 등록(한국어기초사전)</td>
+					<td><a href="./base/sub_1_2_5.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>외부 지식베이스 기항목 등록(국립중앙도서관)</td>
+					<td><a href="./base/sub_1_2_6.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>외부 지식베이스 기항목 등록(한국민속대백과사전)</td>
+					<td><a href="./base/sub_1_2_7.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반관리</td>
+					<td>외부 지식베이스 기항목 등록(문화융합키워드)</td>
+					<td><a href="./base/sub_1_2_8.html" target="_blank">지식베이스 기반관리 > 지식베이스</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>코퍼스 사전 관리</td>
+					<td>목록</td>
+					<td><a href="./base/sub_2_1_1.html" target="_blank">코퍼스 사전 관리 > 코퍼스 사전</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>코퍼스 사전 관리</td>
+					<td>지식베이스 사전 전환</td>
+					<td><a href="./base/sub_2_1_2.html" target="_blank">코퍼스 사전 관리 > 코퍼스 사전</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>코퍼스 사전 관리</td>
+					<td>목록</td>
+					<td><a href="./base/sub_2_2_1.html" target="_blank">코퍼스 사전 관리</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>코퍼스 사전 관리</td>
+					<td>코퍼스 사전 전환</td>
+					<td><a href="./base/sub_2_2_2.html" target="_blank">코퍼스 사전 관리 > 코퍼스 사전 전환</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반 통계 현황</td>
+					<td>통계 현황</td>
+					<td><a href="./base/sub_3_1_1.html" target="_blank">지식베이스 기반 통계 현황 > 지식베이스 사전 표제어 등록 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반 통계 현황</td>
+					<td>통계 현황</td>
+					<td><a href="./base/sub_3_1_2.html" target="_blank">지식베이스 기반 통계 현황 > 코퍼스 사전 키워드 등록 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td><span class="num"></span></td>
+					<td>지식베이스</td>
+					<td>지식베이스 기반 통계 현황</td>
+					<td>통계 현황</td>
+					<td><a href="./base/sub_3_1_3.html" target="_blank">지식베이스 기반 통계 현황 > 외부 지식베이스 사전 연계 통계 현황</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+
+				<!-- // 지식베이스 -->
+
+				<!-- 에러 -->
+				<tr>
+					<td><span class="num"></span></td>
+					<td>에러페이지</td>
+					<td></td>
+					<td>404 Error</td>
+					<td><a href="./error404.html" target="_blank">404Error</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<!-- // 에러 -->
+
+
+			</tbody>
+		</table>
+	</div>
+
+	<span class="btn-top"><a href="#wrap">&uarr; TOP</a></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+#content > * {outline: none;}
+#content .subTab {padding-left:250px; border-bottom:1px solid #ccc;}
+#content .subTab button {position: relative; padding:0 27px 15px;  background:none; border:0; cursor: pointer;}
+#content .subTab button:after {content:""; position: absolute; top:50%; right:0; top:0; width:1px; height:20px; background:#ccc;}
+#content .subTab button:last-child:after {display: none;}
+#content .subTab button.on { color:#1f65b2; border-bottom:2px solid #1f65b2; font-weight: bold;}
+#content .show {display: none;}
+#content .show.on {display: block;}
+#content button {outline: none;}
+#newBg {height: 100vh; background:url(../img/characterBg.jpg) no-repeat bottom center;}
+.form-control {padding:3px 5px!important; box-sizing: border-box;}
+.sms-wrap.new {padding: 0; width:265px;}
+.sms-list-wrap.new {padding:0;}
+.sms-wrap.new .sms-btm {padding:0;}
+.sms-wrap.new .sms-btm a {display: inline-block; border-radius: 5px; padding:5px 25px; font-size:14px; }
+.sms-wrap.new .sms-btm a:last-child {background:#29b3a1; border:1px solid #29b3a1;}
+.sms-wrap.new .sms-btm a:last-child:hover{background:#229283}
+.sms-wrap.new .sms-top {width: auto; height:93px; background:url(../img/top_2020.png) no-repeat top center; background-size: 100%;}
+.sms-wrap.new .sms-bdy {width: auto; background:url(../img/mid_2020.png) no-repeat center;  background-size: 100%;}
+.sms-wrap.new .sms-text {background: none; overflow-y: visible; padding: 0;width: auto; resize: none;}
+.sms-wrap.new .sms-screen {width:100%; margin:0; background:none; border:0;}
+.sms-wrap.new .sms-info {padding:0; padding-right:35px; margin:0; width:100%; border:0; background:none; box-sizing: border-box;}
+.sms-wrap.new .sms-info button {background:none; padding:3px 10px; font-size:12px; color:#333; border:1px solid #ccc;}
+.sms-wrap.new .sms-screen textarea {width:75%; padding:5px; border-bottom:2px solid #333; box-sizing: border-box;}
+.sms-wrap.new .sms-btm {width: auto; height:160px; padding-top:35px; background:url(../img/btm_2020.png) no-repeat top center;  background-size: 100%;}
+.sms-wrap.new .w100 {width:100%;}
+
+.modal-body .template {position: relative; overflow: hidden; padding:0 45px; box-sizing: border-box;}
+.modal-body .template .templeBox{float: left; width:calc(100% / 3 - 40px); padding:0 20px; margin:10px 0;}
+.modal-body .template .templeBox .title {display: block} 
+.modal-body .template .templeBox .txtArea {margin-top:10px; border-top:1px solid #333; }
+.modal-body .template .templeBox .txtArea textarea {width:100%; padding:10px;  border:0; border-bottom:1px solid #333; background:#f4f4f4; box-sizing: border-box; resize: none;}
+.modal-body .sms-info {overflow: hidden;}
+.modal-body .sms-wrap.new .sms-info {margin-top:5px; padding:0 35px;}
+.modal-body .numberInput {width: 100%; padding:0 35px; box-sizing: border-box; margin-top:20px; text-align: left;}
+.modal-body .numberInput input {margin-top:10px; width:100%; height:25px; border:1px solid #ccc;}
+
+.titleCheck {display:inline-block; margin-right:10px;}
+.scrollArea {overflow: auto; width:100%;}
+.scrollArea table {min-width:1000px;}
+
+#title.titleArea > span{display: block;}
+#title.titleArea .title {padding-bottom:5px; border-bottom:2px solid #11589b; font-size:20px; color:#11589b; font-weight: bold;}
+#title.titleArea .subTitle {padding-left:10px; color:#333; font-weight: bold;}
+
+.infoTxt{display:inline-block; font-weight: normal; font-size:14px; margin-left:20px;}
+
+#reportArea .w100 {width:100%; border:1px solid #ccc;}
+
+
+@media only print and (orientation: landscape) {
+    body { min-width:1024px; }
+    h3 {padding-left:0; background:none;}
+    #title.titleArea .subTitle {padding-left:0;}
+    .modal-footer {display:none;}
+}
+
+/* Portrait mode */
+
+@media only print and (orientation: portrait) {
+    body { min-width:1024px; }
+    h3 {padding-left:0; background:none;}
+    #title.titleArea .subTitle {padding-left:0;}
+    .modal-footer {display:none;}
+}
+
+/* 20-10-21 */
+table.write input {width:100%; height:23px; border:1px solid #ccc;}
+table.write .repeat {overflow: hidden; width:100%;}
+table.write .repeat input[type="text"] {float: left; width:70%;}
+table.write .repeat a {float: right;}
+table.write textarea {border:1px solid #ccc; width:100%;}
+
+.arrowArea {position: absolute; top:50%; width:100%; transform: translateY(-50%);}
+.arrowArea button {width:22px; height:40px; border:0; background:none; text-indent: -9999px; cursor: pointer;}
+.arrowArea .leftArrow {position: absolute; left:-15px; background: url(../img/arrow-left.png)}
+.arrowArea .rightArrow {position: absolute; right:45px; background: url(../img/arrow-right.png)}
+
+/* newlogin */
+#newLogingArea {position:relative; height:100vh; background:#fff;}
+#newLogingArea .fl {float: left;}
+#newLogingArea .fr {float: right;}
+#newLogingArea .loginArea {position: absolute; top:50%; left:50%; width:850px; padding-left:360px; padding-top:130px; padding-bottom:50px; background:url(../img/logoImg.jpg) no-repeat left center; background-size: 330px; transform: translate(-50%, -50%); box-sizing: border-box;}
+#newLogingArea .topArea {overflow: hidden; padding-bottom:10px;}
+#newLogingArea .topArea .title {color:#333; font-size:25px;}
+#newLogingArea .topArea .title span {font-weight: normal;}
+#newLogingArea .topArea .title .bold {font-weight: bold;}
+#newLogingArea .midArea {padding:15px 0; border-top:2px solid #333; border-bottom:1px solid #333;}
+#newLogingArea .infoArea {overflow: hidden;}
+#newLogingArea .infoArea .infoInput {width:80%;}
+#newLogingArea .infoArea .infoInput input {width:100%; height:30px; padding-left:10px; border:1px solid #ccc; box-sizing: border-box;}
+#newLogingArea .infoArea .infoInput input + input {margin-top:5px;}
+#newLogingArea .infoArea button {width:18%; line-height: 64px; background:#1e3f77; color:#fff; border:0; cursor: pointer;}
+#newLogingArea .checkArea {margin-top:10px;}
+#newLogingArea .checkArea > * {display: inline-block; margin-right:5px;}
+#newLogingArea .checkArea > * > * {display: inline-block; vertical-align: middle;}
+#newLogingArea .footerTxt {display: block; margin-top:5px; font-size:12px; color:#888; text-align:right;}
+
+/* 20-10-22 */
+#addData {position: relative; overflow: hidden; padding:10px 0;}
+#addData #gridHolder {margin:0;}
+#addData .fl {float:left;}
+#addData .fr {float: right;}
+#addData .fl, #addData .fr {width:45%;}
+#addData .area.fr {overflow: auto; border-top:1px solid #ccc; max-height: 350px;}
+#addData .box {overflow: hidden; border:1px solid #ccc; border-bottom:0;}
+#addData .box span {float:left; display: block; width:33%; padding:10px 0;  border-right:1px solid #ccc; text-align: center; }
+#addData .box span:last-child {border-right:0;}
+#addData .box .noData {display:block; width:100%;}
+#addData .box.top {background:#e7eff4; border-top:0;}
+#addData .btm {border-top:1px solid #ccc;}
+#addData .btm:last-child {border-bottom:1px solid #ccc;}
+#addData .arrowBtn {position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);}
+#addData .arrowBtn button {display: block; margin: 20px 0; width: 22px; height:40px; border:0; background:none; text-indent: -9999px; cursor: pointer; outline: none;}
+#addData .arrowBtn .right {background: url(../img/arrow-right.png) no-repeat center; background-size: 100%;}
+#addData .arrowBtn .left {background: url(../img/arrow-left.png) no-repeat center; background-size: 100%;}

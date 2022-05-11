@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("../include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("../include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">연계 프로토콜 설정을 수정합니다.</p>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">연계 자원정보</h4>
+					</div>
+				</div>
+				<div class="com-table-enroll">
+					<table>
+						<caption>연계기관정보 입력 표</caption>
+						<tbody>
+							<tr>
+								<th>오류메시지<br>입력필드 케이스</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="true"><!-- // 잘못된 입력 시 aria=invalid="true" -->
+									</div>
+									<p class="msg-error" role="alert" style="display:block">에러메시지</p>
+								</td>
+								<th>오류메시지<br>입력필드 + 버튼 케이스</th>
+								<td>
+									<div class="row-form-btn">
+										<input type="text" aria-invalid="true"><!-- // 잘못된 입력 시 aria=invalid="true" -->
+										<a href="#none" class="btn multi"><span>버튼</span></a>
+									</div>
+									<p class="msg-error" role="alert" style="display:block">에러메시지</p>
+								</td>
+							</tr>
+							<tr>
+								<th>오류메시지<br>셀렉트박스 케이스</th>
+								<td colspan="3">
+									<div class="row-form">
+										<select aria-invalid="true">
+											<option value="#">선택</option>
+										</select><!-- // 잘못된 입력 시 aria=invalid="true" -->
+									</div>
+									<p class="msg-error" role="alert" style="display:block">에러메시지</p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("../include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

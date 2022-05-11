@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>팝업 | 관리자 | 우편번호검색</title>
+	<!-- 공통 웹자원 : 맨 위에 위치 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+	<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+	<!-- 개발 : 팝업 -->
+	<script type="text/javascript" src="../common/js/jquery-confirm.min.js"></script>
+
+	<!-- 공통 웹자원 : 맨 마지막 위치 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+	<script type="text/javascript" src="../common/js/extension.js"></script>
+	<script>
+		$(function () {
+
+			// <!-- 200420 allChk 클래스 변경 -->
+			$(".topArea .allChk").click(function () {
+				if ($(".topArea .allChk").prop("checked")) {
+					// <!-- 200420 allChk 클래스 변경 -->
+					$(".listArea .check").prop("checked", true);
+				} else {
+					$(".listArea .check").prop("checked", false);
+				}
+			});
+
+			$("#layer_1").click(function () {
+				$(".layer_1").show();
+			});
+
+			$(".layer_1 .btnArea .btn").click(function () {
+				$(".layer_1").hide();
+			});
+			$("#layer_2").click(function () {
+				$(".layer_2").show();
+			});
+
+			$(".layer_2 .btnArea .btn").click(function () {
+				$(".layer_2").hide();
+			});
+			$("#layer_3").click(function () {
+				$(".layer_3").show();
+			});
+
+			$(".layer_3 .btnArea .btn").click(function () {
+				$(".layer_3").hide();
+			});
+			$("#layer_4").click(function () {
+				$(".layer_4").show();
+			});
+
+			$(".layer_4 .btnArea .btn").click(function () {
+				$(".layer_4").hide();
+			});
+
+		});
+	</script>
+</head>
+
+<body id="layer">
+	<div class="schTopBox newWindow">
+		<div class="phoneNumber">
+			<h2 class="layerTitle">휴대폰 본인인증</h2>
+			<div class="contentArea">
+				<div class="topArea">
+					<label class="label">
+						<!-- 200420 allChk 클래스 변경 -->
+						<input type="checkbox" class="chk allChk">
+						<!-- 200420 allChk 클래스 변경 -->
+						<span class="ico"></span>
+						<span class="lTxt">약관 전체동의</span>
+					</label>
+					<div class="fr">
+						<span class="iconArrow"></span>
+					</div>
+					<ul class="listArea">
+						<li>
+							<!-- 20-04-20 변경부분 -->
+							<div class="checkArea">
+								<input type="checkbox" id="chk1" class="check">
+								<label for="chk1">개인정보 수집이용 동의</label>
+							</div>
+							<!-- 20-04-20 변경부분 -->
+							<button type="button" class="lookBtn fr" id="layer_1">보기</button>
+						</li>
+						<li>
+							<!-- 20-04-20 변경부분 -->
+							<div class="checkArea">
+								<input type="checkbox" id="chk2" class="check">
+								<label for="chk2">고객식별정보 처리 동의</label>
+							</div>
+							<!-- 20-04-20 변경부분 -->
+							<button type="button" class="lookBtn fr" id="layer_2">보기</button>
+
+						</li>
+						<li>
+							<!-- 20-04-20 변경부분 -->
+							<div class="checkArea">
+								<input type="checkbox" id="chk3" class="check">
+								<label for="chk3">통신사 이용약관 동의</label>
+							</div>
+							<!-- 20-04-20 변경부분 -->
+							<button type="button" class="lookBtn fr" id="layer_3">보기</button>
+
+						</li>
+						<li>
+							<!-- 20-04-20 변경부분 -->
+							<div class="checkArea">
+								<input type="checkbox" id="chk4" class="check">
+								<label for="chk4">서비스 이용약관</label>
+							</div>
+							<!-- 20-04-20 변경부분 -->
+							<button type="button" class="lookBtn fr" id="layer_4">보기</button>
+
+						</li>
+					</ul>
+				</div>
+				<script>
+					$(function () {
+						$(".label.type2 .lTxt").click(function () {
+							$(".label.type2 input[type='text']").prop("checked", true);
+
+						});
+					})
+				</script>
+				<div class="bottomArea">
+					<div>
+						<span class="title">이름</span>
+						<input type="text" placeholder="이름을 입력해주세요.">
+					</div>
+					<div class="number">
+						<span class="title">주민등록번호</span>
+						<div class="w50">
+							<input type="text" maxlength="6" placeholder="">
+						</div>
+						<span class="dash">-</span>
+						<div class="w50">
+							<input type="text" maxlength="1">
+							<input type="password" maxlength="6">
+						</div>
+					</div>
+					<div class="phoneReg">
+						<span class="title">휴대폰번호</span>
+						<div class="fl">
+							<select name="" id="">
+								<option value="">LGU+</option>
+								<option value="">SK</option>
+								<option value="">KT</option>
+								<option value="">알뜰폰</option>
+							</select>
+						</div>
+						<div class="fl input">
+							<input type="text">
+						</div>
+						<div class="fr">
+							<a href="#" class="btn md de">인증요청</a>
+						</div>
+					</div>
+					<!-- 인증번호 입력란 -->
+					<div class="inputNumber">
+						<div class="w85 fl">
+							<input type="text">
+						</div>
+						<div class="w10 fr">
+							<span class="red">01:50</span>
+						</div>
+					</div>
+					<!-- 인증번호 입력란 -->
+				</div>
+			</div>
+		</div>
+		<div class="btnArea">
+			<a href="#" class="btn md de">닫기</a>
+			<a href="#" class="btn md ye">확인</a>
+		</div>
+	</div>
+	<div class="layerArea layer_1">
+		<div class="layerFrame">
+			<div class="topArea">
+				<span class="title">개인정보 수집이용 동의</span>
+			</div>
+			<div class="showArea">
+				<span class="subTitle">통신사 이용약관</span>
+				<p> 이 약관은 '본인확인서비스'를 제공하는 '회사'(이하'
+					회사'라 합니다)와 '본인 확인서비스' '이용자'(이하
+					'이용자'라 합니다)간에 '본인확인서비스' 이용에
+					관한 '회사'와 '이용자'의 권리와 의무, 기타 제반이 약관은 '본인확인서비스'를 제공하는 '회사'(이하'
+					회사'라 합니다)와 '본인 확인서비스' '이용자'(이하
+					'이용자'라 합니다)간에 '본인확인서비스' 이용에
+					관한 '회사'와 '이용자'의 권리와 의무, 기타 제반이 약관은 '본인확인서비스'를 제공하는 '회사'(이하'
+					회사'라 합니다)와 '본인 확인서비스' '이용자'(이하
+					'이용자'라 합니다)간에 '본인확인서비스' 이용에
+					관한 '회사'와 '이용자'의 권리와 의무, 기타 제반이 약관은 '본인확인서비스'를 제공하는 '회사'(이하'
+					회사'라 합니다)와 '본인 확인서비스' '이용자'(이하
+					'이용자'라 합니다)간에 '본인확인서비스' 이용에
+					관한 '회사'와 '이용자'의 권리와 의무, 기타 제반이 약관은 '본인확인서비스'를 제공하는 '회사'(이하'
+					회사'라 합니다)와 '본인 확인서비스' '이용자'(이하
+					'이용자'라 합니다)간에 '본인확인서비스' 이용에
+					관한 '회사'와 '이용자'의 권리와 의무, 기타 제반
+				</p>
+			</div>
+			<div class="btnArea mt30">
+				<a href="#" class="btn md de">닫기</a>
+			</div>
+		</div>
+	</div>
+	<div class="layerArea layer_2">
+		<div class="layerFrame">
+			<div class="top_area">
+				<span class="title">고객식별정보 처리 동의</span>
+			</div>
+			<div class="showArea">
+				통신사 이용약관
+				<br>
+				이 약관은 '본인확인서비스'를 제공하는 '회사'(이하'
+				회사'라 합니다)와 '본인 확인서비스' '이용자'(이하
+				'이용자'라 합니다)간에 '본인확인서비스' 이용에
+				관한 '회사'와 '이용자'의 권리와 의무, 기타 제반
+			</div>
+			<div class="btnArea">
+				<a href="#" class="btn md de">닫기</a>
+			</div>
+		</div>
+	</div>
+	<div class="layerArea layer_3">
+		<div class="layerFrame">
+			<div class="top_area">
+				<span class="title">통신사 이용약관 동의</span>
+			</div>
+			<div class="showArea">
+				통신사 이용약관
+				<br>
+				이 약관은 '본인확인서비스'를 제공하는 '회사'(이하'
+				회사'라 합니다)와 '본인 확인서비스' '이용자'(이하
+				'이용자'라 합니다)간에 '본인확인서비스' 이용에
+				관한 '회사'와 '이용자'의 권리와 의무, 기타 제반
+			</div>
+			<div class="btnArea">
+				<a href="#" class="btn md de">닫기</a>
+			</div>
+		</div>
+	</div>
+	<div class="layerArea layer_4">
+		<div class="layerFrame">
+			<div class="top_area">
+				<span class="title">서비스 이용약관</span>
+			</div>
+			<div class="showArea">
+				통신사 이용약관
+				<br>
+				이 약관은 '본인확인서비스'를 제공하는 '회사'(이하'
+				회사'라 합니다)와 '본인 확인서비스' '이용자'(이하
+				'이용자'라 합니다)간에 '본인확인서비스' 이용에
+				관한 '회사'와 '이용자'의 권리와 의무, 기타 제반
+			</div>
+			<div class="btnArea">
+				<a href="#" class="btn md de">닫기</a>
+			</div>
+		</div>
+	</div>
+	<!-- 버튼 종류 -->
+
+</body>
+
+</html>

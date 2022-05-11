@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>퍼블리싱 현황판</title>
+<script type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<style type="text/css">
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0; padding:0; border:0 none;}
+body,th,td,input,select,textarea,button {font-size:12px; line-height:1.5; font-family:'돋움',dotum,sans-serif; color:#666;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary, time {display:block;}
+h1,h2,h3,h4,h5,h6{font-family:"맑은 고딕", "Malgun Gothic"; font-weight:normal;}
+img, fieldset{border:0 none; vertical-align:middle;}
+iframe{overflow-x:hidden; overflow-y:hidden; margin:0; padding:0; border:0 none;}
+dl,ul,ol,menu,li {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after ,q:before, q:after {content:''; content:none;}
+input, select, textarea, label, button{vertical-align:middle;}
+label, button{cursor:pointer;}
+button {border:0 none; background-color:transparent; cursor:pointer;}
+table{border-collapse:collapse; border-spacing:0;}
+
+caption {visibility:hidden; overflow:hidden; display:none;}
+legend{position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;}
+
+table {width:100%; }
+.tit {font-size:20px; color:#333; font-weight:bold; height:20px; padding:15px 0 10px; text-align:center;}
+th {height:23px; background-color:#cdcdcd; border:1px solid #b5b5b5; padding:2px 5px 3px; text-align:center; color:#000;}
+td {border-bottom:1px solid #c9c9c9; border-right:1px solid #c9c9c9; height:15px; padding:2px 10px 3px; font-size:12px; word-break:break-all;}
+td.first {border-right:1px solid #c9c9c9; border-bottom:2px solid #c9c9c9; font-weight:bold;}
+td.last {border-bottom:2px solid #c9c9c9;}
+td:first-child{border-left:1px solid #c9c9c9;}
+td:nth-child(7),
+td:nth-child(10),
+td:nth-child(11){text-align: center;}
+
+a{color:#000; text-decoration:none;}
+a:hover,a:active,a:focus{color:#000; text-decoration:underline;}
+.Wrap{min-width:1200px; padding:20px; margin:0 auto;}
+.font_01 {color:#a1a1a1;}
+.font_02 {font-weight:bold;}
+.font_03 {color:#00f;}
+.font_04 {color:#f00;}
+.font_05{color:#909; font-weight:bold;}
+.gride{}
+.gride table{border:none;}
+.del td{text-decoration:line-through; color:#ababab; background: #f1f1f1;}
+.del td:last-child{text-decoration: none;}
+.del td.txt{color:#666; text-decoration:none;}
+.dec{text-align:right; width:1705px;}
+.point_bg{background:#FF9;}
+.type_guide{padding:10px; background:#ac1846;  text-align:center; font-size:14px; font-weight:bold;}
+.type_guide a {color:#fff;}
+.red {background:#666;}
+.red > td {color:#CCC;}
+.yellow {color:yellow}
+.new {background:yellow;}
+tr.modify { background:#e2f1ff; }
+tr.modify td { color:#002446;}
+tr.hr td { border-top:2px solid #999;}
+span.ico {display:inline-block; font-size:10px; font-family:Myriad, Verdana; line-height:1; padding:4px; background:#666; color:#fff; border-radius:3px;}
+span.ico.ing { background:#30F;}
+span.ico.done { background:#C0C;}
+span.ico.modify { background:#C39;}
+.tac{text-align: center;}
+.tbl-top{line-height: 1.1; padding-bottom: 10px;}
+.tbl-top:after{display: block; content: ''; clear: both;}
+.tbl-top .fl{float: left;}
+.tbl-top .fr{float: right;}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$(".table colgroup").prepend("<col width='50px'>");
+		$(".table thead tr").prepend("<th scope='col'>No</th>");
+		for(i=0; i <= $(".table tbody tr").length; i++)
+		$(".table tbody tr:nth-child("+ i+")").prepend("<td class='tac'>"+i+"</td>");
+	});
+</script>
+</head>
+
+<body>
+
+<div class="Wrap">
+	<div class="tit">퍼블리싱 현황판</div>
+	<div class="tbl-top">
+		<div class="fl">
+			<a href="guide/guide.html" target="_blank">[퍼블 가이드]</a>
+		</div>
+		<div class="fr">
+			<strong>[형태]</strong> T:탭, L:레이어 팝업, N:새창, S:스텝
+		</div>
+	</div>
+	<table class="table">
+	<caption>퍼블리싱 메뉴 구조</caption>
+    <colgroup>
+	    <col width="100px">
+	    <col width="120px">
+	    <col width="140px">
+	    <col width="200px">
+		<col width="200px">
+		<col width="60px" >
+		<col width="140px">
+		<col width="180px">
+		<col width="70px">
+		<col width="70px">
+	    <col width="*">
+    </colgroup>
+	<thead>
+		<tr>
+			<th scope="col">Depth 1</th>
+			<th scope="col">Depth 2</th>
+			<th scope="col">Depth 3</th>
+			<th scope="col">Depth 4</th>
+			<th scope="col">Depth 5</th>
+			<th scope="col">형태</th>
+			<th scope="col">화면ID</th>
+			<th scope="col">파일명</th>
+			<th scope="col">처리여부</th>
+			<th scope="col">작업자</th>
+			<th scope="col">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>공통</td>
+			<td>레이아웃</td>
+			<td>레이어 팝업</td>
+			<td>알림</td>
+			<td>타이틀 있을때</td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/layout_layer01.html" target="_blank">layout_layer01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>타이틀 없을 때</td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/layout_layer02.html" target="_blank">layout_layer02.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>에러페이지</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/layout_error.html" target="_blank">layout_error.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>텍스트만 수정해서 사용하세요. 191128)수정</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>로딩중</td>
+			<td>타입1</td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/layout_loading.html" target="_blank">layout_loading.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>초기 진입시</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>컨텐츠</td>
+			<td>이용약관</td>
+			<td>목록</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/layout_terms_01.html" target="_blank">layout_terms_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>동의하기</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/layout_terms_02.html" target="_blank">layout_terms_02.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>상세</td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td><a href="html/layout_terms_03.html" target="_blank">layout_terms_03.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>개발</td>
+			<td>테스트</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/dev.html" target="_blank">dev.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>실제 페이지가 아닌 개발 테스트용 html임</td>
+		</tr>
+		<tr class="hr">
+			<td>메인</td>
+			<td>카드등록 전</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/main_01.html" target="_blank">main_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>확인용 파일</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>카드등록 후</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/main_0102.html" target="_blank">main_0102.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>로딩중 포함(페이지 하단 주석처리), 카드 등록전/후 해당 파일에 모두 있습니다. 카드전 요소는 주석처리함.</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>결제수단추가</td>
+			<td></td>
+			<td align="center">L</td>
+			<td align="center"></td>
+			<td><a href="html/main_01P01.html" target="_blank">main_01P01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr class="del">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>앱설치및이동안내</td>
+			<td></td>
+			<td align="center">L</td>
+			<td align="center"></td>
+			<td>main_01P02.html</td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191206 기획삭제)</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>동의서개정안내</td>
+			<td></td>
+			<td align="center">L</td>
+			<td align="center"></td>
+			<td><a href="html/main_01P03.html" target="_blank">main_01P03.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>결제수단등록</td>
+			<td>서비스가입</td>
+			<td>약관동의</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/payregi_serv_01.html" target="_blank">payregi_serv_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가</td>
+		</tr>
+		<tr class="del">
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>상세</td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>공통레이아웃 : layout_terms_03.html</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>본인인증</td>
+			<td>인증정보 입력 전/후</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/payregi_cert_01.html" target="_blank">payregi_cert_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)수정</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>계좌등록</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/payregi_acc_01.html" target="_blank">payregi_acc_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)수정</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>완료</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/payregi_acc_02.html" target="_blank">payregi_acc_02.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191128)추가</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>은행선택</td>
+			<td></td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td><a href="html/payregi_bank_01.html" target="_blank">payregi_bank_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>ARS인증</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/payregi_ars_01.html" target="_blank">payregi_ars_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>간편비밀번호등록</td>
+			<td>입력</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/payregi_pw_01.html" target="_blank">payregi_pw_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>재입력</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/payregi_pw_02.html" target="_blank">payregi_pw_02.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>확인</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/payregi_pw_03.html" target="_blank">payregi_pw_03.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>완료</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/payregi_comp_01.html" target="_blank">payregi_comp_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191128)수정, 191210)수정</td>
+		</tr>
+		<tr>
+			<td>이용내역</td>
+			<td>결제내역</td>
+			<td>목록</td>
+			<td>내역이 있을 때</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/use_01.html" target="_blank">use_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>내역이 없을 때</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/use_0101.html" target="_blank">use_0101.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>상세</td>
+			<td></td>
+			<td></td>
+			<td align="center">L</td>
+			<td align="center"></td>
+			<td><a href="html/use_01P01.html" target="_blank">use_01P01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)수정</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>캐시백내역</td>
+			<td>목록</td>
+			<td>내역이 있을때</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/use_0201.html" target="_blank">use_0201.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>내역이 없을때</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/use_0202.html" target="_blank">use_0202.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가</td>
+		</tr>
+		<tr>
+			<td>설정</td>
+			<td>회원정보관리</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_mem_01.html" target="_blank">set_mem_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)수정</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>이용중지/회원탈퇴</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_mem_0102.html" target="_blank">set_mem_0102.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>이용중지</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_mem_0103.html" target="_blank">set_mem_0103.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>회원탈퇴</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_mem_0104.html" target="_blank">set_mem_0104.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>간편비밀번호변경</td>
+			<td>입력</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_pw_01.html" target="_blank">set_pw_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>새로운 입력</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_pw_02.html" target="_blank">set_pw_02.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>재입력</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_pw_03.html" target="_blank">set_pw_03.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>생체인증 설정</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_cert_01.html" target="_blank">set_cert_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가, 퍼블까지만 작업하면 됨</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>안내</td>
+			<td></td>
+			<td></td>
+			<td align="center">L</td>
+			<td align="center"></td>
+			<td><a href="html/set_cert_01P01.html" target="_blank">set_cert_01P01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)추가, 퍼블까지만 작업하면 됨</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>결제수단관리</td>
+			<td>목록</td>
+			<td>내역이 있을 때</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_pay_01.html" target="_blank">set_pay_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>내역이 없을 때</td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_pay_0101.html" target="_blank">set_pay_0101.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>현금영수증설정</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/set_cash_01.html" target="_blank">set_cash_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>고객센터</td>
+			<td>공지사항</td>
+			<td>목록</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/cust_noti_01.html" target="_blank">cust_noti_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>상세</td>
+			<td></td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td><a href="html/cust_noti_02.html" target="_blank">cust_noti_02.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>FAQ</td>
+			<td>목록</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/cust_faq_01.html" target="_blank">cust_faq_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>상세</td>
+			<td></td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td><a href="html/cust_faq_02.html" target="_blank">cust_faq_02.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>서비스제안</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td><a href="html/cust_serv_01.html" target="_blank">cust_serv_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)수정</td>
+		</tr>
+		<tr class="del">
+			<td></td>
+			<td>이용약관</td>
+			<td>목록</td>
+			<td></td>
+			<td></td>
+			<td align="center"></td>
+			<td align="center"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>공통레이아웃 : layout_terms_01.html</td>
+		</tr>
+		<tr class="del">
+			<td></td>
+			<td></td>
+			<td>상세</td>
+			<td></td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td>공통레이아웃 : layout_terms_03.html, 191218)마크업 수정</td>
+		</tr>
+		<tr class="hr">
+			<td>결제</td>
+			<td>정보확인</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td><a href="html/pay_01.html" target="_blank">pay_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)수정, 191218)잔액조회버튼 추가</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>결제수단미등록</td>
+			<td></td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td><a href="html/pay_0101.html" target="_blank">pay_0101.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191128)수정, 191210)수정</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>완료</td>
+			<td>정상</td>
+			<td></td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td><a href="html/pay_02.html" target="_blank">pay_02.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191210)수정</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td>실패</td>
+			<td></td>
+			<td></td>
+			<td align="center">N</td>
+			<td align="center"></td>
+			<td><a href="html/pay_02_01.html" target="_blank">pay_02_01.html</a></td>
+			<td>완료</td>
+			<td>오해영</td>
+			<td>191128)수정, 191210)수정</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</body>
+</html>

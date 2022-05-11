@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>BC 페이북</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/slick.js"></script>	
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<!-- #wrap -->
+	<div id="wrap" class="savings">
+
+		<!-- 헤더 -->
+		<header>
+			<a href="#" class="back-btn">뒤로가기</a>
+			<h1>적금 설정</h1>
+			<a href="#" class="close-btn">닫기</a>
+		</header>
+		<!-- //헤더 -->	
+		
+		<!-- 컨텐츠 -->		
+		<section class="container">
+			<div class="com-point-txt">
+				<div class="point-cell">
+					<span class="txt">기간</span>
+					<span class="p-txt">6개월</span>
+				</div>				
+				<div class="point-cell">
+					<span class="txt">연이율</span>
+					<span class="p-txt">2.3%</span>
+				</div>
+				<div class="point-cell">
+					<span class="txt">페이북 혜택</span>
+					<span class="p-txt">+2.2%</span>
+				</div>
+			</div>
+            <div class="auto-transfer-content">
+                <span class="title">출금계좌</span>
+                <div class="send-info-area">
+                    <div class="account-cnt">
+                        <a href="#" class="pop-btn on">수협 101012797718</a><!-- pop-btn 정보 있을시 글자 활성화 클래스 on// -->
+                    </div>                    
+                </div>                
+            </div>
+            <div class="auto-transfer-content">
+                <span class="title">출금계좌 비밀번호</span>
+                <div class="send-info-area">
+                    <div class="account-cnt">
+                        <input type="password" placeholder="비밀번호 입력">
+                    </div>                    
+                </div>                
+            </div>
+            <div class="auto-transfer-content">
+                <span class="title">첫 입금액</span>
+                <div class="send-info-area">
+                    <div class="account-cnt">
+                        <input type="text" placeholder=" 적금 가입 금액 입력">
+                    </div>                    
+                </div>
+                <div class="info-area">
+					<span class="info-txt">1천원 이상 20만원 이하</span>
+				</div>
+            </div>
+			<div class="toggle-check-content">
+				<div class="top-area">
+					<span class="title">입금 방식</span>					
+				</div>
+				<div class="check-area">
+					<div class="check-cnt">
+						<input type="radio" name="radio-2" id="radio-2-1" checked>
+						<label for="radio-2-1">자동이체</label>
+					</div>
+					<div class="check-cnt">
+						<input type="radio" name="radio-2" id="radio-2-2">
+						<label for="radio-2-2">자유 입금</label>
+					</div>
+				</div>
+                <div class="more-notice-info2">
+                    <p class="txt">자동이체 설정시 익월부터 적용됩니다.</p>
+                </div>
+			</div>
+			<div class="auto-transfer-content">
+				<span class="title">자동 이체 계좌</span>
+				<div class="send-info-area">
+					<div class="money-cnt">
+						<div class="left">
+							<a href="#" class="pop-btn">이체일자</a><!-- pop-btn 정보 있을시 글자 활성화 클래스 on// -->
+						</div>
+						<div class="right"><!-- 에러일시 : error// -->
+							<input type="text" placeholder="월 입금액 입력" value="">
+							<span class="txt">원</span>
+						</div>
+					</div>
+				</div>
+				<div class="info-area"><!-- 에러일시 : error// -->
+					<span class="info-txt">1천원 이상 20만원 이하</span>
+				</div>
+                <div class="more-notice-info">
+                    <span class="icon">안내</span>
+                    <p class="txt">적금 만기시 자동해지되어 지정하신 출금계좌로 입금됩니다.</p>
+                </div>
+			</div>
+		</section>
+		<!-- //컨텐츠 -->
+
+		<!-- 하단 버튼 -->
+		<div class="com-btn-content">
+			<a href="#" class="full disabled">다음</a>
+		</div>
+		<!-- //하단 버튼 -->
+
+	</div>
+	<!-- //#wrap -->
+	
+</body>
+</html>

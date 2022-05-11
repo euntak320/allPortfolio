@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>Utrade Hub 영문 IA</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+	<script src="html/assets/js/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: 'Roboto', sans-serif;
+			;
+		}
+
+		#wrap {
+			padding: 10px;
+		}
+
+		#header {
+			position: relative;
+		}
+
+		#header .titleArea {
+			overflow: hidden;
+			padding-bottom: 20px;
+			border-bottom: 3px solid #ddd;
+		}
+
+		#header .titleArea>* {
+			display: inline-block;
+			width: 49%;
+			vertical-align: middle;
+		}
+
+		#header .titleArea .fr {
+			line-height: 26px;
+		}
+
+		iframe {
+			position: absolute;
+			right: 0;
+		}
+
+		table {
+			width: 100%;
+			margin-top: 30px;
+			border-collapse: collapse;
+		}
+
+		table th {
+			background: #f7c192;
+		}
+
+		table td,
+		table th {
+			padding: 7px 2px;
+			border: 1px solid #ddd;
+			font-size: 14px;
+			font-weight: 500;
+			text-align: center;
+		}
+
+		table .depth {
+			border-top: 1px solid #333;
+		}
+
+		section {padding:10px;}
+	</style>
+
+	<script>
+		$(function(){
+			$("table tr").each(function( index ){
+				$(this).find("td").eq(0).text( index-1 );
+            });
+		});
+	</script>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+
+		<!-- header -->
+		<header id="header">
+			<div class="titleArea">
+				<div class="fl">
+					<h1>Utrade Hub 영문</h1>
+				</div>
+				<div class="fr">
+					<p>HTML5 / utf-8</p>
+				</div>
+			</div>
+
+		</header>
+		<!--// header -->
+
+		<!-- section -->
+		<section id="contents">
+			<iframe src="" frameborder="0"></iframe>
+			<!-- 메뉴 구조도 -->
+			<div class="table_style01">
+				<table>
+					<colgroup>
+						<col span="8" style="width:atuo" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2">구분</th>
+							<th scope="col" rowspan="2">1depth</th>
+							<th scope="col" rowspan="2">2depth</th>
+							<th scope="col" rowspan="2">3depth</th>
+							<th scope="col" rowspan="2">URL</th>
+							<th scope="col" colspan="2">브라우저/기기 검수</th>
+							<th scope="col" rowspan="2">완료일자</th>
+							<th scope="col" rowspan="2">최종수정일자</th>
+							<th scope="col" rowspan="2">기타사항</th>
+						</tr>
+						<tr>
+							<th scope="col">IE</th>
+							<th scope="col">Chrome</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="depth">
+							<td></td> <!-- 분류 -->
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/index.html" target="_blank">index.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr class="depth">
+							<td></td> <!-- 메인 -->
+							<td rowspan="4">About utradeHub</td>
+							<td>Introduction</td>
+							<td></td>
+							<td>
+								<a href="html/page_1100.html" target="_blank">page_1100.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>Background</td>
+							<td></td>
+							<td>
+								<a href="html/page_1200.html" target="_blank">page_1200.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>Milestones</td>
+							<td></td>
+							<td>
+								<a href="html/page_1300.html" target="_blank">page_1300.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>Expected Benefits</td>
+							<td></td>
+							<td>
+								<a href="html/page_1400.html" target="_blank">page_1400.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td rowspan="12">Services</td>
+							<td rowspan="5">uTrade</td>
+							<td>Introduce</td>
+							<td>
+								<a href="html/page_2110.html" target="_blank">page_2110.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>Service Details</td>
+							<td>
+								<a href="html/page_2120.html" target="_blank">page_2120.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>e-L/C Service</td>
+							<td>
+								<a href="html/page_2130.html" target="_blank">page_2130.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>e-B/L Service</td>
+							<td>
+								<a href="html/page_2140.html" target="_blank">page_2140.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>e-NEGO Service</td>
+							<td>
+								<a href="html/page_2150.html" target="_blank">page_2150.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td rowspan="3">uLogis</td>
+							<td>Introduce</td>
+							<td>
+								<a href="html/page_2210.html" target="_blank">page_2210.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>Service Details</td>
+							<td>
+								<a href="html/page_2220.html" target="_blank">page_2220.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>e-B/L Services</td>
+							<td>
+								<a href="html/page_2230.html" target="_blank">page_2230.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td rowspan="2">uBankers</td>
+							<td>Introduction</td>
+							<td>
+								<a href="html/page_2310.html" target="_blank">page_2310.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>Service Details</td>
+							<td>
+								<a href="html/page_2320.html" target="_blank">page_2320.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>uTradeSearch</td>
+							<td></td>
+							<td>
+								<a href="html/page_2400.html" target="_blank">page_2400.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>uCustoms</td>
+							<td></td>
+							<td>
+								<a href="html/page_2500.html" target="_blank">page_2500.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr class="depth">
+							<td></td> <!-- 메인 -->
+							<td rowspan="4">Architecture</td>
+							<td>Brief Summary</td>
+							<td></td>
+							<td>
+								<a href="html/page_3100.html" target="_blank">page_3100.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>User Interface</td>
+							<td></td>
+							<td>
+								<a href="html/page_3200.html" target="_blank">page_3200.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>e-Trade Document Repository</td>
+							<td></td>
+							<td>
+								<a href="html/page_3300.html" target="_blank">page_3300.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>Security Authentication</td>
+							<td></td>
+							<td>
+								<a href="html/page_3400.html" target="_blank">page_3400.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr class="depth">
+							<td></td> <!-- 메인 -->
+							<td rowspan="5">Global Initiatives</td>
+							<td>Introduction</td>
+							<td></td>
+							<td>
+								<a href="html/page_4100.html" target="_blank">page_4100.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>Standards</td>
+							<td></td>
+							<td>
+								<a href="html/page_4200.html" target="_blank">page_4200.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>Global e-Trade Network</td>
+							<td></td>
+							<td>
+								<a href="html/page_4300.html" target="_blank">page_4300.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>International Cooperation</td>
+							<td></td>
+							<td>
+								<a href="html/page_4400.html" target="_blank">page_4400.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td> <!-- 메인 -->
+							<td>PR and Consulting Services</td>
+							<td></td>
+							<td>
+								<a href="html/page_4500.html" target="_blank">page_4500.html</a> <!-- URL -->
+							</td>
+							<td></td> <!-- IE -->
+							<td></td> <!-- Chrom -->
+							<td>20.12.27</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+	<!--// wrap -->
+
+</body>
+
+</html>

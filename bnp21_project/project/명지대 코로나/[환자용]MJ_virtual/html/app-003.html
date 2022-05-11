@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+</head>
+
+<body>
+    <div class="joinArea">
+        <div class="joinVisual">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide imgSize">
+                    <img src="../assets/images/img_intro01.png" alt="">
+                    <span class="txt">
+                        <span>언택트 시대</span>의 필수 서비스 !
+                    </span>
+                </div>
+                <div class="swiper-slide imgSize">
+                    <img src="../assets/images/img_intro02.png" alt="">
+                    <span class="txt">
+                        어디서나 가능한 <span>원격치료</span>
+                    </span>
+                </div>
+                <div class="swiper-slide imgSize">
+                    <img src="../assets/images/img_intro03.png" alt="">
+                    <span class="txt">
+                        원하는 진료과목을<br><span>원하는 주치의에게 바로</span>
+                    </span>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="btmArea">
+            <button type="button" class="join">회원가입</button>
+            <button type="button" class="normal">로그인</button>
+        </div>
+    </div>
+
+    <script>
+        var swiper = new Swiper('.joinVisual', {
+            slidesPerView: "auto",
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            breakpoints: {
+                500: {
+                    slidesPerView: 1,
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>

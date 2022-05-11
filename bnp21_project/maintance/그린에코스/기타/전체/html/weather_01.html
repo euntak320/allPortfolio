@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<title>기상 - 경기도 대기환경</title>
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/jquery-ui.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+	<!-- 헤더부분 -->
+	<header>
+		<div class="top_area">
+			<h1>
+				<a href="#none">경기도대기환경 진단평가 시스템</a>
+			</h1>
+			<div class="login_area">
+				<a href="#none" class="admin">관리자</a>
+				<a href="#none" class="my_info">내 정보</a>
+				<a href="#none" class="login">로그아웃</a>
+				<!-- <a href="#none" class="login">로그인</a> -->
+			</div>
+		</div>
+		<div class="bottom_area">
+			<div class="menu_area">
+				<span class="menu_txt ">일일진단평가</span>
+				<span class="menu_txt">대기정보</span>
+				<span class="menu_txt on">기상현황</span>
+				<span class="menu_txt ">모델링결과</span>
+				<span class="menu_txt ">사이트맵</span>
+				<a href="#" class="menu_btn">햄버거 메뉴</a>
+			</div>
+		</div>
+	</header>
+	<!-- 헤더부분 -->
+	<section>
+		<div class="content_frame">
+			<div class="left_menu">
+				<span class="menu_title">기상현황</span>
+				<div class="left_area">
+					<a href="#none" class="on">기상</a>
+					<a href="#none">기상도표</a>
+					<a href="#none">위성자료</a>
+					<a href="#none">분석영상</a>
+				</div>
+			</div>
+			<div class="content_area">
+				<div class="title_area">
+					<span class="title">기상</span>
+					<div class="nav_area">
+						<span class="home">처음</span>
+						<span class="left">기상현황</span>
+						<span class="left">기상</span>
+					</div>
+				</div>
+				<div class="input_data">
+					<fieldset>
+						<legend>검색</legend>
+						<div class="input_cell">
+							<span class="hidden"><label for="src2">날짜</label></span>
+							<div class="com_input mg0">
+								<input type="text" class="cal" id="src2">
+							</div>
+							<button type="button" class="btn">조회</button>
+						</div>
+						<div class="input_cell">
+							<div class="btn_day">
+								<button type="button" class="prev">1D</button>
+								<button type="button" class="today">현재</button>
+								<button type="button" class="next">1D</button>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="tab_area col8">
+					<a href="#none" class="on">수원</a>
+					<a href="#none">백령도</a>
+					<a href="#none">파주</a>
+					<a href="#none">동두천</a>
+					<a href="#none">양평</a>
+					<a href="#none">이천</a>
+					<a href="#none">서울</a>
+					<a href="#none">인천</a>
+				</div>
+
+				<!-- 시계열 그래프 20191023 수정 -->
+				<div class="table_area center">
+					<p class="tit_h3">시계열 그래프</p>
+					<table>
+						<caption>시계열 그래프</caption>
+						<colgroup>
+							<col style="width:10%">
+							<col style="width:40%">
+							<col style="width:10%">
+							<col style="width:40%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" class="bgGray">기온<br><small>(℃)</small></th>
+								<td><img src="../assets/images/temp/temp_graph7_1.jpg" alt="샘플"></td>
+								<th scope="row" class="bgGray">습도<br><small>(%)</small></th>
+								<td><img src="../assets/images/temp/temp_graph7_1.jpg" alt="샘플"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgGray">풍향<br><small>(㎧)</small></th>
+								<td><img src="../assets/images/temp/temp_graph7_1.jpg" alt="샘플"></td>
+								<th scope="row" class="bgGray">기압<br><small>(mmHg)</small></th>
+								<td><img src="../assets/images/temp/temp_graph7_1.jpg" alt="샘플"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="bgGray">풍속<br><small>(㎧)</th>
+								<td><img src="../assets/images/temp/temp_graph7_1.jpg" alt="샘플"></td>
+								<th scope="row" class="bgGray">강수량<br>(㎜)</small></th>
+								<td><img src="../assets/images/temp/temp_graph7_1.jpg" alt="샘플"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //시계열 그래프 -->
+
+				<!-- 데이터 테이블 -->
+				<div class="dataTable_wrap">
+					<p class="tit_h3">데이터 테이블</p>
+					<div class="btn_zone">
+						<button type="button" class="btnXS  hideToggle close" data="toggleTable">데이터 테이블</button>
+					</div>
+					<div class="data_table" id="toggleTable">
+						<div class="tb_wrap">
+							<div class="tb_left">
+								<table>
+									<caption>시도별 리스트</caption>
+									<colgroup>
+										<col style="width:80px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">권역</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">기온</th>
+										</tr>
+										<tr>
+											<th scope="row">풍량</th>
+										</tr>
+										<tr>
+											<th scope="row">풍속</th>
+										</tr>
+										<tr>
+											<th scope="row">습도</th>
+										</tr>
+										<tr>
+											<th scope="row">기압</th>
+										</tr>
+										<tr>
+											<th scope="row">강수량</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="tb_right">
+								<table>
+									<caption>시간별 데이타</caption>
+									<colgroup>
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:70px;">
+										<col style="width:100px;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">01</th>
+											<th scope="col">02</th>
+											<th scope="col">03</th>
+											<th scope="col">04</th>
+											<th scope="col">05</th>
+											<th scope="col">06</th>
+											<th scope="col">07</th>
+											<th scope="col">08</th>
+											<th scope="col">09</th>
+											<th scope="col">10</th>
+											<th scope="col">11</th>
+											<th scope="col">12</th>
+											<th scope="col">13</th>
+											<th scope="col">14</th>
+											<th scope="col">15</th>
+											<th scope="col">16</th>
+											<th scope="col">17</th>
+											<th scope="col">18</th>
+											<th scope="col">19</th>
+											<th scope="col">20</th>
+											<th scope="col">21</th>
+											<th scope="col">22</th>
+											<th scope="col">23</th>
+											<th scope="col">24</th>
+											<th scope="col">평균</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //tb_right -->
+						</div>
+						<!-- //tb_wrap -->
+					</div>
+					<!-- // data_table -->
+				</div>
+				<!-- // 데이터 테이블 -->
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+		<span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+	</footer>
+</body>
+
+</html>

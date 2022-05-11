@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>1-1_공통분류 관리</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+	<div id="GNB">
+		<h1><a href="#" tabindex="1"><img src="../images/logo.png" alt="상상스토리" /></a></h1>
+		<ul>
+			<li><a href="#">Main</a></li>
+			<li class="on"><a href="#">수집 메타 관리</a>
+				<ul>
+					<li class="on"><a href="#">공통분류 관리</a>
+					</li>
+					<li><a href="#">API 메타정보 관리</a></li>
+					<li><a href="#">API 전문정보 관리</a></li>
+				</ul>
+			</li>
+			<li><a href="#">수집 관리</a></li>
+			<li><a href="#">수집 현황 관리</a></li>
+		</ul>
+	</div>
+
+	<div id="SUB">
+		<div class="header">
+			<button type="button" class="toggle"><img src="../images/toggle_close.png" alt="메뉴 닫기"/></button>
+			<!-- Type 1 -->
+			<div class="top_nav">
+				<a href="#" class="home">Home</a>
+				<!-- 1depth -->
+				<span>&gt;</span>
+				<button type="button" class="nav_btn1">수집 메타 관리</button>
+				<ul class="nav_menu nav_depth1">
+					<li><a href="#">Main</a></li>
+					<li class="on"><a href="#">수집 메타 관리</a></li>
+					<li><a href="#">수집 관리</a></li>
+					<li><a href="#">수집 현황 관리</a></li>
+				</ul>
+				<!-- //1depth -->
+				<!-- 2depth -->
+				<span>&gt;</span>
+				<button  type="button" class="nav_btn2 last">공통분류 관리</button>
+				<ul class="nav_menu nav_depth2">
+					<li class="on"><a href="#">공통분류 관리</a></li>
+					<li><a href="#">API 메타정보 관리</a></li>
+					<li><a href="#">API 전문정보 관리</a></li>
+				</ul>
+				<!-- //2depth -->
+			</div>
+			<!-- //Type 1 -->
+			<!-- Type 2 -->
+			<div class="top_menu">
+				<ul>
+					<li><a href="#">Main</a></li>
+					<li class="on"><a href="#">수집 메타 관리</a></li>
+					<li><a href="#">수집 관리</a></li>
+					<li><a href="#">수집 현황 관리</a></li>
+				</ul>
+			</div>
+			<!-- //Type 2 -->
+			<div class="log_info">
+				<span class="user_info">Admin</span>
+				<button type="button" class="btn red" tabindex="1">로그아웃</button>
+			</div>
+		</div>
+
+		<div class="contents_area">
+
+			<h3>공통분류 관리</h3>
+
+			<div class="section">
+				<form id="search">
+					<span class="small_title">Search</span>
+					<select id="sns_type">
+						<option value="분류명">분류명</option>
+						<option value="공공데이터">공공데이터</option>
+						<option value="포털데이터">포털데이터</option>
+					</select>
+					<input type="text" id="search_word" title="검색" class="basic" style="width:274px;" />
+					<input type="submit" id="search_btn" class="btn green" value="검색">
+				</form>
+			</div>
+
+			<div class="tb_top_area">
+				<h4>공통분류 관리목록</h4>
+				<div class="btn_right">
+					<button type="button" class="btn blue" onclick="window.open('1-1_공통분류 관리_popup.html', 'popup', 'scrollbars=yes, resizable=no, copyhistory=no, width=520, height=400')">코드등록</button>
+				</div>
+			</div>
+
+			<div class="table_wrap">
+				<table class="col_type" cellpadding="0" cellspacing="0" border="0" width="100%" summary="분류코드, 분류명, 사용여부, 기능으로 구성된 테이블입니다.">
+					<caption>공통분류 관리</caption>
+					<colgroup>
+						<col width="5%" />
+						<col width="10%" />
+						<col width="60%" />
+						<col width="10%" />
+						<col width="15%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col"><input type="checkbox" id="check_all" title="전체선택" /></th>
+							<th scope="col">분류코드</th>
+							<th scope="col">분류명</th>
+							<th scope="col">사용여부</th>
+							<th scope="col">기능</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="checkbox" id="check01" title="01번째 행 선택" /></td>
+							<td>01</td>
+							<td>공공데이터</td>
+							<td>Y</td>
+							<td>
+							<button type="button" class="btn blue">수정</button>
+							<button type="button" class="btn gray">삭제</button>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="check02" title="02번째 행 선택" /></td>
+							<td>02</td>
+							<td>포털데이터</td>
+							<td>Y</td>
+							<td>
+							<button type="button" class="btn blue">수정</button>
+							<button type="button" class="btn gray">삭제</button>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="check03" title="03번째 행 선택" /></td>
+							<td>03</td>
+							<td>SNS데이터</td>
+							<td>N</td>
+							<td>
+							<button type="button" class="btn blue">수정</button>
+							<button type="button" class="btn gray">삭제</button>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="check04" title="04번째 행 선택" /></td>
+							<td>04</td>
+							<td>금융데이터</td>
+							<td>Y</td>
+							<td>
+							<button type="button" class="btn blue">수정</button>
+							<button type="button" class="btn gray">삭제</button>
+							</td>
+						</tr>
+						<tr>
+							<td><input type="checkbox" id="check05" title="05번째 행 선택" /></td>
+							<td>05</td>
+							<td>통계데이터</td>
+							<td>Y</td>
+							<td>
+							<button type="button" class="btn blue">수정</button>
+							<button type="button" class="btn gray">삭제</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div> <!-- //table_wrap -->
+
+		</div> <!-- //contents_area -->
+	</div> <!-- //#SUB -->
+
+</div>
+
+</body>
+</html>

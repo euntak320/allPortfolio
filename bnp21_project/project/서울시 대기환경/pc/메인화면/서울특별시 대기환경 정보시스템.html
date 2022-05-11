@@ -1,0 +1,4321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0044)http://cleanair.seoul.go.kr/main.htm#tab1_02 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" data-livestyle-extension="available"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>서울특별시 대기환경 정보시스템</title>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	.pop-layer {display:none; position: absolute; top: 16%; left: 12%; width: 750px; height:auto;  background-color:#fff; border: 5px solid #3571B5; z-index: 100;}
+	.pop-layer2 {display:none; position: absolute; top: 16%; left: 12%; width: 400px; height:auto;  background-color:#fff; border: 5px solid #3571B5; z-index: 100;}
+	.pop-layer .pop-container {padding: 10px 15px;}
+	.pop-layer p.ctitle {font-weight:bold; font-size:16px; color: #666; line-height: 25px; background-color:#DDD; text-align:center;}
+	.pop-layer p.ctxt {color: #666; line-height: 25px;}
+	.pop-layer .btn-r {width: 100%; margin:0 0 0; padding-top: 10px; border-top: 1px solid #DDD; text-align:right;}
+	a.cbtn {display:inline-block; height:25px; padding:0 14px 0; border:1px solid #304a8a; background-color:#3f5a9d; font-size:13px; color:#fff; line-height:25px;}
+	a.cbtn:hover {border: 1px solid #091940; background-color:#1f326a; color:#fff;}
+	a.cbtn2 {display:inline-block; height:25px; padding:0 14px 0; font-size:13px; color:#000; line-height:25px;}
+</style>
+<script type="text/javascript" src="js/saved_resource" async="" charset="UTF-8"></script>
+<script type="text/javascript" src="js/AutoEvent.js" async="" charset="utf-8"></script>
+<script type="text/javascript" src="js/seetoc.js" async="" charset="utf-8"></script>
+<script type="text/javascript" src="js/wl6.js" async="" charset="utf-8"></script>
+<script async="" src="js/analytics.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/maintype.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/rsa.js"></script>
+<script type="text/javascript" src="js/jsbn.js"></script>
+<script type="text/javascript" src="js/prng4.js"></script>
+<script type="text/javascript" src="js/rng.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+$( function(){
+  weatherbg_change();
+  function weatherbg_change(){
+    var d = new Date();
+        if (d.getHours() > 18 || d.getHours() < 6) {
+          $('body').addClass('night');
+          $('#skipNav').addClass('night');
+        } else {
+          $('body').removeClass('night');
+          $('#skipNav').removeClass('night');
+        }
+  }
+
+
+	$('#actionCtrBtn').click(function(){
+		// 새로만든 layer에 대한 폼체크
+		var msrAdmVal = $('#msrAdm').val();
+		if(!msrAdmVal){
+			alert('지역을 선택하세요.');
+			return false;
+		}
+
+		var requireCheck = $('.requireSmsChk').is(':checked');	// 미세먼지와 오존 중 하나는 체크 되어야 함.
+		if(!requireCheck){
+			alert('오염물질을 선택하세요.');
+			return false;
+		}
+
+		var pmSms = $('#smsPm10').val();
+		if(pmSms == 'Y'){
+			var pmSmsCheck = $('.pmChkTarget').is(':checked');
+			if(!pmSmsCheck){
+				alert('메세먼지 예보,경보를 선택하세요.');
+				return false;
+			}
+		}
+
+		var ozoneSms = $('#smsOzone').val();
+		if(ozoneSms == 'Y'){
+			var ozoneSmsCheck = $('.ozoneChkTarget').is(':checked');
+			if(!ozoneSmsCheck){
+				alert('오존 예보,경보를 선택하세요.');
+				return false;
+			}
+		}
+
+		smsSend();
+	});
+
+	$('#pmChkForecast').click(function(){
+		var pmF = $('#pmForecast').val();
+		if(pmF == 'N'){
+			$('#pmForecast').val('Y');
+		}else{
+			$('#pmForecast').val('N');
+		}
+	});
+	$('#pmChkAlert').click(function(){
+		var pmA = $('#pmAlert').val();
+		if(pmA == 'N'){
+			$('#pmAlert').val('Y');
+		}else{
+			$('#pmAlert').val('N');
+		}
+	});
+	$('#ozoneChkForecast').click(function(){
+		var ozoneF = $('#ozoneForecast').val();
+		if(ozoneF == 'N'){
+			$('#ozoneForecast').val('Y');
+		}else{
+			$('#ozoneForecast').val('N');
+		}
+	});
+	$('#ozoneChkAlert').click(function(){
+		var ozoneA = $('#ozoneAlert').val();
+		if(ozoneA == 'N'){
+			$('#ozoneAlert').val('Y');
+		}else{
+			$('#ozoneAlert').val('N');
+		}
+	});
+
+	$('#pmChkAll').click(function(){
+		var nowPmChkAll = $('#smsPm10').val();
+		if(nowPmChkAll == 'N'){
+			$('#smsPm10').val('Y');
+			$('#smsPm25').val('Y');
+			$('.pmChkTarget').removeAttr('disabled');
+		}else{
+			$('#smsPm10').val('N');
+			$('#smsPm25').val('N');
+			$('.pmChkTarget').val('N');
+			$('#pmForecast, #pmAlert').val('N');
+			$('.pmChkTarget').prop('checked',false);
+			$('.pmChkTarget').attr('disabled', true);
+		}
+	});
+	$('#ozoneChkAll').click(function(){
+		var nowOzoneChkAll = $('#smsOzone').val();
+		if(nowOzoneChkAll == 'N'){
+			$('#smsOzone').val('Y');
+			$('.ozoneChkTarget').removeAttr('disabled');
+		}else{
+			$('#smsOzone').val('N');
+			$('.ozoneChkTarget').val('N');
+			$('#ozoneAlert, #ozoneForecast').val('N');
+			$('.ozoneChkTarget').prop('checked',false);
+			$('.ozoneChkTarget').attr('disabled', true);
+		}
+	});
+});
+
+  var intnum = 0;
+  var intnum1 = 0;
+  var intnum2=0;
+  var totalcoverimg = 5;
+  var totalcoverimg1 = 1;
+  var totalbancount = 16;
+  var sliderIntervalID = "";
+  var sliderIntervalID1 = "";
+  var sliderIntervalID2 = "";
+
+function hasClass(element,value) {
+    var re = new RegExp("(^|\\s)" + value + "(\\s|$)");
+    return re.test(element.className);
+}
+function addClass(element,value) {
+    if (!element.className){
+    element.className = value;
+    } else {
+        if (!hasClass(element,value)) element.className += " " + value;
+    }
+}
+function removeClass(element,value) {
+    if (element.className && hasClass(element,value)) {
+        var re = new RegExp("(^|\\s)" + value);
+        element.className = element.className.replace(re,"");
+    }
+}
+
+function getElementsByClass(node, tagName, srchClass) {
+    node = node || window.document;
+    tagName = tagName ? tagName.toUpperCase() : "*";
+    var eles = node.getElementsByTagName(tagName);
+
+  if(!srchClass) return eles;
+
+    var arr = new Array;
+    for (var i=0; i<eles.length; i++) {
+        if (hasClass(eles[i],srchClass)) arr.push(eles[i]);
+    }
+    return arr;
+}
+
+function parentEle(ele, tagName, srchClass){
+  if(typeof tagName=="number"){
+    for(var i=0; i<tagName; i++){
+      if(ele!=null) ele = ele.parentNode;
+    }
+    return ele;
+  }
+
+  tagName = tagName ? tagName.toUpperCase() : "*";
+  if(srchClass){
+    if(tagName!="*"){
+      while((ele.nodeName!=tagName || !hasClass(ele,srchClass)) && ele.nodeName!="BODY")
+        ele = ele.parentNode;
+    }else{
+      while(!hasClass(ele,srchClass) && ele.nodeName!="BODY")
+        ele = ele.parentNode;
+    }
+  }else{
+    if(tagName!="*"){
+      while(ele.nodeName!=tagName && ele.nodeName!="BODY")
+        ele = ele.parentNode;
+    }else{
+      ele = ele.parentNode;
+    }
+  }
+  return ele;
+}
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var defList = new Array("111123","111121","111131","111142","111141","111152","111151","111161","111291","111171",
+    "111311","111181","111191","111201","111301","111212","111221","111281","111231","111241",
+    "111251","111262","111261","111273","111274");
+
+var areaList = new Array(25);
+var idx = 0;
+var cd1 = 0;
+var cd2 = 0;
+var cd3 = 0;
+var cd4 = 0;
+var cc=0;
+
+  $(function(){
+    var area = getCookie('AREA');
+    var areaNm = getCookie('AREA-NM');
+
+    if(areaNm){
+    	$('#attentionArea').attr('alt', areaNm);
+    }else{
+    	$('#attentionArea').attr('alt','관심구역 설정');
+    }
+
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111123'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '종로구';
+      areaList[idx][2] = '111123';
+      areaList[idx][3] = chgText('');
+      areaList[idx][8] = chgText('41');
+      areaList[idx][9] = chgText('36');
+      areaList[idx][6] = chgText('37');
+      areaList[idx][7] = chgText('57');
+      areaList[idx][4] = chgText('12');
+      areaList[idx][5] = chgText('11');
+      areaList[idx][10] = chgText('');
+      areaList[idx][11] = chgText('');
+      areaList[idx][12] = chgText('');
+      areaList[idx][13] = chgText('');
+      areaList[idx][14] = chgText('');
+      areaList[idx][15] = chgText('');
+      areaList[idx][16] = chgText('');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '1';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '0';
+      areaList[idx][21] = '0';
+
+      if('111123' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111121'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '중구';
+      areaList[idx][2] = '111121';
+      areaList[idx][3] = chgText('79');
+      areaList[idx][8] = chgText('43');
+      areaList[idx][9] = chgText('56');
+      areaList[idx][6] = chgText('36');
+      areaList[idx][7] = chgText('56');
+      areaList[idx][4] = chgText('15');
+      areaList[idx][5] = chgText('37');
+      areaList[idx][10] = chgText('0.023');
+      areaList[idx][11] = chgText('39');
+      areaList[idx][12] = chgText('0.047');
+      areaList[idx][13] = chgText('79');
+      areaList[idx][14] = chgText('0.6');
+      areaList[idx][15] = chgText('15');
+      areaList[idx][16] = chgText('0.005');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '1';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111121' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111131'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '용산구';
+      areaList[idx][2] = '111131';
+      areaList[idx][3] = chgText('65');
+      areaList[idx][8] = chgText('41');
+      areaList[idx][9] = chgText('52');
+      areaList[idx][6] = chgText('32');
+      areaList[idx][7] = chgText('52');
+      areaList[idx][4] = chgText('16');
+      areaList[idx][5] = chgText('37');
+      areaList[idx][10] = chgText('0.024');
+      areaList[idx][11] = chgText('40');
+      areaList[idx][12] = chgText('0.039');
+      areaList[idx][13] = chgText('65');
+      areaList[idx][14] = chgText('0.4');
+      areaList[idx][15] = chgText('10');
+      areaList[idx][16] = chgText('0.005');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111131' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111142'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '성동구';
+      areaList[idx][2] = '111142';
+      areaList[idx][3] = chgText('80');
+      areaList[idx][8] = chgText('59');
+      areaList[idx][9] = chgText('65');
+      areaList[idx][6] = chgText('46');
+      areaList[idx][7] = chgText('66');
+      areaList[idx][4] = chgText('24');
+      areaList[idx][5] = chgText('50');
+      areaList[idx][10] = chgText('0.016');
+      areaList[idx][11] = chgText('27');
+      areaList[idx][12] = chgText('0.048');
+      areaList[idx][13] = chgText('80');
+      areaList[idx][14] = chgText('0.5');
+      areaList[idx][15] = chgText('13');
+      areaList[idx][16] = chgText('0.003');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111142' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111141'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '광진구';
+      areaList[idx][2] = '111141';
+      areaList[idx][3] = chgText('69');
+      areaList[idx][8] = chgText('60');
+      areaList[idx][9] = chgText('69');
+      areaList[idx][6] = chgText('49');
+      areaList[idx][7] = chgText('69');
+      areaList[idx][4] = chgText('22');
+      areaList[idx][5] = chgText('51');
+      areaList[idx][10] = chgText('0.015');
+      areaList[idx][11] = chgText('25');
+      areaList[idx][12] = chgText('0.038');
+      areaList[idx][13] = chgText('63');
+      areaList[idx][14] = chgText('0.7');
+      areaList[idx][15] = chgText('18');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111141' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111152'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '동대문구';
+      areaList[idx][2] = '111152';
+      areaList[idx][3] = chgText('68');
+      areaList[idx][8] = chgText('42');
+      areaList[idx][9] = chgText('56');
+      areaList[idx][6] = chgText('36');
+      areaList[idx][7] = chgText('56');
+      areaList[idx][4] = chgText('13');
+      areaList[idx][5] = chgText('34');
+      areaList[idx][10] = chgText('0.024');
+      areaList[idx][11] = chgText('40');
+      areaList[idx][12] = chgText('0.041');
+      areaList[idx][13] = chgText('68');
+      areaList[idx][14] = chgText('0.5');
+      areaList[idx][15] = chgText('13');
+      areaList[idx][16] = chgText('0.005');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '1';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111152' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111151'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '중랑구';
+      areaList[idx][2] = '111151';
+      areaList[idx][3] = chgText('54');
+      areaList[idx][8] = chgText('41');
+      areaList[idx][9] = chgText('54');
+      areaList[idx][6] = chgText('34');
+      areaList[idx][7] = chgText('54');
+      areaList[idx][4] = chgText('16');
+      areaList[idx][5] = chgText('40');
+      areaList[idx][10] = chgText('0.020');
+      areaList[idx][11] = chgText('34');
+      areaList[idx][12] = chgText('0.031');
+      areaList[idx][13] = chgText('51');
+      areaList[idx][14] = chgText('0.4');
+      areaList[idx][15] = chgText('10');
+      areaList[idx][16] = chgText('0.007');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111151' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111161'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '성북구';
+      areaList[idx][2] = '111161';
+      areaList[idx][3] = chgText('79');
+      areaList[idx][8] = chgText('68');
+      areaList[idx][9] = chgText('70');
+      areaList[idx][6] = chgText('50');
+      areaList[idx][7] = chgText('70');
+      areaList[idx][4] = chgText('20');
+      areaList[idx][5] = chgText('47');
+      areaList[idx][10] = chgText('0.016');
+      areaList[idx][11] = chgText('27');
+      areaList[idx][12] = chgText('0.047');
+      areaList[idx][13] = chgText('79');
+      areaList[idx][14] = chgText('0.6');
+      areaList[idx][15] = chgText('15');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111161' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111291'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '강북구';
+      areaList[idx][2] = '111291';
+      areaList[idx][3] = chgText('75');
+      areaList[idx][8] = chgText('57');
+      areaList[idx][9] = chgText('58');
+      areaList[idx][6] = chgText('38');
+      areaList[idx][7] = chgText('58');
+      areaList[idx][4] = chgText('17');
+      areaList[idx][5] = chgText('34');
+      areaList[idx][10] = chgText('0.015');
+      areaList[idx][11] = chgText('25');
+      areaList[idx][12] = chgText('0.045');
+      areaList[idx][13] = chgText('75');
+      areaList[idx][14] = chgText('0.6');
+      areaList[idx][15] = chgText('15');
+      areaList[idx][16] = chgText('0.003');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111291' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111171'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '도봉구';
+      areaList[idx][2] = '111171';
+      areaList[idx][3] = chgText('62');
+      areaList[idx][8] = chgText('66');
+      areaList[idx][9] = chgText('61');
+      areaList[idx][6] = chgText('41');
+      areaList[idx][7] = chgText('61');
+      areaList[idx][4] = chgText('19');
+      areaList[idx][5] = chgText('40');
+      areaList[idx][10] = chgText('0.012');
+      areaList[idx][11] = chgText('20');
+      areaList[idx][12] = chgText('0.037');
+      areaList[idx][13] = chgText('62');
+      areaList[idx][14] = chgText('0.6');
+      areaList[idx][15] = chgText('15');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111171' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111311'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '노원구';
+      areaList[idx][2] = '111311';
+      areaList[idx][3] = chgText('75');
+      areaList[idx][8] = chgText('48');
+      areaList[idx][9] = chgText('58');
+      areaList[idx][6] = chgText('38');
+      areaList[idx][7] = chgText('58');
+      areaList[idx][4] = chgText('18');
+      areaList[idx][5] = chgText('44');
+      areaList[idx][10] = chgText('0.013');
+      areaList[idx][11] = chgText('22');
+      areaList[idx][12] = chgText('0.045');
+      areaList[idx][13] = chgText('75');
+      areaList[idx][14] = chgText('0.6');
+      areaList[idx][15] = chgText('15');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111311' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111181'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '은평구';
+      areaList[idx][2] = '111181';
+      areaList[idx][3] = chgText('66');
+      areaList[idx][8] = chgText('62');
+      areaList[idx][9] = chgText('66');
+      areaList[idx][6] = chgText('46');
+      areaList[idx][7] = chgText('66');
+      areaList[idx][4] = chgText('20');
+      areaList[idx][5] = chgText('51');
+      areaList[idx][10] = chgText('0.032');
+      areaList[idx][11] = chgText('52');
+      areaList[idx][12] = chgText('0.032');
+      areaList[idx][13] = chgText('53');
+      areaList[idx][14] = chgText('0.4');
+      areaList[idx][15] = chgText('10');
+      areaList[idx][16] = chgText('0.005');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '2';
+      areaList[idx][21] = '2';
+
+      if('111181' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111191'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '서대문구';
+      areaList[idx][2] = '111191';
+      areaList[idx][3] = chgText('66');
+      areaList[idx][8] = chgText('60');
+      areaList[idx][9] = chgText('66');
+      areaList[idx][6] = chgText('46');
+      areaList[idx][7] = chgText('66');
+      areaList[idx][4] = chgText('28');
+      areaList[idx][5] = chgText('51');
+      areaList[idx][10] = chgText('0.026');
+      areaList[idx][11] = chgText('44');
+      areaList[idx][12] = chgText('0.037');
+      areaList[idx][13] = chgText('62');
+      areaList[idx][14] = chgText('0.9');
+      areaList[idx][15] = chgText('23');
+      areaList[idx][16] = chgText('0.006');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111191' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111201'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '마포구';
+      areaList[idx][2] = '111201';
+      areaList[idx][3] = chgText('73');
+      areaList[idx][8] = chgText('67');
+      areaList[idx][9] = chgText('73');
+      areaList[idx][6] = chgText('53');
+      areaList[idx][7] = chgText('73');
+      areaList[idx][4] = chgText('24');
+      areaList[idx][5] = chgText('56');
+      areaList[idx][10] = chgText('0.021');
+      areaList[idx][11] = chgText('36');
+      areaList[idx][12] = chgText('0.028');
+      areaList[idx][13] = chgText('47');
+      areaList[idx][14] = chgText('0.4');
+      areaList[idx][15] = chgText('10');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111201' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111301'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '양천구';
+      areaList[idx][2] = '111301';
+      areaList[idx][3] = chgText('67');
+      areaList[idx][8] = chgText('57');
+      areaList[idx][9] = chgText('67');
+      areaList[idx][6] = chgText('47');
+      areaList[idx][7] = chgText('67');
+      areaList[idx][4] = chgText('17');
+      areaList[idx][5] = chgText('51');
+      areaList[idx][10] = chgText('0.024');
+      areaList[idx][11] = chgText('40');
+      areaList[idx][12] = chgText('0.033');
+      areaList[idx][13] = chgText('55');
+      areaList[idx][14] = chgText('0.5');
+      areaList[idx][15] = chgText('13');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111301' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111212'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '강서구';
+      areaList[idx][2] = '111212';
+      areaList[idx][3] = chgText('68');
+      areaList[idx][8] = chgText('56');
+      areaList[idx][9] = chgText('68');
+      areaList[idx][6] = chgText('48');
+      areaList[idx][7] = chgText('68');
+      areaList[idx][4] = chgText('16');
+      areaList[idx][5] = chgText('47');
+      areaList[idx][10] = chgText('0.026');
+      areaList[idx][11] = chgText('44');
+      areaList[idx][12] = chgText('0.038');
+      areaList[idx][13] = chgText('63');
+      areaList[idx][14] = chgText('0.4');
+      areaList[idx][15] = chgText('10');
+      areaList[idx][16] = chgText('0.005');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111212' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111221'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '구로구';
+      areaList[idx][2] = '111221';
+      areaList[idx][3] = chgText('66');
+      areaList[idx][8] = chgText('55');
+      areaList[idx][9] = chgText('66');
+      areaList[idx][6] = chgText('46');
+      areaList[idx][7] = chgText('66');
+      areaList[idx][4] = chgText('23');
+      areaList[idx][5] = chgText('44');
+      areaList[idx][10] = chgText('0.025');
+      areaList[idx][11] = chgText('42');
+      areaList[idx][12] = chgText('0.025');
+      areaList[idx][13] = chgText('42');
+      areaList[idx][14] = chgText('0.3');
+      areaList[idx][15] = chgText('8');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111221' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111281'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '금천구';
+      areaList[idx][2] = '111281';
+      areaList[idx][3] = chgText('60');
+      areaList[idx][8] = chgText('48');
+      areaList[idx][9] = chgText('60');
+      areaList[idx][6] = chgText('40');
+      areaList[idx][7] = chgText('60');
+      areaList[idx][4] = chgText('19');
+      areaList[idx][5] = chgText('53');
+      areaList[idx][10] = chgText('0.024');
+      areaList[idx][11] = chgText('40');
+      areaList[idx][12] = chgText('0.036');
+      areaList[idx][13] = chgText('60');
+      areaList[idx][14] = chgText('0.5');
+      areaList[idx][15] = chgText('13');
+      areaList[idx][16] = chgText('0.005');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111281' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111231'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '영등포구';
+      areaList[idx][2] = '111231';
+      areaList[idx][3] = chgText('69');
+      areaList[idx][8] = chgText('62');
+      areaList[idx][9] = chgText('69');
+      areaList[idx][6] = chgText('51');
+      areaList[idx][7] = chgText('71');
+      areaList[idx][4] = chgText('23');
+      areaList[idx][5] = chgText('57');
+      areaList[idx][10] = chgText('0.017');
+      areaList[idx][11] = chgText('29');
+      areaList[idx][12] = chgText('0.025');
+      areaList[idx][13] = chgText('42');
+      areaList[idx][14] = chgText('0.3');
+      areaList[idx][15] = chgText('8');
+      areaList[idx][16] = chgText('0.005');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111231' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111241'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '동작구';
+      areaList[idx][2] = '111241';
+      areaList[idx][3] = chgText('70');
+      areaList[idx][8] = chgText('52');
+      areaList[idx][9] = chgText('61');
+      areaList[idx][6] = chgText('41');
+      areaList[idx][7] = chgText('61');
+      areaList[idx][4] = chgText('19');
+      areaList[idx][5] = chgText('47');
+      areaList[idx][10] = chgText('0.020');
+      areaList[idx][11] = chgText('34');
+      areaList[idx][12] = chgText('0.042');
+      areaList[idx][13] = chgText('70');
+      areaList[idx][14] = chgText('0.5');
+      areaList[idx][15] = chgText('13');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111241' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111251'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '관악구';
+      areaList[idx][2] = '111251';
+      areaList[idx][3] = chgText('69');
+      areaList[idx][8] = chgText('55');
+      areaList[idx][9] = chgText('69');
+      areaList[idx][6] = chgText('49');
+      areaList[idx][7] = chgText('69');
+      areaList[idx][4] = chgText('18');
+      areaList[idx][5] = chgText('47');
+      areaList[idx][10] = chgText('0.031');
+      areaList[idx][11] = chgText('51');
+      areaList[idx][12] = chgText('0.029');
+      areaList[idx][13] = chgText('49');
+      areaList[idx][14] = chgText('0.4');
+      areaList[idx][15] = chgText('10');
+      areaList[idx][16] = chgText('0.003');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '2';
+      areaList[idx][21] = '2';
+
+      if('111251' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111262'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '서초구';
+      areaList[idx][2] = '111262';
+      areaList[idx][3] = chgText('71');
+      areaList[idx][8] = chgText('68');
+      areaList[idx][9] = chgText('71');
+      areaList[idx][6] = chgText('51');
+      areaList[idx][7] = chgText('71');
+      areaList[idx][4] = chgText('24');
+      areaList[idx][5] = chgText('54');
+      areaList[idx][10] = chgText('0.021');
+      areaList[idx][11] = chgText('36');
+      areaList[idx][12] = chgText('0.037');
+      areaList[idx][13] = chgText('62');
+      areaList[idx][14] = chgText('0.3');
+      areaList[idx][15] = chgText('8');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111262' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111261'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '강남구';
+      areaList[idx][2] = '111261';
+      areaList[idx][3] = chgText('60');
+      areaList[idx][8] = chgText('41');
+      areaList[idx][9] = chgText('55');
+      areaList[idx][6] = chgText('35');
+      areaList[idx][7] = chgText('55');
+      areaList[idx][4] = chgText('14');
+      areaList[idx][5] = chgText('40');
+      areaList[idx][10] = chgText('0.016');
+      areaList[idx][11] = chgText('27');
+      areaList[idx][12] = chgText('0.036');
+      areaList[idx][13] = chgText('60');
+      areaList[idx][14] = chgText('0.4');
+      areaList[idx][15] = chgText('10');
+      areaList[idx][16] = chgText('0.005');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '1';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111261' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111273'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '송파구';
+      areaList[idx][2] = '111273';
+      areaList[idx][3] = chgText('69');
+      areaList[idx][8] = chgText('57');
+      areaList[idx][9] = chgText('69');
+      areaList[idx][6] = chgText('49');
+      areaList[idx][7] = chgText('69');
+      areaList[idx][4] = chgText('23');
+      areaList[idx][5] = chgText('60');
+      areaList[idx][10] = chgText('0.015');
+      areaList[idx][11] = chgText('25');
+      areaList[idx][12] = chgText('0.041');
+      areaList[idx][13] = chgText('68');
+      areaList[idx][14] = chgText('0.5');
+      areaList[idx][15] = chgText('13');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111273' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+      for(var i = 0; i < areaList.length; i++){
+        if(defList[i] == '111274'){
+          idx = i;
+        }
+      }
+      areaList[idx] = new Array(22);
+      areaList[idx][0] = '201905071000';
+      areaList[idx][1] = '강동구';
+      areaList[idx][2] = '111274';
+      areaList[idx][3] = chgText('63');
+      areaList[idx][8] = chgText('50');
+      areaList[idx][9] = chgText('63');
+      areaList[idx][6] = chgText('43');
+      areaList[idx][7] = chgText('63');
+      areaList[idx][4] = chgText('18');
+      areaList[idx][5] = chgText('50');
+      areaList[idx][10] = chgText('0.024');
+      areaList[idx][11] = chgText('40');
+      areaList[idx][12] = chgText('0.033');
+      areaList[idx][13] = chgText('55');
+      areaList[idx][14] = chgText('0.5');
+      areaList[idx][15] = chgText('13');
+      areaList[idx][16] = chgText('0.004');
+      areaList[idx][17] = chgText('');
+      areaList[idx][18] = '2';
+      areaList[idx][19] = '2';
+      areaList[idx][20] = '1';
+      areaList[idx][21] = '2';
+
+      if('111274' == area){
+        for(var j = 1; j < 4; j++){
+          cd1 = idx;
+          cd2 = idx;
+          cd3 = idx;
+          cd4 = idx;
+
+          if(areaList[idx][0] != ""){
+            document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+          }else{
+            document.getElementById('date_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][1] != ""){
+            document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+          }else{
+            document.getElementById('areaName_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][4] != ""){
+            document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm25_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][8] != ""){
+            document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+          }else{
+            document.getElementById('pm10_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][10] != ""){
+            document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+          }else{
+            document.getElementById('o3_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][12] != ""){
+            document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+          }else{
+            document.getElementById('no2_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][14] != ""){
+            document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+          }else{
+            document.getElementById('co_'+j).innerHTML = "점검중";
+          }
+          if(areaList[idx][16] != ""){
+            document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+          } else{
+            document.getElementById('so2_'+j).innerHTML = "점검중";
+          }
+        }
+      }
+
+
+    if(area == '' || area == null){
+      idx = 0;
+      for(var j = 1; j < 4; j++){
+        cd1 = idx;
+        cd2 = idx;
+        cd3 = idx;
+        cd4 = idx;
+
+        if(areaList[idx][0] != ""){
+          document.getElementById('date_'+j).innerHTML = areaList[idx][0].substring(0,4)+"년 "+areaList[idx][0].substring(4,6)+"월 "+areaList[idx][0].substring(6,8)+"일 "+areaList[idx][0].substring(8,10)+"시";
+        }else{
+          document.getElementById('date_'+j).innerHTML = "점검중";
+        }
+        if(areaList[idx][1] != ""){
+          document.getElementById('areaName_'+j).innerHTML = areaList[idx][1];
+        }else{
+          document.getElementById('areaName_'+j).innerHTML = "점검중";
+        }
+        if(areaList[idx][4] != ""){
+          document.getElementById('pm25_'+j).innerHTML = areaList[idx][4]+" &micro;g/m&sup3;";
+        }else{
+          document.getElementById('pm25_'+j).innerHTML = "점검중";
+        }
+        if(areaList[idx][8] != ""){
+          document.getElementById('pm10_'+j).innerHTML = areaList[idx][8]+" &micro;g/m&sup3;";
+        }else{
+          document.getElementById('pm10_'+j).innerHTML = "점검중";
+        }
+        if(areaList[idx][10] != ""){
+          document.getElementById('o3_'+j).innerHTML = areaList[idx][10]+" ppm";
+        }else{
+          document.getElementById('o3_'+j).innerHTML = "점검중";
+        }
+        if(areaList[idx][12] != ""){
+          document.getElementById('no2_'+j).innerHTML = areaList[idx][12]+" ppm";
+        }else{
+          document.getElementById('no2_'+j).innerHTML = "점검중";
+        }
+        if(areaList[idx][14] != ""){
+          document.getElementById('co_'+j).innerHTML = areaList[idx][14]+" ppm";
+        }else{
+          document.getElementById('co_'+j).innerHTML = "점검중";
+        }
+        if(areaList[idx][16] != ""){
+          document.getElementById('so2_'+j).innerHTML = areaList[idx][16]+" ppm";
+        } else{
+          document.getElementById('so2_'+j).innerHTML = "점검중";
+        }
+      }
+    }
+  });
+
+  function showHide(id) {
+      if (cc==0) {
+          cc=1;
+          document.getElementById(id).style.display="block";
+      } else {
+          cc=0;
+          document.getElementById(id).style.display="none";
+      }
+  }
+
+  function chgText(item){
+    var item2;
+    if(item == '9999' || item == '9999.000'){
+      item2 = '';
+    }else{
+      item2 = item;
+    }
+    return item2;
+  }
+
+  var poptoday = new Date();
+  var todayyear = poptoday.getFullYear();
+  var todaymonth = poptoday.getMonth()+1;
+  var todayday = poptoday.getDate();
+  var today = "";
+  var sdate = "20190304";
+  var edate = "20190304";
+
+  if (todaymonth.toString().length < 2) {
+    todaymonth = "0"+todaymonth;
+  }
+
+  if(todayday.toString().length < 2){
+    todayday = "0"+todayday;
+  }
+
+  today = todayyear+""+todaymonth+""+todayday;
+  /* console.log('today : '+today);
+  console.log('sdate : '+sdate);
+  console.log('edate : '+edate); */
+  if (today >= sdate && today <= edate) {
+    setTimeout("popwindow('POP_OPEN')",500);
+  }
+
+
+  function popwindow(url){
+    if(!getCookie(url)){
+      document.getElementById("layer1").style.display = "block";
+    }
+  }
+
+  function popwindow2(url){
+    if(!getCookie(url)){
+      document.getElementById("layer2").style.display = "block";
+    }
+  }
+
+  function popclose() {
+    if ( document.notice_form.chktype.checked ){
+      setcookie('POP_OPEN', "true" ,1);
+    }
+    document.getElementById('layer1').style.display = "none";;
+  }
+  function popclose2() {
+   /*  if ( document.notice_form2.chktype.checked ){
+      setcookie('POP_OPEN2', "true" ,1);
+    } */
+    document.getElementById('layer2').style.display = "none";;
+  }
+
+  function setcookie(name, value, expiredays) {
+     var today = new Date();
+     today.setDate(today.getDate() + expiredays);
+     document.cookie = name + "=" + escape(value) + "; path=/; expires=" + today.toGMTString() + ";";
+  }
+
+  function getCookie(c_name) {
+    var cookies = document.cookie.split(";");
+    var cookie_val;
+    var cookie_cnt = cookies.length;
+    if(cookies !== undefined) {
+      for(var i =0; i < cookie_cnt; i++) {
+        var x = cookies[i].substr(0,cookies[i].indexOf("="));
+        var y = cookies[i].substr(cookies[i].indexOf("=")+1);
+        x = x.replace(/^\s+|\s+$/g,"");
+        if(x==c_name) {
+          cookie_val = unescape(y);
+          break;
+        }
+      }
+    }
+    return cookie_val;
+  };
+
+  function openWin( winName ) {
+     var blnCookie    = getCookie( winName );
+       window.open("coupon.html","coupon","scrollbars=no,width=785,height=450");
+  }
+
+  function setArea() {
+    var num_temp = document.all.grp1.length;
+    var area = null;
+    var areaNm = null;
+
+    for(var i =0; i < num_temp; i++){
+      if(document.all.grp1[i].checked == true){
+        area = document.all.grp1[i].value;
+      }
+    }
+
+	$('.rdo').each(function(){
+		if(this.checked){
+			areaNm = $(this).attr('data-guNm');
+		}
+	});
+
+    setcookie('AREA', area ,1000);
+    setcookie('AREA-NM', areaNm, 1000);
+    location.reload();
+  }
+
+  function deleteCookie( cookieName ){
+   var expireDate = new Date();
+   expireDate.setDate( expireDate.getDate() - 1 );
+   document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString() + "; path=/";
+  }
+
+  function setViewArea(item1,item2){
+    if(item1 == 1) cd1 = item2;
+    if(item1 == 2) cd2 = item2;
+    if(item1 == 3) cd3 = item2;
+    if(item1 == 4) cd4 = item2;
+
+    if(areaList[item2][0] != ""){
+      document.getElementById('date_'+item1).innerHTML = areaList[item2][0].substring(0,4)+"년 "+areaList[item2][0].substring(4,6)+"월 "+areaList[item2][0].substring(6,8)+"일 "+areaList[item2][0].substring(8,10)+"시";
+    }else{
+      document.getElementById('date_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][1] != ""){
+      document.getElementById('areaName_'+item1).innerHTML = areaList[item2][1];
+    }else{
+      document.getElementById('areaName_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][4] != ""){
+      document.getElementById('pm25_'+item1).innerHTML = areaList[item2][4]+" &micro;g/m&sup3;";
+    }else{
+      document.getElementById('pm25_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][8] != ""){
+      document.getElementById('pm10_'+item1).innerHTML = areaList[item2][8]+" &micro;g/m&sup3;";
+    }else{
+      document.getElementById('pm10_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][10] != ""){
+      document.getElementById('o3_'+item1).innerHTML = areaList[item2][10]+" ppm";
+    }else{
+      document.getElementById('o3_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][12] != ""){
+      document.getElementById('no2_'+item1).innerHTML = areaList[item2][12]+" ppm";
+    }else{
+      document.getElementById('no2_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][14] != ""){
+      document.getElementById('co_'+item1).innerHTML = areaList[item2][14]+" ppm";
+    }else{
+      document.getElementById('co_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][16] != ""){
+      document.getElementById('so2_'+item1).innerHTML = areaList[item2][16]+" ppm";
+    } else{
+      document.getElementById('so2_'+item1).innerHTML = "점검중";
+    }
+  }
+
+  function setViewMoveArea(item,item1){
+    var item2 = 0;
+    if(item == "pre"){
+      if(item1 == 1){
+        if(cd1 == "0"){
+          cd1 = 24;
+        }else{
+          cd1 -= 1;
+        }
+        item2 = cd1;
+      }
+      if(item1 == 2){
+        if(cd2 == "0"){
+          cd2 = 24;
+        }else{
+          cd2 -= 1;
+        }
+        item2 = cd2;
+      }
+      if(item1 == 3){
+        if(cd3 == "0"){
+          cd3 = 24;
+        }else{
+          cd3 -= 1;
+        }
+        item2 = cd3;
+      }
+      if(item1 == 4){
+        if(cd4 == "0"){
+          cd4 = 24;
+        }else{
+          cd4 -= 1;
+        }
+        item2 = cd4;
+      }
+    }else{
+      if(item1 == 1){
+        if(cd1 == "24"){
+          cd1 = 0;
+        }else{
+          cd1 += 1;
+        }
+        item2 = cd1;
+      }
+      if(item1 == 2){
+        if(cd2 == "24"){
+          cd2 = 0;
+        }else{
+          cd2 += 1;
+        }
+        item2 = cd2;
+      }
+      if(item1 == 3){
+        if(cd3 == "24"){
+          cd3 = 0;
+        }else{
+          cd3 += 1;
+        }
+        item2 = cd3;
+      }
+      if(item1 == 4){
+        if(cd4 == "24"){
+          cd4 = 0;
+        }else{
+          cd4 += 1;
+        }
+        item2 = cd4;
+      }
+    }
+
+    if(areaList[item2][0] != ""){
+      document.getElementById('date_'+item1).innerHTML = areaList[item2][0].substring(0,4)+"년 "+areaList[item2][0].substring(4,6)+"월 "+areaList[item2][0].substring(6,8)+"일 "+areaList[item2][0].substring(8,10)+"시";
+    }else{
+      document.getElementById('date_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][1] != ""){
+      document.getElementById('areaName_'+item1).innerHTML = areaList[item2][1];
+    }else{
+      document.getElementById('areaName_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][4] != ""){
+      document.getElementById('pm25_'+item1).innerHTML = areaList[item2][4]+" &micro;g/m&sup3;";
+    }else{
+      document.getElementById('pm25_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][8] != ""){
+      document.getElementById('pm10_'+item1).innerHTML = areaList[item2][8]+" &micro;g/m&sup3;";
+    }else{
+      document.getElementById('pm10_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][10] != ""){
+      document.getElementById('o3_'+item1).innerHTML = areaList[item2][10]+" ppm";
+    }else{
+      document.getElementById('o3_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][12] != ""){
+      document.getElementById('no2_'+item1).innerHTML = areaList[item2][12]+" ppm";
+    }else{
+      document.getElementById('no2_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][14] != ""){
+      document.getElementById('co_'+item1).innerHTML = areaList[item2][14]+" ppm";
+    }else{
+      document.getElementById('co_'+item1).innerHTML = "점검중";
+    }
+    if(areaList[item2][16] != ""){
+      document.getElementById('so2_'+item1).innerHTML = areaList[item2][16]+" ppm";
+    } else{
+      document.getElementById('so2_'+item1).innerHTML = "점검중";
+    }
+  }
+
+  var data_ozone_check = new Array();
+  var data_alert10_blink = "";
+  var data_alert25_blink = "";
+  var data_ysAlert_blink = "";
+  var blink_cnt = 0;
+  function doBlinkYn() {
+    if($("#alert10_blink").length) {
+      blink_cnt++;
+    }
+    if($("#alert25_blink").length) {
+      blink_cnt++;
+    }
+    if($("#ysAlert_blink").length) {
+      blink_cnt++;
+    }
+      for (var i=0; i < 5; i++) {
+        var red_blink_obj = $("#red_blink" + (i + 1));
+        if(red_blink_obj.length) {
+        blink_cnt++;
+        }
+      }
+  }
+  function doBlinkData() {
+    if($("#alert10_blink").length) {
+      data_alert10_blink  = $("#alert10_blink").html();
+    }
+    if($("#alert25_blink").length) {
+      data_alert25_blink  = $("#alert25_blink").html();
+    }
+    if($("#ysAlert_blink").length) {
+      data_ysAlert_blink  = $("#ysAlert_blink").html();
+    }
+
+      for (var i=0; i < 5; i++) {
+        data_ozone_check[i] = new Array();
+        var red_blink_obj = $("#red_blink" + (i + 1));
+        if(red_blink_obj.length) {
+          data_ozone_check[i][0] = "Y";
+          data_ozone_check[i][1] = red_blink_obj.html();
+        } else {
+          data_ozone_check[i][0] = "N";
+          data_ozone_check[i][1] = "";
+        }
+      }
+  }
+
+  function doBlink() {
+      for (var i=0; i < 5; i++) {
+        var red_blink_obj = $("#red_blink" + (i + 1));
+        var red_block_blink_obj = $("#red_block_blink" + (i + 1));
+        if(red_blink_obj.length) {
+          if(red_blink_obj.is(':visible') == false){
+            red_block_blink_obj.html("");
+            red_blink_obj.show();
+          }else{
+            red_block_blink_obj.html("&nbsp;" + replaceSapce(data_ozone_check[i][1]));
+            red_blink_obj.hide();
+          }
+        }
+      }
+
+      var obj_alert10_blink = $("#alert10_blink");
+      var obj_alert10_block_blink = $("#alert10_block_blink");
+
+    if(obj_alert10_blink.length) {
+        if(obj_alert10_blink.is(':visible') == false){
+          obj_alert10_block_blink.html("");
+          obj_alert10_blink.show();
+        } else {
+          obj_alert10_block_blink.html("&nbsp;" + replaceSapce(data_alert10_blink));
+          obj_alert10_blink.hide();
+        }
+    }
+
+      var obj_alert25_blink = $("#alert25_blink");
+      var obj_alert25_block_blink = $("#alert25_block_blink");
+
+    if(obj_alert25_blink.length) {
+        if(obj_alert25_blink.is(':visible') == false){
+          obj_alert25_block_blink.html("");
+          obj_alert25_blink.show();
+        } else {
+          obj_alert25_block_blink.html("&nbsp;" + replaceSapce(data_alert25_blink));
+          obj_alert25_blink.hide();
+        }
+    }
+
+      var obj_ysAlert_blink = $("#ysAlert_blink");
+      var obj_ysAlert_block_blink = $("#ysAlert_block_blink");
+
+    if(obj_ysAlert_blink.length) {
+        if(obj_ysAlert_blink.is(':visible') == false){
+          obj_ysAlert_block_blink.html("");
+          obj_ysAlert_blink.show();
+        } else {
+          obj_ysAlert_block_blink.html("&nbsp;" + replaceSapce(data_ysAlert_blink));
+          obj_ysAlert_blink.hide();
+        }
+    }
+  }
+
+  function replaceSapce(strVal) {
+    var str = "";
+    if(strVal === undefined) {
+      return str;
+    }
+    var cnt = strVal.length;
+      for (var i=0; i < cnt; i++) {
+      str = str + "&nbsp;";
+      }
+      return str;
+  }
+
+$( document ).ready(function() {
+  doBlinkYn();
+  if(blink_cnt > 0) {
+    doBlinkData();
+    setInterval("doBlink()",700);
+  }
+});
+
+  function popConfig(){
+    $(".btn_close").click(layerClose);
+    $(".btn_close2").click(layerClose2);
+  }
+  function layerOpen(){
+    $("#sns_pop").css("display","block");
+    var tx = ($(window).width()-$("#sns_pop .pop_cont").width())/2;
+    var ty = ($(window).height()-$("#sns_pop .pop_cont").height())/2;
+    $("#sns_pop .pop_cont").css({left:tx+"px",top:ty+"px"});
+    $("body").css("overflow","hidden");
+  }
+  function layerClose(){
+    $("#sns_pop").css("display","none");
+    $("body").css("overflow","auto");
+  }
+
+  function MM_showHideLayers() { //v9.0
+      var i,p,v,obj,args=MM_showHideLayers.arguments;
+      for (i=0; i<(args.length-2); i+=3)
+      with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+        if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+        obj.visibility=v; }
+  }
+
+  var url_val="/sms_application_apply.htm";
+  var formData;
+
+  function smsSend() {
+    formData = $("#frm_sms").serialize();
+     $.ajax({
+        type : "POST",
+        url : url_val,
+        cache : false,
+        data : formData,
+        success : onSuccess,
+        error : onError
+      });
+  };
+
+  function alertMessage(strMessage) {
+      alert(strMessage);
+  };
+  function onSuccess(json, status){
+    var dataResult = $.parseJSON(json);
+    if(dataResult == undefined) {
+      alertMessage("응닶이 없습니다. 다시 시도하여 주세요!");
+    } else {
+      alertMessage(dataResult.comment);
+      if(dataResult.code == "0") { // 취소완료
+        document.getElementById("phoneNo1").value = "";
+        document.getElementById("phoneNo2").value = "";
+        document.getElementById("phoneNo3").value = "";
+        document.getElementById("confirm_no").value = "";
+        document.getElementsByName("sms_yn")[0].checked = false;
+        layerClose();
+      } else if(dataResult.code == "3"){ // 신청완료
+        document.getElementById("phoneNo1").value = "";
+        document.getElementById("phoneNo2").value = "";
+        document.getElementById("phoneNo3").value = "";
+        document.getElementById("confirm_no").value = "";
+        document.getElementsByName("sms_yn")[0].checked = false;
+        $('.smsDetailDefault').val('N');
+	  	$('.requireSmsChk, .pmChkTarget, .ozoneChkTarget').prop('checked',false);
+	  	$('.pmChkTarget, .ozoneChkTarget').val('N');
+	  	$('.pmChkTarget, .ozoneChkTarget').prop('disabled', true);
+	  	$('#msrAdm').val('');
+        //layerClose();
+        layerClose2();
+      } else if(dataResult.code == "4"){ // 신청변경
+   		document.getElementById("phoneNo1").value = "";
+	  	document.getElementById("phoneNo2").value = "";
+	  	document.getElementById("phoneNo3").value = "";
+	  	document.getElementById("confirm_no").value = "";
+	  	document.getElementsByName("sms_yn")[0].checked = false;
+	  	$('.smsDetailDefault').val('N');
+	  	$('.requireSmsChk, .pmChkTarget, .ozoneChkTarget').prop('checked',false);
+	  	$('.pmChkTarget, .ozoneChkTarget').val('N');
+	  	$('.pmChkTarget, .ozoneChkTarget').prop('disabled', true);
+	  	$('#msrAdm').val('');
+	  	layerClose2();
+	  }
+    };
+    /* var jsonResult = $.parseJSON(data);
+      alert(jsonResult["code"]);
+      alert(jsonResult["comment"]);
+    if (json.isSuccess) {
+             alert(json.code);
+             alert(json.comment);
+       };
+    alert($.trim(json)); */
+  };
+  function onError(data, status){
+    alertMessage("예상치 않은 에러가 났습니다. 다시 시도하여 주세요!");
+  };
+
+$( function(){
+  popConfig();
+
+  $('#btn_confirm').click(function(){
+    var ph1 = $('#phoneNo1 option:selected').val();
+    var ph2 = $('#phoneNo2').val();
+    var ph3 = $('#phoneNo3').val();
+
+    if(ph1 == ""){
+      alert('번호를 선택하세요.');
+      $('#phoneNo1').focus();
+      return false;
+    }
+    if(ph2 == ""){
+      alert('번호를 입력하세요.');
+      $('#phoneNo2').focus();
+      return false;
+    }
+    if(ph3 == ""){
+      alert('번호를 입력하세요.');
+      $('#phoneNo3').focus();
+      return false;
+    }
+
+    $("#method").val("certificateNoApply");
+
+    // rsa 암호화
+    var rsa = new RSAKey();
+    rsa.setPublic($('#RSAModulus').val(),$('#RSAExponent').val());
+
+    $('#phoneNo1_target').val(rsa.encrypt(ph1));
+    $('#phoneNo2_target').val(rsa.encrypt(ph2));
+    $('#phoneNo3_target').val(rsa.encrypt(ph3));
+    smsSend();
+  });
+
+  $('#btn_sms_application').click(function(){
+    var cFirmNo = $('#confirm_no').val();
+
+    if(cFirmNo == ""){
+      alert("번호 인증 받으세요.");
+      $('#confirm_no').focus();
+      return false;
+    }
+    if($('input:checkbox[id="sms_yn"]').is(":checked") == false){
+      alert('약관의 동의하세요.');
+      $('#agreeYn').focus();
+      return false;
+    }
+
+    $("#method").val("smsApplicationApply");
+    $('#actionCtrBtn').attr('title', '신청');
+    $('#actionCtrBtn').val('신청');
+    //smsSend();
+    layerClose();
+    layerOpen2();
+  });
+
+  $('#btn_sms_application_cancel').click(function(){
+    var cFirmNo = $('#confirm_no').val();
+
+    if(cFirmNo == ""){
+      alert("번호 인증 받으세요.");
+      $('#confirm_no').focus();
+      return false;
+    }
+    if($('input:checkbox[id="sms_yn"]').is(":checked") == false){
+      alert('약관의 동의하세요.');
+      $('#agreeYn').focus();
+      return false;
+    }
+
+    $("#method").val("smsApplicationApplyCancel");
+    smsSend();
+  });
+
+  $('#btn_sms_application_update').click(function(){
+	    var cFirmNo = $('#confirm_no').val();
+
+	    if(cFirmNo == ""){
+	      alert("번호 인증 받으세요.");
+	      $('#confirm_no').focus();
+	      return false;
+	    }
+
+	    if($('input:checkbox[id="sms_yn"]').is(":checked") == false){
+	      alert('약관의 동의하세요.');
+	      $('#agreeYn').focus();
+	      return false;
+	    }
+
+	    $("#method").val("smsApplicationApplyUpdate");
+	    $('#actionCtrBtn').attr('title', '신청변경');
+	    $('#actionCtrBtn').val('신청변경');
+	    //smsSend();
+	    layerClose();
+	    layerOpen2();
+	});
+});
+
+function layerOpen2(){
+  $("#sns_pop2").css("display","block");
+  var tx = ($(window).width()-$("#sns_pop2 .pop_cont2").width())/2;
+  var ty = ($(window).height()-$("#sns_pop2 .pop_cont2").height())/2;
+  $("#sns_pop2 .pop_cont2").css({left:tx+"px",top:ty+"px"});
+  $("body").css("overflow","hidden");
+}
+function layerClose2(){
+  $("#sns_pop2").css("display","none");
+  $("body").css("overflow","auto");
+}
+
+
+function noticeListForward(gubun) {
+  if(gubun == 1) {
+    window.location.href = "citizen.htm?method=notice";
+  } else {
+    window.location.href = "inform.htm?method=materials";
+  }
+};
+
+function informListForward() {
+  var list_obj = $("#info_list0");
+  if(list_obj.length) {
+    if(list_obj.attr("href") != undefined) {
+      location.href = list_obj.attr("href");
+    }
+  }
+}
+
+function funcNoticeDetail(val1){
+  var f=document.noticeDetail; //폼 name
+  document.getElementById("seqNoticeId").value=val1;
+  f.submit();
+}
+
+function onlyNumber(event) {
+  event = event || window.event;
+  var keyID = (event.which) ? event.which : event.keyCode;
+  if ((keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39) {
+    return;
+  } else {
+    return false;
+  }
+}
+
+function removeChar(event) {
+  event = event || window.event;
+  var keyID = (event.which) ? event.which : event.keyCode;
+  if (keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39) {
+    return;
+  } else {
+    event.target.value = event.target.value.replace(/[^0-9]/g, "");
+  }
+}
+//]]>
+</script>
+<link rel="stylesheet" type="text/css" media="all" href="./css/seoul-common-gnb.css"></head>
+<body id="main">
+	<form name="frm_sms" id="frm_sms" method="post" action="http://cleanair.seoul.go.kr/main.htm">
+		<input type="hidden" id="method" name="method" value="">
+		<input type="hidden" id="RSAModulus" value="ad41c9a598c55f08d4f048cd1b6801cf739610924da09a04007949cd47cc998dbb9be74dd5d864b5032f10e6ab93996628f0d5969b0ad7a440eab9bb05e8719252a0c5e66ac3836f94ba96e9562da017ed67b6db72cf03b47e1f4f0401f7c48f184f812d84d403ccea0a7f1f81e94a11f1626a2974a9af27f305ecf98cb46df1">
+		<input type="hidden" id="RSAExponent" value="10001">
+		<input type="hidden" id="phoneNo1_target" name="phoneNo1" value="">
+		<input type="hidden" id="phoneNo2_target" name="phoneNo2" value="">
+		<input type="hidden" id="phoneNo3_target" name="phoneNo3" value="">
+		<input type="hidden" id="smsApplicationName" name="smsApplicationName" maxlength="50" value="">
+
+		<input type="hidden" id="smsPm10" name="smsPm10" value="N" class="smsDetailDefault">
+		<input type="hidden" id="smsPm25" name="smsPm25" value="N" class="smsDetailDefault">
+		<input type="hidden" id="pmForecast" name="pmForecast" value="N" class="smsDetailDefault">
+		<input type="hidden" id="pmAlert" name="pmAlert" value="N" class="smsDetailDefault">
+
+		<input type="hidden" id="smsOzone" name="smsOzone" value="N" class="smsDetailDefault">
+		<input type="hidden" id="ozoneForecast" name="ozoneForecast" value="N" class="smsDetailDefault">
+		<input type="hidden" id="ozoneAlert" name="ozoneAlert" value="N" class="smsDetailDefault">
+
+		<div id="sns_pop2">
+			<div class="pop_cont2">
+				<div class="cont">
+					<p class="title">문자서비스신청(무료)</p>
+					<fieldset>
+						<legend>문자서비스신청</legend>
+						<div>
+							<label for="msrAdm">지역선택 : </label>
+							<select id="msrAdm" name="msrAdm" class="w100 line" style="margin-left:14px">
+								<option value="">선택</option>
+								<option value="111123">종로구</option>
+								<option value="111121">중구</option>
+								<option value="111131">용산구</option>
+								<option value="111142">성동구</option>
+								<option value="111141">광진구</option>
+								<option value="111152">동대문구</option>
+								<option value="111151">중랑구</option>
+								<option value="111161">성북구</option>
+								<option value="111291">강북구</option>
+								<option value="111171">도봉구</option>
+								<option value="111311">노원구</option>
+								<option value="111181">은평구</option>
+								<option value="111191">서대문구</option>
+								<option value="111201">마포구</option>
+								<option value="111301">양천구</option>
+								<option value="111212">강서구</option>
+								<option value="111221">구로구</option>
+								<option value="111281">금천구</option>
+								<option value="111231">영등포구</option>
+								<option value="111241">동작구</option>
+								<option value="111251">관악구</option>
+								<option value="111262">서초구</option>
+								<option value="111261">강남구</option>
+								<option value="111273">송파구</option>
+								<option value="111274">강동구</option>
+								</select>
+						</div>
+						<div class="box">
+							<p class="blt_01">예보: 매일 미세먼지 농도지수를 예측하여 오늘 예보는 05시, 11시 기준, 내일 예보는 17, 23시 기준으로 알림 <span class="ft_point3">(일 4회)</span> </p>
+							<p class="blt_01">경보(주의보, 경보): 미세먼지 농도가 일정기준 이상으로 상승하여 건강에 해를 줄 염려가 있을 때 알림 </p>
+						</div>
+						<div class="sms_pollutant">
+							<dl>
+								<dt>오염물질 : </dt>
+								<dd>
+									<input type="checkbox" id="pmChkAll" class="requireSmsChk">
+									<label for="pmChkAll">미세먼지(미세먼지+초미세먼지)</label>
+								</dd>
+								<dd class="box" style="padding-left:24px">
+									<input type="checkbox" id="pmChkForecast" name="" value="N" class="pmChkTarget" disabled="disabled">
+									<label for="pmChkForecast">예보</label>
+									<input type="checkbox" id="pmChkAlert" name="" value="N" class="pmChkTarget" disabled="disabled" style="margin-left:20px">
+									<label for="pmChkAlert">경보</label>
+								</dd>
+								<dd>
+									<input type="checkbox" id="ozoneChkAll" class="requireSmsChk">
+									<label for="ozoneChkAll">오존</label>
+									<p class="ft_point3" style="padding-left:24px">※ 선택시 모든 권역에 대하여 발령 시, 해지 시 모두 문자가 발송되므로 불필요한 문자 메시지가 발생할 수 있습니다. 원하지 않으시면 체크박스를 해제해주세요. </p>
+								</dd>
+								<dd class="box" style="padding-left:24px">
+									<input type="checkbox" id="ozoneChkForecast" name="" value="N" class="ozoneChkTarget" disabled="disabled">
+									<label for="ozoneChkForecast">예보</label>
+									<input type="checkbox" id="ozoneChkAlert" name="" value="N" class="ozoneChkTarget" disabled="disabled" style="margin-left:20px">
+									<label for="ozoneChkAlert">경보</label>
+								</dd>
+							</dl>
+						</div>
+					</fieldset>
+					<div class="al_c">
+						<input type="button" class="btn_sns_04" id="actionCtrBtn" title="" value="">
+					</div>
+				</div>
+				<p>
+					<a href="http://cleanair.seoul.go.kr/main.htm#" class="btn_close2">x close</a>
+				</p>
+			</div>
+		</div>
+		<div id="sns_pop">
+			<div class="pop_cont">
+				<div class="cont">
+					<p class="title">문자서비스신청(무료)</p>
+					<p class="box">황사,(초)미세먼지, 오존 주의보 경보 발령 및 해제 시 SMS로 받아볼 수 있습니다. 단, 실외활동이 적은 시간대(22:00~06:00)는 수면방해 등을 최소화하기 위해 SMS를 발송하지 않습니다.<br>대기질 예보 서비스는 예보 등급이 "나쁨" 이상 일때 보건환경연구원에서 문자를 제공합니다. 경보 발령 및 해제시에는 아래 신청취소 버튼을 누르시고, 예보문자서비스 취소는 별도로 02)570-3406<br>전화 해 주셔야 취소가 됩니다.</p>
+					<fieldset>
+						<legend>문자서비스신청</legend>
+						<label for="phoneNo1" class="none">통신사</label>
+						<p>
+							<select id="phoneNo1" class="w100 line" title="핸드폰 번호를 선택하세요.">
+								<option value="">선택</option>
+								<option value="010">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="017">017</option>
+								<option value="018">018</option>
+								<option value="019">019</option>
+							</select>
+							<input type="text" id="phoneNo2" class="w70 line" title="휴대폰 중간자리 입력" maxlength="4" onkeydown="onlyNumber(event)" onkeyup="removeChar(event)">
+							<input type="text" id="phoneNo3" class="w70 line" title="휴대폰 끝자리 입력" maxlength="4" onkeydown="onlyNumber(event)" onkeyup="removeChar(event)">
+							<input type="button" id="btn_confirm" class="btn_sns_01" title="인증번호받기" value="인증번호받기">
+						</p>
+						<p style="position:relative">
+							<label for="confirm_no" id="confirm_num">인증번호입력</label>
+							<input type="text" id="confirm_no" name="certificateNo" class="line" style="width:98%;" onclick="MM_showHideLayers(&#39;confirm_num&#39;,&#39;&#39;,&#39;hide&#39;)" maxlength="6">
+						</p>
+						<p class="title_s">개인정보수집동의 및 기타사항</p>
+						<textarea name="textarea" class="line" style="width:98%; height:100px" title="개인정보수집동의" rows="0" cols="0">[서울특별시]('http://cleanair.seoul.go.kr/'이하 '대기환경정보시스템')은(는) 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.
+
+[서울특별시]('대기환경정보시스템') 은(는) 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.
+
+○ 본 방침은부터 2017년 9월 15일부터 시행됩니다.
+
+
+1. 개인정보의 처리 목적 [서울특별시]('http://cleanair.seoul.go.kr/'이하 '대기환경정보시스템')은(는) 개인정보를 다음의 목적을 위해 처리합니다. 처리한 개인정보는 다음의 목적이외의 용도로는 사용되지 않으며 이용 목적이 변경될 시에는 사전동의를 구할 예정입니다.
+
+가. 민원사무 처리
+
+처리결과 통보 등을 목적으로 개인정보를 처리합니다.
+
+
+
+
+2. 개인정보 파일 현황
+(‘http://cleanair.seoul.go.kr/’이하 '대기환경정보시스템')가 개인정보 보호법 제32조에 따라 등록●공개하는 개인정보파일의 처리목적은 다음과 같습니다.
+
+1. 개인정보 파일명 : 개인정보취급방침
+- 개인정보 항목 : 휴대전화번호
+- 수집방법 : 홈페이지
+- 보유근거 : 보유근거
+- 보유기간 : 준영구
+- 관련법령 : 신용정보의 수집/처리 및 이용 등에 관한 기록 : 3년
+
+
+※ 기타('http://cleanair.seoul.go.kr/'이하 '대기환경정보시스템')의 개인정보파일 등록사항 공개는 행정안전부 개인정보보호 종합지원 포털(www.privacy.go.kr) → 개인정보민원 → 개인정보열람등 요구 → 개인정보파일 목록검색 메뉴를 활용해주시기 바랍니다.
+
+
+3. 개인정보의 처리 및 보유 기간
+
+① [서울특별시]('대기환경정보시스템')은(는) 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 개인정보를 수집시에 동의 받은 개인정보 보유,이용기간 내에서 개인정보를 처리,보유합니다.
+
+② 각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.
+1.&lt;민원사무 처리&gt;
+&lt;민원사무 처리&gt;와 관련한 개인정보는 수집.이용에 관한 동의일로부터&lt;준영구&gt;까지 위 이용목적을 위하여 보유.이용됩니다.
+-보유근거 : 보유근거
+-관련법령 : 소비자의 불만 또는 분쟁처리에 관한 기록 : 3년
+-예외사유 :
+
+4. 정보주체의 권리,의무 및 그 행사방법 이용자는 개인정보주체로서 다음과 같은 권리를 행사할 수 있습니다.
+
+① 정보주체는 서울특별시(‘http://cleanair.seoul.go.kr/’이하 '대기환경정보시스템') 에 대해 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.
+1. 개인정보 열람요구
+2. 오류 등이 있을 경우 정정 요구
+3. 삭제요구
+4. 처리정지 요구
+② 제1항에 따른 권리 행사는서울특별시(‘http://cleanair.seoul.go.kr/’이하 '대기환경정보시스템') 에 대해 개인정보 보호법 시행규칙 별지 제8호 서식에 따라 서면, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며 [기관/회사명](‘사이트URL’이하 ‘사이트명) 은(는) 이에 대해 지체 없이 조치하겠습니다.
+③ 정보주체가 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 &lt;기관/회사명&gt;(‘사이트URL’이하 ‘사이트명) 은(는) 정정 또는 삭제를 완료할 때까지 당해 개인정보를 이용하거나 제공하지 않습니다.
+④ 제1항에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 개인정보 보호법 시행규칙 별지 제11호 서식에 따른 위임장을 제출하셔야 합니다.
+
+
+5. 처리하는 개인정보의 항목 작성
+
+① [서울특별시]('http://cleanair.seoul.go.kr/'이하 '대기환경정보시스템')은(는) 다음의 개인정보 항목을 처리하고 있습니다.
+
+1[민원사무 처리]
+- 필수항목 : 휴대전화번호
+- 선택항목 :
+
+6. 개인정보의 파기[서울특별시]('대기환경정보시스템')은(는) 원칙적으로 개인정보 처리목적이 달성된 경우에는 지체없이 해당 개인정보를 파기합니다. 파기의 절차, 기한 및 방법은 다음과 같습니다.
+
+-파기절차이용자가 입력한 정보는 목적 달성 후 별도의 DB에 옮겨져(종이의 경우 별도의 서류) 내부 방침 및 기타 관련 법령에 따라 일정기간 저장된 후 혹은 즉시 파기됩니다. 이 때, DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 다른 목적으로 이용되지 않습니다.-파기기한이용자의 개인정보는 개인정보의 보유기간이 경과된 경우에는 보유기간의 종료일로부터 5일 이내에, 개인정보의 처리 목적 달성, 해당 서비스의 폐지, 사업의 종료 등 그 개인정보가 불필요하게 되었을 때에는 개인정보의 처리가 불필요한 것으로 인정되는 날로부터 5일 이내에 그 개인정보를 파기합니다.
+
+-파기방법
+전자적 파일 형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용합니다.
+
+7. 개인정보의 안전성 확보 조치 [서울특별시]('대기환경정보시스템')은(는) 개인정보보호법 제29조에 따라 다음과 같이 안전성 확보에 필요한 기술적/관리적 및 물리적 조치를 하고 있습니다.
+
+1. 정기적인 자체 감사 실시
+ 개인정보 취급 관련 안정성 확보를 위해 정기적(분기 1회)으로 자체 감사를 실시하고 있습니다.
+
+2. 개인정보 취급 직원의 최소화 및 교육
+ 개인정보를 취급하는 직원을 지정하고 담당자에 한정시켜 최소화 하여 개인정보를 관리하는 대책을 시행하고 있습니다.
+
+3. 내부관리계획의 수립 및 시행
+ 개인정보의 안전한 처리를 위하여 내부관리계획을 수립하고 시행하고 있습니다.
+
+4. 해킹 등에 대비한 기술적 대책
+[서울특별시]('대기환경정보시스템')은 해킹이나 컴퓨터 바이러스 등에 의한 개인정보 유출 및 훼손을 막기 위하여 보안프로그램을 설치하고 주기적인 갱신·점검을 하며 외부로부터 접근이 통제된 구역에 시스템을 설치하고 기술적/물리적으로 감시 및 차단하고 있습니다.
+
+5. 개인정보의 암호화
+ 이용자의 개인정보는 비밀번호는 암호화 되어 저장 및 관리되고 있어, 본인만이 알 수 있으며 중요한 데이터는 파일 및 전송 데이터를 암호화 하거나 파일 잠금 기능을 사용하는 등의 별도 보안기능을 사용하고 있습니다.
+
+6. 접속기록의 보관 및 위변조 방지
+ 개인정보처리시스템에 접속한 기록을 최소 6개월 이상 보관, 관리하고 있으며, 접속 기록이 위변조 및 도난, 분실되지 않도록 보안기능 사용하고 있습니다.
+
+7. 개인정보에 대한 접근 제한
+ 개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여,변경,말소를 통하여 개인정보에 대한 접근통제를 위하여 필요한 조치를 하고 있으며 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있습니다.
+
+8. 비인가자에 대한 출입 통제
+ 개인정보를 보관하고 있는 물리적 보관 장소를 별도로 두고 이에 대해 출입통제 절차를 수립, 운영하고 있습니다.
+
+10. 개인정보 보호책임자 작성
+
+① 서울특별시(‘http://cleanair.seoul.go.kr/’이하 '대기환경정보시스템') 은(는) 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.
+
+▶ 개인정보 보호책임자
+성명 :권민
+직책 :대기정책과장
+연락처 :02-2133-3630
+※ 개인정보 보호 담당부서로 연결됩니다.
+
+▶ 개인정보 보호 담당부서
+부서명 :대기정책과
+담당자 :주유현
+연락처 :02-2133-3665, jyhyun@seoul.go.kr
+② 정보주체께서는 서울특별시(‘http://cleanair.seoul.go.kr/’이하 '대기환경정보시스템') 의 서비스(또는 사업)을 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수 있습니다. 서울특별시(‘http://cleanair.seoul.go.kr/’이하 '대기환경정보시스템') 은(는) 정보주체의 문의에 대해 지체 없이 답변 및 처리해드릴 것입니다.
+
+
+11. 개인정보 처리방침 변경
+
+①이 개인정보처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 공지사항을 통하여 고지할 것입니다.
+
+12. 기타사항
+
+① 대기질 예보출처: "환경부/한국환경공단(Airkorea)"
+② 데이터 오류 가능성: 예보지수 제공자(환경부/한국환경공단)의 사정이나 문자전송시스템의 전송/수신 상태에 따라 미발송될 수 있습니다.
+③ 1일 2회(05시, 17시)의 국립환경과학원에서 발표한 예보 등급이 "나쁨" 이상 일때 문자를 제공합니다.
+</textarea>
+						<p class="al_r">
+							<input type="checkbox" style="height:16px" id="sms_yn" name="sms_yn"><label for="sms_yn"> 동의함</label>
+							<input type="hidden" name="agreeYn" value="Y">
+						</p>
+					</fieldset>
+					<div class="al_c">
+						<input type="button" class="btn_sns_02" id="btn_sms_application" title="신청" value="신청">
+						<input type="button" class="btn_sns_03" id="btn_sms_application_cancel" title="신청취소" value="신청취소">
+						<input type="button" class="btn_sns_04" id="btn_sms_application_update" title="신청변경" value="신청변경">
+					</div>
+				</div>
+				<p>
+					<a href="http://cleanair.seoul.go.kr/main.htm#" class="btn_close">x close</a>
+				</p>
+			</div>
+		</div>
+	</form>
+	<dl id="skipNav">
+		<dt>바로가기</dt>
+		<dd><a href="http://cleanair.seoul.go.kr/main.htm#mainwrap">본문영역 바로가기</a></dd>
+		<dd><a href="http://cleanair.seoul.go.kr/main.htm#footer">하단영역 바로가기</a></dd>
+	</dl>
+<div id="wrap">
+	<!-- 웹로그 주석처리 -->
+<script type="text/javascript" src="./js/makePCookie.js.다운로드"></script>
+<script type="text/javascript" src="./js/tabcontent.js.다운로드"></script>
+<script type="text/javascript" src="./js/gnb.js.다운로드"></script>
+<script type="text/javascript">
+//<![CDATA[
+
+
+function faqList(objs){
+	var obj = document.getElementById(objs);
+	var menuLink = getElementsByClass(obj, "A", "language"); // A태그 추출
+
+	var currentMenu = obj.currentMenu = null;
+	for(var i=0; i<menuLink.length; i++){
+		thismenu = menuLink[i];
+		thismenu.container = obj;
+		thismenu.targetName = document.getElementById(menuLink[i].href.split("#")[1]);
+		thismenu.targetName.style.display = "none";
+		thismenu.dt = parentEle(thismenu, "dt");
+		thismenu.img = thismenu.getElementsByTagName("IMG")[0];
+
+		thismenu.onclick = function(){
+			if(currentMenu){
+				if(this == currentMenu && currentMenu.targetName.style.display == "none"){
+					currentMenu.targetName.style.display = "";
+					addClass(currentMenu.dt, "current");
+					if(currentMenu.img) currentMenu.img.src = currentMenu.img.src.replace(".gif", "_on.gif");
+				} else {
+					currentMenu.targetName.style.display = "none";
+					removeClass(currentMenu.dt, "current");
+					if(currentMenu.img) currentMenu.img.src = currentMenu.img.src.replace("_on.gif", ".gif");
+				}
+			}
+
+			if(currentMenu != this){
+				this.targetName.style.display = "";
+				addClass(this.dt, "current");
+				if(this.img) this.img.src = this.img.src.replace(".gif", "_on.gif");
+			}
+
+			currentMenu = this;
+			return false;
+		}
+	}
+}
+//]]>
+</script>
+<script type="text/javascript">
+// GNB 로딩 스크립트
+// Yjs.Gnb.init('사이트코드', 'GNB 표출영역 ID');
+window.onload = function() {
+Yjs.Gnb.init('G024', 'seoul-common-gnb');
+};
+</script>
+
+<div id="seoul-common-gnb">	<div id="seoul-gnb-plugin">		<div class="seoul-gnb-holder">			<p class="seoul-gnb-link"><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=logo&amp;link=https://www.seoul.go.kr" target="_blank" title="새창열림" class="seoul-gnb-icon-link wise-link" data-kind="logo">서울특별시</a></p>			<dl class="seoul-gnb-news">				<dt><a href="https://www.seoul.go.kr/realmnews/in/list.do" target="_blank" title="새창열림(서울소식)" class="seoul-gnb-icon-notice">서울소식</a></dt>				<dd><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=hotissue&amp;link=http://news.seoul.go.kr/welfare/archives/505600" target="_blank" title="새창열림">안심이 앱 설치하면 3천원 주유할인권 드립니다.</a></dd>			</dl>			<dl class="seoul-gnb-menu">				<dt>주요메뉴</dt>				<dd><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=seoulnews&amp;link=https://www.seoul.go.kr/realmnews/in/list.do" target="_blank" title="새창열림" class="seoul-gnb-icon-menu1 wise-link" data-kind="seoulnews">서울소식</a></dd>				<dd><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=eungdapso&amp;link=http://eungdapso.seoul.go.kr" target="_blank" title="새창열림" class="seoul-gnb-icon-menu2 wise-link" data-kind="eungdapso">응답소</a></dd>				<dd><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=opengov&amp;link=http://opengov.seoul.go.kr" target="_blank" title="새창열림" class="seoul-gnb-icon-menu3 wise-link" data-kind="opengov">정보공개</a></dd>				<dd>					<button type="button" class="seoul-gnb-icon-menu4">분야별정보</button>					<div class="seoul-gnb-menu-section" style="display: none;">						<dl>							<dt>분야별정보</dt>							<dd>								<ul>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=citybuild&amp;link=http://news.seoul.go.kr/citybuild/" target="_blank" title="새창열림" class="wise-link" data-kind="citybuild">주택</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=economy&amp;link=http://news.seoul.go.kr/economy/" target="_blank" title="새창열림" class="wise-link" data-kind="economy">경제</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=traffic&amp;link=http://news.seoul.go.kr/traffic/" target="_blank" title="새창열림" class="wise-link" data-kind="traffic">교통</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=env&amp;link=http://news.seoul.go.kr/env/" target="_blank" title="새창열림" class="wise-link" data-kind="env">환경</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=welfare&amp;link=http://news.seoul.go.kr/welfare/" target="_blank" title="새창열림" class="wise-link" data-kind="welfare">복지</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=safe&amp;link=http://news.seoul.go.kr/safe/" target="_blank" title="새창열림" class="wise-link" data-kind="safe">안전</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=culture&amp;link=http://news.seoul.go.kr/culture/" target="_blank" title="새창열림" class="wise-link" data-kind="culture">문화</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=gov&amp;link=http://news.seoul.go.kr/gov/" target="_blank" title="새창열림" class="wise-link" data-kind="gov">행정</a></li>								</ul>							</dd>						</dl>						<p><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=allservice&amp;link=https://www.seoul.go.kr/service/all.do" target="_blank" title="새창열림" class="wise-link" data-kind="allservice"><span class="seoul-gnb-icon-service"></span> 서비스 전체보기</a></p>						<button type="button"><span class="seoul-gnb-icon-service-close"></span><span class="hd-element">분야별 정보 닫기</span></button>					</div>				</dd>			</dl>		</div>	</div></div>
+
+<div id="header">
+    <div id="logo">
+      <h1><a href="http://cleanair.seoul.go.kr/main.htm"><img src="./서울특별시 대기환경 정보시스템_files/top_logo.gif" width="225" height="29" alt="서울특별시 대기환경정보"></a></h1>
+    <div id="globalmenu">
+      <!--
+      <iframe src="//www.seoul.go.kr/seoul-common-gnb/seoul-common-gnb-type-b.html?gid=cleanair" width="470" height="28" frameborder="0" scrolling="no" title="서울시 새소식"></iframe>
+      -->
+
+	<!-- <div id='seoul-common-gnb'> </div> -->
+      	<!--  -->
+        <ul id="social">
+          <li><a href="https://twitter.com/search?q=seoulcleanair" target="_blank" title="새창열림"><img src="./서울특별시 대기환경 정보시스템_files/twitter.gif" width="24" height="24" alt="트위터"></a></li>
+          <li><a href="https://www.facebook.com/seoul.kr" target="_blank" title="새창열림"><img src="./서울특별시 대기환경 정보시스템_files/facebook.gif" width="24" height="24" alt="페이스북"></a></li>
+        </ul>
+      	<div id="sitemap"><a href="http://cleanair.seoul.go.kr/citizen.htm?method=sitemap">사이트맵</a></div>
+        <dl id="lang">
+          <dt><a href="http://cleanair.seoul.go.kr/main.htm#tab_grp" class="language">LANGUAGE</a></dt>
+          <dd id="tab_grp" style="display: none;">
+            <p><a href="http://english.seoul.go.kr/policy-information/environment-energy/air-quality-information/1-air-quality-information/" target="_blank" title="go to new window">ENGLISH</a></p>
+            <p><a href="http://chinese.seoul.go.kr/%E6%94%BF%E7%AD%96%E4%BF%A1%E6%81%AF/%E7%8E%AF%E5%A2%83%E8%83%BD%E6%BA%90/%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F%E4%BF%A1%E6%81%AF/1-%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F%E4%BF%A1%E6%81%AF/" target="_blank" title="go to new window">簡体中文</a></p>
+            <p><a href="http://tchinese.seoul.go.kr/%E6%94%BF%E7%AD%96%E8%B3%87%E8%A8%8A/%E7%92%B0%E5%A2%83%E8%83%BD%E6%BA%90/%E7%A9%BA%E6%B0%A3%E7%92%B0%E5%A2%83%E8%B3%87%E8%A8%8A/1-%E7%A9%BA%E6%B0%A3%E7%92%B0%E5%A2%83%E8%B3%87%E8%A8%8A/" target="_blank" title="go to new window">繁体中文</a></p>
+            <p><a href="http://japanese.seoul.go.kr/%E6%94%BF%E7%AD%96%E6%83%85%E5%A0%B1/%E7%92%B0%E5%A2%83-%E3%82%A8%E3%83%8D%E3%83%AB%E3%82%AE%E3%83%BC/%E5%A4%A7%E6%B0%97%E7%92%B0%E5%A2%83%E6%83%85%E5%A0%B1/1-%E5%A4%A7%E6%B0%97%E7%92%B0%E5%A2%83%E6%83%85%E5%A0%B1/" target="_blank" title="go to new window">日本語</a></p>
+            <p><a href="http://spanish.seoul.go.kr/informacion-sobre-politicas/medio-ambiente-energia/informations-sur-la-qualite-de-lair/1-informacion-de-ambiente-atmosferico/" target="_blank" title="go to new window">Español</a></p>
+            <p><a href="http://french.seoul.go.kr/infos-politiques/environnement-energy/informations-sur-la-qualite-de-lair/1-informations-sur-la-qualite-de-lair/" target="_blank" title="go to new window">Français</a></p>
+          </dd>
+        </dl>
+        <script type="text/javascript">faqList("lang");</script>
+
+
+      </div>
+    </div>
+    <div id="gnb_wrap" style="height: 36px; border-bottom: 1px solid rgb(223, 223, 223);">
+      <div class="gnb_section">
+        <ul class="gnb">
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=pm10">대기현황</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=pm10">미세먼지</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=pm25">초미세먼지</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=o3">오존</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=ysand">황사</a></dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/air_pollution.htm?method=average">대기통계</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/air_pollution.htm?method=average">평균대기오염도</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/air_pollution.htm?method=season">기간별</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/alert_year.htm?method=dust">경보발령</a></dd>
+              <!-- <dd><a href="air_pollution.htm?method=longtime">장기간추이</a></dd> -->
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=weather">날씨·기후</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=weather">날씨</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=weatherFactor01">기상지수</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/climate.htm?method=year">기후</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/climate_map.htm?method=temp">기후지도</a></dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/inform.htm?method=standards">정보마당</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=standards">대기환경기준</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=airPollutant">대기오염물질</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=airQualityStandard">대기질개선정책</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=climateEffect01">기후변화</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=monitoringpost">측정소정보</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=monitoring">대기오염전광판</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=materials">자료실</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=glossary">용어사전</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=cai">통합대기환경지수</a></dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/citizen.htm?method=notice">시민광장</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/citizen.htm?method=notice">공지사항</a></dd>
+              <!-- <dd><a href="citizen.htm?method=qna">묻고답하기</a></dd> -->
+              <!-- <dd><a href="citizen.htm?method=siteLink">사이트링크</a></dd>
+              <dd><a href="citizen.htm?method=hpInfo">홈페이지소개</a></dd> -->
+              <dd><a href="http://cleanair.seoul.go.kr/citizen.htm?method=way">찾아오시는길</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/citizen.htm?method=sitemap">사이트맵</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><div id="mainwrap">
+	<p class="pop_btn">
+		<a href="http://cleanair.seoul.go.kr/main.htm#layer" onclick="showHide(&#39;layer&#39;);return false;">
+			<img src="./서울특별시 대기환경 정보시스템_files/trans.png" width="100" height="20" alt="관심구역 설정" id="attentionArea">
+		</a>
+	</p>
+	<div id="layer" class="pop">
+		<p class="cls">
+			<a href="http://cleanair.seoul.go.kr/main.htm#layer" onclick="showHide(&#39;layer&#39;);return false;">
+				<img src="./서울특별시 대기환경 정보시스템_files/btn_x.gif" width="18" height="18" alt="닫기">
+			</a>
+		</p>
+		<p class="pop_t"></p>
+		<div class="pop_m">
+			<fieldset>
+				<legend>지역 선택</legend>
+				<input id="num1" name="grp1" type="radio" class="rdo" value="111123" data-gunm="종로구">
+				<label for="num1"> 종로구</label>
+				<input id="num2" name="grp1" type="radio" class="rdo" value="111121" data-gunm="중구">
+				<label for="num2"> 중구</label>
+				<input id="num3" name="grp1" type="radio" class="rdo" value="111131" data-gunm="용산구">
+				<label for="num3"> 용산구</label>
+				<input id="num4" name="grp1" type="radio" class="rdo" value="111142" data-gunm="성동구">
+				<label for="num4"> 성동구</label>
+				<input id="num5" name="grp1" type="radio" class="rdo" value="111141" data-gunm="광진구">
+				<label for="num5"> 광진구</label><br>
+				<input id="num6" name="grp1" type="radio" class="rdo" value="111152" data-gunm="동대문구">
+				<label for="num6"> 동대문구</label>
+				<input id="num7" name="grp1" type="radio" class="rdo" value="111151" data-gunm="중랑구">
+				<label for="num7"> 중랑구</label>
+				<input id="num8" name="grp1" type="radio" class="rdo" value="111161" data-gunm="성북구">
+				<label for="num8"> 성북구</label>
+				<input id="num9" name="grp1" type="radio" class="rdo" value="111291" data-gunm="강북구">
+				<label for="num9"> 강북구</label>
+				<input id="num10" name="grp1" type="radio" class="rdo" value="111171" data-gunm="도봉구">
+				<label for="num10"> 도봉구</label><br>
+				<input id="num11" name="grp1" type="radio" class="rdo" value="111311" data-gunm="노원구">
+				<label for="num11"> 노원구</label>
+				<input id="num12" name="grp1" type="radio" class="rdo" value="111181" data-gunm="은평구">
+				<label for="num12"> 은평구</label>
+				<input id="num13" name="grp1" type="radio" class="rdo" value="111191" data-gunm="서대문구">
+				<label for="num13"> 서대문구</label>
+				<input id="num14" name="grp1" type="radio" class="rdo" value="111201" data-gunm="마포구">
+				<label for="num14"> 마포구</label>
+				<input id="num15" name="grp1" type="radio" class="rdo" value="111301" data-gunm="양천구">
+				<label for="num15"> 양천구</label><br>
+				<input id="num16" name="grp1" type="radio" class="rdo" value="111212" data-gunm="강서구">
+				<label for="num16"> 강서구</label>
+				<input id="num17" name="grp1" type="radio" class="rdo" value="111221" data-gunm="구로구">
+				<label for="num17"> 구로구</label>
+				<input id="num18" name="grp1" type="radio" class="rdo" value="111281" data-gunm="금천구">
+				<label for="num18"> 금천구</label>
+				<input id="num19" name="grp1" type="radio" class="rdo" value="111231" data-gunm="영등포구">
+				<label for="num19"> 영등포구</label>
+				<input id="num20" name="grp1" type="radio" class="rdo" value="111241" data-gunm="동작구">
+				<label for="num20"> 동작구</label><br>
+				<input id="num21" name="grp1" type="radio" class="rdo" value="111251" data-gunm="관악구">
+				<label for="num21"> 관악구</label>
+				<input id="num22" name="grp1" type="radio" class="rdo" value="111262" data-gunm="서초구">
+				<label for="num22"> 서초구</label>
+				<input id="num23" name="grp1" type="radio" class="rdo" value="111261" data-gunm="강남구">
+				<label for="num23"> 강남구</label>
+				<input id="num24" name="grp1" type="radio" class="rdo" value="111273" data-gunm="송파구">
+				<label for="num24"> 송파구</label>
+				<input id="num25" name="grp1" type="radio" class="rdo" value="111274" data-gunm="강동구">
+				<label for="num25"> 강동구</label>
+			</fieldset>
+			<p class="al_c mgt10">
+				<a href="http://cleanair.seoul.go.kr/main.htm#" onclick="deleteCookie(&#39;AREA&#39;);setArea();">
+					<img src="./서울특별시 대기환경 정보시스템_files/btn_pop_save.gif" width="101" height="30" alt="설정저장">
+				</a> &nbsp;&nbsp;
+				<a href="http://cleanair.seoul.go.kr/main.htm#" onclick="deleteCookie(&#39;AREA&#39;);deleteCookie(&#39;AREA-NM&#39;);showHide(&#39;layer&#39;);return false;">
+					<img src="./서울특별시 대기환경 정보시스템_files/btn_pop_cencel.gif" width="101" height="30" alt="설정취소">
+				</a>
+			</p>
+		</div>
+		<p class="pop_b"></p>
+	</div>
+	<div class="colgrp1">
+		<div class="fl w706" style="margin-left:1px">
+			<noscript>        스크립트가 작동하지 않습니다.        </noscript>
+			<ul id="tabNav1">
+				<li><a href="http://cleanair.seoul.go.kr/main.htm#tab1_01" id="tn1" class="tab">초미세먼지</a></li>
+				<li><a href="http://cleanair.seoul.go.kr/main.htm#tab1_02" id="tn2" class="tab">미세먼지</a></li>
+				<li><a href="http://cleanair.seoul.go.kr/main.htm#tab1_03" id="tn3" class="tab">오존</a></li>
+				<li><a href="http://cleanair.seoul.go.kr/main.htm#tab1_04" id="tn4" class="tab">공간분포</a></li>
+			</ul>
+			<div class="tabContentsWrap">
+				<div id="tab1_01" class="tabContents1" style="display: none;">
+					<div class="tower">
+						<img src="./서울특별시 대기환경 정보시스템_files/ico_tower_02.png" width="62" height="274" alt="">
+					</div>
+					<div class="all">
+						<img src="./서울특별시 대기환경 정보시스템_files/all.png" alt="" width="418" height="340" border="0" usemap="#Map1">
+						<map name="Map1" id="Map1">
+							<area shape="poly" coords="277,86,282,72,289,75,283,41,288,18,276,12,267,12,261,4,250,4,244,17,252,42,251,65,266,74,276,85" href="javascript:setViewArea(1,9);" alt="도봉구">
+							<area shape="poly" coords="312,8,300,17,291,19,286,41,291,72,290,78,284,75,279,89,294,107,303,109,319,98,329,101,338,99,349,87,342,71,328,71,324,57,330,53,328,29,330,19,313,8" href="javascript:setViewArea(1,10);" alt="노원구">
+							<area shape="poly" coords="268,114,282,95,266,77,248,65,250,45,242,21,226,30,226,45,216,63,220,80,252,109,268,113" href="javascript:setViewArea(1,8);" alt="강북구">
+							<area shape="poly" coords="205,88,199,76,188,59,177,58,148,71,137,107,137,131,124,142,138,155,148,141,157,144,184,115,183,97,205,88" href="javascript:setViewArea(1,11);" alt="은평구">
+							<area shape="poly" coords="211,91,218,80,246,108,259,114,271,115,283,99,294,110,304,111,303,117,292,126,273,136,258,154,244,149,236,136,224,137,217,130,223,113,216,107" href="javascript:setViewArea(1,7);" alt="성북구">
+							<area shape="poly" coords="260,165,258,156,244,152,234,138,223,140,216,132,221,115,213,101,206,89,185,99,186,116,191,131,192,147,191,155,202,167,211,161,225,165" href="javascript:setViewArea(1,0);" alt="종로구">
+							<area shape="poly" coords="184,118,158,146,148,143,138,158,156,170,164,173,165,181,194,183,204,173,190,158,190,141,188,130" href="javascript:setViewArea(1,12);" alt="서대문구">
+							<area shape="poly" coords="206,168,212,163,227,167,247,166,258,166,259,172,245,194,235,191,227,192,211,186,200,189,197,182" href="javascript:setViewArea(1,1);" alt="중구">
+							<area shape="poly" coords="261,156,275,137,302,120,306,127,304,143,311,154,310,172,298,177,276,160,262,168" href="javascript:setViewArea(1,5);" alt="동대문구">
+							<area shape="poly" coords="320,100,307,109,305,122,308,127,306,141,313,154,313,164,326,166,335,160,339,148,353,126,349,103,331,103" href="javascript:setViewArea(1,6);" alt="중랑구">
+							<area shape="poly" coords="119,137,138,158,147,165,161,173,164,182,183,184,196,184,198,192,192,202,190,208,180,213,156,203,123,189,96,161,114,154" href="javascript:setViewArea(1,13);" alt="마포구">
+							<area shape="poly" coords="199,192,211,188,226,194,236,192,245,197,254,208,231,232,212,236,185,228,182,213,192,210" href="javascript:setViewArea(1,2);" alt="용산구">
+							<area shape="poly" coords="277,161,261,171,246,196,256,208,265,204,291,214,306,190,311,173,297,179" href="javascript:setViewArea(1,3);" alt="성동구">
+							<area shape="poly" coords="313,165,313,173,310,177,304,197,293,214,311,220,332,214,343,196,347,180,338,178,339,159,328,168" href="javascript:setViewArea(1,4);" alt="광진구">
+							<area shape="poly" coords="409,151,381,166,349,181,345,200,357,204,352,217,379,231,400,198,416,194,415,168" href="javascript:setViewArea(1,24);" alt="강동구">
+							<area shape="poly" coords="125,192,96,164,41,122,32,145,1,186,21,198,33,208,48,200,59,204,68,195,76,220,100,212,96,198,102,192,123,197" href="javascript:setViewArea(1,15);" alt="강서구">
+							<area shape="poly" coords="59,206,68,197,75,222,102,213,99,201,101,193,122,199,125,211,117,226,123,236,110,233,103,246,89,237,76,252,61,241,62,223" href="javascript:setViewArea(1,14);" alt="양천구">
+							<area shape="poly" coords="183,230,180,216,149,202,127,193,123,198,127,212,121,226,124,236,131,244,131,264,135,271,157,251,159,236" href="javascript:setViewArea(1,18);" alt="영등포구">
+							<area shape="poly" coords="185,230,162,237,159,252,139,270,159,271,179,263,195,265,203,279,215,282,220,260,214,238" href="javascript:setViewArea(1,19);" alt="동작구">
+							<area shape="poly" coords="215,237,223,260,218,281,223,294,225,302,233,294,245,305,257,304,267,297,273,314,271,328,284,336,307,338,320,323,331,306,319,286,293,294,278,278,263,265,256,234,246,221,233,232" href="javascript:setViewArea(1,21);" alt="서초구">
+							<area shape="poly" coords="247,217,257,210,265,205,305,219,304,245,319,254,344,264,360,296,346,306,334,305,320,284,308,288,294,292,276,272,267,265,259,237" href="javascript:setViewArea(1,22);" alt="강남구">
+							<area shape="poly" coords="308,222,306,244,338,260,347,265,361,294,383,279,394,254,378,246,376,231,349,217,353,206,343,202,331,217" href="javascript:setViewArea(1,23);" alt="송파구">
+							<area shape="poly" coords="60,242,75,254,90,240,104,250,110,235,125,238,129,248,131,266,131,278,123,280,104,259,87,278,79,286,58,281,50,256" href="javascript:setViewArea(1,16);" alt="구로구">
+							<area shape="poly" coords="114,272,122,282,133,280,134,271,144,280,143,289,149,300,152,308,163,318,154,328,137,327,119,306,117,290" href="javascript:setViewArea(1,17);" alt="금천구">
+							<area shape="poly" coords="140,272,158,274,180,264,194,266,201,280,217,284,224,304,197,328,178,330,157,312,147,291" href="javascript:setViewArea(1,20);" alt="관악구">
+						</map>
+					</div>
+					<div class="map">
+						<p class="Jongno">
+							<img src="./서울특별시 대기환경 정보시스템_files/Jongno_01.png" width="76" height="83" alt="종로구 좋음">
+						</p>
+						<p class="Jung">
+							<img src="./서울특별시 대기환경 정보시스템_files/Jung_01.png" width="69" height="35" alt="중구 좋음">
+						</p>
+						<p class="Yongsan">
+							<img src="./서울특별시 대기환경 정보시스템_files/Yongsan_02.png" width="78" height="55" alt="용산구 보통">
+						</p>
+						<p class="Seongdong">
+							<img src="./서울특별시 대기환경 정보시스템_files/Seongdong_02.png" width="66" height="60" alt="성동구 보통">
+						</p>
+						<p class="Gwangjin">
+							<img src="./서울특별시 대기환경 정보시스템_files/Gwangjin_02.png" width="59" height="64" alt="광진구  보통">
+						</p>
+						<p class="Dongdaemun">
+							<img src="./서울특별시 대기환경 정보시스템_files/Dongdaemun_01.png" width="59" height="60" alt="동대문구 좋음">
+						</p>
+						<p class="Jungnang">
+							<img src="./서울특별시 대기환경 정보시스템_files/Jungnang_02.png" width="59" height="68" alt="중랑구 보통">
+						</p>
+						<p class="Seongbuk">
+							<img src="./서울특별시 대기환경 정보시스템_files/Seongbuk_02.png" width="95" height="76" alt="성북구 보통">
+						</p>
+						<p class="Gangbuk">
+							<img src="./서울특별시 대기환경 정보시스템_files/Gangbuk_02.png" width="71" height="98" alt="강북구 보통">
+						</p>
+						<p class="Dobong">
+							<img src="./서울특별시 대기환경 정보시스템_files/Dobong_02.png" width="50" height="90" alt="도봉구 보통">
+						</p>
+						<p class="Nowon">
+							<img src="./서울특별시 대기환경 정보시스템_files/Nowon_02.png" width="72" height="105" alt="노원구 보통">
+						</p>
+						<p class="Eunpyung">
+							<img src="./서울특별시 대기환경 정보시스템_files/Eunpyung_02.png" width="84" height="103" alt="은평구 보통">
+						</p>
+						<p class="Seodaemun">
+							<img src="./서울특별시 대기환경 정보시스템_files/Seodaemun_02.png" width="68" height="67" alt="서대문구 보통">
+						</p>
+						<p class="Mapo">
+							<img src="./서울특별시 대기환경 정보시스템_files/Mapo_02.png" width="107" height="79" alt="마포구 보통">
+						</p>
+						<p class="Yangcheon">
+							<img src="./서울특별시 대기환경 정보시스템_files/Yangcheon_02.png" width="72" height="61" alt="양천구 보통">
+						</p>
+						<p class="Gangseo">
+							<img src="./서울특별시 대기환경 정보시스템_files/Gangseo_02.png" width="125" height="100" alt="강서구 보통">
+						</p>
+						<p class="Guro">
+							<img src="./서울특별시 대기환경 정보시스템_files/Guro_02.png" width="93" height="55" alt="구로구 보통">
+						</p>
+						<p class="Geumcheon">
+							<img src="./서울특별시 대기환경 정보시스템_files/Geumcheon_02.png" width="55" height="63" alt="금천구 보통">
+						</p>
+						<p class="Yeongdeungpo">
+							<img src="./서울특별시 대기환경 정보시스템_files/Yeongdeungpo_02.png" width="71" height="82" alt="영등포구 보통">
+						</p>
+						<p class="Dongjak">
+							<img src="./서울특별시 대기환경 정보시스템_files/Dongjak_02.png" width="87" height="57" alt="동작구 보통">
+						</p>
+						<p class="Gwanak">
+							<img src="./서울특별시 대기환경 정보시스템_files/Gwanak_02.png" width="94" height="71" alt="관악구 보통">
+						</p>
+						<p class="Seocho">
+							<img src="./서울특별시 대기환경 정보시스템_files/Seocho_02.png" width="121" height="123" alt="서초구 보통">
+						</p>
+						<p class="Gangnam">
+							<img src="./서울특별시 대기환경 정보시스템_files/Gangnam_01.png" width="114" height="106" alt="강남구 좋음">
+						</p>
+						<p class="Songpa">
+							<img src="./서울특별시 대기환경 정보시스템_files/Songpa_02.png" width="94" height="99" alt="송파구 보통">
+						</p>
+						<p class="Gangdong">
+							<img src="./서울특별시 대기환경 정보시스템_files/Gangdong_02.png" width="77" height="80" alt="강동구 보통">
+						</p>
+					</div>
+				<div class="monitor">
+					<div class="monitor_t" id="date_1">2019년 05월 07일 10시</div>
+					<div class="monitor_m">
+						<table width="100%" cellspacing="0" cellpadding="0" summary="선택된 지역별 측정소의 초미세먼지, 미세먼지, 오존, 이산화질소, 일산화탄소, 아황산가스의 정보를 테이블로 보여줍니다.">
+							<caption>측정소별 정보</caption>
+							<colgroup>
+								<col width="50%">
+								<col width="50%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th colspan="2" scope="col">
+										<p id="areaName_1">종로구</p>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row" style="text-align:left;padding-left:5px;">초미세먼지</th>
+									<td id="pm25_1">12 µg/m³</td>
+								</tr>
+								<tr>
+									<th scope="row" style="text-align:left;padding-left:5px;">미세먼지</th>
+									<td id="pm10_1">41 µg/m³</td>
+								</tr>
+								<tr>
+									<th scope="row" style="text-align:left;padding-left:5px;">오존</th>
+									<td id="o3_1">점검중</td>
+								</tr>
+								<tr>
+									<th scope="row" style="text-align:left;padding-left:5px;">이산화질소</th>
+									<td id="no2_1">점검중</td>
+								</tr>
+								<tr>
+									<th scope="row" style="text-align:left;padding-left:5px;">일산화탄소</th>
+									<td id="co_1">점검중</td>
+								</tr>
+								<tr class="bdr_none">
+									<th scope="row" style="text-align:left;padding-left:5px;">아황산가스</th>
+									<td id="so2_1">점검중</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="monitor_b"></div>
+				</div>
+				<div class="notes">
+					<div class="notes_t">초미세먼지 <span class="s">(PM-2.5)</span></div>
+					<div class="notes_m">
+						<table width="100%" cellspacing="0" cellpadding="0" summary="초미세먼지의 대한 범례와 지수범위를 색상과 수치로 나타냅니다. 파란색은 좋음, 연두색은 보통, 노랑색은 나쁨, 빨간색은 매우나쁨 , 흰색은 점검중을 의미합니다.">
+							<caption>초미세먼지 범례</caption>
+							<colgroup>
+								<col width="50%">
+								<col width="50%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">범례</th>
+									<td>지수범위</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+											<th scope="row" class="num_01" style="text-align:left;padding-left:5px;">① 좋음</th>
+											<td>0~15</td>
+										</tr>
+										<tr>
+											<th scope="row" class="num_02" style="text-align:left;padding-left:5px;">② 보통</th>
+											<td>16~35</td>
+										</tr>
+										<tr>
+											<th scope="row" class="num_03" style="text-align:left;padding-left:5px;">③ 나쁨</th>
+											<td>36~75</td>
+										</tr>
+										<tr>
+											<th scope="row" class="num_04" style="text-align:left;padding-left:5px;">④  매우나쁨</th>
+											<td>76~</td>
+										</tr>
+										<tr class="bdr_none">
+											<th scope="row" class="num_05" style="text-align:left;padding-left:5px;">ⓞ 점검중</th>
+											<td>&nbsp;</td>
+										</tr>
+									</tbody>
+						</table>
+					</div>
+					<div class="notes_b"></div>
+				</div>
+			</div>
+			<div id="tab1_02" class="tabContents2" style="display: none;">
+				<div class="tower"><img src="./서울특별시 대기환경 정보시스템_files/ico_tower_02.png" width="62" height="274" alt=""> </div>
+				<div class="all">
+					<img src="./서울특별시 대기환경 정보시스템_files/all.png" alt="" width="418" height="340" border="0" usemap="#Map2">
+					<map name="Map2" id="Map2">
+						<area shape="poly" coords="277,86,282,72,289,75,283,41,288,18,276,12,267,12,261,4,250,4,244,17,252,42,251,65,266,74,276,85" href="javascript:setViewArea(2,9);" alt="도봉구">
+						<area shape="poly" coords="312,8,300,17,291,19,286,41,291,72,290,78,284,75,279,89,294,107,303,109,319,98,329,101,338,99,349,87,342,71,328,71,324,57,330,53,328,29,330,19,313,8" href="javascript:setViewArea(2,10);" alt="노원구">
+						<area shape="poly" coords="268,114,282,95,266,77,248,65,250,45,242,21,226,30,226,45,216,63,220,80,252,109,268,113" href="javascript:setViewArea(2,8);" alt="강북구">
+						<area shape="poly" coords="205,88,199,76,188,59,177,58,148,71,137,107,137,131,124,142,138,155,148,141,157,144,184,115,183,97,205,88" href="javascript:setViewArea(2,11);" alt="은평구">
+						<area shape="poly" coords="211,91,218,80,246,108,259,114,271,115,283,99,294,110,304,111,303,117,292,126,273,136,258,154,244,149,236,136,224,137,217,130,223,113,216,107" href="javascript:setViewArea(2,7);" alt="성북구">
+						<area shape="poly" coords="260,165,258,156,244,152,234,138,223,140,216,132,221,115,213,101,206,89,185,99,186,116,191,131,192,147,191,155,202,167,211,161,225,165" href="javascript:setViewArea(2,0);" alt="종로구">
+						<area shape="poly" coords="184,118,158,146,148,143,138,158,156,170,164,173,165,181,194,183,204,173,190,158,190,141,188,130" href="javascript:setViewArea(2,12);" alt="서대문구">
+						<area shape="poly" coords="206,168,212,163,227,167,247,166,258,166,259,172,245,194,235,191,227,192,211,186,200,189,197,182" href="javascript:setViewArea(2,1);" alt="중구">
+						<area shape="poly" coords="261,156,275,137,302,120,306,127,304,143,311,154,310,172,298,177,276,160,262,168" href="javascript:setViewArea(2,5);" alt="동대문구">
+						<area shape="poly" coords="320,100,307,109,305,122,308,127,306,141,313,154,313,164,326,166,335,160,339,148,353,126,349,103,331,103" href="javascript:setViewArea(2,6);" alt="중랑구">
+						<area shape="poly" coords="119,137,138,158,147,165,161,173,164,182,183,184,196,184,198,192,192,202,190,208,180,213,156,203,123,189,96,161,114,154" href="javascript:setViewArea(2,13);" alt="마포구">
+						<area shape="poly" coords="199,192,211,188,226,194,236,192,245,197,254,208,231,232,212,236,185,228,182,213,192,210" href="javascript:setViewArea(2,2);" alt="용산구">
+						<area shape="poly" coords="277,161,261,171,246,196,256,208,265,204,291,214,306,190,311,173,297,179" href="javascript:setViewArea(2,3);" alt="성동구">
+						<area shape="poly" coords="313,165,313,173,310,177,304,197,293,214,311,220,332,214,343,196,347,180,338,178,339,159,328,168" href="javascript:setViewArea(2,4);" alt="광진구">
+						<area shape="poly" coords="409,151,381,166,349,181,345,200,357,204,352,217,379,231,400,198,416,194,415,168" href="javascript:setViewArea(2,24);" alt="강동구">
+						<area shape="poly" coords="125,192,96,164,41,122,32,145,1,186,21,198,33,208,48,200,59,204,68,195,76,220,100,212,96,198,102,192,123,197" href="javascript:setViewArea(2,15);" alt="강서구">
+						<area shape="poly" coords="59,206,68,197,75,222,102,213,99,201,101,193,122,199,125,211,117,226,123,236,110,233,103,246,89,237,76,252,61,241,62,223" href="javascript:setViewArea(2,14);" alt="양천구">
+						<area shape="poly" coords="183,230,180,216,149,202,127,193,123,198,127,212,121,226,124,236,131,244,131,264,135,271,157,251,159,236" href="javascript:setViewArea(2,18);" alt="영등포구">
+						<area shape="poly" coords="185,230,162,237,159,252,139,270,159,271,179,263,195,265,203,279,215,282,220,260,214,238" href="javascript:setViewArea(2,19);" alt="동작구">
+						<area shape="poly" coords="215,237,223,260,218,281,223,294,225,302,233,294,245,305,257,304,267,297,273,314,271,328,284,336,307,338,320,323,331,306,319,286,293,294,278,278,263,265,256,234,246,221,233,232" href="javascript:setViewArea(2,21);" alt="서초구">
+						<area shape="poly" coords="247,217,257,210,265,205,305,219,304,245,319,254,344,264,360,296,346,306,334,305,320,284,308,288,294,292,276,272,267,265,259,237" href="javascript:setViewArea(2,22);" alt="강남구">
+						<area shape="poly" coords="308,222,306,244,338,260,347,265,361,294,383,279,394,254,378,246,376,231,349,217,353,206,343,202,331,217" href="javascript:setViewArea(2,23);" alt="송파구">
+						<area shape="poly" coords="60,242,75,254,90,240,104,250,110,235,125,238,129,248,131,266,131,278,123,280,104,259,87,278,79,286,58,281,50,256" href="javascript:setViewArea(2,16);" alt="구로구">
+						<area shape="poly" coords="114,272,122,282,133,280,134,271,144,280,143,289,149,300,152,308,163,318,154,328,137,327,119,306,117,290" href="javascript:setViewArea(2,17);" alt="금천구">
+						<area shape="poly" coords="140,272,158,274,180,264,194,266,201,280,217,284,224,304,197,328,178,330,157,312,147,291" href="javascript:setViewArea(2,20);" alt="관악구">
+					</map>
+				</div>
+				<div class="map">
+					<p class="Jongno"><img src="./서울특별시 대기환경 정보시스템_files/Jongno_02.png" width="76" height="83" alt="종로구	보통" style="cursor:pointer;" onclick="setViewArea(2,0);"></p>
+					<p class="Jung"><img src="./서울특별시 대기환경 정보시스템_files/Jung_02.png" width="69" height="35" alt="중구		보통" style="cursor:pointer;" onclick="setViewArea(2,1);"></p>
+					<p class="Yongsan"><img src="./서울특별시 대기환경 정보시스템_files/Yongsan_02.png" width="78" height="55" alt="용산구	보통" style="cursor:pointer;" onclick="setViewArea(2,2);"></p>
+					<p class="Seongdong"><img src="./서울특별시 대기환경 정보시스템_files/Seongdong_02.png" width="66" height="60" alt="성동구	보통" style="cursor:pointer;" onclick="setViewArea(2,3);"></p>
+					<p class="Gwangjin"><img src="./서울특별시 대기환경 정보시스템_files/Gwangjin_02.png" width="59" height="64" alt="광진구 	보통" style="cursor:pointer;" onclick="setViewArea(2,4);"></p>
+					<p class="Dongdaemun"><img src="./서울특별시 대기환경 정보시스템_files/Dongdaemun_02.png" width="59" height="60" alt="동대문구	보통" style="cursor:pointer;" onclick="setViewArea(2,5);"></p>
+					<p class="Jungnang"><img src="./서울특별시 대기환경 정보시스템_files/Jungnang_02.png" width="59" height="68" alt="중랑구	보통" style="cursor:pointer;" onclick="setViewArea(2,6);"></p>
+					<p class="Seongbuk"><img src="./서울특별시 대기환경 정보시스템_files/Seongbuk_02.png" width="95" height="76" alt="성북구	보통" style="cursor:pointer;" onclick="setViewArea(2,7);"></p>
+					<p class="Gangbuk"><img src="./서울특별시 대기환경 정보시스템_files/Gangbuk_02.png" width="71" height="98" alt="강북구	보통" style="cursor:pointer;" onclick="setViewArea(2,8);"></p>
+					<p class="Dobong"><img src="./서울특별시 대기환경 정보시스템_files/Dobong_02.png" width="50" height="90" alt="도봉구	보통" style="cursor:pointer;" onclick="setViewArea(2,9);"></p>
+					<p class="Nowon"><img src="./서울특별시 대기환경 정보시스템_files/Nowon_02.png" width="72" height="105" alt="노원구	보통" style="cursor:pointer;" onclick="setViewArea(2,10);"></p>
+					<p class="Eunpyung"><img src="./서울특별시 대기환경 정보시스템_files/Eunpyung_02.png" width="84" height="103" alt="은평구	보통" style="cursor:pointer;" onclick="setViewArea(2,11);"></p>
+					<p class="Seodaemun"><img src="./서울특별시 대기환경 정보시스템_files/Seodaemun_02.png" width="68" height="67" alt="서대문구	보통" style="cursor:pointer;" onclick="setViewArea(2,12);"></p>
+					<p class="Mapo"><img src="./서울특별시 대기환경 정보시스템_files/Mapo_02.png" width="107" height="79" alt="마포구	보통" style="cursor:pointer;" onclick="setViewArea(2,13);"></p>
+					<p class="Yangcheon"><img src="./서울특별시 대기환경 정보시스템_files/Yangcheon_02.png" width="72" height="61" alt="양천구	보통" style="cursor:pointer;" onclick="setViewArea(2,14);"></p>
+					<p class="Gangseo"><img src="./서울특별시 대기환경 정보시스템_files/Gangseo_02.png" width="125" height="100" alt="강서구	보통" style="cursor:pointer;" onclick="setViewArea(2,15);"></p>
+					<p class="Guro"><img src="./서울특별시 대기환경 정보시스템_files/Guro_02.png" width="93" height="55" alt="구로구	보통" style="cursor:pointer;" onclick="setViewArea(2,16);"></p>
+					<p class="Geumcheon"><img src="./서울특별시 대기환경 정보시스템_files/Geumcheon_02.png" width="55" height="63" alt="금천구	보통" style="cursor:pointer;" onclick="setViewArea(2,17);"></p>
+					<p class="Yeongdeungpo"><img src="./서울특별시 대기환경 정보시스템_files/Yeongdeungpo_02.png" width="71" height="82" alt="영등포구	보통" style="cursor:pointer;" onclick="setViewArea(2,18);"></p>
+					<p class="Dongjak"><img src="./서울특별시 대기환경 정보시스템_files/Dongjak_02.png" width="87" height="57" alt="동작구	보통" style="cursor:pointer;" onclick="setViewArea(2,19);"></p>
+					<p class="Gwanak"><img src="./서울특별시 대기환경 정보시스템_files/Gwanak_02.png" width="94" height="71" alt="관악구	보통" style="cursor:pointer;" onclick="setViewArea(2,20);"></p>
+					<p class="Seocho"><img src="./서울특별시 대기환경 정보시스템_files/Seocho_02.png" width="121" height="123" alt="서초구	보통" style="cursor:pointer;" onclick="setViewArea(2,21);"></p>
+					<p class="Gangnam"><img src="./서울특별시 대기환경 정보시스템_files/Gangnam_02.png" width="114" height="106" alt="강남구	보통" style="cursor:pointer;" onclick="setViewArea(2,22);"></p>
+					<p class="Songpa"><img src="./서울특별시 대기환경 정보시스템_files/Songpa_02.png" width="94" height="99" alt="송파구	보통" style="cursor:pointer;" onclick="setViewArea(2,23);"></p>
+					<p class="Gangdong"><img src="./서울특별시 대기환경 정보시스템_files/Gangdong_02.png" width="77" height="80" alt="강동구	보통" style="cursor:pointer;" onclick="setViewArea(2,24);"></p>
+				</div>
+            <div class="monitor">
+              <div class="monitor_t" id="date_2">2019년 05월 07일 10시</div>
+              <div class="monitor_m">
+                <table width="100%" cellspacing="0" cellpadding="0" summary="선택된 지역별 측정소의 초미세먼지, 미세먼지, 오존, 이산화질소, 일산화탄소, 아황산가스의 정보를 테이블로 보여줍니다.">
+                  <caption>측정소별 정보</caption>
+                  <colgroup>
+                  <col width="50%">
+                  <col width="50%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th colspan="2" scope="col">
+                        <p id="areaName_2">종로구</p>
+                        </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">초미세먼지</th>
+                      <td id="pm25_2">12 µg/m³</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">미세먼지</th>
+                      <td id="pm10_2">41 µg/m³</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">오존</th>
+                      <td id="o3_2">점검중</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">이산화질소</th>
+                      <td id="no2_2">점검중</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">일산화탄소</th>
+                      <td id="co_2">점검중</td>
+                    </tr>
+                    <tr class="bdr_none">
+                      <th scope="row" style="text-align:left;padding-left:5px;">아황산가스</th>
+                      <td id="so2_2">점검중</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="monitor_b"></div>
+            </div>
+            <div class="notes">
+              <div class="notes_t">미세먼지 <span class="s">(PM-10)</span></div>
+              <div class="notes_m">
+                <table width="100%" cellspacing="0" cellpadding="0" summary="미세먼지의 대한 범례와 지수범위를 색상과 수치로 나타냅니다. 파란색은 좋음, 연두색은 보통, 노랑색은 나쁨, 빨간색은 매우나쁨 , 흰색은 점검중을 의미합니다.">
+                  <caption>미세먼지 범례</caption>
+                  <colgroup>
+                  <col width="50%">
+                  <col width="50%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">범례</th>
+                      <td>지수범위</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="num_01" style="text-align:left;padding-left:5px;">① 좋음</th>
+                      <td>0~30</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="num_02" style="text-align:left;padding-left:5px;">② 보통</th>
+                      <td>31~80</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="num_03" style="text-align:left;padding-left:5px;">③ 나쁨</th>
+                      <td>81~150</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="num_04" style="text-align:left;padding-left:5px;">④  매우나쁨</th>
+                      <td>151~</td>
+                    </tr>
+                    <tr class="bdr_none">
+                      <th scope="row" class="num_05" style="text-align:left;padding-left:5px;">ⓞ 점검중</th>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="notes_b"></div>
+            </div>
+          </div>
+          <div id="tab1_03" class="tabContents3" style="display: none;">
+            <div class="tower"><img src="./서울특별시 대기환경 정보시스템_files/ico_tower_01.png" width="62" height="274" alt=""> </div>
+            <div class="all"><img src="./서울특별시 대기환경 정보시스템_files/all.png" alt="" width="418" height="340" border="0" usemap="#Map3">
+              <map name="Map3" id="Map3">
+                <area shape="poly" coords="277,86,282,72,289,75,283,41,288,18,276,12,267,12,261,4,250,4,244,17,252,42,251,65,266,74,276,85" href="javascript:setViewArea(3,9);" alt="도봉구">
+                <area shape="poly" coords="312,8,300,17,291,19,286,41,291,72,290,78,284,75,279,89,294,107,303,109,319,98,329,101,338,99,349,87,342,71,328,71,324,57,330,53,328,29,330,19,313,8" href="javascript:setViewArea(3,10);" alt="노원구">
+                <area shape="poly" coords="268,114,282,95,266,77,248,65,250,45,242,21,226,30,226,45,216,63,220,80,252,109,268,113" href="javascript:setViewArea(3,8);" alt="강북구">
+                <area shape="poly" coords="205,88,199,76,188,59,177,58,148,71,137,107,137,131,124,142,138,155,148,141,157,144,184,115,183,97,205,88" href="javascript:setViewArea(3,11);" alt="은평구">
+                <area shape="poly" coords="211,91,218,80,246,108,259,114,271,115,283,99,294,110,304,111,303,117,292,126,273,136,258,154,244,149,236,136,224,137,217,130,223,113,216,107" href="javascript:setViewArea(3,7);" alt="성북구">
+                <area shape="poly" coords="260,165,258,156,244,152,234,138,223,140,216,132,221,115,213,101,206,89,185,99,186,116,191,131,192,147,191,155,202,167,211,161,225,165" href="javascript:setViewArea(3,0);" alt="종로구">
+                <area shape="poly" coords="184,118,158,146,148,143,138,158,156,170,164,173,165,181,194,183,204,173,190,158,190,141,188,130" href="javascript:setViewArea(3,12);" alt="서대문구">
+                <area shape="poly" coords="206,168,212,163,227,167,247,166,258,166,259,172,245,194,235,191,227,192,211,186,200,189,197,182" href="javascript:setViewArea(3,1);" alt="중구">
+                <area shape="poly" coords="261,156,275,137,302,120,306,127,304,143,311,154,310,172,298,177,276,160,262,168" href="javascript:setViewArea(3,5);" alt="동대문구">
+                <area shape="poly" coords="320,100,307,109,305,122,308,127,306,141,313,154,313,164,326,166,335,160,339,148,353,126,349,103,331,103" href="javascript:setViewArea(3,6);" alt="중랑구">
+                <area shape="poly" coords="119,137,138,158,147,165,161,173,164,182,183,184,196,184,198,192,192,202,190,208,180,213,156,203,123,189,96,161,114,154" href="javascript:setViewArea(3,13);" alt="마포구">
+                <area shape="poly" coords="199,192,211,188,226,194,236,192,245,197,254,208,231,232,212,236,185,228,182,213,192,210" href="javascript:setViewArea(3,2);" alt="용산구">
+                <area shape="poly" coords="277,161,261,171,246,196,256,208,265,204,291,214,306,190,311,173,297,179" href="javascript:setViewArea(3,3);" alt="성동구">
+                <area shape="poly" coords="313,165,313,173,310,177,304,197,293,214,311,220,332,214,343,196,347,180,338,178,339,159,328,168" href="javascript:setViewArea(3,4);" alt="광진구">
+                <area shape="poly" coords="409,151,381,166,349,181,345,200,357,204,352,217,379,231,400,198,416,194,415,168" href="javascript:setViewArea(3,24);" alt="강동구">
+                <area shape="poly" coords="125,192,96,164,41,122,32,145,1,186,21,198,33,208,48,200,59,204,68,195,76,220,100,212,96,198,102,192,123,197" href="javascript:setViewArea(3,15);" alt="강서구">
+                <area shape="poly" coords="59,206,68,197,75,222,102,213,99,201,101,193,122,199,125,211,117,226,123,236,110,233,103,246,89,237,76,252,61,241,62,223" href="javascript:setViewArea(3,14);" alt="양천구">
+                <area shape="poly" coords="183,230,180,216,149,202,127,193,123,198,127,212,121,226,124,236,131,244,131,264,135,271,157,251,159,236" href="javascript:setViewArea(3,18);" alt="영등포구">
+                <area shape="poly" coords="185,230,162,237,159,252,139,270,159,271,179,263,195,265,203,279,215,282,220,260,214,238" href="javascript:setViewArea(3,19);" alt="동작구">
+                <area shape="poly" coords="215,237,223,260,218,281,223,294,225,302,233,294,245,305,257,304,267,297,273,314,271,328,284,336,307,338,320,323,331,306,319,286,293,294,278,278,263,265,256,234,246,221,233,232" href="javascript:setViewArea(3,21);" alt="서초구">
+                <area shape="poly" coords="247,217,257,210,265,205,305,219,304,245,319,254,344,264,360,296,346,306,334,305,320,284,308,288,294,292,276,272,267,265,259,237" href="javascript:setViewArea(3,22);" alt="강남구">
+                <area shape="poly" coords="308,222,306,244,338,260,347,265,361,294,383,279,394,254,378,246,376,231,349,217,353,206,343,202,331,217" href="javascript:setViewArea(3,23);" alt="송파구">
+                <area shape="poly" coords="60,242,75,254,90,240,104,250,110,235,125,238,129,248,131,266,131,278,123,280,104,259,87,278,79,286,58,281,50,256" href="javascript:setViewArea(3,16);" alt="구로구">
+                <area shape="poly" coords="114,272,122,282,133,280,134,271,144,280,143,289,149,300,152,308,163,318,154,328,137,327,119,306,117,290" href="javascript:setViewArea(3,17);" alt="금천구">
+                <area shape="poly" coords="140,272,158,274,180,264,194,266,201,280,217,284,224,304,197,328,178,330,157,312,147,291" href="javascript:setViewArea(3,20);" alt="관악구">
+              </map>
+            </div>
+            <div class="map">
+              <p class="Jongno"><img src="./서울특별시 대기환경 정보시스템_files/Jongno_00.png" width="76" height="83" alt="종로구 점검중" style="cursor:pointer;" onclick="setViewArea(3,0);"></p>
+              <p class="Jung"><img src="./서울특별시 대기환경 정보시스템_files/Jung_01.png" width="69" height="35" alt="중구 좋음" style="cursor:pointer;" onclick="setViewArea(3,1);"></p>
+              <p class="Yongsan"><img src="./서울특별시 대기환경 정보시스템_files/Yongsan_01.png" width="78" height="55" alt="용산구 좋음" style="cursor:pointer;" onclick="setViewArea(3,2);"></p>
+              <p class="Seongdong"><img src="./서울특별시 대기환경 정보시스템_files/Seongdong_01.png" width="66" height="60" alt="성동구 좋음" style="cursor:pointer;" onclick="setViewArea(3,3);"></p>
+              <p class="Gwangjin"><img src="./서울특별시 대기환경 정보시스템_files/Gwangjin_01.png" width="59" height="64" alt="광진구  좋음" style="cursor:pointer;" onclick="setViewArea(3,4);"></p>
+              <p class="Dongdaemun"><img src="./서울특별시 대기환경 정보시스템_files/Dongdaemun_01.png" width="59" height="60" alt="동대문구 좋음" style="cursor:pointer;" onclick="setViewArea(3,5);"></p>
+              <p class="Jungnang"><img src="./서울특별시 대기환경 정보시스템_files/Jungnang_01.png" width="59" height="68" alt="중랑구 좋음" style="cursor:pointer;" onclick="setViewArea(3,6);"></p>
+              <p class="Seongbuk"><img src="./서울특별시 대기환경 정보시스템_files/Seongbuk_01.png" width="95" height="76" alt="성북구 좋음" style="cursor:pointer;" onclick="setViewArea(3,7);"></p>
+              <p class="Gangbuk"><img src="./서울특별시 대기환경 정보시스템_files/Gangbuk_01.png" width="71" height="98" alt="강북구 좋음" style="cursor:pointer;" onclick="setViewArea(3,8);"></p>
+              <p class="Dobong"><img src="./서울특별시 대기환경 정보시스템_files/Dobong_01.png" width="50" height="90" alt="도봉구 좋음" style="cursor:pointer;" onclick="setViewArea(3,9);"></p>
+              <p class="Nowon"><img src="./서울특별시 대기환경 정보시스템_files/Nowon_01.png" width="72" height="105" alt="노원구 좋음" style="cursor:pointer;" onclick="setViewArea(3,10);"></p>
+              <p class="Eunpyung"><img src="./서울특별시 대기환경 정보시스템_files/Eunpyung_02.png" width="84" height="103" alt="은평구 보통" style="cursor:pointer;" onclick="setViewArea(3,11);"></p>
+              <p class="Seodaemun"><img src="./서울특별시 대기환경 정보시스템_files/Seodaemun_01.png" width="68" height="67" alt="서대문구 좋음" style="cursor:pointer;" onclick="setViewArea(3,12);"></p>
+              <p class="Mapo"><img src="./서울특별시 대기환경 정보시스템_files/Mapo_01.png" width="107" height="79" alt="마포구 좋음" style="cursor:pointer;" onclick="setViewArea(3,13);"></p>
+              <p class="Yangcheon"><img src="./서울특별시 대기환경 정보시스템_files/Yangcheon_01.png" width="72" height="61" alt="양천구 좋음" style="cursor:pointer;" onclick="setViewArea(3,14);"></p>
+              <p class="Gangseo"><img src="./서울특별시 대기환경 정보시스템_files/Gangseo_01.png" width="125" height="100" alt="강서구 좋음" style="cursor:pointer;" onclick="setViewArea(3,15);"></p>
+              <p class="Guro"><img src="./서울특별시 대기환경 정보시스템_files/Guro_01.png" width="93" height="55" alt="구로구 좋음" style="cursor:pointer;" onclick="setViewArea(3,16);"></p>
+              <p class="Geumcheon"><img src="./서울특별시 대기환경 정보시스템_files/Geumcheon_01.png" width="55" height="63" alt="금천구 좋음" style="cursor:pointer;" onclick="setViewArea(3,17);"></p>
+              <p class="Yeongdeungpo"><img src="./서울특별시 대기환경 정보시스템_files/Yeongdeungpo_01.png" width="71" height="82" alt="영등포구 좋음" style="cursor:pointer;" onclick="setViewArea(3,18);"></p>
+              <p class="Dongjak"><img src="./서울특별시 대기환경 정보시스템_files/Dongjak_01.png" width="87" height="57" alt="동작구 좋음" style="cursor:pointer;" onclick="setViewArea(3,19);"></p>
+              <p class="Gwanak"><img src="./서울특별시 대기환경 정보시스템_files/Gwanak_02.png" width="94" height="71" alt="관악구 보통" style="cursor:pointer;" onclick="setViewArea(3,20);"></p>
+              <p class="Seocho"><img src="./서울특별시 대기환경 정보시스템_files/Seocho_01.png" width="121" height="123" alt="서초구 좋음" style="cursor:pointer;" onclick="setViewArea(3,21);"></p>
+              <p class="Gangnam"><img src="./서울특별시 대기환경 정보시스템_files/Gangnam_01.png" width="114" height="106" alt="강남구 좋음" style="cursor:pointer;" onclick="setViewArea(3,22);"></p>
+              <p class="Songpa"><img src="./서울특별시 대기환경 정보시스템_files/Songpa_01.png" width="94" height="99" alt="송파구 좋음" style="cursor:pointer;" onclick="setViewArea(3,23);"></p>
+              <p class="Gangdong"><img src="./서울특별시 대기환경 정보시스템_files/Gangdong_01.png" width="77" height="80" alt="강동구 좋음" style="cursor:pointer;" onclick="setViewArea(3,24);"></p>
+            </div>
+            <div class="monitor">
+              <div class="monitor_t" id="date_3">2019년 05월 07일 10시</div>
+              <div class="monitor_m">
+                <table width="100%" cellspacing="0" cellpadding="0" summary="선택된 지역별 측정소의 초미세먼지, 미세먼지, 오존, 이산화질소, 일산화탄소, 아황산가스의 정보를 테이블로 보여줍니다.">
+                  <caption>측정소별 정보</caption>
+                  <colgroup>
+                  <col width="50%">
+                  <col width="50%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th colspan="2" scope="col">
+                        <p id="areaName_3">종로구</p>
+                       </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">초미세먼지</th>
+                      <td id="pm25_3">12 µg/m³</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">미세먼지</th>
+                      <td id="pm10_3">41 µg/m³</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">오존</th>
+                      <td id="o3_3">점검중</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">이산화질소</th>
+                      <td id="no2_3">점검중</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" style="text-align:left;padding-left:5px;">일산화탄소</th>
+                      <td id="co_3">점검중</td>
+                    </tr>
+                    <tr class="bdr_none">
+                      <th scope="row" style="text-align:left;padding-left:5px;">아황산가스</th>
+                      <td id="so2_3">점검중</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="monitor_b"></div>
+            </div>
+            <div class="notes">
+              <div class="notes_t">오존 <span class="s">(O<sub>3</sub>)</span></div>
+              <div class="notes_m">
+                <table width="100%" cellspacing="0" cellpadding="0" summary="오존의 대한 범례와 지수범위를 색상과 수치로 나타냅니다. 파란색은 좋음, 연두색은 보통, 노랑색은 나쁨, 빨간색은 매우나쁨 , 흰색은 점검중을 의미합니다.">
+                  <caption>오존 범례</caption>
+                  <colgroup>
+                  <col width="50%">
+                  <col width="50%">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">범례</th>
+                      <td>지수범위</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="num_01" style="text-align:left;padding-left:5px;">① 좋음</th>
+                      <td>0~0.030</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="num_02" style="text-align:left;padding-left:5px;">② 보통</th>
+                      <td>0.031~0.090</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="num_03" style="text-align:left;padding-left:5px;">③ 나쁨</th>
+                      <td>0.091~0.150</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="num_04" style="text-align:left;padding-left:5px;">④  매우나쁨</th>
+                      <td>0.151~</td>
+                    </tr>
+                    <tr class="bdr_none">
+                      <th scope="row" class="num_05" style="text-align:left;padding-left:5px;">ⓞ 점검중</th>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="notes_b"></div>
+            </div>
+          </div>
+					<!-- 2019-05-07 추가 -->
+					<div id="tab1_04" class="tabContents4">
+						<div class="left_menu">
+							<span class="left_list_box on">초미세먼지</span>
+							<span class="left_list_box">미세먼지</span>
+							<span class="left_list_box">오존</span>
+						</div>
+						<div class="right_menu">
+							<div class="show_area on">
+								<div class="img_area_box">이미지 영역입니다.</div>
+								<div class="img_area_box">이미지 영역입니다.</div>
+							</div>
+							<div class="show_area">
+								<div class="img_area_box">이미지 영역입니다.</div>
+								<div class="img_area_box">이미지 영역입니다.</div>
+							</div>
+							<div class="show_area">
+								<div class="img_area_box">이미지 영역입니다.</div>
+								<div class="img_area_box">이미지 영역입니다.</div>
+							</div>
+						</div>
+					</div>
+					<!-- 2019-05-07 추가 -->
+				 <!-- 2019-05-07 수정사항 탭 메뉴 스크립트-->
+					<script src="text/javascript">
+						$(document).ready(function(){
+
+							$("#tab1_04 > .left_list_box").on("click" , function(){
+								$("#tab1_04 > .left_list_box").removeClass("on");
+								$(this).addClass("on");
+								$("#tab1_04 > show_area").removeClass("on");
+								$("#tab1_04 > show_area").eq($(this).index()).addClass("on");
+							});
+						});
+					</script>
+          <script type="text/javascript">initTabMenu("tabNav1");</script>
+
+        </div>
+      </div>
+
+      <div class="fr w293" style="margin-right:1px">
+        <div id="situation">
+          <ul id="tabNav2">
+            <li><a href="http://cleanair.seoul.go.kr/main.htm#tab2_02" class="tab" id="forecast_alert_tab">대기오염경보</a></li>
+            <li><a href="http://cleanair.seoul.go.kr/main.htm#tab2_01" class="tab on" id="forecast_tab">대기오염예보</a></li>
+          </ul>
+          <ul id="tab2_01" class="tabscon2">
+            <li class="h3">초미세먼지 예보<span class="date">&nbsp;
+              [2019년 05월 07일 05시 기준]</span>
+        </li>
+            <li>
+              <dl>
+              <dt>
+                  <img src="./서울특별시 대기환경 정보시스템_files/icon_forecast_2.png" width="15" height="15" alt="보통">
+                </dt>
+                <dd>
+                <span class="ft_point2">보통</span>
+                <span>
+                <a href="http://cleanair.seoul.go.kr/safety_guide.htm?method=pm25&amp;grp1=pm25">
+                      실외활동에 지장 없음</a>
+                </span></dd>
+              </dl>
+            </li>
+            <li class="h3">미세먼지 예보<span class="date">
+                  [2019년 05월 07일 05시 기준]</span> </li>
+            <li>
+              <dl>
+              <dt><img src="./서울특별시 대기환경 정보시스템_files/icon_forecast_2.png" width="15" height="15" alt="보통"></dt>
+                <dd>
+                <span class="ft_point2">보통</span>
+                <span>
+                <a href="http://cleanair.seoul.go.kr/safety_guide.htm?method=pm10&amp;grp1=pm10">
+             실외활동에 지장 없음</a>
+                </span></dd>
+                </dl>
+            </li>
+            <li class="h3">오존예보
+            <span class="date">
+              [2019년 05월 07일 05시 기준]</span>
+      </li>
+            <li>
+              <dl>
+            <!-- 2019.03.15 참고사항: 오존 예보 운영기간이 아닐때는 실제 예보데이터의 CAISTEP값이 N으로 들어온다.테스트시  MainAction o3Forecast.setCaistep_nm(Pollutant.getAlarmStepToCode(o3Forecast.getCaistep(), 2)); 에서 숫자가 리턴되지 않기 때문에 localhost/main.htm에서 이미지가 뜨지 않는다..  -->
+              				<!-- 이미지가 안떠서 재분석 하는 수고를 하지않는다. -->
+                          <dt><a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=ozone&amp;grp1=o3" title="오존 예보 더보기"><img src="./서울특별시 대기환경 정보시스템_files/icon_forecast_2.png" width="17" height="17" alt="보통"></a></dt>
+                          <dd><span class="ft_point2">보통</span>
+                            <a href="http://cleanair.seoul.go.kr/safety_guide.htm?method=o3&amp;grp1=o3">
+                                실외활동에 제약 없음</a>
+                          </dd>
+                        </dl>
+                    </li>
+            <li class="h3">황사전망
+            <span class="date">
+                  [2019년 05월 07일 10시 기준]</span> </li>
+            <li style="position:relative">
+                <span class="action">
+                  <a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=ysand"><img src="./서울특별시 대기환경 정보시스템_files/btn_detale.gif" width="63" height="19" alt="황사 전망 상세내용 확인페이지로 바로가기"></a>
+                </span>
+            </li>
+          </ul>
+
+
+
+
+
+
+          <ul id="tab2_02" class="tabscon2">
+
+			<li class="h3">비상저감조치
+				</li>
+			<li>
+				<dl>
+					<dt>
+								<img src="./서울특별시 대기환경 정보시스템_files/ico_siren_00.png" width="15" height="19" alt="발령없음">
+							</dt>
+							<dd style="position:relative">
+								<span class="ft_point2">발령없음</span>
+								<span class="action">
+									<a href="http://cleanair.seoul.go.kr/inform.htm?method=airQualityStandard3">
+										<img src="./서울특별시 대기환경 정보시스템_files/btn_detale.gif" width="63" height="17" alt="비상저감조치 상세내용 확인페이지 바로가기">
+									</a>
+								</span>
+							</dd>
+						</dl>
+			</li>
+
+          <li class="h3">예비저감조치</li>
+            <li>
+              <dl>
+				<dt><img src="./서울특별시 대기환경 정보시스템_files/ico_siren_00.png" width="15" height="19" alt="발령없음"></dt>
+                <dd style="position:relative"><span class="ft_point2">발령없음</span><span class="action">
+                <a href="http://cleanair.seoul.go.kr/inform.htm?method=airQualityStandard3"><img src="./서울특별시 대기환경 정보시스템_files/btn_detale.gif" width="63" height="17" alt="예비비상저감 조치 상세내용 확인페이지 바로가기"></a>
+                </span></dd>
+                </dl>
+            </li>
+
+
+
+          <li class="h3" id="tab1">초미세먼지 경보
+                <span class="date">
+                  [2019년 05월 07일 10시 기준]</span></li>
+            <li>
+              <dl>
+              <dt><img src="./서울특별시 대기환경 정보시스템_files/icon_alert_0.png" width="15" height="19" alt="경보없음"></dt>
+                <dd style="position:relative"><span class="ft_point2">경보없음</span><span class="action">
+                <a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=pm25&amp;grp1=pm25"><img src="./서울특별시 대기환경 정보시스템_files/btn_detale.gif" width="63" height="17" alt="초미세먼지경보 상세내용 확인페이지 바로가기"></a>
+                <a href="http://cleanair.seoul.go.kr/safety_guide.htm?method=pm25&amp;grp1=pm25"><img src="./서울특별시 대기환경 정보시스템_files/btn_act.gif" width="63" height="17" alt="초미세먼지경보 행동요령 페이지 바로가기"></a>
+                </span></dd>
+                </dl>
+            </li>
+
+
+
+
+            <li class="h3">미세먼지경보
+            <span class="date">
+            [2019년 05월 07일 10시 기준]</span> </li>
+
+            <li>
+            <dl>
+                <dt><img src="./서울특별시 대기환경 정보시스템_files/icon_alert_0.png" width="15" height="19" alt="경보없음"></dt>
+                <dd style="position:relative"><span class="ft_point2">경보없음</span>
+                  <span class="action">
+                    <a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=pm10&amp;grp1=pm10"><img src="./서울특별시 대기환경 정보시스템_files/btn_detale.gif" width="63" height="17" alt="미세먼지경보 상세내용 확인페이지 바로가기"></a>
+                    <a href="http://cleanair.seoul.go.kr/safety_guide.htm?method=pm10&amp;grp1=pm10"><img src="./서울특별시 대기환경 정보시스템_files/btn_act.gif" width="63" height="17" alt="미세먼지경보 행동요령 페이지 바로가기"></a>
+                    </span>
+                </dd>
+              </dl>
+             </li>
+
+
+
+            <li class="h3">오존경보
+            <span class="date">
+                    [2019년05월07일10시기준]</span>
+         </li>
+
+
+
+            <li style="font-size:11px;line-height:11px">
+            <table width="100%" cellspacing="0" cellpadding="0" summary="오존경보 상세내용을 표출합니다.">
+                <caption>오존경보</caption>
+                <tbody><tr>
+                  <td style="font-size:11px;" onclick="location.href=&#39;forecast_alert.htm?method=ozone&amp;grp1=o3&#39;"><span class="ft_b ft_point2" style="margin-left:5px;">[도심권]</span>
+                  경보없음</td>
+                  <td style="font-size:11px;" onclick="location.href=&#39;forecast_alert.htm?method=ozone&amp;grp1=o3&#39;"><span class="ft_b ft_point2" style="margin-left:5px;">[동북권]</span>
+                  경보없음</td>
+                  </tr>
+                  <tr>
+                  <td style="font-size:11px;" onclick="location.href=&#39;forecast_alert.htm?method=ozone&amp;grp1=o3&#39;"><span class="ft_b ft_point2" style="margin-left:5px;">[서북권]</span>
+                  경보없음</td>
+                  <td style="font-size:11px;" onclick="location.href=&#39;forecast_alert.htm?method=ozone&amp;grp1=o3&#39;"><span class="ft_b ft_point2" style="margin-left:5px;">[서남권]</span>
+                  경보없음</td>
+                  </tr>
+                  <tr>
+                  <td style="font-size:11px;" onclick="location.href=&#39;forecast_alert.htm?method=ozone&amp;grp1=o3&#39;"><span class="ft_b ft_point2" style="margin-left:5px;">[동남권]</span>
+                  경보없음</td>
+                  <td style="position:relative">
+                    <div class="action2">
+                            <a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=ozone&amp;grp1=o3"><img src="./서울특별시 대기환경 정보시스템_files/btn_detale.gif" width="63" height="17" alt="오존경보 상세내용 확인페이지 바로가기"></a><a href="http://cleanair.seoul.go.kr/safety_guide.htm?method=o3&amp;grp1=o3"><img src="./서울특별시 대기환경 정보시스템_files/btn_act.gif" width="63" height="17" alt="오존경보 행동요령 페이지 바로가기"></a>
+                    </div>
+                          </td>
+                </tr>
+                   </tbody></table>
+              </li>
+
+            <li class="h3">황사경보<span class="date">
+                [2019년 05월 07일 10시 기준]</span> </li>
+
+
+
+            <li>
+              <dl class="bdr_none">
+                <dt><img src="./서울특별시 대기환경 정보시스템_files/icon_alert_0.png" width="15" height="19" alt="좋음"></dt>
+                    <dd style="position:relative"><span class="ft_point2">경보없음</span><span class="action">
+                      <a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=ysand"><img src="./서울특별시 대기환경 정보시스템_files/btn_detale.gif" width="63" height="17" alt="황사경보 상세내용 확인페이지 바로가기"></a>
+                      <a href="http://cleanair.seoul.go.kr/safety_guide.htm?method=ysand"><img src="./서울특별시 대기환경 정보시스템_files/btn_act.gif" width="63" height="17" alt="황사경보 행동요령 페이지 바로가기"></a></span></dd>
+                  </dl>
+            </li>
+
+
+
+
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="colgrp2">
+      <div id="notice">
+        <h3 id="btn_open2">공지사항</h3>
+        <ul id="tab3_01" class="notice">
+          <li><a id="notice_list0" href="http://cleanair.seoul.go.kr/citizen.htm?method=noticeView&amp;searchWord=&amp;seq=877">중구 측정소 일시정지(4월 13일토 ...</a></li>
+      <li><a id="notice_list1" href="http://cleanair.seoul.go.kr/citizen.htm?method=noticeView&amp;searchWord=&amp;seq=876">2019년 4월 대기측정소 정도검사 일...</a></li>
+      <li><a id="notice_list2" href="http://cleanair.seoul.go.kr/citizen.htm?method=noticeView&amp;searchWord=&amp;seq=866">송파구(올림픽공원역 1번 출구 부근...</a></li>
+      <li><a id="notice_list3" href="http://cleanair.seoul.go.kr/citizen.htm?method=noticeView&amp;searchWord=&amp;seq=774">노후 장비 교체 및 펌웨어 업그레이...</a></li>
+      </ul>
+        <p class="more"><a href="http://cleanair.seoul.go.kr/main.htm#" onclick="noticeListForward(&#39;1&#39;);"><img src="./서울특별시 대기환경 정보시스템_files/btn_more.gif" width="53" height="17" alt="공지사항 더보기"></a></p>
+      </div>
+      <div class="fl" style="margin-right:-3px;">
+        <div>
+          <span>
+            <a href="http://bluesky.seoul.go.kr/finedust/emergency_reduction_measures" target="_blank"><img src="./서울특별시 대기환경 정보시스템_files/img_main_06.gif" width="135" height="79" alt="고농도 미세먼지 발생시 비상저감조치"></a>
+            <a href="http://cleanair.seoul.go.kr/main.htm#" style="margin-left:-4px;"><img src="./서울특별시 대기환경 정보시스템_files/img_main_02_new.gif" width="143" height="79" alt="대기질정보 문자서비스 ARS신청(한글,ENGLISH) 02-3789-8701"></a>
+            <a style="margin-left:-4px;" onclick="layerOpen()" target="_blank">
+              <img src="./서울특별시 대기환경 정보시스템_files/img_main_03.gif" width="168" height="79" alt="대기질정보 문자서비스(무료)" style="cursor:pointer">
+            </a>
+          </span>
+        </div>
+        <div>
+          <span>
+          <a href="http://cleanair.seoul.go.kr/upload/data/file/pm_sensitiveGroup_guide.pdf" target="_blank"><img src="./서울특별시 대기환경 정보시스템_files/img_main_190110.gif" width="135" height="74" alt="예.경보 단계별 민감취약군 오존 대응 세부 행동요령"></a><a href="http://air.eseoul.go.kr/service/intro.html" target="_blank"><img src="./서울특별시 대기환경 정보시스템_files/img_main_05.gif" width="143" height="74" alt="Air quality information SMS service  ARS Application"></a><a href="http://bluesky.seoul.go.kr/bluesky_notice/citizen-action" target="_blank"><img src="./서울특별시 대기환경 정보시스템_files/img_main_04.gif" width="168" height="74" alt="미세먼지 시민참여 차량2부제 실천 인증샷 함께해요 참여하기"></a>
+          </span>
+        </div>
+      </div>
+
+
+      <div id="listRotation">
+
+
+        <script type="text/javascript">initTabMenu("tabNav2");</script>
+        <div id="weather">
+          <h3>서울의 날씨 및 기상지수</h3>
+          <dl>
+          <dt><img src="./서울특별시 대기환경 정보시스템_files/ico_weather1.gif" width="40" height="40" alt="맑음"></dt>
+        <dd>
+        <span class="point">
+        맑음&nbsp;
+          </span>
+        <a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=weather"><img src="./서울특별시 대기환경 정보시스템_files/btn_more.gif" width="53" height="17" alt="더보기"></a>
+        </dd>
+      </dl>
+      <dl>
+         <dt>
+
+          <p class="kma4">매우높음</p></dt>
+      <dd>
+            오늘 자외선지수
+        &nbsp;<!-- <a href="http://www.weather.go.kr/weather/lifenindustry/life_jisu.jsp" target="_blank"><img src="img/btn/btn_more.gif" width="53" height="17" alt="더보기" /></a> -->
+        <a href="http://cleanair.seoul.go.kr/inform.htm?method=weatherFactor01"><img src="./서울특별시 대기환경 정보시스템_files/btn_more.gif" width="53" height="17" alt="더보기"></a>
+      </dd>
+          </dl>
+        </div>
+
+
+ </div>
+
+
+
+    </div>
+    <div class="colgrp3">
+      <ul id="banner">
+        <li class="bgnone">
+              <a href="http://www.me.go.kr/" target="_blank" title="환경부바로가기"><img src="./서울특별시 대기환경 정보시스템_files/benr_20180219113801_69.jpg" width="110" height="38" alt="환경부바로가기"></a>
+            </li>
+    <li>
+              <a href="http://www.airkorea.or.kr/" target="_blank" title="에어코리아 홈페이지 바로가기"><img src="./서울특별시 대기환경 정보시스템_files/benr_20120207165143_16.jpg" width="110" height="38" alt="에어코리아 홈페이지 바로가기"></a>
+            </li>
+    <li>
+              <a href="http://www.kma.go.kr/index.jsp" target="_blank" title="기상청 홈페이지 바로가기"><img src="./서울특별시 대기환경 정보시스템_files/benr_20120307092655_41.jpg" width="110" height="38" alt="기상청 홈페이지 바로가기"></a>
+            </li>
+    <li>
+              <a href="http://kaq.or.kr/" target="_blank" title="한국대기질예보시스템"><img src="./서울특별시 대기환경 정보시스템_files/benr_20150331135755_57.jpg" width="110" height="38" alt="한국대기질예보시스템"></a>
+            </li>
+    <li>
+              <a href="http://aws.seoul.go.kr/" target="_blank" title="자동기상관측시스템"><img src="./서울특별시 대기환경 정보시스템_files/benr_20160205114457_20.jpg" width="110" height="38" alt="자동기상관측시스템"></a>
+            </li>
+    <li>
+              <a href="http://energy.seoul.go.kr/" target="_blank" title="원전하나줄이기"><img src="./서울특별시 대기환경 정보시스템_files/benr_20180219113444_67.jpg" width="110" height="38" alt="원전하나줄이기"></a>
+            </li>
+    </ul>
+    </div>
+  </div>
+
+<div id="footer">
+	<div class="container">
+		<p id="footerlogo">서울특별시 기후환경본부</p>
+		<address>서울특별시청 서소문청사 (04515) 서울특별시 중구 덕수궁길 15 대기정책과	<br>도시대기 측정망 관련 문의 : 02) 570-3371<br>대기오염 예보 문자메세지 관련문의 : 02) 570-3406<br>내용 문의 : 02) 2133-3669</address>
+		<p id="wa">
+			<a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110">
+      <img src="./서울특별시 대기환경 정보시스템_files/logo_wa.png" border="0" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" title="국가 공인 인증기관 : 웹와치"></a>
+		</p>
+		<p id="ban"><img src="./서울특별시 대기환경 정보시스템_files/img_call.gif" width="188" height="41" alt="개인정보 처리방침 문의 전화 120 정보를 못찾으셧나요? 120다산콜센터로 물어보세요!"></p>
+	</div>
+</div>
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-46997250-3', 'auto');
+
+	ga('send', 'pageview');
+</script><div class="pop-layer" id="layer1" style="z-index:999;">
+    <div class="pop-container">
+      <div class="pop-conts">
+        <p class="ctitle">
+          보건환경연구원 외부 광케이블작업 안내</p>
+        <br>
+        <p class="ctxt">
+          보건환경연구원 외부 광케이블 작업 으로  대기측정소와  통신이 이루어지지 않아
+<br>초미세먼지, 미세번지, 오존 측정자료가 나오지 않습니다.
+<br>
+<br>기간 : 2019년 3월22일(금) 11:00 ~ 13:00
+<br>사유 : 보건환경연구원 외부 광케이블 통신작업
+<br></p>
+      <div class="btn-r">
+        <form name="notice_form" action="http://cleanair.seoul.go.kr/main.htm">
+        <input name="chktype" type="checkbox" title="오늘 하루 이 창을 열지 않습니다 체크">오늘 하루 이 창을 열지 않음&nbsp;&nbsp;<a class="cbtn" href="http://cleanair.seoul.go.kr/main.htm#" onclick="popclose();">닫기.</a>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+  var forecast_alert_tab = "Y";
+    setTimeout("ozit_timer_test()", 1);
+
+  function ozit_timer_test() {
+    $( "#tn1" ).trigger( "mouseover" );
+    if(forecast_alert_tab == "Y") {
+      $( "#forecast_alert_tab" ).trigger( "mouseover" );
+    }
+  };
+</script>
+<script type="text/javascript" src="./서울특별시 대기환경 정보시스템_files/install.js.다운로드"></script>
+
+</div></body></html>

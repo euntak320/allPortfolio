@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<!-- E : mobile -->
+	<title>WISE SELECTION</title>
+	<link rel="stylesheet" type="text/css" href="../../assets/css/orp/style.css" />
+	<link rel="stylesheet" type="text/css" href="../../assets/css/orp/swiper.css" />
+
+	<!-- fullcalendar 추가 -->
+	<link rel="stylesheet" type="text/css" href="../../assets/css/orp/fullcalendar.min.css" />
+
+	<script type="text/javascript" src="../../assets/js/jquery-2.2.4.js"></script>
+	<script type="text/javascript" src="../../assets/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../../assets/js/common-orp.js"></script>
+	<script type="text/javascript" src="../../assets/js/swiper.js"></script>
+	<script type="text/javascript" src="../../assets/js/moment.min.js"></script>
+	<script type="text/javascript" src="../../assets/js/fullcalendar.js"></script>
+	<!-- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="js/selectivizr.js">
+ -->
+	<!--[if lte IE 9]>
+</script>
+<![endif]-->
+
+	<script>
+		$(document).ready(function () {
+
+			$('#calendar').fullCalendar({
+				
+				header: {
+					left: '',
+					center: 'title',
+					right: 'today prev,next'
+				}, // buttons for switching between 
+				titleFormat: "Y년 M월",
+				defaultDate: '2020-06-09',
+				droppable: false,
+				editable: false,
+				eventLimit: true, // allow "more" link when too many events
+				monthNames: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+				monthNamesShort: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+				dayNames: ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"],
+				dayNamesShort: ["일","월","화","수","목","금","토"],
+				buttonText: {
+				today : "오늘",
+				month : "월별",
+				week : "주별",
+				day : "일별",
+				},
+				events: [{
+						title: 'event1',
+						start: '2020-06-01',
+						end: '2020-06-06',
+						color: '#ee8738'
+					},
+					{
+						title: 'event2',
+						start: '2020-06-07',
+						end: '2020-06-10',
+						color:'#60c83d'
+					},
+					{
+						id: 999,
+						title: 'event3',
+						start: '2020-06-09',
+						end: '2020-06-13',
+						color:'#019bcd'
+					},
+					{
+						id: 999,
+						title: 'event4',
+						start: '2020-06-14',
+						end: '2020-06-20',
+						color:'#0076d0'
+					},
+					{
+						title: 'event5',
+						url: 'http://google.com/',
+						start: '2020-06-21',
+						end: '2020-06-27',
+						color:'#8e4dc5'
+					},
+					{
+						id: 999,
+						title: 'event6',
+						start: '2020-06-27',
+						end: '2020-06-30',
+						color:'#69259c'
+					}
+				]
+			});
+
+		});
+	</script>
+</head>
+
+<body>
+	<div class="recruit">
+		<ul>
+			<li>채용공고명</li>
+			<li>지원자 수<span>최근 7일간 신규 대상자</span></li>
+			<li>진행현황</li>
+			<li>진행현황 상세</li>
+		</ul>
+		<div>
+			<ul>
+				<li>
+					<div class="recAccord">
+						<div>
+							<div class="rec">
+								<a href="">[테스트기업]테스트공고명</a>
+								<span class="recDate">2020.06.06 ~ 2020.09.30</span>
+								<button class="btn ss btnLGray m3">관리</button>
+								<button class="btn ss btnLGray m3">채용</button>
+							</div>
+							<div class="rec">
+								<span>0명</span>
+								<span class="cRed icon">0명</span>
+							</div>
+							<div class="rec">
+								<span>채용공고 게시시작</span>
+								<span class="label blue">D-day</span>
+							</div>
+							<div class="swiperArea">
+								<div class="processList">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_06.png" alt="">
+											</div>
+											<div>
+												<span>채용공고 게시 시작</span>
+												<span></span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_02.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 1차 시작</span>
+												<span></span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_14.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 1차 마감</span>
+												<span class="label orange">D-1</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_14.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 2차 시작</span>
+												<span class="label orange">D-2</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_14.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 2차 마감</span>
+												<span class="label orange">D-8</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 1차 시작</span>
+												<span class="label orange">D-9</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 1차 마감</span>
+												<span class="label orange">D-15</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 2차 시작</span>
+												<span class="label orange">D-18</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 2차 마감</span>
+												<span class="label orange">D-22</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 1차 시작</span>
+												<span class="label orange">D-23</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 1차 마감</span>
+												<span class="label orange">D-26</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 2차 시작</span>
+												<span class="label orange">D-28</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 2차 마감</span>
+												<span class="label orange">D-38</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_05.png" alt="">
+											</div>
+											<div>
+												<span>채용공고 게시 마감</span>
+												<span class="label orange">D-117</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+								</div>
+							</div>
+						</div>
+						<a href="" class="accordBtn">열기</a>
+						<div class="recDapth02">
+							<div class="calArea " id='calendar'></div>
+						</div>
+					</div>
+
+				</li>
+				<li>
+					<div class="recAccord">
+						<div>
+							<div class="rec">
+								<a href="">[테스트기업]테스트공고명</a>
+								<span class="recDate">2020.06.06 ~ 2020.09.30</span>
+								<button class="btn ss btnLGray m3">관리</button>
+							</div>
+							<div class="rec">
+								<span>10명</span>
+								<span class="cRed icon">1명</span>
+							</div>
+							<div class="rec">
+								<span>채용공고 게시시작</span>
+								<span class="label blue">D-day</span>
+							</div>
+							<div class="swiperArea">
+								<div class="processList">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_06.png" alt="">
+											</div>
+											<div>
+												<span>채용공고 게시 시작</span>
+												<span></span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_02.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 1차 시작</span>
+												<span></span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_14.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 1차 마감</span>
+												<span class="label orange">D-1</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_14.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 2차 시작</span>
+												<span class="label orange">D-2</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_14.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 2차 마감</span>
+												<span class="label orange">D-8</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 1차 시작</span>
+												<span class="label orange">D-9</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 1차 마감</span>
+												<span class="label orange">D-15</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 2차 시작</span>
+												<span class="label orange">D-18</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 2차 마감</span>
+												<span class="label orange">D-22</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 1차 시작</span>
+												<span class="label orange">D-23</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 1차 마감</span>
+												<span class="label orange">D-26</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 2차 시작</span>
+												<span class="label orange">D-28</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 2차 마감</span>
+												<span class="label orange">D-38</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_05.png" alt="">
+											</div>
+											<div>
+												<span>채용공고 게시 마감</span>
+												<span class="label orange">D-117</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+								</div>
+							</div>
+						</div>
+						<a href="" class="accordBtn">열기</a>
+						<div class="recDapth02">
+							<div class="calArea calendar">
+								달력 영역 입니다.
+							</div>
+						</div>
+					</div>
+
+				</li>
+				<li>
+					<div class="recAccord">
+						<div>
+							<div class="rec">
+								<a href="">[테스트기업]테스트공고명</a>
+								<span class="recDate">2020.06.06 ~ 2020.09.30</span>
+								<button class="btn ss btnLGray m3">관리</button>
+							</div>
+							<div class="rec">
+								<span>0명</span>
+								<span class="cRed icon">0명</span>
+							</div>
+							<div class="rec">
+								<span>채용공고 게시시작</span>
+								<span class="label blue">D-day</span>
+							</div>
+							<div class="swiperArea">
+								<div class="processList">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_06.png" alt="">
+											</div>
+											<div>
+												<span>채용공고 게시 시작</span>
+												<span></span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_02.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 1차 시작</span>
+												<span></span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_14.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 1차 마감</span>
+												<span class="label orange">D-1</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_14.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 2차 시작</span>
+												<span class="label orange">D-2</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_14.png" alt="">
+											</div>
+											<div>
+												<span>서류전형 2차 마감</span>
+												<span class="label orange">D-8</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 1차 시작</span>
+												<span class="label orange">D-9</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 1차 마감</span>
+												<span class="label orange">D-15</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 2차 시작</span>
+												<span class="label orange">D-18</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_11.png" alt="">
+											</div>
+											<div>
+												<span>필기전형 2차 마감</span>
+												<span class="label orange">D-22</span>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 1차 시작</span>
+												<span class="label orange">D-23</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 1차 마감</span>
+												<span class="label orange">D-26</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 2차 시작</span>
+												<span class="label orange">D-28</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_08.png" alt="">
+											</div>
+											<div>
+												<span>면접전형 2차 마감</span>
+												<span class="label orange">D-38</span>
+											</div>
+										</div>
+										<div class="swiper-slide ">
+											<div>
+												<img src="../../assets/images/orp/icon_05.png" alt="">
+											</div>
+											<div>
+												<span>채용공고 게시 마감</span>
+												<span class="label orange">D-117</span>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+								</div>
+							</div>
+						</div>
+						<a href="" class="accordBtn">열기</a>
+						<div class="recDapth02">
+							<div class="calArea calendar">
+								달력 영역 입니다.
+							</div>
+						</div>
+					</div>
+
+				</li>
+			</ul>
+		</div>
+		<a class="more" href=""><span>더보기</span></a>
+	</div>
+
+</body>
+
+</html>

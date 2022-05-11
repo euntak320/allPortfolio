@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>등록 &lt; KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/common.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li><a href="">대시보드</a></li>
+				<li class="curr"><a href="">등록</a></li>
+				<li><a href="">조회</a></li>
+				<li><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">유형별 상세</a></li>
+						<li><a href="">심판별</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li><a href="">관리</a>
+					<ul>
+						<li><a href="">경기관리</a></li>
+						<li><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>등록</h2>
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>경기정보</h3>
+				<div class="btnArea">
+					<button class="btn btnRed" onclick="fn_layer('layer1','1100')"><span class="icoImport">경기정보 불러오기</span></button>
+				</div>
+			</div>
+			<!--// titArea -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>일시, 대진, 장소, 방송사, 경기구분 항목으로 구성된 경기정보 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">일시</th>
+							<td colspan="3">
+								<input type="text" title="일시 입력" readonly>
+								<!-- checkBox -->
+								<div class="checkBox">
+									<span><input type="checkbox" id="chk0101" disabled><label for="chk0101">더블헤더 경기</label></span>
+									<span><input type="checkbox" id="chk0102" disabled><label for="chk0102">우천취소</label></span>
+								</div>
+								<!--// checkBox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">대진</th>
+							<td><input type="text" title="대진 입력" readonly></td>
+							<th scope="row">장소</th>
+							<td><input type="text" title="장소 입력" readonly></td>
+						</tr>
+						<tr>
+							<th scope="row">방송사</th>
+							<td><input type="text" title="방송사 입력" readonly></td>
+							<th scope="row">경기구분</th>
+							<td><input type="text" title="경기구분 입력" readonly></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>심판정보</h3>
+			</div>
+			<!--// titArea -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>성명, 베이스, 횟수, 판독관 항목으로 구성된 심판정보 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">성명</th>
+							<td>
+								<!-- 2020-05-20 -->
+								<div class="txtInput v2">
+									<input type="text" title="성명 입력" readonly>
+									<span>(0조)</span>
+								</div>
+								<!--// 2020-05-20 - div로 한번 감싸주세요. -->
+								<button class="btn btnYellow" onclick="fn_layer('layer2','1100')"><span class="icoSearch">심판조회</span></button>
+							</td>
+							<th scope="row">베이스</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="베이스 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">횟수</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>1회</span>
+									<select title="횟수 선택">
+										<option value="">1회</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+							<th scope="row">판독관</th>
+							<td>
+								<input type="text" title="판독관 입력">
+								<!-- selectbox -->
+								<div class="selectbox w146">
+									<span>선택</span>
+									<select title="심판 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- selectbox -->
+								<div class="selectbox w146">
+									<span>선택</span>
+									<select title="심판 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>영상판독</h3>
+			</div>
+			<!--// titArea -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>판독 이닝, 요청팀, 판독 결과, 최초 판정, 최종 판정, 소요 시간, 동시판독, 판독 내용, 판독 근거, 유형 항목으로 구성된 영상판독 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">판독 이닝</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="판독 이닝 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="판독 이닝 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+							<th scope="row">요청팀</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>팀 선택</span>
+									<select title="팀 선택">
+										<option value="">팀 선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">판독 결과</th>
+							<td colspan="3">
+								<!-- checkBox -->
+								<div class="checkBox">
+									<span><input type="radio" name="chk02" id="chk0201" checked><label for="chk0201">원심</label></span>
+									<span><input type="radio" name="chk02" id="chk0202"><label for="chk0202">번복</label></span>
+									<span><input type="radio" name="chk02" id="chk0203"><label for="chk0203">판독거부</label></span>
+								</div>
+								<!--// checkBox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">최초 판정</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="최초 판정 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+							<th scope="row">최종 판정</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="최종 판정 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">소요 시간</th>
+							<td>
+								<!-- 2020-05-20 -->
+								<div class="txtInput">
+									<input type="text" title="소요 시간 입력">
+									<span>초</span>
+								</div>
+								<!--// 2020-05-20 - div로 한번 감싸주세요. -->
+							</td>
+							<th scope="row">동시판독</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="동시판독 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">판독 내용</th>
+							<td colspan="3"><textarea title="판독 내용 입력"></textarea></td>
+						</tr>
+						<tr>
+							<th scope="row">판독 근거</th>
+							<td colspan="3"><textarea title="판독 근거 입력"></textarea></td>
+						</tr>
+						<tr>
+							<th scope="row">유형</th>
+							<td colspan="3">
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select id="a" title="유형 선택">
+										<option value="1">선택1</option>
+										<option value="2">선택2</option>
+										<option value="3">선택3</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select id="b" title="유형 선택">
+										<option class="s1">선택1</option>
+										<option class="s1">선택2</option>
+										<option class="s1">선택3</option>
+										<option class="s2">선택4</option>
+										<option class="s2">선택5</option>
+										<option class="s3">선택6</option>
+										<option class="s3">선택7</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>영상업로드</h3>
+			</div>
+			<!--// titArea -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>판독영상 항목으로 구성된 영상업로드 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">판독영상</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>방송국 영상 선택</span>
+									<select title="방송국 영상 선택">
+										<option value="">방송국 영상 선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>방송국 선택</span>
+									<select title="방송국 선택">
+										<option value="">방송국 선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- fileWrap -->
+								<div class="fileWrap">
+									<input type="text" readonly="readonly" title="첨부파일 입력" value="">
+									<input type="file" title="첨부파일 선택">
+								</div>
+								<!--// fileWrap -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- btnBottom -->
+			<div class="btnBottom">
+				<button class="btn btnGray">취소</button>
+				<button class="btn btnBlue">저장</button>
+			</div>
+			<!--// btnBottom -->
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<div class="inner">
+			<p class="logo">KOREA BASEBALL KBO 비디오판독 센터 관리자</p>
+			<div class="footCenter">
+				<address><strong>(사)한국야구위원회</strong>02) 3460-4600 서울시 강남구 강남대로 278</address>
+				<p>Copyrightⓒ KBO, All Rights Reserved.</p>
+			</div>
+			<div class="footRight">
+				<dl class="logoArea">
+					<dt>재정후원 :</dt>
+					<dd>
+						<a href=""><img src="../images/common/logo02.png" alt=""></a>
+						<a href=""><img src="../images/common/logo03.png" alt=""></a>
+					</dd>
+				</dl>
+				<p>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</p>
+			</div>
+		</div>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+
+
+<!-- 경기정보 선택 팝업 -->
+<div class="layer layer1">
+	<div class="inner">
+		<p class="tit">경기 정보 선택</p>
+		<!-- popCont --> 
+		<div class="popCont">
+			<!-- searchArea -->
+			<div class="searchArea">
+				<div class="inBox">
+					<dl>
+						<dt>경기일자</dt>
+						<dd>
+							<span class="date"><input type="text" title="시작날짜선택" disabled></span>
+						</dd>
+					</dl>
+					<div class="btnArea">
+						<button class="btn btnYellowL"><span class="icoReset">초기화</span></button>
+						<button class="btn btnYellow"><span class="icoSearch">조회</span></button>
+					</div>
+				</div>
+			</div>
+			<!--// searchArea -->
+			<!-- 2020-03-20 -->
+			<!-- colTable -->
+			<div class="colTable v2">
+				<table>
+					<caption>날짜, 경기구분, 경기, 장소, 방송사, 선택 항목으로 구성된 경기 정보 리스트 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:150px">
+						<col style="width:150px">
+						<col style="width:auto">
+						<col style="width:auto">
+						<col style="width:150px">
+						<col style="width:160px">
+						<col style="width:150px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2">날짜</th>
+							<th scope="col" rowspan="2">경기구분</th>
+							<th scope="col" colspan="2">경기</th>
+							<th scope="col" rowspan="2">장소</th>
+							<th scope="col" rowspan="2">방송사</th>
+							<th scope="col" rowspan="2">선택</th>
+						</tr>
+						<tr>
+							<th scope="col">원정</th>
+							<th scope="col">홈</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>12.28</td>
+							<td>시범</td>
+							<td><span class="emblem HH">한화 이글스</span></td>
+							<td><span class="emblem HT">기아 타이거즈</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>12.28</td>
+							<td>정규</td>
+							<td><span class="emblem KT">KT 위즈</span></td>
+							<td><span class="emblem LG">LG 트윈스</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>12.28</td>
+							<td>올스타전</td>
+							<td><span class="emblem LT">롯데 자이언츠</span></td>
+							<td><span class="emblem NC">NC 다이노스</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>12.28</td>
+							<td>한국시리즈</td>
+							<td><span class="emblem OB">두산 베어스</span></td>
+							<td><span class="emblem SK">SK 와이번스</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>12.28</td>
+							<td>정규</td>
+							<td><span class="emblem SS">삼성 라이온</span></td>
+							<td><span class="emblem WO">키움 히어로</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// colTable -->
+			<!--// 2020-03-20 수정 -->
+		</div>
+		<!--// popCont -->
+		<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">close</a><!-- 2020-03-20 수정 -->
+	</div>
+</div>
+<!--// 경기정보 선택 팝업 -->
+
+<!-- 심판조회 팝업 -->
+<div class="layer layer2">
+	<div class="inner">
+		<p class="tit">심판조회</p>
+		<!-- popCont --> 
+		<div class="popCont">
+			<!-- searchArea -->
+			<div class="searchArea">
+				<div class="inBox">
+					<dl>
+						<dt>조 선택</dt>
+						<dd>
+							<!-- selectbox -->
+							<div class="selectbox">
+								<span>전체</span>
+								<select title="조 선택">
+									<option value="">전체</option>
+								</select>
+							</div>
+							<!--// selectbox -->
+						</dd>
+					</dl>
+					<dl>
+						<dt>이름</dt>
+						<dd><input type="text" title="이름 입력"></dd>
+					</dl>
+					<div class="btnArea">
+						<button class="btn btnYellowL"><span class="icoReset">초기화</span></button>
+						<button class="btn btnYellow"><span class="icoSearch">조회</span></button>
+					</div>
+				</div>
+			</div>
+			<!--// searchArea -->
+			<!-- colTable -->
+			<div class="colTable">
+				<table>
+					<caption>조, 이름 ,선택 항목으로 구성된 경기관리 리스트 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:auto">
+						<col style="width:auto">
+						<col style="width:155px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">조</th>
+							<th scope="col">이름</th>
+							<th scope="col">선택</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+						<tr>
+							<td>1조</td>
+							<td>최수원</td>
+							<td><button class="btn">선택</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// colTable -->
+			<!-- btnBottom -->
+			<div class="btnBottom">
+				<button class="btn btnBlueL">+ 더보기</button>
+			</div>
+			<!--// btnBottom -->
+		</div>
+		<!--// popCont -->
+		<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">close</a><!-- 2020-03-20 수정 -->
+	</div>
+</div>
+<!--// 심판조회 팝업 -->
+</body>
+</html>
+

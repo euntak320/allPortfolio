@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>대시보드 &lt; KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/jquery.cookie.js"></script>
+<script src="../js/common.js"></script>
+
+
+<script>
+	$(document).ready(function() {		
+		$(".layer3").each(function() {
+			var thisID = $(this).attr("id");
+			
+			if ($.cookie(thisID) == "Y" || $("#" + thisID).css("visibility") == "hidden") {
+				closePopup(thisID);
+			}
+		});
+	});
+	
+	//닫기
+	function closePopup(popID) {
+		$("#" + popID).fadeOut(500, function() {
+			$("#" + popID).css("visibility","hidden");
+			checkDim();
+		});
+	};
+	
+	//오늘하루 보지않기
+	function closePopupNotToday(popID) {
+		$.cookie(popID, "Y", { expires: 1 });
+		closePopup(popID);
+	};
+</script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li class="curr"><a href="">대시보드</a></li>
+				<li><a href="">등록</a></li>
+				<li><a href="">조회</a></li>
+				<li><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">유형별 상세</a></li>
+						<li><a href="">심판별</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li><a href="">관리</a>
+					<ul>
+						<li><a href="">경기관리</a></li>
+						<li><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>대시보드</h2>
+			<!-- 2020-03-26 -->
+			<!-- searchArea -->
+			<div class="searchArea">
+				<div class="inBox">
+					<div class="totalGame">
+						<dl>
+							<dt>총 경기수</dt>
+							<dd><strong>740</strong> <span>경기</span></dd>
+						</dl>
+					</div>
+					<dl>
+						<dt>경기일자</dt>
+						<dd class="dateWrap">
+							<span class="date"><input type="text" title="시작날짜선택"></span>
+							<em>~</em>
+							<span class="date"><input type="text" title="종료날짜선택"></span>
+						</dd>
+					</dl>
+					<div class="btnArea">
+						<button class="btn btnYellow"><span class="icoSearch">조회</span></button>
+					</div>
+				</div>
+			</div>
+			<!--// searchArea -->
+			<!--// 2020-03-26 추가 -->
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>영상판독통계<span>2020.01.01 ~ 2020.04.03</span></h3>
+				<!-- 2020-03-26 -->
+				<!-- <div class="rightArea">
+					<dl>
+						<dt>경기일자</dt>
+						<dd class="dateWrap">
+							<span class="date"><input type="text" title="시작날짜선택"></span>
+							<em>~</em>
+							<span class="date"><input type="text" title="종료날짜선택"></span>
+						</dd>
+					</dl>
+					<button class="btn btnYellow"><span class="icoSearch">검색</span></button>
+				</div> -->
+				<!--// 2020-03-26 - 삭제 -->
+			</div>
+			<!--// titArea -->
+			<div class="statsArea">
+				<dl>
+					<dt>영상판독 요청</dt>
+					<dd><strong>20</strong> <span>건</span></dd>
+				</dl>
+				<div class="chartArea">
+					<dl>
+						<dt>원심<span>(건)</span></dt>
+						<dd>
+							<canvas style="background:#89cdef"></canvas><!-- style은 영역확인용이니 개발시 삭제요망 -->
+						</dd>
+					</dl>
+					<dl>
+						<dt>번복<span>(건)</span></dt>
+						<dd>
+							<canvas style="background:#89cdef"></canvas><!-- style은 영역확인용이니 개발시 삭제요망 -->
+						</dd>
+					</dl>
+					<dl>
+						<dt>번복률<span>(%)</span></dt>
+						<dd>
+							<canvas style="background:#89cdef"></canvas><!-- style은 영역확인용이니 개발시 삭제요망 -->
+						</dd>
+					</dl>
+				</div>
+			</div>
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>전체 판독 현황</h3>
+			</div>
+			<!--// titArea -->
+			<div class="statusArea">
+				<div class="graphArea">
+					<!-- 2020-03-27 -->
+					<dl>
+						<dt>총 횟수</dt>
+						<dd>
+							<div class="graph other bgNavy"><p></p></div>
+							<strong><span><em>727</em></span></strong>
+						</dd>
+					</dl>
+					<!--// 2020-03-27 -->
+					<dl>
+						<dt>원심유지</dt>
+						<dd>
+							<div class="graph bgBlue"><p></p></div>
+							<strong><span>527</span></strong>
+						</dd>
+					</dl>
+					<dl>
+						<dt>판정번복</dt>
+						<dd>
+							<div class="graph bgRad"><p></p></div>
+							<strong><span>200</span></strong>
+						</dd>
+					</dl>
+				</div>
+				<div class="figureArea">
+					<dl>
+						<dt>경기당 평균</dt>
+						<dd><strong>00.00</strong> <span>건</span></dd>
+					</dl>
+					<dl>
+						<dt>번복률</dt>
+						<dd><strong>100.00</strong> <span>%</span></dd>
+					</dl>
+					<dl>
+						<dt>평균소요시간</dt>
+						<dd><strong>00:00</strong> <span>초</span></dd>
+					</dl>
+				</div>
+			</div>
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>카메라별 판독 현황</h3>
+			</div>
+			<!--// titArea -->
+			<div class="statusArea">
+				<div class="graphArea"> 
+					<!-- 2020-03-27 -->
+					<dl>
+						<dt>총 횟수</dt>
+						<dd>
+							<div class="graph other bgNavy"><p></p></div>
+							<strong><span><em>900</em></span></strong>
+						</dd>
+					</dl>
+					<!--// 2020-03-27 -->
+					<dl>
+						<dt>방송사 카메라</dt>
+						<dd>
+							<div class="graph bgBlue"><p></p></div>
+							<strong><span>600</span></strong>
+						</dd>
+					</dl>
+					<dl>
+						<dt>KBO 카메라</dt>
+						<dd>
+							<div class="graph bgBlue"><p></p></div>
+							<strong><span>200</span></strong>
+						</dd>
+					</dl>
+				</div>
+				<div class="figureArea">
+					<dl>
+						<dt>KBO카메라 적용률</dt>
+						<dd><strong>100.00</strong> <span>%</span></dd>
+					</dl>
+				</div>
+			</div>
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>유형별 판독 현황</h3>
+			</div>
+			<!--// titArea -->
+			<!-- 2020-04-16 -->
+			<!-- colTable -->
+			<div class="colTable v2">
+				<table>
+					<caption>태그/포스[1루, 2루, 3루, 홈], 홈런, 포구(파울팁포함), 페어/파울, 몸에맞는공, 파울/헛스윙, 충돌[2루, 홈], 3피트 항목으로 구성된 유형별 판독 현황 테이블입니다.</caption>
+					<colgroup>
+						<col span="4" style="width:95px">
+						<col span="5" style="width:auto">
+						<col span="2" style="width:95px">
+						<col style="width:auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" colspan="4">태그/포스</th>
+							<th scope="col" rowspan="2">홈런</th>
+							<th scope="col" rowspan="2">포구(파울팁포함)</th>
+							<th scope="col" rowspan="2">페어/파울</th>
+							<th scope="col" rowspan="2">몸에맞는공</th>
+							<th scope="col" rowspan="2">파울/헛스윙</th>
+							<th scope="col" colspan="2">충돌</th>
+							<th scope="col" rowspan="2">3피트</th>
+						</tr>
+						<tr>
+							<th scope="col">1루</th>
+							<th scope="col">2루</th>
+							<th scope="col">3루</th>
+							<th scope="col">홈</th>
+							<th scope="col">2루</th>
+							<th scope="col">홈</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+							<td>00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// colTable --
+			<!--// 2020-04-16 -->
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>팀별 판독 현황</h3>
+			</div>
+			<!--// titArea -->
+			<div class="halfWrap">
+				<!-- colTable -->
+				<div class="colTable">
+					<table>
+						<caption>판독신청, 원심유지, 판정번복, 번복률 항목으로 구성된 팀별 판독 현황 테이블입니다.</caption>
+						<colgroup>
+							<col span="5" style="width:auto">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">포스</th>
+								<th scope="col">판독신청</th>
+								<th scope="col">원심유지</th>
+								<th scope="col">판정번복</th>
+								<th scope="col">번복률</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><span class="emblem OB">두산 베어스</span></td>
+								<td>67</td>
+								<td>44</td>
+								<td>44</td>
+								<td>34.30%</td>
+							</tr>
+							<tr>
+								<td><span class="emblem NC">NC 다이노스</span></td>
+								<td>67</td>
+								<td>44</td>
+								<td>44</td>
+								<td>34.30%</td>
+							</tr>
+							<tr>
+								<td><span class="emblem WO">키움 히어로</span></td>
+								<td>67</td>
+								<td>44</td>
+								<td>44</td>
+								<td>34.30%</td>
+							</tr>
+							<tr>
+								<td><span class="emblem LG">LG 트윈스</span></td>
+								<td>67</td>
+								<td>23</td>
+								<td>23</td>
+								<td>34.30%</td>
+							</tr>
+							<tr>
+								<td><span class="emblem HT">기아 타이거즈</span></td>
+								<td>67</td>
+								<td>23</td>
+								<td>23</td>
+								<td>34.30%</td>
+							</tr>
+							<tr>
+								<td><span class="emblem SK">SK 와이번스</span></td>
+								<td>44</td>
+								<td>44</td>
+								<td>23</td>
+								<td>34.30%</td>
+							</tr>
+							<tr>
+								<td><span class="emblem HH">한화 이글스</span></td>
+								<td>67</td>
+								<td>67</td>
+								<td>44</td>
+								<td>34.30%</td>
+							</tr>
+							<tr>
+								<td><span class="emblem LT">롯데 자이언츠</span></td>
+								<td>67</td>
+								<td>67</td>
+								<td>23</td>
+								<td>34.30%</td>
+							</tr>
+							<tr>
+								<td><span class="emblem SS">삼성 라이온</span></td>
+								<td>67</td>
+								<td>23</td>
+								<td>23</td>
+								<td>34.30%</td>
+							</tr>
+							<tr>
+								<td><span class="emblem KT">KT 위즈</span></td>
+								<td>67</td>
+								<td>67</td>
+								<td>44</td>
+								<td>34.30%</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--// colTable -->
+				<!-- chartArea -->
+				<div class="chartArea">
+					<h4>팀별 번복률</h4>
+					<canvas style="background:#89cdef"></canvas><!-- style은 영역확인용이니 개발시 삭제요망 -->
+				</div>
+				<!-- chartArea -->
+			</div>
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<p>Copyright&copy; KBO, All Rights Reserved.</p>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+<div id="pop" class="layer layer3" style="display: block;"> 
+	<div class="inner">
+		<img src="../images/temp-img.jpg" alt="KBO비디오 판독센터 시스템 점검 안내 공지문">
+		<div class="checkBoxArea">
+			<input type="checkbox" id="chk1" name="chkbox">
+			<label for="chk1">오늘하루보지않기</label>
+		</div>
+		<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">닫기 <img src="../images/w-close.png" alt="닫기"></a>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <defs>
+        <style>
+            .cls-1,.cls-2{fill:none}.cls-2{stroke:#929292;stroke-linecap:round;stroke-miterlimit:10;stroke-width:2.8px}.cls-3{fill:#929292}
+        </style>
+    </defs>
+    <g id="icon_b_refresh" transform="translate(.316 4.02)">
+        <path id="사각형_1084" d="M0 0h30v30H0z" class="cls-1" data-name="사각형 1084" transform="translate(-.316 -4.02)"/>
+        <path id="패스_7_1_" d="M22.995 10.38a9.366 9.366 0 0 1-9.36 9.36 9.18 9.18 0 0 1-4.955-1.423" class="cls-2" transform="translate(.416 .48)"/>
+        <path id="패스_8_1_" d="M4.5 10.86a9.366 9.366 0 0 1 9.36-9.36 9.18 9.18 0 0 1 4.954 1.423" class="cls-2" transform="translate(.189)"/>
+        <path id="패스_9_3_" d="M.057 9.3L3.3 16.44a.4.4 0 0 0 .762 0L7.3 9.3c.18-.379-.033-.854-.369-.854H.441C.1 8.45-.115 8.924.057 9.3z" class="cls-3" transform="translate(1.005 .376)"/>
+        <path id="패스_9_2_" d="M26.515 11.491l-3.882-7.137a.514.514 0 0 0-.912 0l-3.882 7.136a.569.569 0 0 0 .451.854h7.775a.569.569 0 0 0 .45-.853z" class="cls-3" transform="translate(1.239 .139)"/>
+    </g>
+</svg>

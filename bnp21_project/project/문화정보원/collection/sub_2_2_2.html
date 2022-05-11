@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("../include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("../include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">수집 실행을 등록합니다.</p>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">수집 작업 정보</h4>
+					</div>
+				</div>
+				<div class="com-table-search">
+					<table>
+						<caption>입력 표</caption>						
+						<tbody>
+							<tr>
+								<th>Seed 프로파일 ID</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">XX00-001-001-SD001</option>
+										</select>
+									</div>
+								</td>
+								<th>Seed 프로파일 명</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="OOOO 공연정보 일별 수신" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>수집 대상 명</th>
+								<td>OOOO 공연정보-SD001</td>
+								<th>연계 자원 ID</th>
+								<td>XX00-001</td>
+							</tr>
+							<tr>
+								<th>연계주기</th>
+								<td>일 배치(1회)</td>
+								<th>연계 프로토콜 유형</th>
+								<td>XX000-001-Wc001</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">수집 프로그램 정보</h4>
+					</div>
+				</div>
+				<div class="com-table-search">
+					<table>
+						<caption>입력 표</caption>
+						<tbody>
+							<tr>
+								<th>수집작업 명</th>
+								<td class="w530">
+									<div class="row-form multi-form">
+										<input type="text" value="OOOO 공연정보-SD001 일별수신" aria-invalid="false">
+										<input type="text" value="BJ-MI-000000001" disabled>
+									</div>
+								</td>
+								<th>시스템 구분</th>
+								<td class="w190">
+									<div class="row-form">
+										<select class="w100p" aria-invalid="false">
+											<option value="#">수집연계(MI)</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>수집 프로그램 명</th>
+								<td class="w530">
+									<div class="row-form">
+										<input type="text" value="kr.kcisa.omi.batch.xx00_001_SD001_BatchJob" aria-invalid="false">
+									</div>
+								</td>
+								<th>실행여부</th>
+								<td class="w190">
+									<div class="row-form">
+										<select class="w100p" aria-invalid="false">
+											<option value="#">Y</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>스케줄 속성</th>
+								<!-- 181227 수정 -->
+								<td colspan="3">
+									<div class="com-radio">
+										<input type="radio" id="inp_rad01_01" name="sel_schedule" checked>
+										<label for="inp_rad01_01">반복</label>
+									</div>
+									<div class="com-radio">
+										<input type="radio" id="inp_rad01_02" name="sel_schedule">
+										<label for="inp_rad01_02">주기</label>
+									</div>
+									<!-- 반복 -->
+									<div class="row-form time" style="display:none">
+										<input type="text" aria-invalid="false" class="sec">
+										<span class="txt">초</span>
+									</div>
+									<!-- // 반복 -->
+									<!-- 주기 -->
+									<div class="row-form time">
+										<select aria-invalid="false">
+											<option value="#">매주</option>
+										</select>
+										<!-- 매월 -->
+										<div class="group">
+											<select aria-invalid="false">
+												<option value="#">01</option>
+											</select>
+											<span class="txt">일</span>
+											<select aria-invalid="false">
+												<option value="#">00</option>
+											</select>
+											<span class="txt">시</span>
+											<select aria-invalid="false">
+												<option value="#">00</option>
+											</select>
+											<span class="txt">분</span>
+										</div>
+										<!-- // 매월 -->
+										<!-- 매주 -->
+										<div class="group" style="display:none">
+											<select aria-invalid="false">
+												<option value="#">월</option>
+											</select>
+											<span class="txt">요일</span>
+											<select aria-invalid="false">
+												<option value="#">00</option>
+											</select>
+											<span class="txt">시</span>
+											<select aria-invalid="false">
+												<option value="#">00</option>
+											</select>
+											<span class="txt">분</span>
+										</div>
+										<!-- // 매주 -->
+										<!-- 매일 -->
+										<div class="group" style="display:none">
+											<select aria-invalid="false">
+												<option value="#">00</option>
+											</select>
+											<span class="txt">시</span>
+											<select aria-invalid="false">
+												<option value="#">00</option>
+											</select>
+											<span class="txt">분</span>
+										</div>
+										<!-- // 매일 -->
+									</div>
+									<!-- // 주기 -->
+								</td>
+								<!-- // 181227 수정 -->
+							</tr>
+							<tr>
+								<th>비고</th>
+								<td colspan="3">
+									<input type="text" value="OOOO 공연정보 일별 수신 작업을 처리하는 Web-Crawling 프로그램">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="com-btn">
+					<a href="#none">취소</a>
+					<a href="#none" class="send">저장</a>
+				</div>
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->	
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("../include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

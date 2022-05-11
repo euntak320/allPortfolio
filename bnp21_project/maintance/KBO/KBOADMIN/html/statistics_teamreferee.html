@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>심판조별 &lt; 통계 &lt; KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/common.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li><a href="">대시보드</a></li>
+				<li><a href="">등록</a></li>
+				<li><a href="">조회</a></li>
+				<li class="curr"><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">심판별</a></li>
+						<li class="curr"><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li><a href="">관리</a>
+					<ul>
+						<li><a href="">경기관리</a></li>
+						<li><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>심판조별</h2>
+			<!-- searchArea -->
+			<div class="searchArea">
+				<div class="inBox">
+					<dl>
+						<dt>경기일자</dt>
+						<dd class="dateWrap">
+							<span class="date"><input type="text" title="시작날짜선택"></span>
+							<em>~</em>
+							<span class="date"><input type="text" title="종료날짜선택"></span>
+						</dd>
+					</dl>
+					<div class="btnArea">
+						<button class="btn btnYellowL"><span class="icoReset">초기화</span></button>
+						<button class="btn btnYellow"><span class="icoSearch">조회</span></button>
+					</div>
+				</div>
+			</div>
+			<!--// searchArea -->
+
+			<!-- tableTop -->
+			<div class="tableTop">
+				<div class="btnArea">
+					<button class="btn btnRedL"><span class="icoEx">엑셀다운로드</span></button>
+				</div>
+			</div>
+			<!--// tableTop -->
+
+			<!-- statusTable -->
+			<div class="statusTable">
+				<table>
+					<caption>총시간(초), 총시간(분),  판독평균시간(분), 총 횟수, 유지, 번복, 번복률 항목으로 구성된 심판조별 리스트 테이블입니다.</caption>
+					<colgroup>
+						<col span="7" style="width:auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">총시간(초)</th>
+							<th scope="col">총시간(분)</th>
+							<th scope="col">판독평균시간(분)</th>
+							<th scope="col">총 횟수</th>
+							<th scope="col">유지</th>
+							<th scope="col">번복</th>
+							<th scope="col">번복률</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>10,247초</td>
+							<td>17시간39초</td>
+							<td>1분26초</td>
+							<td>113</td>
+							<td>73</td>
+							<td>40</td>
+							<td>35.4%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// statusTable -->
+
+			<!-- colTable -->
+			<div class="colTable">
+				<table>
+					<caption>조, 이름, 총 횟수, 유지, 번복, 번복률, 조 번복률 항목으로 구성된 심판조별 리스트 테이블입니다.</caption>
+					<colgroup>
+						<col span="7" style="width:auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">조</th>
+							<th scope="col">이름</th>
+							<th scope="col">총 횟수</th>
+							<th scope="col">유지</th>
+							<th scope="col">번복</th>
+							<th scope="col">번복률</th>
+							<th scope="col">조 번복률</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" rowspan="5">1조</th>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+							<td rowspan="5">0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<th scope="row" rowspan="5">2조</th>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+							<td rowspan="5">0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<th scope="row" rowspan="5">3조</th>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+							<td rowspan="5">0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+						<tr>
+							<td>강광회</td>
+							<td>6</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0.0%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// colTable -->
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<p>Copyright&copy; KBO, All Rights Reserved.</p>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+</body>
+</html>

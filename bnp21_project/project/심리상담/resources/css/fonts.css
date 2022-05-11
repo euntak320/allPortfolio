@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+/*
+* Noto Sans KR (korean) http://fonts.googleapis.com/earlyaccess/notosanskr.css
+*/
+
+@font-face {
+  font-family: 'NotoSansCJKkr';
+  src: url(../fonts/NotoSansCJKkr-Thin.eot);
+  src: url(../fonts/NotoSansCJKkr-Thin.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NotoSansCJKkr-Thin.woff) format('woff'),
+       url(../fonts/NotoSansCJKkr-Thin.otf) format('truetype');
+  font-style: normal;
+  font-weight: 100;
+}
+@font-face {
+  font-family: 'NotoSansCJKkr';
+  src: url(../fonts/NotoSansCJKkr-Light.eot);
+  src: url(../fonts/NotoSansCJKkr-Light.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NotoSansCJKkr-Light.woff) format('woff'),
+       url(../fonts/NotoSansCJKkr-Light.otf) format('truetype');
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'NotoSansCJKkr';
+  src: url(../fonts/NotoSansCJKkr-DemiLight.eot);
+  src: url(../fonts/NotoSansCJKkr-DemiLight.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NotoSansCJKkr-DemiLight.woff) format('woff'),
+       url(../fonts/NotoSansCJKkr-DemiLight.otf) format('truetype');
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'NotoSansCJKkr';
+  src: url(../fonts/NotoSansCJKkr-Regular.eot);
+  src: url(../fonts/NotoSansCJKkr-Regular.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NotoSansCJKkr-Regular.woff) format('woff'),
+       url(../fonts/NotoSansCJKkr-Regular.otf) format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'NotoSansCJKkr';
+  src: url(../fonts/NotoSansCJKkr-Medium.eot);
+  src: url(../fonts/NotoSansCJKkr-Medium.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NotoSansCJKkr-Medium.woff) format('woff'),
+       url(../fonts/NotoSansCJKkr-Medium.otf) format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'NotoSansCJKkr';
+  src: url(../fonts/NotoSansCJKkr-Bold.eot);
+  src: url(../fonts/NotoSansCJKkr-Bold.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NotoSansCJKkr-Bold.woff) format('woff'),
+       url(../fonts/NotoSansCJKkr-Bold.otf) format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'NotoSansCJKkr';
+  src: url(../fonts/NotoSansCJKkr-Black.eot);
+  src: url(../fonts/NotoSansCJKkr-Black.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NotoSansCJKkr-Black.woff) format('woff'),
+       url(../fonts/NotoSansCJKkr-Black.otf) format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}

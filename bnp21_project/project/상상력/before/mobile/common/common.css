@@ -1,0 +1,85 @@
+body,div,dl,dt,dd,ul,ol,menu,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,th,td,p{margin:0; padding:0; border:0; outline:0; font-size:1em; line-height:120%; font-family:'Segoe UI', 'Lucida Sans Unicode', 'Lucida Grande', 'Tahoma', 'Arial', 'sans-serif';background:#f7ec5a;}
+article,aside,hgroup,header,footer,figure,figcaption,nav,section,time,mark,canvas,video,audio,details,summary{display:block;}
+dl,dt,dd,ul,ol,menu,li{list-style:none;}
+table{border-collapse:collapse; border-spacing:0;}
+fieldset,img{border:0; padding:0;}
+img{vertical-align:top;}
+address,caption,cite,code,dfn,em,var{font-style:normal; font-weight:normal;}
+caption,th{text-align:left;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;}
+form{margin:0;}
+a{text-decoration:none;}
+.clearFix:after{content:"."; display:block; clear:both; height:0; visibility:hidden;}
+.clearFix{display:inline-block;}
+* html .clearFix{height:1%;}
+.clearFix{display:block;}
+caption,legend,.skip,hr{display:none;}
+input,textarea{outline-style:none; resize:none;}
+
+body{padding:40px 0 0 0;}
+/*#header{width:100%; height:40px; position:fixed; left:0; top:0; border-bottom:1px solid #835daf; background:#835daf; z-index:2;}*/
+#header{width:100%; height:40px; position:fixed; left:0; top:0; border-bottom:1px solid #f72ec5a; background:#f72ec5a; z-index:2;}
+#header .caller{display:block; width:45px; height:40px; background:url('../images/btn_menucaller.png?1') no-repeat; background-size:cover; text-indent:-9999em; text-indent:-9999em; position:absolute; right:0; top:0; z-index:2;}
+/*#header nav{position:absolute; left:0; top:0; bottom:0; right:0; background:#ffff0d; z-index:1; padding:40px 0 0 0; display:none;}*/
+#header nav{position:absolute; left:0; top:0; bottom:0; right:0; background:#f7ec5a; z-index:1; padding:40px 0 0 0; display:none;}
+#header nav li{padding:0 0 5px 0;}
+#header nav .menu{border-top:1px solid #835daf; padding:15px;font-weight: bold;}
+#header nav .menu ul ul, #header nav .menu ul ul div{padding-left:25px;}
+#header nav .menu div{line-height:140%;}
+#header nav a{font-size:14px; color:#835daf;}
+.nav-fix #header{left:0; top:0; bottom:0; right:0; height:auto; overflow:auto;}
+.nav-fix #header nav{display:block;}
+
+.main{padding:0; background:#f7ec5a;}
+.main p img{width:100%;}
+/*.main p.regist{padding:0 90px 25px;}*/
+.main p.regist{padding:0 140px 25px;}
+.main .link{padding:25px 0 0; text-align:center; font-size:12px;}
+.main .link a{
+	color:#1AAA7D;
+	letter-spacing:-1px;
+	margin:0 5px;
+	font-weight: bold;
+}
+
+.contents{padding:20px;}
+.contents h2{padding:0 0 20px 0; font-size:16px; color:#805ab7; letter-spacing:-1px;}
+/*.contents h2 span{font-size:12px; display:block; padding:5px 0;}*/
+.contents h2 span{padding:0 0 20px 0; font-size:16px; color:#805ab7; letter-spacing:-1px;font-weight:500;}
+.contents h3{
+	padding:0 0 10px 0;
+	margin:0 0 20px;
+	font-size:14px;
+	color:#805ab7;
+	border-bottom:1px solid #835daf;
+	letter-spacing:-1px;
+}
+.contents h3 img { float:right; } 
+/*.contents .textarea{padding:0 0 45px 0; font-size:13px; color:#7c7c7c ; line-height:160%;}*/
+.contents .textarea{padding:0 0 45px 0; font-size:13px; color:#5d5d5d ; line-height:160%;}
+.contents .textarea span{color:#805ab7;font-size:14px;font-weight:bold; border-bottom:1px solid #805ab7; line-height:auto;}
+.contents .textarea strong{
+	color:#805ab7;
+}
+.contents .textarea img{width:100%;}
+.contents .textarea a{color:#5d5d5d;font-weight:bold;}
+.contents address{padding:0 0 15px; font-size:16px; color:#33d879;}
+.contents .textarea .regist{width:62px; height:22px;}
+.sns{text-align:center; padding:25px 0 30px 0;background:#f7ec5a;}
+.sns a{margin:0 5px;}
+.sns img{width:27px; height:27px;}
+
+.gallery li{padding:0 0 20px;}
+.gallery li a{display:block; text-align:center;}
+.gallery li img{width:100%;}
+.gallery li strong{display:block; padding:5px 0 0 0; color:#1d42a8; font-size:13px;}
+
+.pager{padding:0 0 45px; text-align:center; margin-top:-20px;}
+.pager a{font-size:12px; color:#1d42a8; margin:0 10px;}
+
+.bg{background:#ffff0d;}
+.bg .contents .textarea, .bg .contents .textarea a{color:#fff;}
+
+.youtube{margin:-20px 0 40px;}
+.youtube img{width:100%;}

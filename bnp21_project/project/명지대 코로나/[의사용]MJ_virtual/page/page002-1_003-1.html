@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MJ Virtual care center</title>
+	<script type="text/javascript" async="" src="../js/jquery-3.3.1.min.js"></script>	
+	<link rel="stylesheet" href="../css/reset.css">	
+	<link rel="stylesheet" href="../css/layout.css">
+</head>
+<body>
+  
+<div id="join-wrap">
+	<div id="regist-container">
+		<div class="regist-box-wrap">
+			<h1 class="symbol-logo"><img src="../images/common/logo2.svg" alt=""></h1>
+			<p class="regist-title">MJ Virtual 의사 등록 하기​</p>
+			<div class="regist-step-wrap active-step1"> <!-- step별로  active-step1,active-step2,active-step3,active-step4-->
+				<ol>
+					<li>
+						<dl>
+							<dt><div class="num">1</div></dt>
+							<dd>의사 <br class="p-hide" />기본 정보</dd>
+						</dl>
+						<div class="bar-wrap">
+							<span class="bar" style="width:80%;"></span> <!-- 진행률에 따라 % 값 변경해주시면 됩니다 -->
+						</div>
+					</li>
+					<li>
+						<dl>
+							<dt><div class="num">2</div></dt>
+							<dd>진료과목 <br class="p-hide" />선택</dd>
+						</dl>
+						<div class="bar-wrap">
+							<span class="bar"></span>
+						</div>
+					</li>
+					<li>
+						<dl>
+							<dt><div class="num">3</div></dt>
+							<dd>병원 <br class="p-hide" />정보</dd>
+						</dl>
+						<div class="bar-wrap">
+							<span class="bar"></span>
+						</div>
+					</li>
+					<li>
+						<dl>
+							<dt><div class="num">4</div></dt>
+							<dd>계좌 <br class="p-hide" />정보</dd>
+						</dl>
+					</li>
+				</ol>
+			</div>
+			<div class="box-form">
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">프로필 사진 업로드</dt>
+					<dd class="form-cont">
+						<div class="profile-area">
+							<div class="profile-thumb"></div>
+						</div>
+						<div class="ip-area btn-type">
+							<div class="file-del-area">
+								<input type="file" id="file" name="" class="ip-hidden" value="file_name.jpg">
+								<input class="upload-name default-ip" value="" placeholder="이미지 파일 업로드" readonly>
+								<button type="button" class="btn-del">삭제</button>
+							</div>
+							<label for="file" class="btn-ip"><i class="ico-file"></i>찾아보기</label>
+						</div>
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">이름 (한글)</dt>
+					<dd class="form-cont">
+						<div class="ip-area">
+							<input type="text" id="" name="" class="default-ip" placeholder="이름을 입력하세요.">							
+						</div>
+						
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">휴대전화 번호</dt>
+					<dd class="form-cont">
+						<div class="ip-area btn-type">
+							<input type="text" id="" name="" class="default-ip" placeholder="'-'없이 입력하세요.">
+							<button type="button" class="btn-ip">인증번호 받기</button>
+						</div>
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">인증번호 입력</dt>
+					<dd class="form-cont">
+						<div class="ip-area btn-type citation-type">
+							<input type="text" id="" name="" class="default-ip" placeholder="인증번호를 입력하세요.">
+							<span class="citation-txt">03:00</span>
+							<p class="form-txt"><i class="ico-chk-blue"></i>인증에 성공하였습니다.</p>
+							<button type="button" class="btn-ip">인증번호 확인</button>
+						</div>						
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">전문의 자격증</dt>
+					<dd class="form-cont">
+						<div class="ip-area">
+							<input type="text" id="" name="" class="default-ip" placeholder="자격증을 입력하세요.">							
+						</div>						
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">전문분야</dt>
+					<dd class="form-cont">
+						<div class="ip-area btn-type">
+							<input type="text" id="" name="" class="default-ip" placeholder="전문분야를 입력하세요.">
+							<button type="button" class="btn-ip"><i class="ico-add"></i>추가</button>
+						</div>
+						<div class="tag-area">
+							<ul>
+								<li><span>통증클리닉</span><button type="button" class="btn-tag-del">삭제</button></li>
+								<li><span>수액클리닉</span><button type="button" class="btn-tag-del">삭제</button></li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">면허 취득연도</dt>
+					<dd class="form-cont">
+						<div class="ip-area">
+							<input type="text" id="" name="" class="default-ip" placeholder="연도를 입력하세요.">							
+						</div>						
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">학력</dt>
+					<dd class="form-cont">
+						<div class="ip-area btn-type">
+							<input type="text" id="" name="" class="default-ip" placeholder="학력을 입력하세요.">
+							<button type="button" class="btn-ip"><i class="ico-add"></i>추가</button>
+						</div>
+						<div class="tag-area">
+							<ul>
+								<li><span>연세대학교 의학과 졸업</span><button type="button" class="btn-tag-del">삭제</button></li>
+								<li><span>연세대학원 의학과 졸업</span><button type="button" class="btn-tag-del">삭제</button></li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">경력</dt>
+					<dd class="form-cont">
+						<div class="ip-area btn-type">
+							<input type="text" id="" name="" class="default-ip" placeholder="경력을 입력하세요.">
+							<button type="button" class="btn-ip"><i class="ico-add"></i>추가</button>
+						</div>
+						<div class="tag-area">
+							<ul>
+								<li><span>OOO학회 상임이사</span><button type="button" class="btn-tag-del">삭제</button></li>
+								<li><span>원격의료센터장</span><button type="button" class="btn-tag-del">삭제</button></li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">의사소개</dt>
+					<dd class="form-cont">
+						<div class="text-area">
+							<span class="txt-count">0/최대 50자</span>
+							<textarea name="" id="" class="default-txt" placeholder="내용을 입력하세요."></textarea>
+						</div>
+					</dd>
+				</dl>
+			</div><!-- box-form -->
+			<div class="form-btn-area">
+				<button type="button" class="btn btn-full btn-gray" disabled><span>다음</span></button> <!-- 활성화 시 disabled 삭제 -->
+			</div>
+		</div>
+		<p class="join-copy">ⓒ 2020 MJ VIRTUAL CARE CENTER. <br class="p-hide"/>All rights reserved.</p>
+	</div>	
+</div>
+
+
+<script>
+$(document).ready(function(){
+	var fileTarget = $('#file'); 
+	fileTarget.on('change', function(){ // 값이 변경되면
+		var cur=$(".file-del-area input[type='file']").val();
+		$(".upload-name").val(cur);
+	}); 
+});
+</script>
+
+</body>
+</html>

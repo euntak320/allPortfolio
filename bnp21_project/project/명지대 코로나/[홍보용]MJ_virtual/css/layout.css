@@ -1,0 +1,89 @@
+﻿@charset "utf-8";
+/* wrap */
+#wrap {max-width:100%; width:100%}
+
+/* header */
+#header {position:fixed; left:0; top:0; z-index:9999; max-width:100%; width:100%}
+#header .inner {position:relative; margin:0 auto; padding:0 20px; padding-bottom:10px; max-width:100%; width:1360px}
+#header .inner:after {display:block; content:""; clear:both}
+#header .inner h1 {float:left; padding-top:25px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#header .inner h1 a {display:block; width:150px}
+#header .inner h1 a img {width:100%}
+#header .inner .gnbIcon {display:none}
+#header.scroll {background:rgba(0,0,0,0.5)}
+@media (max-width:1160px) {
+	#header .inner h1 a {width:130px}
+	#header .inner .gnbIcon {display:block; position:absolute; top:35px; right:23px; z-index:999; width:30px; height:30px; text-indent:-9999px; background:url("../images/gnbIcon.png") no-repeat center; background-size:30px auto; transition:all 0.5s; -webkit-transition:all 0.5s; -moz-transition:all 0.5s} 
+	#header .inner .gnbIcon.on {background:url("../images/gnbIcon_close.png"); background-size:30px auto} 
+}
+@media (max-width:767px) {
+	#header .inner h1 a {width:115px}
+	#header .inner .gnbIcon {width:25px; height:25px}
+}
+/* gnb */
+#gnb {float:right}
+#gnb > ul:after {display:block; content:""; clear:both}
+#gnb > ul > li {position:relative; float:left; text-align:center}
+#gnb > ul > li + li {margin-left:116px}
+#gnb > ul > li > a {display:block; padding-top:25px; line-height:53px; font-size:18px; color:#fff}
+#gnb > ul > li > div {visibility:hidden; opacity:0; position:absolute; left:0; top:78px; padding:25px 0; width:165px; border-radius:5px; box-shadow:0px 4px 10px #00000033; text-align:center; background-color:#fff; transition:all 0.5s}
+#gnb > ul > li.on > div {visibility:visible; opacity:1; left:-50px; transition:all 0.5s} 
+#gnb > ul > li.on > div.v2 {left:-43px; transition:all 0.5s}
+#gnb > ul > li > div .depth02 li + li {margin-top:15px}
+#gnb > ul > li > div .depth02 li a {display:block; line-height:28px; font-size:16px; color:#666666}
+#gnb > ul > li > div .depth02 li:hover a {font-weight:500; color:#0082FF}
+@media (min-width:1161px) {
+	#gnb {display:block !important}
+}
+@media (max-width:1160px) {
+	#gnb {display:none; position:fixed; left:0; top:0; z-index:99; max-width:100%; width:100%; height:380px; background-color:rgba(255,255,255,1); transition:all 0.5s; -webkit-transition:all 0.5s; -moz-transition:all 0.5s}
+	#gnb > ul {padding:25px}
+	#gnb > ul > li {float:none; text-align:left}
+	#gnb > ul > li + li {margin-left:0}
+	#gnb > ul > li > a {color:#484848}
+	/* #gnb > ul > li > div {visibility:visible} */
+}
+
+/* footer */
+#footer {position:relative; background-color:#F5F7FF}
+#footer:before {display:block; content:""; position:absolute; left:0; top:60px; width:100%; height:1px; background-color:#DFE2E9}
+#footer .inner {margin:0 auto; padding:0 20px; max-width:100%; width:1360px}
+#footer .inner .policy {position:relative}
+#footer .inner .policy:after {display:block; content:""; clear:both}
+#footer .inner .policy ul {float:left}
+#footer .inner .policy ul li {position:relative; float:left; padding:0 30px}
+#footer .inner .policy ul li:first-child {padding-left:0}
+#footer .inner .policy ul li + li:before {display:inline-block; content:""; position:absolute; left:0; top:26px; width:1px; height:13px; background-color:#DFE2E9}
+#footer .inner .policy ul li a {display:block; padding:17px 0; line-height:26px; font-size:15px; color:#333333}
+#footer .inner .policy > span {display:block; position:absolute; right:0; top:0; padding:19px 0; line-height:26px; font-size:15px; color:#333333}
+#footer .inner .ftInfo {padding:40px 0}
+#footer .inner .ftInfo:after {display:block; content:""; clear:both} 
+#footer .inner .ftInfo p {display:inline-block; float:left; line-height:26px; font-size:14px; color:#95989F}
+#footer .inner .ftInfo p span {color:#95989F}
+#footer .inner .ftInfo .ftLogo {display:inline-block; float:right}
+#footer .inner .ftInfo .ftLogo img {width:130px}
+@media (max-width:1160px) {
+	#footer:before {top:53px}
+	#footer .inner .policy ul li {padding:0 20px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+	#footer .inner .policy ul li + li:before {top:22px}
+	#footer .inner .policy ul li a {padding:15px 0}
+	#footer .inner .policy > span {padding:15px 0}
+	#footer .inner .ftInfo {padding:30px 0; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+	#footer .inner .ftInfo .ftLogo img {width:120px}
+}
+@media (max-width:940px) {
+	#footer:before {display:none}
+	#footer .inner .policy ul {padding-top:8px} 
+	#footer .inner .policy ul li {float:none; padding-left:0}
+	#footer .inner .policy ul li + li:before {display:none}
+	#footer .inner .policy ul li a {padding:8px 0}
+}
+@media (max-width:767px) {
+	#footer .inner .policy {text-align:center}
+	#footer .inner .policy ul {float:none; padding-top:15px; text-align:center}
+	#footer .inner .policy ul li {padding:0}
+	#footer .inner .policy > span {position:static}
+	#footer .inner .ftInfo {padding:25px 0 30px; text-align:center}
+	#footer .inner .ftInfo p {float:none}
+	#footer .inner .ftInfo .ftLogo {float:none; display:block; margin-top:15px; text-align:center}
+}

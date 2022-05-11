@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Button</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+	<div id="LNB">
+		<h1><a href="#"  tabindex="1"><img src="../images/logo.png" alt="상상스토리" /></a></h1>
+		<ul><!-- 1depth -->
+			<li><a href="01_title.html">Title</a></li>
+			<li><a href="02_tab.html">Tab</a></li>
+			<li class="on"><a href="03_button.html">Button</a></li>
+			<li><a href="04_table_coltype.html">Table</a></li>
+			<li><a href="05_form_date.html">Form</a></li>
+			<li><a href="06_popup.html">Popup</a></li>
+			<li><a href="07_BBS_list.html">BBS</a></li>
+			<li><a href="08_etc.html">etc.</a></li>
+		</ul>
+	</div>
+
+	<div id="SUB">
+		<div class="header">
+			<button type="button" class="toggle"><img src="../images/toggle_close.png" alt="메뉴 닫기"/></button>
+			<!-- Type 1 -->
+			<div class="top_nav">
+				<a href="#" class="home">Home</a>
+				<!-- 1depth -->
+				<span>&gt;</span>
+				<button class="nav_btn1 last" type="button">Button</button>
+				<ul class="nav_menu nav_depth1">
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li class="on"><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li><a href="#">Form</a></li>
+					<li><a href="#">Popup</a></li>
+					<li><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+				<!-- //1depth -->
+			</div>
+			<!-- //Type 1 -->
+			<!-- Type 2 -->
+			<div id="GNB">
+				<ul>
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li class="on"><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li><a href="#">Form</a></li>
+					<li><a href="#">Popup</a></li>
+					<li><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+			</div>
+			<!-- //Type 2 -->
+			<div class="log_info">
+				<span class="user_info">Admin</span>
+				<button type="button" class="btn red" tabindex="1">로그아웃</button>
+			</div>
+		</div>
+
+		<div class="contents_area">
+
+			<h3>버튼</h3>
+
+			<h4>&lt;button&gt;태그 버튼 - 기능 컨트롤</h4>
+			<div class="section">
+				<button type="button" class="btn blue">.blue</button>
+				<button type="button" class="btn red">.red</button>
+				<button type="button" class="btn green">.green</button>
+				<button type="button" class="btn gray">.gray</button>
+				<button type="button" class="btn sky">.sky</button>
+				<button type="button" class="btn brown">.brown</button>
+			</div>
+
+			<h4>&lt;a&gt;태그 버튼 - 페이지 이동, 링크, 팝업 오픈 시</h4>
+			<div class="section">
+				<a href="#" class="btn blue">.blue</a>
+				<a href="#" class="btn red">.red</a>
+				<a href="#" class="btn green">.green</a>
+				<a href="#" class="btn gray">.gray</a>
+				<a href="#" class="btn sky">.sky</a>
+				<a href="#" class="btn brown">.brown</a>
+			</div>
+
+			<h4>버튼 사이즈</h4>
+			<div class="section">
+				<button type="button" class="btn blue small">버튼</button>
+				<button type="button" class="btn blue">버튼</button>
+				<button type="button" class="btn blue big">버튼</button>
+			</div>
+
+			<h4>고유 기능 버튼</h4>
+			<div class="section">
+				<button type="button" class="btn sky search">찾기</button>
+				<a href="#" class="btn sky down">다운로드</a>
+				<button type="button" class="btn sky calendar"><img src="../images/btn_ico_calendar.png" alt="달력보기" /></button>
+			</div>
+
+		</div> <!-- //contents_area -->
+	</div> <!-- //#SUB -->
+
+</div>
+
+</body>
+</html>

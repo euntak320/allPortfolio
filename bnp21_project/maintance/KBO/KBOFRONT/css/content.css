@@ -1,0 +1,310 @@
+@charset "utf8";
+/* 타이틀 */
+.titArea {position:relative; margin-top:40px}
+.titArea:first-child {margin-top:0}
+.titArea h3 {line-height:48px; font-size:26px; font-weight:700; color:#1b2e59; letter-spacing:-0.05em}
+@media screen and (max-width:767px) {
+	.titArea {margin-top:23px}
+	.titArea h3 {line-height:43px; font-size:20px}
+}
+
+/* 버튼 */
+.btn {display:inline-block; padding:0 15px; border:1px solid #e3ad24; min-width:100px; line-height:36px; font-size:16px; color:#fff; font-weight:600; background:#e3ad24}
+.btnArea {margin:-30px 0 10px}
+@media screen and (max-width:767px) {
+	.btn {padding:0 10px; line-height:28px; font-size:13px}
+	.btnArea {margin:10px 0}
+}
+/* 인풋 셀렉트 라디오 체크박스 */
+input[type=text],
+input[type=password] {border:1px solid #ccc; padding:0 10px; max-width:100%; width:200px; height:34px; letter-spacing:-0.05em}
+.date {display:inline-block; position:relative; padding-right:44px; width:160px}
+.date input {width:100%}
+.date img {position:absolute; top:0; right:0}
+.dateWrap:after {display:block; content:""; clear:both}
+.dateWrap > * {float:left}
+.dateWrap > em {width:28px; text-align:center; line-height:34px; color:#000}
+.selectbox {display:inline-block; position:relative; border:1px solid #ccc; width:120px; background:#fff}
+.selectbox span {display:block; overflow:hidden; padding:0 40px 0 10px; line-height:32px; white-space:nowrap; text-overflow:ellipsis; background:url("../images/bl-arrow.png") no-repeat right center}
+.selectbox select {position:absolute; top:0; left:0; width:100%; height:100%; opacity:0}
+
+/* 검색영역 */
+.searchArea {padding:6px 20px; margin-bottom:20px; text-align:center; background:#fff}
+.searchArea .inBox {display:inline-block; overflow:hidden; margin-bottom:-4px; text-align:left}
+.searchArea .inBox > * {float:left}
+.searchArea .inBox > * + * {margin-left:20px}
+.searchArea .inBox dl {overflow:hidden; padding:10px 0}
+.searchArea .inBox dl dt {float:left; margin-right:15px; line-height:34px; color:#000}
+.searchArea .inBox dl dd {float:left}
+.searchArea .inBox dl dd.btnInput {position:relative; padding-right:44px; width:186px}
+.searchArea .inBox dl dd.btnInput .selectbox {width:100%}
+.searchArea .inBox dl dd.btnInput .btnSearch {display:block; position:absolute; top:0; right:0; border:none; width:34px; height:34px; text-indent:-9999px; background:url("../images/btn-search.png") no-repeat center}
+.searchArea .inBox dl dd .selectbox + .selectbox {margin-left:10px}
+@media screen and (max-width:1300px) {
+	.searchArea {padding-left:0}
+	.searchArea .inBox {display:block}
+	.searchArea .inBox dl {position:relative; padding-left:80px; float:left; margin:0; width:50%}
+	.searchArea .inBox dl dt {position:absolute; top:10px; left:20px}
+	.searchArea .inBox dl dd {width:100%}
+	.searchArea .inBox dl dd:after {display:block; content:""; clear:both}
+	.searchArea .inBox dl dd .selectbox {display:block; width:100%}
+	.searchArea .inBox dl dd.v2 .selectbox {float:left; width:calc(50% - 5px)}
+	.searchArea .inBox dl dd.dateWrap .date {width:calc(50% - 14px)}
+	.searchArea .inBox dl dd.btnInput {width:100%}
+}
+@media screen and (max-width:1024px) {
+	.searchArea .inBox dl {width:100%}
+}
+@media screen and (max-width:767px) {
+	.searchArea {margin:0; padding:20px 10px; border:1px solid #f1f1f6}
+	.searchArea .inBox {padding:0}
+	.searchArea .inBox dl {position:relative; margin:0 !important; float:none; padding:5px 15px 5px 45px; width:100%}
+	.searchArea .inBox dl + dl {margin:0}
+	.searchArea .inBox dl dt {position:absolute; top:5px; left:0; width:45px; margin:0}
+	.searchArea .inBox dl dd {position:relative; width:100%}
+	.searchArea .inBox dl dd .selectbox {display:block; width:100%}
+	.searchArea .inBox dl dd .selectbox + .selectbox {margin:5px 0 0 0}
+	.searchArea .inBox dl dd.v2 .selectbox {float:none; width:100%}
+	.searchArea .inBox dl dd.btnInput {width:100%}
+	.searchArea .inBox dl dd.dateWrap {position:relative; padding:0}
+	.searchArea .inBox dl dd.dateWrap em {position:absolute; top:0; right:-15px; width:15px; text-align:right}
+	.searchArea .inBox dl dd.dateWrap .date {width:100%}
+	.searchArea .inBox dl dd.dateWrap .date:last-child {margin-top:5px}
+}
+
+/**/
+
+/* 페이징 */
+.paging {margin-top:20px; text-align:center; -webkit-transition:all 0.2s; transition:all 0.2s}
+.paging .inner {display:inline-block; overflow:hidden}
+.paging .inner > * {float:left}
+.paging .inner .page {overflow:hidden; margin:0 10px}
+.paging .inner a,
+.paging .inner strong {float:left; margin:0 2px; width:38px; line-height:36px; letter-spacing:-0.05em; color:#666; -webkit-transition:all 0.2s; transition:all 0.2s}
+.paging .inner strong {position:relative; color:#0472a9; font-weight:700}
+.paging .inner strong:before {display:block; content:""; position:absolute; bottom:4px; left:50%; margin-left:-4px; width:8px; height:1px; background:#0472a9}
+.paging .inner > a {border:1px solid #ccc; text-indent:-9999px}
+.paging .inner > a.btnFirst {background:#f4f6f6 url("../images/btn-first.png") no-repeat center}
+.paging .inner > a.btnPrev {background:#f4f6f6 url("../images/btn-prev.png") no-repeat center}
+.paging .inner > a.btnNext {background:#f4f6f6 url("../images/btn-next.png") no-repeat center}
+.paging .inner > a.btnLast {background:#f4f6f6 url("../images/btn-last.png") no-repeat center}
+@media screen and (max-width:767px) {
+	.paging {margin-top:36px}
+	.paging .inner a,
+	.paging .inner strong {margin:0; width:25px; line-height:30px}
+	.paging .inner > a {margin:0 2px; width:32px}
+}
+
+/* layer */
+.layer {display:none; position:fixed; top:0; left:0; overflow:hidden; padding:15px 0; text-align:center; width:100%; height:100%; z-index:10000; background:rgba(0,0,0,0.5)}
+.layer > .inner {display:inline-block; position:relative; top:50%; overflow:hidden; max-width:100%; padding-bottom:65px; background:#fff; transform:translate(0, -50%); -webkit-transform:translate(0, -50%); -moz-transform:translate(0, -50%)}
+.layer > .inner .tit {padding:60px 80px 15px; line-height:40px; font-size:30px; text-align:left; color:#333; font-weight:700; -webkit-transition:padding 0.2s; transition:padding 0.2s}
+.layer > .inner .tit span {display:inline-block; margin-left:20px; line-height:40px; font-size:20px; color:#666}
+.layer > .inner .popCont {overflow-y:auto; margin:0; padding:0 80px; text-align:left; -webkit-transition:padding 0.2s; transition:padding 0.2s}
+.layer > .inner .popCont .searchArea {margin-top:0}
+.layer > .inner .popCont .searchArea .inBox dl dt {margin-right:10px}
+.layer > .inner > a.closeLayer {display:inline-block; position:absolute; top:60px; right:80px; width:40px; height:40px; background:url("../images/btn-close.png") no-repeat right center; text-indent:-9999px}
+@media screen and (max-width:1160px) {
+	.layer > .inner {padding-bottom:45px}
+	.layer > .inner .tit {padding:40px 40px 15px}
+	.layer > .inner .popCont {padding:0 40px; text-align:left}
+	.layer > .inner > a.closeLayer {top:40px; right:40px}
+}
+@media screen and (max-width:767px) {
+	.layer > .inner {padding-bottom:40px}
+	.layer > .inner .tit {padding:25px 15px 15px; line-height:35px}
+	.layer > .inner .tit span {display:block; margin:0; line-height:27px}
+	.layer > .inner .popCont {padding:0 15px}
+	.layer > .inner .popCont .searchArea .inBox dl dt {margin-right:10px}
+	.layer > .inner > a.closeLayer {top:25px; right:15px; width:35px; height:35px; background-size:19px}
+}
+
+/* 엠블럼 */
+.emblem {display:inline-block; width:62px; height:40px; text-indent:-9999px; background-size:100% !important; -webkit-transition:all 0.2s; transition:all 0.2s}
+.emblem.HH {background:url("../images/emblem_HH.png") no-repeat center}
+.emblem.HT {background:url("../images/emblem_HT.png") no-repeat center}
+.emblem.KT {background:url("../images/emblem_KT.png") no-repeat center}
+.emblem.LG {background:url("../images/emblem_LG.png") no-repeat center}
+.emblem.LT {background:url("../images/emblem_LT.png") no-repeat center}
+.emblem.NC {background:url("../images/emblem_NC.png") no-repeat center}
+.emblem.OB {background:url("../images/emblem_OB.png") no-repeat center}
+.emblem.SK {background:url("../images/emblem_SK.png") no-repeat center}
+.emblem.SS {background:url("../images/emblem_SS.png") no-repeat center}
+.emblem.WO {background:url("../images/emblem_WO.png") no-repeat center}
+@media screen and (max-width:767px) {
+	.emblem {width:47px; height:30px}
+}
+
+/* 정보 테이블 */
+.infoTable {padding:12px 0 15px; border-top:2px solid #0472a9}
+.infoTable table th,
+.infoTable table td {height:30px; text-align:left; vertical-align:top}
+.infoTable table th {position:relative; font-weight:700; color:#0472a9; letter-spacing:-0.05em}
+.infoTable table th:before {display:inline-block; content:"·"; margin-right:5px}
+@media screen and (max-width:767px) {
+	.infoTable {padding:16px 0 13px}
+	.infoTable table,
+	.infoTable table tbody,
+	.infoTable table tbody tr,
+	.infoTable table tbody tr th,
+	.infoTable table tbody tr td {display:block; overflow:hidden}
+	.infoTable table th,
+	.infoTable table td {float:left; height:auto; line-height:24px}
+	.infoTable table th {width:75px}
+	.infoTable table th:before {display:inline-block; content:"·"; margin-right:5px}
+	.infoTable table td {width:calc(50% - 75px)}
+	.infoTable table .line td {width:calc(100% - 75px)}
+}
+.videoArea img {width:100%}
+@media screen and (max-width:767px) {
+	.videoArea {margin:0 -15px}
+}
+
+/* 레이아웃 */
+#wrap {overflow:hidden; width:100%; background:url("../images/common/bg.png") no-repeat top center}
+#container {margin:0 auto; padding:77px 40px 100px; max-width:100%; width:1380px; -webkit-transition:all 0.2s; transition:all 0.2s}
+#footer {background:#ededed}
+#footer .inner {overflow:hidden; margin:0 auto; padding:0 40px; max-width:100%; width:1380px; -webkit-transition:all 0.2s; transition:all 0.2s}
+#footer .inner > * {float:left; height:128px}
+#footer .inner .logo {width:36%; text-indent:-9999px; background:url("../images/common/foot-logo.png") no-repeat left center; background-size:272px auto; -webkit-transition:all 0.2s; transition:all 0.2s}
+#footer .inner .footCenter {padding-top:33px; width:24%; -webkit-transition:all 0.2s; transition:all 0.2s}
+#footer .inner .footCenter address {line-height:20px; letter-spacing:-0.02em; font-style:normal}
+#footer .inner .footCenter address strong {display:block; font-weight:700}
+#footer .inner .footCenter p {color:#999; font-size:12px; letter-spacing:-0.02em}
+#footer .inner .footRight {padding-top:26px; float:right; width:40%; text-align:right; -webkit-transition:all 0.2s; transition:all 0.2s}
+#footer .inner .footRight .logoArea {display:inline-block}
+#footer .inner .footRight .logoArea:after {display:block; content:""; clear:both}
+#footer .inner .footRight .logoArea > * {float:left; line-height:36px}
+#footer .inner .footRight .logoArea dt {margin-right:15px}
+#footer .inner .footRight .logoArea dd:after {display:block; content:""; clear:both}
+#footer .inner .footRight .logoArea dd a {float:left}
+#footer .inner .footRight .logoArea dd a img {vertical-align:middle}
+#footer .inner .footRight .logoArea dd a + a {margin:-6px 0 0 20px}
+#footer .inner .footRight p {margin-top:10px; color:#666}
+@media screen and (max-width:1160px) {
+	#container {padding:30px 40px 100px}
+	#footer .inner {padding:30px 40px 40px; text-align:center}
+	#footer .inner > * {float:none !important; width:100% !important; height:auto}
+	#footer .inner .logo {height:80px; background:url("../images/common/foot-logo-m.png") no-repeat center; background-position:center; background-size:auto 100%}
+	#footer .inner .footCenter {padding-top:24px}
+	#footer .inner .footRight {padding-top:45px; text-align:center}
+}
+@media screen and (max-width:767px) {
+	#wrap {background:url("../images/common/bg-m.png") no-repeat top center; background-size:100% auto}
+	#container {padding:17px 15px 53px}
+	#footer .inner {padding:16px 10px 20px}
+	#footer .inner .logo {height:49px}
+	#footer .inner .footCenter {padding-top:20px}
+	#footer .inner .footRight {padding-top:23px}
+	#footer .inner .footRight .logoArea > * {line-height:24px}
+	#footer .inner .footRight .logoArea dt {margin-right:5px}
+	#footer .inner .footRight .logoArea dd a img {height:19px}
+	#footer .inner .footRight .logoArea dd a + a {margin:-4px 0 0 13px}
+	#footer .inner .footRight .logoArea dd a + a img {height:28px}
+	#footer .inner .footRight p {margin-top:6px}
+}
+
+/* 상단영역 */
+.statsArea {overflow:hidden; margin-bottom:55px; -webkit-transition:all 0.2s; transition:all 0.2s}
+.statsArea > * {float:left}
+.statsArea dl dt {margin-top:-8px; text-align:center; line-height:40px; font-size:26px; font-weight:500; color:#fff; -webkit-transition:all 0.2s; transition:all 0.2s}
+.statsArea dl dt span {font-size:16px; font-weight:500; color:#fff; -webkit-transition:all 0.2s; transition:all 0.2s}
+.statsArea .inBox {overflow:hidden; padding-right:30px; width:37.7%; -webkit-transition:all 0.2s; transition:all 0.2s} 
+.statsArea .inBox h1 {float:left; width:50%}
+.statsArea .inBox h1 a {display:block}
+.statsArea .inBox h1 a img {max-width:100%}
+.statsArea .inBox dl {float:right; width:50%; text-align:center}
+.statsArea .inBox dl > * {display:block; vertical-align:top}
+.statsArea .inBox dl dt {margin-top:0; line-height:24px; font-size:18px}
+.statsArea .inBox dl dd {margin-top:15px; line-height:60px}
+.statsArea .inBox dl dd strong {font-size:60px; font-family:'Roboto', sans-serif; color:#fff; font-weight:600}
+.statsArea .inBox dl dd span {display:inline-block; line-height:40px; font-size:20px; color:#fff}
+.statsArea .chartArea {display:table; padding-left:20px; border-left:1px solid rgba(255,255,225,0.3); width:62.3%; -webkit-transition:all 0.2s; transition:all 0.2s}
+.statsArea .chartArea dl {display:table-cell; padding-left:30px}
+.statsArea .chartArea dl > * {display:inline-block; vertical-align:top}
+.statsArea .chartArea dl dd {margin-left:-3px}
+.statsArea .chartArea dl dd canvas {width:150px; height:150px}
+.statsArea .chartArea dl dd span {display:none}
+@media screen and (max-width:1160px) {
+	.statsArea > * {float:none}
+	.statsArea dl dt {margin-top:0}
+	.statsArea .inBox {margin-bottom:20px; padding:0; width:100%} 
+	.statsArea .inBox h1 {float:left; text-align:center}
+	.statsArea .inBox dl {float:right; margin-top:6px}
+	.statsArea .inBox dl dt {margin:11px 0}
+	.statsArea .inBox dl dd {margin:0 0 0 30px}
+	.statsArea .chartArea {padding-left:0; border-left:none; width:100%}
+	.statsArea .chartArea dl {position:relative; padding:0; text-align:center}
+	.statsArea .chartArea dl dt {display:block}
+	.statsArea .chartArea dl dd canvas {display:inline-block; width:150px; height:150px}
+	.statsArea .chartArea dl dd span {display:none}
+	.statsArea .chartArea dl + dl:before {display:block; content:""; position:absolute; bottom:0; left:0; width:1px; height:150px; background:rgba(255,255,255,0.3)}
+}
+@media screen and (max-width:767px) {
+	.statsArea {margin-bottom:16px}
+	.statsArea dl dt {margin-top:0; line-height:30px; font-size:20px}
+	.statsArea dl dt span {font-size:14px}
+	.statsArea .inBox {margin-bottom:15px; width:100%} 
+	.statsArea .inBox h1 {float:none; margin:0 auto 15px; width:110px}
+	.statsArea .inBox dl {float:none; overflow:hidden; margin:0; padding-left:0; width:100%}
+	.statsArea .inBox dl dt {float:left; margin:0; line-height:35px; font-size:12px}
+	.statsArea .inBox dl dt br {display:none}
+	.statsArea .inBox dl dd {float:right; margin:0; line-height:35px} 
+	.statsArea .inBox dl dd strong {font-size:30px}
+	.statsArea .inBox dl dd span {margin:0; font-size:14px}
+	.statsArea .chartArea dl dt {margin-bottom:12px}
+	.statsArea .chartArea dl dd canvas {display:none}
+	.statsArea .chartArea dl dd span {display:block; line-height:30px; font-size:24px; font-family:'Roboto'; font-weight:600}
+	.statsArea .chartArea dl:nth-child(1) dd span {color:#139ce0}
+	.statsArea .chartArea dl:nth-child(2) dd span {color:#d9172c}
+	.statsArea .chartArea dl:nth-child(3) dd span {color:#ffc123}
+	.statsArea .chartArea dl + dl:before {bottom:7px; left:0; width:1px; height:35px; background:rgba(255,255,255,0.3)}
+}
+
+.videoList {padding:60px 60px 0; background:#fff}
+.videoList ul {overflow:hidden; margin:0 -10px}
+.videoList ul li {float:left; padding:0 10px; width:33.3333%; height:378px}
+.videoList ul li a {display:block}
+.videoList ul li a .imgArea {margin-bottom:20px}
+.videoList ul li a .txtArea {position:relative}
+.videoList ul li a .txtArea strong {display:block; margin-bottom:26px; padding-right:130px; font-size:16px; color:#000}
+.videoList ul li a .txtArea strong span {display:inline-block; margin-right:10px; line-height:40px; font-size:30px; font-weight:600; font-family:"Roboto", sans-serif}
+.videoList ul li a .txtArea strong em {display:inline-block; vertical-align:text-top; line-height:20px}
+.videoList ul li a .txtArea p {color:#000}
+.videoList ul li a .txtArea .game {position:absolute; top:0; right:0; line-height:40px}
+@media screen and (max-width:1160px) {
+	.videoList {padding:40px 40px 0}
+	.videoList ul li {width:50%; height:400px}
+}
+@media screen and (max-width:767px) {
+	.videoList {padding:0; background:none}
+	.videoList ul {margin:0}
+	.videoList ul li {padding:0; width:100%; height:auto}
+	.videoList ul li + li {margin-top:38px}
+	.videoList ul li a .imgArea {margin-bottom:16px; border:1px solid #fff}
+	.videoList ul li a .txtArea strong {margin-bottom:10px; padding-right:100px; font-size:13px}
+	.videoList ul li a .txtArea strong span {margin-right:8px; line-height:30px; font-size:24px}
+	.videoList ul li a .txtArea strong em {line-height:18px; font-size:13px}
+	.videoList ul li a .txtArea .game {line-height:30px}
+	/* 20-06-18 */
+	.layer3 .inner > img{width:100%;}
+
+}
+.terms strong {display:block; margin:10px 0 15px; line-height:30px; font-size:18px; color:#000}
+.terms * {letter-spacing:normal}
+.terms p {line-height:26px; font-size:14px; color:#666}
+.terms dl {margin-top:20px}
+.terms dl dt {line-height:30px; font-size:16px; font-weight:500}
+.terms dl dd {line-height:26px; color:#666}
+.terms dl dd > ol > li {padding-left:17px; text-indent:-17px; line-height:26px; color:#666}
+.terms dl dd > ol > li ol li {padding-left:17px; text-indent:-17px; line-height:26px; color:#666}
+
+
+/* 공지팝업 20-06-18 */
+.layer3 .inner {padding:5px 5px 40px 5px; background:#004c93}
+.layer3 .inner .checkBoxArea {position: absolute; bottom:8px; right:60px; left:auto; top:auto}
+.layer3 .inner .checkBoxArea > *{display: inline-block; vertical-align: middle;}
+.layer3 .inner .checkBoxArea input[type="checkbox"] {width:20px; height:20px; -webkit-appearance: checkbox}
+.layer3 .inner .checkBoxArea label {color:#fff}
+.layer.layer3 > .inner > .closeLayer {position: absolute; bottom:9px; right:10px; left:auto; top:auto; width: auto; height:auto; text-indent: 0; color:#fff; background: none}
+.layer.layer3 > .inner > .closeLayer img{margin:8px 0 0 3px;}

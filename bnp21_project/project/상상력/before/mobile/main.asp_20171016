@@ -1,0 +1,22 @@
+﻿<!-- #include virtual="/mobile/common/top.asp" -->
+<body>
+	<div class="main">
+		<p><img src="images/img_main.png" alt="" /></p>
+	  <p class="regist"><a href="https://onoffmix.com/event/114514" target="_blank"><img src="images/btn_regist.png" alt="" width="98" height="33" /></a></p>
+	  <p></p>
+		<p><!--a href="https://www.youtube.com/embed/AYLMhPSP5Ys?autoplay=1&amp;autohide=1&amp;showinfo=0&amp;fs=0&amp;rel=0&amp;wmode=transparent" target="_blank"><img src="images/btn_movie.png" alt="" /></a--></p>
+		<div class="link">
+      <a href="http://seoulpowerstation2016.org" target="_blank">2016년 웹사이트</a>
+			<a href="http://seoulpowerstation2015.org" target="_blank">2015년 웹사이트</a>
+			<!--a href="#">리플렛 다운로드</a-->
+			<a href="http://www.sewoonmap.net" target="_blank">세운 안내도</a>
+	  </div>
+	  <div class="link">
+	  </div>
+	  <div class="sns">
+			<a href="https://www.facebook.com/seoulpowerstation/"><img src="images/btn_facebook.png" alt="" /></a>
+			<a href="https://www.instagram.com/seoulpowerstation/"><img src="images/btn_insta.png" alt="" /></a>
+		</div>
+  </div>		
+</body>
+</html>

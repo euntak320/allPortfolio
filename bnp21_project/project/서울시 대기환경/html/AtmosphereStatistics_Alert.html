@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>서울시특별시 대기환경정보</title>
+  <link rel="stylesheet" href="assets/css/slick.css" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="assets/js/slick.min.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="header_area">
+        <a href="javascript:void();" class="m_menu">햄버거메뉴</a>
+        <span class="logo_area">로고</span>
+        <a href="javascript:void();" class="spot_icon">위치표시</a>
+      </div>
+    </header>
+    <div class="left_menu">
+      <div class="slide_nav">
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img cloud">구름이미지</span>
+            <span class="txt">대기현황</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">미세먼지</span>
+            <span class="menu_txt">초미세먼지</span>
+            <span class="menu_txt">오존</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img act">행동요령 이미지</span>
+            <span class="txt">행동요령</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt sub_menu">예보</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+            <span class="menu_txt sub_menu">경보</span>
+            <span class="hidden_menu_area ">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img list">대기통계 이미지</span>
+            <span class="txt">대기통계</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">평균대기오염도</span>
+            <span class="menu_txt">기간별</span>
+            <span class="menu_txt">경보발령</span>
+            <span class="menu_txt">장기간추이</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img look">정보마당 이미지</span>
+            <span class="txt">정보마당</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">대기환경기준</span>
+            <span class="menu_txt sub_menu">대기오염물질</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 test">진단평가결과</span>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 moblie">문자서비스신청</span>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="sub_title_area">
+        <span class="title_sub">대기통계 &gt; 경보발령</span>
+      </div>
+      <div class="tab_area">
+        <span class="tab_txt on">미세먼지</span>
+        <span class="tab_txt">초미세먼지</span>
+        <span class="tab_txt">오존</span>
+      </div>
+      <!-- 미세먼지 -->
+      <div class="tab_show_area on">
+        <div class="content_frame">
+          <div class="common_table sub">
+            <span class="title">서울시 '미세먼지' 연도별 발령현황</span>
+            <span class="sub_title gray">※ 주의경보 발령이 없는 년도는 표출되지 않음.</span>
+            <table style="border-collapse:separate;">
+              <colgroup>
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th rowspan="2">년도</th>
+                  <th colspan="2">주의보</th>
+                  <th colspan="2">경보</th>
+                </tr>
+                <tr>
+                  <th style="border-left:1px solid #ccc;">발령횟수</th>
+                  <th>발령일수</th>
+                  <th>발령횟수</th>
+                  <th>발령일수</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2017</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2016</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2015</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2014</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2013</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2012</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2011</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2010</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2009</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2008</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="graph_area_frame">
+            <div class="graph_area">
+              <span style="display: block; line-height: 175px; text-align:center; color:#fff; font-weight:bold;">그래프 영역입니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 초미세먼지 -->
+      <div class="tab_show_area">
+        <div class="content_frame">
+          <div class="common_table sub">
+            <span class="title">서울시 '초미세먼지' 연도별 발령현황</span>
+            <span class="sub_title gray">※ 초미세먼지 경보제는 2013년 10월부터 시행했으며, 2013년도 자료는 10월부터 3개월간 운영 자료임.</span>
+            <span class="sub_title gray">※ 주의경보 발령이 없는 년도는 표출되지 않음.</span>
+            <table style="border-collapse:separate;">
+              <colgroup>
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th rowspan="2">년도</th>
+                  <th colspan="2">주의보</th>
+                  <th colspan="2">경보</th>
+                </tr>
+                <tr>
+                  <th style="border-left:1px solid #ccc;">발령횟수</th>
+                  <th>발령일수</th>
+                  <th>발령횟수</th>
+                  <th>발령일수</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2017</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2016</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2015</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2014</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2013</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="graph_area_frame">
+            <div class="graph_area">
+              <span style="display: block; line-height: 175px; text-align:center; color:#fff; font-weight:bold;">그래프 영역입니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--일별 -->
+      <div class="tab_show_area">
+        <div class="content_frame">
+          <div class="common_table sub">
+            <span class="title">서울시 '오존' 연도별 발령현황</span>
+            <span class="sub_title gray">※ 주의경보 발령이 없는 년도는 표출되지 않음.</span>
+            <table style="border-collapse:separate;">
+              <colgroup>
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th rowspan="2">년도</th>
+                  <th colspan="2">주의보</th>
+                  <th colspan="2">경보</th>
+                </tr>
+                <tr>
+                  <th style="border-left:1px solid #ccc;">발령횟수</th>
+                  <th>발령일수</th>
+                  <th>발령횟수</th>
+                  <th>발령일수</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2017</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2016</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2015</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2014</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2013</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2012</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2011</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2010</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2009</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>2008</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                  <td>2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="graph_area_frame">
+            <div class="graph_area">
+              <span style="display: block; line-height: 175px; text-align:center; color:#fff; font-weight:bold;">그래프 영역입니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_area">
+        <div class="left_area">
+          <span>&copy; Seoul city</span>
+        </div>
+        <div class="right_area">
+          <span class="pc_btn">PC 화면보기</span>
+          <div class="com_select">
+            <select name="" id="">
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+            </select>
+          </div>
+          <a href="#top" class="black_btn">위로가기</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="position_area">
+    <div class="title_area">
+      <span class="x_btn">닫기버튼</span>
+      <span class="title">관심지역 설정하기</span>
+    </div>
+    <div class="choice_area">
+      <span class="align">가나다 순</span>
+      <div class="com_radio">
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강남구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강서구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">관악구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">광진구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">구로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">금천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">노원구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">도봉구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동대문구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동작구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">마포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">서초구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">양천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">영등포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">용산구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">은평구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">종로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중량구</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer_area">
+    <span class="x_btn">닫기버튼</span>
+    <div class="criteria_area">
+      <div class="align_area">
+        <span class="title">미세먼지</span>
+        <div class="color_box_area">
+          <div class="color_box">
+            <span class="txt blue">좋음</span>
+            <span class="detail_txt">0~30</span>
+          </div>
+          <div class="color_box">
+            <span class="txt green">보통</span>
+            <span class="detail_txt">31~80</span>
+          </div>
+          <div class="color_box">
+            <span class="txt orange">나쁨</span>
+            <span class="detail_txt">81~150</span>
+          </div>
+          <div class="color_box">
+            <span class="txt red">매우나쁨</span>
+            <span class="detail_txt">151이상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="criteria_area">
+      <div class="align_area">
+        <span class="title">초미세먼지</span>
+        <div class="color_box_area">
+          <div class="color_box">
+            <span class="txt blue">좋음</span>
+            <span class="detail_txt">0~15</span>
+          </div>
+          <div class="color_box">
+            <span class="txt green">보통</span>
+            <span class="detail_txt">36~35</span>
+          </div>
+          <div class="color_box">
+            <span class="txt orange">나쁨</span>
+            <span class="detail_txt">36~75</span>
+          </div>
+          <div class="color_box">
+            <span class="txt red">매우나쁨</span>
+            <span class="detail_txt">76이상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="criteria_area">
+      <div class="align_area">
+        <span class="title">오존</span>
+        <div class="color_box_area">
+          <div class="color_box">
+            <span class="txt blue">좋음</span>
+            <span class="detail_txt">0~0.030</span>
+          </div>
+          <div class="color_box">
+            <span class="txt green">보통</span>
+            <span class="detail_txt">0.031~0.091</span>
+          </div>
+          <div class="color_box">
+            <span class="txt orange">나쁨</span>
+            <span class="detail_txt">0.091~0.150</span>
+          </div>
+          <div class="color_box">
+            <span class="txt red">매우나쁨</span>
+            <span class="detail_txt">0.151이상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

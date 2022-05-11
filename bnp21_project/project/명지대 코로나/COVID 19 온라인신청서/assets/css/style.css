@@ -1,0 +1,81 @@
+/* common */
+.check input[type="checkbox"]{opacity: 0;}
+.check input[type="checkbox"] + label{position: relative; display:inline-block;}
+.check input[type="checkbox"] + label::before{content: ""; position: absolute; left:-25px; width:20px; height:20px; background:url(../images/ico_check_off.png) no-repeat 0 0; background-size: cover;}
+.check input[type="checkbox"]:checked + label::before { background:url(../images/ico_check_on.png) no-repeat 0 0; background-size: cover;}
+
+.radio input[type="radio"]{opacity: 0;}
+.radio input[type="radio"] + label{position: relative; display:inline-block;}
+.radio input[type="radio"] + label::before{content: ""; position: absolute; left:-25px; width:20px; height:20px; background:url(../images/ico_radio_off.png) no-repeat 0 0; background-size: cover;}
+.radio input[type="radio"]:checked + label::before { background:url(../images/ico_radio_on.png) no-repeat 0 0; background-size: cover;}
+
+#intro {overflow: hidden; position: relative; height:100vh; padding:16px 20px 0; background:#0090da url(../images/img_city.png) no-repeat bottom; background-size: 100%;}
+#intro .header .logo {display: block; width:91.5px; height:26.5px; background:url(../images/logo.png) no-repeat; text-indent: -9999px; background-size: 100%;}
+#intro .txtArea {margin-top:62px;} 
+#intro .txtArea span {display: block; color:#fff; font-size:32px; letter-spacing: -1.28px; line-height: 46px; font-weight: normal;}
+#intro .txtArea .bold {font-weight: bold;}
+#intro .airImg {position: absolute; bottom:140px; right:-45px;}
+#intro .airImg img {width:240px;}
+#intro .inputArea {margin-top:127px;}
+#intro .inputArea.v2 {margin-top:67px}
+#intro .inputArea.v2 + .inputArea.v2 {margin-top:26px;}
+#intro .inputArea span {display: block; font-weight: normal; color:#fff; font-size: 18px; letter-spacing: -0.54px; line-height: 27px;}
+#intro .inputArea .smallTxt {color:rgba(255,255,255,0.7); font-size:14px; letter-spacing: -0.42px; line-height: 20px;}
+#intro .inputArea .input input[type="text"], #intro .inputArea .input input[type="password"] {margin-top:18px; border:0; border-bottom:1px solid rgba(255,255,255,0.3); background:none;}
+#intro .inputArea .nextBtn {display: block; position: relative; width:58px; height: 34px; margin-top:40px; background:url(../images/btn_next_white.png) no-repeat center; background-size: 100%; text-indent: -9999px;}
+
+#page {overflow: auto; position: relative; height:100vh; padding:20px 20px 80px; background:#f6f6f6;}
+#page .home {position: fixed; right: 20px; top:14px; width:32px; height:32px; border-radius: 50%; background:#0c2e68 url(../images/btn_home.png) no-repeat center; background-size:50%; text-indent: -9999px; box-shadow: 0 4px 6px #ccc;}
+#page .linkBtn {position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);}
+#page .linkBtn a {position: relative; display: block; width:180px; height:180px; margin:0 auto; padding:15px; border-radius: 11px; background:#fff; box-shadow: 0 4px 8px #ccc;}
+#page .linkBtn a + a {margin-top:20px;}
+#page .linkBtn a > * {display: block;}
+#page .linkBtn a span {color:#d0d4dc; letter-spacing: -0.48px; line-height: 24px;}
+#page .linkBtn a .title {font-size:24px; color:#0C2e68; letter-spacing: -0.72px; line-height: 36px;}
+#page .linkBtn a button {position: absolute; bottom:15px; right:15px; width:58.5px;  height:48px; background:url(../images/btn_next_blue.png) no-repeat right center; background-size:100%; text-indent: -9999px;}
+#page .titleTxt {margin-top:30px;}
+#page .titleTxt span {display: block; color:#333; font-size:18px; letter-spacing: -0.72px; line-height: 26px;}
+#page .titleTxt .small {font-size:14px;}
+#page .titleTxt .blue {color:#0c2e68}
+#page .titleTxt.v2 {margin-top:30px;}
+#page .titleTxt.v2 span {font-size:14px; letter-spacing: -0.42px; line-height: 28px;}
+#page .titleTxt.v2 .bold {position: relative; padding-left:10px; color:#333; letter-spacing: -0.48px; line-height: 28px; font-size:16px; font-weight: bold;}
+#page .titleTxt.v2 .bold::before {content:""; position: absolute; left:0; top:50%; width:3px; height:20px; background:#0c2e68; transform: translateY(-50%);}
+#page .whiteBox {padding:15px; margin-top:20px; background:#fff; color:#333;}
+#page .whiteBox .mt6 {margin-top:6px;}
+#page .whiteBox .mt20 {margin-top:20px;}
+#page .whiteBox .title {display: block; font-size:14px; font-weight: bold; letter-spacing: -0.48px; line-height: 28px;}
+#page .whiteBox .title.bold {font-size:16px;}
+#page .whiteBox .title .inline {font-size:12px; letter-spacing: -0.36px; color:#666;}
+#page .whiteBox .title .blue {font-size:11px; letter-spacing: -0.33px; line-height: 28px; color:#0c2e68}
+#page .whiteBox .smallTxt {display: block; margin-bottom:5px; font-size:12px; color:#666;}
+#page .whiteBox .check + .check {margin-top:19px;}
+#page .whiteBox .check input[type="checkbox"] + label {padding-left:15px; font-size:14px;}
+#page .whiteBox .check input[type="checkbox"] + label::before {left:-15px; top:50%; transform: translateY(-50%);}
+#page .whiteBox .checkArea.v2 .check:first-child{padding-bottom:15px; border-bottom:1px solid #ccc;}
+#page .whiteBox .checkArea.v2 .check + .check {margin-top:10px;}
+#page .whiteBox .radioArea {padding:0 10px;}
+#page .whiteBox .radio {display: inline-block; width:50%;}
+#page .whiteBox .radio:last-child {float: right;}
+#page .whiteBox .radio input[type="radio"] + label {font-size:14px;}
+#page .whiteBox input[type="text"] {height:40px;}
+#page .whiteBox input[type="text"]::-webkit-input-placeholder {color:#ccc;}
+#page .whiteBox .date {display: flex; align-items: center; justify-content: space-between;}
+#page .whiteBox .date input[type="text"] {width:25%; margin:0 1%;}
+#page .whiteBox .date input[type="text"]:first-child {width:50%;}
+#page .btn {position: fixed; bottom:0; left:0; width:100%; padding:12px 20px 16px; background:#f6f6f6}
+#page .btn button {width:100%; padding-left:20px; line-height:48px; background:#0c2e68 url(../images/ico_save.png) no-repeat 40% center; background-size:25px; color:#fff; font-size:18px; font-weight: normal;}
+#page .btn.v2 {display: flex; align-items: center; justify-content: space-between; width:100%;}
+#page .btn.v2 button {width:50%; text-indent: -9999px;}
+#page .btn.v2 .gray {background:#666 url(../images/ico_correct.png) no-repeat center; background-size:28px;}
+#page .btn.v2 .blue {background:#0c2e68 url(../images/ico_next.png) no-repeat center; background-size:28px;}
+#page .linkBtn.v2 {width:90%;}
+#page .numberArea {width:100%; background:#fff; border-radius: 11px; box-shadow: 0 5px 8px #ccc;}
+#page .numberArea .title {display: block; padding:12px 15px; font-size:16px; letter-spacing: -0.48px; line-height: 28px; color:#333; border-bottom:1px solid #ccc;} 
+#page .numberArea .title > span {font-size:11px; color:#0c2e68; letter-spacing: -0.33px;}
+#page .numberArea .input {display: flex; align-items: center; justify-content: space-between; padding:12px 15px;}
+#page .numberArea .input input[type="text"] {height:40px; text-align: center;}
+#page .numberArea .input span {margin:0 2%;}
+#page .printBtn {width:100%; height:100px; margin-top:14px; background:#0c2e68; border-radius: 11px; color:#fff; box-shadow: 0 4px 8px #ccc; }
+#page .printBtn img {width: 40px;}
+#page .printBtn span {display: block; margin-top:2px; font-size:18px; font-weight: normal;}

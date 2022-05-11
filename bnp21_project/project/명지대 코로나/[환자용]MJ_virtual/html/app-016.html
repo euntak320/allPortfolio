@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <!-- <script>
+        $(function(){
+
+            $("#top #allCheck").click(function(){
+                console.log("aaaa");
+                if($("#top #allCheck").is(":checked")){
+                    $(".checkArea .chk").prop("checked", true);
+                }else{
+                    $(".checkArea .chk").prop("checked", false);
+                }
+            });
+
+        });
+    </script> -->
+
+</head>
+
+<body>
+    <div id="subPage">
+        <div id="header">
+            <button class="back">뒤로가기</button>
+            <span class="title">회원가입</span>
+        </div>
+        <div id="content" class="join">
+            <div class="normalTxt">
+                <span>회원가입 약관에</span>
+                <span>동의해주세요.</span>
+            </div>
+            <div class="pagingArea">
+                <ul>
+                    <li class="before">1</li>
+                    <li class="before">2</li>
+                    <li class="active">3</li>
+                    <li>4</li>
+                </ul>
+            </div>
+            <div class="checkListArea">
+                <div class="checkArea" id="top">
+                    <div class="check">
+                        <input type="checkbox" id="chk_1" id="allCheck">
+                        <label for="chk_1">모두 확인, 동의합니다.</label>
+                    </div>
+                </div>
+                <div class="checkArea">
+                    <div class="check">
+                        <input type="checkbox" name="chk" id="chk_3" class="chk">
+                        <label for="chk_3">(필수) 서비스 이용약관</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" name="chk" id="chk_4" class="chk">
+                        <label for="chk_4">(필수) 개인정보취급방침​</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" name="chk" id="chk_5" class="chk">
+                        <label for="chk_5">(필수) 개인정보 제3자 제공 동의​</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" name="chk" id="chk_6" class="chk">
+                        <label for="chk_6">(필수) 개인 민감(건강)정보 동의​</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" name="chk" id="chk_7" class="chk">
+                        <label for="chk_7">(필수) 개인 민감(건강)정보 제3자 제공 동의​</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" name="chk" id="chk_8" class="chk">
+                        <label for="chk_8">(필수) 고유식별정보 수집동의​</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- check 될시 on 클래스 추가 -->
+        <div class="comBtn default">
+            <button type="button" class="default on">동의 후 계속</button>
+        </div>
+    </div>
+</body>
+
+</html>

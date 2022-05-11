@@ -1,0 +1,42 @@
+@charset "utf-8";
+#subHeader .inner {overflow:hidden; margin:0 auto; padding:0 30px; max-width:100%; width:1084px}
+#subHeader .inner h1 {float:left}
+#subHeader .inner h1 a {display:block; line-height:90px}
+#subHeader .inner h1 a img {max-height:43px; vertical-align:middle}
+#subHeader .inner h1.v3 {display:none !important}
+#subHeader .inner .menuArea {overflow:hidden; padding:24px 0; float:right}
+#subHeader .inner .menuArea li {float:left}
+#subHeader .inner .menuArea li + li {margin-left:90px}
+#subHeader .inner .menuArea li button {display:block; padding-left:38px; line-height:42px; font-size:20px; font-weight:500; color:#000; background-size:34px auto !important}
+#subHeader .inner .menuArea li:nth-child(1) button {background:url("../images/common/ico-menu01.png") no-repeat left center}
+#subHeader .inner .menuArea li:nth-child(2) button {background:url("../images/common/ico-menu02.png") no-repeat left center}
+#subHeader .inner .menuArea li:nth-child(3) button {background:url("../images/common/ico-menu03.png") no-repeat left center}
+#subHeader h2 {padding:70px 0; height:200px; text-align:center; line-height:60px; font-size:40px; font-weight:700; color:#fff; background:url("../images/common/bg-visual.jpg") no-repeat center top; background-size:cover}
+#subHeader .btnBack,
+#subHeader .btnClose {display:none}
+#container {padding:0 30px}
+#container h3 {display:inline-block; position:relative; z-index:1; line-height:35px; font-size:30px; font-weight:700; color:#000}
+#container h3:before {display:block; content:""; position:absolute; bottom:20%; left:0; z-index:-1; width:100%; height:8px; background:#ffcc00}
+#container .content {margin:0 auto; padding:50px 0; max-width:100%; width:1024px}
+#container.fixedBtn {padding-bottom:100px}
+@media (min-width:768px) {
+	#subHeader .inner h1 {display:block !important}
+}
+@media (max-width:767px) {
+	#subHeader {position:fixed; top:0; left:0; z-index:100; width:100%; height:60px}
+	#subHeader .inner {padding:0; width:100%; height:60px; background:#fff}
+	#subHeader .inner h1 {position:absolute; top:0; right:0; z-index:100; float:none}
+	#subHeader .inner h1 a {width:54px; height:60px; background:url("../images/common/btn-home.png") no-repeat center; background-size:18px auto}
+	#subHeader .inner h1 a img {display:none}
+	#subHeader .inner h1.v2 {display:block !important}
+	#subHeader .inner h1.v2 a {max-width:110px; padding-right:12px; width:auto; height:60px; line-height:60px; background:none}
+	#subHeader .inner h1.v2 a img {display:inline-block; max-width:100%; max-height:23px}
+	#subHeader .inner h1.v4 {display:none}
+	#subHeader .inner .menuArea {display:none}
+	#subHeader h2 {position:absolute; top:0; left:0; padding:0; width:100%; height:auto; line-height:60px; font-size:19px; color:#111; font-weight:500; background:#fff}
+	#subHeader .btnBack {display:block; position:absolute; top:0; left:0; z-index:100; width:54px; height:60px; text-indent:-9999px; background:url("../images/common/btn-back.png") no-repeat center; background-size:10px auto}
+	#subHeader .btnClose {display:block; position:absolute; top:0; left:0; z-index:100; width:54px; height:60px; text-indent:-9999px; background:url("../images/common/btn-close.png") no-repeat center; background-size:15px auto}
+	#container {padding:60px 12px 0}
+	#container .content {padding:30px 0}
+	#container.fixedBtn {padding-bottom:50px}
+}

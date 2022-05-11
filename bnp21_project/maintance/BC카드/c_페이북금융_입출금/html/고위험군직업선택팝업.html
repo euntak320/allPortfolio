@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>BC 페이북</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/slick.js"></script>	
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<!-- #wrap -->
+	<div id="wrap" class="incoming">
+
+		<!-- 헤더 -->
+		<header>
+			<a href="#" class="back-btn">뒤로가기</a>
+			<h1>계좌 개설 목적</h1>
+			<a href="#" class="close-btn">닫기</a>
+		</header>
+		<!-- //헤더 -->	
+		
+		<!-- 컨텐츠 -->		
+		<section class="container">
+			<div class="toggle-check-content">
+				<div class="top-area">
+					<span class="title">개설할 계좌가 본인 소유가 맞습니까?</span>
+				</div>
+				<div class="check-area">
+					<div class="check-cnt">
+						<input type="radio" name="radio-1" id="radio-1-1" checked>
+						<label for="radio-1-1">네, 맞습니다</label>
+					</div>
+					<div class="check-cnt">
+						<input type="radio" name="radio-1" id="radio-1-2">
+						<label for="radio-1-2">아니오</label>
+					</div>
+				</div>
+			</div>
+			<div class="auto-transfer-content">
+				<span class="title">거래목적</span>
+				<div class="send-info-area">
+					<div class="account-cnt">
+						<a href="#" class="pop-btn on" onclick="$('#layer-test-1').toggleClass('on');return false;">급여 및 생활비</a><!-- pop-btn 정보 있을시 글자 활성화 클래스 on// -->
+					</div>					
+				</div>				
+			</div>
+			<div class="auto-transfer-content">
+				<span class="title">자금의 출처</span>
+				<div class="send-info-area">
+					<div class="account-cnt">
+						<a href="#" class="pop-btn on">급여</a><!-- pop-btn 정보 있을시 글자 활성화 클래스 on// -->
+					</div>					
+				</div>				
+			</div>			
+			<div class="auto-transfer-content">
+				<span class="title">직업</span>
+				<div class="send-info-area">
+					<div class="account-cnt num-2">
+						<a href="#" class="pop-btn on">급여소득자</a><!-- pop-btn 정보 있을시 글자 활성화 클래스 on// -->
+						<a href="#" class="pop-btn">입력하세요</a><!-- pop-btn 정보 있을시 글자 활성화 클래스 on// -->
+					</div>					
+				</div>				
+			</div>			
+		</section>
+		<!-- //컨텐츠 -->
+
+		<!-- 하단 버튼 -->
+		<div class="com-btn-content">
+			<a href="#" class="full">다음</a>
+		</div>
+		<!-- //하단 버튼 -->
+
+	</div>
+	<!-- //#wrap -->
+
+	<!-- layer pop -->
+	<div id="layer-test-1" class="layer-notice on"><!-- 활성화 클래스 on// -->
+		<div class="layer-container">					
+			<div class="middle-area">
+				<p class="info-text imp">해당 직종의 경우 고객확인의무 제도가 강화되어<br>모바일 가입이 불가능합니다.</p>
+				<p class="info-text">가까운 수협 영업점을 방문해주세요.</p>
+			</div>
+			<div class="btn-area">				
+				<a href="#" class="full">확인</a>
+			</div>
+		</div>
+	</div>
+	<!-- //layer pop -->
+	
+</body>
+</html>

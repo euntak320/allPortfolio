@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>스타플랫폼 관리시스템 &gt; 교회서비스 &gt; 헌금종류관리 &gt; 헌금종류 상세</title>
+	<!-- 공통 웹자원 : 맨 위에 위치 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+	<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+	<!-- 해당페이지에서만 사용 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery.datetimepicker.css">
+	<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+	<!-- 공통 웹자원 : 맨 마지막 위치 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+	<script type="text/javascript" src="../common/js/extension.js"></script>
+	<script>
+		$(function () {
+			// 파일 업로드시 나오는 경로 텍스트
+			$("#file").on('change', function () {
+				var fileName = $("#file").val();
+				$(".upload-name").val(fileName);
+			});
+
+			// x버튼 클릭시 삭제
+			$(".addFileList .fileTxt a").click(function () {
+				$(this).closest("div").hide();
+			});
+
+			// 전화번호 입력시 "-" 자동 입력
+			$('.phoneHypen').keydown(function (event) {
+				var key = event.charCode || event.keyCode || 0;
+				$text = $(this);
+				if (key !== 8 && key !== 9) {
+					if ($text.val().length === 3) {
+						$text.val($text.val() + '-');
+					}
+					if ($text.val().length === 8) {
+						$text.val($text.val() + '-');
+					}
+				}
+
+				return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <=
+					105));
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap" class="sub">
+		<!-- header -->
+		<header id="header">
+			<div class="inner">
+				<div class="gnbWrap">
+					<div class="fl">
+						<h1 class="logo"><a href="#">스타플랫폼<span>관리 시스템</span></a></h1>
+					</div>
+
+				</div>
+			</div>
+		</header>
+		<!-- //header -->
+
+		<!-- left menu -->
+		<div class="leftMenu">
+			<div class="inner">
+				<ul class="ul">
+					<li class="li">
+						<ul>
+							<!-- 개발 : 페이지 진입시 해당 메뉴가 활성화되어야할때 li에 클래스 on 추가 -->
+							<li ><a href="#" class="mm">거래 관리</a></li>
+							<li><a href="#" class="mm">정산 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">고객 관리</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">회원정보 조회</a></li>
+									<li><a href="#">기업 관리</a></li>
+									<li><a href="#">가맹점 관리</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">서비스 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">운영 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li class="on"><a href="#" class="mm">교회 서비스</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">교회정보관리</a></li>
+									<li><a href="#">성경문구관리</a></li>
+									<li class="on"><a href="#">헌금종류관리</a></li>
+									<li><a href="#">성도관리</a></li>
+									<li><a href="#">헌금 기도내용 조회</a></li>
+									<li><a href="#">헌금 입금내역 조회</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //left menu -->
+		<!-- container -->
+		<div id="container">
+			<!-- content -->
+			<div class="content">
+				<h2 class="hTit">헌금종류상세</h2>
+				<span>* : 필수입력사항</span>
+				<!-- table -->
+				<div class="tbw scroll-x v2"> 
+					<table>
+						<caption></caption>
+						<colgroup>
+							<col style="width:10%;">
+							<col style="width:40%;">
+							<col style="width:10%;">
+							<col style="width:40%;">
+						</colgroup>
+						 <tbody>
+							<tr>
+								<th scope="row">교회</th>
+								<td class="txtL">사랑교회</td>
+								<th scope="row">헌금종류번호</th>
+								<td class="txtL">1</td>
+							</tr>
+							<tr>
+								<th scope="row">* 헌금종류</th>
+								<td colspan="3" class="txtL v2">
+									<ul class="fl">
+										<li>
+											<label for="chk0201" class="label">
+											<input type="radio" id="chk0201" name="chk02"  class="rdo" />
+											<span class="ico v2"></span>
+											<span class="lTxt">예</span>
+										</label>
+										</li>
+										<li>
+											<label for="chk0202" class="label">
+											<input type="radio" id="chk0202" name="chk02" class="rdo" />
+											<span class="ico v2"></span>
+											<span class="lTxt">아니오</span>
+										</label>
+										</li>
+									</ul>
+									<select class="fl" class="select">
+										<option>헌금종류 1단계 선택</option>
+									</select>
+									<input type="text" class="input fl" style="width:230px;" placeholder="헌금종류명을 입력하세요.">
+									<span class="tdDesc">
+										※ 입력 예) 감사헌금에 일반감사, 추수감사, 부활감사 등으로 나누어 관리하시려면<br/>
+										1) 1단계를 선택하시고 헌금종류명에 “감사헌금”을 입력<br/>
+										2) 2단계를 선택하시고, 헌금종류1단계에 “감사헌금 ▼” 선택하신 후 헌금종류명에 “일반감사”를 입력
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">* 입금계좌</th>
+								<td colspan="3" class="v2">
+									<select class="select">
+										<option>헌금종류 1단계 선택</option>
+									</select>
+									<span>적용일 : 2020-05-01</span>
+									<button class="btn sm gr">계좌변경이력</button>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">헌금색상구분</th>
+								<td colspan="3" class="v2">
+									<ul>
+										<li class="fl">
+											<label for="chk0101" class="label">
+												<input type="radio" id="chk0101" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk0102" class="label">
+												<input type="radio" id="chk0102" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v2"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk0103" class="label">
+												<input type="radio" id="chk0103" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v3"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk0104" class="label">
+												<input type="radio" id="chk0104" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v4"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk0105" class="label">
+												<input type="radio" id="chk0105" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v5"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk0106" class="label">
+												<input type="radio" id="chk0106" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v6"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk0107" class="label">
+												<input type="radio" id="chk0107" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v7"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk0108" class="label">
+												<input type="radio" id="chk0108" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v8"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk0109" class="label">
+												<input type="radio" id="chk0109" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v9"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk01010" class="label">
+												<input type="radio" id="chk01010" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v10"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk01011" class="label">
+												<input type="radio" id="chk01011" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v11"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk01012" class="label">
+												<input type="radio" id="chk01012" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v12"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk01013" class="label">
+												<input type="radio" id="chk01013" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v13"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk01014" class="label">
+												<input type="radio" id="chk01014" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v14"></span>
+											</label>	
+										</li>
+										<li class="fl">
+											<label for="chk01015" class="label">
+												<input type="radio" id="chk01015" name="chk02" class="rdo" />
+												<span class="ico v2"></span>
+												<span class="cList v15"></span>
+											</label>	
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">* 사용여부</th>
+								<td colspan="3">
+									<label class="label">
+										<input type="checkbox" class="chk"/>
+										<span class="ico"></span>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">헌금설명</th>
+								<td colspan="3">
+									<span>※ 헌금종류 아래에 표시될 문구입니다.</span>
+									<div class="areaList v2">
+										<textarea title="" rows="6" class="txtArea" placeholder="텍스트영역 입니다"></textarea>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //table -->
+				<!-- btmBtn -->
+				<div class="btmBtnWrap">
+					<div class="fr">
+						<a href="#" class="btn md de">목록</a><a href="#" class="btn md de">삭제</a><a href="#" class="btn md de">저장</a>
+					</div>
+				</div>
+				<!--// btmBtn -->
+			</div>
+			<!-- //content -->
+		</div>
+	</div>
+	<!-- //container -->
+	</div>
+	<!-- //wrap -->
+
+</body>
+
+</html>

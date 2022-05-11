@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID 19 온라인신청서</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+</head>
+
+<body>
+    <div id="page">
+        <a href="" class="home">홈으로</a>
+        <div class="checkList">
+            <div class="titleTxt">
+                <span class="blue">出国用 (COVID-19 PCR)</span>
+                <span>(核酸检测结果报告) 申请书</span>
+            </div>
+            <div class="whiteBox">
+                <span class="title bold">请在申请的样式前划</span>
+                <div class="checkArea mt20">
+                    <div class="check">
+                        <input type="checkbox" id="chk_1" checked="checked">
+                        <label for="chk_1">健康状态声明书</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="chk_2">
+                        <label for="chk_2">英文診斷書</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="chk_3">
+                        <label for="chk_3">(中國出國用)核酸检测结果报告</label>
+                    </div>
+                </div>
+            </div>
+            <div class="whiteBox">
+                <span class="title">到达国家(目的地)</span>
+                <input type="text" placeholder="请输入与您的护照相同的英文名称。" readonly>
+            </div>
+            <div class="titleTxt v2">
+                <span class="bold">申請人信息(英文)</span>
+                <span>※ 请参照护照信息填写</span>
+            </div>
+            <div class="whiteBox">
+                <span class="title bold">Name <span class="blue">(姓名)</span></span>
+                <div class="txtInput">
+                    <span class="title">韩文</span>
+                    <input type="text" placeholder="请输入与您的护照相同的英文名称。" readonly>
+                </div>
+                <div class="txtInput">
+                    <span class="title mt20">英文</span>
+                    <span class="smallTxt">姓</span>
+                    <input type="text" placeholder="请输入与您的护照相同的英文名称。" readonly>
+                </div>
+                <div class="txtInput">
+                    <span class="smallTxt mt20">名字</span>
+                    <input type="text" placeholder="请输入与您的护照相同的英文名称。" readonly>
+                </div>
+                <span class="title mt20 bold">Date of Birth <span class="blue">(出生年月)</span></span>
+                <div class="txtInput">
+                    <input type="text" placeholder="请输入与您的护照相同的英文名称。" readonly>
+                </div>
+                <span class="title mt20 bold">Gender <span class="blue">(性别)</span></span>
+                <div class="radioArea">
+                    <div class="radio">
+                        <input type="radio" name="gender" id="rd_1" checked>
+                        <label for="rd_1">Male(男)</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="gender" id="rd_2">
+                        <label for="rd_2">Female(女)</label>
+                    </div>
+                </div>
+                <span class="title mt20 bold">Passport number <span class="blue">(护照号码)</span></span>
+                <div class="txtInput">
+                    <input type="text" placeholder="请输入与您的护照相同的英文名称。"readonly>
+                </div>
+                <span class="title mt20 bold">Home Address <span class="blue">(韩国内住址)</span></span>
+                <div class="txtInput">
+                    <input type="text" placeholder="请输入与您的护照相同的英文名称。"readonly>
+                </div>
+                <span class="title mt20 bold">Vietnam <span class="inline">* 到越南时填写</span></span>
+                <div class="txtInput">
+                    <span class="title mt20">Intended Address in Vietnam <span class="blue">(越南内住址)</span></span>
+                    <input type="text" placeholder="请输入与您的护照相同的英文名称。"readonly>
+                </div>
+                <div class="txtInput">
+                    <span class="title mt20 bold">Date of Entry<span class="blue">(到达越南时间)</span></span>
+                    <input type="text" placeholder="请输入与您的护照相同的英文名称。"readonly>
+                </div>
+            </div>
+            <div class="titleTxt v2">
+                <span class="bold">領取方法</span>
+            </div>
+            <div class="whiteBox">
+                <div class="checkArea v2">
+                    <div class="check">
+                        <input type="checkbox" id="chk_2_1" checked>
+                        <label for="chk_2_1">来访领取</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="chk_2_2">
+                        <label for="chk_2_2">亲自领取</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="chk_2_3">
+                        <label for="chk_2_3">代理领取(持委托书)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="titleTxt">
+                <span class="small">根据以上事实申请报告书</span>
+            </div>
+            <div class="whiteBox">
+                <div class="txtInput">
+                    <span class="title">申请日期</span>
+                    <div class="date">
+                        <input type="text" placeholder="年" readonly>
+                        <input type="text" placeholder="月" readonly>
+                        <input type="text" placeholder="日" readonly>
+                    </div>
+                </div>
+                <div class="txtInput">
+                    <span class="title mt20">申请人</span>
+                    <input type="text" placeholder="请输入与您的护照相同的英文名称。" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="btn v2">
+            <button type="button" class="gray">수정</button>
+            <button type="button" class="blue">뒤로가기</button>
+        </div>
+    </div>
+</body>
+
+</html>

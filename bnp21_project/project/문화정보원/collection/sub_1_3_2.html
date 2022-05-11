@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("../include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("../include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">연계 프로토콜 설정을 등록합니다.</p>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">연계 자원정보</h4>
+					</div>
+				</div>
+				<div class="com-table-enroll">
+					<table>
+						<caption>연계기관정보 입력 표</caption>
+						<tbody>
+							<tr>
+								<th>연계기관 ID</th>
+								<td>
+									XX00000
+								</td>
+								<th>연계기관 명</th>
+								<td>
+									OOOO 문화재단
+								</td>
+							</tr>
+							<tr>
+								<th>연계시스템 ID</th>
+								<td>
+									XX00000-01
+								</td>
+								<th>연계시스템 명</th>
+								<td>
+									OOOO 공연포탈시스템
+								</td>
+							</tr>
+							<tr>
+								<th>자원 ID</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="XX00-001" aria-invalid="false">
+									</div>
+								</td>
+								<th>자원 명</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="OOOO 공연정보" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">프로토콜정보</h4>
+					</div>
+				</div>
+				<!-- 181119 수정 -->
+				<div class="com-table-enroll">
+					<table>
+						<caption>연계시스템정보 입력 표</caption>
+						<tbody>
+							<tr>
+								<th>프로토콜ID</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="XX00-001-WC001" aria-invalid="false">
+									</div>
+								</td>
+								<th>프로토콜 명</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="OOOO 공연정보 프로토콜" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>연계유형</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">Web-Crawling</option>
+										</select>
+									</div>
+								</td>
+								<th>연계주기</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="일 배치(1회)" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>프로토콜설명</th>
+								<td colspan="3">
+									<div class="row-form">
+										<textarea name="" id="" cols="30" rows="10" aria-invalid="false">
+OOOO 문화재단 공연정보 프로토콜
+										</textarea>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>수집분야</th>
+								<td>
+									<select>
+										<option value="#">공연정보</option>
+									</select>
+								</td>
+								<th>인터페이스IP</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="XXX.XXX.XXX.XXX" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>수집키워드</th>
+								<td>
+									<div class="row-form-btn">
+										<input type="text" value="유관기관_공연정보_01" aria-invalid="false">
+										<a href="#none" class="btn ico03" onclick="openLayer($('#keywardfacet-custom-opener'))"><span>설정</span></a>
+									</div>
+								</td>
+								<th>인터페이스포트</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="XXX" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>수집패싯(Facet)</th>
+								<td>
+									<div class="row-form-btn">
+										<input type="text" value="..." aria-invalid="false">
+										<a href="#none" class="btn ico03" onclick="openLayer($('#keywardfacet-custom-opener'))"><span>설정</span></a>
+									</div>
+								</td>
+								<th>수집&middot;연계인증정보</th>
+								<td>
+									<div class="row-form-btn">
+										<input type="text" value="svcld,svcPwd,sign..." aria-invalid="false">
+										<a href="#none" class="btn ico03" onclick="openLayer($('#collection-custom-opener'))"><span>설정</span></a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>수집질의(Query)</th>
+								<td colspan="3">
+									<div class="row-form-btn upload">
+										<input type="text" value="정보관리과" aria-invalid="false">
+										<label for="upload" class="btn ico04"><span>질의업로드</span></label>
+										<input type="file" id="upload">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>수집 URL주소</th>
+								<td colspan="3">
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 181119 수정 -->
+				<div class="com-btn">
+					<a href="#none">초기화</a>
+					<a href="#none" class="send">저장</a>
+				</div>
+				<!-- 수집 키워드/패싯 설정 -->
+				<div class="layer-pop" role="dialog" id="keywardfacet-custom-opener" aria-labelledby="keywardfacet-custom-popup" aria-modal="true" aria-hidden="true" tabindex="1">
+					<div class="content">
+						<div class="top-area">
+							<span class="title">연계프로토콜 설정</span>
+							<a href="#none" class="btn-close close-layer">팝업 닫기</a>
+						</div>
+						<div class="view-area">
+							<div class="table-header">
+								<div class="inner">
+									<p class="title">수집 키워드/패싯 설정</p>
+									<div class="table-top-btn">
+										<a href="#none" class="new-btn">추가</a>
+										<a href="#none" class="delete-btn">삭제</a>
+									</div>
+								</div>
+							</div>
+							<!-- 리얼 그리드 영역 -->
+							<div class="realgrid">
+								<table>
+									<caption>목록 표</caption>	
+									<colgroup>
+										<col style="width:6.5%">
+										<col style="width:17.5%">
+										<col style="width:29%">
+										<col style="width:14%">
+										<col style="width:12%">
+										<col style="width:13.5%">
+										<col style="width:7.5%">				
+									</colgroup>
+									<thead>
+										<tr>
+											<th>번호</th>
+											<th>분류</th>
+											<th>요청내역</th>
+											<th>기관명</th>
+											<th>회원아이디</th>
+											<th>요청일</th>
+											<th>상태</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>20</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>19</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>18</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>17</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>16</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>15</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>14</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>13</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>12</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>11</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //리얼 그리드 영역 -->
+							<div class="com-btn">
+								<a href="#none" class="close-layer">닫기</a>
+								<a href="#none" class="send">저장</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 수집 키워드/패싯 설정 -->
+				<!-- 수집연계 인증 정보 설정 -->
+				<div class="layer-pop" role="dialog" id="collection-custom-opener" aria-labelledby="collection-custom-popup" aria-modal="true" aria-hidden="true" tabindex="1">
+					<div class="content">
+						<div class="top-area">
+							<span class="title">연계프로토콜 설정</span>
+							<a href="#none" class="btn-close close-layer">팝업 닫기</a>
+						</div>
+						<div class="view-area">
+							<div class="table-header">
+								<div class="inner">
+									<p class="title">수집&middot;연계 인증 정보 설정</p>
+									<div class="table-top-btn">
+										<a href="#none" class="new-btn">추가</a>
+										<a href="#none" class="delete-btn">삭제</a>
+									</div>
+								</div>
+							</div>
+							<!-- 리얼 그리드 영역 -->
+							<div class="realgrid">
+								<table>
+									<caption>목록 표</caption>	
+									<colgroup>
+										<col style="width:6.5%">
+										<col style="width:17.5%">
+										<col style="width:29%">
+										<col style="width:14%">
+										<col style="width:12%">
+										<col style="width:13.5%">
+										<col style="width:7.5%">				
+									</colgroup>
+									<thead>
+										<tr>
+											<th>번호</th>
+											<th>분류</th>
+											<th>요청내역</th>
+											<th>기관명</th>
+											<th>회원아이디</th>
+											<th>요청일</th>
+											<th>상태</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>20</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>19</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>18</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>17</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>16</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>15</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>14</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>13</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>12</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+										<tr>
+											<td>11</td>
+											<td>에이전트 재설치</td>
+											<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+											<td>한국문화정보원</td>
+											<td>hermesoh</td>
+											<td>2018-08-22</td>
+											<td>대기</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- //리얼 그리드 영역 -->
+							<div class="com-btn">
+								<a href="#none" class="close-layer">닫기</a>
+								<a href="#none" class="send">저장</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 수집연계 인증 정보 설정 -->
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("../include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,508 @@
+﻿@charset "utf-8";
+/*>>>>> 공통 <<<<<*/
+/* 타이틀 */
+.titArea {position:relative; margin-top:40px}
+.titArea:first-child {margin-top:0 !important}
+.titArea h3 {line-height:48px; font-size:26px; font-weight:700; color:#1b2e59; letter-spacing:-0.05em}
+.titArea h3 span {display:inline-block; margin-left:20px; color:#666}
+.titArea h3 strong {display:inline-block; margin-left:5px; font-weight:700; color:#666}
+.titArea h3 strong em {font-style:normal; font-weight:700; color:#666; vertical-align:top}
+.titArea .btnArea {position:absolute; bottom:12px; right:0}
+@media screen and (max-width:767px){
+	.titArea {margin:30px 0 8px}
+	.titArea h3 {line-height:28px; font-size:20px}
+	.titArea h3 span {margin-left:10px}
+	.titArea .btnArea {bottom:0; right:0}
+}
+
+/* 버튼 */
+.btn {display:inline-block; padding:0 10px; border:1px solid #666; min-width:100px; line-height:32px; color:#000; background:#fff}
+.btnBlue {border:1px solid #0472a9; color:#fff; background:#0472a9}
+.btnBlueL {border:1px solid #0472a9; color:#0472a9; background:#fff}
+.btnGray {border:1px solid #e8e8e8; color:#0472a9; background:#e8e8e8}
+.btnYellow {border:1px solid #e3ad24; color:#fff; background:#e3ad24}
+.btnYellowL {border:1px solid #e3ad24; color:#bc8a0d; background:none}
+.btnRed {border:1px solid #bc0017; color:#fff; background:#bc0017}
+.btnRedL {border:1px solid #bc0017; color:#bc0017; background:none}
+.btnPlay {display:inline-block; border-radius:50%; border:none; width:21px; height:21px; text-indent:-9999px; background:url("../images/btn-play.png") no-repeat center}
+.btn span {display:inline-block; padding-left:20px; color:inherit; line-height:inherit; vertical-align:top}
+.btn span.icoImport {background:url("../images/ico-import.png") no-repeat left center}
+.btn span.icoSearch {background:url("../images/ico-search.png") no-repeat left center}
+.btn span.icoDownload {background:url("../images/ico-download.png") no-repeat left center}
+.btn span.icoTrash {background:url("../images/ico-trash.png") no-repeat left center}
+.btn span.icoTrashR {background:url("../images/ico-trash-r.png") no-repeat left center}
+.btn span.icoReset {background:url("../images/ico-reset.png") no-repeat left center}
+.btn span.icoEx {padding-left:23px; background:url("../images/ico-ex.png") no-repeat left center}
+.btn span.icoModi {padding-left:23px; background:url("../images/ico-modi.png") no-repeat left center}
+.btn span.icoSave {background:url("../images/ico-save.png") no-repeat left center}
+
+/* 버튼정렬 */
+.btnBottom {margin-top:40px; text-align:center}
+.btnBottom .btn {margin:0 5px; min-width:120px; line-height:40px; font-weight:500}
+@media screen and (max-width:767px){
+	.btnBottom {display:flex}
+	.btnBottom .btn {flex:1}
+	.btnBottom .btn + .btn {margin-left:8px}
+}
+
+/* 테이블 상단 */
+.tableTop {overflow:hidden; margin-bottom:12px}
+.tableTop .btnArea {float:right; overflow:hidden}
+.tableTop .btnArea .btn {float:left; width:120px}
+.tableTop .btnArea .btn + .btn {margin-left:5px}
+@media screen and (max-width:767px){
+	.tableTop {margin-bottom:10px}
+}
+
+/* ROW 테이블 */
+.rowTable {border-top:2px solid #0472a9}
+.rowTable table th,
+.rowTable table td {padding:3px 15px; border-bottom:1px solid #ccc; height:46px; text-align:left; vertical-align:top}
+.rowTable table th {position:relative; padding:13px 0 13px 25px; text-indent:-5px; line-height:20px; font-weight:700; color:#0472a9; letter-spacing:-0.05em; background:#f4f4f4}
+.rowTable table th:before {display:inline-block; content:"·"; margin-right:5px}
+.rowTable > table > tbody > tr > td > div > * {float:left; margin:3px 5px}
+.rowTable table td > div > span {display:inline-block; line-height:34px}
+.rowTable table td > div > .checkBox {margin-left:-25px}
+.rowTable table td > div > * + .checkBox {margin-left:0}
+.rowTable table td > div > .checkBox + * {margin-left:25px}
+.rowTable table td .checkBox label {padding-left:10px; vertical-align:top; line-height:34px}
+.rowTable table td dl dt {margin-bottom:5px}
+.rowTable table td dl dd {padding-left:10px}
+.rowTable table td .btnArea {float:right; overflow:hidden; margin:3px 0 !important}
+.rowTable table td .btnArea .btn {float:left}
+.rowTable table td .btnArea .btn + .btn {margin-left:10px}
+@media screen and (max-width:1160px){
+	.rowTable table,
+	.rowTable table thead,
+	.rowTable table tbody,
+	.rowTable table tr,
+	.rowTable table th,
+	.rowTable table td {display:block}
+	.rowTable table tr {overflow:hidden}
+	.rowTable table th {float:left; width:96px; height:100%}
+	.rowTable table td {float:left; width:calc(100% - 96px)}
+	.rowTable table td {padding-right:0; height:auto}
+	.rowTable > table > tbody > tr > td > div {display:flex}
+	.rowTable > table > tbody > tr > td > div > * {flex:1; width:auto !important}
+}
+@media screen and (max-width:767px){
+	.rowTable table,
+	.rowTable table thead,
+	.rowTable table tbody,
+	.rowTable table tr,
+	.rowTable table th,
+	.rowTable table td {padding:0; float:none; border:none; height:auto; width:100%}
+	.rowTable table td:after {display:block; content:""; clear:both}
+	.rowTable table th {padding-top:12px; height:auto !important; line-height:22px; font-size:14px; text-indent:0; background:none}
+	.rowTable > table > tbody > tr > td >  div {display:block; overflow:hidden}
+	.rowTable > table > tbody > tr > td > div > * {display:block; margin:5px 0; width:100% !important}
+	.rowTable > table > tbody > tr > td > div > .w146 {width:100% !important}
+	.rowTable > table > tbody > tr > td > div > * + .checkBox {margin-left:-30px}
+	.rowTable > table > tbody > tr > td > div > span {width:auto}
+}
+/* COL 테이블 */
+.colTable {overflow-x:auto; border-top:2px solid #1b2e59; border-bottom:1px solid #ccc}
+.colTable table {margin:0 -1px; min-width:100%; width:auto}
+.colTable table th {padding:3px 10px; border-top:1px solid #ccc; border-left:1px solid #ccc; height:51px; color:#1b2e59; text-align:center; font-weight:700; background:#e1e6ea; white-space:nowrap}
+.colTable table thead tr:first-child th {border-top:none}
+.colTable table tr + tr th {border-left:1px solid #ccc; background:#f4f4f4}
+.colTable table td {padding:5px 10px; border-left:1px solid #ccc; border-top:1px solid #ccc; height:51px; text-align:center; letter-spacing:-0.06em; color:#000; white-space:nowrap}
+.colTable table td .btn {min-width:80px}
+.colTable table td.cPoint {color:#02699c; font-weight:500}
+.colTable table td.txtL {padding:8px 20px; text-align:left; white-space:normal}
+.colTable table tbody th,
+.colTable table tfoot th {color:#0472a9; background:#f4f4f4}
+.colTable table tfoot th,
+.colTable table tfoot td {border-top:1px solid #000}
+.colTable table tfoot td {font-size:18px}
+.colTable.v2 table th {height:31px}
+.colTable.fixedScroll table {width:100%}
+.colTable.fixedScroll table .emblem {width:62px; height:40px}
+.colTable.fixedScroll table tr {position:relative}
+.colTable.fixedScroll table tr .fixedTh {position:absolute; padding:5px 0; border-right:1px solid #ccc; border-left:1px solid #fff; width:71px; height:51px; line-height:50px}
+.colTable.fixedScroll table tr .fixedTh .emblem {vertical-align:top}
+.colTable.fixedScroll table thead tr .fixedTh {height:93px; line-height:93px}
+.colTable + .colTable {margin-top:30px}
+@media screen and (max-width:1160px){
+	.colTable table th,
+	.colTable table td {white-space:nowrap !important}
+}
+@media screen and (max-width:767px){
+	.colTable.fixedScroll table .emblem {width:55px; height:35px}
+}
+
+/* 정보 테이블 */
+.infoTable {padding:12px 0 15px; border-top:2px solid #0472a9}
+.infoTable table th,
+.infoTable table td {height:30px; text-align:left}
+.infoTable table th {position:relative; font-weight:700; color:#0472a9; letter-spacing:-0.05em}
+.infoTable table th:before {display:inline-block; content:"·"; margin-right:5px}
+@media screen and (max-width:767px){
+	.infoTable {padding:0 0 12px; overflow:hidden}
+	.infoTable table,
+	.infoTable table tbody,
+	.infoTable table tr,
+	.infoTable table th,
+	.infoTable table td {display:block}
+	.infoTable table th,
+	.infoTable table td {float:left; padding-top:12px; width:calc(100% - 70px); height:auto; line-height:22px}
+	.infoTable table th {width:70px}
+}
+
+/* 인풋 셀렉트 라디오 체크박스 */
+input[type=text],
+input[type=password] {border:1px solid #ccc; padding:0 10px; max-width:100%; width:200px; height:34px; letter-spacing:-0.05em}
+textarea {border:1px solid #ccc; padding:10px; height:100px; letter-spacing:-0.05em; resize:none; width:100%}
+input[type=checkbox],
+input[type=radio] {width:18px; height:18px}
+input[type=checkbox] + label,
+input[type=radio] + label {padding-left:10px; vertical-align:top}
+.txtInput {overflow:hidden}
+.txtInput > * {float:left}
+.txtInput > span {line-height:34px}
+.txtInput > input {margin-right:10px}
+.checkBox {display:inline-block; overflow:hidden}
+.checkBox:first-child {margin-left:-30px}
+.checkBox span {float:left; margin-left:30px; line-height:34px}
+.checkBox em {float:left; font-style:normal; line-height:34px}
+.checkBox em:first-child {margin:0 -20px 0 30px}
+.checkBox em:last-child {margin-left:10px}
+.date {position:relative; display:block; padding-right:44px}
+.date input {width:100%}
+.date img {position:absolute; top:0; right:0}
+.dateWrap {max-width:100%; width:452px}
+.dateWrap:after {display:block; content:""; clear:both}
+.dateWrap > * {float:left; width:calc(50% - 24px) !important}
+.dateWrap > em {width:48px !important; text-align:center; line-height:34px; color:#000}
+.selectbox {display:inline-block; position:relative; border:1px solid #ccc; width:200px; background:#fff}
+.selectbox span {display:block; overflow:hidden; padding:0 40px 0 10px; line-height:32px; white-space:nowrap; text-overflow:ellipsis; background:url("../images/bl-arrow.png") no-repeat right center}
+.selectbox select {position:absolute; top:0; left:0; width:100%; height:100%; opacity:0}
+.fileWrap {display:inline-block; position:relative; padding-right:44px; width:264px; max-width:100%; background:url("../images/btn-file.png") no-repeat right center}
+.fileWrap input {width:100%; background:#fff}
+.fileWrap input[type=file] {position:absolute; top:0; left:0; width:100%; height:100%; opacity:0}
+.fileWrap + input:read-only {text-overflow:ellipsis; width:247px}
+.fileWrap + input:-moz-read-only {width:145px}
+@media screen and (max-width:1160px){
+	.txtInput {position:relative; padding-right:20px; width:100%}
+	.txtInput > * {margin:0; width:100% !important}
+	.txtInput > span {position:absolute; top:0; right:0; width:auto !important}
+	.txtInput.v2 {padding-right:36px}
+}
+@media screen and (max-width:767px){
+	.dateWrap {position:relative}
+	.dateWrap > span {width:100% !important}
+	.dateWrap > em {position:absolute; right:-17px; top:0; width:20px !important}
+	.dateWrap > em + span {margin-top:5px}
+}
+
+/* 검색영역 */
+.searchArea {margin-top:20px; padding:24px 20px; margin-bottom:30px; text-align:center; background:#f5f5f5}
+.searchArea .inBox {display:inline-block; text-align:left}
+.searchArea .inBox > * {float:left}
+.searchArea .inBox > * + * {margin-left:30px}
+.searchArea .inBox dl {position:relative; padding-left:70px}
+.searchArea .inBox dl dt {position:absolute; top:0; left:0; width:70px; line-height:34px; color:#000}
+.searchArea .inBox .btnArea {overflow:hidden}
+.searchArea .inBox .btnArea .btn {float:left}
+.searchArea .inBox .btnArea .btn + .btn {margin-left:10px}
+.searchArea .inBox .totalGame {float:left}
+.searchArea .inBox .totalGame dl {padding-right:20px; border-right:1px solid #aaa}
+.searchArea .inBox .totalGame dl dt {color:#0472a9; font-weight:700}
+.searchArea .inBox .totalGame dl dd {line-height:34px}
+.searchArea .inBox .totalGame dl dd span {display:inline-block; margin-top:8px; color:#000; font-weight:500}
+.searchArea .inBox .totalGame dl dd strong {font-size:30px; font-family:'Roboto', sans-serif; font-weight:600; color:#000}
+@media screen and (max-width:1160px){
+	.searchArea .inBox {max-width:100%; width:522px}
+	.searchArea .inBox > * {float:none}
+	.searchArea .inBox > * + * {margin:10px 0 0 0}
+	.searchArea .inBox dl dd > * {width:100%}
+	.searchArea .inBox .btnArea {display:block; margin-top:20px; padding-top:20px; border-top:1px solid #ccc; width:100%; text-align:center}
+	.searchArea .inBox .btnArea .btn {float:none}
+	.searchArea .inBox .btnArea .btn + .btn {margin-left:10px}
+	.searchArea .inBox .totalGame {float:none}
+	.searchArea .inBox .totalGame dl dd span {width:auto}
+	.searchArea .inBox .totalGame dl {padding-right:0; border-right:none}
+}
+@media screen and (max-width:767px){
+	.searchArea {padding:15px 20px; margin-bottom:15px}
+	.searchArea .inBox {width:350px}
+	.searchArea .inBox .btnArea {margin-top:10px; padding-top:10px}
+	.searchArea .inBox .totalGame dl dd strong {font-size:20px}
+	.searchArea .inBox .totalGame dl dd span {margin-top:2px}
+}
+
+/* 페이징 */
+.paging {margin-top:40px; text-align:center}
+.paging .inner {display:inline-block; overflow:hidden}
+.paging .inner > * {float:left}
+.paging .inner .page {overflow:hidden; margin:0 8px}
+.paging .inner a,
+.paging .inner strong {float:left; margin:0 2px; border:1px solid #ccc; width:38px; line-height:36px; letter-spacing:-0.05em}
+.paging .inner strong {border-color:#0472a9; color:#fff; background:#0472a9}
+.paging .inner > a {text-indent:-9999px}
+.paging .inner > a.btnFirst {background:#f4f6f6 url("../images/btn-first.png") no-repeat center}
+.paging .inner > a.btnPrev {background:#f4f6f6 url("../images/btn-prev.png") no-repeat center}
+.paging .inner > a.btnNext {background:#f4f6f6 url("../images/btn-next.png") no-repeat center}
+.paging .inner > a.btnLast {background:#f4f6f6 url("../images/btn-last.png") no-repeat center}
+@media screen and (max-width:767px) {
+	.paging {margin-top:30px}
+	.paging .inner .page {overflow:hidden; margin:0 6px}
+	.paging .inner a,
+	.paging .inner strong {margin:0 1px; width:30px; height:30px; line-height:28px}
+	.paging .inner > a {margin:0 1px; width:30px}
+}
+
+/* layer */
+.layer {display:none; position:fixed; top:0; left:0; overflow:hidden; padding:20px; text-align:center; width:100%; height:100%; z-index:10000; background:rgba(0,0,0,0.5)}
+.layer > .inner {display:inline-block; position:relative; top:50%; overflow:hidden; max-width:100%; padding-bottom:65px; background:#fff; transform:translate(0, -50%); -webkit-transform:translate(0, -50%); -moz-transform:translate(0, -50%)}
+.layer > .inner .tit {padding:60px 80px 15px; line-height:40px; font-size:30px; text-align:left; color:#333; font-weight:700}
+.layer > .inner .tit span {display:inline-block; margin-left:20px; line-height:40px; font-size:20px; color:#666}
+.layer > .inner .popCont {overflow-y:auto; margin:0; padding:0 80px; text-align:left}
+.layer > .inner .popCont .searchArea {margin-top:0}
+.layer > .inner .popCont .searchArea .inBox dl dt {margin-right:10px}
+.layer > .inner > a.closeLayer {display:inline-block; position:absolute; top:60px; right:80px; width:40px; height:40px; background:url("../images/btn-close.png") no-repeat right center; text-indent:-9999px}
+@media screen and (max-width:1160px) {
+	.layer > .inner {padding-bottom:45px}
+	.layer > .inner .tit {padding:40px 40px 15px}
+	.layer > .inner .tit span {line-height:40px}
+	.layer > .inner .popCont {padding:0 40px}
+	.layer > .inner > a.closeLayer {top:37px; right:60px}
+}
+@media screen and (max-width:767px) {
+	.layer {padding:10px}
+	.layer > .inner {padding-bottom:30px}
+	.layer > .inner .tit {padding:15px 10px 10px; line-height:30px; font-size:20px}
+	.layer > .inner .tit span {display:block; margin-left:0; line-height:30px; font-size:14px}
+	.layer > .inner .popCont {padding:0 10px}
+	.layer > .inner .popCont .searchArea .inBox dl dt {margin-right:10px}
+	.layer > .inner > a.closeLayer {top:12px; right:10px; width:30px; height:30px; background-size:15px}
+}
+/* 텍스트 */
+.cRed {color:#e31c67}
+
+/* 엠블럼 */
+.emblem {display:inline-block; width:63px; height:41px; /* width:48px; height:31px; */ text-indent:-9999px; background-size:100% !important}
+.emblem.HH {background:url("../images/emblem_HH.png") no-repeat center}
+.emblem.HT {background:url("../images/emblem_HT.png") no-repeat center}
+.emblem.KT {background:url("../images/emblem_KT.png") no-repeat center}
+.emblem.LG {background:url("../images/emblem_LG.png") no-repeat center}
+.emblem.LT {background:url("../images/emblem_LT.png") no-repeat center}
+.emblem.NC {background:url("../images/emblem_NC.png") no-repeat center}
+.emblem.OB {background:url("../images/emblem_OB.png") no-repeat center}
+.emblem.SK {background:url("../images/emblem_SK.png") no-repeat center}
+.emblem.SS {background:url("../images/emblem_SS.png") no-repeat center}
+.emblem.WO {background:url("../images/emblem_WO.png") no-repeat center}
+.emblemS .emblem {width:48px; height:31px}
+@media screen and (max-width:767px){
+	.emblem {width:50px; height:32px}
+}
+
+/* 사이즈 */
+.w146 {width:146px !important}
+
+/*>>>>> 페이지 <<<<<*/
+/* 로그인 */
+.loginWrap {position:fixed; top:0; left:0; width:100%; height:100%; text-align:right; background:url("../images/common/bg-login.png") no-repeat center 0; background-size:1920px 970px}
+.loginWrap .loginArea {position:relative; padding:292px 20px 0; margin:0 auto; width:1040px}
+.loginWrap .loginArea h1 {position:absolute; right:98px; top:134px; width:503px; height:137px; text-align:left; text-indent:-9999px; background:url("../images/common/login-logo.png") no-repeat center}
+.loginWrap .loginArea .loginBox {display:inline-block; width:415px; text-align:left}
+.loginWrap .loginArea .loginBox strong {display:block; line-height:60px; font-size:30px; font-weight:700; color:#bcbcbc}
+.loginWrap .loginArea .loginBox p + p {margin-top:10px}
+.loginWrap .loginArea .loginBox p input[type=text],
+.loginWrap .loginArea .loginBox p input[type=password] {padding:0 20px; width:100%; height:45px; font-size:16px}
+.loginWrap .loginArea .loginBox p label {color:#333}
+.loginWrap .loginArea .loginBox .btnArea {margin-top:20px}
+.loginWrap .loginArea .loginBox .btnArea .btnLogin {display:block; text-align:center; border:none; width:100%; line-height:50px; font-size:16px; font-weight:500; color:#fff; letter-spacing:-0.02em; background:#5a4dbb}
+.loginWrap .loginArea .loginBox .btnArea + p {margin:6px 0 33px}
+.loginWrap .loginArea .loginBox .btnVideo {display:inline-block; position:relative; padding:0 22px 0 52px; line-height:40px; font-size:20px; font-weight:700; color:#333; background:url("../images/common/ico01.png") no-repeat left center}
+.loginWrap .loginArea .loginBox .btnVideo:after {display:block; content:""; position:absolute; top:0; right:0; width:18px; height:100%; background:url("../images/common/ico02.png") no-repeat right center}
+@media screen and (max-width:1160px){
+	.loginWrap .loginArea {max-width:100%}
+}
+@media screen and (max-width:767px){
+	.loginWrap {text-align:center; background:url("../images/common/bg-login-m.png") no-repeat center top; background-size:cover}
+	.loginWrap .loginArea {position:static; padding:0; width:100%}
+	.loginWrap .loginArea h1 {right:0; top:60px; width:100%; height:72px; background:url("../images/common/login-logo-m.png") no-repeat center; background-size:auto 100%}
+	.loginWrap .loginArea .loginBox {position:absolute; bottom:65px; left:0; padding:0 40px; width:100%}
+	.loginWrap .loginArea .loginBox strong {display:none}
+	.loginWrap .loginArea .loginBox p + p {margin-top:8px}
+	.loginWrap .loginArea .loginBox p input[type=text],
+	.loginWrap .loginArea .loginBox p input[type=password] {padding:0 15px; height:36px; font-size:14px}
+	.loginWrap .loginArea .loginBox .btnArea {margin-top:16px}
+	.loginWrap .loginArea .loginBox .btnArea .btnLogin {line-height:36px; font-size:14px}
+	.loginWrap .loginArea .loginBox .btnArea + p {margin:15px 0 0}
+}
+
+/* 관리 */
+.rowTable .addContArea {position:relative; border-bottom:1px solid #ccc}
+.rowTable .addContArea .sClassTable {margin:20px 0 20px 116px; width:calc(100% - 100px)}
+.rowTable .addContArea:before {display:block; content:""; position:absolute; top:93px; left:0; border-bottom:1px solid #ccc; width:100%}
+.rowTable .addContArea .sClassTable + .sClassTable {margin-top:-20px}
+.rowTable .addContArea .mClassTable tr:last-child th,
+.rowTable .addContArea .mClassTable tr:last-child td {border-bottom:none}
+.rowTable .addContArea .mClassTable + .sClassTable {border-top:1px solid #ccc}
+.rowTable .addContArea table td > * {margin:3px 0}
+.rowTable .addContArea table td > .checkBox:first-child {margin-left:-30px}
+.rowTable .addContArea table td:last-child {padding-right:0}
+@media screen and (max-width:1160px){
+	.rowTable .addContArea + .addContArea {margin-top:-1px; border-top:1px solid #0472a9}
+	.rowTable .addContArea:before {top:234px}
+	.rowTable .addContArea .sClassTable {margin:20px 0 20px 100px}
+	.rowTable .addContArea table {position:relative; padding-bottom:47px; border-bottom:1px solid #ccc}
+	.rowTable .addContArea table td > * {width:100%}
+	.rowTable .addContArea table td {padding-right:0}
+	.rowTable .addContArea table td > .btnArea {display:flex; position:absolute; bottom:3px; right:0; width:100%}
+	.rowTable .addContArea table td > .btnArea .btn {flex:1}
+}
+@media screen and (max-width:767px){
+	.rowTable .addContArea {border-bottom:none}
+	.rowTable .addContArea + .addContArea {padding-top:10px; border-top:1px solid #0472a9}
+	.rowTable .addContArea .mClassTable {padding-bottom:64px}
+	.rowTable .addContArea .mClassTable + .sClassTable {border-top:none}
+	.rowTable .addContArea:before {display:none}
+	.rowTable .addContArea table td {position:static}
+	.rowTable .addContArea table td > .btnArea {top:auto; bottom:20px; right:0; width:100%}
+	.rowTable .addContArea .sClassTable {padding:10px 10px 64px; margin:0; width:100%; background:#f6f6f6}
+	.rowTable .addContArea .sClassTable + .sClassTable {margin-top:0}
+	.rowTable .addContArea .sClassTable td > .btnArea {padding:0 10px}
+}
+
+/* 통계 */
+.statusTable {margin-bottom:20px; border-top:2px solid #1b2e59}
+.statusTable table th,
+.statusTable table td {padding:5px 0; border-bottom:1px solid #ccc; height:51px; text-align:center; letter-spacing:-0.06em; color:#000; background:#f4f4f4}
+.statusTable table th {color:#1b2e59; font-weight:700}
+@media screen and (max-width:767px){
+	.statusTable {overflow-y:auto}
+	.statusTable table {min-width:100%; width:auto}
+	.statusTable table th,
+	.statusTable table td {padding:5px 10px; border-bottom:1px solid #ccc; height:51px; text-align:center; letter-spacing:-0.06em; color:#000; background:#f4f4f4; white-space:nowrap}
+	.statusTable table th {color:#1b2e59; font-weight:700}
+}
+
+/* 대시보드 */
+.halfWrap {overflow:hidden}
+.halfWrap > * {float:left; width:50%}
+.halfWrap > * + * {padding-left:20px}
+.halfWrap .chartArea h4 {margin-top:-8px; text-align:center; line-height:40px; font-size:26px; font-weight:500; color:#000}
+.halfWrap .chartArea canvas {width:100%; height:542px}
+.statsArea {overflow:hidden; padding-top:50px; border-top:2px solid #0472a9}
+.statsArea > * {float:left}
+.statsArea dl dt {margin-top:-8px; text-align:center; line-height:40px; font-size:26px; font-weight:500; color:#000}
+.statsArea dl dt span {font-size:16px; font-weight:500; color:#000}
+.statsArea > dl {padding-left:35px; width:35%; text-align:center} 
+.statsArea > dl > * {display:inline-block; vertical-align:top}
+.statsArea > dl dd {margin:-5px 0 0 30px}
+.statsArea > dl dd strong {line-height:60px; font-size:60px; font-family:'Roboto', sans-serif; color:#000; font-weight:600}
+.statsArea > dl dd span {display:inline-block; margin-top:20px; font-size:20px; color:#000}
+.statsArea .chartArea {display:table; padding-left:10px; border-left:1px solid #aaa; width:65%}
+.statsArea .chartArea dl {display:table-cell; padding-left:50px}
+.statsArea .chartArea dl > * {display:inline-block; vertical-align:top}
+.statsArea .chartArea dl dd {margin-left:-3px}
+.statsArea .chartArea dl dd canvas {width:150px; height:150px}
+.statusArea {overflow:hidden; padding-top:30px; border-top:2px solid #0472a9}
+.statusArea > * {float:left}
+.statusArea > * dl dt {position:relative; font-weight:700; color:#0472a9; line-height:30px; letter-spacing:-0.05em}
+.statusArea > * dl dt:before {display:inline-block; content:"·"; margin-right:5px}
+.statusArea > .graphArea {padding-right:20px; width:calc(100% - 520px)}
+.statusArea > .graphArea dl {position:relative; padding-left:100px}
+.statusArea > .graphArea dl + dl {margin-top:10px}
+.statusArea > .graphArea dl dt {position:absolute; top:0; left:0}
+.statusArea > .graphArea dl dd {position:relative; width:590px; max-width:100%; padding-right:40px}
+.statusArea > .graphArea dl dd .graph {overflow:hidden; width:100%; height:30px; background:#e1e7ea}
+.statusArea > .graphArea dl dd .graph p {width:0%; height:30px; -webkit-transition:all 0.5s; transition:all 0.5s}
+.statusArea > .graphArea dl dd .graph.bgNavy p {background:#1b2e59}
+.statusArea > .graphArea dl dd .graph.bgBlue p {background:#139ce0}
+.statusArea > .graphArea dl dd .graph.bgRad p {background:#d9172c}
+.statusArea > .graphArea dl dd strong {position:absolute; top:0; right:0; line-height:30px; font-size:20px; font-weight:500; font-family:'Roboto', sans-serif; color:#000}
+.statusArea > .graphArea dl dd strong * {line-height:30px; font-size:20px; font-weight:500; font-style:normal; color:#000; vertical-align:top; font-family:'Roboto', sans-serif}
+.statusArea > .figureArea {display:table; padding-left:10px; width:520px; border-left:1px solid #aaa}
+.statusArea > .figureArea dl {display:table-cell}
+.statusArea > .figureArea dl dt {padding-left:20px; margin-bottom:30px; line-height:30px}
+.statusArea > .figureArea dl dd {padding-left:20px}
+.statusArea > .figureArea dl + dl dd {border-left:1px solid #ccc}
+.statusArea > .figureArea dl dd span {display:inline-block; margin-top:10px; font-size:20px; font-weight:500; color:#000; letter-spacing:-0.05em}
+.statusArea > .figureArea dl dd strong {line-height:50px; font-family:'Roboto', sans-serif; font-size:50px; font-weight:600; color:#000; letter-spacing:-0.05em} 
+@media screen and (max-width:1160px){
+	.halfWrap > * {float:none; width:100%}
+	.halfWrap > * + * {padding:0; margin-top:30px}
+	.halfWrap .chartArea h4 {margin-top:0}
+	.statsArea {padding-top:30px}
+	.statsArea > * {float:none}
+	.statsArea dl dt {margin-top:0}
+	.statsArea > dl {padding-left:0; width:100%}
+	.statsArea .chartArea {padding:20px 0 0 0; margin-top:20px; border-left:none; border-top:1px solid #aaa; width:100%}
+	.statsArea .chartArea dl {padding:0 20px; text-align:center}
+	.statsArea .chartArea dl dd {margin-left:0}
+	.statusArea > * {float:none}
+	.statusArea > .graphArea {padding-right:0; width:100%}
+	.statusArea > .graphArea dl dd {width:100%; padding-right:50px}
+	.statusArea > .figureArea {padding:20px 0 0 0; margin-top:20px; border-left:none; border-top:1px solid #aaa; width:100%}
+	.statusArea > .figureArea dl {text-align:center}
+	.statusArea > .figureArea dl dt {padding:0 20px 0 0; margin-bottom:20px}
+	.statusArea > .figureArea dl dd {padding-left:0}
+}
+@media screen and (max-width:767px){
+	.halfWrap > * + * {padding:0; margin-top:20px}
+	.halfWrap .chartArea h4 {margin-bottom:8px; line-height:26px; font-size:18px}
+	.halfWrap .chartArea canvas {height:400px}
+	.statsArea {padding-top:20px}
+	.statsArea dl dt {line-height:28px; font-size:18px}
+	.statsArea dl dt span {font-size:14px}
+	.statsArea > dl dd {margin:0 0 0 10px}
+	.statsArea > dl dd strong {line-height:40px; font-size:40px}
+	.statsArea > dl dd span {margin-top:15px; font-size:14px}
+	.statsArea .chartArea {padding:15px 0 0 0; margin-top:15px}
+	.statsArea .chartArea dl {padding:0 5px}
+	.statsArea .chartArea dl dd canvas {width:90px; height:90px}
+	.statusArea {padding-top:20px}
+	.statusArea > .graphArea dl {padding-left:90px}
+	.statusArea > .graphArea dl dd {padding-right:36px}
+	.statusArea > .graphArea dl dd strong * {font-size:16px}
+	.statusArea > .figureArea {padding:15px 0 0 0; margin-top:15px}
+	.statusArea > .figureArea dl dt {margin-bottom:10px; line-height:20px}
+	.statusArea > .figureArea dl dd {padding:0 6px}
+	.statusArea > .figureArea dl dd span {margin-top:5px; font-size:16px}
+	.statusArea > .figureArea dl dd strong {line-height:25px; font-size:25px} 
+}
+
+/* 로딩중 */
+.loading {position:fixed; top:0; left:0; z-index:10000; width:100%; height:100%; background:rgba(255,255,255,0.7)}
+.loading div {position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%)}
+.loading div strong {display:block; line-height:30px; font-size:16px; color:#000; text-align:center}
+.loading div p {margin-top:5px}
+.loading div p span {display:inline-block; margin:0 5px; border-radius:50%; width:10px; height:10px; background:#dedede; animation:loading 1.5s linear infinite; -ms-animation:loading 1.5s linear infinite; -moz-animation:loading 1.5s linear infinite; -webkit-animation:loading 1.5s linear infinite}
+.loading div p span:nth-child(2) {animation-delay:0.5s; -ms-animation-delay:0.5s; -moz-animation-delay:0.5s; -webkit-animation-delay:0.5s}
+.loading div p span:nth-child(3) {animation-delay:1s; -ms-animation-delay:1s; -moz-animation-delay:1s; -webkit-animation-delay:1s}
+@-webkit-keyframes loading{
+	0% {background:#dedede}
+	80% {background:#1b2e59}
+	100% {background:#dedede}
+}
+@-ms-keyframes loading{
+	0% {background:#dedede}
+	80% {background:#1b2e59}
+	100% {background:#dedede}
+}
+@-moz-keyframes loading{
+	0% {background:#dedede}
+	80% {background:#1b2e59}
+	100% {background:#dedede}
+}
+@keyframes loading{
+	0% {background:#dedede}
+	80% {background:#1b2e59}
+	100% {background:#dedede}
+}
+
+.videoArea img {width:100%}
+.w100p {width:100% !important}
+
+/* 공지팝업 20-06-18 */
+.layer3 .inner {padding:5px 5px 40px 5px; background:#004c93}
+.layer3 .inner .checkBoxArea {position: absolute; bottom:10px; right:60px; left:auto; top:auto}
+.layer3 .inner .checkBoxArea > *{display: inline-block; vertical-align: middle;}
+.layer3 .inner .checkBoxArea input[type="checkbox"] {width:20px; height:20px; -webkit-appearance: checkbox}
+.layer3 .inner .checkBoxArea label {padding-left:0; color:#fff}
+.layer.layer3 > .inner > .closeLayer {position: absolute; bottom:10px; right:10px; left:auto; top:auto; width: auto; height:auto; text-indent: 0; color:#fff; background: none}
+.layer.layer3 > .inner > .closeLayer img{margin:0 0 0 3px;}

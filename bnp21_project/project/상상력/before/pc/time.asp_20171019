@@ -1,0 +1,18 @@
+﻿<!-- #include virtual="/pc/common/top.asp" -->
+<%
+wa = "time"
+%>
+<body>
+<div id="sub">
+<!-- #include virtual="/pc/common/sub_header.asp" -->
+	<div class="contents">
+		<div class="location clearFix">
+			<div class="text">
+				<img src="images/time.jpeg" alt="" /><br /><br />
+			</div>
+		</div>
+	</div>
+</div>
+	<!-- #include virtual="/pc/common/bottom.asp" -->
+</body>
+</html>

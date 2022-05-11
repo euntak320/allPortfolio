@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MJ Virtual care center</title>
+	<script type="text/javascript" async="" src="../js/jquery-3.3.1.min.js"></script>	
+	<link rel="stylesheet" href="../css/reset.css">	
+	<link rel="stylesheet" href="../css/layout.css">
+</head>
+<body>
+  
+<div id="join-wrap">
+	<div id="regist-container">
+		<div class="regist-box-wrap">
+			<h1 class="symbol-logo"><img src="../images/common/logo2.svg" alt=""></h1>
+			<p class="regist-title">MJ Virtual 의사 등록 하기​</p>
+			<div class="regist-step-wrap active-step3"> <!-- step별로  active-step1,active-step2,active-step3,active-step4-->
+				<ol>
+					<li>
+						<dl>
+							<dt><div class="num">1</div></dt>
+							<dd>의사 <br class="p-hide" />기본 정보</dd>
+						</dl>
+						<div class="bar-wrap">
+							<span class="bar" style="width:100%;"></span> <!-- 진행률에 따라 % 값 변경해주시면 됩니다 -->
+						</div>
+					</li>
+					<li>
+						<dl>
+							<dt><div class="num">2</div></dt>
+							<dd>진료과목 <br class="p-hide" />선택</dd>
+						</dl>
+						<div class="bar-wrap">
+							<span class="bar" style="width:100%;"></span>
+						</div>
+					</li>
+					<li>
+						<dl>
+							<dt><div class="num">3</div></dt>
+							<dd>병원 <br class="p-hide" />정보</dd>
+						</dl>
+						<div class="bar-wrap">
+							<span class="bar" style="width:30%;"></span>
+						</div>
+					</li>
+					<li>
+						<dl>
+							<dt><div class="num">4</div></dt>
+							<dd>계좌 <br class="p-hide" />정보</dd>
+						</dl>
+					</li>
+				</ol>
+			</div>
+			<div class="box-form">				
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">병원 이름</dt>
+					<dd class="form-cont">
+						<div class="slc-area">
+							<select name="" id="" class="default-slc">
+								<option value="병원을 선택하세요.">병원을 선택하세요.</option>
+							</select>						
+						</div>						
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">병원 주소</dt>
+					<dd class="form-cont">
+						<div class="ip-area">
+							<input type="text" id="" name="" class="default-ip" readonly>							
+						</div>						
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">우편번호</dt>
+					<dd class="form-cont">
+						<div class="ip-area">
+							<input type="text" id="" name="" class="default-ip" readonly>							
+						</div>						
+					</dd>
+				</dl>
+				<dl class="form-sec imp-type">
+					<dt class="form-tt">전화번호 (대표번호)</dt>
+					<dd class="form-cont">
+						<div class="ip-area">
+							<input type="text" id="" name="" class="default-ip" placeholder="예) 02-000-0000">							
+						</div>						
+					</dd>
+				</dl>				
+			</div><!-- box-form -->
+			<div class="form-btn-area">
+				<button type="button" class="btn btn-full btn-gray" disabled><span>다음</span></button> <!-- 활성화 시 disabled 삭제 -->
+			</div>
+		</div>
+		<p class="join-copy">ⓒ 2020 MJ VIRTUAL CARE CENTER. <br class="p-hide"/>All rights reserved.</p>
+	</div>	
+</div>
+
+
+<script>
+$(document).ready(function(){
+
+});
+</script>
+
+</body>
+</html>

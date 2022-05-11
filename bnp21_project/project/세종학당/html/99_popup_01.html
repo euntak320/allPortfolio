@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Popup_01</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+	<div id="popup">
+
+		<h1>팝업 타이틀영역</h1>
+
+		<form id="form_box">
+
+			<div class="pop_wrap">
+
+				<div class="table_wrap">
+					<table class="row_type">
+						<caption>항목1, 항목2, 이메일, 전화번호로 구성된 테이블</caption>
+						<colgroup>
+							<col style="width: 12%;" />
+							<col style="width: 38%;" />
+							<col style="width: 12%;" />
+							<col style="width: 38%;" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="input_01">항목 1 <span class="star">*</span></label></th>
+								<td><input type="text" id="input_01" title="항목 1" class="basic" style="width:150px;" /></td>
+								<th scope="row"><label for="select_01">항목 2</label></th>
+								<td>
+									<select id="select_01">
+										<option value="선택">선택</option>
+										<option value="옵션 1">옵션 1</option>
+										<option value="옵션 2">옵션 2</option>
+										<option value="옵션 3">옵션 3</option>
+									</select>
+									<select id="select_02">
+										<option value="선택">전체</option>
+										<option value="옵션 1">옵션 1</option>
+										<option value="옵션 2">옵션 2</option>
+										<option value="옵션 3">옵션 3</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="e-mail_id">이메일</label></th>
+								<td>
+									<input type="text" id="e-mail_id" title="이메일 아이디" class="basic" style="width:60px;" /> @
+									<input type="text" id="e-mail_add" title="이메일 주소" class="basic" style="width:80px;" />
+									<select id="select_03">
+										<option value="선택">선택</option>
+										<option value="naver.com">naver.com</option>
+										<option value="gmail.com">gmail.com</option>
+										<option value="daum.net">daum.net</option>
+									</select>
+								</td>
+								<th scope="row"><label for="phone_num">전화번호</label></th>
+								<td>
+									<input type="text" id="phone_num" title="전화번호" class="basic" style="width:120px;" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> <!-- //table_wrap -->
+
+			</div>
+
+			<div class="pop_btn_area">
+				<div class="btn_right">
+					<button type="button" class="btn blue">저장</button>
+					<button type="button" class="btn gray">닫기</button>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+
+</body>
+</html>

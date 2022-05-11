@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MJ Virtual care center</title>
+	<script type="text/javascript" async="" src="../js/jquery-3.3.1.min.js"></script>	
+	<script type="text/javascript" async="" src="../js/jquery-ui.js"></script>	
+	<link rel="stylesheet" href="../css/jquery-ui.css">	
+	<link rel="stylesheet" href="../css/jquery.scrollbar.css">	
+	<link rel="stylesheet" href="../css/reset.css">	
+	<link rel="stylesheet" href="../css/layout.css">
+
+
+	<script type="text/javascript" async="" src="../js/jquery.scrollbar.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){                
+			$('.scroll-box').scrollbar();
+		});
+	</script>
+</head>
+<body>
+  
+<div id="wrap" class="scroll-box scrollbar-dynamic">
+	<div id="header">
+		<div class="head">
+			<h1 class="logo"><a href="page008.html"><img src="../images/common/logo.svg" alt=""></a></h1>
+			<button type="button" class="btn-menu">
+				메뉴/닫기
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<div class="gnb">
+				<ul>
+					<li><a href="page008.html">진료현황</a></li>
+					<li><a href="page025.html">스케줄</a></li>
+					<li><a href="#">계좌정보</a></li>
+					<li class="menu-actvie"><a href="page026.html">마이페이지</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="top-my">
+			<div class="user-name"><a href="#">김철민 의사</a></div>
+			<button type="button" class="btn-logout"><i class="ico-logout"></i>로그아웃</button>
+		</div>
+	</div>
+	<div id="container">
+		<div class="content">
+			<div class="head-title">
+				<h2>마이페이지</h2>
+				<div class="location">
+					<a href="#"><img src="../images/common/ico_home.svg" alt="홈"></a>
+					<a href="#" class="location-txt">마이페이지</a>
+				</div>
+			</div>
+			<div class="section">
+				<div class="mypage-wrap">
+					<div class="regist-step-wrap active-step2"> <!-- step별로  active-step1,active-step2,active-step3,active-step4-->
+						<ol>
+							<li>
+								<dl>
+									<dt><div class="num">1</div></dt>
+									<dd>의사 <br class="p-hide" />기본 정보</dd>
+								</dl>
+								<div class="bar-wrap">
+									<span class="bar" style="width:100%;"></span> <!-- 진행률에 따라 % 값 변경해주시면 됩니다 -->
+								</div>
+							</li>
+							<li>
+								<dl>
+									<dt><div class="num">2</div></dt>
+									<dd>진료과목 <br class="p-hide" />선택</dd>
+								</dl>
+								<div class="bar-wrap">
+									<span class="bar" style="width:10%;"></span>
+								</div>
+							</li>
+							<li>
+								<dl>
+									<dt><div class="num">3</div></dt>
+									<dd>병원 <br class="p-hide" />정보</dd>
+								</dl>
+								<div class="bar-wrap">
+									<span class="bar"></span>
+								</div>
+							</li>
+							<li>
+								<dl>
+									<dt><div class="num">4</div></dt>
+									<dd>계좌 <br class="p-hide" />정보</dd>
+								</dl>
+							</li>
+						</ol>
+					</div>
+					<div class="mypage-content">
+						<div class="box-form">
+							<dl class="form-sec imp-type">
+								<dt class="form-tt">가능한 진료과목 선택 (복수 선택 가능)</dt>
+								<dd class="form-cont">
+									<ul class="slc-subject">
+										<li>
+											<input type="checkbox" id="sbj1" name="sbj1">
+											<label for="sbj1">
+												<i class="ico-sbj1"></i>
+												<p class="sbj-name">가정의학과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj2" name="sbj2">
+											<label for="sbj2">
+												<i class="ico-sbj2"></i>
+												<p class="sbj-name">감염내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj3" name="sbj3">
+											<label for="sbj3">
+												<i class="ico-sbj3"></i>
+												<p class="sbj-name">내분비내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj4" name="sbj4">
+											<label for="sbj4">
+												<i class="ico-sbj4"></i>
+												<p class="sbj-name">류마티스내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj5" name="sbj5">
+											<label for="sbj5">
+												<i class="ico-sbj5"></i>
+												<p class="sbj-name">마취통증<br/>의학과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj6" name="sbj6">
+											<label for="sbj6">
+												<i class="ico-sbj6"></i>
+												<p class="sbj-name">방사선<br/>종양학과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj7" name="sbj7">
+											<label for="sbj7">
+												<i class="ico-sbj7"></i>
+												<p class="sbj-name">비뇨의학과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj8" name="sbj8">
+											<label for="sbj8">
+												<i class="ico-sbj8"></i>
+												<p class="sbj-name">산부인과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj9" name="sbj9">
+											<label for="sbj9">
+												<i class="ico-sbj9"></i>
+												<p class="sbj-name">성형외과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj10" name="sbj10">
+											<label for="sbj10">
+												<i class="ico-sbj10"></i>
+												<p class="sbj-name">소아청소년과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj11" name="sbj11">
+											<label for="sbj11">
+												<i class="ico-sbj11"></i>
+												<p class="sbj-name">소화기내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj12" name="sbj12">
+											<label for="sbj12">
+												<i class="ico-sbj12"></i>
+												<p class="sbj-name">신경과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj13" name="sbj13">
+											<label for="sbj13">
+												<i class="ico-sbj13"></i>
+												<p class="sbj-name">신경외과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj14" name="sbj14">
+											<label for="sbj14">
+												<i class="ico-sbj14"></i>
+												<p class="sbj-name">신장내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj15" name="sbj15">
+											<label for="sbj15">
+												<i class="ico-sbj15"></i>
+												<p class="sbj-name">심장내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj16" name="sbj16">
+											<label for="sbj16">
+												<i class="ico-sbj16"></i>
+												<p class="sbj-name">안과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj17" name="sbj17">
+											<label for="sbj17">
+												<i class="ico-sbj17"></i>
+												<p class="sbj-name">알러지내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj18" name="sbj18">
+											<label for="sbj18">
+												<i class="ico-sbj18"></i>
+												<p class="sbj-name">외과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj19" name="sbj19">
+											<label for="sbj19">
+												<i class="ico-sbj19"></i>
+												<p class="sbj-name">외상외과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj20" name="sbj20">
+											<label for="sbj20">
+												<i class="ico-sbj20"></i>
+												<p class="sbj-name">이비인후과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj21" name="sbj21">
+											<label for="sbj21">
+												<i class="ico-sbj21"></i>
+												<p class="sbj-name">일반내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj22" name="sbj22">
+											<label for="sbj22">
+												<i class="ico-sbj22"></i>
+												<p class="sbj-name">재활의학과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj23" name="sbj23">
+											<label for="sbj23">
+												<i class="ico-sbj23"></i>
+												<p class="sbj-name">정신건강<br/>의학과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj24" name="sbj24">
+											<label for="sbj24">
+												<i class="ico-sbj24"></i>
+												<p class="sbj-name">정형외과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj25" name="sbj25">
+											<label for="sbj25">
+												<i class="ico-sbj25"></i>
+												<p class="sbj-name">치과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj26" name="sbj26">
+											<label for="sbj26">
+												<i class="ico-sbj26"></i>
+												<p class="sbj-name">피부과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj27" name="sbj27">
+											<label for="sbj27">
+												<i class="ico-sbj27"></i>
+												<p class="sbj-name">핵의학과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj28" name="sbj28">
+											<label for="sbj28">
+												<i class="ico-sbj28"></i>
+												<p class="sbj-name">혈액종양내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj29" name="sbj29">
+											<label for="sbj29">
+												<i class="ico-sbj29"></i>
+												<p class="sbj-name">호흡기내과</p>
+											</label>
+										</li>
+										<li>
+											<input type="checkbox" id="sbj30" name="sbj30">
+											<label for="sbj30">
+												<i class="ico-sbj30"></i>
+												<p class="sbj-name">흉부외과</p>
+											</label>
+										</li>
+									</ul>
+								</dd>
+							</dl>
+							<dl class="form-sec imp-type">
+								<dt class="form-tt">전문분야 입력 (복수 입력 가능)</dt>
+								<dd class="form-cont">
+									<div class="ip-area btn-type">
+										<input type="text" id="" name="" class="default-ip" placeholder="예) '피부질환' 입력 후 Enter">
+										<button type="button" class="btn-ip"><i class="ico-add"></i>추가</button>
+									</div>
+									<div class="tag-area">
+										<ul>
+											<li><span>피부질환</span><button type="button" class="btn-tag-del">삭제</button></li>
+											<li><span>호흡기질환</span><button type="button" class="btn-tag-del">삭제</button></li>
+										</ul>
+									</div>
+								</dd>
+							</dl>				
+						</div><!-- box-form -->
+						<div class="form-btn-area">
+							<button type="button" class="btn btn-full btn-gray" disabled><span>다음</span></button> <!-- 활성화 시 disabled 삭제 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+	<script>
+	$(document).ready(function(){
+		$( ".datepicker" ).datepicker({
+			showOn: "button",
+			buttonImage: "../images/common/ico_calendar.svg",
+			buttonImageOnly: true,
+			buttonText: "Select date"
+		});
+
+		$('.popup .btn-pop-close').on('click',function(){
+			$(this).parents('.popup').fadeOut();
+		});
+
+
+		$('#header .btn-menu').on('click',function(){
+			$('body').toggleClass('open-menu');
+		});
+		
+	});
+	</script>
+</body>
+</html>

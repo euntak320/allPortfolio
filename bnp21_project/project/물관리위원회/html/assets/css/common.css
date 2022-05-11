@@ -1,0 +1,590 @@
+#main {background: #f4f4f4;}
+body.over{overflow: hidden;}
+
+/* comlayout */
+.comLayout {position: relative; width:1200px; max-width:100%; padding:0 20px; margin:0 auto;}
+
+@media all and (max-width:1160px) {
+    .comLayout {width:100%;}
+}
+
+/* header */
+.header {position: relative; width:100%; height:139px; border-bottom:1px solid #ddd; background: #fff;}
+.header .topArea {height: 80px; border-bottom:1px solid #ddd;}
+.header .topArea .comLayout {height: 100%;}
+.header .topArea h1 {position: absolute; top:50%; left:20px; transform: translateY(-50%);}
+/* 20-08-27 */
+.header .topArea h1 a {display: block; width:187px; height:34px; background: url(../images/logo.png) no-repeat; background-size: 100%; text-indent: -9999px;}
+/* 20-08-27 */
+.header .topArea h1 a.hangang {width: 213px; height:40px; background: url(../images/img_logo02.svg) no-repeat center;}
+.header .topArea h1 a.nakdong {width: 229px; height:40px; background: url(../images/img_logo03.svg) no-repeat center;}
+.header .topArea h1 a.kumgang {width: 213px; height:40px; background: url(../images/img_logo04.svg) no-repeat center;}
+.header .topArea h1 a.etc {width: 284px; height:40px; background: url(../images/img_logo05.svg) no-repeat center;}
+.header .searchArea {position: absolute; right:187px; top:24px;}
+.header .searchArea input[type="text"] {width:240px; height:32px; border-bottom:1px solid #ddd;}
+.header .searchArea button {position: absolute; right:0; width:25px; height:31px; background:#fff url(../images/icn_input_search.svg) no-repeat top right; text-indent: -9999px; cursor: pointer;}
+.header .menuList {position: relative;}
+.header .menuList ul > li > div {display: none;}
+.header .menuList::after {display: none; content: ""; position: absolute; left:0; top:59px; width:100%; height:415px; background: #fafafa; z-index: 3;}
+/* .header .menuList::after {display: none; content: ""; position: absolute; left:0; top:59px; width:100%; height:350px; background: #fafafa; z-index: 3;}  */
+.header .comLayout {position: relative;}
+.header .comLayout a {display: block; font-size:18px;}
+.header .comLayout > ul {display: flex; justify-content: center; }
+.header .comLayout > ul > li {position: relative; width: 25%; z-index: 4;}  
+.header .comLayout > ul > li > a {position: relative; display: block; font-size:20px; color:#222; font-weight: bold; letter-spacing: -0.6px; text-align: center; line-height: 59px; }
+.header .comLayout > ul > li:hover > a:after, 
+.header .comLayout > ul > li.curr > a:after {content: ""; position: absolute; left:0; bottom:0; width:100%; height:2px; background: #2b6bf3;}
+.header .comLayout > ul > li > div {display:none}
+.header .comLayout > ul > li > div > .subMenu {padding-top:20px; text-align: center;}
+.header .comLayout > ul > li > div > .subMenu li + li {margin-top:13px;}
+.header .comLayout > ul > li > div > .subMenu a {font-size: 18px;}
+.header .comLayout > ul > li > div > .subMenu a:hover, 
+.header .comLayout > ul > li > div > .subMenu a.on{color:#2b6bf3;}
+.header .comLayout > ul > li > div > .subMenu > li.addMenu > ul {display: none;}
+.header .comLayout > ul > li > div > .subMenu > li.addMenu > ul > li {margin-top:5px;}
+.header .comLayout > ul > li > div > .subMenu > li.addMenu > ul li + li {margin-top:4px;}
+.header .comLayout > ul > li > div > .subMenu > li.addMenu.on > a {color:#2b6bf3; }
+.header .comLayout > ul > li > div > .subMenu > li.addMenu > ul > li > a {font-size:16px;}
+.header .comLayout > ul > li.first > div > .subMenu > li.addMenu > a {background: url(../images/btn_open.svg) no-repeat 85% center; }
+.header .comLayout > ul > li.first > div > .subMenu > li.addMenu.on > a {background: url(../images/btn_close.svg) no-repeat 85% center;}
+/* .header .comLayout > ul > li.first > div > .subMenu > li.addMenu > a {background: url(../images/btn_open.svg) no-repeat 95% center; }
+.header .comLayout > ul > li.first > div > .subMenu > li.addMenu.on > a {background: url(../images/btn_close.svg) no-repeat 95% center;} */
+/* .header .comLayout > ul > li.sec > div > .subMenu > li.addMenu > a {background: url(../images/btn_open.svg) no-repeat 85% center; }
+.header .comLayout > ul > li.sec > div > .subMenu > li.addMenu.on > a {background: url(../images/btn_close.svg) no-repeat 85% center;}  */
+.header .comLayout .menuBoxList {display:none; position: absolute; left:0; bottom:auto; width:1200px; height:144px; z-index: 5;}
+.header .comLayout .menuBoxList.on {display: block;}
+.header .comLayout .menuBoxList .boxFrame{float: right; display: flex; justify-content: center; width:900px; height:100%; }
+.header .comLayout .menuBoxList .boxFrame .box {width:25%; padding:14px 20px; text-align: left;}
+.header .comLayout .menuBoxList .boxFrame .box span, 
+.header .comLayout .menuBoxList .boxFrame .box a {font-size:16px; color:#fff; }
+.header .comLayout .menuBoxList .boxFrame .box span {display: block; margin-bottom:12.5px;}
+.header .comLayout .menuBoxList .boxFrame .box .linkBox a {display: inline-block; padding:0 13px; background: #fff; color: #2b6bf3; font-size:14px; letter-spacing: -0.42px; line-height: 22px; border-radius: 12px;}
+.header .comLayout .menuBoxList .boxFrame .box .linkBox + .linkBox {margin-top:10px;}
+.header .comLayout .menuBoxList .boxFrame .box:nth-child(1) {background: #2760da url(../images/icn_menu_01.svg) no-repeat 95% 90px;}
+.header .comLayout .menuBoxList .boxFrame .box:nth-child(2) {background: #2b6bf3 url(../images/icn_menu_02.svg) no-repeat 95% 90px;}
+.header .comLayout .menuBoxList .boxFrame .box:nth-child(3) {background: #2760da url(../images/icn_menu_03.svg) no-repeat 95% 90px;}
+.header .comLayout .menuBoxList .boxFrame .box:nth-child(4) {background: #2b6bf3 url(../images/icn_menu_04.svg) no-repeat 95% 90px;}
+.header .mBtn {display: none; cursor: pointer;}
+
+@media all and (min-width:1161px){
+	.header .menuListArea {display:block !important; height:auto !important; transform: unset; transition: none;}
+	.header .menuList:hover::after {display: block !important;}
+    .header .menuList:hover ul > li > div {display: block !important;}
+    .header .menuList:hover ul > li.first > div > .subMenu {height:270px; z-index:10}
+    /* .header .menuList:hover ul > li.first > div > .subMenu {height:205px; z-index:10} */
+    
+}
+
+
+@media all and (max-width:1160px) {
+    .comLayout {width:100%;}
+    .header {height: 60px;}
+    .header .mBtn {display: block; position: absolute; right:20px; top:15px; width:22px; height: 22px; background: url(../images/btn_menu.svg) no-repeat center; text-indent: -9999px;}
+    .header .mBtn.close {top:15px; width: 20px; height: 20px; background: url(../images/btn_mclose.svg) no-repeat center; z-index: 101;}
+    .header .topArea {height: 60px;}
+    .header .topArea .comLayout{height: 60px;}
+    .header .comLayout {padding:0; height: 100%;}
+    .header .menuListArea{overflow: auto; position: fixed; right:0; top:0; bottom:0; left:0; width:100%; height:100vh; background: #fff; z-index: 100; transform: translateX(100%);}
+    .header .menuListArea.active {transform: translateX(0); transition: 0.5s;}
+    .header .menuListArea.active .menuList::before {display: none;}
+    .header .searchArea {left:20px; top:12px; right:auto; width:90%; z-index: 100;}
+    .header .searchArea input[type="text"] {width:100%;}
+    .header .searchArea button {background-position: center;}
+    .header .menuList {padding-top:60px;}
+    .header .menuList > .comLayout{border-top:1px solid #333;}
+    .header .comLayout > ul {display: block;}
+    .header .comLayout > ul > li {width:100%; text-align: center;}
+    .header .comLayout > ul > li > a {font-size:18px; text-align: left; padding-left:20px; border-bottom:1px solid #ddd; background: url(../images/btn_open.svg) no-repeat 95% center; color:#15244b;}
+    .header .comLayout > ul > li > a.on {background: url(../images/btn_close.svg) no-repeat 95% center;}
+	.header .comLayout > ul > li:hover > a:after, 
+	.header .comLayout > ul > li.curr > a:after {display: none;}
+    .header .comLayout > ul > li > div {display: none; overflow:hidden}
+    .header .comLayout > ul > li > div > .subMenu {padding-top: 0;}
+    .header .comLayout > ul > li > div > .subMenu li + li {margin-top:0;}
+    .header .comLayout > ul > li > div > .subMenu a {padding-left:20px; border-bottom:1px solid #eee; text-align: left; line-height: 48px;}
+    .header .comLayout > ul > li > div > .subMenu a:hover, 
+	.header .comLayout > ul > li > div > .subMenu a.on {color:#666;}
+    .header .comLayout > ul > li > div > .subMenu > li.addMenu.on > a {background: #2b6bf3 url(../images/w_btn_close.svg) no-repeat 95% center!important; color:#fff;}
+    .header .comLayout > ul > li > div > .subMenu > li.addMenu > ul > li > a {font-size:15px; line-height: 26px; border-bottom: 0;}
+    .header .comLayout > ul > li > div > .subMenu > li.addMenu > ul {background: #f4f4f4;}
+	.header .comLayout > ul > li.first > div > .subMenu > li.addMenu > a {background-position: 95% center;}
+    .header .comLayout > ul > li.first > div {position:relative; padding-top:166px}
+    .header .comLayout > ul > li.sec > div > .subMenu > li.addMenu > a, 
+	.header .comLayout > ul > li.sec > ul > li.addMenu.on > a ,
+	.header .comLayout > ul > li.first > ul > li.addMenu.on > a, 
+	.header .comLayout > ul > li.first > ul > li.addMenu > a {background-position: 95% center;}
+    .header .menuList ul > li > div >.subMenu {border-bottom:1px solid #ddd;}
+    .header .menuList:hover ul > li.first > div .subMenu {height: auto;}
+    .header .comLayout .menuBoxList {display:block; overflow:hidden; top:0; left:0; width:100%; height:auto; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+    .header .comLayout > ul > li > div > .subMenu > li.addMenu > ul > li {margin-top:0;}
+    .header .comLayout .menuBoxList .boxFrame {width:100%;}
+    .header .menuList:hover::after {display:none;}
+}
+
+@media all and (max-width:767px) {
+    .header .searchArea {width:80%;}
+    .header .comLayout > ul > li.first > div {padding-top: 155px;}
+    .header .comLayout .menuBoxList .boxFrame .box {padding:10px 7px; height:154px;}
+    .header .comLayout .menuBoxList .boxFrame .box span {font-size:13px; margin-bottom:20px;}
+    .header .comLayout .menuBoxList .boxFrame .box .linkBox {margin-top:30px;}
+    .header .comLayout .menuBoxList .boxFrame .box .linkBox a {padding:0 10px; width:100%; text-align: center; font-size:12px;}
+    .header .comLayout .menuBoxList .boxFrame .box .linkBox + .linkBox {margin-top:5px;}
+    .header .comLayout .menuBoxList .boxFrame .box:nth-child(1) {background-position: 95% 50px; background-size: 30px;}
+    .header .comLayout .menuBoxList .boxFrame .box:nth-child(2) {background-position: 95% 50px; background-size: 30px;}
+    .header .comLayout .menuBoxList .boxFrame .box:nth-child(3) {background-position: 95% 50px; background-size: 20px;}
+    .header .comLayout .menuBoxList .boxFrame .box:nth-child(4) {background-position: 95% 50px; background-size: 30px;}
+}
+
+@media all and (max-width:400px) {
+    .header .searchArea {width:80%;}
+    .header .comLayout .menuBoxList .boxFrame .box span {font-size:11px}
+    .header .comLayout .menuBoxList .boxFrame .box .linkBox a {padding:0 10px}
+}
+
+.footer {width:100%; height:156px; background: #32393f;}
+.footer .comLayout {position: relative; height: 100%; background: url(../images/img_footer_logo01.svg) no-repeat left center;}
+.footer .comLayout .txtArea {padding:46px 0 0 250px;}
+.footer .comLayout .txtArea a {display: inline-block; margin-right:10px; color:#fff;}
+.footer .comLayout .txtArea > span {display: block; margin-top:9px; color:#999; letter-spacing: -0.42px;}
+.footer .comLayout .txtArea > span + span {margin-top:5px;}
+.footer .comLayout .footerLink {position: absolute; right:0; top:50%; transform: translateY(-50% );}
+.footer .comLayout .footerLink a {display: inline-block; text-indent: -9999px; vertical-align: middle;}
+.footer .comLayout .footerLink .bluehouse {width:124px; height:62px; margin-right:40px; background: url(../images/img_footer_logo02.png) no-repeat center;}
+.footer .comLayout .footerLink .goverment {width:154px; height:30px; background: url(../images/img_footer_logo03.png) no-repeat center;}
+
+@media all and (max-width: 1160px){
+    
+    .footer {height: auto;}
+    .footer .comLayout {padding:30px 0;}
+    .footer .comLayout .txtArea{padding:60px 20px 0 20px; text-align: center;}
+    .footer .comLayout {background-position: center 30px;}
+    .footer .comLayout .txtArea a {margin-right:0; padding: 0 10px;}
+    .footer .comLayout .txtArea > span {line-height: 26px;}
+    .footer .comLayout .footerLink{position: static; margin-top:30px;  transform: none;}
+    .footer .comLayout .footerLink a {display: inline-block; width:49%!important; height: 60px; vertical-align: middle; background-size: auto;}
+    .footer .comLayout .footerLink .bluehouse {height:68px; margin-right:0;}
+}
+
+@media all and (max-width:500px) {
+    .footer .comLayout .footerLink a {background-size: 70%!important;}
+}
+
+/* subpage common*/
+#subPage {overflow: hidden;}
+#subPage .comLayout {padding:68px 0 100px;}
+#subPage .comLayout .title {display: block; font-size:40px; color:#15244b; text-align: center; letter-spacing: -1.2px; line-height: 48px;}
+#subPage .comContent {margin-top:40px;}
+.circle {position: relative;}
+.circle::after {content: ""; position: absolute; left: 0; top: 11px; width: 4px; height: 4px; border-radius: 50%; background: #2b6bf3;}
+.comBtm {position: relative; margin-top:60px; text-align: center;}
+.comBtm > * {display: inline-block; margin:0 10px; padding:0 20px; line-height: 60px; vertical-align: middle; font-size:20px; letter-spacing:-0.6px; color:#fff;}
+.comBtm .window {padding:0 56px 0 26px; background:#2b6bf3 url(../images/icn_view.svg) no-repeat 90% center; }
+.comBtm .normal {display: inline-block; padding:0 27px; background: #15244b; font-size:16px; letter-spacing: -0.48px; line-height: 36px;}
+br.mobile {display: none;}
+
+@media all and (max-width:1160px) {
+    #subPage .comLayout {width:100%; padding:68px 20px 100px;}
+    #subPage .comLayout .title {font-size:30px;}
+    br.mobile {display: block;}
+}
+
+@media all and (max-width:767px) {
+    #subPage .comLayout {padding:32px 20px 60px;}
+    #subPage .comLayout .title {font-size:20px; font-weight:bold;}
+    #subPage .comContent {margin-top:23px;}
+    .comBtm {margin-top:30px;}
+    .comBtm > * {font-size:16px; line-height: 56px;}
+    .comBtm .normal {line-break: 28px;}
+}
+
+@media all and (max-width:500px) {
+    #subPage .comLayout {padding:30px 20px;}
+}
+
+/* select */
+.comSelectArea {position: absolute; left:50%; bottom:0; display: flex; justify-content: left; max-width:100%; width:1200px; height:56px; background: rgba(255,255,255,0.9); transform: translateX(-50%);}
+.comSelectArea > a {width:61px; height:100%; border-right:1px solid #888; background: url(../images/icn_navi_home.svg) no-repeat center; text-indent: -9999px;}
+.comSelectArea > span {background: #ededed; color:#15244b; font-weight: bold; font-family: "noto";}
+#firstMenu-button {width:240px; line-height: 45px;}
+#secMenu-button {width:280px; line-height: 45px;}
+.comSelectArea .ui-corner-all,
+.comSelectArea .ui-corner-bottom, 
+.comSelectArea .ui-corner-right, 
+.comSelectArea .ui-corner-br {border:0; border-radius: 0; border-right:1px solid #888;}
+.comSelectArea .ui-selectmenu-button.ui-button {white-space: initial; text-align: initial; width:auto;}
+.comSelectArea .ui-widget {font-size:16px;}
+.comSelectArea .ui-state-hover,
+.comSelectArea .ui-widget-content .ui-state-hover,  
+.comSelectArea .ui-widget-header .ui-state-hover, 
+.comSelectArea .ui-state-focus, 
+.comSelectArea .ui-widget-content .ui-state-focus, 
+.comSelectArea .ui-widget-header .ui-state-focus, 
+.comSelectArea .ui-button:hover, 
+.comSelectArea .ui-button:focus {border:0; border-right:1px solid #888; background: #ededed; font-weight: bold; color:#15244b;}
+.comSelectArea .ui-button .ui-icon {background: url(../images/btn_navi_expand.svg) no-repeat  center ;}
+.comSelectArea .ui-selectmenu-icon.ui-icon {margin-top:13px;}
+.ui-menu .ui-menu-item {background: rgba( 238, 238, 238,0.9);}
+.ui-menu .ui-menu-item > div {padding:16px 18px; font-family: "noto"; font-weight: bold; color:#15244b;}
+.ui-menu .ui-menu-item .ui-state-active {padding:16px 18px; border:0; background: rgba(221, 228,236,0.9); font-weight: bold;}
+.ui-menu .ui-state-focus, .ui-menu .ui-state-active {margin:0;}
+
+@media all and (max-width:1160px) {
+    .comSelectArea {width:95%; height:48px; margin:0 auto;}
+    .comSelectArea > a {display: none;}
+    .comSelectArea #firstMenu-button {display: none;}
+    .comSelectArea .ui-state-hover, .comSelectArea .ui-widget-content .ui-state-hover, .comSelectArea .ui-widget-header .ui-state-hover, .comSelectArea .ui-state-focus, .comSelectArea .ui-widget-content .ui-state-focus, .comSelectArea .ui-widget-header .ui-state-focus, .comSelectArea .ui-button:hover, .comSelectArea .ui-button:focus, .comSelectArea .ui-corner-all, .comSelectArea .ui-corner-bottom, .comSelectArea .ui-corner-right, .comSelectArea .ui-corner-br {border-right:0;}
+    .comSelectArea #secMenu-button {width:100%;}
+}
+@media all and (max-width:767px) {
+    .ui-widget-content {background: none;}
+}
+
+
+/* 탭 */
+.tabArea {position: relative; margin-top:30px;}
+.tabArea .tabTxt {display: flex; justify-content: center; align-items: center; height:65px; background: #f8f8f8;}
+.tabArea .tabTxt button {position: relative; width:33.3%; height:100%; border-top:1px solid #ddd; border-left:1px solid #ddd; border-bottom:1px solid #15244b; background:none; color:#bbb; font-size:18px; letter-spacing: -0.54px; cursor: pointer;}
+.tabArea .tabTxt button a {display: block; width:100%;}
+.tabArea .tabTxt button:last-child {border-right:1px solid #ddd;}
+.tabArea .tabTxt button.on{border:0; border-left:1px solid #15244b; border-right:1px solid #15244b; background: #fff; color:#15244b}
+.tabArea .tabTxt button.on > a {display: block; color:#15244b;}
+.tabArea .tabTxt button.on::after {content: ""; position: absolute; top:0; left:0; width:100%; height: 2px; background:#15244b;}
+.tabArea .viewArea {margin-top:50px;}
+.tabArea .tabTxt.v2 > * {width:25%;}
+.tabArea .tabTxt.v5 > * {width:20%;}
+
+@media all and (max-width:1160px) {
+    .tabArea .tabTxt button {font-size:16px;}
+}
+
+@media all and (max-width:767px) {
+    .tabArea {margin-top:24px;}
+    .tabArea .tabTxt {overflow: hidden; display: block; height: auto; background: none;}
+    .tabArea .tabTxt button {float: left; width:48%!important; height:50px; border-bottom:0; border:1px solid #ddd; background:#f8f8f8; font-size:14px; }
+    .tabArea .tabTxt button:nth-child(2n) {float: right;}
+    .tabArea .tabTxt button:nth-child(3) {margin-top:10px;}
+    .tabArea .tabTxt button:nth-child(4) {margin-top:10px;}
+    .tabArea .tabTxt button:nth-child(5) {margin-top:10px;}
+    .tabArea .tabTxt button:hover, .tabArea .tabTxt button.on{border-bottom:1px solid #ddd; border-left:1px solid #ddd; border-right:1px solid #ddd;}
+    .tabArea .viewArea {margin-top:30px;}
+}
+
+/* 메인 타이틀 */
+.mainVisual {position: relative; width:100%; height:340px;}
+.mainVisual .title {position: absolute; top:50%; left:50%; font-size:48px; color:#fff; letter-spacing: -1.44px; line-height: 56px; transform: translate(-50%, -50%);}
+
+@media all and (max-width:1160px) {
+    .mainVisual .title {font-size:40px; width:100%; text-align: center;}
+}
+
+@media all and (max-width:767px) {
+    .mainVisual .title {font-size:26px; line-height: 34px;}
+}
+
+@media all and (max-width:500px) {
+    .mainVisual {height:220px;}
+    .ui-button {padding:4px 16px; line-height: 48px;}
+    .mainVisual .title {top:40%;}
+}
+
+/* 서브페이지 타이틀 */
+.basicTxtBox  {overflow: hidden;}
+.basicTxtBox .subTitle {display: block; font-size:24px; font-weight: bold; color:#222; letter-spacing: -0.72px; line-height: 32px;}
+.basicTxtBox .subTitle .smallTxt {margin-left:8px; font-size:20px; color:#222; letter-spacing: -0.6px; line-height: 26px;}
+.basicTxtBox + .basicTxtBox {margin-top:40px;}
+
+/* 단순리스트 */
+.list {margin-top:14px;}
+.list > li {position: relative; padding-left:10px; letter-spacing: -0.48px; line-height: 26px; color:#666;}
+.list > li::before {content: ""; position: absolute; left:0; top:11px; width:4px; height:4px; border-radius: 50%; background: #2b6bf3;}
+
+@media all and (max-width:767px) {
+    .basicTxtBox .subTitle {font-size:18px; letter-spacing: -0.54px; line-height: 26px;}
+    .basicTxtBox + .basicTxtBox {margin-top:30px;}
+    .list {margin-top:10px;}
+    .list > li > ul {margin-top:8px;}
+    .list + .list {margin-top:30px;}
+}
+
+@media all and (max-width:500px) {
+    .basicTxtBox .subTitle {letter-spacing:-1.5px;}
+}
+
+/* 보기리스트영역 */
+.stateArea {position: relative;}
+.stateArea .buttonArea {overflow: hidden; margin-top:50px;}
+.stateArea .buttonArea > * {float: left; width:50%; font-size:24px; letter-spacing: -0.72px; line-height: 32px; background: url(../images/btn_expand_off.svg) no-repeat 35%; color:#222; font-weight:bold; text-align: left; cursor: pointer;}
+.stateArea .buttonArea button.on {background: url(../images/btn_expand_on.svg) no-repeat  35%;}
+.stateArea .buttonArea button.on, .stateArea .buttonArea button:hover {color:#2b6bf3;}
+.stateArea .viewList {margin-top:50px;}
+.stateArea .viewList .list {display: none;}
+.stateArea .viewList .list.on {display: block;}
+.stateArea .viewList .boxList + .boxList {margin-top:60px;}
+.stateArea .viewList .boxList + .boxList .box .btmArea {background:#fff;}
+.stateArea .viewList .boxList .txt {display: block; padding-left:10px;}
+.stateArea .viewList .boxList .txt.circle::after {top:50%; transform: translateY(-50%);}
+.stateArea .viewList .boxList .box {display: inline-block; width:180px; margin:20px 0; margin-right:59px; border:1px solid #ddd; border-radius: 12px; vertical-align: middle;}
+.stateArea .viewList .boxList .box:nth-child(6n) {margin-right:0;}
+.stateArea .viewList .boxList .box .imgArea {padding:53px 52px; min-height: 140px;}
+/* 변경된 부분 20-08-25 */
+.stateArea .viewList .boxList .box .imgArea.farming {padding:53px 35px;}
+.stateArea .viewList .boxList .box .imgArea.water {padding:53px 27px;}
+.stateArea .viewList .boxList .box .imgArea.environment {padding:43px 51px;}
+.stateArea .viewList .boxList .box .imgArea.nuclear {padding:43px 34px;}
+/* 변경된 부분 20-08-25 */
+/* 20-08-27 */
+.stateArea .viewList .boxList .box .imgArea.jeju {padding:75px 35px;}
+.stateArea .viewList .boxList .box .btmArea {padding:26px 0;  border-top:1px solid #ddd; border-radius: 0 0 12px 12px; background: #f8f8f8;}
+.stateArea .viewList .boxList .box .btmArea span {display: block; text-align: center; color:#15244b; font-size:18px;}
+.stateArea .viewList .boxList.v2 .box {width:180px; margin:0; margin:20px 0 20px 62px;}
+.stateArea .viewList .boxList.v2 .box.ml0 {margin-left: 0;}
+.stateArea .viewList .boxList.v2 .box:nth-child(2), 
+.stateArea .viewList .boxList.v2 .box:nth-child(7), 
+.stateArea .viewList .boxList.v2 .box:nth-child(12), 
+.stateArea .viewList .boxList.v2 .box:nth-child(17), 
+.stateArea .viewList .boxList.v2 .box:nth-child(22), 
+.stateArea .viewList .boxList.v2 .box:nth-child(27) {margin-left:0;}
+.stateArea .viewList .boxList.v2 .box .imgArea {padding:17px 18px 19px;}
+.stateArea .viewList .boxList.v2 .box .imgArea img {display: block; width:144px; height:144px; margin:0 auto;}
+.stateArea .viewList .boxList.v2 .box .btmArea {padding:8px 0; min-height: 81px; background: #f8f8f8;}
+.stateArea .viewList .boxList.v2 .box .btmArea span:last-child {font-size:14px; color:#666;}
+.stateArea .viewList .boxList.v2 + .boxList.v2 .box .btmArea {background:#fff;}
+
+@media all and (max-width:1160px) {
+    .stateArea .buttonArea > * {background-position: 95% center;}
+    .stateArea .buttonArea button.on {background-position: 95% center;}
+    .stateArea .viewList .boxList .box {width:31.7%; margin-right: 2%!important;}
+    .stateArea .viewList .boxList .box:nth-child(4n) {margin-right:0!important;}
+    .stateArea .viewList .boxList .box:nth-child(7n) {margin-right:0!important;}
+    .stateArea .viewList .boxList .box .imgArea {text-align: center;}
+    .stateArea .viewList .boxList.v2 .box {width:32%; margin:15px 0!important; margin-right:1%!important}
+    .stateArea .viewList .boxList.v2 .box:nth-child(4n) {margin-right:0!important;}    
+}
+
+@media all and (max-width:767px) {
+    .stateArea .buttonArea > * {font-size:16px; background-size: 20px;}
+    .stateArea .buttonArea button.on {background-size: 20px;}
+    .stateArea .buttonArea {margin-top:20px;}
+    .stateArea .viewList {margin-top:31px;}
+    .stateArea .viewList .boxList {overflow: hidden;}
+    .stateArea .viewList .boxList .box {display: block; width:48%; margin:12px 0!important;}
+    .stateArea .viewList .boxList .box:nth-child(2n-1) {float: right;}
+    .stateArea .viewList .boxList .box:nth-child(2n) {float: left;}
+    .stateArea .viewList .boxList .box .imgArea {padding:46px 47px;}
+    .stateArea .viewList .boxList .box img {width:auto;}
+    .stateArea .viewList .boxList + .boxList {margin-top:48px;}
+    .stateArea .viewList .boxList .box .btmArea {padding:21px 0;}
+    .stateArea .viewList .boxList .box .btmArea span {font-size:16px;}
+    .stateArea .viewList .boxList.v2 .box {width:48%; margin:12px 0;}
+    .stateArea .viewList .boxList.v2 .box .imgArea img {max-width:100%; margin:0 auto;}
+    .stateArea .viewList .boxList.v2 .box .btmArea span:last-child {font-size:12px;}
+    .stateArea .viewList .boxList.v3 .box {width:48%; margin:12px 0;}
+    .stateArea .viewList .boxList.v3 .box .imgArea {height:140px; padding:30px 47px}
+    .stateArea .viewList .boxList.v3 .box .imgArea img {max-width:100%; margin:0 auto;}
+}
+
+@media all and (max-width:500px) {
+    /* 변경된 부분 20-08-25 */
+    .stateArea .viewList .boxList .box .imgArea {padding:46px 28px;}
+    .stateArea .viewList .boxList .box .imgArea.farming {padding:53px 25px;}
+    .stateArea .viewList .boxList .box .imgArea.water {padding:53px 17px;}
+    .stateArea .viewList .boxList .box .imgArea.environment {padding:43px 42px;}
+    .stateArea .viewList .boxList .box .imgArea.nuclear {padding:43px 40px;}
+    /* 변경된 부분 20-08-25 */
+}
+
+
+/* 공통테이블 */
+.comTable {margin-top:22px; border-top:1px solid #333;}
+.comTable th {background: #f8f8f8; font-weight: bold;}
+.comTable td {border-bottom: 1px solid #ddd;}
+.comTable th, .comTable td {padding: 15px 0; text-align: center;}
+.comTable td:nth-child(2) a:hover {text-decoration: underline;}
+.comTable a.file {display:inline-block; width:18px; height:18px; margin:0 auto; background: url(../images/icn_file_table.svg) no-repeat center; text-indent: -9999px;}
+
+/* 체크박스 변경 */
+.checkWrap {overflow:hidden; margin-left:-20px}
+.checkWrap .check {float:left; margin-left:20px}
+.checkWrap.v2 {display:inline-block; margin-left:-30px}
+.checkWrap.v2 .check {margin-left:30px}
+.check {display:inline-block; position:relative}
+.check input {position:absolute; top:0; left:0; opacity:0}
+.check input + label {display:inline-block; padding-left:28px; line-height:18px; font-size:15px; color:#010101}
+.check input[type=checkbox] + label {background:url("../../image/checkbox.png") no-repeat left center}
+.check input[type=checkbox]:checked + label {background:url("../images/orp/checkbox-on.png") no-repeat left center}
+.check input[type=radio] + label {background:url("../images/orp/radio.png") no-repeat left center}
+.check input[type=radio]:checked + label {background:url("../images/orp/radio-on.png") no-repeat left center}
+
+/* 페이징영역 */
+.pagingArea {margin:56px 0 0; text-align: center;}
+.pagingArea > a {position: relative; display: inline-block;  margin:0 15px;}
+.pagingArea > a:hover, .pagingArea > a.on{color:#15244b}
+.pagingArea > a:hover::after, .pagingArea > a.on::after{content: ""; position: absolute; bottom:-2px; left:0; width:100%; height:2px; background: #15244b;}
+.pagingArea > a.arrow {width:12px; height: 13px; border-bottom:0;}
+.pagingArea > a.arrow:after{display: none;}
+.pagingArea > a.first {background: url(../images/icon-FLeft.png) no-repeat center; background-size: 100%}
+.pagingArea > a.prev {width:8px; margin-right:20px; background: url(../images/icon-Left.png) no-repeat center; background-size: 100%}
+.pagingArea > a.next {width:8px; margin-left:20px; background: url(../images/icon-Right.png) no-repeat center; background-size: 100%}
+.pagingArea > a.last {background: url(../images/icon-FRight.png) no-repeat center; background-size: 100%}
+
+@media all and (max-width:767px) {
+    .pagingArea {margin-top:35px;}
+    .pagingArea > a:nth-child(8),
+    .pagingArea > a:nth-child(8),
+    .pagingArea > a:nth-child(9),
+    .pagingArea > a:nth-child(10),
+    .pagingArea > a:nth-child(11),
+    .pagingArea > a:nth-child(12) {display: none;}
+}
+@media all and (max-width:500px) {
+    
+    .pagingArea > a {margin:0 3%!important;}
+}
+
+/* 공통 텍스트 컨텐츠 */
+.txtArea {position: relative;}
+.txtArea + .txtArea {margin-top:122px;}
+.txtArea .msg {position: absolute; top:-50px; font-size:24px; font-weight: bold; letter-spacing: 8.64px; line-height: 30px; color:#eee;}
+.txtArea + .txtArea .msg {right:0;}
+.txtArea::after {content: ""; display: block; clear: both;}
+.txtArea .txtBox {position: absolute; left:0; top:80px; width:592px; height:400px; background: #fff;}
+.txtArea .txtBox.left {left: 0; right:auto;}
+.txtArea .txtBox.right {top:99px; left: auto; right: 0; width:535px; padding-left:56px;}
+.txtArea .txtBox:after {content: ""; position: absolute; bottom:0; width:32px; height:32px; background: #2b6bf3;} 
+.txtArea .txtBox.left:after {right:0;}
+.txtArea .txtBox.right::after {left:0;}
+.txtArea p {margin-top:44px; font-size:40px; letter-spacing: -1.2px; line-height:60px; color:#222; font-weight: normal;}
+.txtArea p span {position: relative; color:#15244b; z-index: 10; font-weight: bold;}
+.txtArea p span:after {content:""; position: absolute; left:0; bottom:4px; width:100%; height:10px; background:#c0d8f2; z-index: -1;}
+.txtArea .txt {margin-top:40px; color:#222}
+.txtArea .txt > * {display: inline-block; vertical-align: middle;}
+.txtArea .txt span {font-size:20px; letter-spacing: -0.6px; line-height: 28px; }
+.txtArea .txt .bold {margin-left: 12px; font-size:29px; letter-spacing: -0.84px; line-height: 36px;}
+.txtArea .rightBox {float: right;}
+.txtArea .rightBox .imgArea img {width:100%;}
+.txtArea .imgArea.no {background: #eee;}
+.txtArea .imgArea.no img {opacity: 0;}
+
+@media all and (max-width:1160px) {
+    .txtArea {overflow: hidden;}
+    .txtArea .txtBox {position: static; width:50%; height: auto;}
+    .txtArea .txtBox.left {float: left;}
+    .txtArea .txtBox:after {display: none;}
+    .txtArea .leftBox {float: left; width:50%;}
+    .txtArea .leftBox .imgArea {width:50%;}
+    .txtArea .leftBox .imgArea img {width:209%;}
+    .txtArea .rightBox, .txtArea .txtBox.right {width:50%;}
+    .txtArea .txtBox.right {float: right; padding-left:0;}
+    .txtArea p {margin-top:85px; font-size:30px; line-height: 46px;}
+    .txtArea p span {letter-spacing: -1px;;}
+    .txtArea .txt {margin-top:20px;}
+    .txtArea .txt span {font-size:18px; line-height: initial;}
+    .txtArea .msg {top:0; font-size:20px;}
+    .txtArea + .txtArea {margin-top:60px;}
+    .txtArea + .txtArea p {text-align: right;}
+    .txtArea + .txtArea .txt {text-align: right;}
+    .tabArea .txtArea p {margin-top:27px; font-size:26px;}
+    
+}
+
+@media all and (max-width:767px) {
+    .txtArea .txtBox.left, 
+    .txtArea .rightBox, 
+    .txtArea .rightBox, 
+    .txtArea .leftBox, 
+    .txtArea .txtBox.right {float: none; width:100%; text-align: center;}
+    .txtArea .leftBox .imgArea{width:100%;}
+    .txtArea .leftBox .imgArea img {width:100%;}
+    .txtArea .txtBox {margin-top:28px;}
+    .txtArea .msg {position: static; font-size:13px;}
+    .txtArea p {margin-top:19px; font-size:24px; text-align: center; line-height: 34px; letter-spacing: -2.5px;}
+    .txtArea .txt span {font-size:14px;}
+    .txtArea .txt .bold {font-size:18px; line-height: 26px; letter-spacing: -0.54px;}
+    .txtArea + .txtArea p {text-align: center;}
+    .txtArea + .txtArea .txt {text-align: center;}
+}
+
+@media all and (max-width:500px) {
+    .txtArea p span {letter-spacing: -1.5px;}
+    .tabArea .txtArea p {font-size:23px;}
+}
+
+/* 찾아오시는길 */
+.directions {margin-top:30px;}
+.directions .imgArea {width:100%; height:521px; margin-top:20px; text-indent: -9999px;}
+.directions .imgArea.hangang {background: url(../images/img_map01.png) no-repeat center; }
+.directions .imgArea.nakdong {background: url(../images/img_map02.png) no-repeat center; }
+.directions .imgArea.kumgang {background: url(../images/img_map03.png) no-repeat center; }
+.directions  .imgArea.etc {background: url(../images/img_map04.png) no-repeat center; }
+.directions .imgArea.main {background: url(../images/img_map05.png) no-repeat center; ;}
+.directions .trafficInfo {margin-top:40px;}
+.directions .trafficInfo .address img,
+.directions .trafficInfo .address > span {display: inline-block; vertical-align: middle;}
+.directions .trafficInfo .address > span {margin-left:12px; color:#222; font-size:24px; letter-spacing: -0.72px; line-height: 32px; font-weight: bold;}
+.directions .trafficInfo .address ul {margin-top:12px;}
+.directions .trafficInfo .address ul li {padding-left:10px; line-height: 26px;}
+.directions .trafficInfo .address ul li .blue {margin-right:10px; color:#15244b; font-weight: bold;}
+.directions .trafficInfo .address + .address {margin-top:40px;}
+
+@media all and (max-width:767px) {
+    .directions .trafficInfo .address img {width: 16px;}
+    .directions .trafficInfo .address > span {margin-left:5px; font-size:18px;}
+    .directions .trafficInfo .address ul li {margin-top:12px;}
+    .directions .trafficInfo .address ul li span {display: block;}
+    .directions .trafficInfo .address ul li .blue {display: block;}
+    .directions .imgArea {height:418px;}
+    .directions .imgArea.hangang {background: url(../images/m_img_map01.png) no-repeat center;}
+    .directions .imgArea.nakdong {background: url(../images/m_img_map02.png) no-repeat center;}
+    .directions .imgArea.kumgang {background: url(../images/m_img_map03.png) no-repeat center;}
+    .directions .imgArea.etc {background: url(../images/m_img_map04.png) no-repeat center;}
+    .directions .imgArea.main {background: url(../images/m_img_map05.png) no-repeat center;}
+}
+
+@media all and (max-width:500px) {
+    .directions .imgArea{height:330px;}
+}
+
+/* 테이블검색 */
+.comSearchArea { margin-top:59px; padding:25px; background:#f5f8fe;}
+.comSearchArea .frame {text-align: center;}
+.comSearchArea .frame > * {display: inline-block;}
+.comSearchArea .select {width:19%;}
+.comSearchArea .select select {width:100%; height:50px; padding-left:16px;}
+.comSearchArea .inputArea {position: relative; width:60%; margin-left:1%;}
+.comSearchArea .inputArea input {width:100%; height:50px; padding-left:16px; border: 1px solid #ddd;}
+.comSearchArea .inputArea button {position: absolute; right:0; width:50px; height:50px; border:1px solid #ddd; border-left:0; background:#fff url(../images/icn_input_search.svg) no-repeat center; text-indent: -9999px; cursor: pointer;}
+
+@media all and (max-width:767px) {
+    .comSearchArea {padding:16px; margin-top:30px;}
+    .comSearchArea .inputArea {width:100%; margin-left:0; margin-top:16px;}
+    .comSearchArea .inputArea input {height:44px;}
+    .comSearchArea .select {width:100%;}
+    .comSearchArea .select select {height:44px; font-size:14px;}
+    .comSearchArea .inputArea button {width:44px; height:44px;}
+}
+
+/* 상세페이지 */
+.deatilArea {position: relative; margin-top:30px; }
+.deatilArea .topArea {padding:17px 10px 22px; border-top:1px solid #888; border-bottom:1px solid #ddd;}
+.deatilArea .topArea .topTitle {font-size:22px; color:#222; letter-spacing: -0.66px; line-height:30px;}
+.deatilArea .topArea .btmArea {margin-top:10px;}
+.deatilArea .topArea .btmArea .txt {position: relative; display: inline-block; padding:0 14px; letter-spacing: -0.48px; line-height: 22px;}
+.deatilArea .topArea .btmArea .txt::after {content:""; position: absolute; right:0; top:50%; width:2px; height:100%; background:#ddd; transform: translateY(-50%);}
+.deatilArea .topArea .btmArea .txt:first-child {padding:0; padding-right:14px;}
+.deatilArea .topArea .btmArea .txt:last-child::after {display: none;}
+.deatilArea .topArea .btmArea .blue {color:#15244b;}
+.deatilArea .contentArea {padding:20px 0;}
+.deatilArea .contentArea > div {min-height: 461px; background: #f4f5f6;}
+.deatilArea .downLoadArea { border-top:1px solid #888;}
+.deatilArea .downLoadArea span {display: block; padding:13px 9px 13px 36px; background: url(../images/icn_file.svg) no-repeat 9px center; color:#222; letter-spacing: -0.48px; line-height: 22px;}
+.deatilArea .downLoadArea .downLoad {padding:5px 11px; border-top:1px solid #ddd; border-bottom:1px solid #ddd; background: #f8f8f8;}
+.deatilArea .downLoadArea .downLoad a {display: block; padding-left:27px; margin:5px 0; color:#666; background: url(../images/icn_file_table.svg) no-repeat 0 center; background-size: 15px; line-height: 22px; font-size:15px;}
+
+@media all and (max-width:767px) {
+    .deatilArea {margin-top:24px;}
+    .deatilArea .topArea {padding:10px 4px;}
+    .deatilArea .topArea .btmArea .txt {padding:0 10px;}
+    .deatilArea .topArea .btmArea .txt:first-child {display: block; margin-bottom:4px;}
+    .deatilArea .topArea .btmArea .txt:first-child::after {display: none;}
+    .deatilArea .topArea .btmArea .txt:nth-child(2) {padding:0; padding-right:10px;}
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Popup</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+	<div id="LNB">
+		<h1><a href="#"  tabindex="1"><img src="../images/logo.png" alt="상상스토리" /></a></h1>
+		<ul><!-- 1depth -->
+			<li><a href="01_title.html">Title</a></li>
+			<li><a href="02_tab.html">Tab</a></li>
+			<li><a href="03_button.html">Button</a></li>
+			<li><a href="04_table_coltype.html">Table</a></li>
+			<li><a href="05_form_date.html">Form</a></li>
+			<li class="on"><a href="06_popup.html">Popup</a></li>
+			<li><a href="07_BBS_list.html">BBS</a></li>
+			<li><a href="08_etc.html">etc.</a></li>
+		</ul>
+	</div>
+
+	<div id="SUB">
+		<div class="header">
+			<button type="button" class="toggle"><img src="../images/toggle_close.png" alt="메뉴 닫기"/></button>
+			<!-- Type 1 -->
+			<div class="top_nav">
+				<a href="#" class="home">Home</a>
+				<!-- 1depth -->
+				<span>&gt;</span>
+				<button class="nav_btn1 last" type="button">Popup</button>
+				<ul class="nav_menu nav_depth1">
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li><a href="#">Form</a></li>
+					<li class="on"><a href="#">Popup</a></li>
+					<li><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+				<!-- //1depth -->
+			</div>
+			<!-- //Type 1 -->
+			<!-- Type 2 -->
+			<div id="GNB">
+				<ul>
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li><a href="#">Form</a></li>
+					<li class="on"><a href="#">Popup</a></li>
+					<li><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+			</div>
+			<!-- //Type 2 -->
+			<div class="log_info">
+				<span class="user_info">Admin</span>
+				<button type="button" class="btn red" tabindex="1">로그아웃</button>
+			</div>
+		</div>
+
+		<div class="contents_area">
+
+			<h3>팝업</h3>
+			
+			<h4>팝업 사이즈 종류</h4>
+			<div class="section">
+				<button type="button" class="btn blue" onclick="window.open('99_popup_01.html', 'popup', 'scrollbars=yes, resizable=no, copyhistory=no, width=800, height=700')">대형사이즈 팝업</button> 800px * 700px<br /><br />
+				<button type="button" class="btn red" onclick="window.open('99_popup_02.html', 'popup', 'scrollbars=yes, resizable=no, copyhistory=no, width=620, height=640')">중형사이즈 팝업</button> 620px * 640px<br /><br />
+				<button type="button" class="btn sky" onclick="window.open('99_popup_03.html', 'popup', 'scrollbars=yes, resizable=no, copyhistory=no, width=520, height=400')">소형사이즈 팝업</button> 520px * 400px<br /><br />
+				<button type="button" class="btn gray" onclick="window.open('99_popup_03.html', 'popup', 'scrollbars=yes, resizable=no, copyhistory=no, width=420, height=240')">메시지 팝업</button> 420px * 240px
+			</div>
+
+			<h4>팝업 예시</h4>
+			<div class="section">
+				<button type="button" class="btn blue" onclick="window.open('99_popup_01.html', 'popup', 'scrollbars=yes, resizable=no, copyhistory=no, width=800, height=200')">팝업 샘플 1</button><br /><br />
+				<button type="button" class="btn red" onclick="window.open('99_popup_02.html', 'popup', 'scrollbars=yes, resizable=no, copyhistory=no, width=620, height=394')">팝업 샘플 2</button> 버튼 사용 예시<br /><br />
+				<button type="button" class="btn sky" onclick="window.open('99_popup_03.html', 'popup', 'scrollbars=yes, resizable=no, copyhistory=no, width=520, height=231')">팝업 샘플 3</button><br /><br />
+				<button type="button" class="btn gray" onclick="window.open('99_popup_04.html', 'popup', 'scrollbars=yes, resizable=no, copyhistory=no, width=520, height=341')">팝업 샘플 4</button> 텍스트 사용 예시
+			</div>
+
+		</div> <!-- //contents_area -->
+	</div> <!-- //#SUB -->
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>국가물관리위원회 IA</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+	<script src="html/assets/js/jquery-3.3.1.min.js"></script>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: 'Roboto', sans-serif;
+			;
+		}
+
+		#wrap {
+			padding: 10px;
+		}
+
+		#header {
+			position: relative;
+		}
+
+		#header .titleArea {
+			overflow: hidden;
+			padding-bottom: 20px;
+			border-bottom: 3px solid #ddd;
+		}
+
+		#header .titleArea>* {
+			display: inline-block;
+			width: 49%;
+			vertical-align: middle;
+		}
+
+		#header .titleArea .fr {
+			line-height: 26px;
+		}
+
+		iframe {
+			position: absolute;
+			right: 0;
+		}
+
+		table {
+			width: 100%;
+			margin-top: 30px;
+			border-collapse: collapse;
+		}
+
+		table th {
+			background: #f7c192;
+		}
+
+		table td,
+		table th {
+			padding: 7px 2px;
+			border: 1px solid #ddd;
+			font-size: 14px;
+			font-weight: 500;
+			text-align: center;
+		}
+
+		table .depth {
+			border-top: 1px solid #333;
+		}
+
+		section {padding:10px;}
+	</style>
+
+	<script>
+		$(function(){
+			$("table tr").each(function( index ){
+				$(this).find("td").eq(0).text( index-1 );
+            });
+		});
+	</script>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+
+		<!-- header -->
+		<header id="header">
+			<div class="titleArea">
+				<div class="fl">
+					<h1>국가물관리위원회 IA</h1>
+				</div>
+				<div class="fr">
+					<strong>국문 <span>(Mobile)</span></strong>
+					<p>HTML5 / utf-8</p>
+					<p>Browser - Firefox, IE9.0, Crome, Safari, Opera</p>
+				</div>
+			</div>
+
+		</header>
+		<!--// header -->
+
+		<!-- section -->
+		<section id="contents">
+			<iframe src="" frameborder="0"></iframe>
+			<!-- 메뉴 구조도 -->
+			<div class="table_style01">
+				<table>
+					<colgroup>
+						<col span="8" style="width:atuo" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2">구분</th>
+							<th scope="col" rowspan="2">1depth</th>
+							<th scope="col" rowspan="2">2depth</th>
+							<th scope="col" rowspan="2">3depth</th>
+							<th scope="col" rowspan="2">4depth</th>
+							<th scope="col" rowspan="2">URL</th>
+							<th scope="col" colspan="2">브라우저/기기 검수</th>
+							<th scope="col" rowspan="2">완료일자</th>
+							<th scope="col" rowspan="2">최종수정일자</th>
+							<th scope="col" rowspan="2">CSS수정여부</th>
+							<th scope="col" rowspan="2">기타사항</th>
+						</tr>
+						<tr>
+							<th scope="col">IE</th>
+							<th scope="col">Chrome</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="depth">
+							<td></td> <!-- 분류 -->
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/index.html" target="_blank">index.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- CSS수정여부 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr class="depth">
+							<td></td> <!-- 메인 -->
+							<td rowspan="10">01_위원회 소개</td>
+							<td>01_국가물관리위원회인사말</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/page_1100.html" target="_blank">page_1100.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td> <!-- 최종수정일자 -->
+							<td></td> <!-- CSS수정여부 -->
+							<td></td> <!-- 기타사항 -->
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="3">02_위원회 소개</td>
+							<td>01_목적/기능</td>
+							<td></td>
+							<td>
+								<a href="html/page_1210.html" target="_blank">page_1210.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02_구성/연혁</td>
+							<td></td>
+							<td>
+								<a href="html/page_1220.html" target="_blank">page_1220.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>03_지원단 조직</td>
+							<td></td>
+							<td>
+								<a href="html/page_1230.html" target="_blank">page_1230.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="4">03_4대유역위원회소개</td>
+							<td>01_한강유역위원회</td>
+							<td></td>
+							<td>
+								<a href="html/page_1310.html" target="_blank">page_1310.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02_낙동강유역물관리위원회</td>
+							<td></td>
+							<td>
+								<a href="html/page_1320.html" target="_blank">page_1320.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>03_금강유역물관리위원회</td>
+							<td></td>
+							<td>
+								<a href="html/page_1330.html" target="_blank">page_1330.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>04_영산강·섬진강유역물관리위원회</td>
+							<td></td>
+							<td>
+								<a href="html/page_1340.html" target="_blank">page_1340.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>04_국가물관리위원회 BI</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/page_1400.html" target="_blank">page_1400.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>05_찾아오시는길</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/page_1500.html" target="_blank">page_1500.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.14</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td rowspan="14">02_위원회활동</td>
+							<td rowspan="10">01_위원회회의결과</td>
+							<td rowspan="2">01_국가물관리위원회</td>
+							<td>01 목록</td>
+							<td>
+								<a href="html/page_2110.html" target="_blank">page_2110.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td>
+								<a href="html/page_2115.html" target="_blank">page_2115.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="2">02_한강유역물관리위원회</td>
+							<td>01 목록</td>
+							<td>
+								<a href="html/page_2120.html" target="_blank">page_2120.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td>
+								<a href="html/page_2125.html" target="_blank">page_2125.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="2">03_낙동강유역물관리위원회</td>
+							<td>01 목록</td>
+							<td>
+								<a href="html/page_2130.html" target="_blank">page_2130.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td>
+								<a href="html/page_2135.html" target="_blank">page_2135.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="2">04_금강유역물관리위원회</td>
+							<td>01 목록</td>
+							<td>
+								<a href="html/page_2140.html" target="_blank">page_2140.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td>
+								<a href="html/page_2145.html" target="_blank">page_2145.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="2">05_영산강·섬진강유역물관리위원회</td>
+							<td>01 목록</td>
+							<td>
+								<a href="html/page_2150.html" target="_blank">page_2150.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td>
+								<a href="html/page_2155.html" target="_blank">page_2155.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="2">02_위원동정</td>
+							<td>01 목록</td>
+							<td></td>
+							<td>
+								<a href="html/page_2200.html" target="_blank">page_2200.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td></td>
+							<td>
+								<a href="html/page_2210.html" target="_blank">page_2210.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="2">03_인터뷰/기고</td>
+							<td>01 목록</td>
+							<td></td>
+							<td>
+								<a href="html/page_2300.html" target="_blank">page_2300.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td></td>
+							<td>
+								<a href="html/page_2310.html" target="_blank">page_2310.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="9">03_알림마당</td>
+							<td rowspan="2">01 공지사항</td>
+							<td>01 목록</td>
+							<td></td>
+							<td>
+								<a href="html/page_3100.html" target="_blank">page_3100.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td></td>
+							<td>
+								<a href="html/page_3105.html" target="_blank">page_3105.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="2">02 보도자료</td>
+							<td>01 목록</td>
+							<td></td>
+							<td>
+								<a href="html/page_3200.html" target="_blank">page_3200.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td></td>
+							<td>
+								<a href="html/page_3205.html" target="_blank">page_3205.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="2">03_홍보자료</td>
+							<td>01 목록</td>
+							<td></td>
+							<td>
+								<a href="html/page_3300.html" target="_blank">page_3300.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02 내용</td>
+							<td></td>
+							<td>
+								<a href="html/page_3305.html" target="_blank">page_3305.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>04_물관련 법정계획</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/page_3400.html" target="_blank">page_3400.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>05_관련법령</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/page_3500.html" target="_blank">page_3500.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>06_관련기관 안내</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/page_3600.html" target="_blank">page_3600.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="2">04_참여마당</td>
+							<td>01_국민제안</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/page_4100.html" target="_blank">page_4100.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02_민원신청</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/page_4200.html" target="_blank">page_4200.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td rowspan="4">05_검색결과</td>
+							<td>01_전체검색</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/resultAll.html" target="_blank">resultAll.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>02_위원회 소개</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/result_01.html" target="_blank">result_01.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>03_위원회 활동</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/result_02.html" target="_blank">result_02.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>04_알림마당</td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="html/result_03.html" target="_blank">result_03.html</a> <!-- URL -->
+							</td>
+							<td>O</td> <!-- IE -->
+							<td>O</td> <!-- Chrom -->
+							<td>20.08.21</td> <!-- 완료일자 -->
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+	<!--// wrap -->
+
+</body>
+
+</html>

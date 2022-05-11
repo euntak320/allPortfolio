@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>스티로폼 부표 정보관리시스템</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/jquery-1.11.2.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <header>
+            <div class="subTitle">
+                <span>폐 스티로폼 부표 관리시스템</span>
+                <button type="button">모바일 버튼</button>
+            </div>
+
+        </header>
+        <!-- header -->
+
+        <!-- menuList -->
+        <div class="menuArea">
+            <div class="menuList">
+                <div class="topArea">
+                    <span>전체메뉴</span>
+                    <button type="button" class="closeBtn">닫기</button>
+                </div>
+                <div class="listArea">
+                    <ul>
+                        <li><a href="">회수량 등록</a></li>
+                        <li><a href="">회수량 수정</a></li>
+                        <li><a href="">어업면허 등록</a></li>
+                    </ul>
+                </div>
+                <div class="logout">
+                    <a href="">로그아웃</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- menuList -->
+
+        <!-- section -->
+        <div class="section">
+            <span class="mainTitle">회수량 등록</span>
+            <div class="registerArea">
+                <div class="choiceArea">
+                    <span class="subTitle">행정구역</span>
+                    <div class="flex">
+                        <span class="txt">경상남도 마산시 합포구</span>
+                    </div>
+                </div>
+                <div class="choiceArea">
+                    <span class="subTitle">배출자</span>
+                    <ul class="leftList">
+                        <li>행사자 : 홍길동</li>
+                        <li>어장 위치 : 경상남도 마산시 합포구 합덕</li>
+                        <li>어업권자 : 만동어촌계등2</li>
+                        <li>어업면허번호 : 창원 323호</li>
+                    </ul>
+                </div>
+                <div class="choiceArea">
+                    <span class="subTitle">원제품 용량(리터)</span>
+                    <div class="input">
+                        <input type="text" placeholder="용량을 입력해주세요.">
+                        <span>L</span>
+                    </div>
+                </div>
+                <div class="choiceArea">
+                    <span class="subTitle">폐부표 회수량()</span>
+                    <span class="normalTxt">원제품 용량 50% 이하</span>
+                    <div class="input">
+                        <input type="text" placeholder="개수를 입력해주세요.">
+                        <span>개</span>
+                    </div>
+                    <span class="normalTxt">원제품 용량 50% ~ 100%</span>
+                    <div class="input">
+                        <input type="text" placeholder="개수를 입력해주세요.">
+                        <span>개</span>
+                    </div>
+                </div>
+                <div class="choiceArea">
+                    <span class="subTitle">회수일</span>
+                    <div class="dateArea">
+                        <select name="" id="">
+                            <option value="">2011</option>
+                            <option value="">2020</option>
+                        </select>
+                        <span>년</span>
+                        <select name="" id="">
+                            <option value="">10</option>
+                            <option value="">11</option>
+                        </select>
+                        <span>월</span>
+                        <select name="" id="">
+                            <option value="">1</option>
+                            <option value="">3</option>
+                        </select>
+                        <span>일</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btnArea">
+            <button type="button" class="cancel">취소</button>
+            <button type="button"class="confirm">등록</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="./assets/css/idangerous.swiper.css" />
+	<link rel="stylesheet" type="text/css" href="./assets/css/jquery.fullpage.min.css" />
+	<script src="./assets/js/jquery-1.11.0.min.js"></script>
+	<script src="./assets/js/echarts.min.js"></script>
+	<script src="./assets/js/idangerous.swiper.min.js"></script>
+	<script src="./assets/js/jquery.fullpage.min.js"></script>
+	<script src="./assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<div id="wrap" class="main view-swiper">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("./include/header.html" , function(){});
+		</script>
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 본문 -->
+		<div class="main-container">
+			<div class="dashboard swiper-container">
+				<div class="group swiper-wrapper">
+					<div class="sec integrated swiper-slide section">
+						<h2 class="title">통합운영관리</h2>
+						<ul class="data-list">
+							<li>
+								<div class="category">
+									<h3><a href="#none">기술지원요청</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<div class="status">
+									<span class="txt">완료</span>
+									<p class="unit"><span>89</span></p>
+								</div>
+								<div class="chart-area">
+									<div id="chart04_01" style="width:420px;height:240px;"></div>
+								</div>
+							</li>
+							<li>
+								<div class="category">
+									<h3><a href="#none">회원 현황</a></h3>
+									<span>(신규는 -7일내) / 단위 : 명</span>
+								</div>
+								<div class="status">
+									<span class="txt">전체</span>
+									<p class="unit"><span>304</span></p>
+								</div>
+								<div class="chart-area">
+									<div id="chart04_02" style="width:420px;height:240px;"></div>
+								</div>
+							</li>
+							<li>
+								<div class="category">
+									<h3><a href="#none">운영 현황</a></h3>
+									<span>(최근은 -7일내)</span>
+								</div>
+								<ul class="number-bar-color type02">
+									<li class="khaki">
+										<span class="txt">최근 운영 이력/누적 <span class="unit">(건)</span></span>
+										<em><span class="num">25/431</span></em>
+									</li>
+									<li class="fleshy">
+										<span class="txt">최근 접속 이력/누적 <span class="unit">(회)</span></span>
+										<em><span class="num">1,304/2,256,487</span></em>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="sec collection swiper-slide section">
+						<h2 class="title">메타데이터 수집연계</h2>
+						<ul class="data-list">
+							<li>
+								<div class="category">
+									<h3><a href="#none">수집데이터</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<div class="status">
+									<span class="txt">누적</span>
+									<p class="unit"><span>74,514,038</span></p>
+								</div>
+								<div class="chart-area">
+									<div id="chart01_01" style="width:420px;height:230px;"></div>
+								</div>
+							</li>
+							<li>
+								<div class="category">
+									<h3><a href="#none">연계서비스</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<div class="status">
+									<span class="txt">누적</span>
+									<p class="unit"><span>1,001</span></p>
+								</div>
+								<div class="chart-area">
+									<div id="chart01_02" style="width:420px;height:230px;"></div>
+								</div>
+							</li>
+							<li>
+								<div class="category">
+									<h3><a href="#none">가동현황</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<ul class="number-bar-color">
+									<li class="cyan">
+										<span class="txt">정상</span>
+										<em><span class="num">840</span></em>
+									</li>
+									<li class="khaki">
+										<span class="txt">단절</span>
+										<em><span class="num">60</span></em>
+									</li>
+									<li class="fleshy">
+										<span class="txt">데드링크</span>
+										<em><span class="num">189</span></em>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="sec rule swiper-slide section">
+						<h2 class="title">연계표준 및 규칙관리</h2>
+						<ul class="data-list">
+							<li>
+								<div class="category">
+									<h3><a href="#none">메타데이터 등록 관리</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<div class="status">
+									<span class="txt">완료</span>
+									<p class="unit"><span>1,012</span></p>
+								</div>
+								<div class="chart-area">
+									<div id="chart02_01" style="width:420px;height:300px;"></div>
+								</div>
+							</li>
+							<li>
+								<div class="category">
+									<h3><a href="#none">메타데이터 분류 현황</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<div class="status">
+									<span class="txt">누적</span>
+									<p class="unit"><span>1,001</span></p>
+								</div>
+								<div class="chart-area">
+									<div id="chart02_02" style="width:420px;height:320px;"></div>
+								</div>
+							</li>
+							<li>
+								<div class="category">
+									<h3><a href="#none">품질 진단</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<div class="status">
+									<p class="summary">표준 <span>89</span> 항목 / 소분류 <span>172</span> 가이드</p>
+								</div>
+								<ul class="number-bar-color">
+									<li class="cyan">
+										<span class="txt">기관수</span>
+										<em><span class="num">187</span></em>
+									</li>
+									<li class="khaki">
+										<span class="txt">평균점수</span>
+										<em><span class="num">91.4</span></em>
+									</li>
+									<li class="fleshy">
+										<span class="txt">평균등급</span>
+										<em><span class="num">우수</span></em>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="sec base swiper-slide section">
+						<h2 class="title">지식베이스 &middot; 품질 진단</h2>
+						<ul class="data-list">
+							<li>
+								<div class="category">
+									<h3><a href="#none">외부 키워드 등록 관리 현황</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<div class="status">
+									<span class="txt">완료</span>
+									<p class="unit"><span>1,012</span></p>
+								</div>
+								<div class="chart-area">
+									<div id="chart03_01" style="width:420px;height:300px;"></div>
+								</div>
+							</li>
+							<li>
+								<div class="category">
+									<h3><a href="#none">문화 사전 등록 현황</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<div class="status">
+									<span class="txt">누적</span>
+									<p class="unit"><span>1,001</span></p>
+								</div>
+								<div class="chart-area">
+									<div id="chart03_02" style="width:420px;height:300px;"></div>
+								</div>
+							</li>
+							<li>
+								<div class="category">
+									<h3><a href="#none">외부 사전 연계 현황</a></h3>
+									<span>단위 : 건</span>
+								</div>
+								<div class="chart-area">
+									<div id="chart03_03" style="width:420px;height:380px;"></div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="swiper-pagination">
+					<span class="swiper-pagination-switch">통합운영관리</span>
+					<span class="swiper-pagination-switch">연계표준 및 규칙관리</span>
+					<span class="swiper-pagination-switch">메타데이터 수집연계</span>
+					<span class="swiper-pagination-switch">지식베이스</span>
+				</div>
+				<div class="swiper-controls">
+					<a class="arrow-left" href="#"></a> 
+					<a class="arrow-right" href="#"></a>
+				</div>
+			</div>
+		</div>
+		<!-- //본문 -->			
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("./include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+
+		<script type="text/javascript">
+			var collectionData = echarts.init(document.getElementById("chart01_01"));
+			var collectionDataOption = {
+				tooltip : {
+			        trigger: 'axis',
+			        axisPointer : {
+			            type : 'shadow'
+			        },
+			    },
+			    grid : {
+			    	left : '3%',
+			    	right : '4%',
+			    	bottom : '3%',
+			    	top : '2%',
+			    	containLabel: true,
+			    	grid : '100%',
+			    },
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data : ['금일','전일'],
+			            axisTick : {
+			                show:false,
+			            },
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'#66d7e2',
+			          			fontSize:22,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#d8edff',
+			          			type:'dashed',
+			          			width:1,
+			          		}
+			          	}
+			        },
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+			            axisTick : {
+			                show:false,
+			            },
+			            axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#96b5db',
+			          			width:1,
+			          		}
+			          	},
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'white',
+			          			fontSize:14,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	splitLine : {
+		                show:true,
+		                lineStyle: {
+		                    color: '#96b5db',
+		                    type: 'dashed',
+		                    width: 1
+		                }
+		            },
+			        },
+			    ],
+			    series : [
+			        {
+			            name:'수집데이터',
+			            type:'bar',
+			            barWidth: '40%',
+			            data : [123012,800000],
+			            itemStyle: {   
+			                normal:{  
+			                        color: function (params){
+			                        var colorList = ['#3cc5d9', '#70a6ef'];
+			                        return colorList[params.dataIndex];
+			                    }
+			                }
+			            }
+			        },
+			    ],
+			};
+			collectionData.setOption(collectionDataOption);
+
+			var linkService = echarts.init(document.getElementById("chart01_02"));
+			var linkServiceOption = {
+				tooltip : {
+			        trigger: 'axis',
+			        axisPointer : {
+			            type : 'shadow'
+			        },
+			    },
+			    grid : {
+			    	left : '3%',
+			    	right : '4%',
+			    	bottom : '3%',
+			    	top : '2%',
+			    	containLabel: true,
+			    	grid : '100%',
+			    },
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data : ['금일','전일'],
+			            axisTick : {
+			                show:false,
+			            },
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'#66d7e2',
+			          			fontSize:22,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#d8edff',
+			          			type:'dashed',
+			          			width:1,
+			          		}
+			          	}
+			        },
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+			            axisTick : {
+			                show:false,
+			            },
+			            axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#96b5db',
+			          			width:1,
+			          		}
+			          	},
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'white',
+			          			fontSize:14,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	splitLine : {
+		                show:true,
+		                lineStyle: {
+		                    color: '#96b5db',
+		                    type: 'dashed',
+		                    width: 1
+		                }
+		            },
+			        },
+			    ],
+			    series : [
+			        {
+			            name:'수집데이터',
+			            type:'bar',
+			            barWidth: '40%',
+			            data : [3,40],
+			            itemStyle: {   
+			                normal:{  
+			                        color: function (params){
+			                        var colorList = ['#72d59e', '#39bf9b'];
+			                        return colorList[params.dataIndex];
+			                    }
+			                }
+			            }
+			        },
+			    ],
+			};
+			linkService.setOption(linkServiceOption);
+
+			var metadataSubmit = echarts.init(document.getElementById("chart02_01"));
+			var metadataSubmitOption = {
+				tooltip : {
+			        trigger: 'axis',
+			        axisPointer : {
+			            type : 'shadow'
+			        },
+			    },
+			    grid : {
+			    	left : '3%',
+			    	right : '4%',
+			    	bottom : '3%',
+			    	top : '2%',
+			    	containLabel: true,
+			    	grid : '100%',
+			    },
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data : ['신청','진행','보완'],
+			            axisTick : {
+			                show:false,
+			            },
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'#66d7e2',
+			          			fontSize:22,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#d8edff',
+			          			type:'dashed',
+			          			width:1,
+			          		}
+			          	}
+			        },
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+			            axisTick : {
+			                show:false,
+			            },
+			            axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#96b5db',
+			          			width:1,
+			          		}
+			          	},
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'white',
+			          			fontSize:14,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	splitLine : {
+		                show:true,
+		                lineStyle: {
+		                    color: '#96b5db',
+		                    type: 'dashed',
+		                    width: 1
+		                }
+		            },
+			        },
+			    ],
+			    series : [
+			        {
+			            name:'수집데이터',
+			            type:'bar',
+			            barWidth: '40%',
+			            data : [3,40,8],
+			            itemStyle: {   
+			                normal:{  
+			                        color: function (params){
+			                        var colorList = ['#39bf9b', '#3cc5d9', '#70a6ef'];
+			                        return colorList[params.dataIndex];
+			                    }
+			                }
+			            }
+			        },
+			    ],
+			};
+			metadataSubmit.setOption(metadataSubmitOption);
+
+			var metadataStatus = echarts.init(document.getElementById("chart02_02"));
+			var matadataStatusOption = {
+			    tooltip: {
+			        trigger: 'item',
+			        formatter: "{a} <br/>{b}: {c} ({d}%)"
+			    },
+			    legend: {
+					bottom:30,
+	        		left: 'center',
+			        itemWidth : 16,
+			        itemHidth : 15,
+			        itemGap : 20,
+			        width : 400,
+			        textStyle:{color:'#fff', fontSize:'18', fontFamily:'Nanum Square'},
+			        data:[
+			        	'문화예술','문화유산','문화산업','관광','체육','도서관','여건조성','홍보지원'
+			        ],
+			    },
+			    color: ['#ee7f81','#f6a698','#f1f494','#de9c2b','#a6bc8d','#5bbeaa','#878fb6','#bbc9e4'],
+			    series: [
+			        {
+			            name:'분류현황',
+			            type:'pie',
+			            radius: ['35%', '60%'],
+			            center : ['50%','35%'],
+			            avoidLabelOverlap: false,
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'center'
+			                },
+			                emphasis: {
+			                    show: true,
+			                    textStyle: {
+			                        fontSize: '18',
+			                        fontWeight: 'bold'
+			                    }
+			                },
+			            },
+			            data:[
+			                {value:580, name:'문화예술'},
+			                {value:800, name:'문화유산'},
+			                {value:789, name:'문화산업'},
+			                {value:230, name:'관광'},
+			                {value:652, name:'체육'},
+			                {value:865, name:'도서관'},
+			                {value:452, name:'여건조성'},
+			                {value:1100, name:'홍보지원'},
+			            ],
+			        },
+			    ],
+			};
+			metadataStatus.setOption(matadataStatusOption);
+
+			var keywordSubmit = echarts.init(document.getElementById("chart03_01"));
+			var keywordSubmitOption = {
+				tooltip : {
+			        trigger: 'axis',
+			        axisPointer : {
+			            type : 'shadow'
+			        },
+			    },
+			    grid : {
+			    	left : '3%',
+			    	right : '4%',
+			    	bottom : '3%',
+			    	top : '2%',
+			    	containLabel: true,
+			    	grid : '100%',
+			    },
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data : ['일별','주별'],
+			            axisTick : {
+			                show:false,
+			            },
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'#66d7e2',
+			          			fontSize:22,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#d8edff',
+			          			type:'dashed',
+			          			width:1,
+			          		}
+			          	}
+			        },
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+			            axisTick : {
+			                show:false,
+			            },
+			            axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#96b5db',
+			          			width:1,
+			          		}
+			          	},
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'white',
+			          			fontSize:14,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	splitLine : {
+		                show:true,
+		                lineStyle: {
+		                    color: '#96b5db',
+		                    type: 'dashed',
+		                    width: 1
+		                }
+		            },
+			        },
+			    ],
+			    series : [
+			        {
+			            name:'수집데이터',
+			            type:'bar',
+			            barWidth: '40%',
+			            data : [121,400],
+			            itemStyle: {   
+			                normal:{  
+			                        color: function (params){
+			                        var colorList = ['#f0c5c6', '#ee8d7d'];
+			                        return colorList[params.dataIndex];
+			                    }
+			                }
+			            }
+			        },
+			    ],
+			};
+			keywordSubmit.setOption(keywordSubmitOption);
+
+			var cultureSubmit = echarts.init(document.getElementById("chart03_02"));
+			var cultureSubmitOption = {
+				tooltip : {
+			        trigger: 'axis',
+			        axisPointer : {
+			            type : 'shadow'
+			        },
+			    },
+			    grid : {
+			    	left : '3%',
+			    	right : '4%',
+			    	bottom : '3%',
+			    	top : '2%',
+			    	containLabel: true,
+			    	grid : '100%',
+			    },
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data : ['일별','주별'],
+			            axisTick : {
+			                show:false,
+			            },
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'#66d7e2',
+			          			fontSize:22,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#d8edff',
+			          			type:'dashed',
+			          			width:1,
+			          		}
+			          	}
+			        },
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+			            axisTick : {
+			                show:false,
+			            },
+			            axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#96b5db',
+			          			width:1,
+			          		}
+			          	},
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'white',
+			          			fontSize:14,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	splitLine : {
+		                show:true,
+		                lineStyle: {
+		                    color: '#96b5db',
+		                    type: 'dashed',
+		                    width: 1
+		                }
+		            },
+			        },
+			    ],
+			    series : [
+			        {
+			            name:'수집데이터',
+			            type:'bar',
+			            barWidth: '40%',
+			            data : [121,400],
+			            itemStyle: {   
+			                normal:{  
+			                        color: function (params){
+			                        var colorList = ['#39bf9b', '#3cc5d9'];
+			                        return colorList[params.dataIndex];
+			                    }
+			                }
+			            }
+			        },
+			    ],
+			};
+			cultureSubmit.setOption(cultureSubmitOption);
+
+			var dictionary = echarts.init(document.getElementById("chart03_03"));
+			dictionaryOption = {
+			    angleAxis: {
+			        interval: 1,
+			        type: 'category',
+			        data: [
+			        	{
+			        		value:'문화예술',
+			        		textStyle: {
+			        			fontFamily:'Nanum Square',
+			        			fontSize:14,
+			        			color:'#fff',
+			        		},
+			        	},
+			        	{
+			        		value:'문화유산',
+			        		textStyle: {
+			        			fontFamily:'Nanum Square',
+			        			fontSize:14,
+			        			color:'#fff',
+			        		},
+			        	},
+			        	{
+			        		value:'문화산업',
+			        		textStyle: {
+			        			fontFamily:'Nanum Square',
+			        			fontSize:14,
+			        			color:'#fff',
+			        		},
+			        	},
+			        	{
+			        		value:'체육',
+			        		textStyle: {
+			        			fontFamily:'Nanum Square',
+			        			fontSize:14,
+			        			color:'#fff',
+			        		},
+			        	},
+			        	{
+			        		value:'도서관',
+			        		textStyle: {
+			        			fontFamily:'Nanum Square',
+			        			fontSize:14,
+			        			color:'#fff',
+			        		},
+			        	},
+			        	{
+			        		value:'여건조성',
+			        		textStyle: {
+			        			fontFamily:'Nanum Square',
+			        			fontSize:14,
+			        			color:'#fff',
+			        		},
+			        	},
+			        ],
+			        z: 10,
+			        axisLine: {
+			            show: true,
+			            lineStyle: {
+			                color: "#d8edff",
+			                width: 1,
+			                type: "solid"
+			            },
+			        },
+			    },
+			    radiusAxis: {
+			        min: 0,
+			        max: 100,
+			        interval: 20,
+			        axisLine: {
+			            show: false,
+			        },
+			        axisLabel: {
+			            formatter: '{value}',
+			            show: true,
+			            padding: [0, 0, 20, 0],
+			            color: "#d8edff",
+			            fontSize: 16
+			        },
+			        splitLine: {
+			            lineStyle: {
+			                color: "#d8edff",
+			                width: 1,
+			                type: "solid"
+			            }
+			        },
+			        axisTick :{
+			        	show:false,
+			        }
+			    },
+			    polar: {},
+			    series: [{
+			        type: 'bar',
+			        data: [
+			        	{
+			        		name: '문화예술',
+			                value: 87,
+			                itemStyle: {
+			                    normal: {
+			                        color: "#ee7f81",
+			                        opacity: 0.8,
+			                    }
+			                },
+			            },
+			            {
+			            	name: '문화유산',
+			                value: 80,
+			                itemStyle: {
+			                    normal: {
+			                        color: "#f6a698",
+			                        opacity: 0.8,
+			                    }
+			                },
+			            },
+			            {
+			            	name: '문화산업',
+			                value: 75,
+			                itemStyle: {
+			                    normal: {
+			                        color: "#f1f494",
+			                        opacity: 0.8,
+			                    },
+			                },
+			            },
+			            {
+			            	name: '체육',
+			                value: 69,
+			                itemStyle: {
+			                    normal: {
+			                        color: "#a6bc8d",
+			                        opacity: 0.8,
+			                    },
+			                },
+			            },
+			            {
+			            	name: '도서관',
+			                value: 63,
+			                itemStyle: {
+			                    normal: {
+			                        color: "#5bbeaa",
+			                        opacity: 0.8,
+			                    }
+			                },
+			            },
+			            {
+			            	name: '여건조성',
+			                value: 54,
+			                itemStyle: {
+			                    normal: {
+			                        color: "#878fb6",
+			                        opacity: 0.8,
+			                    }
+			                },
+			            },
+			        ],
+			        coordinateSystem: 'polar',
+			    }],
+			};
+			dictionary.setOption(dictionaryOption);
+
+			var support = echarts.init(document.getElementById("chart04_01"));
+			var supportOption = {
+				tooltip : {
+			        trigger: 'axis',
+			        axisPointer : {
+			            type : 'shadow'
+			        },
+			    },
+			    grid : {
+			    	left : '3%',
+			    	right : '4%',
+			    	bottom : '3%',
+			    	top : '2%',
+			    	containLabel: true,
+			    	grid : '100%',
+			    },
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data : ['대기','진행','보류'],
+			            axisTick : {
+			                show:false,
+			            },
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'#66d7e2',
+			          			fontSize:22,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#d8edff',
+			          			type:'dashed',
+			          			width:1,
+			          		}
+			          	}
+			        },
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+			            axisTick : {
+			                show:false,
+			            },
+			            axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#96b5db',
+			          			width:1,
+			          		}
+			          	},
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'white',
+			          			fontSize:14,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	splitLine : {
+		                show:true,
+		                lineStyle: {
+		                    color: '#96b5db',
+		                    type: 'dashed',
+		                    width: 1
+		                }
+		            },
+		        	},
+			    ],
+			    series : [
+			        {
+			            name:'수집데이터',
+			            type:'bar',
+			            barWidth: '40%',
+			            data : [5,25,40],
+			            itemStyle: {   
+			                normal:{  
+			                        color: function (params){
+			                        var colorList = ['#ee7f81', '#f1f494','#de9c2b'];
+			                        return colorList[params.dataIndex];
+			                    }
+			                }
+			            }
+			        },
+			    ],
+			};
+			support.setOption(supportOption);
+
+			var memberStatus = echarts.init(document.getElementById("chart04_02"));
+			var memberStatusOption = {
+				tooltip : {
+			        trigger: 'axis',
+			        axisPointer : {
+			            type : 'shadow'
+			        },
+			    },
+			    grid : {
+			    	left : '3%',
+			    	right : '4%',
+			    	bottom : '3%',
+			    	top : '2%',
+			    	containLabel: true,
+			    	grid : '100%',
+			    },
+			    xAxis : [
+			        {
+			            type : 'category',
+			            data : ['신규','내부','기관'],
+			            axisTick : {
+			                show:false,
+			            },
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'#66d7e2',
+			          			fontSize:22,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#d8edff',
+			          			type:'dashed',
+			          			width:1,
+			          		}
+			          	}
+			        },
+			    ],
+			    yAxis : [
+			        {
+			            type : 'value',
+			            axisTick : {
+			                show:false,
+			            },
+			            axisLine : {
+			          		show:true,
+			          		lineStyle: {
+			          			color:'#96b5db',
+			          			width:1,
+			          		}
+			          	},
+			          	axisLabel : {
+			          		show:true,
+			          		textStyle:{
+			          			color:'white',
+			          			fontSize:14,
+			          			fontFamily:'Nanum Square',
+			          		},
+			          	},
+			          	splitLine : {
+		                show:true,
+		                lineStyle: {
+		                    color: '#96b5db',
+		                    type: 'dashed',
+		                    width: 1
+		                }
+		            },
+		        	},
+			    ],
+			    series : [
+			        {
+			            name:'수집데이터',
+			            type:'bar',
+			            barWidth: '40%',
+			            data : [100,300,400],
+			            itemStyle: {   
+			                normal:{  
+			                        color: function (params){
+			                        var colorList = ['#39bf9b', '#3cc5d9','#70a6ef'];
+			                        return colorList[params.dataIndex];
+			                    }
+			                }
+			            }
+			        },
+			    ],
+			};
+			memberStatus.setOption(memberStatusOption);
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var swiperSetting = {
+					paginationClickable: true,
+					calculateHeight: true,
+					pagination: '.swiper-pagination',
+					createPagination: false,
+					observer:true,
+				},
+				fullpageSetting = {
+					verticalCentered: false,
+					autoScrolling: true,
+					scrollOverflow: false,
+			        navigationPosition: 'right',
+			        navigation: true,
+			        navigationTooltips: ['통합운영관리', '연계표준 및 규칙관리', '메타데이터 수집연계', '지식베이스']
+				},
+				mySwiper = new Swiper('.dashboard', swiperSetting);
+
+				$(document).on('click', '.view-swiper .arrow-left', function(e){
+					e.preventDefault();
+					mySwiper.swipePrev();
+				});
+				$(document).on('click', '.view-swiper .arrow-right', function(e){
+					e.preventDefault();
+					mySwiper.swipeNext();
+				});
+				$(document).on('click', '.dashboard-toggle', function(){
+					if ($(this).hasClass('on')){
+						$(this).removeClass('on');
+						$('#wrap').removeClass('view-swiper').addClass('view-fullpage');
+						mySwiper.destroy(true);
+						$('.dashboard .group').fullpage(fullpageSetting);
+					} 
+					else {
+						$(this).addClass('on');
+						$('#wrap').removeClass('view-fullpage').addClass('view-swiper');
+						$.fn.fullpage.destroy('all');
+						mySwiper = new Swiper('.dashboard', swiperSetting);
+					}
+				});
+			});
+		</script>
+	</div>
+</body>
+</html>

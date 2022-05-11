@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>S2lab</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+
+        $(function(){
+            // 초기화 버튼
+            $("#reset").click(function(){
+                $(".tableArea td input[type='text']").val('');
+                $(".tableArea textarea").val('');
+            });
+
+            $("#commentForm").validate();
+            $.extend( $.validator.messages, 
+            { 
+                required: "필수 항목입니다.", 
+                remote: "항목을 수정하세요.", 
+                email: "유효하지 않은 E-Mail주소입니다.", 
+                url: "유효하지 않은 URL입니다.", 
+                date: "올바른 날짜를 입력하세요.",
+                dateISO: "올바른 날짜(ISO)를 입력하세요.", 
+                number: "유효한 숫자가 아닙니다.", 
+                digits: "숫자만 입력 가능합니다.", 
+                creditcard: "신용카드 번호가 바르지 않습니다.", 
+                equalTo: "같은 값을 다시 입력하세요.", 
+                extension: "올바른 확장자가 아닙니다.", 
+                maxlength: $.validator.format( "{0}자를 넘을 수 없습니다. " ),
+                minlength: $.validator.format( "{0}자 이상 입력하세요." ), 
+                rangelength: $.validator.format( "문자 길이가 {0} 에서 {1} 사이의 값을 입력하세요." ), 
+                range: $.validator.format( "{0} 에서 {1} 사이의 값을 입력하세요." ), 
+                max: $.validator.format( "{0} 이하의 값을 입력하세요." ), 
+                min: $.validator.format( "{0} 이상의 값을 입력하세요." ) 
+            });
+
+            function checkz() {
+            var getIntro = $("#intro").val().replace(/\s|/gi,'');
+            var hobbyCheck = false;
+            var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+            var getCheck= RegExp(/^[a-zA-Z0-9]{4,12}$/);
+            var getName= RegExp(/^[가-힣]+$/);
+            var fmt = RegExp(/^\d{6}[1234]\d{6}$/); //형식 설정
+            var buf = new Array(13); //주민등록번호 배열
+        
+        
+            //아이디 공백 확인
+            if($("#name").val() == ""){
+                alert("아이디를 입력해주세요.");
+                $("#name").focus();
+                return false;
+            }
+        
+            //이름의 유효성 검사
+            if(!getCheck.test($("#name").val())){
+                alert("형식에 맞게 입력해주세요.");
+                $("#name").val("");
+                $("#name").focus();
+                return false;
+            }
+
+            //국가의 공백 확인
+            if($("#nation").val() == ""){
+                alert("국가를 입력해주세요.");
+                $("#nation").focus();
+                return false;
+            }
+        
+            //국가의 유효성 검사
+            if(!getCheck.test($("#nation").val())){
+                alert("형식에 맞게 입력해주세요");
+                $("#nation").val("");
+                $("#nation").focus();
+                return false;
+            }
+
+            // 타이틀의 공백 확인
+            if($("#title").val() == ""){
+                alert("제목을 넣어주세요.");
+                $("#title").focus();
+                return false;
+            }
+        
+            //타이틀의 유효성 검사
+            if(!getCheck.test($("#title").val())){
+                alert("형식에 맞게 입력해주세요");
+                $("#title").val("");
+                $("#title").focus();
+                return false;
+            }
+
+        
+            //이메일 공백 확인
+            if($("#mail").val() == ""){
+                alert("이메일을 입력해주세요");
+                $("#mail").focus();
+                return false;
+            }
+                
+            //이메일 유효성 검사
+            if(!getMail.test($("#mail").val())){
+                alert("이메일형식에 맞게 입력해주세요")
+                $("#mail").val("");
+                $("#mail").focus();
+                return false;
+            }
+        
+        
+            return true;
+            }
+        
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="headerWrap" >
+                <h1>
+                    <a href="index.html">홈으로</a>
+                </h1>
+                <div class="menuList">
+                    <ul>
+                        <li><a href="index.html">Main</a></li>
+                        <li>
+                            <a href="javascript:void(0);" class="m_btn">Product</a>
+                            <ul class="subList">
+                                <li><a href="02_Products_01Hiware.html">HIWARE</a></li>
+                                <li><a href="02_Products_01Hiware_01.html" class="on">- PSM for System</a></li>
+                                <li><a href="02_Products_01Hiware_02.html">- IM for System</a></li>
+                                <li><a href="02_Products_01Hiware_03.html">- PSM for DBMS</a></li>
+                                <li><a href="02_Products_01Hiware_04.html">- IM for DBMS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="lab.html">S2Lab</a></li>
+                        <a href="#none" class="mMenuClose">닫기버튼</a>
+                    </ul>
+                </div>
+                <a href="#none" class="mMenuBtn">모바일 버튼</a>
+            </div>
+        </div>
+        <div class="visualArea">
+            <div class="eight">
+                <div class="txtArea">
+                    <dl>
+                        <dd class="mediumTxt">Contact Us</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="contentBox v2">
+            <div class="boxWrap">
+                <a href="tel:070-8672-8155" class="box">
+                    <img src="assets/images/b-call.png" alt="">
+                    <span class="title">Contact</span>
+                    <span>Tel. +82 (0)70-8672-8155</span>
+                    <span>Fax. +82 (0)70-8250-3647</span>
+                </a>
+                <a href="mailto::shhan@s2lab.co.kr" class="box">
+                    <img src="assets/images/b-mail.png" alt="">
+                    <span class="title">E-mail</span>
+                    <span>shhan@s2lab.co.kr</span>
+                </a>
+                <a href="http://naver.me/GAnTQBDz" target="_blank" class="box">
+                    <img src="assets/images/b-deraction.png" alt="">
+                    <span class="title">Address</span>
+                    <span>200, 6-7 Gangnam-daero 39-gil,</span>
+                    <span>Seocho-gu, Seoul</span>
+                </a>
+            </div>
+        </div>
+        <div class="content support">
+            <div class="txtList">
+                <span class="title">Contact Us</span>
+                <div class="tableArea">
+                    <table>
+                        <caption>category, Name, E-mail, nation, title, contents로 구성되어있는 테이블입니다.</caption>
+                        <colgroup>
+                            <col style="width:30%;">
+                            <col style="width:70%;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>category</th>
+                                <td>
+                                    <div class="radioBtn">
+                                        <input type="radio" id="rd_1">
+                                        <label for="rd_1">Sales</label>
+                                    </div>
+                                    <div class="radioBtn">
+                                        <input type="radio" id="rd_2">
+                                        <label for="rd_2">Tech</label>
+                                    </div>
+                                    <div class="radioBtn">
+                                        <input type="radio" id="rd_3">
+                                        <label for="rd_3">etc</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Name</th>
+                                <td>
+                                    <input type="text" value="특수문자 안됨" id="name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>E-mail</th>
+                                <td>
+                                    <input type="text" value="골뱅이 필요" id="mail">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Nation</th>
+                                <td>
+                                    <input type="text" value="특수문자 안됨" id="nation">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Title</th>
+                                <td>
+                                    <input type="text" id="title">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Contents</th>
+                                <td>
+                                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btnArea">
+                    <button type="button" class="confirm">Send</button>
+                    <button type="button" id="reset">Reset</button>
+                </div>
+            </div>
+            <div class="txtList">
+                <span class="title">Downloads</span>
+                <div class="downList">
+                    <div class="downfile">
+                        <img src="assets/images/file1.jpg" alt="">
+                        <span>Hiware PSM for System_s2lab</span>
+                        <a href="assets/file/system_s2lab.pdf" target="_blank">Download</a>
+                    </div>
+                    <div class="downfile">
+                        <img src="assets/images/file2.jpg" alt="">
+                        <span>Hiware PSM, IM for DBMS_s2lab</span>
+                        <a href="assets/file/DBMS_s2lab.pdf " target="_blank">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footerWrap">
+                <span class="fLogo">
+                    <img src="assets/images/f-logo.png" alt="로고">
+                </span>
+                <div class="infoTxt">
+                    <span>200, 6-7 Gangnam-daero 39-gil, Seocho-gu, Seoul</span>
+                    <span>Tel. 070-8672-8155, Fax. 070-8250-3647</span>
+                </div>
+            </div>
+        </div>
+    </>
+</body>

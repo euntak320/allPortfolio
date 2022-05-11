@@ -1,0 +1,2428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<!-- E : mobile -->
+<title>가이드</title>
+<link rel="stylesheet" type="text/css" href="../assets/css/orp/style.css" />
+<script type="text/javascript" src="../assets/js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="../assets/js/jquery-ui.js"></script>
+<script type="text/javascript" src="../assets/js/common-orp.js"></script>
+<style type="text/css">
+	body {overflow:auto}
+	.guideHeader {position:fixed; z-index:1000; border-bottom:2px solid #003dac; width:100%; background-color:#fff; padding:0 50px 0 25px; overflow:hidden;}
+	.guideHeader h1 {display:table; padding:20px 0}
+	.guideHeader h1 a {display:table-cell; height:28px; vertical-align:middle}
+	.guideHeader h1 img {max-height:28px}
+	.guideBody {padding:70px 0 0 250px; min-height:700px}
+	.guideBody .side {overflow:hidden; position:fixed; top:68px; left:0; z-index:50; width:230px !important; border-top:2px solid #003dac; border-right:1px solid #eaeaea; background:#fff}
+	.guideBody .side ul {overflow-y:scroll; width:250px}
+	.guideBody .side ul li {}
+	.guideBody .side ul li a {display:block; padding:0 30px; border-bottom:1px solid #eaeaea; line-height:50px; font-size:15px; color:#333}
+	.guideBody .side ul li a:hover,
+	.guideBody .side ul li.on a {border-bottom:1px solid #003dac; color:#fff; background:#508dfe}
+	.guideBody .contWrap {}
+	.guideBody .contWrap .cont {padding:50px 40px}
+	.guideBody .guideList {margin-bottom:60px;}
+	.guideBody .guideList > dt {color:#2d6cca; padding-bottom:10px; position:relative; font-size:20px; font-weight:900; border-bottom:1px solid #bfbfbf;}
+	.guideBody .guideList > dt > a {display:inline-block; position:absolute; top:0; right:5px; line-height:30px; font-size:16px; font-weight:600; color:#003dac; padding-left:30px; background:url("../assets/images/guide/ico-show.png") no-repeat left center}
+	.guideBody .guideList > dd .guideView {padding-top:20px; width:100%; margin-bottom:10px}
+	.guideBody .guideList > dd .guideView:after {display:block; content:""; clear:both}
+	.guideBody .guideList > dd .guideView > strong {display:block; margin-bottom:10px; font-size:18px; color:#6ea0d4}
+	.guideBody .guideList > dd .guideView > .pointTxt {margin-bottom:20px; font-size:14px; color:#999}
+	.guideBody .guideList > dd .guideView .GuideNumList {overflow:hidden;}
+	.guideBody .guideList > dd .guideView .GuideNumList li {min-height:40px; float:left; position:relative; padding-left:20px; margin:0 15px 10px 0}
+	.guideBody .guideList > dd .guideView .GuideNumList li .Guidenum {position:absolute; top:2px; left:0; font-size:11px; color:#000}
+	.guideBody .guideList > dd .guideCode {border:1px solid #bfbfbf; padding:0 10px 0; position:relative; display:none;}
+	.guideBody .guideList > dd .guideCode.on {display:block;}
+	.guideBody .guideList > dd xmp {white-space:pre-wrap; margin:0; line-height:18px;}
+	.closeCodeArea {width:40px; height:40px; position:absolute; top:-1px; right:-1px; background:#003dac url('../assets/images/guide/btn-close.png') no-repeat center; background-size:50%; text-indent:-9999px}
+
+	#container {min-height:inherit !important}
+
+	@media (max-width: 900px){
+		.guideBody  {overflow:hidden; padding:0; min-height:inherit}
+		.guideBody .side {position:static; margin-top:66px; border-bottom:1px solid #eaeaea; width:100% !important; height:auto !important}
+		.guideBody .side ul {overflow:hidden; margin:0 -1px -1px; width:100% !important; height:auto !important}
+		.guideBody .side ul li {float:left; width:25%; border-right:1px solid #eaeaea}
+		.guideBody .side ul li.on {border-right:1px solid #db3128}
+	}
+
+	@media (max-width: 500px){
+		.guideBody .side ul li {width:50%}
+	}
+</style>
+<!--[if lt IE 9]>
+
+<script type="text/javascript" src="../js/respond.min.js"></script>
+
+<![endif]-->
+<script type="text/javascript">
+	$(function(){
+		$(window).resize(function(){
+			if ($(window).width() <= 1000)
+			{
+				$(".guideBody > div").css({
+					"width" : "100%",
+					"float" : "none"
+				});
+			}else{
+				$(".guideBody > div").removeAttr("style");
+			}
+		});
+		var thisMemoryPos;
+		$(".guideList dt a").click(function(e){
+			e.preventDefault();
+			thisMemoryPos = $(this).offset().top;
+
+			$(this).closest("dl").find(".guideCode").slideDown(200).promise().done(function(){
+				aa = $(this).closest("dl").find(".guideCode").offset();
+				$("html, body").animate({
+					scrollTop : aa.top-$(".guideHeader").outerHeight()-20
+				},500);
+			});
+		});
+
+		$(".closeCodeArea").click(function(e){
+			e.preventDefault();
+			$("html, body").animate({
+				scrollTop : thisMemoryPos-$(".guideHeader").outerHeight()-20
+			},500);
+			$(this).closest(".guideCode").slideUp(200);
+		});
+
+		$(".guideBody .guideView").each(function(i){
+			$(".guideBody .guideView").eq(i).find(".GuideNumList li").each(function(n){
+				$(".guideBody .guideView").eq(i).find(".GuideNumList li").eq(n).append("<span class='Guidenum'>"+(n+1)+")</span>");
+			});
+		});
+		var $tab = $(".tab");
+		$tab.each(function(i){
+			$tab.eq(i).find("li").css({"width" : 100/$tab.eq(i).find("li").length+"%"});
+		});
+	
+		var $side = $(".guideBody .side");
+		var $contWrap = $(".guideBody .contWrap");
+
+		$contWrap.find(".cont").not(":eq(0)").hide();
+		$side.find("ul li").eq("0").addClass("on");
+
+		$side.find("ul li a").click(function(){
+			i = $(this).parent().index();
+
+			$side.find("ul li").removeClass("on");
+			$(this).parent().addClass("on");
+			$contWrap.find(".cont").hide();
+			$contWrap.find(".cont").eq(i).show();
+
+			$(window).resize(function(){
+			}).resize();
+		});
+
+		$(window).resize(function(){
+			$(".guideBody .side ul").outerHeight($(window).height() - 82);
+		}).resize();
+	});
+</script>
+<!-- E : 가이드 용 -->
+</head>
+<body>
+	<div class="guideHeader">
+		<h1><img src="../assets/images/orp/common/logo.png" alt=""></h1>
+	</div>
+	<div class="guideBody">
+		<div class="side">
+			<ul>
+				<li><a href="#">타이틀</a></li>
+				<li><a href="#">버튼</a></li>
+				<li><a href="#">라벨</a></li>
+				<li><a href="#">인풋</a></li>
+				<li><a href="#">검색영역</a></li>
+				<li><a href="#">필터</a></li>
+				<li><a href="#">탭</a></li>
+				<li><a href="#">테이블</a></li>
+				<li><a href="#">팝업</a></li>
+				<li><a href="#">컨텐츠</a></li>
+			</ul>
+		</div>
+
+		<div class="contWrap">
+			<!-- 타이틀 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>타이틀<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<h2>TITLE</h2>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<h2>TITLE</h2>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--// 타이틀 -->
+
+			<!-- 버튼 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>SIZE<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<button type="button" class="btn ss">SMALL</button>
+							<button type="button" class="btn">NORMAL</button>
+							<button type="button" class="btn sm">MEDIUM</button>
+							<button type="button" class="btn sl">LARGE</button>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<button type="button" class="btn ss">SMALL</button>
+							<button type="button" class="btn">NORMAL</button>
+							<button type="button" class="btn sm">MEDIUM</button>
+							<button type="button" class="btn sl">LARGE</button>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>COLOR<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<button type="button" class="btn">BUTTON</button>
+							<button type="button" class="btn btnLGray">BUTTON</button>
+							<button type="button" class="btn btnGray">BUTTON</button>
+							<button type="button" class="btn btnBlue">BUTTON</button>
+							<button type="button" class="btn btnNavy">BUTTON</button>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<button type="button" class="btn">BUTTON</button>
+							<button type="button" class="btn btnLGray">BUTTON</button>
+							<button type="button" class="btn btnGray">BUTTON</button>
+							<button type="button" class="btn btnBlue">BUTTON</button>
+							<button type="button" class="btn btnNavy">BUTTON</button>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>ICON<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<button type="button" class="btn"><span class="icoFocus">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoSearch">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoReset">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoArrow">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoAdd">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoDl">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoChk">BUTTON</span></button>
+							<button type="button" class="btnIcon icoTrash">삭제</button>
+							<button type="button" class="btnIcon icoArrowT">상단으로 이동 비활성</button>
+							<button type="button" class="btnIcon icoArrowTOn">상단으로 이동</button>
+							<button type="button" class="btnIcon icoArrowB">하단으로 이동 비활성</button>
+							<button type="button" class="btnIcon icoArrowBOn">하단으로 이동</button>
+							<button type="button" class="btnIcon icoPlus">더하기 비활성</button>
+							<button type="button" class="btnIcon icoPlusOn">더하기</button>
+							<button type="button" class="btnIcon icoMinus">빼기 비활성</button>
+							<button type="button" class="btnIcon icoMinusOn">빼기</button>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<button type="button" class="btn"><span class="icoFocus">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoSearch">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoReset">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoArrow">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoAdd">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoDl">BUTTON</span></button>
+							<button type="button" class="btn btnBlue"><span class="icoChk">BUTTON</span></button>
+							<button type="button" class="btnIcon icoTrash">삭제</button>
+							<button type="button" class="btnIcon icoArrowT">상단으로 이동 비활성</button>
+							<button type="button" class="btnIcon icoArrowTOn">상단으로 이동</button>
+							<button type="button" class="btnIcon icoArrowB">하단으로 이동 비활성</button>
+							<button type="button" class="btnIcon icoArrowBOn">하단으로 이동</button>
+							<button type="button" class="btnIcon icoPlus">더하기 비활성</button>
+							<button type="button" class="btnIcon icoPlusOn">더하기</button>
+							<button type="button" class="btnIcon icoMinus">빼기 비활성</button>
+							<button type="button" class="btnIcon icoMinusOn">빼기</button>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--// 버튼 -->
+
+			<!-- 라벨 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>COLOR<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<span class="label white">TEXT</span>
+							<span class="label blue">TEXT</span>
+							<span class="label yellow">TEXT</span>
+							<span class="label orange">TEXT</span>
+							<span class="label green">TEXT</span>
+							<span class="label navy">TEXT</span>
+							<span class="label red">TEXT</span>
+							<span class="label gray">TEXT</span>
+							<span class="label black">TEXT</span>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<span class="label white">TEXT</span>
+							<span class="label blue">TEXT</span>
+							<span class="label yellow">TEXT</span>
+							<span class="label orange">TEXT</span>
+							<span class="label green">TEXT</span>
+							<span class="label navy">TEXT</span>
+							<span class="label red">TEXT</span>
+							<span class="label gray">TEXT</span>
+							<span class="label black">TEXT</span>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>DELETE<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<span class="label white">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label blue">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label yellow">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label orange">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label green">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label navy">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label red">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label gray">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label black">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<span class="label white">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label blue">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label yellow">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label orange">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label green">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label navy">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label red">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label gray">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="label black">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>TEXT<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="txtLabel">이름 > 홍길동 <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+							<span class="txtLabel">이름 > 홍길동 <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				
+			</div>
+			<!--// 라벨 -->
+
+			<!-- 인풋 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>CHECKBOX<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<strong>[단독사용]</strong>
+							<span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">CHECKBOX</label></span><br />
+							<span class="check"><input type="checkbox" id="chk0101"><label for="chk0101">CHECKBOX</label></span>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">CHECKBOX</label></span><br />
+							<span class="check"><input type="checkbox" id="chk0101"><label for="chk0101">CHECKBOX</label></span>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>CHECKBOX GROUP<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- checkWrap -->
+							<div class="checkWrap">
+								<span class="check"><input type="checkbox" id="chk0201"><label for="chk0201">CHECKBOX</label></span>
+								<span class="check"><input type="checkbox" id="chk0202"><label for="chk0202">CHECKBOX</label></span>
+							</div>
+							<!--// checkWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- checkWrap -->
+							<div class="checkWrap">
+								<span class="check"><input type="checkbox" id="chk0101"><label for="chk0201">CHECKBOX</label></span>
+								<span class="check"><input type="checkbox" id="chk0102"><label for="chk0202">CHECKBOX</label></span>
+							</div>
+							<!--// checkWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>RADIO GROUP<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- checkWrap -->
+							<div class="checkWrap">
+								<span class="check"><input type="radio" name="chk03" id="chk0301"><label for="chk0301">RADIO</label></span>
+								<span class="check"><input type="radio" name="chk03" id="chk0302"><label for="chk0302">RADIO</label></span>
+							</div>
+							<!--// checkWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- checkWrap -->
+							<div class="checkWrap">
+								<span class="check"><input type="radio" name="chk03" id="chk0301"><label for="chk0301">RADIO</label></span>
+								<span class="check"><input type="radio" name="chk03" id="chk0302"><label for="chk0302">RADIO</label></span>
+							</div>
+							<!--// checkWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>WHITE COLOR<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- checkWrap -->
+							<div class="checkWrap" style="padding:20px; background:#6ea0d4">
+								<span class="check cW"><input type="checkbox" id="chk0501"><label for="chk0501">CHECKBOX</label></span>
+								<span class="check cW"><input type="checkbox" id="chk0502"><label for="chk0502">CHECKBOX</label></span>
+								<span class="check cW"><input type="radio" name="chk04" id="chk0401"><label for="chk0401">RADIO</label></span>
+								<span class="check cW"><input type="radio" name="chk04" id="chk0402"><label for="chk0402">RADIO</label></span>
+							</div>
+							<!--// checkWrap -->
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- checkWrap -->
+							<div class="checkWrap">
+								<span class="check cW"><input type="checkbox" id="chk0501"><label for="chk0501">CHECKBOX</label></span>
+								<span class="check cW"><input type="checkbox" id="chk0502"><label for="chk0502">CHECKBOX</label></span>
+								<span class="check cW"><input type="radio" name="chk04" id="chk0401"><label for="chk0401">RADIO</label></span>
+								<span class="check cW"><input type="radio" name="chk04" id="chk0402"><label for="chk0402">RADIO</label></span>
+							</div>
+							<!--// checkWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>INPUT<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<input type="text" title="검색어를 입력하세요" placeholder="검색어를 입력하세요">
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<input type="text" title="검색어를 입력하세요" placeholder="검색어를 입력하세요">
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>INPUT + BUTON<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<div class="btnInput">
+								<input type="text" title="TEXT 입력" placeholder="TEXT를 입력해주세요.">
+								<button type="button" class="btn btnBlue">BUTTON</button>
+							</div>
+							<br />
+							<br />
+							<div class="btnInput v2">
+								<input type="text" title="TEXT 입력" placeholder="TEXT를 입력해주세요.">
+								<button type="button" class="btn btnBlue">중복확인</button>
+							</div>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<div class="btnInput">
+								<input type="text" title="TEXT 입력" placeholder="TEXT를 입력해주세요.">
+								<button type="button" class="btn btnBlue">BUTTON</button>
+							</div>
+
+							<div class="btnInput v2">
+								<input type="text" title="TEXT 입력" placeholder="TEXT를 입력해주세요.">
+								<button type="button" class="btn btnBlue">중복확인</button>
+							</div>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>ADDRESS<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<div class="address">
+								<div class="btnInput">
+									<input type="text" title="우편번호 입력" placeholder="우편번호" readonly>
+									<input type="text" title="주소 입력" placeholder="주소를 검색하여 입력해주세요." readonly>
+									<button type="button" class="btn btnBlue">주소검색</button>
+								</div>
+								<input type="text" title="상세주소 입력" placeholder="상세주소를 입력해주세요.">
+							</div>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<div class="address">
+								<div class="btnInput">
+									<input type="text" title="우편번호 입력" placeholder="우편번호" readonly>
+									<input type="text" title="주소 입력" placeholder="주소를 검색하여 입력해주세요." readonly>
+									<button type="button" class="btn btnBlue">주소검색</button>
+								</div>
+								<input type="text" title="상세주소 입력" placeholder="상세주소를 입력해주세요.">
+							</div>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>SELECTBOX<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<select class="select" title="구분 선택">
+								<option value="">검색어 입력</option>
+								<option value="">기업명</option>
+								<option value="">계약만료월</option>
+								<option value="">계약상태</option>
+							</select>
+							<br />
+							<!-- selectBox -->
+							<div class="selectBox">
+								<button type="button">전체</button>
+								<div class="option">
+									<input type="text" title="검색어 입력" placeholder="검색어 입력">
+									<ul>
+										<li><a href="">전체</a></li>
+										<li value="val02"><a href="">전체2</a></li>
+										<li value="val0201" class="depth02"><a href="">전체2-1</a></li>
+										<li value="val0202" class="depth02"><a href="">전체2-2</a></li>
+										<li value="val0203" class="depth02"><a href="">전체2-3</a></li>
+										<li value="val03"><a href="">전체3</a></li>
+										<li value="val04"><a href="">전체4</a></li>
+										<li value="val0401" class="depth02"><a href="">전체4-1</a></li>
+										<li value="val0402" class="depth02"><a href="">전체4-2</a></li>
+										<li value="val05"><a href="">전체5</a></li>
+										<li value="val06"><a href="">전체6</a></li>
+										<li value="val07"><a href="">전체7</a></li>
+									</ul>
+								</div>
+							</div>
+							<!--// selectBox -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<select class="select" title="구분 선택">
+								<option value="">검색어 입력</option>
+								<option value="">기업명</option>
+								<option value="">계약만료월</option>
+								<option value="">계약상태</option>
+							</select>
+
+							<!-- selectBox -->
+							<div class="selectBox">
+								<button type="button">전체</button>
+								<div class="option">
+									<input type="text" title="검색어 입력" placeholder="검색어 입력">
+									<ul>
+										<li><a href="">전체</a></li>
+										<li value="val02"><a href="">전체2</a></li>
+										<li value="val0201" class="depth02"><a href="">전체2-1</a></li>
+										<li value="val0202" class="depth02"><a href="">전체2-2</a></li>
+										<li value="val0203" class="depth02"><a href="">전체2-3</a></li>
+										<li value="val03"><a href="">전체3</a></li>
+										<li value="val04"><a href="">전체4</a></li>
+										<li value="val0401" class="depth02"><a href="">전체4-1</a></li>
+										<li value="val0402" class="depth02"><a href="">전체4-2</a></li>
+										<li value="val05"><a href="">전체5</a></li>
+										<li value="val06"><a href="">전체6</a></li>
+										<li value="val07"><a href="">전체7</a></li>
+									</ul>
+								</div>
+							</div>
+							<!--// selectBox -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>SELECTBOX_ UPLOAD<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<div class="btnTop">
+								<div class="addLabel txtR">
+									<span class="txtLabel v2">엑셀파일 SAMPLE <a href="javascript:void(0)" class="btnDel v2" onclick="fn_label_del(this)">삭제</a></span>
+									<!-- selectBox -->
+									<div class="selectBox">
+										<button type="button">업로드</button>
+										<div class="option">
+											<button class="btn">업로드1</button>
+											<button class="btn">업로드2</button>
+										</div>
+									</div>
+									<!--// selectBox -->
+								</div>
+							</div>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<div class="btnTop">
+								<div class="addLabel txtR">
+									<span class="txtLabel v2">엑셀파일 SAMPLE <a href="javascript:void(0)" class="btnDel v2" onclick="fn_label_del(this)">삭제</a></span>
+									<!-- selectBox -->
+									<div class="selectBox">
+										<button type="button">업로드</button>
+										<div class="option">
+											<button class="btn">업로드1</button>
+											<button class="btn">업로드2</button>
+										</div>
+									</div>
+									<!--// selectBox -->
+								</div>
+							</div>
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>DATEPICKER<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- dateWrap -->
+							<div class="dateWrap">
+								<input type="text"class="date" placeholder="기간 입력" title="기간 입력">
+								<span>~</span>
+								<input type="text"class="date" placeholder="기간 입력" title="기간 입력">
+							</div>
+							<!--// dateWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- dateWrap -->
+							<div class="dateWrap">
+								<input type="text"class="date" placeholder="기간 입력" title="기간 입력">
+								<span>~</span>
+								<input type="text"class="date" placeholder="기간 입력" title="기간 입력">
+							</div>
+							<!--// dateWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>CUSTOM INPUT<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- flex -->
+							<div class="flex">
+								<div class="selectBox">
+									<button type="button">년도 선택</button>
+									<div class="option">
+										<ul>
+											<li><a href="">년도 선택</a></li>
+											<li><a href="">2020</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="selectBox">
+									<button type="button">월 선택</button>
+									<div class="option">
+										<ul>
+											<li><a href="">월 선택</a></li>
+											<li><a href="">01</a></li>
+										</ul>
+									</div>
+								</div>
+								<input type="text" title="검색어 입력" placeholder="검색어를 입력하세요.">
+							</div>
+							<!--// flex -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- flex -->
+							<div class="flex">
+								<div class="selectBox">
+									<button type="button">년도 선택</button>
+									<div class="option">
+										<ul>
+											<li><a href="">년도 선택</a></li>
+											<li><a href="">2020</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="selectBox">
+									<button type="button">월 선택</button>
+									<div class="option">
+										<ul>
+											<li><a href="">월 선택</a></li>
+											<li><a href="">01</a></li>
+										</ul>
+									</div>
+								</div>
+								<input type="text" title="검색어 입력" placeholder="검색어를 입력하세요.">
+							</div>
+							<!--// flex -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>FILE UPLOAD<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- fileWrap -->
+							<div class="fileWrap">
+								<input type="text" title="파일명">
+								<input type="file" id="fileUpload"><label for="fileUpload">파일 업로드</label>
+							</div> 
+							<!--// fileWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- fileWrap -->
+							<div class="fileWrap">
+								<input type="text" title="파일명">
+								<input type="file" id="fileUpload"><label for="fileUpload">파일 업로드</label>
+							</div>
+							<!--// fileWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--// 인풋 -->
+
+			<!-- 검색영역 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>SEARCH AREA01<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- searchWrap -->
+							<div class="searchWrap">
+								<div class="searchTable">
+									<table>
+										<caption>검색영역표</caption>
+										<colgroup>
+											<col style="width:140px">
+											<col style="width:auto">
+											<col style="width:200px">
+											<col style="width:110px">
+										</colgroup>
+										<tbody>
+											<tr>
+												<td>
+													<select class="select" title="구분 선택">
+														<option value="">검색어 입력</option>
+														<option value="">기업명</option>
+														<option value="">계약만료월</option>
+														<option value="">계약상태</option>
+													</select>
+												</td>
+												<td>
+													<input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요.">
+													<!-- 기업명 -->
+													<!-- <div class="selectBox">
+														<button type="button">전체</button>
+														<div class="option">
+															<input type="text" title="검색어 입력" placeholder="검색어 입력">
+															<ul>
+																<li><a href="">전체</a></li>
+																<li value="val02"><a href="">전체2</a></li>
+																<li value="val03" class="depth02"><a href="">전체2-1</a></li>
+																<li value="val04" class="depth02"><a href="">전체2-2</a></li>
+																<li value="val05" class="depth02"><a href="">전체2-3</a></li>
+																<li value="val06"><a href="">전체3</a></li>
+																<li value="val07"><a href="">전체4</a></li>
+															</ul>
+														</div>
+													</div> -->
+													<!--// 기업명 -->
+													<!-- 계약만료월 -->
+													<!-- <div class="flex">
+														<div class="selectBox">
+															<button type="button">년도 선택</button>
+															<div class="option">
+																<ul>
+																	<li><a href="">년도 선택</a></li>
+																	<li value="val02"><a href="">2020</a></li>
+																</ul>
+															</div>
+														</div>
+														<div class="selectBox">
+															<button type="button">월 선택</button>
+															<div class="option">
+																<ul>
+																	<li><a href="">월 선택</a></li>
+																	<li value="val02"><a href="">01</a></li>
+																</ul>
+															</div>
+														</div>
+													</div> -->
+													<!--// 계약만료월 -->
+													<!-- 계약상태 -->
+													<!-- <div class="selectBox">
+														<button type="button">전체</button>
+														<div class="option">
+															<ul>
+																<li><a href="">전체</a></li>
+																<li value="val02"><a href="">만료</a></li>
+																<li value="val03"><a href="">미계약</a></li>
+																<li value="val04"><a href="">면접시스템</a></li>
+																<li value="val05"><a href="">프로젝트</a></li>
+																<li value="val06"><a href="">Primeum</a></li>
+																<li value="val07"><a href="">Standard</a></li>
+															</ul>
+														</div>
+													</div> -->
+													<!--// 계약상태 -->
+												</td>
+												<td>
+													<!-- checkWrap -->
+													<div class="checkWrap">
+														<span class="check"><input type="radio" name="chk03" id="chk0301"><label for="chk0301">전체</label></span>
+														<span class="check"><input type="radio" name="chk03" id="chk0302"><label for="chk0302">계약중</label></span>
+													</div>
+													<!--// checkWrap -->
+												</td>
+												<td><button type="button" class="btn sm btnNavy"><span class="icoAdd">조건추가</span></button></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="searchBox">
+									<div class="addLabel">
+										<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+										<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+										<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+										<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+									</div>
+									<div class="btnCenter">
+										<button type="button" class="btn sm btnLGray"><span class="icoReset">초기화</span></button>
+										<button type="button" class="btn sm btnNavy"><span class="icoSearch">검색</span></button>
+									</div>
+								</div>
+							</div>
+							<!--// searchWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- searchWrap -->
+							<div class="searchWrap">
+								<div class="searchTable">
+									<table>
+										<caption>검색영역표</caption>
+										<colgroup>
+											<col style="width:140px">
+											<col style="width:auto">
+											<col style="width:200px">
+											<col style="width:110px">
+										</colgroup>
+										<tbody>
+											<tr>
+												<td>
+													<select class="select" title="구분 선택">
+														<option value="">검색어 입력</option>
+														<option value="">기업명</option>
+														<option value="">계약만료월</option>
+														<option value="">계약상태</option>
+													</select>
+												</td>
+												<td>
+													<input type="text" title="검색어를 입력하세요." placeholder="검색어를 입력하세요.">
+													<!-- 기업명 -->
+													<!-- <div class="selectBox">
+														<button type="button">전체</button>
+														<div class="option">
+															<input type="text" title="검색어 입력" placeholder="검색어 입력">
+															<ul>
+																<li><a href="">전체</a></li>
+																<li value="val02"><a href="">전체2</a></li>
+																<li value="val03" class="depth02"><a href="">전체2-1</a></li>
+																<li value="val04" class="depth02"><a href="">전체2-2</a></li>
+																<li value="val05" class="depth02"><a href="">전체2-3</a></li>
+																<li value="val06"><a href="">전체3</a></li>
+																<li value="val07"><a href="">전체4</a></li>
+															</ul>
+														</div>
+													</div> -->
+													<!--// 기업명 -->
+													<!-- 계약만료월 -->
+													<!-- <div class="flex">
+														<div class="selectBox">
+															<button type="button">년도 선택</button>
+															<div class="option">
+																<ul>
+																	<li><a href="">년도 선택</a></li>
+																	<li value="val02"><a href="">2020</a></li>
+																</ul>
+															</div>
+														</div>
+														<div class="selectBox">
+															<button type="button">월 선택</button>
+															<div class="option">
+																<ul>
+																	<li><a href="">월 선택</a></li>
+																	<li value="val02"><a href="">01</a></li>
+																</ul>
+															</div>
+														</div>
+													</div> -->
+													<!--// 계약만료월 -->
+													<!-- 계약상태 -->
+													<!-- <div class="selectBox">
+														<button type="button">전체</button>
+														<div class="option">
+															<ul>
+																<li><a href="">전체</a></li>
+																<li value="val02"><a href="">만료</a></li>
+																<li value="val03"><a href="">미계약</a></li>
+																<li value="val04"><a href="">면접시스템</a></li>
+																<li value="val05"><a href="">프로젝트</a></li>
+																<li value="val06"><a href="">Primeum</a></li>
+																<li value="val07"><a href="">Standard</a></li>
+															</ul>
+														</div>
+													</div> -->
+													<!--// 계약상태 -->
+												</td>
+												<td>
+													<!-- checkWrap -->
+													<div class="checkWrap">
+														<span class="check"><input type="radio" name="chk03" id="chk0301"><label for="chk0301">전체</label></span>
+														<span class="check"><input type="radio" name="chk03" id="chk0302"><label for="chk0302">계약중</label></span>
+													</div>
+													<!--// checkWrap -->
+												</td>
+												<td><button type="button" class="btn sm btnNavy"><span class="icoAdd">조건추가</span></button></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="searchBox">
+									<div class="addLabel">
+										<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+										<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+										<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+										<span class="txtLabel">TEXT <a href="javascript:void(0)" class="btnDel" onclick="fn_label_del(this)">삭제</a></span>
+									</div>
+									<div class="btnCenter">
+										<button type="button" class="btn sm btnLGray"><span class="icoReset">초기화</span></button>
+										<button type="button" class="btn sm btnNavy"><span class="icoSearch">검색</span></button>
+									</div>
+								</div>
+							</div>
+							<!--// searchWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>SEARCH AREA02<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- searchWrap -->
+							<div class="searchWrap">
+								<div class="searchTable">
+									<table>
+										<caption>검색영역표</caption>
+										<colgroup>
+											<col style="width:82px">
+											<col style="width:auto">
+											<col style="width:150px">
+											<col style="width:auto">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">설정</th>
+												<td>
+													<!-- btnInput -->
+													<div class="btnInput">
+														<!-- selectBox -->
+														<div class="selectBox">
+															<button type="button">전체 채용분야</button>
+															<div class="option">
+																<input type="text" title="검색어 입력" placeholder="검색어 입력">
+																<ul>
+																	<li><a href="">전체 채용분야</a></li>
+																</ul>
+															</div>
+														</div>
+														<!--// selectBox -->
+														<button type="button" class="btn sm btnNavy">확인</button>
+													</div>
+													<!--// btnInput -->
+												</td>
+												<th scope="row">그래프</th>
+												<td>
+													<dl>
+														<dt>일일 집계</dt>
+														<dd class="checkWrap">
+															<span class="check"><input type="checkbox" id="chk0101"><label for="chk0101">공고조회</label></span>
+															<span class="check"><input type="checkbox" id="chk0102"><label for="chk0102">임시저장</label></span>
+															<span class="check"><input type="checkbox" id="chk0103"><label for="chk0103">최종제출</label></span>
+														</dd>
+													</dl>
+													<dl>
+														<dt>누적 집계</dt>
+														<dd class="checkWrap">
+															<span class="check"><input type="checkbox" id="chk0201"><label for="chk0201">공고조회</label></span>
+															<span class="check"><input type="checkbox" id="chk0202"><label for="chk0202">임시저장</label></span>
+															<span class="check"><input type="checkbox" id="chk0203"><label for="chk0203">최종제출</label></span>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!--// searchWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- searchWrap -->
+							<div class="searchWrap">
+								<div class="searchTable">
+									<table>
+										<caption>검색영역표</caption>
+										<colgroup>
+											<col style="width:82px">
+											<col style="width:auto">
+											<col style="width:150px">
+											<col style="width:auto">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">설정</th>
+												<td>
+													<!-- btnInput -->
+													<div class="btnInput">
+														<!-- selectBox -->
+														<div class="selectBox">
+															<button type="button">전체 채용분야</button>
+															<div class="option">
+																<input type="text" title="검색어 입력" placeholder="검색어 입력">
+																<ul>
+																	<li><a href="">전체 채용분야</a></li>
+																</ul>
+															</div>
+														</div>
+														<!--// selectBox -->
+														<button type="button" class="btn sm btnNavy">확인</button>
+													</div>
+													<!--// btnInput -->
+												</td>
+												<th scope="row">그래프</th>
+												<td>
+													<dl>
+														<dt>일일 집계</dt>
+														<dd class="checkWrap">
+															<span class="check"><input type="checkbox" id="chk0101"><label for="chk0101">공고조회</label></span>
+															<span class="check"><input type="checkbox" id="chk0102"><label for="chk0102">임시저장</label></span>
+															<span class="check"><input type="checkbox" id="chk0103"><label for="chk0103">최종제출</label></span>
+														</dd>
+													</dl>
+													<dl>
+														<dt>누적 집계</dt>
+														<dd class="checkWrap">
+															<span class="check"><input type="checkbox" id="chk0201"><label for="chk0201">공고조회</label></span>
+															<span class="check"><input type="checkbox" id="chk0202"><label for="chk0202">임시저장</label></span>
+															<span class="check"><input type="checkbox" id="chk0203"><label for="chk0203">최종제출</label></span>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!--// searchWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>SEARCH AREA03<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- searchWrap -->
+							<div class="searchWrap">
+								<div class="searchTable">
+									<table>
+										<caption>검색영역표</caption>
+										<colgroup>
+											<col style="width:100px">
+											<col style="width:auto">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">그래프</th>
+												<td>
+													<dl>
+														<dt>일일 집계</dt>
+														<dd class="checkWrap">
+															<span class="check"><input type="checkbox" id="chk0101"><label for="chk0101">공고조회</label></span>
+															<span class="check"><input type="checkbox" id="chk0102"><label for="chk0102">임시저장</label></span>
+															<span class="check"><input type="checkbox" id="chk0103"><label for="chk0103">최종제출</label></span>
+														</dd>
+														<dt>누적 집계</dt>
+														<dd class="checkWrap">
+															<span class="check"><input type="checkbox" id="chk0201"><label for="chk0201">공고조회</label></span>
+															<span class="check"><input type="checkbox" id="chk0202"><label for="chk0202">임시저장</label></span>
+															<span class="check"><input type="checkbox" id="chk0203"><label for="chk0203">최종제출</label></span>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!--// searchWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- searchWrap -->
+							<div class="searchWrap">
+								<div class="searchTable">
+									<table>
+										<caption>검색영역표</caption>
+										<colgroup>
+											<col style="width:100px">
+											<col style="width:auto">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">그래프</th>
+												<td>
+													<dl>
+														<dt>일일 집계</dt>
+														<dd class="checkWrap">
+															<span class="check"><input type="checkbox" id="chk0101"><label for="chk0101">공고조회</label></span>
+															<span class="check"><input type="checkbox" id="chk0102"><label for="chk0102">임시저장</label></span>
+															<span class="check"><input type="checkbox" id="chk0103"><label for="chk0103">최종제출</label></span>
+														</dd>
+														<dt>누적 집계</dt>
+														<dd class="checkWrap">
+															<span class="check"><input type="checkbox" id="chk0201"><label for="chk0201">공고조회</label></span>
+															<span class="check"><input type="checkbox" id="chk0202"><label for="chk0202">임시저장</label></span>
+															<span class="check"><input type="checkbox" id="chk0203"><label for="chk0203">최종제출</label></span>
+														</dd>
+													</dl>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!--// searchWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--// 검색영역 -->
+
+			<!-- 필터 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>FILTER<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- topFilter -->
+							<div class="topFilter">
+								<div class="left">
+									<button type="button" class="btn"><span class="icoFocus">Focus</span></button>
+									<!-- 기본정보 -->
+									<div class="selectBox">
+										<button type="button">기본정보</button>
+										<div class="option">
+											<input type="text" title="검색어 입력" placeholder="검색어 입력">
+											<ul>
+												<li><a href="">기본정보</a></li>
+											</ul>
+										</div>
+									</div>
+									<!--// 기본정보 -->
+									<!-- Display -->
+									<div class="selectBox">
+										<button type="button">Display</button>
+										<div class="option">
+											<ul>
+												<li class="check"><input type="checkbox" id="chk0101"><label for="chk0101">ALL</label></li>
+												<li class="check"><input type="checkbox" id="chk0102"><label for="chk0102">CHECK</label></li>
+											</ul>
+										</div>
+									</div>
+									<!--// Display -->
+									<button type="button" class="btn">등록</button>
+									<button type="button" class="btn">수정</button>
+									<button type="button" class="btn">삭제</button>
+								</div>
+								<div class="right">
+									<!-- 기본정보 -->
+									<div class="selectBox">
+										<button type="button">기본정보</button>
+										<div class="option">
+											<input type="text" title="검색어 입력" placeholder="검색어 입력">
+											<ul>
+												<li><a href="">기본정보</a></li>
+											</ul>
+										</div>
+									</div>
+									<!--// 기본정보 -->
+									<!-- Display -->
+									<div class="selectBox">
+										<button type="button">Display</button>
+										<div class="option">
+											<ul>
+												<li class="check"><input type="checkbox" id="chk0101"><label for="chk0101">ALL</label></li>
+												<li class="check"><input type="checkbox" id="chk0102"><label for="chk0102">CHECK</label></li>
+											</ul>
+										</div>
+									</div>
+									<!--// Display -->
+									<!-- 개수 -->
+									<select class="select" title="개수 선택">
+										<option value="">20</option>
+										<option value="">50</option>
+										<option value="">100</option>
+										<option value="">200</option>
+									</select>
+									<!--// 개수 -->
+								</div>
+							</div>
+							<!--// topFilter -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- topFilter -->
+							<div class="topFilter">
+								<div class="left">
+									<button type="button" class="btn"><span class="icoFocus">Focus</span></button>
+									<!-- 기본정보 -->
+									<div class="selectBox">
+										<button type="button">기본정보</button>
+										<div class="option">
+											<input type="text" title="검색어 입력" placeholder="검색어 입력">
+											<ul>
+												<li><a href="">기본정보</a></li>
+											</ul>
+										</div>
+									</div>
+									<!--// 기본정보 -->
+									<!-- Display -->
+									<div class="selectBox">
+										<button type="button">Display</button>
+										<div class="option">
+											<ul>
+												<li class="check"><input type="checkbox" id="chk0101"><label for="chk0101">ALL</label></li>
+												<li class="check"><input type="checkbox" id="chk0102"><label for="chk0102">CHECK</label></li>
+											</ul>
+										</div>
+									</div>
+									<!--// Display -->
+									<button type="button" class="btn">등록</button>
+									<button type="button" class="btn">수정</button>
+									<button type="button" class="btn">삭제</button>
+								</div>
+								<div class="right">
+									<!-- 기본정보 -->
+									<div class="selectBox">
+										<button type="button">기본정보</button>
+										<div class="option">
+											<input type="text" title="검색어 입력" placeholder="검색어 입력">
+											<ul>
+												<li><a href="">기본정보</a></li>
+											</ul>
+										</div>
+									</div>
+									<!--// 기본정보 -->
+									<!-- Display -->
+									<div class="selectBox">
+										<button type="button">Display</button>
+										<div class="option">
+											<ul>
+												<li class="check"><input type="checkbox" id="chk0101"><label for="chk0101">ALL</label></li>
+												<li class="check"><input type="checkbox" id="chk0102"><label for="chk0102">CHECK</label></li>
+											</ul>
+										</div>
+									</div>
+									<!--// Display -->
+									<!-- 개수 -->
+									<select class="select" title="개수 선택">
+										<option value="">20</option>
+										<option value="">50</option>
+										<option value="">100</option>
+										<option value="">200</option>
+									</select>
+									<!--// 개수 -->
+								</div>
+							</div>
+							<!--// topFilter -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--// 필터 -->
+
+			<!-- 탭 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>1DAPTH [LINK]<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- tabWrap -->
+							<div class="tabWrap tabFunc">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+									<li><a href="">TAB MENU03</a></li>
+									<li><a href="">TAB MENU04</a></li>
+									<li><a href="">TAB MENU05</a></li>
+								</ul>
+							</div>
+							<!--// tabWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- tabWrap -->
+							<div class="tabWrap">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+									<li><a href="">TAB MENU03</a></li>
+									<li><a href="">TAB MENU04</a></li>
+									<li><a href="">TAB MENU05</a></li>
+								</ul>
+							</div>
+							<!--// tabWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>1DAPTH + 2DAPTH SET<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- tabWrap -->
+							<div class="tabWrap">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+									<li><a href="">TAB MENU03</a></li>
+									<li><a href="">TAB MENU04</a></li>
+									<li><a href="">TAB MENU05</a></li>
+								</ul>
+							</div>
+							<!--// tabWrap -->
+							<!-- tabInTab -->
+							<div class="tabInTab">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+								</ul>
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- tabWrap -->
+							<div class="tabWrap">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+									<li><a href="">TAB MENU03</a></li>
+									<li><a href="">TAB MENU04</a></li>
+									<li><a href="">TAB MENU05</a></li>
+								</ul>
+							</div>
+							<!--// tabWrap -->
+							<!-- tabInTab -->
+							<div class="tabInTab">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+								</ul>
+							</div>
+							<!--// tabInTab -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>1DAPTH + 2DAPTH SET [2DAPTH FUNCTION]<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- tabWrap -->
+							<div class="tabWrap">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+									<li><a href="">TAB MENU03</a></li>
+									<li><a href="">TAB MENU04</a></li>
+									<li><a href="">TAB MENU05</a></li>
+								</ul>
+							</div>
+							
+							<!-- tabInTab -->
+							<div class="tabInTab tabFunc">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+								</ul>
+								<div class="tabBox" style="padding:30px 30px 0">
+									<!-- TAB MENU01 -->
+									<div>
+										TAB MENU01 CONTENTS
+									</div>
+									<!--// TAB MENU01 -->
+									<!-- TAB MENU02 -->
+									<div>
+										TAB MENU02 CONTENTS
+									</div>
+									<!--// TAB MENU02 -->
+								</div>
+							</div>
+							<!--// tabInTab -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- tabWrap -->
+							<div class="tabWrap">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+									<li><a href="">TAB MENU03</a></li>
+									<li><a href="">TAB MENU04</a></li>
+									<li><a href="">TAB MENU05</a></li>
+								</ul>
+							</div>
+							<!--// tabWrap -->
+							<!-- tabInTab -->
+							<div class="tabInTab tabFunc">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+								</ul>
+								<div class="tabBox">
+									<!-- TAB MENU01 -->
+									<div>
+										TAB MENU01 CONTENTS
+									</div>
+									<!--// TAB MENU01 -->
+									<!-- TAB MENU02 -->
+									<div>
+										TAB MENU02 CONTENTS
+									</div>
+									<!--// TAB MENU02 -->
+								</div>
+							</div>
+							<!--// tabInTab -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>SUB TAB<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- subTabWrap -->
+							<div class="subTabWrap">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+								</ul>
+							</div>
+							<!--// subTabWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- subTabWrap -->
+							<div class="subTabWrap tabFunc">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+								</ul>
+								<div class="tabBox">
+									<!-- TAB MENU01 -->
+									<div>
+										TAB MENU01 CONTENTS
+									</div>
+									<!--// TAB MENU01 -->
+									<!-- TAB MENU02 -->
+									<div>
+										TAB MENU02 CONTENTS
+									</div>
+									<!--// TAB MENU02 -->
+								</div>
+							</div>
+							<!--// subTabWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>SUB TAB [FUNCTION]<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- subTabWrap -->
+							<div class="subTabWrap tabFunc">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+								</ul>
+								<div class="tabBox" style="padding:30px 30px 0">
+									<!-- TAB MENU01 -->
+									<div>
+										TAB MENU01 CONTENTS
+									</div>
+									<!--// TAB MENU01 -->
+									<!-- TAB MENU02 -->
+									<div>
+										TAB MENU02 CONTENTS
+									</div>
+									<!--// TAB MENU02 -->
+								</div>
+							</div>
+							<!--// subTabWrap -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- subTabWrap -->
+							<div class="subTabWrap tabFunc">
+								<ul>
+									<li class="curr"><a href="">TAB MENU01</a></li>
+									<li><a href="">TAB MENU02</a></li>
+								</ul>
+								<div class="tabBox">
+									<!-- TAB MENU01 -->
+									<div>
+										TAB MENU01 CONTENTS
+									</div>
+									<!--// TAB MENU01 -->
+									<!-- TAB MENU02 -->
+									<div>
+										TAB MENU02 CONTENTS
+									</div>
+									<!--// TAB MENU02 -->
+								</div>
+							</div>
+							<!--// subTabWrap -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--// 탭 -->
+
+			<!-- 테이블 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>COL TABLE<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- colTable -->
+							<div class="colTable">
+								<table>
+									<caption>항목, 항목, 항목 항목으로 구성된 제목 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:60px">
+										<col span="8" style="width:auto">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col"><span class="check cW only"><input type="checkbox" id="chkAll"><label for="chkAll">전체선택</label></span></th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">LABEL</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>TEXT</td>
+											<td><a href="" class="btnLink">TEXT</a></td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td><span class="label orange">TEXT</span></td>
+										</tr>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>TEXT</td>
+											<td><a href="" class="btnLink">TEXT</a></td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td><span class="label blue">TEXT</span></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// colTable -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- colTable -->
+							<div class="colTable">
+								<table>
+									<caption>항목, 항목, 항목 항목으로 구성된 제목 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:60px">
+										<col span="8" style="width:auto">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col"><span class="check cW only"><input type="checkbox" id="chkAll"><label for="chkAll">전체선택</label></span></th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">LABEL</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>TEXT</td>
+											<td><a href="" class="btnLink">TEXT</a></td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td><span class="label orange">TEXT</span></td>
+										</tr>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>TEXT</td>
+											<td><a href="" class="btnLink">TEXT</a></td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td><span class="label blue">TEXT</span></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// colTable -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>COL TABLE_ ARROW BTN<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- colTable -->
+							<div class="colTable">
+								<table>
+									<caption>항목, 항목, 항목 항목으로 구성된 제목 테이블입니다.</caption>
+									<colgroup>
+										<col span="6" style="width:auto">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col"><span class="check cW only"><input type="checkbox" id="chkAll"><label for="chkAll">전체선택</label></span></th>
+											<th scope="col">TEXT
+												 <div class="sort">
+													<button class="btnUp">오름차순 정렬</button>
+													<button class="btnDown on">내림차순 정렬</button>
+												</div>
+											</th>
+											<th scope="col">TEXT
+												<!-- 기본 버튼엔 on이 안들어 갑니다. -->
+												<div class="sort">
+													<button class="btnUp on">오름차순 정렬</button><!-- 오름차순의 경우 class="on" 추가 -->
+													<button class="btnDown">내림차순 정렬</button><!-- 내림차순의 경우 class="on" 추가 -->
+												</div>
+												<!--// 기본 버튼엔 on이 안들어 갑니다. -->
+											</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>2</td>
+											<td><a href="" class="btnLink">TEXT</a></td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+										</tr>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>1</td>
+											<td><a href="" class="btnLink">TEXT</a></td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// colTable -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- colTable -->
+							<div class="colTable">
+								<table>
+									<caption>항목, 항목, 항목 항목으로 구성된 제목 테이블입니다.</caption>
+									<colgroup>
+										<col span="6" style="width:auto">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col"><span class="check cW only"><input type="checkbox" id="chkAll"><label for="chkAll">전체선택</label></span></th>
+											<th scope="col">TEXT
+												 <div class="sort">
+													<button class="btnUp">오름차순 정렬</button>
+													<button class="btnDown on">내림차순 정렬</button>
+												</div>
+											</th>
+											<th scope="col">TEXT
+												<!-- 기본 버튼엔 on이 안들어 갑니다. -->
+												<div class="sort">
+													<button class="btnUp on">오름차순 정렬</button> <!-- 오름차순의 경우 class="on" 추가 -->
+													<button class="btnDown">내림차순 정렬</button> <!-- 내림차순의 경우 class="on" 추가 -->
+												</div>
+												<!--// 기본 버튼엔 on이 안들어 갑니다. -->
+											</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>2</td>
+											<td><a href="" class="btnLink">TEXT</a></td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+										</tr>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>1</td>
+											<td><a href="" class="btnLink">TEXT</a></td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// colTable -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>LIST TABLE<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- listTable -->
+							<div class="listTable">
+								<table>
+									<caption>리스트 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:54px">
+										<col style="width:54px">
+										<col style="width:auto">
+										<col style="width:190px">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>1</td>
+											<td class="txtL">
+												<p>03-000001</p>
+												<strong class="tit"><span class="label red">심사중</span><a href="" class="btnLink">홍길동</a></strong>
+												<div class="txtArea">
+													<span>신입</span>
+													<span>정보처리산업기사</span>
+													<span>TOEIC 823점</span>
+													<span>정보처리산업기사</span>
+													<span>TOEIC 823점</span>
+												</div>
+											</td>
+											<td>
+												<strong class="txt">85<span>점</span></strong>
+												<div class="txtArea">
+													<span>abc1234@orp.biz</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>1</td>
+											<td class="txtL">
+												<p>TEXT</p>
+												<strong class="tit"><span class="label red">TEXT</span><a href="" class="btnLink">TEXT</a></strong>
+												<div class="txtArea">
+													<span>TEXT</span>
+													<span>TEXT</span>
+													<span>TEXT</span>
+													<span>TEXT</span>
+													<span>TEXT</span>
+												</div>
+											</td>
+											<td>
+												<strong class="txt">TEXT<span>TEXT</span></strong>
+												<div class="txtArea">
+													<span>TEXT</span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// listTable -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- listTable -->
+							<div class="listTable">
+								<table>
+									<caption>리스트 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:54px">
+										<col style="width:54px">
+										<col style="width:auto">
+										<col style="width:190px">
+									</colgroup>
+									<tbody>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>1</td>
+											<td class="txtL">
+												<p>03-000001</p>
+												<strong class="tit"><span class="label red">심사중</span><a href="" class="btnLink">홍길동</a></strong>
+												<div class="txtArea">
+													<span>신입</span>
+													<span>정보처리산업기사</span>
+													<span>TOEIC 823점</span>
+													<span>정보처리산업기사</span>
+													<span>TOEIC 823점</span>
+												</div>
+											</td>
+											<td>
+												<strong class="txt">85<span>점</span></strong>
+												<div class="txtArea">
+													<span>abc1234@orp.biz</span>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td><span class="check only"><input type="checkbox" id="chkOnly"><label for="chkOnly">선택</label></span></td>
+											<td>1</td>
+											<td class="txtL">
+												<p>TEXT</p>
+												<strong class="tit"><span class="label red">TEXT</span><a href="" class="btnLink">TEXT</a></strong>
+												<div class="txtArea">
+													<span>TEXT</span>
+													<span>TEXT</span>
+													<span>TEXT</span>
+													<span>TEXT</span>
+													<span>TEXT</span>
+												</div>
+											</td>
+											<td>
+												<strong class="txt">TEXT<span>TEXT</span></strong>
+												<div class="txtArea">
+													<span>TEXT</span>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// listTable -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>VIEW TABLE<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- viewTable -->
+							<div class="viewTable">
+								<table>
+									<caption>항목, 항목, 항목 항목으로 구성된 제목 테이블입니다.</caption>
+									<colgroup>
+										<col span="5" style="width:auto">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT<span>(20.03.24~20.03.31)</span></th>
+											<th scope="col">TEXT<span>(20.03.24~20.03.31)</span></th>
+											<th scope="col">TEXT<span>(20.03.24~20.03.31)</span></th>
+											<th scope="col">TEXT</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+										</tr>
+										<tr>
+											<td>TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+										</tr>
+										<tr>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// viewTable -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- viewTable -->
+							<div class="viewTable">
+								<table>
+									<caption>항목, 항목, 항목 항목으로 구성된 제목 테이블입니다.</caption>
+									<colgroup>
+										<col span="5" style="width:auto">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">TEXT</th>
+											<th scope="col">TEXT<span>(20.03.24~20.03.31)</span></th>
+											<th scope="col">TEXT<span>(20.03.24~20.03.31)</span></th>
+											<th scope="col">TEXT<span>(20.03.24~20.03.31)</span></th>
+											<th scope="col">TEXT</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+										</tr>
+										<tr>
+											<td>TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+											<td class="cBlue">TEXT</td>
+										</tr>
+										<tr>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+											<td>TEXT</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// viewTable -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>INPUT TABLE<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- inputTable -->
+							<div class="inputTable">
+								<table>
+									<caption>항목, 항목, 항목으로 구성된 제목 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:135px">
+										<col style="width:auto">
+										<col style="width:120px">
+										<col style="width:auto">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">TEXT01 <span class="cRed">*</span></th>
+											<td><input type="text" title="TEXT01 입력" placeholder="TEXT01를 입력해주세요.">
+												<p class="msg">※ 메시지 입력입니다.</p>
+												<p class="msg">※ 메시지 입력입니다.</p>
+											</td>
+											<th scope="row">TEXT02</th>
+											<td><input type="text" title="TEXT01 입력" placeholder="TEXT01를 입력해주세요."></td>
+										</tr>
+										<tr>
+											<th scope="row">TEXT03 <span class="cRed">*</span></th>
+											<td><input type="text" title="TEXT01 입력" placeholder="TEXT01를 입력해주세요.">
+												<p class="msg">※ 메시지 입력입니다.</p>
+											</td>
+											<th scope="row">TEXT04</th>
+											<td><input type="text" title="TEXT01 입력" placeholder="TEXT01를 입력해주세요."></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// inputTable -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- inputTable -->
+							<div class="inputTable">
+								<table>
+									<caption>항목, 항목, 항목으로 구성된 제목 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:120px">
+										<col style="width:auto">
+										<col style="width:120px">
+										<col style="width:auto">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">TEXT01 <span class="cRed">*</span></th>
+											<td><input type="text" title="TEXT01 입력" placeholder="TEXT01를 입력해주세요.">
+												<p class="msg">※ 메시지 입력입니다.</p>
+												<p class="msg">※ 메시지 입력입니다.</p>
+											</td>
+											<th scope="row">TEXT02</th>
+											<td><input type="text" title="TEXT01 입력" placeholder="TEXT01를 입력해주세요."></td>
+										</tr>
+										<tr>
+											<th scope="row">TEXT03 <span class="cRed">*</span></th>
+											<td><input type="text" title="TEXT01 입력" placeholder="TEXT01를 입력해주세요.">
+												<p class="msg">※ 메시지 입력입니다.</p>
+											</td>
+											<th scope="row">TEXT04</th>
+											<td><input type="text" title="TEXT01 입력" placeholder="TEXT01를 입력해주세요."></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// inputTable -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>PAGING<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- paging -->
+							<div class="paging">
+								<p class="total">Total 2건</p>
+								<div class="inner">
+									<a href="" class="btnFirst">첫 페이지</a>
+									<a href="" class="btnPrev">이전 페이지</a>
+									<div class="page">
+										<a href="">1</a>
+										<a href="">2</a>
+										<a href="">3</a>
+										<strong>4</strong>
+										<a href="">5</a>
+										<a href="">6</a>
+										<a href="">7</a>
+										<a href="">8</a>
+										<a href="">9</a>
+										<a href="">10</a>
+									</div>
+									<a href="" class="btnNext">다음 페이지</a>
+									<a href="" class="btnLast">마지막 페이지</a>
+								</div>
+							</div>
+							<!--// paging -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- paging -->
+							<div class="paging">
+								<p class="total">Total 2건</p>
+								<div class="inner">
+									<a href="" class="btnFirst">첫 페이지</a>
+									<a href="" class="btnPrev">이전 페이지</a>
+									<div class="page">
+										<a href="">1</a>
+										<a href="">2</a>
+										<a href="">3</a>
+										<strong>4</strong>
+										<a href="">5</a>
+										<a href="">6</a>
+										<a href="">7</a>
+										<a href="">8</a>
+										<a href="">9</a>
+										<a href="">10</a>
+									</div>
+									<a href="" class="btnNext">다음 페이지</a>
+									<a href="" class="btnLast">마지막 페이지</a>
+								</div>
+							</div>
+							<!--// paging -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>INPUT TABLE v2<a href="#">Code View</a></dt>
+					<dd>
+						<!-- inputTable -->
+						<div class="inputTable">
+							<table>
+								<caption>항목, 항목, 항목으로 구성된 제목 테이블입니다.</caption>
+								<colgroup>
+									<col style="width:200px">
+									<col style="width:90px">
+									<col style="width:auto">
+									<col style="width:90px">
+									<col style="width:auto">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">TEXT</th>
+										<td colspan="4">
+											<input type="text" title="TEXT 입력"  placeholder="TEXT">
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" rowspan="2">TEXT</th>
+										<th scope="row" class="sTit">TEXT1-1</th>
+										<td><input type="text" title="TEXT1-1 입력" placeholder="TEXT1-1" /></td>
+										<th scope="row" class="sTit">TEXT1-2</th>
+										<td><input type="text" title="TEXT1-2 입력" placeholder="TEXT1-2" /></td>
+									</tr>
+									<tr class="bdNone">
+										<th scope="row" class="sTit">TEXT2-1</th>
+										<td><input type="text" title="TEXT2-1 입력" placeholder="TEXT2-1" /></td>
+										<th scope="row" class="sTit">TEXT2-2</th>
+										<td><input type="text" title="TEXT2-2 입력" placeholder="TEXT2-2" /></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!--// inputTable -->
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- inputTable -->
+							<div class="inputTable">
+								<table>
+									<caption>항목, 항목, 항목으로 구성된 제목 테이블입니다.</caption>
+									<colgroup>
+										<col style="width:200px">
+										<col style="width:90px">
+										<col style="width:auto">
+										<col style="width:90px">
+										<col style="width:auto">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">TEXT</th>
+											<td colspan="4">
+												<input type="text" title="TEXT 입력"  placeholder="TEXT">
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" rowspan="2">TEXT</th>
+											<th scope="row" class="sTit">TEXT1-1</th>
+											<td><input type="text" title="TEXT1-1 입력" placeholder="TEXT1-1" /></td>
+											<th scope="row" class="sTit">TEXT1-2</th>
+											<td><input type="text" title="TEXT1-2 입력" placeholder="TEXT1-2" /></td>
+										</tr>
+										<tr class="bdNone">
+											<th scope="row" class="sTit">TEXT2-1</th>
+											<td><input type="text" title="TEXT2-1 입력" placeholder="TEXT2-1" /></td>
+											<th scope="row" class="sTit">TEXT2-2</th>
+											<td><input type="text" title="TEXT2-2 입력" placeholder="TEXT2-2" /></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// inputTable -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--// 테이블 -->
+
+			<!-- 팝업 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>POPUP<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<button type="button" class="btn" onclick="fn_layer('layer1','660')">팝업 오픈</button>
+							<!-- 팝업 -->
+							<div class="layer layer1">
+								<div class="inner">
+									<p class="tit">TITLE</p>
+									<!-- popCont --> 
+									<div class="popCont">
+										<!-- btnCenter -->
+										<div class="btnCenter">
+											<button type="button" class="btn sl btnNavy">BUTTON</button>
+										</div>
+										<!--// btnCenter -->
+									</div>
+									<!--// popCont -->
+									<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">close</a>
+								</div>
+							</div>
+							<!--// 팝업 -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<button type="button" class="btn" onclick="fn_layer('layer1','660')">팝업 오픈</button>
+
+							<!-- 팝업 -->
+							<div class="layer layer1">
+								<div class="inner">
+									<p class="tit">TITLE</p>
+									<!-- popCont --> 
+									<div class="popCont">
+										<!-- btnCenter -->
+										<div class="btnCenter">
+											<button type="button" class="btn sl btnNavy">BUTTON</button>
+										</div>
+										<!--// btnCenter -->
+									</div>
+									<!--// popCont -->
+									<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">close</a>
+								</div>
+							</div>
+							<!--// 팝업 -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--// 팝업 -->
+
+			<!-- 컨텐츠 -->
+			<div class="cont">
+				<dl class="guideList">
+					<dt>CONTENTS<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>TITLEAREA<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- titArea -->
+							<h3>h3 타이틀</h3>
+							<h4>h4 타이틀</h4>
+							<!--// titArea -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- titArea -->
+							<h3>h3 타이틀</h3>
+							<h4>h4 타이틀</h4>
+							<!--// titArea -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>TITLEAREA v2<a href="#">Code View</a></dt>
+					<dd>
+						<div class="guideView">
+							<!-- titleArea -->
+							<h3>h3 타이틀</h3>
+							<div class="develInfo">
+								<ul class="dotList">
+									<li>홍길동 <span>2020.05.07 10:39:58</span></li>
+									<li>홍길동 <span>2020.05.07 10:39:58</span></li>
+									<li>코드명: <span>STD-00000</span></li>
+								</ul>
+							</div>
+							<h4>h4 타이틀</h4>
+							<!--// titleArea -->
+						</div>
+						<!-- 코드내용 -->
+						<div class="guideCode">
+						<xmp>
+							<!-- titleArea -->
+							<h3>h3 타이틀</h3>
+							<div class="develInfo">
+								<ul class="dotList">
+									<li>홍길동 <span>2020.05.07 10:39:58</span></li>
+									<li>홍길동 <span>2020.05.07 10:39:58</span></li>
+									<li>코드명: <span>STD-00000</span></li>
+								</ul>
+							</div>
+							<h4>h4 타이틀</h4>
+							<!--// titleArea -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+				<dl class="guideList">
+					<dt>TITLEAREA v3<a href="#">Code View</a></dt>
+					<dd>
+						<!-- titleArea -->
+						<h3 class="mt75">h3 타이틀</h3>
+						<h4>h4 타이틀</h4>
+						<div>
+							<!-- descArea -->
+							<p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</p>
+							<ul class="dotList">
+								<li>내용내용내용: <span>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></li>
+								<li>내용내용내용: <span>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></li>
+								<li>내용내용내용: <span>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></li>
+							</ul>
+							<!--// descArea -->
+						</div>
+						<!-- titleArea -->
+						<div class="guideCode">
+						<xmp>
+						<!-- titleArea -->
+						<h3 class="mt75">h3 타이틀</h3>
+						<h4>h4 타이틀</h4>
+						<!--// titleArea -->
+						<div class="ml62">
+							<!-- descArea -->
+							<p>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</p>
+							<ul class="dotList">
+								<li>내용내용내용: <span>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></li>
+								<li>내용내용내용: <span>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></li>
+								<li>내용내용내용: <span>내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</span></li>
+							</ul>
+							<!--// descArea -->
+						</div>
+						<!-- titleArea -->
+						</xmp>
+						<a href="#" class="closeCodeArea">코드 닫기</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<!--// 컨텐츠 -->
+		</div>
+	</div>
+</body>
+</html>

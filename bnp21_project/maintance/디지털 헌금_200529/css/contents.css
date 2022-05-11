@@ -1,0 +1,841 @@
+@charset "utf-8";
+/*>>>>>>>>>> 공통 <<<<<<<<<<*/
+
+/* 버튼 */
+.btn {display:inline-block; padding:2px 12px 0; border:1px solid #ccc; text-align:center; line-height:46px; font-size:22px; font-weight:500; color:#000; letter-spacing:-0.05em; background:#fff}
+.btn:disabled {border-color:#dbdbdb; background:#dbdbdb}
+.btn.ss {border-radius:14px; line-height:22px; font-size:16px}
+.btnYellowL {border-color:#ffcc00; color:#000; background:#fff}
+.btnYellow {border-color:#ffcc00; color:#000; background:#ffcc00}
+.btnGray {border-color:#dbdbdb; color:#000; background:#dbdbdb}
+.btnLGray {border-color:#f4f4f4; color:#000; background:#f4f4f4}
+.btn span.icoArrow {display:inline-block; padding-right:30px; background:url("../images/ico-arrow02.png") no-repeat right center; background-size:20px auto}
+.btn span.icoArrow02 {display:inline-block; padding-right:18px; background:url("../images/ico-arrow03.png") no-repeat right center; background-size:12px auto}
+.btn span.icoDownload {display:inline-block; padding-right:23px; background:url("../images/ico-download.png") no-repeat right center; background-size:13px auto}
+.btn span.icoClose {display:inline-block; text-indent:-9999px; background:url("../images/ico-close.png") no-repeat center; background-size:15px auto}
+.btnStar {display:block; width:23px; height:22px; text-indent:-9999px; background:url("../images/ico-star.png") no-repeat center; background-size:100% !important; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.btnStar.on {background:url("../images/ico-star-on.png") no-repeat center}
+
+@media (max-width:767px) {
+	.btn {font-size:20px}
+	.btn.ss {line-height:20px; font-size:14px}
+}
+
+/* 버튼 정렬 */
+.btnFixed {display:flex; position:absolute; bottom:50px; left:50%; padding:0 30px; max-width:100%; width:1084px; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); -moz-transform:translate(-50%, 0)}
+.btnFixed button {flex:1}
+.btnBottom {display:flex; margin-top:46px}
+.btnBottom button {flex:1}
+.btnLeft {overflow:hidden}
+.btnLeft > * {float:left}
+.btnLeft > * + * {margin-left:10px}
+@media (max-width:767px) {
+	.btnFixed {position:fixed; bottom:0; left:0; padding:0; transform:translate(0); -webkit-transform:translate(0); -moz-transform:translate(0)}
+	.btnBottom {margin-top:10px}
+	.btnLeft > * {float:none}
+	.btnLeft > * + * {margin:10px 0 0 0}
+}
+/* 텍스트 */
+.msg {line-height:26px; font-size:16px; font-weight:500; color:#ff7800 !important}
+strong.msg {display:block; line-height:20px; font-size:14px}
+.msg.txtC {margin-top:40px}
+.topTxt {display:block; margin-bottom:35px; line-height:34px; font-size:24px; font-weight:500; color:#000; transition:all 0.2s}
+.topTxt strong {display:block; line-height:50px; font-size:36px; font-weight:500}
+.topTxt span {display:inline-block; position:relative; z-index:1}
+.topTxt span:before {display:block; content:""; position:absolute; bottom:20%; left:0; z-index:-1; width:100%; height:10px; background:#ffcc00}
+.topTxt button {margin:0 0 5px 10px; padding-top:2px; vertical-align:middle; font-family:"KD", sans-serif; font-weight:500}
+.topTxt .bold {font-weight:500}
+.topTxt + .topTxt {margin-top:-20px}
+.topTxt + .txt {margin-top:-30px}
+.txt {line-height:26px; font-size:16px; color:#333}
+.txt em {display:block; margin-top:21px}
+strong.txt {display:block; font-size:14px; font-weight:500}
+.txt02 {display:block; font-size:14px; font-weight:500}
+.txt02 strong {font-weight:700}
+.txt03 {line-height:21px; font-size:14px; font-weight:500; color:#000}
+.txtDate {line-height:25px; font-size:20px; font-weight:500; color:#333}
+.cOrange {color:#ff7800 !important}
+@media (max-width:767px) {
+	.msg {font-size:14px}
+	.msg.txtC {margin:60px 0 -15px; text-align:left !important}
+	.topTxt {line-height:24px; font-size:20px}
+	.topTxt + .topTxt {margin-top:-25px}
+	.topTxt strong {line-height:36px; font-size:30px}
+	.topTxt em {display:block}
+	.topTxt em {display:block}
+	.txt {line-height:21px; font-size:14px}
+	.txt span {display:block}
+	strong.txt {font-size:12px}
+	.txt03 {font-size:14px}
+	.txtDate {line-height:21px; font-size:18px}
+	strong.msg {line-height:18px; font-size:12px}
+}
+
+/* 체크박스 */
+.check {display:inline-block; position:relative}
+.check input {position:absolute; top:0; left:0; opacity:0}
+.check input + label {display:inline-block; padding:3px 0 1px 35px; line-height:21px; font-size:16px; font-weight:500; color:#333; background-size:25px !important; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.check input[type=checkbox] + label {background:url("../images/checkbox.png") no-repeat left top}
+.check input[type=checkbox]:checked + label {background:url("../images/checkbox-on.png") no-repeat left top}
+.check input[type=radio] + label {background:url("../images/radio.png") no-repeat left top}
+.check input[type=radio]:checked + label {background:url("../images/radio-on.png") no-repeat left top}
+@media (max-width:767px) {
+	.check input + label {font-size:14px}
+}
+
+/* 텍스트 정렬 */
+.txtL {text-align:left !important}
+.txtC {text-align:center !important}
+.txtR {text-align:right !important}
+
+/* 인풋 리스트 */
+.inputList > * + * {margin-top:15px}
+.inputList .selectBtn + * {margin-top:30px}
+.inputList strong.txt {margin-top:0}
+.inputList > input + strong.txt {margin-top:10px}
+.inputList p {position:relative}
+.inputList p span {position:absolute; left:10px; top:0; line-height:40px; font-size:14px; color:#ccc; font-weight:500}
+.inputList p input {font-size:30px}
+.inputList .msg {margin-top:10px}
+.inputList .msg + .msg {margin-top:0}
+
+/* 셀렉트 버튼 */
+.selectBtn {display:flex; overflow:hidden; border-radius:2px}
+.selectBtn > * {flex:1}
+.selectBtn span {position:relative; text-align:center}
+.selectBtn span input {position:absolute; top:0; left:0; opacity:0}
+.selectBtn span label {display:block; width:100%; line-height:40px; font-size:16px; font-weight:500; color:#888; background:#dbdbdb; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.selectBtn span input:checked + label {color:#111; background:#ffcc00}
+@media (max-width:767px) {
+	.selectBtn span label {font-size:14px}
+}
+
+/* 팝업 */
+.layer {display:none; position:fixed; top:0; left:0; overflow:hidden; padding:12px; text-align:center; width:100%; height:100%; z-index:10000; background:rgba(0,0,0,0.5)}
+.layer .inner {display:inline-block; position:relative; top:50%; overflow:hidden; padding-bottom:50px; border-radius:3px; max-width:100%; min-width:400px !important; background:#fff; transform:translate(0, -50%); -webkit-transform:translate(0, -50%); -moz-transform:translate(0, -50%)}
+.layer .inner .tit {position:absolute; top:0; left:0; width:100%; padding:0 20px; border-bottom:1px solid #d5d5d5; line-height:54px; font-size:20px; color:#111; font-weight:500}
+.layer .inner .popCont {display:table; overflow-y:auto; margin:0; padding:25px; width:100%; height:240px}
+.layer .inner .tit + .popCont {padding:80px 25px 25px 25px}
+.layer .inner .popCont .inBox {display:table-cell; vertical-align:middle}
+.layer .inner .popCont strong.topTxt {margin-bottom:0; line-height:24px; font-size:16px; color:#333}
+.layer .inner .popCont strong.topTxt em {font-weight:700}
+.layer .inner .popCont strong.topTxt.v2 {margin-bottom:0; line-height:30px; font-weight:400; font-size:22px; color:#111}
+.layer .inner .popCont strong.topTxt.v2 em {font-weight:500}
+.layer .inner .popCont strong.topTxt.v2 span:before {display:none}
+.layer .inner .popCont strong.topTxt.v2 br {display:block}
+.layer .inner .popCont img {margin:10px 0; width:85px}
+.layer .inner .popCont strong.txt {line-height:20px; font-weight:500}
+.layer .inner .popCont strong.txt span {display:inline}
+.layer .inner .popCont strong.topTxt.v2 + strong.txt {margin-top:20px}
+.layer .inner .popCont strong.txt + strong.txt {margin-top:5px}
+.layer .inner .popCont p.topTxt br {display:block}
+.layer .inner .popCont .msg {margin:25px 0 -13px; text-align:left}
+.layer .inner .btnArea {position:absolute; bottom:0; left:0; width:100%}
+.layer .inner .btnArea button {width:100%; line-height:46px; font-size:18px}
+.layer .inner .btnArea.close {overflow:hidden}
+.layer .inner .btnArea.close button {float:left; width:calc(100% - 40px)}
+.layer .inner .btnArea.close button.btnGray {width:40px}
+.layer.fullPop .inner {padding-bottom:0; border-radius:0}
+.layer.fullPop .inner .popCont {display:block; height:auto}
+.layer.fullPop .inner .popCont .inBox {display:block}
+.layer.fullPop .inner .tit {position:static; border-bottom:none; line-height:55px; font-size:19px; font-weight:500}
+.layer.fullPop .inner .popCont {padding:30px; text-align:left}
+.layer.fullPop .inner > a {display:inline-block; position:absolute; top:0; right:10px; width:55px; height:55px; background:url("../images/common/btn-close.png") no-repeat center; text-indent:-9999px; background-size:16px}
+@media (max-width:767px) {
+	.layer .inner {padding-bottom:42px; min-width:inherit !important}
+	.layer .inner .tit {line-height:45px; font-size:16px}
+	.layer .inner .popCont {height:208px}
+	.layer .inner .popCont strong.topTxt {font-size:14px}
+	.layer .inner .popCont strong.topTxt.v2 {font-size:20px}
+	.layer .inner .popCont strong.topTxt.v2 em {display:inline}
+	.layer .inner .popCont strong.topTxt.v2 span {display:block}
+	.layer .inner .btnArea button {line-height:38px; font-size:14px}
+	.layer.fullPop {padding:0}
+	.layer.fullPop .inner {top:0; left:0; width:100%; height:100%; transform:translate(0, 0); -webkit-transform:translate(0, 0); -moz-transform:translate(0, 0)}
+	.layer.fullPop .inner .tit {padding:0; line-height:60px}
+	.layer.fullPop .inner > a {top:0; right:inherit; left:0; width:54px; height:60px; background-size:15px auto}
+}
+
+/*>>>>>>>>>> 페이지 <<<<<<<<<<*/
+
+/* 로그인 */
+.loginWrap {position:fixed; top:0; left:0; width:100%; height:100%; background:url("../images/bg-login.jpg") no-repeat center; background-size:cover}
+.loginWrap .inner {position:absolute; top:50%; left:50%; padding:0 30px; width:375px; max-width:100%; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%)}
+.loginWrap .inner h1 {position:relative; padding-top:60px; text-align:center; line-height:46px; font-size:40px; font-weight:500; color:#fff}
+.loginWrap .inner h1 span {font-weight:500; opacity:0.45}
+.loginWrap .inner h1:before {display:block; content:""; position:absolute; top:0; left:50%; margin-left:-10px; width:20px; height:35px; background:url("../images/common/logo.png") no-repeat center; background-size:100%}
+.loginWrap .inner > p {margin-top:6px; text-align:center; line-height:20px; font-size:16px; color:#fff; opacity:0.3}
+.loginWrap .inner .loginBox {margin-top:56px}
+.loginWrap .inner .loginBox p {padding:7px 0}
+.loginWrap .inner .loginBox p > * {display:block; overflow:hidden; border-radius:25px; width:100%; height:50px}
+.loginWrap .inner .loginBox p a {position:relative; z-index:1; padding:8px 20px; line-height:34px; font-size:18px; font-weight:500; color:#fff}
+.loginWrap .inner .loginBox p a:before,
+.loginWrap .inner .loginBox p a:after {display:block; content:""; position:absolute}
+.loginWrap .inner .loginBox p a:before {top:0; left:0; z-index:-1; width:100%; height:100%; background:#fff; opacity:0.3}
+.loginWrap .inner .loginBox p a:after {top:0; right:22px; width:13px; height:100%; background:url("../images/bl-arrow.png") no-repeat center; background-size:100% auto}
+.loginWrap .inner .loginBox p a img {max-height:100%}
+.loginWrap .inner .loginBox p a span {display:inline-block; margin-right:10px; height:34px}
+.loginWrap .inner .loginBox p input {padding:0 50px; border:none; opacity:0.6; font-weight:400; color:#fff; background:none}
+.loginWrap .inner .loginBox p input::-webkit-input-placeholder {color:#fff}
+.loginWrap .inner .loginBox p input::-moz-placeholder {color:#fff}
+.loginWrap .inner .loginBox p input:-ms-input-placeholder {color:#fff}
+.loginWrap .inner .loginBox p input:-moz-placeholder {color:#fff}
+.loginWrap .inner .loginBox p.inputbox,
+.loginWrap .inner .loginBox p.inputbox {position:relative; z-index:1}
+.loginWrap .inner .loginBox p.inputbox:before,
+.loginWrap .inner .loginBox p.inputbox:after {display:block; content:""; position:absolute; top:7px}
+.loginWrap .inner .loginBox p.inputbox:before {left:0; z-index:-1; border-radius:25px; border:1px solid #ffcc00; width:100%; height:50px; box-sizing:border-box; opacity:0.5}
+.loginWrap .inner .loginBox p.inputbox:after {left:13px; width:26px; height:50px}
+.loginWrap .inner .loginBox p.inputbox:after {background:url("../images/ico-id.png") no-repeat center; background-size:26px}
+.loginWrap .inner .loginBox p.inputbox + p.inputbox:after {background:url("../images/ico-pw.png") no-repeat center; background-size:26px}
+.loginWrap .inner .loginBox p .btnLogin {display:block; border:none; width:100%; line-height:50px; font-size:22px; font-weight:700; color:#222; background:#ffcc00}
+.loginWrap .inner .loginBox p.msg {margin:0 0 3px; line-height:26px; font-size:16px}
+.loginWrap .inner .loginBox span.check label {margin:7px 0 7px 4px; font-size:16px; font-weight:500; color:#b2b1b1}
+.loginWrap .inner .btnUtil {margin-top:18px; text-align:center}
+.loginWrap .inner .btnUtil button {display:inline-block; padding:0; border:none; line-height:24px; font-size:16px; color:#fff; font-weight:400; background:none; opacity:0.6}
+.loginWrap .inner .btnUtil button + button:before {display:inline-block; content:""; margin:0 10px 0 8px; border-left:1px solid #fff; height:9px; vertical-align:middle}
+@media (max-width:767px) {
+	.loginWrap .inner {padding:0}
+	.loginWrap .inner h1 {margin-top:50px}
+	.loginWrap .inner .loginBox {padding:0 22px}
+}
+@media (max-width:359px) {
+	.loginWrap .inner h1 {margin-top:30px}
+	.loginWrap .inner .loginBox {margin-top:50px}
+	.loginWrap .inner .btnUtil {margin-top:20px}
+}
+
+/* 메인 */
+#wrap {overflow:hidden}
+#header {padding-top:278px; height:700px; text-align:center; background:url("../images/common/bg-visual.jpg") no-repeat center; background-size:cover; transition:all 0.0.2s; -webkit-transition:all 0.0.2s; -moz-transition:all 0.0.2s}
+#header h1 {line-height:80px; font-size:60px; font-weight:700; color:#fff; transition:all 0.0.2s; -webkit-transition:all 0.0.2s; -moz-transition:all 0.0.2s}
+#header p {margin-top:10px; line-height:40px; font-size:26px; font-weight:500; color:#fff}
+#mainContainer {padding:0 40px 50px}
+#mainContainer .content {margin:-86px auto 0; padding:0 30px; border-radius:20px; max-width:100%; width:1024px; box-shadow:10px 10px 10px rgba(0, 0, 0, 0.08); background:#fff}
+#mainContainer .content:after {display:block; content:""; clear:both}
+#mainContainer .content > * {float:left; width:50%}
+#mainContainer .content .intro {padding:22px 30px 27px 0; transition:all 0.05s; -webkit-transition:all 0.05s; -moz-transition:all 0.05s}
+#mainContainer .content .intro strong {display:block; margin-bottom:13px; height:43px; transition:all 0.05s; -webkit-transition:all 0.05s; -moz-transition:all 0.05s}
+#mainContainer .content .intro strong img {max-height:100%}
+#mainContainer .content .intro p {line-height:26px; font-size:16px; color:#333; transition:all 0.05s; -webkit-transition:all 0.05s; -moz-transition:all 0.05s}
+#mainContainer .content .intro .btnWorship {display:none}
+#mainContainer .content .menuArea:after {display:block; content:""; clear:both}
+#mainContainer .content .menuArea li {float:left; width:33.3333%; text-align:center}
+#mainContainer .content .menuArea li p {display:none}
+#mainContainer .content .menuArea li button {padding-top:72px; border:none; width:100%; height:210px; line-height:26px; font-size:20px; font-weight:500; color:#000; background:#fff; transition:all 0.05s; -webkit-transition:all 0.05s; -moz-transition:all 0.05s}
+#mainContainer .content .menuArea li:nth-child(1) button {background:url("../images/common/ico-menu01.png") no-repeat center 56px}
+#mainContainer .content .menuArea li:nth-child(2) button {background:url("../images/common/ico-menu02.png") no-repeat center 56px}
+#mainContainer .content .menuArea li:nth-child(3) button {background:url("../images/common/ico-menu03.png") no-repeat center 56px}
+#mainContainer .content .menuArea li button:hover {background-color:#ffcc00}
+#footer p {text-align:center; line-height:66px; font-size:14px; color:#666}
+@media (max-width:1024px) {
+	#mainContainer .content > * {float:none; width:100%}
+	#mainContainer .content .intro {padding:22px 0 27px}
+}
+@media (max-width:767px) {
+	#wrap {position:relative}
+	#header {padding-top:0; height:410px; background:url("../images/common/bg-visual-m.jpg") no-repeat center; background-size:cover}
+	#header:after {display:block; content:""; position:absolute; top:362px; left:0; width:100%; height:48px; background:url("../images/bg-frame.png") no-repeat 0 0; background-size:100% 100%}
+	#header h1 {position:fixed; top:0; left:0; right:0; line-height:60px; font-size:19px; font-weight:500; background:#366a94}
+	#header p {display:none}
+	#mainContainer {padding:0 0 26px; margin:-90px 0 0 0}
+	#mainContainer .content {margin:0; padding:0; border-radius:0; box-shadow:none; background:none}
+	#mainContainer .content .intro {overflow:hidden; padding:0 12px}
+	#mainContainer .content .intro strong {float:left; margin-bottom:0; height:65px; line-height:65px}
+	#mainContainer .content .intro strong img {height:42px; vertical-align:middle}
+	#mainContainer .content .intro p {display:none}
+	#mainContainer .content .intro .btnWorship {display:block; float:right; padding-top:20px; border-radius:50%; width:65px; height:65px; font-size:12px; font-weight:500; color:#111; background:#f1f1f1 url("../images/ico-play.png") no-repeat center 15px; background-size:auto 13px}
+	#mainContainer .content .menuArea {min-height:232px}
+	#mainContainer .content .menuArea li {float:none}
+	#mainContainer .content .menuArea li p {display:block; margin-top:4px; line-height:19px; font-size:14px; color:#666}
+	#mainContainer .content .menuArea li:nth-child(1) {position:absolute; bottom:26px; left:0; padding:58px 20px 0; width:100%; text-align:left; background:url("../images/bg-offe-m.png") no-repeat 120px top; background-size:239px auto}
+	#mainContainer .content .menuArea li:nth-child(1) button {padding:0 30px 0 0; width:auto; height:auto; text-align:right; line-height:46px; font-size:40px; color:#333; font-weight:500; background:url("../images/ico-arrow.png") no-repeat right 76px; background-size:26px}
+	#mainContainer .content .menuArea li:nth-child(1) button span {display:block; line-height:65px; font-size:60px}
+	#mainContainer .content .menuArea li:nth-child(2) button,
+	#mainContainer .content .menuArea li:nth-child(3) button {position:fixed; top:0; padding:0; width:56px; height:60px; text-indent:-9999px; background-size:22px auto !important}
+	#mainContainer .content .menuArea li:nth-child(2) button {left:0; background:url("../images/common/btn-menu01.png") no-repeat center}
+	#mainContainer .content .menuArea li:nth-child(3) button {right:0; background:url("../images/common/btn-menu02.png") no-repeat center}
+	#mainContainer .content .menuArea li button:hover {background-color:#fff}
+	#footer {display:none}
+}
+
+/* 헌금하기 */
+.offeBox {position:relative; z-index:10}
+.offeBox ul {padding-top:80px}
+.offeBox ul li {position:relative; z-index:1; overflow:hidden; margin-top:-80px; padding:20px 40px 40px; border-top-left-radius:20px; border-top-right-radius:20px; background:#ccc; box-shadow:0 -3px 6px rgba(0, 0, 0, 0.2); cursor:pointer; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.offeBox ul li:last-child {margin-bottom:-130px}
+.offeBox ul li.bg01 {background:#8ed1ab}
+.offeBox ul li.bg02 {background:#9ac0ec}
+.offeBox ul li.bg03 {background:#7877c1}
+.offeBox ul li.bg04 {background:#bf79d6}
+.offeBox ul li.bg05 {background:#e4bc50}
+.offeBox ul li.bg06 {background:#60c8ac}
+.offeBox ul li.bg07 {background:#76a4da}
+.offeBox ul li.bg08 {background:#695fa0}
+.offeBox ul li.bg09 {background:#d872a0}
+.offeBox ul li.bg10 {background:#e49836}
+.offeBox ul li.bg11 {background:#add389}
+.offeBox ul li.bg12 {background:#a7c7ed}
+.offeBox ul li.bg13 {background:#7f8be5}
+.offeBox ul li.bg14 {background:#d18ddd}
+.offeBox ul li.bg15 {background:#e2d568}
+.offeBox ul li dl {margin-bottom:15px}
+.offeBox ul li dl dt {margin-bottom:8px; line-height:42px; font-size:34px; color:#fff; font-weight:500}
+.offeBox ul li dl dd {display:block; position:relative; overflow:hidden; padding-right:100px; height:24px; line-height:24px; font-size:18px; color:#fff; font-weight:500; white-space:nowrap; text-overflow:ellipsis; letter-spacing:0.02em; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.offeBox ul li dl dd span {position:absolute; bottom:0; right:0}
+.offeBox ul li button {float:right; opacity:0; border-radius:20px; width:120px; text-align:center; line-height:40px; font-size:18px; color:#333; font-family:'KT', sans-serif; font-weight:700; background:#fff; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.offeBox ul li.on {margin-top:-150px}
+.offeBox ul li.on dl dd {padding:0 0 24px; height:auto; white-space:inherit; text-overflow:inherit}
+.offeBox ul li.on dl dd span {right:inherit; left:0}
+.offeBox ul li.on button {opacity:1}
+.offeBox ul li.on:last-child {margin-bottom:-50px}
+.offeBox ul li.on + li {margin-top:-20px}
+@media (max-width:767px) {
+	.offeBox {width:100%}
+	.offeBox ul {padding-top:58px}
+	.offeBox ul li {margin-top:-58px; padding:12px 15px 28px; border-top-left-radius:10px; border-top-right-radius:10px; box-shadow:0 -2px 3px rgba(0, 0, 0, 0.2)}
+	.offeBox ul li:last-child {margin-bottom:-54px}
+	.offeBox ul li dl {margin-bottom:5px}
+	.offeBox ul li dl dt {margin-bottom:5px; line-height:25px; font-size:18px}
+	.offeBox ul li dl dd {padding:0 0 17px 0; height:34px; line-height:17px; font-size:12px}
+	.offeBox ul li dl dd span {right:inherit; left:0}
+	.offeBox ul li button {border-radius:15px; width:100px; line-height:30px; font-size:13px; font-weight:700}
+	.offeBox ul li.on {margin-top:-116px}
+	.offeBox ul li.on dl dd {padding:0 0 17px}
+	.offeBox ul li.on:last-child {margin-bottom:0}
+	.offeBox ul li.on + li {margin-top:-10px}
+}
+
+/* 헌금하기 - 계좌입력 */
+.payAccount {border-top:2px solid #000}
+.payAccount .accountBox {margin-bottom:42px; padding:12px 0 13px; border-bottom:1px solid #ccc; text-align:right}
+.payAccount .accountBox * {display:inline-block}
+.payAccount .accountBox * + * {margin-left:10px}
+.payAccount .accountBox p {line-height:24px; font-size:14px; color:#666}
+.payAccount dl {text-align:right}
+.payAccount dl dt {display:block; margin-bottom:20px; text-align:left; line-height:35px; font-size:20px; font-weight:500; color:#111}
+.payAccount dl dd {display:inline-block; position:relative; padding-right:19px; width:336px}
+.payAccount dl dd input {padding:0 20px; border:none; border-bottom:1px solid #000; width:100%; height:62px; text-align:right; font-size:50px; color:#000}
+.payAccount dl dd input::-webkit-input-placeholder {color:#aaa}
+.payAccount dl dd input::-moz-placeholder {color:#aaa}
+.payAccount dl dd input:-ms-input-placeholder {color:#aaa}
+.payAccount dl dd input:-moz-placeholder {color:#aaa}
+.payAccount dl dd span {position:absolute; bottom:0; right:0; font-size:30px; color:#111}
+.payAccount dl + .msg {margin-top:44px; text-align:center}
+.payAccount .keyPad {display:none}
+@media (max-width:767px) {
+	.payAccount {border-top:none}
+	.payAccount .accountBox {margin-bottom:20px; padding:0; border-bottom:none}
+	.payAccount dl dt {margin-bottom:10px; line-height:30px}
+	.payAccount dl dd {display:block; padding-right:35px; width:100%}
+	.payAccount dl dd input {padding:0 18px}
+	.payAccount dl + .msg {margin-top:4px; text-align:left}
+	.payAccount .msg + .keyPad {margin-top:7px}
+	.payAccount .keyPad {display:block; overflow:hidden; margin-top:35px}
+	.payAccount .keyPad > li {float:left; padding:2px 0 3px; width:33.3333%; text-align:center}
+	.payAccount .keyPad > li button {display:inline-block; border-radius:50%; width:70px; height:70px; line-height:70px; font-size:30px; color:#111}
+	.payAccount .keyPad > li button.btnNum:active {background:#ffcc00}
+	.payAccount .keyPad > li button.btnBackS {text-indent:-9999px; background:url("../images/btn-back-s.png") no-repeat center; background-size:auto 31px}
+	.payAccount .keyPad > li button.btnClear {font-size:20px}
+}
+
+/* 헌금 비밀번호 입력 */
+.pwArea {padding-top:40px; text-align:center}
+.pwArea h3 {margin-bottom:46px}
+.pwArea .password p {display:inline-block; border-radius:50%; width:30px; height:30px; background:#e2e2e2}
+.pwArea .password p + p {margin-left:6px}
+.pwArea .password p.on {background:#ffcc00}
+.pwArea .password + .msg {margin-top:45px}
+.pwArea .password + .btnPwFind {margin-top:99px}
+.pwArea .msg + .btnPwFind {margin-top:30px}
+.pwArea .btnPwFind {display:inline-block; padding-left:25px; line-height:24px; font-size:14px; color:#666; background:url("../images/ico-lock.png") no-repeat left center; background-size:17px auto}
+.pwArea img {margin:50px 0 48px; width:135px}
+@media (max-width:767px) {
+	.pwArea {padding-top:96px}
+	.pwArea .password p.on {background:#ffcc00}
+	.pwArea .password + .msg {margin-top:30px}
+	.pwArea .password + .btnPwFind {margin-top:172px}
+	.pwArea .msg + .btnPwFind {margin-top:118px}
+	.pwArea .btnPwFind {background-size:15px auto}
+	.pwArea img {margin:60px 0 18px}
+}
+
+/* 헌금완료 */
+.completeBox:after {display:block; content:""; clear:both}
+.completeBox .topTxt + .txtDate {margin-top:50px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.completeBox .txtDate + .txt {margin-top:20px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.completeBox img {float:right; margin-top:-130px; margin-right:14px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+@media (max-width:1024px) {
+	.completeBox img {margin:-15px 0 0 0}
+}
+@media (max-width:767px) {
+	.completeBox {position:relative; z-index:1; padding-top:40px}
+	.completeBox:before {display:block; content:""; position:absolute; top:-25px; right:-12px; z-index:-1; width:100%; height:100%; background:url("../images/bg01-m.png") no-repeat right -20px; background-size:350px auto}
+	.completeBox img { width:240px}
+}
+
+/* 회원가입 - 교회선택 */
+.selectList {border-top:2px solid #000; margin-top:16px}
+.selectList ul li {border-bottom:1px solid #ccc}
+.selectList ul li a {display:block; padding:0 12px; line-height:49px; font-size:18px; color:#666; font-weight:500; font-family:"KT" , sans-serif; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.selectList ul li a span {display:inline-block; min-width:37px; height:49px}
+.selectList ul li a span img {max-width:24px; max-height:24px; vertical-align:middle}
+.selectList ul li a > img {width:auto !important; height:34px; vertical-align:middle}
+.selectList ul li a.selected {background:#f6f6f6}
+.selectList ul li a em {display:block; padding:0 12px}
+@media (max-width:767px) {
+	.selectList {margin:35px -12px 0; border-color:#dbdbdb}
+	.selectList ul li a.selected {background:#f6f6f6}
+}
+
+/* 가입정보 */
+.joinInfo .topTxt {margin:0}
+.joinInfo .topTxt + .topTxt {margin-top:30px}
+.joinInfo .topTxt + .txt {margin-top:85px}
+.joinInfo .btnLeft {margin-top:20px}
+@media (max-width:767px) {
+	.joinInfo .topTxt + .topTxt {margin-top:10px}
+	.joinInfo .topTxt + .txt {margin-top:34px}
+	.joinInfo .btnLeft {margin-top:50px}
+} 
+
+/* 본인인증 */
+.topTxt + .inputList {margin-top:-17px}
+.certNum {position:relative; margin-top:30px}
+.certNum input {padding-right:110px; border-color:#cfcfcf}
+.certNum input:focus {border-color:#ffcc00 !important}
+.certNum span {position:absolute; top:0; right:11px; line-height:40px; font-size:16px; font-weight:500; color:#ff7800}
+.slideSelect {border-bottom:1px solid #ccc}
+.slideSelect strong {display:block; position:relative; padding:0 11px; line-height:39px; font-size:14px; font-weight:400; color:#999}
+.slideSelect strong span.on {color:#333}
+.slideSelect strong button {display:block; position:absolute; top:0; left:0; width:100%; height:100%; text-indent:-9999px; background:url("../images/bl-arrow02.png") no-repeat right 9px center; background-size:11px auto !important; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.slideSelect strong button.on {background:url("../images/bl-arrow02-on.png") no-repeat right 9px center}
+.slideSelect ul {display:none; border-top:2px solid #393939; background:#f8f8f8}
+.slideSelect ul li:first-child {padding-top:5px}
+.slideSelect ul li:last-child {padding-bottom:5px}
+.slideSelect ul li a {display:block; padding:0 30px; line-height:34px; font-size:16px; color:#333; font-weight:500}
+.agreeCheck > span {display:block; margin-bottom:15px}
+.agreeCheck > span label {display:block; font-size:18px; font-weight:700}
+.agreeCheck > span button {display:block; position:absolute; top:0; right:0; width:30px; height:100%; text-indent:-9999px; background:url("../images/bl-arrow02.png") no-repeat right 9px center; background-size:11px auto !important; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.agreeCheck > span button.on {background:url("../images/bl-arrow02-on.png") no-repeat right 9px center}
+.agreeCheck > ul {display:none; border-top:2px solid #393939; border-bottom:1px solid #ccc; background:#f8f8f8}
+.agreeCheck > ul > li:first-child {padding-top:20px}
+.agreeCheck > ul > li:last-child {padding-bottom:13px}
+.agreeCheck > ul > li + li {margin-top:15px}
+.agreeCheck > ul > li > span {display:block; position:relative; padding:0 15px}
+.agreeCheck > ul > li > span > label {display:block}
+.agreeCheck > ul > li > span > a {display:block; position:absolute; top:0; right:4px; width:30px; height:100%; text-indent:-9999px; background:url("../images/bl-arrow02.png") no-repeat center; transform:rotate(-90deg); background-size:11px auto !important}
+@media (max-width:767px) {
+	.certNum span {font-size:12px}
+	.slideSelect ul li a {line-height:30px; font-size:14px}
+	.agreeCheck > span label {font-size:16px}
+}
+
+/* 약관동의 */
+.agreeWrap + .agreeWrap {margin-top:40px}
+.agreeWrap dt {padding:2px 0 13px; border-bottom:2px solid #393939}
+.agreeWrap dt,
+.agreeWrap dt span label {line-height:25px; font-size:18px; font-weight:700}
+.agreeWrap dd {padding-top:20px}
+.agreeWrap dd p {margin:-3px 0 10px; line-height:21px; font-size:16px; font-weight:500; color:#333}
+.agreeWrap dd ul {padding-left:10px}
+.agreeWrap dd ul li + li {margin-top:15px}
+.agreeWrap dd ul li span {display:block; position:relative}
+.agreeWrap dd ul li span label {display:block}
+.agreeWrap dd ul li span a {display:block; position:absolute; top:0; right:4px; width:30px; height:100%; text-indent:-9999px; background:url("../images/bl-arrow02.png") no-repeat center; transform:rotate(-90deg); background-size:11px auto !important}
+.agreeWrap dt.msg {font-size:14px; font-weight:500}
+.inputList + .agreeWrap {margin-top:50px}
+@media (max-width:767px) {
+	.agreeWrap dt,
+	.agreeWrap dt span label {font-size:16px}
+	.agreeWrap dt.msg {font-size:12px}
+	.agreeWrap dd p {font-size:12px}
+}
+
+/* 회원가입 */
+.topTxt + .logo {padding-bottom:10px; margin-bottom:15px; border-bottom:2px solid #000}
+.topTxt + .logo img {height:35px}
+@media (max-width:767px) {
+	.topTxt + .logo {padding-bottom:10px; border-bottom:none}
+}
+
+/* 회원가입 완료 */
+.completeBox02 .logo {display:none}
+.completeBox02 .topTxt + .txt {margin-top:90px}
+@media (max-width:767px) {
+	.completeBox02 {padding:0; border:none}
+	.completeBox02 .logo {display:block; margin-bottom:35px}
+	.completeBox02 .logo img {height:38px}
+}
+
+/* 약관 */
+button + .termsArea {margin-top:25px}
+.termsArea * {font-family:"KT" , sans-serif; line-height:24px; font-size:16px; color:#666; font-weight:500}
+.termsArea > strong {display:block; line-height:26px; font-size:18px; color:#111}
+.termsArea > p {margin-bottom:24px}
+.termsArea dl + dl {margin-top:24px}
+.termsArea dl dt {color:#333}
+.termsArea dl dd ol li {padding-left:18px; text-indent:-18px}
+.termsArea dl dd ol li ol {margin-left:-18px}
+.termsArea dl dd ol li ol li {padding-left:18px; text-indent:-18px}
+@media (max-width:767px) {
+	.termsArea * {font-size:14px}
+	.termsArea > strong {font-size:16px}
+}
+/* 계좌정보 등록 */
+.inputList + .agreeCheck.v2 {margin-top:30px}
+.agreeCheck.v2 > span {font-size:16px; font-weight:700}
+.agreeCheck.v2 > ul {display:block}
+.agreeCheck.v2 > ul > li > span a {transform:rotate(0deg)}
+.agreeCheck.v2 > ul > li > span a.on {transform:rotate(180deg)}
+.agreeCheck.v2 > ul > li div {display:none; padding-left:28px}
+.agreeCheck.v2 > ul > li div ul li:first-child {margin-top:12px}
+.agreeCheck.v2 > ul > li div ul li + li {margin-top:4px}
+.agreeCheck.v2 > ul > li div ul li span {position:relative; display:block; padding-right:40px}
+.agreeCheck.v2 > ul > li div ul li span a {display:block; position:absolute; top:0; right:10px; padding:0 5px; line-height:24px; font-size:14px; color:#999; font-weight:500; text-decoration:underline}
+.agreeCheck.v2 > ul > li div ul li input[type=checkbox] + label {padding:0 0 0 28px; line-height:24px; font-size:15px; color:#666; background:url("../images/checkbox02.png") no-repeat 2px 4px; background-size:15px auto !important}
+.agreeCheck.v2 > ul > li div ul li input[type=checkbox]:checked + label {background:url("../images/checkbox02-on.png") no-repeat 2px 4px}
+.agreeCheck.v2 > ul > li div.checkWrap {overflow:hidden; margin-left:-15px}
+.agreeCheck.v2 > ul > li div.checkWrap > span {float:left; margin:12px 0 0 15px}
+.agreeCheck.v2 > ul > li div.checkWrap > span input[type=checkbox] + label {padding:0 0 0 30px; line-height:24px; font-size:15px; color:#666; background:url("../images/checkbox03.png") no-repeat 0 0; background-size:20px auto !important}
+.agreeCheck.v2 > ul > li div.checkWrap > span input[type=checkbox]:checked + label {background:url("../images/checkbox03-on.png") no-repeat 0 0}
+.agreeCheck.v2 + .txt {margin-top:10px; color:#999}
+@media (max-width:767px) {
+	.agreeCheck.v2 > ul > li div ul li span a {line-height:20px; font-size:14px}
+	.agreeCheck.v2 > ul > li div ul li input[type=checkbox] + label,
+	.agreeCheck.v2 > ul > li div.checkWrap > span input[type=checkbox] + label {line-height:20px; font-size:13px}
+}
+
+/* 1원인증 */
+.useInfo {margin-top:27px}
+.useInfo dt {margin-bottom:4px; line-height:23px; font-size:15px; font-weight:500; color:#666}
+.useInfo dd {padding-left:10px; line-height:21px; font-size:15px; font-weight:500; color:#666}
+.imgWrap {margin-top:10px; text-align:center; background:#eee}
+.imgWrap img {max-width:100%; width:318px}
+@media (max-width:767px) {
+.useInfo dt {line-height:21px; font-size:13px}
+.useInfo dd {line-height:19px; font-size:13px}
+}
+
+/* 계좌등록완료 */
+.msg + .bank {margin-top:6px}
+.bank {position:relative; padding:11px 52px 12px 12px; border-top:2px solid #dbdbdb; border-bottom:1px solid #eee}
+.bank .bankName {line-height:24px; font-size:14px; color:#999}
+.bank .bankName img {margin-right:12px; width:24px; height:24px}
+.bank .accoNum {padding-left:36px; line-height:21px; font-size:18px; color:#333; font-weight:500}
+.bank .btnStar {position:absolute; top:50%; right:15px; margin-top:-11px}
+@media (max-width:767px) {
+	.bank {margin:0 -12px}
+}
+
+/* 인증번호 입력 팝업 */
+.inputNum {display:inline-block; overflow:hidden; margin:-15px 0 35px}
+.inputNum input {float:left; margin:0 5px; border-radius:2px; border:none; width:40px; height:40px; text-align:center; font-size:30px; font-weight:500; background:#eee}
+@media (max-width:767px) {
+	.inputNum {margin:0 0 35px}
+}
+
+/* 은행 선택 팝업 */
+.bankList {margin:15px}
+.bankList ul:after {display:block; content:""; clear:both}
+.bankList ul li {float:left; border:1px solid #ccc; border-top:none; border-right:none; width:33.3333%; text-align:center}
+.bankList ul li:nth-child(1),
+.bankList ul li:nth-child(2),
+.bankList ul li:nth-child(3) {border-top:1px solid #ccc}
+.bankList ul li:nth-child(3n) {border-right:1px solid #ccc}
+.bankList ul li a {display:block; line-height:38px; font-size:14px; color:#333; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.bankList ul li.on a {background:#ffcc00}
+@media (max-width:767px) {
+	.bankList {margin:5px}
+}
+
+/* 교회선택 팝업 */
+.popCont .selectList {margin:-25px; border-top:0; text-align:left}
+.popCont .selectList ul {overflow-y:auto; max-height:207px}
+.popCont .selectList ul li {border-color:#eee}
+.popCont .btnAdd {margin:-1px 0 0 0}
+
+/* 감사헌금 */
+.offeSelect {overflow:hidden; position:relative; margin-bottom:-50px; padding-bottom:70px; border-top-left-radius:8px; border-top-right-radius:8px; background:url("../images/bg02.png") no-repeat 0 0; background-size:100% 100%}
+.offeSelect:before {display:block; content:""; position:absolute; bottom:0; left:0; border-top-left-radius:15px; border-top-right-radius:15px; width:100%; height:40px; background:#9ac0ec}
+.offeSelect dl {padding:28px 45px 65px}
+.offeSelect dl dt {margin-bottom:8px; line-height:30px; font-size:24px; color:#fff; font-weight:500}
+.offeSelect dl dd {line-height:24px; font-size:16px; color:#fff}
+.offeSelect dl dd span {display:block}
+.offeSelect ul {overflow:hidden; padding:0 65px; margin:-10px 0}
+.offeSelect ul li {float:left; padding:10px 15px; width:25%}
+.offeSelect ul li a {display:block; position:relative; padding:10px 15px; border-radius:20px; box-shadow:0 -4px 8px rgba(0, 0, 0, 0.2); height:132px; line-height:28px; font-size:16px; color:#9ac0ec; font-family:"KT" , sans-serif; background:#fff}
+.offeSelect ul li a:before {display:block; content:""; position:absolute; bottom:16px; right:16px; width:34px; height:34px; background:url("../images/btn-arrow.png") no-repeat center; background-size:100%}
+.offeSelect ul li a strong {display:inline-block; position:relative; z-index:1; line-height:40px; font-family:"KD" , sans-serif; font-size:30px; font-weight:500; color:#111}
+.offeSelect ul li a strong:before {display:block; content:""; position:absolute; bottom:15%; left:0; z-index:-1; width:100%; height:11px; background:#ffcc00}
+.offeSelect ul li a span {display:block}
+@media (max-width:1160px) {
+	.offeSelect ul {padding:0 40px}
+	.offeSelect ul li {width:33.3333%}
+}
+@media (max-width:767px) {
+	.offeSelect {margin:-25px -12px -30px; background:url("../images/bg02-m.png") no-repeat 0 0; background-size:100% 100%}
+	.offeSelect:before {height:30px; border-top-left-radius:8px; border-top-right-radius:8px}
+	.offeSelect dl {padding:20px 25px 45px}
+	.offeSelect dl dt {line-height:30px; font-size:18px}
+	.offeSelect dl dd {line-height:21px; font-size:12px}
+	.offeSelect dl dd em {display:block}
+	.offeSelect dl dd br {display:none}
+	.offeSelect ul {padding:0 5px; margin:-8px 0}
+	.offeSelect ul li {padding:8px 20px; width:50%}
+	.offeSelect ul li a {padding:10px 15px; border-radius:10px; height:100px; line-height:19px; font-size:13px}
+	.offeSelect ul li a strong {line-height:33px; font-size:22px}
+	.offeSelect ul li a span {margin-top:6px}
+	.offeSelect ul li a:before {bottom:12px; right:12px; width:26px; height:26px}
+}
+
+/* 기도제목 */
+.textarea textarea {padding:17px 20px; border:none; width:100%; height:250px; line-height:24px; font-family:"KT" , sans-serif; font-size:16px; color:#333; font-weight:500; resize:none; background:#f6f6f6}
+.textarea p {margin-bottom:8px; text-align:right; line-height:20px; font-size:12px; color:#999; font-weight:500}
+.textarea p span {color:#111}
+.textarea + .msg {margin:45px 0}
+.prayer {position:relative; padding:27px 150px 26px 23px; border:2px solid #e4e4e4; border-radius:10px}
+.prayer:before {display:block; content:""; position:absolute; top:0; right:0; width:108px; height:100%; background:url("../images/img04.png") no-repeat left center; background-size:57px auto}
+.prayer p {line-height:22px; font-size:16px; color:#666; font-family:"KT", sans-serif; font-weight:500}
+.prayer p span {display:block; margin-top:10px}
+.requArea {margin-top:22px}
+.requArea input {padding:0 20px; margin-top:10px; height:40px; border:none !important; background:#f6f6f6}
+.requArea + .msg {margin:45px 0}
+@media (max-width:767px) {
+	.textarea textarea {padding:10px 15px; height:168px; line-height:21px; font-size:14px}
+	.textarea + .msg {margin:5px 0 25px}
+	.prayer {padding:10px 100px 10px 15px}
+	.prayer:before {width:87px}
+	.prayer p {line-height:21px; font-size:14px}
+	.requArea {margin-top:10px}
+}
+
+/* 계좌 선택 팝업 */
+.accoList {overflow-y:auto; margin:-25px -25px 0; border-bottom:1px solid #eee; max-height:272px; text-align:left}
+.accoList li {position:relative; padding:11px 52px 12px 12px}
+.accoList li + li {border-top:1px solid #eee}
+.accoList li .bankName {line-height:21px; font-size:12px; color:#999}
+.accoList li .bankName img {margin:0 12px 0 0 !important; width:24px !important; height:24px}
+.accoList li .bankName .btnDel {display:inline-block; margin-left:8px; width:15px; height:15px; vertical-align:middle; text-indent:-9999px; background:url("../images/btn-del.png") no-repeat 0 0; background-size:100%}
+.accoList li .accoNum {padding-left:36px; line-height:21px; font-size:18px; color:#333; font-weight:500}
+.accoList li .btnStar {position:absolute; top:50%; right:15px; margin-top:-11px}
+.accoList li.noData {padding:37px 0; text-align:center}
+.accoList li.noData img {width:auto !important; height:60px}
+.accoList li.noData p {margin-top:10px; line-height:20px; font-size:16px; color:#333; font-weight:700}
+.accoList + .btnAdd {margin-bottom:-25px}
+.btnAdd {display:block; width:100%; height:56px; font-size:16px; color:#ff7800; font-weight:500; font-family:"KT", sans-serif}
+@media (max-width:767px) {
+	.accoList li.noData {padding:21px 0}
+}
+
+/* 등록계좌 없음 팝업 */
+.notice {padding-top:50px !important}
+.notice img {width:39px !important}
+.notice p {line-height:21px; font-size:14px; font-family:"KT", sans-serif; font-weight:700; color:#333; letter-spacing:-0.025em}
+.notice p + .btnAdd {margin-top:26px}
+
+/* 이체 실패 */
+.accountNum {position:relative; margin:96px 0 45px; padding-left:60px; text-align:left}
+.accountNum img {position:absolute; top:0; left:0; border-radius:50%; width:44px !important; height:44px; box-shadow:1px 1px 4px rgba(0,0,0,0.1)}
+.accountNum .bankName {line-height:24px; font-size:16px; color:#666; font-weight:500; letter-spacing:-0.025em}
+.accountNum .accoNum {line-height:24px; font-size:22px; color:#333; font-weight:700}
+.accountNum .txt {margin-left:-60px; margin-top:15px}
+@media (max-width:767px) {
+	.accountNum {margin:35px 0 48px}
+	.accountNum .bankName {line-height:22px; font-size:14px}
+	.accountNum .accoNum {line-height:22px; font-size:20px}
+}
+
+/* 내역조회 */
+.historyArea > strong {display:block; line-height:26px; font-size:16px; font-weight:500; color:#111}
+.historyArea .flex {display:flex; padding:10px 0 30px; border-bottom:1px solid #dbdbdb}
+.historyArea .flex button {flex:1; padding:2px 0 0 0; border-radius:2px; border-color:#aaa; height:30px; line-height:28px; font-size:14px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.historyArea .flex button.on {border-color:#ffcc00; background:#ffcc00}
+.historyArea .flex button + button {margin-left:20px}
+.historyArea .btnArea {padding:20px 0}
+.historyArea ul li {display:table; border-bottom:1px solid #eee; width:100%}
+.historyArea ul li > * {display:table-cell; height:80px; vertical-align:middle}
+.historyArea ul li * {font-family:"KT"}
+.historyArea ul li .left strong {display:block; line-height:30px; font-size:18px; font-weight:500; color:#111}
+.historyArea ul li .left p {line-height:28px; font-size:14px; font-weight:300; color:#666}
+.historyArea ul li .left p span + span {margin-left:8px}
+.historyArea ul li .left p span + span:before {display:inline-block; content:""; margin-right:8px; border-left:1px solid #ccc; height:10px}
+.historyArea ul li .right {text-align:right}
+.historyArea ul li .right strong {display:block; line-height:30px; font-size:14px; font-weight:700; color:#333}
+.historyArea ul li .right strong span {font-size:18px}
+.historyArea ul li .right strong button {margin-left:5px; line-height:14px}
+@media (max-width:767px) {
+	.historyArea {margin:0 -12px}
+	.historyArea > strong {padding:0 20px}
+	.historyArea .flex {padding:10px 20px 15px}
+	.historyArea .flex button + button {margin-left:7px}
+	.historyArea .btnArea {padding:20px 20px}
+	.historyArea ul {padding:0 21px}
+	.historyArea ul li .left strong {margin-bottom:2px; line-height:25px; font-size:16px}
+	.historyArea ul li .left p {line-height:25px; font-size:12px}
+	.historyArea ul li .right strong {margin-bottom:2px; line-height:25px; font-size:12px; font-weight:700}
+	.historyArea ul li .right strong span {font-size:16px}
+	.historyArea ul li .right strong button {line-height:12px}
+}
+
+/* 설정 */
+.setArea:first-child {margin-top:-20px}
+.setArea:first-child dl:last-child {border:none}
+.setArea + .setArea {border-top:4px solid #dbdbdb}
+.setArea dl {padding:15px 0 12px; border-bottom:1px solid #eee}
+.setArea dl dt {overflow:hidden; line-height:26px; font-family:'KT', sans-serif; font-size:18px; color:#111; font-weight:500}
+.setArea dl dt button {float:right; margin-top:1px}
+.setArea dl dt span {float:right; line-height:26px; font-weight:700; color:#333; font-size:12px}
+.setArea dl dt span strong {margin-right:5px; font-size:16px; color:#ff7800; vertical-align:top}
+.setArea dl dt span em {display:inline-block; font-size:16px; font-weight:500}
+.setArea dl dt span em:after {display:inline-block; content:""; margin:0 8px; border-left:1px solid #ccc; height:13px}
+.setArea dl dt span em + strong {margin:0; font-weight:500}
+.setArea dl dd {font-family:'KT', sans-serif; line-height:26px; font-size:12px; color:#666}
+.setArea dl dd ul {padding:15px 0 8px}
+.setArea dl dd ul li {overflow:hidden; line-height:26px; font-size:14px; font-weight:500; color:#333}
+.setArea dl dd ul li + li {margin-top:16px}
+.setArea dl dd ul li button {float:right; min-width:70px}
+.setArea a {display:block}
+.setArea + .btnLeft {margin-top:20px}
+@media (max-width:767px) {
+	.setArea {margin:0 -12px; padding:0 20px}
+	.setArea:first-child {margin-top:-15px}
+	.setArea + .setArea {border-top:2px solid #dbdbdb}
+	.setArea dl dt {font-size:16px}
+	.setArea dl dt span em {font-size:12px}
+	.setArea dl dt span em:after {margin:0 6px; height:9px}
+	.setArea dl dt span em + strong {font-size:12px}
+	.setArea dl dd ul {padding:8px 0 3px}
+	.setArea dl dd ul li + li {margin-top:7px}
+	.setArea dl dd ul li {font-size:12px}
+	.setArea + .btnLeft {padding:0 8px}
+}
+
+/* 계좌관리 */
+.accoListWrap .accoList {margin:-22px 0 0; border-top:2px solid #000; border-bottom:1px solid #eee; max-height:inherit}
+.accoListWrap + .btnAdd {border-top:none; margin-top:30px}
+@media (max-width:767px) {
+	.accoListWrap .accoList {margin:-22px -12px 0}
+	.accoListWrap + .btnAdd {margin-top:0}
+}
+
+/* 헌금계좌 즐겨찾기 등록 */
+.popCont .accountNum {display:inline-block; margin:15px 0 25px}
+.popCont .accountNum img {margin:0 !important}
+
+/* 비밀번호 변경 */
+.bigLogo {margin-bottom:46px; height:61px; text-align:center}
+.bigLogo img {max-width:100%; height:100%}
+@media (max-width:767px) {
+	.bigLogo {margin-bottom:35px; height:46px}
+}
+
+/* 교회 아이디 찾기 */
+.idList {margin-top:45px}
+.idList .tit {display:table; margin-top:10px; border-top:2px solid #dbdbdb; border-bottom:1px solid #dbdbdb; width:100%; background:#eee}
+.idList .tit > * {display:table-cell; padding:10px 25px; width:33.333%; height:38px; font-family:"KT"; font-size:14px; font-weight:500; color:#666; text-align:center; vertical-align:middle}
+.idList ul li {display:table; border-bottom:1px solid #f4f4f4; width:100%}
+.idList ul li > * {display:table-cell; padding:14px 25px; width:33.333%; line-height:22px; font-family:"KT"; font-size:14px; font-weight:500; color:#666; text-align:center}
+.idList ul li.on > strong {color:#448aff}
+@media (max-width:767px) {
+	.idList {margin:35px -12px 0}
+	.idList > p {padding:0 12px}
+	.idList .tit {display:table}
+	.idList .tit > * {font-size:12px}
+	.idList ul li > * {padding:14px 20px; font-size:12px}
+}
+
+/* 알림 */
+.infoBox {margin-top:40px}
+.infoBox img {display:block; margin:0 auto; width:82px}
+.infoBox dl {margin-top:50px}
+.infoBox dl dt {line-height:21px; font-size:16px; color:#333; font-weight:700}
+.infoBox dl dd {padding-left:16px; margin-top:2px; line-height:21px; font-size:16px; color:#666; font-weight:500}
+.infoBox dl dd + dt {margin-top:5px}
+@media (max-width:767px) {
+	.infoBox {text-align:center}
+	.infoBox dl {margin-top:40px; text-align:left}
+	.infoBox dl dt {font-size:14px}
+	.infoBox dl dd {font-size:14px}
+}
+
+/* 헌금 대상자의 성도 이름 변경하기 */
+.changeName {text-align:center; background:#d5d5d5}
+.changeName > * {display:inline-block; min-width:100px; line-height:50px; vertical-align:top; font-size:18px; font-weight:700; font-family:"KT"}
+.changeName > span {color:#666}
+.changeName > strong span {position:relative; z-index:1; color:#111}
+.changeName > strong span:before {display:block; content:""; position:absolute; bottom:0; left:0; z-index:-1; width:100%; height:8px; background:#ffcc00}
+.changeName > p {position:relative; min-width:44px; height:50px; z-index:2}
+.changeName > p span {position:absolute; opacity:0; left:0; top:0; width:8px; height:100%; text-indent:-9999px; animation:arrow 1500ms linear infinite; -ms-animation:arrow 1500ms linear infinite; -moz-animation:arrow 1500ms linear infinite; -webkit-animation:arrow 1500ms linear infinite; background:url('../images/ico-arrow04.png') no-repeat center; background-size:100%}
+.changeName > p span:nth-child(2) {animation-delay:-0.5s; -ms-animation-delay:-500ms; -moz-animation-delay:-500ms; -webkit-animation-delay:-0.5s}
+.changeName > p span:nth-child(3) {animation-delay:-1s; -ms-animation-delay:-1000ms; -moz-animation-delay:-1000ms; -webkit-animation-delay:-1s}
+.changeName + ul li a:before {display:block; content:""; position:absolute; top:12px; right:24px; width:25px; height:25px; opacity:0; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.changeName + ul li a.selected {position:relative}
+.changeName + ul li a.selected:before {opacity:1; background:url("../images/checkbox-on.png") no-repeat center; background-size:100%}
+@-webkit-keyframes arrow{
+	0% {-webkit-transform:translateX(-5px); opacity:0}
+	50% {-webkit-transform:translateX(18px); opacity:1}
+	100% {-webkit-transform:translateX(41px); opacity:0}
+}
+@-ms-keyframes arrow{
+	0% {-webkit-transform:translateX(-5px); opacity:0}
+	50% {-webkit-transform:translateX(18px); opacity:1}
+	100% {-webkit-transform:translateX(41px); opacity:0}
+}
+@-moz-keyframes arrow{
+	0% {-webkit-transform:translateX(-5px); opacity:0}
+	50% {-webkit-transform:translateX(18px); opacity:1}
+	100% {-webkit-transform:translateX(41px); opacity:0}
+}
+@keyframes arrow{
+	0% {-webkit-transform:translateX(-5px); opacity:0}
+	50% {-webkit-transform:translateX(18px); opacity:1}
+	100% {-webkit-transform:translateX(41px); opacity:0}
+}
+
+/* 추가 헌금자 관리 */
+.setContList {border-top:2px solid #dbdbdb}
+.setContList ul li {display:table; overflow:hidden; position:relative; padding-right:100px; border-bottom:1px solid #dbdbdb; width:100%; line-height:22px; font-size:14px; color:#666}
+.setContList ul li > * {display:table-cell; font-family:"KT"; vertical-align:middle}
+.setContList ul li strong {min-width:240px; height:50px; font-size:18px; font-weight:700; color:#333}
+.setContList ul li strong span {display:inline-block; margin-right:10px; width:25px; text-align:center}
+.setContList ul li strong span img {height:25px}
+.setContList ul li p {overflow:hidden; height:50px}
+.setContList ul li p span {position:relative; float:left; padding:0 15px}
+.setContList ul li p span + span:before {display:block; content:""; position:absolute; top:50%; left:0; margin-top:-6px; border-left:1px solid #d5d5d5; height:12px}
+.setContList ul li button {position:absolute; top:50%; right:20px; margin-top:-14px; width:80px}
+.setContList + .btnAdd {border-top:none; margin-top:30px}
+@media (max-width:1160px) {
+	.setContList ul li {display:block; padding:20px 100px 20px 0; line-height:20px}
+	.setContList ul li > * {display:block}
+	.setContList ul li strong {margin-bottom:10px; min-width:inherit; height:auto; line-height:25px}
+	.setContList ul li p {height:auto}
+	.setContList ul li p span {display:block; float:none; padding:0}
+	.setContList ul li p span + span:before {display:none}
+	.setContList ul li button {position:absolute; top:25px; right:0; margin-top:0; width:80px}
+	.setContList + .btnAdd {border-top:none; margin-top:30px}
+}
+@media (max-width:767px) {
+	.setContList {margin:0 -12px; padding:0 22px}
+	.setContList ul li {padding:12px 100px 10px 0; line-height:18px; font-size:12px}
+	.setContList ul li strong {margin-bottom:8px}
+	.setContList ul li strong span {margin-right:7px}
+	.setContList ul li p span {padding:0 15px}
+	.setContList ul li button {top:10px; padding:0; width:60px}
+	.setContList + .btnAdd {margin-top:20px}
+}
+
+/* 추가 헌금자 삭제 */
+.barTxt {margin-top:30px; text-align:center}
+.barTxt > * {display:inline-block; line-height:21px; font-size:14px; color:#666; font-family:"KT"; font-weight:500}
+.barTxt > * + *:before {display:inline-block; content:""; margin:0 20px 0 18px; border-left:1px solid #ccc; height:14px; vertical-align:middle}
+.barTxt > strong {color:#333}
+@media (max-width:767px) {
+	.barTxt {margin-top:20px}
+	.barTxt > * + *:before {margin:0 12px 0 10px; height:12px}
+}
+
+.topTxt.v2.txtL {padding-left:15px}
+
+.loading {position:fixed; top:0; left:0; z-index:1000; width:100%; height:100%; background:rgba(0,0,0,0.5)}
+.loading img {position:absolute; top:50%; left:50%; width:80px; height:80px; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%)}

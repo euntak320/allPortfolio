@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <script src="assets/js/jquery.fullPage.js"></script>
+  <script src="assets/js/script.js"></script>
+  <title>상상알파국어</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+	<div class="top_menu">
+		<div class="title">
+			<a href="/main.do" class="logo">로고이미지</a>
+		</div>
+		<div class="login_menu">
+			<c:choose>
+				<c:when test="${cneUserSession eq null}">
+					<a href="/login.do" class="login">로그인</a>
+					<a href="/regulation.do" class="join">회원가입</a>
+				</c:when>
+				<c:otherwise>
+					<a href="/personal/check.do" class="login name">${cneUserSession.user_name}</a>
+					<a href="/logout.do" class="join out">로그아웃</a>
+				</c:otherwise>
+			</c:choose>
+		</div>
+	</div>
+
+	<nav class="pc_on">
+		<div class="menu" id="menu">
+      <ul class="menu_list">
+				<li>
+					<a href="/info.do">연구소 소개</a>
+					<!-- <ul class="menu_sub sub1">
+						<li><a href="/info.do">CEO</a></li>
+						<li><a href="/info.do#content2">상상국어평가연구소</a></li>
+						<li><a href="/info.do#content3">상상 vision</a></li>
+						<li><a href="/info.do#content4">상상국어평가연구소 출제시스템</a></li>
+						<li><a href="/info.do#content5">상상국어 모의고사 참여 인력</a></li>
+						<li><a href="/academy.do">모의고사 시행학원 찾기 <span class="find">찾기이미지</span></a></li>
+					</ul> -->
+				</li>
+				<li>
+					<a href="/subject.do">교재</a>
+				</li>
+				<li>
+					<a href="/strategy.do">프로그램</a>
+				</li>
+				<li>
+					<a href="/bbs/qna/list.do">게시판</a>
+				</li>
+				<li>
+          <a href="javascript:alert('준비중입니다.');" class="img">성적확인</a>
+        </li>
+				<!-- <li><a href="javascript:alert('준비중입니다.');">SHOP</a></li> -->
+			</ul>
+      <div class="menu_list_frame">
+  			<div class="menu_list_1">
+          <a href="/info.do">· 상상국어평가연구소</a>
+          <a href="/info.do">· 모의고사 시행학원 찾기</a>
+        </div>
+        <div class="menu_list_2">
+  				<a href="/subject.do">· 상상국어모의고사</a>
+  				<a href="/subject.do#book2">· 상상국어모의고사(현장강의용)</a>
+  				<a href="/subject.do#book3">· 상상국어N과제</a>
+  				<a href="/subject.do#book4">· 상상력</a>
+  				<a href="/subject.do#book7">· 기출문제집</a>
+  				<a href="/subject.do#book8">· 상상알파국어</a>
+        </div>
+        <div class=" menu_list_3">
+  	    	<a href="/strategy.do#textbook">· 교재별 특징</a>
+  	      <a href="/strategy.do#schedule">· 일정표</a>
+        </div>
+        <div class="menu_list_4">
+  				<a href="/bbs/qna/list.do">· Q&A</a>
+  				<a href="/bbs/data/list.do">· 자료실</a>
+  				<a href="/bbs/notice/list.do">· 공지사항</a>
+        </div>
+        <div class="menu_list_5">
+  				<span class="grade_img"><a href="#">성적확인</a></span>
+       </div>
+  			</ul>
+  		</div>
+    </div>
+	</nav>
+	<nav class="mobile_on">
+		<div class="menu" id="menu">
+			<div class="menu_list">
+				<div class="m_login_area">
+					<c:choose>
+						<c:when test="${cneUserSession eq null}">
+							<a href="/login.do" class="login">로그인</a>
+							<a href="/regulation.do" class="join">회원가입</a>
+						</c:when>
+						<c:otherwise>
+							<a href="/personal/check.do" class="login name">${cneUserSession.user_name}</a>
+							<a href="/logout.do" class="join out">로그아웃</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"><a href="javascript:;">연구소 소개</a></span>
+					<!-- <span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/info.do">CEO</a>
+						<br>
+						<a href="/info.do#content2">상상국어평가연구소</a>
+						<br>
+						<a href="/info.do#content3">상상 vision</a>
+						<br>
+						<a href="/info.do#content4">상상국어평가연구소 출제시스템</a>
+						<br>
+						<a href="/info.do#content5">상상국어 모의고사 참여 인력</a>
+						<br>
+						<a href="/academy.do">모의고사 시행학원 찾기 <span class="find">찾기이미지</span></a>
+					</div> -->
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">교재</a>
+					</span> <span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/subject.do">상상국어모의고사</a>
+						<br>
+						<a href="/subject.do#book2">상상국어모의고사(현장강의용)</a>
+						<br>
+						<a href="/subject.do#book3">상상국어N과제</a>
+						<br>
+						<a href="/subject.do#book4">상상력</a>
+						<br>
+						<!-- <a href="/subject.do#book5">상상매미</a>
+						<br>
+						<a href="/subject.do#book6">상상EBS</a>
+						<br> -->
+						<a href="/subject.do#book7">기출문제집</a>
+						<br>
+						<a href="/subject.do#book8">상상알파국어</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">프로그램</a></span>
+					<span class="slide_frame"></span>
+					<div class="menu_sub">
+						<!-- <a href="/strategy.do">line up</a> -->
+						<br>
+						<a href="/strategy.do#textbook">교재별 특징</a>
+						<br>
+						<a href="/strategy.do#schedule">일정표</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">게시판</a></span>
+					<span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/bbs/qna/list.do">Q&A</a>
+						<br>
+						<a href="/bbs/data/list.do">자료실</a>
+						<br>
+						<a href="/bbs/notice/list.do">공지사항</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:alert('준비중입니다.');">성적확인</a></span>
+					<span class="slide_frame"></span>
+				</div>
+				<!-- <div class="m_menu_list">
+					<span class="title"><a href="javascript:alert('준비중입니다.');">SHOP</a></span>
+					 <span class="slide_frame"></span>
+				</div> -->
+			</div>
+		</div>
+	</nav>
+	<a href="#" class="mobile_menu">모바일메뉴</a>
+</header>
+  <!-- header -->
+  <!-- content -->
+  <section>
+    <div class="content_area">
+      <div class="title_area">
+        <span class="title">기본정보입력</span>
+        <br>
+        <span class="sub_title">회원님의 개인정보를 소중하게 생각하며 회원님의 동의없이는 공개 또는 제3자에게 제공되지않습니다.</span>
+      </div>
+      <div class="join_list_area">
+        <span class="two">가입방법이미지</span>
+      </div>
+      <div class="join_content">
+        <div class="com_table join">
+          <table>
+            <colgroup>
+              <col width="20%;">
+              <col width="80%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th class="txt_left">
+                  <span class="imp">*</span> 아이디
+                </th>
+                <td>
+                  <div class="com_input_small">
+                    <input type="text" name="" value="" title="아이디">
+                  </div>
+                  <span class="blue fl">※ 영문자, 숫자만 입력 가능, 최소 3자이상 입력하세요.</span>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">
+                  <span class="imp">*</span> 패스워드
+                </th>
+                <td>
+                  <div class="com_input_small">
+                    <input type="password" name="" value="" title="비밀번호">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">
+                  <span class="imp">*</span> 패스워드 확인
+                </th>
+                <td>
+                  <div class="com_input_small">
+                    <input type="password" name="" value="" title="비밀번호">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">
+                  <span class="imp">*</span> 이름
+                </th>
+                <td>
+                  <div class="com_input_small">
+                    <input type="text" name="" value="" title="이름">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">
+                  <span class="imp">*</span> 별명
+                </th>
+                <td>
+                  <div class="com_input_small fl">
+                    <input type="text" name="" value="" title="별명">
+                  </div>
+                  <span class="red fl">한글 2글자, 영문 4글자 이상 입력 가능합니다.</span>
+                  <p class="txt_list clear">
+                    <span>공백없이 한글, 영문, 숫자만 입력가능(한글2자, 영문4자 이상)<span>
+                        <br>
+                        <span>별명을 바꾸시면 앞으로 60일 이내에는 변경 할 수 없습니다.</span>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">
+                  <span class="imp">*</span> E-mail
+                </th>
+                <td>
+                  <div class="com_input_regular">
+                    <input type="text" name="" value="" title="e-mail">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">
+                  <span class="imp">*</span> 생년월일
+                </th>
+                <td>
+                  <div class="com_input_cal fl">
+                    <input type="text" name="" value="" title="생년월일" id="datepicker">
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">
+                  <span class="imp">*</span> 성별
+                </th>
+                <td>
+                  <div class="com_input_small">
+                    <select class="" name="">
+                      <option value="#">선택하세요</option>
+                      <option value="#">남</option>
+                      <option value="#">여</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">메일링 서비스</th>
+                <td>
+                  <div class="check fl">
+                    <input type="checkbox" name="" value="" id="check1">
+                    <label for="check1">정보메일을 받겠습니다.</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">SMS 수신여부</th>
+                <td>
+                  <div class="check fl">
+                    <input type="checkbox" name="" value="" id="check2">
+                    <label for="check2">핸드폰 문자메세지를 받겠습니다.</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th class="txt_left">정보공개</th>
+                <td>
+                  <div class="check fl">
+                    <input type="checkbox" name="" value="" id="check3">
+                    <label for="check3">다른분들이 나의 정보를 볼 수 있도록 합니다.</label>
+                  </div>
+                  <br>
+                  <span class="text_indent">정보공개를 바꾸시면 앞으로 0일이내에는 변경이 안됩니다.</span>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  <div class="text_input">자동문자영역</div>
+                </th>
+                <td>
+                  <div class="com_input_small fl">
+                    <input type="text" name="" value="" title="별명">
+                  </div>
+                  <span class="noraml fl">왼쪽의 글자를 입력하세요.</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="list_btn">
+          <span class="btn circle fr">확인</span>
+        </div>
+
+      </div><!--  content_area-->
+  </section>
+  <!-- content -->
+  <!-- footer -->
+  <footer>
+    <div class="footer_content">
+      <div class="footer_logo_area fl">
+        <span class="footer_title">로고이미지</span>
+      </div>
+      <div class="deatil_area fr">
+        <p>
+          <span>(주)이매진C&E · 상상국어평가연구소</span>
+          <span>대표 : 강상희</span>
+          <span>서울시 서초구 강남대로 30길(양재동, 산수빌딩)5층</span>
+          <span>TEL : 02-578-3881</span>
+          <span>FAX : 02-574-9881</span>
+        </p>
+        <p>
+          <span>사업자등록번호 : 264-81-36246</span>
+          <span>통신판매신고번호 : 2014-서울서초-1073호</span>
+          <span>출판사신고번호 : 제2014-000114호</span>
+        </p>
+        <p>
+          <span>COPYRIGHT 2014 IMAGINECNE.CO.KR ALL RIGHTS RESERVED</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer -->
+</body>
+
+</html>

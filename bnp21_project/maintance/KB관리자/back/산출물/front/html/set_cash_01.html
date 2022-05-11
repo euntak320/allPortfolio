@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="format-detection" content="telephone=no">
+<title>현금영수증 설정 | KB스타게이트</title>
+<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon" href="">
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 해당페이지만 사용 : 슬라이드  -->
+<link type="text/css" rel="stylesheet" href="../common/css/slick.css">
+<script type="text/javascript" src="../common/js/slick.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub bg">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="fl"><a href="#" class="btnNavi prev"><span class="ico">이전</span></a></div>
+			<div class="tit"><h1>현금영수증 설정</h1></div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div class="content">
+			<!-- 현금영수증 설정 -->
+			<ul class="setCashList">
+				<li class="li row">
+					<div class="in">
+						<strong class="tit">현금영수증 발급</strong>
+						<div class="txt">
+							<label class="switch">
+								<input type="checkbox">
+								<span class="ball"></span>
+							</label>
+						</div>
+					</div>
+				</li>
+				<li class="li">
+					<p class="cTit">발급정보</p>
+					<div class="in">
+						<div class="formChkRdo">
+							<ul>
+								<li><label class="label"><input type="radio" class="rdo" name="rdoTerm" checked=""><span class="ico"></span><span class="lTxt">개인소득공제</span></label></li>
+								<li><label class="label"><input type="radio" class="rdo" name="rdoTerm"><span class="ico"></span><span class="lTxt">사업자지출증빙</span></label></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- intFocsUl -->
+					<ul class="intFocsUl">
+						<li class="liTxt">
+							<div class="txtSel">
+								<select class="select">
+									<option>휴대폰번호</option>
+									<option>사업자등록번호</option>
+									<option>현금영수증카드번호</option>
+								</select>
+							</div>
+						</li>
+						<li class="liForm">
+							<!-- 디폴트 : 휴대폰번호일때 노출-->
+							<p class="txt">01012**98**</p>
+							<!-- 개발 : 사업자등록번호 및 현금영수증 카드번호 선택시 노출
+							<input type="text" class="input" placeholder="- 를 제외한 번호를 입력하세요.">
+							-->
+						</li>
+					</ul>
+					<!-- //intFocsUl -->
+
+					<!-- 동의하기 -->
+					<div class="in">
+						<ul class="termsAgreeList type2">
+							<li><label class="label"><input type="checkbox" class="chk" name=""><span class="ico"></span><span class="lTxt">개인정보 수집 및 이용 동의</span></label><a href="#" class="btn arr"></a></li>
+						</ul>
+					</div>
+					<!-- //동의하기 -->
+
+					<!-- guide list -->
+					<ul class="guideList btm">
+						<li>등록하신 발생정보 기준으로 현금영수증이 자동발행됩니다.</li>
+					</ul>
+					<!-- //guide list -->
+				</li>
+			</ul>
+			<!-- //현금영수증 설정 -->
+		</div>
+		<!-- //content -->
+
+		<!-- button area -->
+		<div class="btmBtnWrap">
+			<ul>
+				<li><a href="#" class="btn lg de">설정</a></li>
+			</ul>
+		</div>
+		<!-- //button area -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+</body>
+</html>

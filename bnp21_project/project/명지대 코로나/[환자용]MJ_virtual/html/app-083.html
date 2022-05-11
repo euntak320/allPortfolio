@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(function(){
+            $(".starlist li").click(function(){
+                $(this).toggleClass("on");
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="layerFrame">
+        <div class="serviceList">
+            <div class="header">
+                <span class="title">서비스 이용약관</span>
+                <button type="button">닫기</button>
+            </div>
+            <div class="content">
+                <div class="serviceArea">
+                    <div class="selectArea">
+                        <span>시행일자</span>
+                        <select name="" id="">
+                            <option value="">YYYY-MM-DD</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="paraList">
+                    <div>
+                        <span class="title">제1조 1항</span>
+                        <p>약관 내용 중략...</p>
+                    </div>
+                </div>
+                <div class="comBtn">
+                    <button type="button" class="w100">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

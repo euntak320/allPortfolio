@@ -1,0 +1,141 @@
+﻿@charset "utf-8";
+/* mainContainer */
+#mainContainer {overflow:hidden; max-width:100%; width:100%; min-height:657px;/*  z-index:-10; background-color:#EFF6FF */}
+
+/* visualArea */
+#mainContainer .visualArea {position:relative; left:0; top:0; height:937px; background:transparent linear-gradient(269deg, #00000047 0%, #4879FF 100%) no-repeat padding-box}
+#mainContainer .visualArea .swiper-slide .textArea {position:absolute; left:15%; top:30%; padding:0 20px 0 0; max-width:100%; text-align:left}
+
+#mainContainer .visualArea .swiper-slide .textArea strong {display:block; line-height:64px; font-size:48px; font-weight:300; color:#fff}
+#mainContainer .visualArea .swiper-slide .textArea strong:before {display:block; content:""; position:absolute; left:0; top:-100px; width:80px; height:80px; background:url("../images/ico01.png") no-repeat center; background-size:80px auto}
+#mainContainer .visualArea .swiper-slide .textArea strong .cLBlue {font-weight:600; color:#75F6FF}
+#mainContainer .visualArea .swiper-slide .textArea > span {display:block; margin-top:32px; line-height:40px; font-size:18px; font-weight:300; letter-spacing:-0.05em; color:#fff}
+#mainContainer .visualArea .swiper-slide .textArea > span .cLBlue {font-weight:600; color:#75F6FF}
+
+#mainContainer .visualArea .swiper-slide .textArea button {margin-top:37px; padding:0px 23px 0px 20px} 
+#mainContainer .visualArea .swiper-slide .textArea button:after {display:inline-block; content:""; margin-left:10px; width:36px; height:11px; vertical-align:middle; background:url("../images/ico_arrow03.png") no-repeat center; background-size:36px auto} 
+#mainContainer .visualArea .swiper-button-prev.visual {left:15%; top:73%; width:68px; height:10px; background:url("../images/ico_arrow01.png")no-repeat center; background-size:68px auto; background-position:center} 
+#mainContainer .visualArea .swiper-button-next.visual {left:22%; top:73%; width:68px; height:10px; background:url("../images/ico_arrow02.png")no-repeat center; background-size:68px auto; background-position:center}
+
+@media (max-width:1160px) {
+	#mainContainer .visualArea {height:880px}
+	#mainContainer .visualArea .swiper-slide .textArea strong:before {top:-90px; width:70px; height:70px;background-size:70px auto}
+	#mainContainer .visualArea .swiper-slide .textArea strong {line-height:58px; font-size:43px}
+	#mainContainer .visualArea .swiper-slide .textArea > span {margin-top:23px; font-size:16px}
+	#mainContainer .visualArea .swiper-slide .textArea > span .cLBlue {font-weight:500}
+	#mainContainer .visualArea .swiper-slide .textArea button {margin-top:30px; padding:0 20px; line-height:46px; font-size:18px}
+	#mainContainer .visualArea .swiper-slide .textArea button:after {width:30px; background-size:30px auto}
+	#mainContainer .visualArea .swiper-button-prev.visual,
+	#mainContainer .visualArea .swiper-button-next.visual {width:58px; background-size:58px auto}
+	#mainContainer .visualArea .swiper-button-next.visual {left:25%}
+}
+@media (max-width:767px) {
+	#mainContainer .visualArea {height:760px}
+	#mainContainer .visualArea .swiper-slide .textArea strong:before {top:-75px; width:55px; height:55px; background-size:55px auto}
+	#mainContainer .visualArea .swiper-slide .textArea strong {line-height:38px; font-size:23px}
+	#mainContainer .visualArea .swiper-slide .textArea > span {margin-top:18px; line-height:25px; font-size:15px}
+	#mainContainer .visualArea .swiper-slide .textArea > span .cLBlue {font-weight:400}
+	#mainContainer .visualArea .swiper-slide .textArea button {margin-top:25px; padding:0 20px; line-height:40px; font-size:16px}
+	#mainContainer .visualArea .swiper-slide .textArea button:after {width:28px; background-size:28px auto}
+	#mainContainer .visualArea .swiper-button-prev.visual,
+	#mainContainer .visualArea .swiper-button-next.visual {top:70%; width:48px; background-size:48px auto}
+	#mainContainer .visualArea .swiper-button-next.visual {left:36%}
+}
+
+
+/* serviceWrap */
+#mainContainer .serviceWrap {position:relative; margin:0 auto; padding:0 20px; padding-bottom:85px; max-width:100%; width:1360px}
+/* #mainContainer .serviceWrap:before {display:block; content:""; position:absolute; right:0; top:135px; width:910px; height:750px; z-index:-1; background:url("../images/img01.png") no-repeat center; background-size:1024px auto}
+ */#mainContainer .titleWrap {margin:50px auto 0; text-align:center}
+#mainContainer .titleWrap h2 {line-height:52px; font-size:46px; font-weight:600; color:#333747; transition:all 0.2s}
+#mainContainer .titleWrap h2 span {font-weight:400}
+#mainContainer .titleWrap > span {display:block; margin-top:10px; line-height:28px; font-size:18px; transition:all 0.2s}
+#mainContainer .titleWrap + .serviceList {margin-top:105px}
+#mainContainer .serviceWrap:after {display:block; content:""; clear:both}
+#mainContainer .serviceWrap .serviceList {float:left; z-index:1}
+#mainContainer .serviceWrap .serviceList ul {position:relative}
+#mainContainer .serviceWrap .serviceList ul:before {display:block; content:""; position:absolute; left:23px; top:50px; width:4px; height:460px; z-index:-1; background-color:#C7DBFF}
+#mainContainer .serviceWrap .serviceList ul li span.number {display:inline-block; border-radius:50%; border:4px solid #C7DBFF; /* box-shadow:0px 3px 4px #4687FDA3; */ vertical-align:top; width:50px; height:50px; text-align:center; line-height:40px; font-size:20px; font-weight:600; color:#4687FD; background-color:#fff /* color:#fff; background-color:#4687FD */}
+#mainContainer .serviceWrap .serviceList ul li div {display:inline-block; margin-left:18px; padding:20px 25px; width:304px; /* border-radius:0px 20px 20px 20px; box-shadow:0px 3px 10px #1454C71F; background-color:#fff */}
+#mainContainer .serviceWrap .serviceList ul li div strong {display:block; line-height:40px; font-size:22px; font-weight:600; color:#454545}
+#mainContainer .serviceWrap .serviceList ul li div span {display:block; margin-top:15px; line-height:24px; font-size:15px; font-weight:400; color:#787878}
+#mainContainer .serviceWrap .serviceList ul li + li {margin-top:27px}
+#mainContainer .serviceWrap .bgArea {position:absolute; right:-50px; top:67px; width:1024px; z-index:-2}
+#mainContainer .serviceWrap .bgArea img {width:100%}
+@media (max-width:1160px) {
+	#mainContainer .titleWrap h2 {line-height:46px; font-size:40px; transition:all 0.2s}
+	#mainContainer .titleWrap > span {font-size:17px; transition:all 0.2s}
+	#mainContainer .titleWrap + .serviceList {margin-top:93px}
+	#mainContainer .serviceWrap .serviceList ul:before {left:21px; top:43px; height:390px}
+	#mainContainer .serviceWrap .serviceList ul li span.number {width:45px; height:45px; line-height:35px; font-size:18px}
+	#mainContainer .serviceWrap .serviceList ul li div {padding:15px 20px; margin-left:15px; width:273px}
+	#mainContainer .serviceWrap .serviceList ul li div strong {line-height:35px; font-size:20px; color:#333}
+	#mainContainer .serviceWrap .serviceList ul li div span {margin-top:8px; line-height:22px; font-size:14px; color:#484848}
+	#mainContainer .serviceWrap .bgArea {width:898px}
+	#mainContainer .serviceWrap .bgArea img {opacity:0.8}
+}
+@media (max-width:767px) {
+	#mainContainer .titleWrap h2 {line-height:38px; font-size:30px; transition:all 0.2s}
+	#mainContainer .titleWrap > span {font-size:14px; transition:all 0.2s}
+	#mainContainer .titleWrap + .serviceList {float:none; margin-top:65px; text-align:center}
+	#mainContainer .serviceWrap .serviceList ul:before {display:none}
+	#mainContainer .serviceWrap .serviceList ul li span.number {width:40px; height:40px; line-height:30px; font-size:16px}
+	#mainContainer .serviceWrap .serviceList ul li div {padding:10px 15px; margin-left:0; width:263px}
+	#mainContainer .serviceWrap .serviceList ul li div strong {line-height:30px; font-size:18px}
+	#mainContainer .serviceWrap .serviceList ul li div span {line-height:20px}
+	#mainContainer .serviceWrap .bgArea {right:-135px; width:745px}
+	#mainContainer .serviceWrap .bgArea img {opacity:0.3}
+}
+
+/* listWrap */
+#mainContainer .listWrap {margin:150px auto; padding:0 20px; max-width:100%; width:1360px}
+#mainContainer .listWrap .titleWrap + .deptArea {margin-top:77px}
+#mainContainer .listWrap .deptArea {position:relative; overflow:hidden}
+#mainContainer .listWrap .deptArea .swiper-slide {text-align:center}
+#mainContainer .listWrap .deptArea .swiper-slide + .swiper-slide {padding:0 37px}
+#mainContainer .listWrap .deptArea .swiper-slide span {display:block; height:57px}
+#mainContainer .listWrap .deptArea .swiper-slide span img {width:auto; height:100%}
+#mainContainer .listWrap .deptArea .swiper-slide strong {display:block; margin-top:10px; line-height:35px; font-size:20px; font-weight:600; color:#333747}
+#mainContainer .listWrap .deptArea .swiper-button-prev.dept {left:0; top:35%; width:50px; height:70px; background:url("../images/ico_arrow04.png")no-repeat center; background-size:14px auto; background-position:center}
+#mainContainer .listWrap .deptArea .swiper-button-next.dept {right:0; top:35%; width:50px; height:70px; background:url("../images/ico_arrow05.png")no-repeat center; background-size:14px auto; background-position:center}
+@media (max-width:940px) {
+	#mainContainer .listWrap .deptArea .swiper-button-prev.dept,
+	#mainContainer .listWrap .deptArea .swiper-button-next.dept {top:25%}
+}
+@media (max-width:767px) {
+	#mainContainer .listWrap .deptArea .swiper-button-prev.dept,
+	#mainContainer .listWrap .deptArea .swiper-button-next.dept {top:28%}
+}
+
+/* mobileWrap */
+#mainContainer .mobileWrap {background:transparent linear-gradient(76deg, #477BFE 0%, #3CBCF7 100%) 0% 0% no-repeat padding-box}
+#mainContainer .mobileWrap > div {position:relative; margin:0 auto; padding:0 20px; max-width:100%; width:1360px}
+#mainContainer .mobileWrap > div:after {display:block; content:""; clear:both}
+#mainContainer .mobileWrap .titleArea {float:left; padding:50px 0}
+#mainContainer .mobileWrap .titleArea strong {line-height:59px; font-size:40px; font-weight:400; color:#fff; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#mainContainer .mobileWrap .titleArea strong span {font-weight:600; color:#fff}
+#mainContainer .mobileWrap .titleArea > span {display:block; margin-top:18px; line-height:26px; font-size:15px; font-weight:300; color:#fff; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#mainContainer .mobileWrap .titleArea .linkArea {margin-top:28px}
+#mainContainer .mobileWrap .titleArea .linkArea a {display:inline-block; width:140px}
+#mainContainer .mobileWrap .titleArea .linkArea a img {width:100%}
+#mainContainer .mobileWrap .titleArea .linkArea a + a {margin-left:25px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#mainContainer .mobileWrap .bgArea {float:right;/*  top:-45px; right:0; */margin-top:-40px; width:425px}
+#mainContainer .mobileWrap .bgArea img {width:100%}
+@media (max-width:1160px) {
+	#mainContainer .mobileWrap .titleArea strong {line-height:46px; font-size:33px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+	#mainContainer .mobileWrap .titleArea > span {margin-top:13px; line-height:23px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+	#mainContainer .mobileWrap .titleArea .linkArea a {width:130px}
+	#mainContainer .mobileWrap .titleArea .linkArea a + a {margin-left:20px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+	#mainContainer .mobileWrap .bgArea {width:387px}
+}
+@media (max-width:940px) {
+	#mainContainer .mobileWrap > div {text-align:center}
+	#mainContainer .mobileWrap .titleArea {float:none}
+	#mainContainer .mobileWrap .bgArea {float:none; display:inline-block}
+}
+@media (max-width:767px) {
+	#mainContainer .mobileWrap .titleArea strong {line-height:36px; font-size:23px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+	#mainContainer .mobileWrap .titleArea > span {line-height:20px; font-size:14px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+	#mainContainer .mobileWrap .titleArea .linkArea a {width:115px}
+	#mainContainer .mobileWrap .bgArea {width:265px}
+}

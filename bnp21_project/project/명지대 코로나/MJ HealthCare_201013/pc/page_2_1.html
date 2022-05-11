@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>MJ CORONA</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    
+</head>
+
+<body>
+    <div id="subPage">
+        <!-- header -->
+        <div class="header">
+            <div class="topArea">
+                <h1><a href="">logo</a></h1>
+                <div class="topBtm">
+                    <span>고객센터 담당자 2님</span>
+                    <button>로그아웃</button>
+                </div>
+            </div>
+            <div class="bottomArea">
+                <span>
+                    <a href="">고객문의</a>
+                </span>
+                <span>
+                    <a href="" class="on">예진표관리</a>
+                </span>
+                <span>
+                    <a href="">관리자관리</a>
+                </span>
+                <span>
+                    <a href="">병원관리</a>
+                </span>
+            </div>
+        </div>
+        <!-- header -->
+
+        <!-- content -->
+        <div class="contentArea v3">
+            <div class="comLayout">
+                <div class="normalArea">
+                    <span>예진표 기본정보</span>
+                    <div class="box w70 fl">
+                        <div class="titleTxt">
+                            <span>예진표 제목</span>
+                        </div>
+                        <div class="conTxt">
+                            <span>
+                                <input type="text" name="" id="" value="예진표 (8/19 업데이트)">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="box w30 fr">
+                        <div class="titleTxt">
+                            <span>처리상태</span>
+                        </div>
+                        <div class="conTxt">
+                            <div class="check">
+                                <div class="radio">
+                                    <input type="radio" name="state" id="rd_1">
+                                    <label for="rd_1">사용</label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" name="state" id="rd_2">
+                                    <label for="rd_2">미사용</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="normalArea">
+                    <div class="titleArea">
+                        <span class="fl">예진표 문항정보</span>
+                        <div class="comBtm fr v2">
+                            <button type="button">문항 추가</button>
+                        </div>
+                    </div>
+                    <div class="questionArea">
+                        <div class="topArea">
+                            <span class="title fl">문항 1 </span>
+                            <div class="fr">
+                                <button type="type">삭제</button>
+                            </div>
+                        </div>
+                        <div class="buttonArea">
+                            <div class="box">
+                                <div class="titleTxt">
+                                    <span>질문내용<strong>(필수)</strong></span>
+                                </div>
+                                <div class="conTxt">
+                                    <p><input type="text" name="" id="" value=" 1. 최근 7일 이내 발열 (37.5 도)"></p>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="titleTxt">
+                                    <span>상세설명<strong>(필수)</strong></span>
+                                </div>
+                                <div class="conTxt">
+                                    <p><input type="text" name="" id="" value=" 37.5 도 이상일 경우 '네'를 체크 해 주세요."></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="questionArea">
+                        <div class="topArea">
+                            <span class="title fl">문항 2</span>
+                            <div class="fr">
+                                <button type="type">삭제</button>
+                            </div>
+                        </div>
+                        <div class="buttonArea">
+                            <div class="box">
+                                <div class="titleTxt">
+                                    <span>질문내용<strong>(필수)</strong></span>
+                                </div>
+                                <div class="conTxt">
+                                    <p><input type="text" name="" id="" value=" 2. 최근 7일 이내 호흡기 증상 (예: 기침, 호흡곤란, 후각&미각 소실)"></p>
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="titleTxt">
+                                    <span>상세설명<strong>(필수)</strong></span>
+                                </div>
+                                <div class="conTxt">
+                                    <p><input type="text" name="" id="" value="기침, 호흡곤란, 후각&미각 소실 등의 증상이 있으실 경우 '네'를 체크 해 주세요."></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="questionArea">
+                        <div class="topArea">
+                            <span class="title fl">문항 3</span>
+                            <div class="fr">
+                                <button type="type">삭제</button>
+                            </div>
+                        </div>
+                        <div class="buttonArea">
+                            <div class="box">
+                                <div class="titleTxt">
+                                    <span>질문내용<strong>(필수)</strong></span>
+                                </div>
+                                <div class="conTxt">
+                                    <p><input type="text" name="" id="" value="3. 최근 14일 이내 호흡기 증상 (대상: 폐렴 진단, 확진자 또는 자가격리 대상자 접촉)">
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="titleTxt">
+                                    <span>상세설명<strong>(필수)</strong></span>
+                                </div>
+                                <div class="conTxt">
+                                    <p><input type="text" name="" id="" value="폐렴 진단, 확진자 또는 자가격리 대상자를 접촉하였을 경우 '네'를 체크 해 주세요.">
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="questionArea">
+                        <div class="topArea">
+                            <span class="title fl">문항 4</span>
+                            <div class="fr">
+                                <button type="type">삭제</button>
+                            </div>
+                        </div>
+                        <div class="buttonArea">
+                            <div class="box">
+                                <div class="titleTxt">
+                                    <span>질문내용<strong>(필수)</strong></span>
+                                </div>
+                                <div class="conTxt">
+                                    <p><input type="text" name="" id="" value="4. 2주 이내 확진자 다수 발생지역에 다녀오신적이 있습니까? (8/19 업데이트)">
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <div class="box">
+                                <div class="titleTxt">
+                                    <span>상세설명<strong>(필수)</strong></span>
+                                </div>
+                                <div class="conTxt">
+                                    <p>
+                                        <textarea name="" id="" cols="30" rows="10">- 서울특별시, 경기도, 인천광역시 등 수도권  사회적 거리두기 2단계 - 코로나19 검사 권고 1) 광화문 집회 참석자 (8/15) ⁠  2) 서울사랑교회 예배 참석자 (8/7 ~ 8/13)
+                                        </textarea>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+
+        <!-- footer -->
+        <div class="footer">
+            <span>2020 &copy; MJ. All Rights Reserved.</span>
+        </div>
+        <!-- footer -->
+    </div>
+</body>
+
+</html>

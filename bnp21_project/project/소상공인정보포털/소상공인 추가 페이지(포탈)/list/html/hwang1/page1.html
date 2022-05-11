@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="서울시 소재 소상공인의 창업 및 경영 안정을 지원하여 일자리 창출과 서울 경제 활성화에 기여하기 위하여 설립된 서울시 소상공인 종합지원센터입니다.">
+    <meta name="keywords" content="창업, 경영교육, 지원사업, 맞춤형사업, 소상공인, 종합지원포털, 시장정보, 자영업, 현장체험, 멘토링, 자영업 협업화, 시장정보, 농수산물 가격정보, 서울시 물가정보, 유통시장 정보, 소상공인 입찰정보, 관광공사 추천업소, 착한가격 선정업소, 소상공인 홍보관, 소상공인아카데미, 정보광장, 창업상담, 경영지원활동, 일자리, 컨설팅, 서울신용보증재단, 신용보증, 신용, 보증">
+    <title>서울특별시 자영업지원센터</title>
+        <!-- styles -->
+    <link href="https://www.seoulsbdc.or.kr/nassets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.seoulsbdc.or.kr//nassets/css/style.css" rel="stylesheet">
+    <link href="https://www.seoulsbdc.or.kr/nassets/css/font-awesome.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]><script src=./assets/js/ie8-responsive-file-warning.js></script><![endif]-->
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script src="https://www.seoulsbdc.or.kr/nassets/js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" href="https://www.seoulsbdc.or.kr/nassets/ico/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="https://www.seoulsbdc.or.kr/nassets/ico/favicon.ico">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://www.seoulsbdc.or.kr/nassets/js/bootstrap.min.js"></script>
+    <script src="https://www.seoulsbdc.or.kr/nassets/js/default.js"></script>
+    <!--
+    <script type="text/javascript" src="/js/jquery/jquery-1.7.2.min.js"></script>
+    -->
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/js/jquery/jquery-ui-1.8.16.min.js"></script>
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/js/jquery/jquery.dialog.min.js"></script>
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/js/jquery/jquery-ui.datepicker.js"></script>
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/js/jquery/jquery.meio.mask-1.1.3.min.js"></script>
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/js/jquery/jquery.maskedinput-1.3.min.js"></script>
+
+    <!-- 포매팅 -->
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/js/jquery/jquery.number.min.js"></script>
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/js/common-util.js"></script>
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/js/sbdcCommon.js"></script>
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/assets/js/default.js"></script>
+    <script type="text/javascript" src="https://www.seoulsbdc.or.kr/js/jquery/jquery.dialog.min.js"></script>
+
+    <!-- 서울 GNB -->
+    <script type="text/javascript" src="https://www.seoul.go.kr/seoulgnb/gnb.js"></script>
+    <script src="//www.seoul.go.kr/seoulgnb/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="//www.seoul.go.kr/seoulgnb/seoul-common-gnb.css">
+
+
+    <!-- 20-11-06 스타일 추가 -->
+
+    <style>
+        .text-right.v2 > a {font-size:14px; padding:5px 10px;}
+        .gridArea .countingArea {overflow: hidden; margin:20px 0;}
+        .gridArea .countingArea .left {float: left; width:150px; height:30px;}
+        .gridArea .countingArea .left select {width:100%; height:100%;}
+        .gridArea .countingArea .right {float: right; padding:5px 0;}
+    </style>
+
+    <!-- 20-11-06 스타일 추가 -->
+</head>
+
+<body>
+    <div class="navbar hidden-xs">
+        <!-- 알림-일반 -->
+        <div id="topNoti" class="alert" role="alert" style="display: none;">
+            <div class="container relative">
+                <a href="#none" class="alert-close" data-dismiss="alert" aria-label="Close">×</a>
+                <div class="col-sm-7 text-left">
+                    <h4><span class="point">IE10 이상 지원됩니다.</span> 브라우저를 업그레이드 하세요.</h4>
+                    Microsoft에서 구 버전의 익스플로러 보안 업데이트 지원을 중단함에 따라 보안에 취약해질 수 있습니다.<br>
+                    지금 바로 업그레이드 하시어 보다 빠르고 안전하게 인터넷을 사용하세요.
+                </div>
+                <div class="col-sm-5 text-center">			
+                    아래의 최신 브라우저로 업그레이드 하세요.<br>
+                    <ul class="browser">
+                        <li><a href="http://windows.microsoft.com/ko-kr/internet-explorer/download-ie" target="_blank"><img src="/nassets/img/ico-ie.png" alt="Internet Explorer"></a></li>
+                        <li><a href="https://www.google.com/intl/ko/chrome/browser/?hl=ko&amp;brand=CHMA&amp;utm_campaign=ko&amp;utm_source=ko-ha-apac-ko-bk&amp;utm_medium=ha" target="_blank"><img src="/nassets/img/ico-chrome.png" alt="Chrome"></a></li>
+                        <li><a href="http://www.mozilla.or.kr/ko/firefox/fx/#desktop" target="_blank"><img src="/nassets/img/ico-firefox.png" alt="Firefox"></a></li>
+                        <li><a href="https://www.opera.com/" target="_blank"><img src="/nassets/img/ico-opera.png" alt="Opera"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- //알림-일반 -->
+        <div class="gnbwrap"></div>
+        <!-- /.gnbwrap -->
+
+        <!-- Navigation Top Menu -->
+        <div class="container">
+            <div class="lnb">
+                <a class="navbar-brand" href="/main.do">
+                    <img src="/nassets/img/logo.png" alt="서울시 자영업지원센터 소상공인 종합지원포털">
+                </a>
+                <ul class="right">
+                    <li class="gnbdropbtn">
+                        <a href="#none">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                            &nbsp; 한은탁 님 &nbsp;
+                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </a>
+                        <ul class="gnbdropdown">
+                        <!--
+                            <li><a href="#"><span>로그인</span></a>
+                            <li><a href="#"><span>회원가입</span></a>
+                            <li><a href="#"><span>아이디 찾기</span></a>
+                            <li><a href="#"><span>비밀번호 찾기</span></a>
+                        -->
+                            <li><a href="/member/logout.do">로그아웃</a></li>
+                            <li><a href="/mypage/myinfo.do">마이페이지</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="/headerMenu/guide.do">이용안내</a></li>
+                    <li><a href="/headerMenu/sitemap.do">사이트맵</a></li>
+                    <li class="gnbdropbtn"><a href="#none"><img src="/nassets/img/icon-list.png" alt=""></a>
+                        <ul class="gnbdropdown">
+                            <li><a href="/info/main.do" target="_blank"><span>정보광장</span></a></li>
+                            <li>
+                                <a href="#" class="btnEdu">
+                                    <span>소상공인아카데미</span>
+                                </a>
+                            </li>
+                            <li><a href="http://golmok.seoul.go.kr/" target="_blank"><span>상권분석시스템</span></a></li>
+                            <li>
+                                <a href="#" onclick="alert('전문가이상 등급만 사용할 수 있습니다.');"><span>컨설팅관리</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <form name="searchPortal" id="searchPortal" method="post" onsubmit="return false;">
+                    <div class="lnbsearch col-sm-4">
+                        <div class="input-group">
+                            <label for="totalKeyword" class="sr-only">통합검색</label>
+                            <input type="text" class="form-control" placeholder="통합검색" id="totalKeyword" name="totalKeyword" value="">
+                            <span class="input-group-btn">
+                                <a class="btn btn-default" href="#none" onclick="searchPortalSubmit();"><i class="fa fa-search" aria-hidden="true"></i></a>
+                            </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /lnbsearch -->						
+                </form>
+            </div><!-- /.lnb -->
+        </div><!-- /.container -->
+            
+            <!-- ############################### 메뉴 생성 부분  ############################### -->
+
+        <div class="topnav-wrap-h">
+            <div class="topnav-wrap" id="top_menu">
+                <ul class="topnav">
+                    
+                    <li class="topbtn"><a href="/cs/businessSearch.do">사업찾기</a>
+                        <ul style="overflow: hidden; height: 0px; padding-top: 0px;">
+                    
+                            <li><a href="/cs/businessSearch.do"><span>맞춤형 사업찾기</span></a></li>
+                    
+                            <li><a href="/cs/popularityBusiness.do"><span>인기사업안내</span></a></li>
+                    
+                            <li><a href="/bs/BS_LIST.do?boardCd=BBS-00028"><span>유관기관 네트워크</span></a></li>
+                    
+                            <li><a href="/bs/wantedPeopleList.do"><span>채용정보</span></a></li>
+                    
+                            <li><a href="/bs/BS_LIST.do?boardCd=BBS-00045"><span>구직자정보</span></a></li>
+                        
+                        </ul>
+                    </li>
+                    
+                    <li class="topbtn"><a href="/cs/contents.do?contentCd=about1">사업안내</a>
+                        <ul style="overflow: hidden; height: 0px; padding-top: 0px;">
+                    
+                            <li><a href="/cs/contents.do?contentCd=about1"><span>종합안내</span></a></li>
+                    
+                            <li><a href="/cs/contents.do?contentCd=about6"><span>창업컨설팅</span></a></li>
+                    
+                            <li><a href="/cs/contents.do?contentCd=about2"><span>자영업클리닉</span></a></li>
+                    
+                            <li><a href="/cs/contents.do?contentCd=about10"><span>시설개선 지원 사업</span></a></li>
+                    
+                            <li><a href="/cs/contents.do?contentCd=about5"><span>사업정리 및 재기 지원</span></a></li>
+                    
+                            <li><a href="/cs/contents.do?contentCd=about3"><span>현장체험(멘토링)</span></a></li>
+                    
+                            <li><a href="/cs/contents.do?contentCd=about4"><span>자영업협업화</span></a></li>
+                    
+                            <li><a href="/cs/insrReqst.do"><span>소상공인 고용보험료 지원</span></a></li>
+                    
+                            <li><a href="/cs/contents.do?contentCd=about11"><span>관악상권 르네상스</span></a></li>
+                    
+                            <li><a href="/cs/contents.do?contentCd=about12"><span>코로나19 희망드림</span></a></li>
+                    
+                            <li><a href="/cc/expertList.do"><span>전문가조회</span></a></li>
+                        
+                        </ul>
+                    </li>
+                    
+                    <li class="topbtn"><a href="/cs/garakAuction.do">시장정보</a>
+                        <ul style="overflow: hidden; height: 0px; padding-top: 0px;">
+                    
+                            <li><a href="/cs/garakAuction.do"><span>농수산물 가격정보</span></a></li>
+                    
+                            <li><a href="/cs/seoulPI.do"><span>서울시 물가정보</span></a></li>
+                    
+                            <li><a href="/cs/newsTender.do"><span>소상공인 입찰정보</span></a></li>
+                    
+                            <li><a href="/bs/BS_LIST.do?boardCd=BBS-00026"><span>도매시장 정보</span></a></li>
+                    
+                            <li><a href="/cs/marketSearchApi.do"><span>도매시장 점포찾기</span></a></li>
+                        
+                        </ul>
+                    </li>
+                    
+                    <li class="topbtn"><a href="/cs/seoulTasty.do">홍보의장</a>
+                        <ul style="overflow: hidden; height: 0px; padding-top: 0px;">
+                    
+                            <li><a href="/cs/seoulTasty.do"><span>관광공사 선정업소</span></a></li>
+                    
+                            <li><a href="/cs/priceModelStore.do"><span>착한가격 선정업소</span></a></li>
+                    
+                            <li><a href="/bs/BS_LIST.do?boardCd=B043" class=""><span>소상공인 홍보관</span></a></li>
+                        
+                        </ul>
+                    </li>
+                    
+                    <li class="topbtn"><a href="/bs/BS_LIST.do?boardCd=B061">지원센터</a>
+                        <ul style="overflow: hidden; height: 0px; padding-top: 0px;">
+                    
+                            <li><a href="/bs/BS_LIST.do?boardCd=B061"><span>공지사항</span></a></li>
+                    
+                            <li><a href="/bs/BS_LIST.do?boardCd=B065"><span>유관기관 공지사항</span></a></li>
+                    
+                            <li><a href="/bs/BS_10100_SL.do?boardCd=B041"><span>궁금합니다</span></a></li>
+                    
+                            <li><a href="/bs/BS_LIST.do?boardCd=BBS-00004"><span>자주하는질문</span></a></li>
+                    
+                            <li><a href="/bs/BS_LIST.do?boardCd=BBS-00038"><span>칭찬한마디</span></a></li>
+                    
+                            <li><a href="/bs/BS_LIST.do?boardCd=BBS-00037"><span>고객제안</span></a></li>
+                    
+                            <li><a href="/cs/contents.do?contentCd=newcode"><span>찾아오시는길</span></a></li>
+                        
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div><!-- /.topnav-wrap -->
+            <!-- ############################### 메뉴 생성 부분  ############################### -->
+
+        </div><!-- /.topnav-wrap-h -->
+    </div>
+
+    <!-- 네비게이션 메뉴  -->
+    <div class="breadcrumbwrap">
+		<div class="container">
+			<ul class="breadcrumb">
+				<li><a href="/"><i class="fa fa-home"></i></a></li>
+				<li>사업안내</li>
+				<li class="active">사업신청</li>
+			</ul>
+		</div>
+    </div>
+
+    <!-- 네비게이션 메뉴  -->
+
+
+    <!-- 실제컨텐츠 영역  -->
+    <div class="container">	
+		<div class="row">
+			<div class="col-sm-12">
+				<!-- Page-header -->
+				<div class="page-header">	
+					<h3>전문가 배정</h3>
+				</div>
+				<!--/ Page-header -->
+			</div>
+		</div>		
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<p class="clearfix"></p>
+				<!-- 전문가 배정목록 START -->
+				<h4 class="dot" style="float: left;">전문가 배정목록</h4>
+                
+				<form id="form" name="form" method="post" class="form-horizontal" enctype="multipart/form-data">
+                <p class="text-right v2">
+                    <a href="#none" id="insertBtn" name="insertBtn" class="btn btn-primary btn-lg">검색</a>
+                    <a href="#none" id="cancleBtn" name="cancleBtn" class="btn btn-default btn-lg">초기화</a>
+                </p>
+
+                
+                <div class="formwrap">
+                    
+					<div class="form-group">
+						<label for="inputName" class="col-sm-1 control-label" style="letter-spacing: -0.1em;">사업구분</label>
+						<div class="col-sm-3">
+                            <input type="text" id="" name="" class="form-control" value="" >                        
+                        </div>
+                        <label for="inputName" class="col-sm-1 control-label" style="letter-spacing: -0.1em;">사업분류</label>
+                        <div class="col-sm-3">
+                            <select id="selBsnsSe" class="form-control border-r">
+                                <option value="">선택</option>
+                                <option value=" " selected="selectd"></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                            </select>
+                        </div>
+						<label for="inputName" class="col-sm-1 control-label" style="letter-spacing: -0.1em;">접수번호</label>
+						<div class="col-sm-3">
+                            <input type="text" id="" name="" class="form-control" value="" >                        
+                        </div>
+                    </div>
+                    <div class="form-group">
+						<label for="inputName" class="col-sm-1 control-label" style="letter-spacing: -0.1em;">업체명</label>
+						<div class="col-sm-3">
+                            <input type="text" id="" name="" class="form-control" value="" >                        
+                        </div>
+                        <label for="inputName" class="col-sm-1 control-label" style="letter-spacing: -0.1em;">대표자</label>
+                        <div class="col-sm-3">
+                            <input type="text" id="" name="" class="form-control" value="" >                        
+                        </div>
+						<label for="inputName" class="col-sm-1 control-label" style="letter-spacing: -0.1em;">접수경로</label>
+						<div class="col-sm-3">
+                            <select id="selBsnsSe" class="form-control border-r">
+                                <option value="">선택</option>
+                                <option value=" " selected="selectd"></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                                <option value=" "></option>
+                            </select>
+                        </div>
+					</div>
+                </form>
+            </div>
+            <div class="gridArea">
+                <div class="countingArea">
+                    <div class="left">
+                        <select name="" id="">
+                            <option value="">10개씩 보기</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="right">
+                        <span>4건[1/5페이지]</span>
+                    </div>
+                </div>
+                <!-- 그리드 영역 -->
+                <div id="" style="height:350px;">
+                    그리드 영역입니다.
+                </div>
+                <nav class="text-center">
+                    <ul class="pagination">
+                        <li><a href="javascript:;">[1]</a></li>
+                        <li><a href="javascript:movePage('2')">2</a></li>
+                        <li><a href="javascript:movePage('3')">3</a></li>
+                        <li><a href="javascript:movePage('4')">4</a></li>
+                        <li><a href="javascript:movePage('5')">5</a></li>
+                        <li><a href="javascript:movePage('6')">6</a></li>
+                        <li><a href="javascript:movePage('7')">7</a></li>
+                        <li><a href="javascript:movePage('8')">8</a></li>
+                        <li><a href="javascript:movePage('9')">9</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="text-right">
+                <a href="#none" id="insertBtn" name="insertBtn" class="btn btn-primary btn-lg">저장</a>
+                <a href="#none" id="cancleBtn" name="cancleBtn" class="btn btn-default btn-lg">취소</a>
+                <a href="#none" id="cancleBtn" name="cancleBtn" class="btn btn-grey btn-lg">엑셀다운로드</a>
+            </p>		
+        </div>
+        <!-- 실제컨텐츠 영역  -->
+
+        <!-- 푸터 영역 -->
+        <footer class="footer-wrap">
+            <div class="footerwrap">
+                <div class="container">
+                    <div class="row visible-xs">
+                        <p class="text-left">
+                            <a href="#this" onclick="location.href='/headerMenu/introduction.do'" class="btn btn-secondary btn-sm">센터소개</a>
+                            <a href="#this" onclick="location.href='/headerMenu/guide.do'" class="btn btn-secondary btn-sm">이용안내</a>
+                        </p>
+                        <p class="visible-xs text-center">©  Seoul City</p>
+                    </div>
+                    <div class="row hidden-xs">
+                        <div class="col-sm-9">
+                                <ul class="footer-link">
+                                    <li><a href="/headerMenu/introduction.do">센터소개</a></li>
+                                    <li><a href="/headerMenu/guide.do">이용안내</a></li>
+                                    <li><a href="/headerMenu/privacy.do">개인정보처리방침</a></li>
+                                    <li><a href="/headerMenu/copyright.do">저작권보호정책</a></li>
+                                    <li><a href="/headerMenu/email.do">이메일무단수집거부</a></li>
+                                    <li><a href="http://www.seoulshinbo.co.kr/wbase/contents/wbaseContentsPage.do?bno=48&amp;id=85" target="_blank">정보공개 3.0</a></li>
+                                    <li><a href="#this" onclick="javascript:popupRemote();">원격지원</a></li>
+                                </ul>
+                                <div class="footer-copy">
+                                    <p>(우)04130 서울특별시 마포구 마포대로 163, 7층 (공덕동, 서울신용보증재단빌딩) &nbsp; <span class="black">TEL: 1577-6119 &nbsp; FAX: 02-3278-8120</span></p>
+                                    <p>© Seoul Credit Guarantee Foundation, All Rights Reserved.</p>
+                                </div>
+                        </div>
+                        <div class="col-sm-3 text-right hidden-xs">
+            
+                            <fieldset class="family-site">
+                                <legend class="invisible">새창에서 패밀리 사이트로 이동합니다.</legend>
+                                    <label for="FamilySite" class="invisible">유관서비스 바로가기</label>
+                                        <div class="fdiv">
+                                        <select id="FamilySite" name="FamilySite">
+                                            <option value="http://www.seoul.go.kr/">서울특별시</option>
+                                            <option value="http://www.seoulshinbo.co.kr/">서울신용보증재단</option>
+                                            <option value="http://blog.naver.com/toktokseoul">재단블로그</option>
+                                            <option value="http://www.bizinfo.go.kr/">중소기업정책포털</option>
+                                            <option value="http://www.koreg.or.kr/">신용보증재단중앙회</option>
+                                            <option value="http://job.seoul.go.kr/">서울일자리플러스센터</option>
+                                            <option value="http://golmok.seoul.go.kr/">우리마을가게 상권분석서비스</option>
+                                            <option value="/info/main.do">정보광장</option>
+                                            <option value="https://sbsc.seoul.go.kr/">서울기업지원센터</option>
+                                        </select>
+                                    </div>
+                                <input type="button" value="GO" title="패밀리 사이트 이동-새창" class="select_btn" onclick="fn_moveSite();">
+                            </fieldset>
+                        </div><!-- /.col-3 -->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- 푸터 영역 -->
+</body>
+</html>

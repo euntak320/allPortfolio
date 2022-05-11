@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<title>문화 빅데이터 트렌드현황</title>
+
+
+	<!-- 기존 운영 소스 -->
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.min.css">
+
+
+	<link rel="stylesheet" href="https://www.bigdata-culture.kr/bigdata/css/common.css">
+	<!-- <link rel="stylesheet" href="https://www.bigdata-culture.kr/bigdata/css/fonts.css"> -->
+	<link rel="stylesheet" href="https://www.bigdata-culture.kr/bigdata/css/style.css">
+	<link rel="stylesheet" href="https://www.bigdata-culture.kr/bigdata/css/responsive.css">
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript">window.jQuery || document.write('<script src="/bigdata/lib/jquery/jquery.min.js" type="text/javascript"><\/script>')</script>
+	<script type="text/javascript">window.jQuery || document.write('<script src="/bigdata/lib/jquery/jquery-ui.min.js" type="text/javascript"><\/script>')</script>
+
+	<script src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js?autoload=false" async defer></script>
+	<script type="text/javascript" src="https://www.bigdata-culture.kr/bigdata/lib/js/script.js"></script> 
+	<script type="text/javascript" src="https://www.bigdata-culture.kr/bigdata/js/lib/swiper/swiper.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="https://www.bigdata-culture.kr/bigdata/js/lib/masonry.pkgd.min.js" charset="utf-8"></script>
+
+	<!-- 임시 폰트 -->
+	<link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<style> 
+		* {font-family: 'Noto Sans KR', sans-serif!important;}
+	</style>
+
+	<!-- 추가되는 부분 -->
+	<link rel="stylesheet" href="../assets/css/trand.css">
+
+	<!-- 선택스크립트 -->
+	<script>
+		$(function(){
+			$("#trand .list_area ul li").click(function(){
+				$(this).toggleClass("on");
+			});
+		});
+
+	</script>
+</head>
+
+<body>
+	<!-- skip -->
+	<div id="skip">
+		<!--<a rel="bookmark" href="#header">헤더 바로가기</a>-->
+		<a rel="bookmark" href="#contents">본문 바로가기</a>
+		<!--<a rel="bookmark" href="#header">푸터 바로가기</a>-->
+	</div>
+	<!-- skip -->
+
+	
+	<!-- header -->
+	<div class="header_wrapper" id="header">
+		<div class="sub_header_wrapper">
+			<h1>
+				<a href="/bigdata/user/main.do"><img src="/bigdata/images/common/logo.png" alt="문화 빅데이터 플랫폼"class="logo"></a></h1>
+			<div class="navigation_wrapper inner clear">
+				<ul class="depth_01">
+					<li class="navigation_list col_7 ">
+						<a href="/bigdata/user/data_market/list.do" target="_self" class="navigation_link">문화빅데이터마켓</a>
+						<ul class="depth_02">
+							<li>
+								<a href="/bigdata/user/data_market/list.do" target="_self">데이터검색</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/data_market/agency/list.do" target="_self">제공기관별</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/application/step1.do?application_code=custom" target="_self">맞춤데이터신청</a>
+							</li>
+						</ul>
+					</li>
+					<li class="navigation_list col_7 ">
+						<a href="/bigdata/user/board/list.do?board_code=big_data_culture" target="_self"
+							class="navigation_link">문화데이터답사</a>
+						<ul class="depth_02">
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=big_data_culture" target="_self">빅데이터로 본문화</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/content.do?sq=68">혁신서비스</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=data_visualization" target="_self">데이터 시각화</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/application/analysis_study/step1.do" target="_self">데이터 분석학습</a>
+							</li>
+						</ul>
+					</li>
+					<li class="navigation_list col_7 ">
+						<a href="/bigdata/user/application/step1.do?application_code=consulting" target="_self"
+							class="navigation_link">지원 & 신청</a>
+						<ul class="depth_02">
+							<li>
+								<a href="/bigdata/user/application/step1.do?application_code=consulting" target="_self">컨설팅</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=contest" target="_self">공모전</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=education" target="_self">교육</a>
+							</li>
+						</ul>
+					</li>
+					<li class="navigation_list col_7 active">
+						<a href="/bigdata/user/board/list.do?board_code=dev_network" target="_self"
+							class="navigation_link">공유 & 소통</a>
+						<ul class="depth_02">
+							<li class="active">
+								<a href="/bigdata/user/board/list.do?board_code=dev_network" target="_self">개발자네트워크</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=data_knowledge" target="_self">데이터지식</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/utilization/list.do?board_code=utilization"
+									target="_self">활용사례</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=faq" target="_self">FAQ</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=qna" target="_self">Q&A</a>
+							</li>
+						</ul>
+					</li>
+					<li class="navigation_list col_7 ">
+						<a href="/bigdata/user/organ/list.do" target="_self" class="navigation_link">거버넌스</a>
+						<ul class="depth_02">
+							<li>
+								<a href="/bigdata/user/organ/list.do" target="_self">거버넌스 소개</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=governance_news" target="_self">거버넌스
+									소식</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=governance_comm" target="_self">거버넌스
+									소통</a>
+							</li>
+						</ul>
+					</li>
+					<li class="navigation_list col_7 ">
+						<a href="/bigdata/user/content.do?sq=50" class="navigation_link">플랫폼소개</a>
+						<ul class="depth_02">
+							<li>
+								<a href="/bigdata/user/content.do?sq=50">플랫폼 소개</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/content.do?sq=51">이용안내</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=notice" target="_self">공지사항</a>
+							</li>
+							<li>
+								<a href="/bigdata/user/board/list.do?board_code=event_board" target="_self">이벤트</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<div class="util_list site_map"><a href="javascript:void(0);" class="util_link">사이트맵</a></div>
+			</div>
+			<div class="util_wrapper">
+				<ul>
+					<li class="util_list sign_up">
+						<a href="/bigdata/user/member/login.do" class="util_link">로그인</a>
+					</li>
+					<li class="util_list my_page">
+						<a href="/bigdata/user/mypage/mydata/cert.do" class="util_link">마이페이지</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="site_map_wrap">
+			<div class="inner">
+				<ul class="col_6 left">
+					<li>
+						<a href="/bigdata/user/data_market/list.do" target="_self">데이터검색</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/data_market/agency/list.do" target="_self">제공기관별</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/application/step1.do?application_code=custom" target="_self">맞춤데이터신청</a>
+					</li>
+				</ul>
+				<ul class="col_6 left">
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=big_data_culture" target="_self">빅데이터로 본 문화</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/content.do?sq=68">혁신서비스</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=data_visualization" target="_self">데이터 시각화</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/application/analysis_study/step1.do" target="_self">데이터 분석학습</a>
+					</li>
+				</ul>
+				<ul class="col_6 left">
+					<li>
+						<a href="/bigdata/user/application/step1.do?application_code=consulting" target="_self">컨설팅</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=contest" target="_self">공모전</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=education" target="_self">교육</a>
+					</li>
+				</ul>
+				<ul class="col_6 left">
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=dev_network" target="_self">개발자네트워크</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=data_knowledge" target="_self">데이터지식</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/utilization/list.do?board_code=utilization" target="_self">활용사례</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=faq" target="_self">FAQ</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=qna" target="_self">Q&A</a>
+					</li>
+				</ul>
+				<ul class="col_6 left">
+					<li>
+						<a href="/bigdata/user/organ/list.do" target="_self">거버넌스 소개</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=governance_news" target="_self">거버넌스 소식</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=governance_comm" target="_self">거버넌스 소통</a>
+					</li>
+				</ul>
+				<ul class="col_6 left">
+					<li>
+						<a href="/bigdata/user/content.do?sq=50">플랫폼 소개</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/content.do?sq=51">이용안내</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=notice" target="_self">공지사항</a>
+					</li>
+					<li>
+						<a href="/bigdata/user/board/list.do?board_code=event_board" target="_self">이벤트</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="mo_dimmed"></div>
+
+	<!-- header -->
+
+	<!-- content -->
+	<div id="contents" class="page_wrapper clear">
+		<div class="sub_page_wrapper" id="trand">
+			<div class="page_title_wrapper align_center">
+				<span class="top_title">문화 관련 소비자 트렌드 카테고리 분석</span>
+				<span class="main_title">주요 콘텐츠 미디어 트렌드 현황</span>
+			</div>
+			<div class="content_wrapper v2">
+				<div class="list_area">
+					<div class="box_list">
+						<span class="date_txt">2020.08.27</span>
+						<ul>
+							<li>	
+								<span class="number">1</span>
+								<span>온라인 콘서트</span>
+							</li>
+							<li>
+								<span class="number">2</span>
+								<span>미스터트롯콘서트</span>
+							</li>
+							<li>
+								<span class="number">3</span>
+								<span>코로나콘서트</span>
+							</li>
+							<li>
+								<span class="number">4</span>
+								<span>뮤지컬</span>
+							</li>
+							<li>
+								<span class="number">5</span>
+								<span>가수콘서트</span>
+							</li>
+							<li>
+								<span class="number">6</span>
+								<span>미스터트롯서울콘서트</span>
+							</li>
+							<li>
+								<span class="number">7</span>
+								<span>콘서트취소</span>
+							</li>
+							<li>
+								<span class="number">8</span>
+								<span>성시경콘서트</span>
+							</li>
+							<li>
+								<span class="number">9</span>
+								<span>공연</span>
+							</li>
+							<li>
+								<span class="number">10</span>
+								<span>싸이콘서트</span>
+							</li>
+						</ul>
+					</div>
+					<div class="box_list">
+						<span class="date_txt">2020.08.27</span>
+						<ul>
+							<li>	
+								<span class="number">1</span>
+								<span>온라인 콘서트</span>
+							</li>
+							<li>
+								<span class="number">2</span>
+								<span>미스터트롯콘서트</span>
+							</li>
+							<li>
+								<span class="number">3</span>
+								<span>코로나콘서트</span>
+							</li>
+							<li>
+								<span class="number">4</span>
+								<span>뮤지컬</span>
+							</li>
+							<li>
+								<span class="number">5</span>
+								<span>가수콘서트</span>
+							</li>
+							<li>
+								<span class="number">6</span>
+								<span>미스터트롯서울콘서트</span>
+							</li>
+							<li>
+								<span class="number">7</span>
+								<span>콘서트취소</span>
+							</li>
+							<li>
+								<span class="number">8</span>
+								<span>성시경콘서트</span>
+							</li>
+							<li>
+								<span class="number">9</span>
+								<span>공연</span>
+							</li>
+							<li>
+								<span class="number">10</span>
+								<span>싸이콘서트</span>
+							</li>
+						</ul>
+					</div>
+					<div class="box_list">
+						<span class="date_txt">2020.08.27</span>
+						<ul>
+							<li>	
+								<span class="number">1</span>
+								<span>온라인 콘서트</span>
+							</li>
+							<li>
+								<span class="number">2</span>
+								<span>미스터트롯콘서트</span>
+							</li>
+							<li>
+								<span class="number">3</span>
+								<span>코로나콘서트</span>
+							</li>
+							<li>
+								<span class="number">4</span>
+								<span>뮤지컬</span>
+							</li>
+							<li>
+								<span class="number">5</span>
+								<span>가수콘서트</span>
+							</li>
+							<li>
+								<span class="number">6</span>
+								<span>미스터트롯서울콘서트</span>
+							</li>
+							<li>
+								<span class="number">7</span>
+								<span>콘서트취소</span>
+							</li>>싸이콘서트</span>
+							</li>
+						</ul>
+					</div>
+					<div class="box_list">
+						<span class="date_txt">2020.08.27</span>
+						<ul>
+							<li>	
+								<span class="number">1</span>
+								<span>온라인 콘서트</span>
+							</li>
+							<li>
+								<span class="number">2</span>
+								<span>미스터트롯콘서트</span>
+							</li>
+							<li>
+								<span class="number">3</span>
+								<span>코로나콘서트</span>
+							</li>
+							<li>
+								<span class="number">4</span>
+								<span>뮤지컬</span>
+							</li>
+							<li>
+								<span class="number">5</span>
+								<span>가수콘서트</span>
+							</li>
+							<li>
+								<span class="number">6</span>
+								<span>미스터트롯서울콘서트</span>
+							</li>
+							<li>
+								<span class="number">7</span>
+								<span>콘서트취소</span>
+							</li>
+						</ul>
+					</div>
+					<div class="box_list">
+						<span class="date_txt">2020.08.27</span>
+						<ul>
+							<li>	
+								<span class="number">1</span>
+								<span>온라인 콘서트</span>
+							</li>
+							<li>
+								<span class="number">2</span>
+								<span>미스터트롯콘서트</span>
+							</li>
+							<li>
+								<span class="number">3</span>
+								<span>코로나콘서트</span>
+							</li>
+							<li>
+								<span class="number">4</span>
+								<span>뮤지컬</span>
+							</li>
+							<li>
+								<span class="number">5</span>
+								<span>가수콘서트</span>
+							</li>
+							<li>
+								<span class="number">6</span>
+								<span>미스터트롯서울콘서트</span>
+							</li>
+							<li>
+								<span class="number">7</span>
+								<span>콘서트취소</span>
+							</li>
+						</ul>
+					</div>
+					<div class="box_list">
+						<span class="date_txt">2020.08.27</span>
+						<ul>
+							<li>	
+								<span class="number">1</span>
+								<span>온라인 콘서트</span>
+							</li>
+							<li>
+								<span class="number">2</span>
+								<span>미스터트롯콘서트</span>
+							</li>
+							<li>
+								<span class="number">3</span>
+								<span>코로나콘서트</span>
+							</li>
+							<li>
+								<span class="number">4</span>
+								<span>뮤지컬</span>
+							</li>
+							<li>
+								<span class="number">5</span>
+								<span>가수콘서트</span>
+							</li>
+							<li>
+								<span class="number">6</span>
+								<span>미스터트롯서울콘서트</span>
+							</li>
+							<li>
+								<span class="number">7</span>
+								<span>콘서트취소</span>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- content -->
+
+	<!-- footer -->
+	<div class="footer_wrapper" id="footer">
+		<div class="inner">
+			<div class="col_5 left"><img src="/bigdata/images/common/kcisa.png" alt="KCISA 문화체육관광부 한국문화 정보원"></div>
+			<div class="col_2 left footer_util_wrap">
+				<a href="/bigdata/user/content.do?sq=50">문화 빅데이터 플랫폼이란?</a>
+				<ul class="footer_util">
+					<li class=""><a href="/bigdata/user/content.do?sq=70">개인정보처리방침</a></li>
+					<!--<li><a href="https://www.kcisa.kr/kr/contents/customer_charter_1/view.do" target="_blank">윤리경영</a></li>-->
+					<li><a href="/bigdata/user/content.do?sq=69">저작권정책</a></li>
+					<li class="email_collection_open"><a href="">이메일주소무단수집거부</a></li>
+				</ul>
+				<p class="footer_copy">대표번호 :  02-3153-2830, 이메일 : <a href="mailto:bigdata@kcisa.kr">bigdata@kcisa.kr</a></p>
+				<p class="footer_copy">대표자 : 홍희경, 사업자 등록번호 : 101-82-10054, 통신판매업신고 : <a href="http://ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2018313020130201503" target="_blank">2018-서울마포-1502</a></p>
+				<p class="footer_copy">서울특별시 마포구 월드컵북로 400 문화콘텐츠센터 6·8층 한국문화정보원</p>
+				<p class="footer_copy">COPYRIGHTⓒ 한국문화정보원</p>
+			</div>
+			<div class="wid30 left align_right">
+				<div class="left relation_site">
+					<select onchange="if(this.value) window.open(this.value);"> 
+						<option value="">관련사이트</option>
+						<option value="http://www.busanit.or.kr/">부산정보산업진흥원 </option>
+						<option value="http://yanoljadata.com/">야놀자 </option>
+						<option value="https://www.redtiebutler.co.kr/">레드타이 </option>
+						<option value="http://company.redtable.global/">레드테이블  </option>
+					</select>
+				</div>
+				<div class="right"><img src="/bigdata/images/common/footer_logo_l.png" alt="문화빅데이터플랫폼"></div>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+</body>
+
+</html>

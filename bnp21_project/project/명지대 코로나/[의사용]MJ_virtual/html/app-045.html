@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(function(){
+            $(".infoBox button").click(function(){
+                $(".infoBox button").removeClass("on");
+                $(".infoBox button").eq($(this).index()).addClass("on");
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="subPage">
+        <div id="header">
+            <button class="back">뒤로가기</button>
+            <span class="title">진료과목 선택</span>
+        </div>
+        <div id="content" class="normal">
+            <div class="buttonArea">
+                <a href="" class="all">전체보기</a>
+                <a href="" class="emergency">응급진료</a>
+                <a href="" class="internal">내과</a>
+                <a href="" class="digestive">소화기내과</a>
+                <a href="" class="heart">심장내과</a>
+                <a href="" class="family">가정의학과</a>
+                <a href="" class="adolescent">소아청소년</a>
+                <a href="" class="woman">유방&middot;갑상선</a>
+                <a href="" class="bone">정형외과</a></a>
+                <a href="" class="surgical">외과</a>
+                <a href="" class="skin">피부진료</a>
+                <a href="" class="cosmetic">성형외과</a>
+                <a href="" class="nerve">신경과</a>
+                <a href="" class="urination">비뇨의학과</a>
+                <a href="" class="pregnant">산부인과</a>
+                <a href="" class="eyes">안과</a>
+                <a href="" class="mental">정신건강</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

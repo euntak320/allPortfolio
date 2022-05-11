@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>BC 페이북</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/slick.js"></script>	
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<!-- #wrap -->
+	<div id="wrap" class="cma">
+
+		<!-- 헤더 -->
+		<header>
+			<a href="#" class="back-btn2">뒤로가기</a><!-- 2019-08-27 수정 -->
+			<h1>신분증 확인</h1>
+			<a href="#" class="close-btn">닫기</a>
+		</header>
+		<!-- //헤더 -->	
+		
+		<!-- 컨텐츠 -->		
+		<section class="container">			
+			<div class="upload-sample-content">
+				<p class="info-txt">아래 입력된 정보를 확인해 주세요.<br>정보가 다른 경우 내용을 수정할 수 있습니다.</p>
+				<div class="sample-img">
+					<img src="../assets/images/card_img.png" alt="주민등록증 이미지">
+				</div>
+			</div>
+			<div class="send-info-content">
+				<div class="name-num-area">
+					<div class="name-cnt">
+						<input type="text" placeholder="" value="김비씨">
+					</div>
+					<div class="day-cnt">
+						<input type="text" placeholder="" value="2018-01-25">
+					</div>
+					<div class="num-cnt">
+						<input type="text" placeholder="" value="800102">
+						<span class="icon"></span>
+						<input type="password" placeholder="뒤7자리 입력" value="">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- //컨텐츠 -->
+
+		<!-- 하단 버튼 -->
+		<div class="com-btn-content btnFixed"><!-- 2019-08-27 btnFixed class 추가 -->
+			<a href="#" class="cancel">신분증 재촬영</a>
+			<a href="#" class="next">확인</a>
+		</div>
+		<!-- //하단 버튼 -->
+
+	</div>
+	<!-- //#wrap -->
+    <!-- layer pop -->
+	<div id="layer-test-1" class="layer-pop on"><!-- 팝업 활성화 클래스 on// -->
+		<div class="layer-container">			
+			<div class="middle-area">
+				<div class="agree-info-txt single">
+					<span class="tit">촬영하신 신분증을 확인 중에 있습니다.</span><br>
+					<span class="txt">확인이 완료되면 자동으로 다음단계인<br>계좌인증으로 이동됩니다.</span>
+				</div>
+			</div>	
+			<a href="#" class="close-btn">팝업 닫기</a>		
+		</div>
+	</div>
+	<!-- //layer pop -->
+	
+</body>
+</html>

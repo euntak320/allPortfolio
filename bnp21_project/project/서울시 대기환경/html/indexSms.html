@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>서울시특별시 대기환경정보</title>
+  <link rel="stylesheet" href="assets/css/slick.css" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="assets/js/slick.min.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="header_area">
+        <a href="javascript:void();" class="m_menu">햄버거메뉴</a>
+        <span class="logo_area">로고</span>
+        <a href="javascript:void();" class="spot_icon">위치표시</a>
+      </div>
+    </header>
+    <div class="left_menu">
+      <div class="slide_nav">
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img cloud">구름이미지</span>
+            <span class="txt">대기현황</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">미세먼지</span>
+            <span class="menu_txt">초미세먼지</span>
+            <span class="menu_txt">오존</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img act">행동요령 이미지</span>
+            <span class="txt">행동요령</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt sub_menu">예보</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+            <span class="menu_txt sub_menu">경보</span>
+            <span class="hidden_menu_area ">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img list">대기통계 이미지</span>
+            <span class="txt">대기통계</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">평균대기오염도</span>
+            <span class="menu_txt">기간별</span>
+            <span class="menu_txt">경보발령</span>
+            <span class="menu_txt">장기간추이</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img look">정보마당 이미지</span>
+            <span class="txt">정보마당</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">대기환경기준</span>
+            <span class="menu_txt sub_menu">대기오염물질</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 test">진단평가결과</span>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 moblie">문자서비스신청</span>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="carousel_area">
+        <div class="dust_status num_1">
+          <span class="title">중구</span>
+          <span class="sub_title">(도시대기)</span>
+          <div class="left_txt">
+            <span class="left_title">미세먼지</span>
+            <span class="left_sub_title">PM<span class="txt">10</span></span>
+          </div>
+          <div class="right_txt">
+            <span class="right_title">35㎍/㎥</span>
+            <span class="right_sub_title">2018.11.18 15시 기준</span>
+          </div>
+        </div>
+        <div class="dust_status num_2">
+          <span class="title">중구</span>
+          <span class="sub_title">(도시대기)</span>
+          <div class="left_txt">
+            <span class="left_title">초미세먼지</span>
+            <span class="left_sub_title">PM<span class="txt">2.5</span></span>
+          </div>
+          <div class="right_txt">
+            <span class="right_title">35㎍/㎥</span>
+            <span class="right_sub_title">2018.11.18 15시 기준</span>
+          </div>
+        </div>
+        <div class="dust_status num_3">
+          <span class="title">중구</span>
+          <span class="sub_title">(도시대기)</span>
+          <div class="left_txt">
+            <span class="left_title">오존</span>
+            <span class="left_sub_title">PM<span class="txt">10</span></span>
+          </div>
+          <div class="right_txt">
+            <span class="right_title">O<sub>3</sub></span>
+            <span class="right_sub_title">2018.11.18 15시 기준</span>
+          </div>
+        </div>
+        <div class="dust_status num_4">
+          <span class="title">중구</span>
+          <span class="sub_title">(도시대기)</span>
+          <div class="left_txt">
+            <span class="left_title">미세먼지</span>
+            <span class="left_sub_title">PM<span class="txt">2.5</span></span>
+          </div>
+          <div class="right_txt">
+            <span class="right_title">35㎍/㎥</span>
+            <span class="right_sub_title">2018.11.18 15시 기준</span>
+          </div>
+        </div>
+      </div>
+      <div class="content_frame">
+        <div class="icon_frame">
+          <div class="icon_list">
+            <span class="icon_txt good">좋음</span>
+            <span class="icon_txt normal">보통</span>
+            <span class="icon_txt bad">나쁨</span>
+            <span class="icon_txt notbad">매우나쁨</span>
+          </div>
+        </div>
+        <div class="smply_alert">
+          <div class="smply_box">
+            <span class="smply_txt red">예비저감조치</span>
+            <span class="date">[2018.11.08 발령]</span>
+            <span class="arrow">화살표</span>
+          </div>
+          <div class="smply_box">
+            <span class="smply_txt red">비상저감조치</span>
+            <span class="date">[2018.11.08 발령]</span>
+            <span class="arrow">화살표</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="main_alert">
+        <div class="content_frame">
+          <span class="title">주요알림</span>
+          <div class="alert_list">
+            <div class="alert_box pink_alert">
+              <span class="alert_title">초미세먼지 경보</span>
+              <span class="date">[2018.11.08 15:00 발령]</span>
+              <span class="arrow">화살표</span>
+            </div>
+            <div class="alert_box yellow_alert">
+              <span class="alert_title">초미세먼지 경보</span>
+              <span class="date">[2018.11.08 15:00 발령]</span>
+              <span class="arrow">화살표</span>
+            </div>
+            <div class="alert_box red_alert">
+              <span class="alert_title">초미세먼지 경보</span>
+              <span class="date">[2018.11.08 15:00 발령]</span>
+              <span class="arrow">화살표</span>
+            </div>
+          </div>
+          <div class="hash_word_area">
+            <div class="hash_word">
+              <span class="txt light_red">도심권</span>
+              <span class="txt">동북권</span>
+              <span class="txt">동남권</span>
+              <span class="txt light_red">서북권</span>
+              <span class="txt light_red">서남권</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="explain_area">
+        <div class="content_frame">
+          <div class="title_area">
+            <span class="title">대기현황</span>
+            <span class="time">2018.11.08 11기 기준</span>
+          </div>
+          <div class="box_list">
+            <span class="status good">좋음</span>
+            <span class="round_status">좋음</span>
+            <span class="box_title">초미세먼지</span>
+            <span class="explain">외출 등 실외활동 좋음</span>
+          </div>
+          <div class="box_list">
+            <span class="status normal">보통</span>
+            <span class="round_status">보통</span>
+            <span class="box_title">미세먼지</span>
+            <span class="explain">몸상태에 따라 유의하여 활동</span>
+          </div>
+          <div class="box_list">
+            <span class="status bad">나쁨</span>
+            <span class="round_status">나쁨</span>
+            <span class="box_title">초미세먼지</span>
+            <span class="explain">장시간, 무리한 실외할동 제한</span>
+          </div>
+        </div>
+      </div>
+      <div class="etc_area">
+        <div class="content_frame">
+          <div class="box">
+            <span class="box_txt">대기질 정보<br>문자서비스(무료)</span>
+            <span class="etc_img sms">sms이미지</span>
+          </div>
+          <div class="box">
+            <span class="box_txt">대기질<br>개선정책</span>
+            <span class="etc_img bag">대기질 이미지</span>
+          </div>
+          <div class="box">
+            <span class="box_txt">대기환경<br>기준</span>
+            <span class="etc_img cloud">대기환경 이미지</span>
+          </div>
+          <div class="box">
+            <span class="box_txt">대기<br>오염물질</span>
+            <span class="etc_img rain">오염물질 이미지</span>
+          </div>
+          <div class="box w100">
+            <span class="box_txt">진단평가결과</span>
+            <span class="etc_img list">진단평가결과 이미지</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_area">
+        <div class="left_area">
+          <span>&copy; Seoul city</span>
+        </div>
+        <div class="right_area">
+          <span class="pc_btn">PC 화면보기</span>
+          <div class="com_select">
+            <select name="" id="">
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+            </select>
+          </div>
+          <a href="#top" class="black_btn">위로가기</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="position_area">
+    <div class="title_area">
+      <span class="x_btn">닫기버튼</span>
+      <span class="title">관심지역 설정하기</span>
+    </div>
+    <div class="choice_area">
+      <span class="align">가나다 순</span>
+      <div class="com_radio">
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강남구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강서구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">관악구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">광진구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">구로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">금천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">노원구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">도봉구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동대문구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동작구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">마포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">서초구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">양천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">영등포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">용산구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">은평구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">종로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중량구</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sms_area">
+    <div class="title_area ">
+      <span class="x_btn">닫기버튼</span>
+      <span class="title">문자서비스신청(무료)</span>
+    </div>
+    <div class="middle_area">
+      <p>
+        황사,(초)미세먼지, 오존 주의보 경보 발령 및 해제 시 SMS로 받아볼 수 있습니다. 단, 실외활동이 적은 시간대(22:00 ~ 06:00)는 수면방해 등을 최소화하기 위해 SMS를 발송하지 않습니다. 대기질 예보 서비스는 예보 등급이 "나쁨" 이상 일때 보건환경연구원에서 문자를 제공합니다. 경보 발령 및 해제시에는 아래 신청취소 버튼을 누르시고, 예보문자서비스 취소는 별도로 02)570-3406 전화 해 주셔야 취소가 됩니다.
+      </p>
+      <div class="phone_number">
+        <div class="com_select">
+          <select class="" name="">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+          </select>
+        </div>
+        <div class="com_input">
+          <input type="text">
+        </div>
+        <div class="com_input">
+          <input type="text">
+        </div>
+      </div>
+      <div class="btn_area">
+        <div class="btn_frame">
+          <span class="btn">인증번호받기</span>
+          <div class="com_input">
+            <input type="text" name="" value="" placeholder="인증번호입력">
+          </div>
+        </div>
+        <div class="btn_frame">
+          <div class="com_radio">
+            <input type="radio" name="" value="" id="radio1">
+            <label for="radio1">개인정보수집동의 및 기타사항</label>
+          </div>
+          <span class="btn style">자세히보기</span>
+        </div>
+        <div class="btn_frame">
+          <span class="btn style2">신청</span>
+          <span class="btn style2">신청취소</span>
+          <span class="btn style2">신청변경</span>
+        </div>
+        <!-- 2019-06-03 수정 -->
+        <a class="banner" href="tel:02-3789-8701">배너이미지</a>
+        <!-- 2019-06-03 수정 -->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

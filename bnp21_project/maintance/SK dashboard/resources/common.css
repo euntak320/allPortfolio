@@ -1,0 +1,152 @@
+.width-50{width:50%; padding: 0 10px;}
+
+.btn{
+	font-size: 13px;
+	padding: 2px 5px;
+	/*color:#fff;*/
+}
+.ver_btn {margin:0 3px;} 
+/*.btn:hover{color:#fff !important;}*/
+.card-footer {overflow: hidden;}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+	background-color: #444;
+}
+
+.btn_prev, .btn_next{
+	position: relative;
+	display: inline-block;
+    top:5px;
+	background-color: #d5d5d5;
+	border:1px solid #9d9d9d;
+	width: 19px; 
+	height: 19px;
+	margin-left: 5px;
+}
+
+.btn_prev:hover, .btn_next:hover{
+	position: relative;
+	display: inline-block;
+	top:5px;
+	background-color: #9d9d9d;
+	border:1px solid #9d9d9d;
+	width: 19px; 
+	height: 19px;
+}
+.btn_prev{
+	color: #868e96;
+		background-color: #fff;
+		border-color: #ddd;
+		border-top-left-radius: .25rem;
+		border-bottom-left-radius: .25rem;
+	}
+.btn_next{
+	color: #868e96;
+		background-color: #fff;
+		border-color: #ddd;
+		border-top-right-radius: .25rem;
+		border-bottom-right-radius: .25rem;
+}
+
+/*�޷�*/
+#ui-datepicker-div{width:260px; font-size:0.9em;}
+#ui-datepicker-div .ui-icon-circle-triangle-w{
+    background-position: 0px -2px ;
+    background-image: url(../images/left-arrow_s.png);	
+}
+#ui-datepicker-div .ui-icon-circle-triangle-e {
+    background-position: 0px -2px ;
+    background-image: url(../images/right-arrow_s.png) ;	
+}
+#ui-datepicker-div .ui-widget-header{
+	background: #e9e9e9;
+}
+#ui-datepicker-div tbody > tr > td:first-child > a{
+	background: #fccece;
+	border:1px solid #f8b6b6;
+}
+#ui-datepicker-div .ui-state-highlight{
+	background: #c0e3ff !important;
+	border:1px solid #afdfff !important;
+}
+#ui-datepicker-div .ui-datepicker-buttonpane button{
+	box-shadow: none;
+	color:#313131;
+	background: none;
+}
+#ui-datepicker-div .ui-priority-secondary{opacity:1;}
+
+#pager_append_region {
+	background-color: white;
+}
+.btn_prev::before{
+	content:"";
+	position: absolute; top:4px; left: 0;
+	border-width:5px;
+	border-style:solid;
+	border-color:transparent #555 transparent transparent;
+}
+.btn_next::before{
+	content:"";
+	position: absolute; top:4px; right: 0;
+	border-width:5px;
+	border-style:solid;
+	border-color: transparent transparent transparent #555;
+}
+
+.multiselect.dropdown-toggle.btn {
+	background-color: white;
+}
+
+.draggedDiv {
+	position: absolute;
+	background: #eee;
+}
+
+/*Ʈ��*/
+.jstree-default .jstree-clicked{
+	color:#333 !important; 
+}
+
+
+/*help*/
+.modal-open{overflow:auto; padding-right:0 !important;}
+.help-body{
+	overflow:scroll;
+	height: calc(100vh - 70px);
+}
+.help-modal-wrap{padding-right:0 !important;}
+.modal-dialog.help-modal{
+    position: fixed;right: 0; top:0;
+    margin: 0;
+    max-width:50%;
+    width: 50%; 
+}
+.hepl-ul{padding-left:0;}
+.hepl-ul ul{padding:10px 0 10px 15px; display:none;}
+.hepl-ul li {list-style:none; cursor:pointer;}
+.hepl-ul > li > span{padding-left:10px;}
+.hepl-ul > li > span:hover {background:#B2DFDB;}
+
+.hepl-ul p, .hepl-ul h2, .hepl-ul h3,  .hepl-ul h4{
+	padding:0; margin:0; font-size:14px; line-height:20px;
+}
+.hepl-tit {
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    line-height: 50px;
+}
+.hepl-ul h2 {color: #48CFAD; padding-bottom:10px;}
+.hepl-ul h3 {padding:10px 0 0 10px;}
+.hepl-ul h4 {padding: 5px 0 10px 20px;}
+.hepl-ul img {padding:10px 0;}
+.icon-help{margin-right:5px;}
+.contents-font-size {
+	font-size:13px;
+}
+#tableOne, #tableSub {
+	font-size:13px;
+}

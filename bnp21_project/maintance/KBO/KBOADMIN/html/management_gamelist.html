@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>경기관리 &lt; 관리 &lt; KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/common.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li><a href="">대시보드</a></li>
+				<li><a href="">등록</a></li>
+				<li><a href="">조회</a></li>
+				<li><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">유형별 상세</a></li>
+						<li><a href="">심판별</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li class="curr"><a href="">관리</a>
+					<ul>
+						<li class="curr"><a href="">경기관리</a></li>
+						<li><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>경기관리</h2>
+
+			<!-- searchArea -->
+			<div class="searchArea">
+				<div class="inBox">
+					<dl>
+						<dt>경기일자</dt>
+						<dd class="dateWrap">
+							<span class="date"><input type="text" title="시작날짜선택"></span>
+							<em>~</em>
+							<span class="date"><input type="text" title="종료날짜선택"></span>
+						</dd>
+					</dl>
+					<div class="btnArea">
+						<button class="btn btnYellowL"><span class="icoReset">초기화</span></button>
+						<button class="btn btnYellow"><span class="icoSearch">조회</span></button>
+					</div>
+				</div>
+			</div>
+			<!--// searchArea -->
+
+			<!-- 2020-03-24 -->
+			<!-- tableTop -->
+			<div class="tableTop">
+				<div class="btnArea">
+					<button class="btn btnRedL"><span class="icoTrashR">삭제</span></button>
+					<button class="btn btnRed"><span class="icoSave">등록</span></button>
+				</div>
+			</div>
+			<!--// tableTop -->
+			<!--// 2020-03-24 수정 -->
+
+			<!-- 2020-03-20 -->
+			<!-- colTable -->
+			<div class="colTable v2">
+				<table>
+					<caption>선택, 우천취소, 날짜, 경기구분, 경기, 장소, 방송사 항목으로 구성된 경기관리 리스트 테이블입니다.</caption><!-- 2020-03-27 - 우천취소 추가 -->
+					<!-- 2020-03-27 -->
+					<colgroup>
+						<col style="width:70px">
+						<col style="width:70px">
+						<col span="5" style="width:auto">
+					</colgroup>
+					<!--// 2020-03-27 - 수정 -->
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2">선택</th>
+							<th scope="col" rowspan="2">우천취소</th><!-- 2020-03-27 - 추가 -->
+							<th scope="col" rowspan="2">날짜</th>
+							<th scope="col" rowspan="2">경기구분</th>
+							<th scope="col" colspan="2">경기</th>
+							<th scope="col" rowspan="2">장소</th>
+							<th scope="col" rowspan="2">방송사</th>
+						</tr>
+						<tr>
+							<th scope="col">원정</th>
+							<th scope="col">홈</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="radio" name="chk01" title="선택"></td>
+							<td><input type="checkbox" title="선택"></td><!-- 2020-03-27 - 추가 -->
+							<td>12.28</td>
+							<td>시범</td>
+							<td><span class="emblem HH">한화 이글스</span></td>
+							<td><span class="emblem HT">기아 타이거즈</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="chk01" title="선택"></td>
+							<td><input type="checkbox" title="선택"></td><!-- 2020-03-27 - 추가 -->
+							<td>12.28</td>
+							<td>시범</td>
+							<td><span class="emblem KT">KT 위즈</span></td>
+							<td><span class="emblem LG">LG 트윈스</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="chk01" title="선택"></td>
+							<td><input type="checkbox" title="선택"></td><!-- 2020-03-27 - 추가 -->
+							<td>12.28</td>
+							<td>시범</td>
+							<td><span class="emblem LT">롯데 자이언츠</span></td>
+							<td><span class="emblem NC">NC 다이노스</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="chk01" title="선택"></td>
+							<td><input type="checkbox" title="선택"></td><!-- 2020-03-27 - 추가 -->
+							<td>12.28</td>
+							<td>시범</td>
+							<td><span class="emblem OB">두산 베어스</span></td>
+							<td><span class="emblem SK">SK 와이번스</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="chk01" title="선택"></td>
+							<td><input type="checkbox" title="선택"></td><!-- 2020-03-27 - 추가 -->
+							<td>12.28</td>
+							<td>시범</td>
+							<td><span class="emblem SS">삼성 라이온</span></td>
+							<td><span class="emblem WO">키움 히어로</span></td>
+							<td>대구</td>
+							<td>SPOTV</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// colTable -->
+			<!--// 2020-03-20 - 경기구분 추가 -->
+
+			<!-- paging -->
+			<div class="paging">
+				<div class="inner">
+					<a href="" class="btnFirst">처음 페이지</a>
+					<a href="" class="btnPrev">이전 페이지</a>
+					<div class="page">
+						<a href="">1</a>
+						<a href="">2</a>
+						<a href="">3</a>
+						<strong>4</strong>
+						<a href="">5</a>
+						<a href="">6</a>
+						<a href="">7</a>
+						<a href="">8</a>
+						<a href="">9</a>
+						<a href="">10</a>
+					</div>
+					<a href="" class="btnNext">다음 페이지</a>
+					<a href="" class="btnLast">마지막 페이지</a>
+				</div>
+			</div>
+			<!--// paging -->
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<p>Copyright&copy; KBO, All Rights Reserved.</p>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+</body>
+</html>

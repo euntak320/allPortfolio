@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>Bluewalnut | 전자계약서 가입신청</title>
+    </title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- script -->
+    <script>
+        $(function () {
+            fileTxtUpload();
+        });
+
+        // 파일업로드
+        function fileTxtUpload() {
+            var fileInput = document.querySelector('.fileInput');
+            var fileInputText = document.querySelector('.fileTxt');
+            fileInputTextContent = fileInputText.textContent;
+
+            fileInput.addEventListener('change', function (e) {
+                var value = e.target.value.length > 0 ? e.target.value : fileInputTextContent;
+                fileInputText.textContent = value.replace('C:\\fakepath\\', '');
+            });
+        }
+
+        function addressBtn (){
+            window.open("address.html", '_blank', 'resizable=no, width=750, height=580, top=100, left=200')
+        }
+        function contractBtn (){
+            window.open("contract.html", '_blank', 'resizable=no, width=750, height=450, top=100, left=200')
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="contentArea">
+            <div class="header">
+                <div class="logo">
+                    <img src="assets/images/logo.jpg" alt="블루월넛">
+                    <span>PG서비스 신청서</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="normalArea">
+                    <!-- 20-08-24 변경 -->
+                    <div class="pravicyArea">
+                        <div class="pravicyList">
+                            <span class="title">개인정보 동의서</span>
+                            <div class="txtBox">
+                                <span class="mainTitle">1. 개인정보의 수집 및 이용</span>
+                                <ul>
+                                    <li>1) 개인정보의 수집 및 이용목적
+                                        <ul>
+                                            <li>주식회사 블루월넛(이하 “회사”라 함)은 수집한 개인정보를 다음의 목적을 위해 활용합니다.</li>
+                                            <li>- 계약의 성립, 유지 및 종료를 위한 본인식별 및 실명확인</li>
+                                            <li>- 서비스의 추가와 변경내역에 대한 공지, 고객민원 및 문의에 대한 대응</li>
+                                            <li>- 부정 이용방지 및 비인가 사용방지</li>
+                                            <li>- 입금 알림 서비스 제공 및 월별 정산내역 안내, 통계작성 등의 업무목적</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>2) 수집하는 개인정보 항목
+                                        <ul>
+                                            <li>회사는 계약, 상담, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다</li>
+                                            <li>- 수집항목 : 대표자명, 대표자 생년월일, 계좌정보(은행명, 계좌번호, 예금주), 전화번호, 로그인ID , PW, 접속이력,
+                                                접속IP정보, 담당자 정보(성명, 이 메일 주소, 전화번호, 휴대폰번호, 부서명, 직책)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li>3) 개인정보의 보유 및 이용기간
+                                        <ul>
+                                            <li>원칙적으로, 개인정보 수집 및 이용목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다. 단, 관계법령의 규정에 의하여 보존할 필요가
+                                                있는 경우 회사는 아래와 같이 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다. </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <table>
+                                    <caption>내용, 근거법령, 보존기간로 구성되어있는 테이블입니다.</caption>
+                                    <colgroup>
+                                        <col style="width:35%">
+                                        <col style="width:35%">
+                                        <col style="width:30%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>내용</th>
+                                            <th>근거법령</th>
+                                            <th>보존기간</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>대금 결제 및 재화 등의 공급에 관한 기록</td>
+                                            <td rowspan="3">전자상거래 등에서의 소비자 보호에 관한 법률</td>
+                                            <td>5년</td>
+                                        </tr>
+                                        <tr>
+                                            <td>계약 또는 청약 철회에 관한 기록</td>
+                                            <td>5년</td>
+                                        </tr>
+                                        <tr>
+                                            <td>소비자 불만 또는 분쟁처리에 관한 기록</td>
+                                            <td>5년</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <span>이용자는 회사의 개인정보 수집·이용 동의를 거부할 수 있습니다. 단, 동의를 거부하는 경우 서비스 신청이 정상적으로 완료될 수 없음을 알려 드립니다.
+                                </span>
+                            </div>
+                            <div class="txtBox">
+                                <span class="mainTitle">2. 개인정보 제3자 제공 및 위탁</span>
+                                <ul>
+                                    <li>1) 개인정보 제3자 제공
+                                        <ul>
+                                            <li>회사는 이용자의 동의 없이 이용자님의 개인정보를 제3자에게 제공하지 않습니다. 회사는 서비스 이행을 위하여 개인정보를 다음과 같이
+                                                제3자에게 제공하고 있습니다.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <table>
+                                    <caption>제공목적, 제공받는자, 제공정보, 보유 및 이용기간으로 구성되어있는 테이블입니다.</caption>
+                                    <colgroup>
+                                        <col style="width:25%">
+                                        <col style="width:25%">
+                                        <col style="width:25%">
+                                        <col style="width:25%">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>제공목적</th>
+                                            <th>제공 받는자</th>
+                                            <th>제공정보</th>
+                                            <th>보유 및 이용기간</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>서비스 이용을 위한결제기관 정보제공</td>
+                                            <td>
+                                                <ul>
+                                                    <li> 1. 신용카드 : 현대, BC, KB, 삼성, 신한, 롯데, NH, 하나, KOCES, FDIK, SMARTRO</li>
+                                                    <li>2. 계좌이체 : 금융결제원 </li>
+                                                    <li>3. 휴대폰 : 다날</li>
+                                                    <li>4. 가상계좌 : 세틀뱅크</li>
+                                                    <li>5. 현금영수증 : SMARTRO, 국세청</li>
+                                                </ul>
+                                            </td>
+                                            <td>생년월일,대표자명, 전화번호</td>
+                                            <td>서비스 종료 시,또는 상담 후 폐기</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <ul>
+                                    <li>2) 개인정보 제공
+                                        <ul>
+                                            <li>회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 단, 아래의 경우에는 예외로 합니다. </li>
+                                            <li>- 이용자들이 사전에 동의한 경우 </li>
+                                            <li>- 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우 </li>
+                                            <li>- 도용방지를 위하여 본인확인에 필요한 경우</li>
+                                            <li>이용자는 회사의 개인정보 수집·이용 동의를 거부할 수 있습니다. 단, 동의를 거부하는 경우 서비스신청이정상적으로 완료될 수 없음을
+                                                알려드립니다</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <span>본인은 개인정보 및 서비스 이용 관련정보를 회사가 위와 같이 본인의 개인정보를 활용하는 것에 관하여 고지를 받았으며 이를 충분히 이해하고
+                                    동의합니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 20-08-24 변경 -->
+                </div>
+                <div class="privacyCheck">
+                    <div class="check">
+                        <input type="checkbox" id="chk1">
+                        <label for="chk1">* [필수] 개인정보</label>
+                    </div>
+                    <span class="green fr">* 이용자는 회사의 개인정보 수집 · 이용 동의를 거부 할 수 있습니다. 단, 동의를 거부하는 경우 서비스 신청이 정상적으로 완료 될 수
+                        없음을 알려 드립니다.</span>
+                </div>
+                <span class="etcTxt">※ 영업담당자가 확인 후 연락을 드리고 있으며, 작성하신 내용은 추후 변경 가능합니다.</span>
+                <div class="presentArea clear">
+                    <span class="posTxt">* 표시는 필수 입력 항목입니다.</span>
+                    <div class="presentBox">
+                        <span>현재상태</span>
+                        <div class="input">
+                            <input type="text" name="" value="" placeholder="신청서 작성" class="lightBg" readonly>
+                        </div>
+                    </div>
+                    <div class="presentBox">
+                        <span>접수 일자</span>
+                        <div class="input">
+                            <input type="text" name="" value="" placeholder="20200507" class="lightBg" readonly>
+                        </div>
+                    </div>
+                    <div class="presentBox">
+                        <span>접수채널</span>
+                        <div class="input">
+                            <input type="text" name="" value="" placeholder="홈페이지" class="lightBg" readonly>
+                        </div>
+                    </div>
+                    <div class="presentBox">
+                        <span>경로구분*</span>
+                        <div class="select">
+                            <select name="" id="" class="lightBg" readonly>
+                                <option value="">선택</option>
+                                <option value=""></option>
+                                <option value=""></option>
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 사업자정보 -->
+            <div class="infoInput">
+                <span class="title">1. 사업자 정보</span>
+                <div class="contentBox">
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>회사명(상호명)*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="회사명(상호명)을 입력해주세요">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>사업자번호*</span>
+                            <div class="input number">
+                                <input type="text" name="" value="" class="lightBg" readonly placeholder="678">
+                                <input type="text" name="" value="" class="lightBg" readonly placeholder="86">
+                                <input type="text" name="" value="" class="lightBg" readonly placeholder="00578">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>대표자명*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="대표자명을 입력해주세요">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>사업자형태*</span>
+                            <div class="select">
+                                <select name="" id="" class="lightBg" readonly>
+                                    <option value="">선택</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>대표자 생년월일(6자리)</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="대표자 생년월일을 입력해주세요">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>과세여부*</span>
+                            <div class="select">
+                                <select name="" id="" class="lightBg" readonly>
+                                    <option value="">선택</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>대표 연락처*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="대표 연락처를 입력해주세요" maxlength="12">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>법인번호</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="법인번호를 입력해주세요" maxlength="14">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>휴대폰 번호*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="휴대폰번호를 입력해주세요" maxlength="12">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>대표 FAX</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="FAX번호를   입력해주세요" maxlength="14">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea w100">
+                        <div class="dbBox">
+                            <span>사업장 소재지*</span>
+                            <div class="address">
+                                <input type="text" name="" value="" class="lightBg" readonly placeholder="우편번호를 입력해주세요">
+                                <button type="button" class="comBtn search" onclick="addressBtn ();">검색버튼</button>
+                                <input type="text" name="" value="" class="lightBg" readonly placeholder="주소를 입력해주세요">
+                                <input type="text" name="" value="" placeholder="상세주소를 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>대표 이메일*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="이메일을 입력해주세요">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>사이트 URL</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="사이트 URL 를 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>업종/형태*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="업종/형태을 입력해주세요">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>주 취급 품목*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="주 취급 품목을 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>가맹점 식별ID</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="가맹점 식별ID를 입력해주세요">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>카드사 서브몰<br>심사 URL</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="주 취급 품목을 입력해주세요" class="lightBg"
+                                    readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 사업자정보 -->
+
+            <!-- 담당자 정보  -->
+            <div class="infoInput">
+                <span class="title fl">2. 담당자 정보</span>
+                <div class="title check fr">
+                    <input type="checkbox" id="chk2">
+                    <label for="chk2">* 사업자 정보와 동일한 경우 체크</label>
+                </div>
+                <div class="contentBox">
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>담당자명*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="담당자명을 입력해주세요">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>연락처 *</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="연락처를 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea">
+                        <div class="dbBox">
+                            <span>휴대폰번호*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="휴대폰번호을 입력해주세요" maxlength="13">
+                            </div>
+                        </div>
+                        <div class="dbBox">
+                            <span>이메일*</span>
+                            <div class="input">
+                                <input type="text" name="" value="" placeholder="이메일을 입력해주세요">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea w100 bb0">
+                        <div class="dbBox">
+                            <span class="top">사업장 소재지*</span>
+                            <div class="txtArea">
+                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 담당자 정보 -->
+
+            <!-- 결제서비스 -->
+            <div class="infoInput">
+                <span class="title">3. 결제서비스* (중복 선택 가능)</span>
+                <div class="contentBox">
+                    <div class="dataArea w100 bb0">
+                        <div class="dbBox">
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk3_1">
+                                <label for="chk3_1">일반결제</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk3_2">
+                                <label for="chk3_2">정기과금</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk3_3">
+                                <label for="chk3_3">SMS결제</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk3_4">
+                                <label for="chk3_4">간편결제</label></label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk3_5">
+                                <label for="chk3_5">에스크로</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk3_6">
+                                <label for="chk3_6">사전주문/테이블 결제</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- 결제서비스 -->
+
+            <!-- 결제방법 -->
+            <div class="infoInput">
+                <span class="title">4. 결제방법* (중복 선택 가능)</span>
+                <div class="contentBox">
+                    <div class="dataArea w100 bb0">
+                        <div class="dbBox">
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk4_1">
+                                <label for="chk4_1">신용카드</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk4_2">
+                                <label for="chk4_2">계좌이체</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk4_3">
+                                <label for="chk4_3">가상계좌</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk4_4">
+                                <label for="chk4_4">휴대폰결제</label></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 결제방법 -->
+
+            <!-- 수금 받을 계좌 -->
+            <div class="infoInput">
+                <span class="title">5. 수금 받을 계좌</span>
+                <div class="contentBox">
+                    <div class="dataArea bb0 flexNone">
+                        <div class="dbBox">
+
+                            <div class="inputArea">
+
+                                <button type="button" class="comBtn" onclick="layerOpen()">계좌조회</button>
+                                <input type="text" name="" value="" readonly class="lightBg" placeholder="입금은행">
+                                <input type="text" name="" value="" readonly class="lightBg" placeholder="계좌번호(-제외)">
+                                <input type="text" name="" value="" readonly class="lightBg" placeholder="예금주">
+                            </div>
+                        </div>
+                        <ul class="txtList">
+                            <li>※ 추후 입력이 가능하나 수금 계좌를 미리 입력해 두시면 신청 정보 확인 및 심사 기간이 단축됩니다.</li>
+                            <li>※ 예금주, 사업자번호, 입금은행, 계좌번호가 모두 일치해야 됩니다. (7. 첨부서류_통장사본 첨부 요망)</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <!-- 수금 받을 계좌 -->
+
+            <!-- 현금영수증 자진 발급 신청 -->
+            <div class="infoInput">
+                <span class="title">6. 현금영수증 자진 발급 신청*</span>
+                <div class="contentBox">
+                    <div class="dataArea flexNone bb0">
+                        <div class="dbBox">
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk6_1">
+                                <label for="chk4_1">Y</label>
+                            </div>
+                            <div class="check">
+                                <input type="checkbox" name="" id="chk6_2">
+                                <label for="chk6_2">N</label>
+                            </div>
+                        </div>
+                        <ul class="txtList">
+                            <li>※ 자진발급의 경우, 국세청에 내역이 전송되며 사용자가 현금영수증 홈페이지에서 발급 요청 분을 등록 해야 합니다.</li>
+                            <li>※ 자진발급 시, 가맹점에서 별도로 추가 발급하게 될 경우 중복 발행이 될 수 있으니 유의하여 주시기 바랍니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 현금영수증 자진 발급 신청 -->
+
+            <!-- 첨부서류 -->
+            <div class="infoInput">
+                <span class="title">7. 첨부서류</span>
+                <div class="contentBox">
+                    <div class="dataArea w100">
+                        <div class="dbBox">
+                            <span>통장사본</span>
+                            <div class="halfInput">
+                                <label class="fileUpload" for="file1">
+                                    <span class="fileTxt">파일을 선택해주세요</span>
+                                    <span class="fileButton comBtn">등록</span>
+                                    <input type="file" id="file1" class="fileInput" />
+                                </label>
+                                <!-- 변경부분 -->
+                                <div class="v2">
+                                    <button type="button" class="comBtn cancel">취소</button>
+                                    <button type="button" class="comBtn layer" onclick="contractBtn();">보기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea w100">
+                        <div class="dbBox">
+                            <span>사업자등록증</span>
+                            <div class="halfInput">
+                                <label class="fileUpload" for="file2">
+                                    <span class="fileTxt">파일을 선택해주세요</span>
+                                    <span class="fileButton comBtn">등록</span>
+                                    <input type="file" id="file2" class="fileInput" />
+                                </label>
+                                <!-- 변경부분 -->
+                                <div class="v2">
+                                    <button type="button" class="comBtn cancel">취소</button>
+                                    <button type="button" class="comBtn layer">보기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea w100">
+                        <div class="dbBox">
+                            <span>신분증 사본</span>
+                            <div class="halfInput">
+                                <label class="fileUpload">
+                                    <span class="fileTxt">파일을 선택해주세요</span>
+                                    <input type="file" class="fileInput" />
+                                    <span class="fileButton comBtn cancel">등록</span>
+                                </label>
+                               <!-- 변경부분 -->
+                               <div class="v2">
+                                <button type="button" class="comBtn cancel">취소</button>
+                                <button type="button" class="comBtn layer">보기</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea w100">
+                        <div class="dbBox">
+                            <span>법인등기부 등본</span>
+                            <div class="halfInput">
+                                <label class="fileUpload" for="file1">
+                                    <span class="fileTxt">파일을 선택해주세요</span>
+                                    <input type="file" id="file1" class="fileInput" />
+                                    <span class="fileButton comBtn">등록</span>
+                                </label>
+                               <!-- 변경부분 -->
+                               <div class="v2">
+                                <button type="button" class="comBtn cancel">취소</button>
+                                <button type="button" class="comBtn layer">보기</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea w100">
+                        <div class="dbBox">
+                            <span>주주명부</span>
+                            <div class="halfInput">
+                                <label class="fileUpload" for="file2">
+                                    <span class="fileTxt">파일을 선택해주세요</span>
+                                    <input type="file" id="file2" class="fileInput" />
+                                    <span class="fileButton comBtn cancel">등록</span>
+                                </label>
+                               <!-- 변경부분 -->
+                               <div class="v2">
+                                <button type="button" class="comBtn cancel">취소</button>
+                                <button type="button" class="comBtn layer">보기</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataArea w100">
+                        <div class="dbBox">
+                            <span>실 소유주확인서</span>
+                            <div class="halfInput">
+                                <label class="fileUpload">
+                                    <span class="fileTxt">파일을 선택해주세요</span>
+                                    <input type="file" class="fileInput" />
+                                    <span class="fileButton comBtn">등록</span>
+                                </label>
+                               <!-- 변경부분 -->
+                               <div class="v2">
+                                <button type="button" class="comBtn cancel">취소</button>
+                                <button type="button" class="comBtn layer">보기</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="txtList">
+                        <li>※ 계약 필수 서류 <button type="type" class="layerBtn" onclick="openLayer()">확인하기</button> </li>
+                        <li>※ 신청 후에도 서류 제출이 가능합니다. </li>
+                        <li>※ 사업자등록증 및 통장 사본의 경우 지금 첨부해 주시면 신청 정보 확인 심사 시간이 단축됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 첨부서류 -->
+
+            <div class="mainBtn">
+                <button type="button">신청하기</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="contentArea">
+            <div class="topArea">
+                <ul class="fl">
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">서비스이용약관</a></li>
+                    <li><a href="">통신과금서비스이용약관</a></li>
+                </ul>
+                <div class="select fr">
+                    <select name="" id="">
+                        <option value="">그룹사</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="btmArea">
+                <div class="info">
+                    <span>고객센터 대표번호 1522-4910</span>
+                    <span>제휴문의 bluewalnut@bluewalnut.co.kr</span>
+                </div>
+                <div class="txt">
+                    <span>(주)블루월넛 서울 영등포구 국회대로 66길 3 현대캐피탈빌딩 2관 2층</span>
+                    <span>대표이사 최우홍</span>
+                    <span>사업자번호 678-86-00578</span>
+                    <span>Copyright (C) Bluewalnut All right reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 계좌정보  검증-->
+    <div class="layerFrame" style="display: none;">
+        <div class="layerArea">
+            <div class="topArea">
+                <span class="title">계좌정보 검증</span>
+            </div>
+            <div class="btmArea">
+                <table>
+                    <caption>예금주, 사업자번호, 입금은행, 계좌번호로 구성되어 있는 테이블입니다.</caption>
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 80%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>예금주</th>
+                            <td>
+                                <div class="input">
+                                    <input type="text" name="" value="" placeholder="예금주를 입력해주세요">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>사업자번호</th>
+                            <td>
+                                <div class="input">
+                                    <input type="text" name="" value="" placeholder="사업자번호를 입력해주세요.">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>입금은행</th>
+                            <td>
+                                <div class="select">
+                                    <select name="" id="">
+                                        <option value="">선택1</option>
+                                        <option value="">선택2</option>
+                                        <option value=""></option>
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>계좌번호</th>
+                            <td>
+                                <div class="input v2">
+                                    <input type="text" name="" value="" placeholder="1234" maxlength="4">
+                                    <input type="password" name="" value="" placeholder="" maxlength="4">
+                                    <input type="text" name="" value="" placeholder="5678" maxlength="4">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mainBtn">
+                <button type="button" class="gray">조회하기</button>
+                <button type="button">등록하기</button>
+            </div>
+            <button type="button" class="closeLayer" onclick="layerClose();">닫기</button>
+        </div>
+    </div>
+    <!-- 계좌정보  검증-->
+
+    <!-- 구비서류 안내-->
+    <div class="layerFrame" style="display: none;">
+        <div class="layerArea">
+            <div class="topArea">
+                <span class="title">블루월넛 전자결제서비스(PG)<br>이용 계약 구비서류안내</span>
+            </div>
+            <div class="btmArea">
+                <div class="txtArea">
+                    <span class="title">우편접수 시</span>
+                    <span>우)07237 서울 영등포구 국회대로 66길3 현대캐피탈빌딩 2관 2층 블루월넛 가맹점 담당자앞</span>
+                    <div class="subTxt">
+                        <span>법인사업자</span>
+                        <p>전자결제서비스이용계약서 / 사업자등록증 사본 / 법인인감증명서 원본 / 법인등기부등본 원본 법인통장 사본 / 사용인감계(사용인감 사용 시) / 주주명부 사본 /
+                            실제소유자 확인서 </p>
+                    </div>
+                    <div class="subTxt">
+                        <span>개인사업자</span>
+                        <p>전자결제서비스이용계약서 2부 / 사업자등록증 사본 / 개인인감증명서 원본 / 개인통장 사본 / 사용인감계(사용인감 사용 시)</p>
+                    </div>
+                </div>
+                <div class="txtArea">
+                    <span class="title">2. 전자계약 시 기재하신 휴대폰, 이메일 주소로 계약 URL이 발송됩니다.</span>
+                    <div class="subTxt">
+                        <span>법인사업자</span>
+                        <p>전자결제서비스이용계약서 / 사업자등록증 사본 / 법인등기부등본 사본 / 법인통장 사본 / 주주명부 사본</p>
+                    </div>
+                    <div class="subTxt">
+                        <span>개인사업자</span>
+                        <p>전자결제서비스이용계약서 / 사업자등록증 사본 / 개인(사업자)통장 사본</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mainBtn">
+                <button type="button" onclick="layerClose();" class="gray">닫기</button>
+            </div>
+        </div>
+
+    </div>
+    <!-- 구비서류 안내-->
+</body>
+
+</html>

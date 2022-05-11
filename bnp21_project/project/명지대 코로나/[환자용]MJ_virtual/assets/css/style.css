@@ -1,0 +1,259 @@
+/* introArea */
+.introArea {position: relative; padding:20px 0; height:100vh; background:#eff6ff}
+.introArea .topLogo {text-align: center;}
+.introArea .topLogo img {width:102px;}
+.introArea .linkBtn {position: absolute; top:50%; left:50%; width:100%; transform: translate(-50%, -50%);}
+.introArea .linkBtn a {display: block; width:85%; height:80px; padding:25px 20px; margin:32px auto; border-radius: 40px; background: #fff url(../images/img_nxt.png) no-repeat 95% center; background-size:90px; box-shadow: 0 4px 10px #ccc; text-align: left; font-size:21px; letter-spacing: -0.42px; color:#333; font-weight: bold;}
+.introArea .copyright {position: fixed; bottom:10px; display:block; width:100%; font-size:12px; letter-spacing: -0.24px; color:#888; opacity: 0.4; text-align: center;}
+.introArea.v2 a {padding:15px 25px;}
+.introArea.v2 a > .region {display: block; font-size:14px; letter-spacing: -0.28px; color:#bbb; font-weight: normal;}
+
+
+
+/* joinArea */
+.joinArea {position: relative; height: 100vh; background:#eff6ff;}
+.joinArea .joinVisual {overflow: hidden; position: relative; padding-bottom: 52px;}
+.joinArea  .swiper-pagination-bullet {transition: 0.5s;}
+.joinArea .swiper-pagination-bullet-active {width:20px; height:8px; border-radius: 5px; background:#333747; transition: 0.5s;}
+/* .joinArea .joinVisual .swiper-slide.one {background: url(../images/img_intro01.png) no-repeat center; background-size:cover;}
+.joinArea .joinVisual .swiper-slide.two {background: url(../images/img_intro02.png) no-repeat center; background-size:cover;}
+.joinArea .joinVisual .swiper-slide.three {background: url(../images/img_intro03.png) no-repeat center; background-size:cover;} */
+.joinArea .joinVisual .swiper-slide {position: relative;}
+.joinArea .joinVisual .swiper-slide img {display: block; width:100%; opacity: 0;}
+.joinArea .joinVisual .txt {position: absolute; top:0; left:50%; display: block; width:100%; margin-top:50px; text-align: center; font-size:20px; font-weight: 400; color: #fff; letter-spacing: -0.4px; line-height: 28px; transform: translateX(-50%);}
+.joinArea .joinVisual .txt > span {color:#75f6ff}
+.joinArea .btmArea {position: fixed; bottom:0; left:0; width:100%; padding:16px;}
+.joinArea .btmArea button {width:100%; height:44px; padding:9px 0 11px; text-align: center; border-radius: 21px; letter-spacing: -0.32px; font-weight: bold;}
+.joinArea .btmArea button + button {margin-top:17px;}
+.joinArea .btmArea .join {background: rgb(59,189,246); background: linear-gradient(248deg, rgba(59,189,246,1) 0%, rgba(72,121,255,1) 100%); color:#fff;}
+.joinArea .btmArea .normal {border:1px solid #3bbdf6; background: #fff;}
+
+/* layer */
+.layerFrame {position: fixed; top:0; left:0; bottom:0; right:0; background: rgba(0,0,0,0.5); z-index: 100;}
+.layerFrame .layerArea {position: absolute; top:50%; left:50%; width:95%; padding:20px; border-radius: 8px; background:#fff; transform: translate(-50%,-50%);}
+.layerFrame .layerArea span {display: block; color:#333; letter-spacing: -0.32px; line-height: 24px;} 
+.layerFrame .layerArea .layerBtn {margin-top:16px; text-align: right;}
+.layerFrame .layerArea .layerBtn button { background: none; color:#4879ff;}
+
+/* common */
+#wrap {position: relative; width:100%;}
+#content {position: relative; overflow: auto; padding:44px 16px; margin-top:40px;} 
+#subContent {position: relative; overflow: auto; padding:26px 16px 0; margin-top:40px;}
+.fl {float: left;}
+.fr {float: right;}
+.imgSize img {opacity: 0;}
+
+/* comCheck */
+.check input[type="checkbox"]{opacity: 0;}
+.check input[type="checkbox"] + label{position: relative; display:inline-block;  padding-left:15px; font-size:12px; letter-spacing: -0.24px;}
+.check input[type="checkbox"] + label::before{content: ""; position: absolute; top:50%; left:-15px; width:20px; height:20px; background:url(../images/check.jpg) no-repeat 0 0; background-size: cover; transform: translateY(-50%);}
+.check input[type="checkbox"]:checked + label::before { background:url(../images/check_on.png) no-repeat 0 0; background-size: cover;  transform: translateY(-50%);}
+
+/* header */
+#header {position: fixed; left:0; top:0; width:100%; height: 44px; padding:0 16px; line-height: 44px; background:#fff; z-index: 10;}
+#header button {position: absolute; top:50%; background-size: 100%; text-indent: -9999px; text-indent: -9999px; transform: translateY(-50%);}
+#header .back {left:15px; width:10px; height:19px; background:url(../images/btn_back.png) no-repeat center; background-size: 100%;  }
+#header .home {left:15px; width:30px; height:30px;  background:url(../images/btn_home.png) no-repeat center; background-size: 100%;}
+#header .logoOut {right:15px; width:30px; height:30px; background:url(../images/btn_logout.png) no-repeat center; background-size: 100%;}
+#header > span {display: block; color:#333; text-align: center; letter-spacing: -0.32px; font-weight: bold;}
+#header .logo {width:102px; height:36px; margin:5px auto 0; background:url(../images/img_logo.png) no-repeat center; text-indent: -9999px; background-size:cover;}
+
+
+/* footer */
+#footer {position: fixed; bottom:0; left:0; width:100%; height:50px; background:#fff; box-shadow: 0 -3px 8px #ccc;}
+#footer ul {display: flex; align-items: center; justify-content: space-between;}
+#footer ul li {width:20%;}
+#footer ul li a {display: block; padding-top:25px; text-align: center; font-size:10px;}
+#footer ul li a.home {background:url(../images/icn_home.png) no-repeat top center; background-size:20px;}
+#footer ul li a.home.on {background:url(../images/icn_home_on.png) no-repeat top center; background-size:20px;}
+#footer ul li a.spot {background:url(../images/icn_location.png) no-repeat top center; background-size:15px;}
+#footer ul li a.spot.on {background:url(../images/icn_location_on.png) no-repeat top center; background-size:15px;}
+#footer ul li a.care {position: relative; top:-20px; width:55px; height:55px; margin:0 auto; padding-top:33px; background:#4879ff url(../images/icn_medical.png) no-repeat center 10px; background-size:20px; color:#fff; border-radius: 50%;}
+#footer ul li a.care.on {background:url(../images/icn_medical_on.png) no-repeat top center; background-size:20px;}
+#footer ul li a.list {background:url(../images/icn_document.png) no-repeat top center; background-size:20px;}
+#footer ul li a.list.on {background:url(../images/icn_document_on.png) no-repeat top center; background-size:20px;}
+#footer ul li a.mypage {background:url(../images/icn_mypage.png) no-repeat top center; background-size:20px;}
+#footer ul li a.mypage.on {background:url(../images/icn_mypage_on.png) no-repeat top center; background-size:20px;}
+
+
+/* join */
+.join .mt40 {margin-top:40px; padding-right:150px;}
+.join .normal {margin-top:16px; font-size:14px; letter-spacing: -0.24px; line-height: 20px;}
+.join .normalTxt span {display: block; color:#333; font-size:21px; font-weight: bold;}
+.join .normalTxt .txt {margin-top:12px; font-size:16px; letter-spacing: -0.32px; color:#1a1a1a; font-weight: normal;}
+.join .input {position: relative;}
+.join .input input[type="text"] { border:0; border-bottom:1px solid #ccc; transition: 0.5s;}
+.join .input input[type="text"].on {border-bottom: 1px solid #4879ff; transition: 0.5s;}
+.join .repeatArea {position: absolute; right:0; top:0;}
+.join .repeatArea > * {display: inline-block; vertical-align: middle;}
+.join .repeatArea span {color:#fc2c2c; font-weight: bold;}
+.join .repeatArea button {width:68px; height:30px; margin-left:12px; border-radius: 4px; background:#333747; text-align: center; color:#fff;}
+.join .pagingArea {position: absolute; top:44px; right:16px;}
+.join .pagingArea ul li {display: inline-block; width:8px; height:8px; margin-left:8px; background:#ddd; border-radius: 50%; text-indent: -9999px;}
+.join .pagingArea ul li:first-child {margin-left:0;}
+.join .pagingArea ul li.before {background:#333747}
+.join .pagingArea ul li.active {width:20px; border-radius: 5px; background:#333747;}
+.join .passInput {position: relative; margin-top:44px;}
+.join .passInput > * {display: inline-block; vertical-align: middle; font-size: 16px; color:#333; font-weight: bold;}
+.join .passInput .input {margin-top:0;}
+.join .passInput .input input {padding:0; border:0; border-bottom:1px solid #4879ff}
+.join .passInput .input .look {position: absolute; right:0; top:50%; display: block; width:22px; height:16px; background:url(../images/icn_eye.png) no-repeat center; background-size:100%; transform: translateY(-50%); text-indent: -9999px; z-index: 10;}
+.join .passInput .input.active .look {background:url(../images/icn_eye-off.png) no-repeat center; background-size:100%; }
+.join .cardInput {margin-top:40px;}
+.join .cardInput input {position: relative; border:0; padding-left:0; text-align: center;}
+.join .cardInput .numberInput {display: flex; justify-content: space-between; align-items: center; border-bottom:1px solid #ccc;}
+.join .cardInput .numberInput div:first-child  input{padding-left:30px; background: url(../images/icn_card.png) no-repeat left center; background-size: 20px; text-align: left;}
+.join .cardInput .cardDate {overflow: hidden; margin-top:20px;}
+.join .cardInput .cardDate input {padding-left:0; border-bottom:1px solid #ccc; text-align: center;}
+.join .cardInput .cardDate .fl {float: left; display: flex; width:30%; align-items: center; justify-content: space-between;}
+.join .cardInput .cardDate .fr {float: right; width:10%;}
+.join .checkListArea {margin-top:31px; color:#333;}
+.join .checkListArea #top {width:100%; height:44px; padding:0 12px; border-radius: 22px; box-shadow: 0 2px 6px #ccc; line-height: 44px;}
+.join .checkListArea #top label {font-size:16px;}
+.join .checkListArea #top .check input[type="checkbox"] + label::before {width:22px; height:22px;}
+.join .checkListArea .checkArea + .checkArea {margin-top:14px; padding:0 14px;}
+.join .checkListArea .checkArea + .checkArea .check {padding:9px 0; background:url(../images/left-arrow.png) no-repeat 100% center; background-size: 8px;}
+.join .para {margin-top:20px; color:#333;}
+.join .para span {display: block;}
+.join .joinBtn {margin-top:17px;}
+.join .joinBtn button {width:100%; padding:0 19px; line-height: 44px; border:1px solid #4879ff; border-radius: 21px; text-align: left; color:#333;}
+.join .joinBtn button > span {float: right; color:#4879ff; font-size:14px;}
+.join .joinBtn button + button {margin-top:12px;}
+.join .joinBtn button.on {border:0; background: rgb(59,189,246); background: linear-gradient(248deg, rgba(59,189,246,1) 0%, rgba(72,121,255,1) 100%); color:#fff;}
+.join .joinBtn button.on > span {color:#fff;}
+.join .bizInput {margin-top:12px;}
+.join .bizInput .title {display: block; color:#333; font-weight: bold;}
+.join .bizInput .input button {font-size:14px;}
+.join .txtArea {margin-top:29px; padding-bottom:24px; border-bottom: 1px solid #f4f4f4; color:#333;}
+.join .txtArea span {font-weight: bold; letter-spacing: -0.32px;}
+.join .txtArea p {margin-top:8px; letter-spacing: -0.3px; font-size:15px;}
+.join .listArea {margin-top:22px;}
+.join .listArea ul li {position: relative; margin:4px 0 0 8px; padding-left:8px; font-size:15px; color:#333;}
+.join .listArea ul li::before {content: ""; position: absolute; top:50%; left:0; width:4px; height:4px;  border-radius: 50%; background: #4879ff; transform: translateY(-50%);}
+.join .infoInput .infoBox + .infoBox {margin-top:40px;}
+.join .infoInput .infoBox span {color:#1a1a1a; letter-spacing: -0.32px; line-height: 24px;}
+.join .infoInput .infoBox .input {position: relative; }
+.join .infoInput .infoBox .input input[type="text"] {padding-right:30px;}
+.join .infoInput .infoBox .input .degree {position: absolute; right:0; top:50%; transform: translateY(-50%);}
+.join .infoInput .infoBox .btn {overflow: hidden; margin-top:12px;}
+.join .infoInput .infoBox .btn .fl {float: left;}
+.join .infoInput .infoBox .btn .fr {float: right;}
+.join .infoInput .infoBox .btn button {width:48%; height:44px; border:1px solid #4879ff; border-radius: 21px; color:#1a1a1a;}
+.join .infoInput .infoBox .btn .on {border:0; background: rgb(59,189,246); background: linear-gradient(248deg, rgba(59,189,246,1) 0%, rgba(72,121,255,1) 100%); color:#fff;}
+.join .infoInput .infoBox .writeArea {position: relative; width:100%; height:120px;  padding:12px 12px 24px 12px; margin-top:16px; border:1px solid #ddd;}
+.join .infoInput .infoBox .writeArea textarea {width:100%; height:75px; resize: none; border:0}
+.join .infoInput .infoBox .writeArea span {position: absolute; bottom:0; right:7px; color:#999;}
+
+/* main */
+.main .topArea {position: relative; margin:0 -16px; padding-bottom:22px; background:#f8f8f8; text-align: center;}
+.main .topArea .info{position: relative; top:-16px; display: block; width:55%; margin:0 auto; line-height: 35px; background: rgb(59,189,246); border-radius: 16px; background: linear-gradient(248deg, rgba(59,189,246,1) 0%, rgba(72,121,255,1) 100%); color:#fff; text-align: center; font-size:15px; letter-spacing: -0.3px;}
+.main .topArea .info > * {display: inline-block; vertical-align: middle;}
+.main .topArea .info img {width:18px; margin-right:5px;}
+.main .topArea .info.v2 {width:70%; line-height: 32px;}
+.main .topArea .info.v2 .linkBtn {width:100%; line-height: 32px;}
+.main .topArea .info.v2 .linkBtn .circle {width:22px; height:22px; background-size:5px;}
+.main .topArea .img {margin-top:22px;}
+.main .topArea .img img {width:35px;}
+.main .topArea .timeTable {margin-top:14px;}
+.main .topArea .timeTable > span {display: block; color:#1a1a1a;}
+.main .topArea .timeTable .big {font-size:18px; font-weight: bold;}
+.main .topArea .linkBtn {position: relative; display: block; width:90%; padding:0 26px; line-height: 50px; margin:20px auto 0; background: rgb(59,189,246); border-radius: 16px; border-radius:28px; background: linear-gradient(248deg, rgba(59,189,246,1) 0%, rgba(72,121,255,1) 100%); color:#fff; text-align: left;}
+.main .topArea .linkBtn .circle {position: absolute; top:50%; right:5px; width:40px; height:40px; border-radius: 50%; background:#fff url(../images/btn_more_arrow-b.png) no-repeat center; background-size: 10px; transform: translateY(-50%); }
+.main .topArea .selectDoctor {overflow: auto; height:192px; padding-bottom: 5px;}
+.main .topArea .selectDoctor > div {width:90%; margin:0 auto; background:#fff; border-radius: 8px; box-shadow: 0 0 10px #ccc;}
+.main .topArea .selectDoctor .doctorBox {display: flex; align-items: center; justify-content: space-between;}
+.main .topArea .doctorBox + .doctorBox {margin-top:16px;}
+.main .topArea .doctorBox .leftArea {overflow: hidden; width:65%; padding:17px 14px; border-right:2px dotted #ccc; text-align: left;}
+.main .topArea .doctorBox .leftArea  > * {display: inline-block;  vertical-align: middle;}
+.main .topArea .doctorBox .leftArea .imgSize {width:52px; height:52px; border-radius: 50%; border:2px solid #3bbdf6;}
+.main .topArea .doctorBox .leftArea .imgSize img {opacity: 0;}
+.main .topArea .doctorBox .leftArea .txtArea {width:68%; margin-left:2%;}
+.main .topArea .doctorBox .leftArea .txtArea > span {overflow: hidden; display: block; width:100%; text-align: left; color:#888; font-size:12px; letter-spacing: -0.24px; white-space: nowrap; text-overflow: ellipsis;}
+.main .topArea .doctorBox .leftArea .txtArea .name {margin-bottom:4px; font-size:16px; color:#1a1a1a;letter-spacing: -0.32px; }
+.main .topArea .doctorBox .rightArea {margin: 0 auto;}
+.main .topArea .doctorBox .rightArea dt {padding:2px 9px; border-radius: 10px; background:#3bbdf6; font-size:11px; color:#fff; letter-spacing: -0.22px;}
+.main .topArea .doctorBox .rightArea dd span {font-size:12px; letter-spacing: -0.24px; color:#1a1a1a; font-weight: bold;}
+.main .topArea .doctorBox .rightArea dd .big {font-size:22px; }
+
+.main .midArea {position: relative; height:150px; margin-top:22px; padding-bottom:30px;}
+.main .midArea::after {content: ""; display: block; clear: both;}
+.main .midArea a {position: relative; display: block; width:48%; height:100%; padding:12px 16px; border:1px solid #3bbdf6; box-shadow: 0 5px 6px #4879ff; border-radius: 12px;}
+.main .midArea a span {color:#1a1a1a;}
+.main .midArea .fl {background:url(../images/img_doctor01.png) no-repeat center; background-size: cover;}
+.main .midArea .fr {background:url(../images/img_doctor02.png) no-repeat center; background-size: cover;}
+.main .midArea a button {position: absolute; bottom:-20px; left:50%; width:48px; height:48px;  background: rgb(59,189,246); border-radius: 16px; border-radius:28px; background: linear-gradient(248deg, rgba(59,189,246,1) 0%, rgba(72,121,255,1) 100%); transform: translateX(-50%);}
+.main .midArea a button > img {width:10px;}
+
+.main .buttonArea a {display: inline-block; width:calc(100% / 4 - 7px); padding:50px 0 5px; margin:0 5px 5px 0; border:1px solid #ddd; border-radius: 8px; font-size:13px; text-align: center; color:#333; font-weight: bold;}
+.main .buttonArea a:nth-child(4n) {margin-right:0;}
+.main .buttonArea .all {background:url(../images/icn_menu01.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .emergency {background:url(../images/icn_menu02.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .internal {background:url(../images/icn_menu03.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .digestive {background:url(../images/icn_menu04.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .heart {background:url(../images/icn_menu05.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .family {background:url(../images/icn_menu06.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .adolescent {background:url(../images/icn_menu07.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .woman {background:url(../images/icn_menu08.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .bone {background:url(../images/icn_menu09.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .surgical {background:url(../images/icn_menu10.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .skin {background:url(../images/icn_menu11.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .cosmetic {background:url(../images/icn_menu12.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .nerve {background:url(../images/icn_menu13.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .urination {background:url(../images/icn_menu14.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .pregnant {background:url(../images/icn_menu15.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .eyes {background:url(../images/icn_menu16.png) no-repeat center 10px; background-size: 50%;}
+.main .buttonArea .mental {background:url(../images/icn_menu17.png) no-repeat center 10px; background-size: 50%;}
+
+.main .topMenu {border-bottom:1px solid #ccc;}
+.main .topMenu ul li {display: inline-block; padding-bottom:6px;}
+.main .topMenu ul li.on { color:#4879ff; border-bottom:1px solid #4879ff}
+.main .resultArea .dateArea {position: relative; line-height: 44px;}
+.main .resultArea .dateArea button {position: absolute; top:50%; width:10px; height:17px; transform: translateY(-50%); text-indent: -9999px; }
+.main .resultArea .dateArea .left {left:0; background:url(../images/left-arrow.png) no-repeat center; background-size:cover;}
+.main .resultArea .dateArea .right {right:0; background:url(../images/right-arrow.png) no-repeat center; background-size:cover;}
+.main .resultArea .dateArea span {display: block; width:100%; color:#1a1a1a; font-weight: bold; text-align: center;}
+.main .view {position: relative; margin:0 -15px; padding:20px 30px; background:#f8f8f8;}
+.main .view .checkArea {display: flex; align-items: center; justify-content: left;}
+.main .view .checkArea .radio {margin-right:5%;}
+.main .view .checkArea label {font-size:14px; color:#1a1a1a;}
+.main .view .searchArea {margin-top:15px;}
+.main .view .searchArea > * {display: inline-block; vertical-align: middle;}
+.main .view .searchArea input[type="text"] {width:80%;}
+.main .view .searchArea button {width:19%; line-height: 30px;; border-radius: 4px; background:#333747; color:#fff; font-size:15px; letter-spacing: -0.3px;}
+.main .view .btmArea {margin:0 -15px;}
+.main .view .btmArea .box {width:100%; padding:16px; border-radius: 8px; box-shadow: 0 0 10px #ccc; background:#fff;}
+.main .view .btmArea .box + .box {margin-top:15px;}
+.main .view .btmArea .top {position: relative;}
+.main .view .btmArea .top > * {display: inline-block; vertical-align: middle;}
+.main .view .btmArea .top .leftArea {width:20%;}
+.main .view .btmArea .top .leftArea span {display: block; width:60px; height:60px; border:2px solid #4879ff; border-radius: 50%;}
+.main .view .btmArea .top .rightArea {overflow: hidden; width:75%; margin-left:3%;}
+.main .view .btmArea .top .rightArea .txt span {display: block; color:#1a1a1a;}
+.main .view .btmArea .top .rightArea .txt span:last-child {font-size:12px; color:#888;}
+.main .view .btmArea .top .rightArea .etcArea {width: 100%;}
+.main .view .btmArea .top .rightArea .etcArea .fl {width:50%; }
+.main .view .btmArea .top .rightArea .etcArea .star {display: block; margin-top:4.5px; padding-left:20px; background:url(../images/icn_star_on.png) no-repeat left center; background-size:15px; font-size:12px; color: #1a1a1a;}
+.main .view .btmArea .top .rightArea .etcArea ul li {display: inline-block; }
+.main .view .btmArea .top .rightArea .etcArea ul li a {display: block; width:21px; height:21px; text-indent: -9999px;}
+.main .view .btmArea .top .rightArea .etcArea .video {background: url(../images/icn_video.png) no-repeat center; background-size:cover;}
+.main .view .btmArea .top .rightArea .etcArea .sms {background: url(../images/icn_sms.png) no-repeat center; background-size:cover;}
+.main .view .btmArea .top .rightArea .etcArea .call {background: url(../images/icn_cal.png) no-repeat center; background-size:cover;}
+.main .view .btmArea .top > button {position: absolute; right:0; top:0; width:16px; height:14px; background:url(../images/icn_like_small.png) no-repeat center; background-size:cover; text-indent: -9999px;;}
+.main .view .btmArea .top > button.on {background:url(../images/icn_like_small-on.png) no-repeat center; background-size:cover; text-indent: -9999px;}
+.main .view .btmArea .btm {margin-top:8px; padding-top:14px; border-top:1px solid #f4f4f4;}
+.main .view .btmArea .btm p {overflow: hidden; width: 100%; font-size:12px; text-overflow: ellipsis; white-space: nowrap;}
+.main .view .btmArea .btm .timeList {margin-top:10px;}
+.main .view .btmArea .btm .timeList span {padding:2px 12px; margin-right:5px; border:1px solid #4879ff; border-radius: 15px; font-size:14px; color:#1a1a1a;}
+
+
+
+/* comBtn */
+.comBtn {position: fixed; bottom:0; width:100%; padding:16px; background:#fff; text-align: right;}
+.comBtn button {min-width:110px; line-height: 44px; border-radius: 21px; background: rgb(59,189,246); background: linear-gradient(248deg, rgba(59,189,246,1) 0%, rgba(72,121,255,1) 100%); color:#fff;}
+.comBtn .w100 {width:100%;}
+.comBtn .normal {background:#eff6ff; color:#999}
+.comBtn.default {bottom:0; padding:0; text-align: initial;}
+.comBtn.default button {width:100%; line-height: 50px; border-radius: 0; text-align: center; background:#eff6ff; color:#999; letter-spacing: -0.32px;}
+.comBtn .bgGray {background:#eff6ff; color:#999; box-shadow: 0 3px 6px #ccc;}
+.comBtn .on {background: rgb(59,189,246); background: linear-gradient(248deg, rgba(59,189,246,1) 0%, rgba(72,121,255,1) 100%); color:#fff;}
+

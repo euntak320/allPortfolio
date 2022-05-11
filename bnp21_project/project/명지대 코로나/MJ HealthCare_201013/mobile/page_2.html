@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>MJ CORONA</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        $(function () {
+
+            // 댓글영역 확인
+            $(".box .counting").click(function () {
+                $(this).next().slideToggle();
+            });
+
+            //수정 버튼 클릭시
+            $(".control .modify").click(function () {
+                $(this).parents(".rightArea").addClass("on");
+            });
+
+            //변경 버튼 클릭식
+            $(".modBtn").click(function () {
+                $(this).parents(".rightArea").removeClass("on");
+            });
+
+            //삭제 버튼 클릭시
+            $(".control .del").click(function () {
+                $(this).parents(".rightArea").hide();
+            });
+        })
+    </script>
+
+
+</head>
+
+<body>
+    <div id="subPage">
+        <!-- header -->
+        <!-- 20-09-03 -->
+        <div class="header">
+            <a href="" class="home"></a>
+            <h1>logo</h1>
+            <a href="" class="logout">로그아웃</a>
+        </div>
+        <!-- 20-09-03 -->
+        <!-- header -->
+
+        <!-- content -->
+        <div class="contentArea">
+            <div class="searchBox">
+                <input type="text" placeholder="문의사항을 입력하세요.">
+            </div>
+            <div class="listBox">
+                <div class="box">
+                    <!-- 20-09-03 -->
+                    <!-- 클릭시  -->
+                    <div class="modifyArea">
+                        <a href="" class="mod">수정</a>
+                        <button type="button" class="del">삭제</button>
+                    </div>
+                    <div class="date">
+                        <span class="state blue">접수</span>
+                        <span>작성일</span>
+                        <span>2020.08.24</span>
+                        <span>11:30</span>
+                    </div>
+                    <!-- 20-09-03 -->
+                    <div class="questionTxt">
+                        <span>문의드립니다 <br>어제 저녁부터 기침과 열이 납니다.</span>
+                    </div>
+                    <div class="counting">
+                        <span>댓글 <span class="red">4</span></span>
+                    </div>
+                </div>
+                <div class="box">
+                    <!-- 20-09-03 -->
+                    <div class="modifyArea">
+                        <a href="" class="mod">수정</a>
+                        <button type="button" class="del">삭제</button>
+                    </div>
+                    <div class="date">
+                        <span class="state gray">완료</span>
+                        <span>작성일</span>
+                        <span>2020.08.24</span>
+                        <span>11:30</span>
+                    </div>
+                    <div class="questionTxt">
+                        <span>문의드립니다 <br>어제 저녁부터 기침과 열이 납니다.</span>
+                    </div>
+                    <div class="counting">
+                        <span>댓글 <span class="red">2</span></span>
+                    </div>
+
+                    <!-- 댓글 밑 대화 영역 -->
+                    <div class="askArea">
+                        <div class="leftArea">
+                            <div class="title">
+                                <span>고객센터 담당자</span>
+                                <span class="small">2020.08.24 11:40</span>
+                            </div>
+                            <div class="talkBox">
+                                <span>안녕하세요</span>
+                            </div>
+                        </div>
+                        <div class="rightArea">
+                            <div class="title">
+                                <span class="small">2020.08.24 11:40</span>
+                                <div class="control">
+                                    <button type="button" class="modify">수정</button>
+                                    <button type="button" class="del">삭제</button>
+                                </div>
+                            </div>
+                            <div class="talkBox">
+                                <span class="txt">안녕하세요 증상문의 드립니다. 어제부터 기침나도 열이 납니다.</span>
+                                <span class="writing">
+                                    <textarea name="" id="" cols="30" rows=""></textarea>
+                                    <!-- <input type="text" value="안녕하세요 증상문의 드립니다. 어제부터 기침나도 열이 납니다."> -->
+                                </span>
+                                <div class="modBtn">
+                                    <button type="button">확인</button>
+                                </div>
+                            </div>
+                            <!-- 20-10-04 -->
+                            <div class="picArea" onclick="layerOpen();">
+                                <img src="" alt="" style="background:green;">
+                            </div>
+                            <!-- 20-10-04 -->
+                        </div>
+                        <div class="inputTxt">
+                            <!-- 20-10-19 -->
+                            <input type="file" class="camera" accept="">
+                            <!-- 20-10-19 -->
+                            <textarea name="" id="" cols="30" rows="1" placeholder="댓글을 입력하세요"></textarea>
+                            <button type="button">확인</button>
+                            <!-- 20-10-04 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <!-- 20-09-03 -->
+                    <div class="modifyArea">
+                        <a href="" class="mod">수정</a>
+                        <button type="button" class="del">삭제</button>
+                    </div>
+                    <div class="date">
+                        <span class="state blue">접수</span>
+                        <span>작성일</span>
+                        <span>2020.08.24</span>
+                        <span>11:30</span>
+                    </div>
+                    <div class="questionTxt">
+                        <span>문의드립니다 <br>어제 저녁부터 기침과 열이 납니다.</span>
+                    </div>
+                    <div class="counting">
+                        <span>댓글 <span class="red">4</span></span>
+                    </div>
+                </div>
+                <div class="box">
+                    <!-- 20-09-03 -->
+                    <div class="modifyArea">
+                        <a href="" class="mod">수정</a>
+                        <button type="button" class="del">삭제</button>
+                    </div>
+                    <div class="date">
+                        <span class="state gray">완료</span>
+                        <span>작성일</span>
+                        <span>2020.08.24</span>
+                        <span>11:30</span>
+                    </div>
+                    <div class="questionTxt">
+                        <span>문의드립니다 <br>어제 저녁부터 기침과 열이 납니다.</span>
+                    </div>
+                    <div class="counting">
+                        <span>댓글 <span class="red">2</span></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+
+        <!-- combtm -->
+        <!-- 20-09-03 -->
+        <div class="comBtm">
+            <button type="button">문의하기</button>
+        </div>
+        <!-- 20-09-03 -->
+    </div>
+
+    <!-- 20-10-20 -->
+    <div class="layerFrame" style="display:none;">
+        <div class="layerArea img">
+            <div class="imgArea imgSize">
+                <img src="assets/images/test.jpg" alt="">
+            </div>
+            <button type="button" class="closeBtn" onclick="javascript:layerClose();">닫기</button>
+        </div>
+    </div>
+</body>
+
+</html>

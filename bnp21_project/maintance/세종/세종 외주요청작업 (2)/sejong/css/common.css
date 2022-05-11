@@ -1,0 +1,174 @@
+@charset "utf-8";
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/NotoSansKR-Light.woff2) format("woff2"), url(../fonts/NotoSansKR-Light.woff) format("woff"), url(../fonts/NotoSansKR-Light.otf) format("opentype");
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NotoSansKR-Regular.woff2) format("woff2"), url(../fonts/NotoSansKR-Regular.woff) format("woff"), url(../fonts/NotoSansKR-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/NotoSansKR-Medium.woff2) format("woff2"), url(../fonts/NotoSansKR-Medium.woff) format("woff"), url(../fonts/NotoSansKR-Medium.otf) format("opentype");
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/NotoSansKR-Bold.woff2) format("woff2"), url(../fonts/NotoSansKR-Bold.woff) format("woff"), url(../fonts/NotoSansKR-Bold.otf) format("opentype");
+}
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/NotoSansKR-Black.woff2) format("woff2"), url(../fonts/NotoSansKR-Black.woff) format("woff"), url(../fonts/NotoSansKR-Black.otf) format("opentype");
+}
+/* reset */
+* {
+  box-sizing: border-box;
+}
+body {
+  overflow-y: auto;
+  position: relative;
+  font-size: 14px;
+  letter-spacing: -0.03em;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #202020;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+textarea,
+p,
+blockquote,
+th,
+td,
+address {
+  margin: 0;
+  padding: 0;
+}
+pre {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+table {
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+fieldset,
+img {
+  border: 0;
+  vertical-align: top;
+}
+ul,
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  line-height: 1em;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+body {
+  position: relative;
+}
+em {
+  font-style: normal;
+}
+legend,
+hr,
+caption {
+  display: none;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+}
+input:-moz-input-placeholder,
+textarea:-moz-input-placeholder {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 14px;
+}
+
+/* skip nav */
+#skipNav {
+  height: 0;
+}
+#skipNav dt {
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+}
+#skipNav dd a {
+  overflow: hidden;
+  display: block;
+  position: absolute;
+  top: -10000px;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  font-size: 16px;
+  text-align: center;
+}
+#skipNav dd a.on {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px 0;
+  background: #272727;
+  font-weight: bold;
+  color: #fff;
+}

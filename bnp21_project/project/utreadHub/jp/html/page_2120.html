@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>utradeHub</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+
+    </script>
+
+</head>
+
+<body>
+    <div class="subWrap">
+    <!-- header -->
+        <div class="header">
+            <div class="topArea">
+                <div class="comLayout">
+                    <div class="top">
+                        <a href="sitemap.html" class="txt">SITEMAP</a>
+                        <a href="" class="txt">CONTACT US</a>
+                        <div class="nationalList">
+                            <a href="" class="ko">한국</a>
+                            <a href="" class="ch">중국</a>
+                            <a href="" class="jp">일본</a>
+                        </div>
+                    </div>
+                    <div class="btm">
+                        <h1>
+                            <a href="index.html" class="logo">로고</a></a>
+                        </h1>
+                        <div class="menuList">
+                            <a href="page_1100.html">uTradeHubに関して </a>
+                            <a href="page_2110.html">サービス</a>
+                            <a href="page_3100.html">システム構造</a>
+                            <a href="page_4100.html">グローバル イニシアチブ</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- header -->
+
+        <div class="contWrap">
+            <div class="comLayout">
+                <div class="naviArea">
+                    <span>HOME</span>
+                    <span> &gt; </span>
+                    <span>サービス</span>
+                    <span> &gt; </span>
+                    <span>uTrade</span>
+                    <span> &gt; </span>
+                    <span>サービス詳細</span>
+                </div>
+                <div class="mainCont">
+                    <div class="leftMenu">
+                        <span class="title">Services</span>
+                        <ul class="accordian">
+                            <li class="on"><a href="page_2110.html" class="ico">uTrade</a>
+                                <ul>
+                                    <li><a href="page_2110.html">Introduction</a></li>
+                                    <li class="on"><a href="page_2120.html">Service Details</a></li>
+                                    <li><a href="page_2130.html">e-L/C Service</a></li>
+                                    <li><a href="page_2140.html">e-B/L Service</a></li>
+                                    <li><a href="page_2150.html">e-NEGO Service</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="page_2210.html" class="ico">uLogis</a>
+                                <ul>
+                                    <li><a href="page_2210.html">Introduce</a></li>
+                                    <li ><a href="page_2220.html">Service Details</a></li>
+                                    <li><a href="page_2230.html">e-B/L Services(Logistics Company)</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="page_2310.html"  class="ico">uBankers</a>
+                                <ul>
+                                    <li><a href="page_2310.html">Introduce</a></li>
+                                    <li><a href="page_2320.html">Service Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="page_2400.html">uTradeSearch</a></li>
+                            <li><a href="page_2500.html">uCustoms</a></li>
+                        </ul>
+                    </div>
+                    <div class="txtWrap">
+                        <span class="title">サービス詳細</span>
+                        <div class="textArea">
+                            <span class="title">サービス詳細</span>
+                            <div class="txtBox v2">
+                                <span class="title">概要</span>
+                                <p>輸出とは、対外販売の目的物となる商品を対象とし、外貨やそれに相応する物品を代価に外国に物品を売却する行為であり、輸出契約後、輸出信用状の通知、通関、船積、入金などの諸業務を電子的に処理し、体系的に管理するシステムのことをいいます。</p>
+                            </div>
+                            <div class="txtBox v2">
+                                <span class="title">輸出業務の流れ</span>
+                                <div class="imgArea">
+                                    <img src="assets/images/process_2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="txtBox v2">
+                                <span class="title">主要業務</span>
+                                <div class="comTable">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:50%;">
+                                            <col style="width:50%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="bdr">業務別</th>
+                                                <th>文書別</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="2" class="bdr">輸出契約</td>
+                                                <td>輸出契約書</td>
+                                            </tr>
+                                            <tr>
+                                                <td>信用状/信用状なしに関する情報</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="9" class="bdr">輸出信用状(e-L/C)</td>
+                                                <td>輸出信用状の到着</td>
+                                            </tr>
+                                            <tr>
+                                                <td>輸出信用状 Confirm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>輸出信用状の交付取消</td>
+                                            </tr>
+                                            <tr>
+                                                <td>輸出信用状の譲渡</td>
+                                            </tr>
+                                            <tr>
+                                                <td>残高照会</td>
+                                            </tr>
+                                            <tr>
+                                                <td>取引履歴照会</td>
+                                            </tr>
+                                            <tr>
+                                                <td>期日内訳照会</td>
+                                            </tr>
+                                            <tr>
+                                                <td>手数料納付内訳照会</td>
+                                            </tr>
+                                            <tr>
+                                                <td>手数料決済</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2" class="bdr">通関</td>
+                                                <td>商業送り状/包装明細書(通関用)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>輸出申告依頼/済証</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="9" class="bdr">船積</td>
+                                                <td>商業送り状</td>
+                                            </tr>
+                                            <tr>
+                                                <td>包装明細書</td>
+                                            </tr>
+                                            <tr>
+                                                <td>船腹予約</td>
+                                            </tr>
+                                            <tr>
+                                                <td>船積予約</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B/L 照会</td>
+                                            </tr>
+                                            <tr>
+                                                <td>e-B/L再発行要請及び取消</td>
+                                            </tr>
+                                            <tr>
+                                                <td>e-B/L譲渡申請/同意</td>
+                                            </tr>
+                                            <tr>
+                                                <td>e-B/L権利登録照会</td>
+                                            </tr>
+                                            <tr>
+                                                <td>船積一般応答</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="4" class="bdr">保険</td>
+                                                <td>積荷保険の申込み</td>
+                                            </tr>
+                                            <tr>
+                                                <td>積荷保険証券発行通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td>積荷保険裏書申請</td>
+                                            </tr>
+                                            <tr>
+                                                <td>積荷保険裏書発行通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="4" class="bdr">原産地証明</td>
+                                                <td>原産地証明発行申請/照会</td>
+                                            </tr>
+                                            <tr>
+                                                <td>商業送り状証明書発行申請/照会</td>
+                                            </tr>
+                                            <tr>
+                                                <td>原産地証明オンライン決済</td>
+                                            </tr>
+                                            <tr>
+                                                <td>商業送り状証明書サンプル</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="3" class="bdr">買取書類</td>
+                                                <td>為替手形</td>
+                                            </tr>
+                                            <tr>
+                                                <td>品質/数量/重量証明書</td>
+                                            </tr>
+                                            <tr>
+                                                <td>受益者証明書</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="3" class="bdr">e-NEGO</td>
+                                                <td>輸出荷為替手形買取(取立)申請</td>
+                                            </tr>
+                                            <tr>
+                                                <td>買取結果/取消</td>
+                                            </tr>
+                                            <tr>
+                                                <td>O/A譲渡通知/同意</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">LogisView(物流情報の照会)</td>
+                                                <td>物流 Visibility 照会</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="textArea">
+                            <span class="title">輸入業務</span>
+                            <div class="txtBox v2">
+                                <span class="title">概要</span>
+                                <p>輸入とは、外国で生産及び加工された物品が税関を通関して入ってくるものであり、輸入契約後、輸入信用状の開設、船積書類の入手及び通関、代金支払などの諸業務を電子的に処理し体系的に管理するシステムのことをいいます。</p>
+                            </div>
+                            <div class="txtBox v2">
+                                <span class="title">輸入業務の流れ</span>
+                                <div class="imgArea">
+                                    <img src="assets/images/process_3.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="txtBox v2">
+                                <span class="title">主要業務</span>
+                                <div class="comTable">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:50%;">
+                                            <col style="width:50%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="bdr">業務別</th>
+                                                <th>文書別</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td rowspan="2" class="bdr">輸入契約</td>
+                                                <td>輸入契約書</td>
+                                            </tr>
+                                            <tr>
+                                                <td>信用状/信用状なしに関する情報</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="4" class="bdr">保険 </td>
+                                                <td>積荷保険の申込み</td>
+                                            </tr>
+                                            <tr>
+                                                <td>積荷保険証券発行通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td>積荷保険裏書申請</td>
+                                            </tr>
+                                            <tr>
+                                                <td>積荷保険裏書発行通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2" class="bdr">輸入信用状</td>
+                                                <td>輸入信用状開設申請/応答</td>
+                                            </tr>
+                                            <tr>
+                                                <td>輸入信用状条件変更申請/応答</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">船積書類</td>
+                                                <td>B/L & AWB管理</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2" class="bdr">L/G 発行</td>
+                                                <td>輸入手形割引内訳通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td>輸入貨物先取保証書</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="6" class="bdr">代金決済</td>
+                                                <td>輸入手形割引内訳通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td>船積書類到着通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td>支払確認</td>
+                                            </tr>
+                                            <tr>
+                                                <td>支払指示の申請</td>
+                                            </tr>
+                                            <tr>
+                                                <td>出金通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td>計算書</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">通関</td>
+                                                <td>輸入申告済証</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">D/O 発行</td>
+                                                <td>貨物情報検索</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="textArea">
+                            <span class="title">国内購買/ 供給</span>
+                            <div class="txtBox v2">
+                                <span class="title">国内購買とは</span>
+                                <p>輸出会社が商品を製造、加工するために所要される原材料又は完成品を国内で円滑に調達するために、内国信用状や購買確認と関連した物品売渡確約、内国信用状/購買確認書の発行、税金請求書、物品受取証発行、代金決済などの諸業務を電子的に処理し、体系的に管理するシステムです。</p>
+                            </div>
+                            <div class="txtBox v2">
+                                <span class="title">国内供給とは</span>
+                                <p>供給会社が輸出用物品を輸出会社に納品し代金を回収するために内国信用状や購買確認と関連した物品売渡確約、内国信用状/購買確認書の通知、税金請求書の発行、物品受取証受信、販売代金取立(買取)依頼などの諸業務を電子的に処理し、体系的に管理するシステムです。</p>
+                            </div>
+                            <div class="txtBox v2">
+                                <span class="title">国内購買/供給の流れ</span>
+                                <div class="imgArea">
+                                    <img src="assets/images/process_4.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="txtBox">
+                                <span class="title">主要業務</span>
+                                <div class="comTable center mt10">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:50%;">
+                                            <col style="width:50%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="bdr">業務別</th>
+                                                <th>文書別</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="bdr">物品売渡確約</td>
+                                                <td>物品売渡確約(提案/確認)</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2" class="bdr">内国信用状</td>
+                                                <td>内国信用状開設申請/応答</td>
+                                            </tr>
+                                            <tr>
+                                                <td>内国信用状条件変更申請/応答</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="2" class="bdr">購買確認</td>
+                                                <td>外貨獲得用購買確認申請</td>
+                                            </tr>
+                                            <tr>
+                                                <td>外貨獲得用購買確認書</td>
+                                            </tr>
+                                            <tr>
+                                                <td rowspan="6" class="bdr">物品代金支払</td>
+                                                <td>物品受取証明書発行</td>
+                                            </tr>
+                                            <tr>
+                                                <td>税金請求書</td>
+                                            </tr>
+                                            <tr>
+                                                <td>内国信用状手形到着通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td>支払指示申請</td>
+                                            </tr>
+                                            <tr>
+                                                <td>出金通知</td>
+                                            </tr>
+                                            <tr>
+                                                <td>計算書</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="textArea">
+                            <span class="title">要件確認業務</span>
+                            <div class="txtBox v2">
+                                <span class="title">概要</span>
+                                <p>輸出入要件確認業務とは、税関長の確認制度の下で確認機関が貿易会社の要請に従い通関における許可、推薦、申告、検査、検定、試験方法、形式承認などを行うことをいいます。</p>
+                            </div>
+                            <div class="txtBox v2">
+                                <span class="title">主要業務</span>
+                                <div class="comTable left">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width:25%;">
+                                            <col style="width:25%;">
+                                            <col style="width:25%;">
+                                            <col style="width:25%;">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th rowspan="4" class="bdr">輸入承認業務</th>
+                                                <td class="bdr">輸入承認申請書</td>
+                                                <td class="bdr">輸入承認変更申請書</td>
+                                                <td>輸入承認書</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">輸入承認変更承認書</td>
+                                                <td class="bdr">安全認証確認申請書</td>
+                                                <td>安全認証確認書</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">飼料輸入届出書</td>
+                                                <td class="bdr">輸入飼料申告済証</td>
+                                                <td>不適格通報書</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">輸入飼料検定依頼書</td>
+                                                <td class="bdr">輸入飼料結果通知書</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th rowspan="3" class="bdr">輸入推薦業務</th>
+                                                <td class="bdr">譲許関税推薦書</td>
+                                                <td class="bdr">割当関税推薦書</td>
+                                                <td>FTA関税推薦書</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">譲許関税推薦申請書</td>
+                                                <td class="bdr">割当関税推薦申請書</td>
+                                                <td>FTA関税推薦申請書</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">譲許推薦延長申請書</td>
+                                                <td class="bdr">割当推薦延長申請書</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th rowspan="3" class="bdr">税関EDI伝送サービス</th>
+                                                <td class="bdr">輸入通関結果照会</td>
+                                                <td class="bdr">譲許関税推薦通報書</td>
+                                                <td>関税減免推薦通報書</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">輸出承認通報書</td>
+                                                <td class="bdr">割当関税推薦通報書</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">輸入承認通報書</td>
+                                                <td class="bdr">FTA関税推薦通報書</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <th rowspan="2" class="bdr">その他業務</th>
+                                                <td class="bdr">誤謬通報</td>
+                                                <td class="bdr">受付通報</td>
+                                                <td>基礎コード管理</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="bdr">取引先管理</td>
+                                                <td class="bdr">品目管理</td>
+                                                <td>各種統計現況</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="comLayout">
+                <div class="imgArea"></div>
+                <div class="txtArea">
+                    <span class="address">Ministry of Trade, Industry and Energy 402 Hannuri-daero, Sejong-si, 30118, Republic of Korea TEL: +82-44-203-4841</span>
+                    <span class="address">Korea Paperless Trade Center(Pangyo TechnoVally) 338, Pangyo-ro, Bundang-gu, Seongnam-si, Gyeonggi-do, Korea TEL: +82-2-6000-2114</span>
+                    <span class="address">Copyright 2008. Ministry of Trade, Industry and Energy. All rights reserved.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

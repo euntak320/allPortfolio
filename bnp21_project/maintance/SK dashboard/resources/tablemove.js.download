@@ -1,0 +1,122 @@
+/**
+ * Table Move 
+ */
+$(function() {
+
+	function Tablemove(id, callback) {
+		var el = document.getElementById(id);
+		
+		if (!(this instanceof Tablemove)) return new Tablemove(el, options);
+
+		if (!el || el.tagName !== 'TABLE') {
+			throw new Error('Element must be a table');
+		}
+		this.init(el, callback);
+	}
+	
+	function getHeaders(el) {
+		return $(el).find('th').map(function() { return $(this).html() }).toArray();
+	}
+
+	Tablemove.prototype = {
+			init: function(el, callback) {
+				var heads = $(el).find('th');
+
+				var dragTD = null;
+				var draggedDiv = null;
+				var mouseClickTimer = null;
+				
+				$.each(heads, function(inx, row ) {
+					var head = $(row);
+					
+					if(head.attr('data-not-move') === undefined) {
+						head.bind("mousedown", function(ev) {
+							var that = this;
+							mouseClickTimer = setTimeout(function() {
+								dragTD = that;
+								$(dragTD).addClass("dragging");
+
+								draggedDiv = $("<div>");
+								draggedDiv.addClass("draggedDiv");
+								draggedDiv.css({top: ev.pageY + 5 + "px", left:ev.pageX + 10 + "px"});
+								$(document.documentElement).append(draggedDiv);
+
+								var dragTable = $("<table>");
+								dragTable.css({width: 150 +"px"})
+								draggedDiv.append(dragTable);
+
+								var srcInx = dragTD.cellIndex;
+								var rows = $(el).find('tr');
+								var tr = rows[0].cloneNode(false);
+								dragTable.append(tr);
+								var tds = rows[0].cells[srcInx].cloneNode(true);
+								tr.appendChild(tds);			
+							}, 500);
+						});
+						
+						head.bind("mouseover", function(ev){
+							if (dragTD === null) { return;}
+							$(this).addClass("hovering");
+						});
+						
+						head.bind("mouseout", function(ev){
+							if (dragTD === null) { return;}
+							$(this).removeClass("hovering");
+						});
+						
+						head.bind("mouseup", function(ev){
+							if(mouseClickTimer !== null)
+								clearTimeout(mouseClickTimer);
+
+							if(dragTD === null) { return;}
+
+							$(this).removeClass("hovering");
+							$(dragTD).removeClass("dragging");
+							draggedDiv.remove();
+							draggedDiv = null;
+
+							var srcInx = dragTD.cellIndex;
+							var tarInx = this.cellIndex;
+							var rows = $(el).find('tr');
+							
+							for (var x=0; x < rows.length; x++) {
+								var tds = rows[x].cells;
+								if(srcInx > tarInx) {
+									rows[x].insertBefore(tds[srcInx], tds[tarInx])
+								} else {
+									rows[x].insertBefore(tds[srcInx], tds[tarInx].nextSibling);
+								}
+							}
+							
+							if(typeof callback === 'function') {
+								callback(getHeaders(el));
+							}
+							dragTD = null;
+						});
+
+						head.addClass("tableHead");
+					}
+				});
+				
+				$(document.documentElement).bind( "mouseup", function(ev) {
+					if (dragTD === null) { return;}
+
+					$(dragTD).removeClass("dragging");
+					dragTD = null;    
+					draggedDiv.remove();
+					draggedDiv = null;
+				});
+				
+				$(document.documentElement).bind( "mousemove", function(ev) {
+					if (!draggedDiv) { return;}
+					draggedDiv.css({top: ev.pageY + 5 + "px", left: ev.pageX + 10 + "px"});
+				});
+			},
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = Tablemove;
+	} else {
+		window.Tablemove = Tablemove;
+	}
+})

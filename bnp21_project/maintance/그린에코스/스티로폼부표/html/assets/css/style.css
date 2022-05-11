@@ -1,0 +1,143 @@
+/* common */
+*{-webkit-text-size-adjust:none; box-sizing: border-box;}article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block}html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure,footer, header, hgroup, menu, nav, section, summary, time, mark, audio, videot{margin:0;padding:0;border:0;outline:0;}body{font-size:14px; font-family:'noto', Dotum ,sans-serif;font-weight:normal;color:#333;}ul, ol, li{list-style:none}fieldset, img{border:0}br{letter-spacing:-0.05em}p{letter-spacing:-0.05em}hr{display:none}address, caption, em, var{padding:0;margin:0;font-style:normal;font-weight:normal}a{text-decoration:none;color:#333;}a[href^="tel"]{font-style:normal}a:hover, a:active, a:focus{text-decoration:none}input, textarea, select, button{font-family:'noto', sans-serif; font-weight:500;letter-spacing:-0.05em; background: #fff;}img{border:0;vertical-align:top}legend, caption{position:absolute;left:-1000%;top:0;width:1px;height:1px;font-size:0;line-height:0;overflow:hidden}table{width:100%;border:0;border-spacing:0;}
+
+/* 폰트 */
+@font-face {
+  font-family: 'noto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/notokr-medium.eot');
+  src: url('../fonts/notokr-medium.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/notokr-medium.woff') format('woff'),
+      url('../fonts/notokr-medium.ttf') format('truetype');
+}
+
+/* header */
+header {position: relative; width:100%; height:50px; border-bottom: 1px solid #ccc;}
+header .loginTxt span {position: absolute; top:50%; left:50%;transform: translate(-50%, -50%); color:#333; font-weight: 600; font-size:18px;}  
+header .subTitle {position: absolute; top:50%; width:100%; padding:0 10px; transform: translateY(-50%);}
+header .subTitle span {font-size:18px;}
+header .subTitle button {position: absolute; top:50%; right:10px; width:17.5px; height:14px; text-indent: -9999px; background: url(../images/icon-mobile.png) no-repeat center; background-size: contain; transform: translateY(-50%);}
+/* header */
+
+/* footer */
+footer {position: absolute; bottom:0; left:0; width:100%; padding:20px 0;}
+footer .logo {text-align: center;}
+footer .logo img {width:35%;}
+
+/* menuList */
+.menuArea {position: absolute; top:0; left:0; bottom:0; right:0; width:100%; height:100%; background: rgba(0, 0, 0, 0.5); transform: translateX(-100%); opacity: 0; transition: 0.5s; z-index: 100;}
+.menuArea.on{transform: translateX(0); transform: 0.5s; opacity: 1;}
+.menuArea .menuList {position: relative; width:55%; height:100%; background: #fff;}
+.menuArea .menuList .topArea {position: relative; width:100%; height: 50px; padding:0 10px; border-bottom:1px solid #ccc;}
+.menuArea .menuList .topArea span {font-size:18px; color:#333; line-height: 50px;}
+.menuArea .menuList .topArea button {position: absolute; right:10px; top:50%; width:18px; height:18px; background: url(../images/icon-cancel.png) no-repeat; background-size: contain;  transform: translateY(-50%); text-indent: -9999px;}
+.menuArea .menuList .listArea li{padding:0 10px; height: 50px; border-bottom:1px solid #ddd; line-height: 50px; background:#ececec;}
+.menuArea .menuList .listArea li a{display: block; width:100%;}
+.menuArea .menuList .logout {position: relative; }
+.menuArea .menuList .logout a {position: absolute; top:20px; left:50%; border:1px solid #ccc; padding:7px 5px 7px 35px; background: url(../images/icon-logout.png) no-repeat 10px center; transform: translateX(-50%); background-size: 20px;}
+
+/* common */
+.wrap {position: relative; height: 100vh;}
+/* 20-07-02 수정 */
+input[type="text"], input[type="password"] {width:100%; height:40px; padding-left: 15px; border:1px solid #ccc; -webkit-appearance: none; -webkit-border-radius: 0;}
+/* 20-07-02 수정 */
+button {border:0; border-radius: 0; background: none; cursor: pointer;}
+select{width:100%; height:35px; padding-left:5px; border:1px solid #ccc; color:#666; -webkit-border-radius: 0;}
+.section { padding-bottom: 20px; }
+.section > div{padding:0 10px;}
+.section .mainTitle{display: block; width:100%; height:45px; font-size:16px; line-height: 45px; text-align: center; background: #ececec;}
+.section .subTitle{position: relative; display: block; width: 100%; padding-left:15px; font-size:15px;}
+.section .subTitle::before{content: ""; position: absolute; top:50%; left:0; width: 7.5px; height:7.5px; background: #5879c0; transform: translateY(-50%); }
+.comBtn {width:100%; margin-top:15px; padding:15px 0; background: #5879c0; color:#fff; font-size:15px; box-shadow: 0 2px 4px #ccc;}
+.comBtn.v2{margin-top:10px; background: #71a3ea;}
+.normalTxt{position: relative; display: block; margin-top:10px; padding-left:10px;font-size:12px;}
+.normalTxt::before{content: ''; position: absolute; top:50%; left:0; width: 3px; height:3px; border-radius: 50%; background: #333; transform: translateY(-50%);}
+.normalTxt.v2{padding-left:0;}
+.normalTxt.v2::before{display: none ;}
+.view{display: none;}
+.view.on{display: block;}
+
+/* paging */
+.paging ul{overflow: hidden; text-align: center;}
+.paging ul li{display: inline-block; margin-right:-5px; border:1px solid #ccc; border-right:0; text-align: center; vertical-align: middle;}
+.paging ul li:last-child{border-right:1px solid #ccc;}
+.paging ul li a{display: block; width:26px; height:26px; padding:3px 0;}
+.paging ul li a.on{background: #eee; color:#5879c0; font-weight: bold;}
+.paging ul li a.before{background: url(../images/before.png) no-repeat center; background-size: 50%;}
+.paging ul li a.prev{background: url(../images/prev.png) no-repeat center; background-size: 25%;}
+.paging ul li a.next{background: url(../images/next.png) no-repeat center; background-size: 25%;}
+.paging ul li a.after{background: url(../images/after.png) no-repeat center; background-size: 50%;}
+
+/* etcTxt */
+.etcTxt li {position: relative; padding-left:15px; margin-top:20px;}
+.etcTxt li + li {margin-top:20px;}
+.etcTxt li::before {content: ""; position: absolute; top:5px; left:0; width:7.5px; height: 7.5px; background: #5879c0;}
+
+/* login */
+.loginArea {position: absolute; top:50%; left:50%; width:100%; margin:40px 0; padding:0 10px; transform: translate(-50%, -65%); }
+.loginArea .title {display: block; color:#053a68; text-align: center; font-size:24px; font-weight: bold;}
+.loginArea .inputArea {margin-top:25px;}
+.loginArea .inputArea input + input {margin-top:15px;}
+.loginArea .comBtn {width:100%; margin-top:15px; padding:15px 0; background: #5879c0; color:#fff; font-size:15px; font-weight: bold;}
+.loginArea .linkBtn {position: relative; display: block; margin-top:40px;text-align: center;}
+.loginArea .linkBtn span {padding-bottom:5px; color:#5879c0; border-bottom:1px solid #5879c0}
+
+.registerArea{margin-bottom: 25px;}
+.choiceArea {margin-top:15px;}
+.choiceArea .flex {display: flex; align-items: center; justify-content: space-between; margin-top:10px;}
+.choiceArea .flex > span{margin:0 1%;}
+.choiceArea .flex select:first-child {margin-right:5px;}
+.choiceArea .flex .txt{padding-left:30px; color:#666; font-size:13px;}
+.choiceArea .flex.v2 select:first-child {margin-right:0;}
+.choiceArea .btnList {overflow: hidden; height:40px;  margin-top:10px; border:1px solid #ccc;}
+.choiceArea .btnList button {float: left; width:33.3%; height:100%; border-left:1px solid #ccc; text-align: center;  background:#eee;}
+.choiceArea .btnList button:first-child {border-left:0;}
+.choiceArea .btnList button.on {background:#5879c0; color:#fff;}
+.choiceArea .btnList.v2 button{width:50%;}
+.choiceArea .leftList {margin-top:10px; padding-left:20px;}
+.choiceArea .leftList li{position: relative; padding-left:10px; line-height: 2; font-size:13px;}
+.choiceArea .leftList li::before{content: ""; position: absolute; left:0; top:45%; width: 3px; height:3px; border-radius: 50%; background: #333; transform: translateX(-50%);}
+.choiceArea .input {margin-top:10px;}
+.choiceArea .input > * {display: inline-block; vertical-align: middle;}
+.choiceArea .input input[type="text"]{width:93.5%;}
+.choiceArea .input.v2 input[type="text"]{width:100%;}
+.choiceArea .input span{margin-left:1%; text-align: right;}
+.choiceArea .dateArea{display: flex; justify-content: center; align-items: center; margin-top:10px;}
+.choiceArea .dateArea span{margin:0 1%;}
+.resultArea {padding:0!important; padding-top:10px!important; border-top:1px solid #ddd; background:#f8f8f8;}
+.view .resultArea{overflow: hidden; margin:0 -10px;}
+.resultArea .boxListArea {padding:15px 10px; background: #fff;}
+.resultArea .boxListArea .titleArea{overflow: hidden;}
+.resultArea .boxListArea .fl{float: left; width:50%;}
+.resultArea .boxListArea .fr{float: right; width:50%; text-align: right;}
+.resultArea .boxListArea .nameBox{overflow: hidden; width:100%; padding:7px 15px; margin-top:10px; border:1px solid #ddd; background: #f8f8f8;}
+.resultArea .boxListArea .nameBox .fr{display:inline-block; width: auto; color:#eb2d1e; border-bottom:1px solid #eb2d1e; font-size:13px;}
+.resultArea .boxListArea .inputName .input {margin-top:5px;}
+.resultArea .boxListArea button{color:#5879c0; text-decoration: underline;}
+.resultArea .boxTxt {overflow: hidden; padding:7.5px 10px; border:1px solid #ddd; background: #f8f8f8;}
+.resultArea .boxTxt + .boxTxt {margin-top:10px;}
+.resultArea .boxTxt li {position: relative; float: left; width:50%; padding:6px 0 6px 10px;}
+.resultArea .boxTxt li::before {content: ""; position: absolute; top:52.5%; left:0; width:3px; height:3px; background: #333; border-radius: 50%; transform: translateY(-50%);}
+.resultArea .boxTxt li:nth-child(3) {clear: both; width: 100%;}
+.resultArea .boxTxt li > * {display: inline-block; vertical-align: middle;}
+.resultArea .boxTxt li > span {overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color:#666; font-size:15px;}
+.resultArea .boxTxt li > strong {font-size:15px; font-weight: 500;}
+.resultArea .boxTxt.v2 li:first-child {float: none; width:100%;}
+.resultArea .boxTxt.v2 li:nth-child(3) {clear: none; float: left; width:50%;}
+.resultArea .boxTxt.v2 li:nth-child(4), 
+.resultArea .boxTxt.v2 li:nth-child(5) {clear: both; width:100%;}
+.resultArea .boxTxt.v3 li{float: none; width: 100%;}
+/* 버튼 */
+.btnArea {display: flex; height:50px;}
+.btnArea button {width:50%; height: 100%; color:#fff;}
+.btnArea .cancel {background:#8b97a7;}
+.btnArea .confirm {background:#71a3ea;}
+.view .btnArea{margin:0 -10px -20px -10px;}
+
+.licenseArea .smallTxt {display:block; margin-top:10px; font-size:12px;}
+
+@media all and (max-width:320px) {
+  .resultArea .boxTxt li, .resultArea .boxTxt.v2 li:nth-child(3), .resultArea .boxTxt.v2 li:nth-child(4), .resultArea .boxTxt.v2 li:nth-child(5) {float: none; width:100%;}
+  .menuArea .menuList .logout a {padding:7px 3px 5px 30px; background-size: 15px;}
+}

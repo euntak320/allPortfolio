@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>BBS_write</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+	<div id="LNB">
+		<h1><a href="#"  tabindex="1"><img src="../images/logo.png" alt="상상스토리" /></a></h1>
+		<ul><!-- 1depth -->
+			<li><a href="#">Title</a></li>
+			<li><a href="#">Tab</a></li>
+			<li><a href="#">Button</a></li>
+			<li><a href="#">Table</a></li>
+			<li><a href="#">Form</a></li>
+			<li><a href="#">Popup</a></li>
+			<li class="on"><a href="#">BBS</a>
+				<ul><!-- 2depth -->
+					<li><a href="#">List</a></li>
+					<li><a href="#">View</a></li>
+					<li class="on"><a href="#">Wirte</a></li>
+				</ul>
+			</li>
+			<li><a href="#">etc.</a></li>
+		</ul>
+	</div>
+
+	<div id="SUB">
+		<div class="header">
+			<button type="button" class="toggle"><img src="../images/toggle_close.png" alt="메뉴 닫기"/></button>
+			<!-- Type 1 -->
+			<div class="top_nav">
+				<a href="#" class="home">Home</a>
+				<!-- 1depth -->
+				<span>&gt;</span>
+				<button class="nav_btn1" type="button">BBS</button>
+				<ul class="nav_menu nav_depth1">
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li><a href="#">Form</a></li>
+					<li><a href="#">Popup</a></li>
+					<li class="on"><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+				<!-- //1depth -->
+				<!-- 2depth -->
+				<span>&gt;</span>
+				<button class="nav_btn2 last" type="button">Wirte</button> <!-- 마지막 경로 버튼에 "last" 클래스 추가 -->
+				<ul class="nav_menu nav_depth2">
+					<li><a href="#">List</a></li>
+					<li><a href="#">View</a></li>
+					<li class="on"><a href="#">Wirte</a></li>
+				</ul>
+				<!-- //2depth -->
+			</div>
+			<!-- //Type 1 -->
+			<!-- Type 2 -->
+			<div id="GNB">
+				<ul>
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li class="on"><a href="#">Form</a></li>
+					<li><a href="#">Popup</a></li>
+					<li><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+			</div>
+			<!-- //Type 2 -->
+			<div class="log_info">
+				<span class="user_info">Admin</span>
+				<button type="button" class="btn red" tabindex="1">로그아웃</button>
+			</div>
+		</div>
+
+		<div class="contents_area">
+
+			<h3>게시판 Write</h3>
+			
+			<form id="bbs_write">
+
+				<div class="table_wrap">
+					<div class="bbs_title">
+						<h5>BBS Write</h5>
+					</div>
+					<table class="bbs_tb">
+						<caption>작성자, 비밀번호, 활성여부, 내용, 댓글로 구성된 테이블</caption>
+						<colgroup>
+							<col style="width: 9%;" />
+							<col style="width: 41%;" />
+							<col style="width: 9%;" />
+							<col style="width: 41%;" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="writer">작성자</label></th>
+								<td><input type="text" id="writer" title="작성자" style="width: 200px"/></td>
+								<th scope="row"><label for="pw">비밀번호</label></th>
+								<td><input type="password" id="pw" title="비밀번호" style="width: 200px;"/></td>
+							</tr>
+							<tr>
+								<th scope="row">활성여부 <span class="star">*</span></th>
+								<td><input type="radio" id="public_open" name="public" /><label for="public_open">활성</label>
+								<input type="radio" id="public_close" name="public" /><label for="public_close">비활성</label></td>
+								<th scope="row"><label for="input_01">구분 2</label></th>
+								<td><input type="text" id="input_01" style="width: 200px;"/></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="title">제목</label></th>
+								<td colspan="3"><input type="text" id="title" style="width: 99%;"/></td>
+							</tr>
+							<tr>
+								<th scope="row">내용</th>
+								<td colspan="3" class="view_contetns"><textarea name="bbs_contents" id="bbs_contents" title="글쓰기" rows="10" style="width: 99%;"></textarea></td>
+							</tr>
+							<tr>
+								<th scope="row">댓글</th>
+								<td colspan="3">댓글 내용 1</td>
+							</tr>
+							<tr>
+								<th scope="row">댓글</th>
+								<td colspan="3">댓글 내용 2</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="comment">댓글 작성</label></th>
+								<td colspan="3"><input type="text" id="comment" style="width: 80%;"/><button type="button" class="btn blue">등록</button>
+							</tr>
+						</tbody>
+					</table>
+					
+					<div class="bbs_control">
+						<div class="btn_group">
+							<div class="btn_left">
+								<a href="#" class="btn green">목록</a>
+							</div>
+							<div class="btn_right">
+								<button type="button" class="btn gray">삭제</button>
+								<button type="button" class="btn blue">수정</button>
+							</div>
+						</div>
+					</div> <!-- //bbs_control -->
+				</div> <!-- //table_wrap -->
+
+			</form>
+
+		</div> <!-- //contents_area -->
+	</div> <!-- //#SUB -->
+
+</div>
+
+</body>
+</html>

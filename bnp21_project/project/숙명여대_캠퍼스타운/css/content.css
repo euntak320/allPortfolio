@@ -1,0 +1,122 @@
+@charset "utf-8";
+/* >>>>>>>>>> 공통 <<<<<<<<<< */
+
+/* input type */
+.btnInput {overflow:hidden; padding-right:100%}
+.btnInput input {}
+
+/* rowTable */
+.rowTable {margin-top:20px; border-top:1px solid #000}
+.rowTable:after {display:block; content:""; clear:both} 
+.rowTable dl {float:left; width:50%}
+.rowTable dl:after {display:block; content:""; clear:both}
+.rowTable dl dt,
+.rowTable dl dd {float:left; padding:13px 15px;  border-bottom:1px solid #ccc; width:20%; line-height:22px; font-size:16px; font-weight:500; color:#000}
+.rowTable dl dt {text-align:center; background-color:#f6f6f6}
+.rowTable dl dd {text-align:left;/*  padding:0 16px; */ width:80%}
+.rowTable dl.last {width:100%}
+.rowTable dl.last dt {width:10%}
+.rowTable dl.last dd {width:90%}
+
+/* colTable */
+.colTable {overflow:hidden; overflow-x:auto; margin-top:30px; border-top:1px solid #000000} 
+.colTable table {width:100%}
+.colTable table th,
+.colTable table td {padding:10px; border-bottom:1px solid #ccc; height:48px; text-align:center;  line-height:22px; font-size:16px; font-weight:500; color:#000; white-space:nowrap; transition:all 0.5s; -webkit-transition:all 0.5s; -moz-transition:all 0.5s}
+.colTable table th {background:#f6f6f6}
+
+/* tab */
+.tabWrap > ul {overflow:hidden; margin-top:30px; width:100%; text-align:center}
+.tabWrap > ul li {float:left; width:50%; border-bottom:1px solid #2060AA; background-color:#f6f6f6}
+.tabWrap > ul li a {display:block; position:relative; padding:0 20px; line-height:50px; font-size:16px; color:#999; font-weight:500} 
+.tabWrap > ul li.curr {border:1px solid #2060AA; border-top:2px solid #2060AA;  border-bottom:none; background-color:#fff}
+.tabWrap > ul li.curr a {line-height:48px; font-size:16px; font-weight:500; color:#2060AA}
+.tabWrap > .tabBox {padding-top:20px}
+
+/* paging */
+.paging {margin-top:20px; margin-bottom:10px; text-align:center}
+.paging .inner {overflow:hidden; margin:0 auto; width:fit-content}
+.paging .inner > a {text-indent:-9999px}
+.paging .inner > a,
+.paging .inner > strong {float:left; border:1px solid #ccc; line-height:33px; font-size:14px; color:#555}
+.paging .inner > a.btnFirst {width:40px; background:url("../images/btn_first.png") no-repeat center}
+.paging .inner > a.btnPrev {width:40px; background:url("../images/btn_prev.png") no-repeat center}
+.paging .inner .page {float:left; overflow:hidden}
+.paging .inner .page > * {display:block; padding:0 14px; float:left; border:1px solid #ccc; line-height:33px; font-size:14px; color:#555}
+.paging .inner > a.btnNext {width:40px; background:url("../images/btn_next.png") no-repeat center}
+.paging .inner > a.btnLast {width:40px; background:url("../images/btn_last.png") no-repeat center}
+.paging .inner > a + a,
+.paging .inner .page > * + * {border-left:none} 
+
+/* 로그인 */
+.loginWrap {position:relative; left:0; top:63px; min-height:638px}
+.loginWrap .loginArea {margin:155px auto 0; padding:0 20px; max-width:100%; width:460px; text-align:center}
+.loginWrap .loginArea .title {line-height:22px; font-size:32px; font-weight:500; color:#000}
+.loginWrap .loginArea .inputArea {margin-top:50px; text-align:left}
+.loginWrap .loginArea .inputArea .input strong {line-height:22px; font-size:16px; font-weight:500; color:#000}
+.loginWrap .loginArea .inputArea .input input {margin-top:8px; padding:18px 20px; border:1px solid #ccc; width:100%; height:60px; background-color:#f6f6f6}
+.loginWrap .loginArea .inputArea .input .cRed {line-height:26px; font-size:14px; font-weight:500; color:#EB3131}
+.loginWrap .loginArea .inputArea .input + .input {margin-top:40px}
+.loginWrap .loginArea .inputArea .input.v2 + .input {margin-top:20px} 
+.loginWrap .loginArea .checkArea {margin-top:20px}
+.loginWrap .loginArea .checkArea:after {display:block; content:""; clear:both}
+.loginWrap .loginArea .checkArea .check {float:left}
+.loginWrap .loginArea .checkArea .check input {position:absolute; left:0; top:0; opacity:0}
+.loginWrap .loginArea .checkArea .check input + label {position:relative; display:inline-block; padding-left:28px; line-height:24px; font-size:14px; color:#666}
+.loginWrap .loginArea .checkArea .check input[type=checkbox] + label:after {content:""; position:absolute; top:0; left:0; width:20px; height:20px; background:url("../images/checkbox.png") no-repeat left center; background-size:cover; transform:translateY(8%)}
+.loginWrap .loginArea .checkArea .check input[type=checkbox]:checked + label:after {background:url("../images/checkbox_on.png") no-repeat left center; background-size:cover}
+.loginWrap .loginArea .checkArea > a {float:right; line-height:24px; font-size:14px; color:#666}
+.loginWrap .loginArea > button {margin-top:50px; border:none; background:linear-gradient(90deg, rgba(7,98,216,1) 0%, rgba(42,59,125,1) 100%);  width:100%; text-align:center; line-height:64px; font-size:18px; font-weight:500; color:#fff}
+
+@media all and (max-width:768px) {
+.loginWrap .loginArea .title {font-size:28px}
+.loginWrap .loginArea .inputArea .input strong {font-size:15px}
+.loginWrap .loginArea > button {font-size:16px}
+}
+
+@media all and (max-width:320px) {
+.loginWrap .loginArea .title {font-size:24px}
+.loginWrap .loginArea .inputArea .input strong {font-size:15px}
+.loginWrap .loginArea > button {font-size:15px}
+}
+
+/* common layout */
+#container {position:relative; left:0; top:-80px}
+#container .visualArea {max-width:100%; width:100%; height:440px; background:url("../images/sub_visual01.png") no-repeat center; background-size:cover}
+#container .visualArea.v1 {max-width:100%; width:100%; height:440px; background:url("../images/sub_visual01.png") no-repeat center; background-size:cover}
+#container .visualArea.v2 {max-width:100%; width:100%; height:440px; background:url("../images/sub_visual01.png") no-repeat center; background-size:cover}
+#container .visualArea.v3 {max-width:100%; width:100%; height:440px; background:url("../images/sub_visual01.png") no-repeat center; background-size:cover}
+#container .visualArea .inner {position:relative; margin:0 auto 0; padding:0 20px; width:1280px}
+#container .visualArea .inner > div {position:absolute; left:0; top:280px}
+#container .visualArea .inner > div h2 {line-height:60px; font-size:40px; font-weight:600; color:#fff; text-shadow: 0px 0px 5px #0000004D}
+#container .visualArea .inner > div .boxTitle {padding:20px 40px; width:600px; text-align:left; background-color:#2A3B7D}
+#container .visualArea .inner > div .boxTitle span {display:block; line-height:34px; font-size:18px; font-weight:500; color:#B6BDCE}
+#container .visualArea .inner > div .boxTitle strong {display:block; line-height:42px; font-size:28px; font-weight:500; color:#fff}
+#container .path {max-width:100%; width:100%; background-color:#f6f6f6}
+#container .path .inner {margin:0 auto 0; padding:17px 0 19px; max-width:100%; width:1320px; text-align:right}
+#container .path .inner div {padding:0 20px}
+#container .path .inner div > * {line-height:22px; font-size:16px; font-weight:500; color:#999}
+#container .path .inner div > * + *:before {display:inline-block; content:""; margin:0 5px; vertical-align:inherit; width:6px; height:12px; background:url("../images/arrow01.png") no-repeat center; background-size:6px auto}
+
+#container .content {margin:50px auto 0; max-width:100%; padding:0 20px; width:1320px}
+
+/* web 01 01 */
+#container .content .intro {position:relative; margin:70px auto 0; max-width:100%; width:1320px; height:570px; background:url("../images/sub_bg01.png") no-repeat center; background-size:640px auto}
+#container .content .intro .introDetail {margin:0 auto 0; padding-top:280px; max-width:100%; width:805px; text-align:center}
+#container .content .intro .introDetail:after {display:block; content:""; clear:both}
+#container .content .intro .introDetail > span {float:left; display:block; vertical-align:middle; width:128px; height:128px; border-radius:64px; line-height:128px; font-size:24px; font-weight:600; color:#fff; background-color:#213054}
+#container .content .intro .introDetail > span.icon {display:block; padding:60px 35px; width:28px; height:28px; vertical-align:middle; background:url("../images/ico05.png") no-repeat center; background-size:28px auto}
+#container .content .intro .introDetail > div:after {display:block; content:""; clear:both}
+#container .content .intro .introDetail > div span {float:left; display:block; width:128px; height:128px; border-radius:64px; line-height:185px; font-size:18px; font-weight:600; background-color:#fff}
+#container .content .intro .introDetail > div span + span {margin-left:30px}
+#container .content .intro .introDetail > div span.first {position:relative; border:1px solid #E5257A; color:#E5257A}
+#container .content .intro .introDetail > div span.first:before {display:block; content:""; position:absolute; left:35%; top:25%; margin-bottom:10px; width:40px; height:34px; background:url("../images/sub_img01.png") no-repeat center; background-size:40px auto}
+#container .content .intro .introDetail > div span.second {position:relative; border:1px solid #F0A40E; color:#F0A40E}
+#container .content .intro .introDetail > div span.second:before {display:block; content:""; position:absolute; left:35%; top:25%; margin-bottom:10px; width:44px; height:34px; background:url("../images/sub_img02.png") no-repeat center; background-size:44px auto}
+#container .content .intro .introDetail > div span.third {position:relative; border:1px solid #2B70C0; color:#2B70C0}
+#container .content .intro .introDetail > div span.third:before {display:block; content:""; position:absolute; left:34%; top:25%; margin-bottom:10px; width:43px; height:38px; background:url("../images/sub_img03.png") no-repeat center; background-size:43px auto}
+#container .content .intro .introDetail > div span.fourth {position:relative; border:1px solid #213054; color:#213054}
+#container .content .intro .introDetail > div span.fourth:before {display:block; content:""; position:absolute; left:32%; top:28%; margin-bottom:10px; width:51px; height:30px; background:url("../images/sub_img04.png") no-repeat center; background-size:51px auto}
+#container .content .intro > strong {display:block; margin-top:50px; text-align:center; line-height:30px; font-size:20px; color:#000}
+#container .content .intro > strong span {position:relative; color:#E05180}
+#container .content .intro > strong span:after {display:block; content:""; position:absolute; left:0; bottom:0; width:100%; height:13px; background-color:#E05180; opacity:0.2}

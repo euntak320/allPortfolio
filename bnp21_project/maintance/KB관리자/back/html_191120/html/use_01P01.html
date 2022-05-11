@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<title>결제내역 상세 | 이용내역 | KB스타게이트</title>
+<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon" href="">
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 개발 : 팝업 -->
+<script type="text/javascript" src="../common/js/jquery-confirm.min.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+	<button type="button" id="layerOpen" style="color:#fff; padding:10px; border-radius: 5px; background:#000; ">레이어 팝업</button>
+	<!-- 개발사용 : 팝업 -->
+	<div id="html-content" class="layerHtml">
+		<div class="l_useDetailBox">
+			<div class="useTitWrap">
+				<p class="date">2019.10.09  15:18<span class="state">취소완료</span></p>
+				<div class="name">
+					<p>황금올리브치킨 1개</p>
+					<p>크림치즈볼(치즈맛 시즈닝) 1개</p>
+					<p>콜라1.25L 1개</p>
+				</div>
+			</div>
+
+			<dl class="useCntWrap">
+				<dt>
+					<p class="txt1">홍대반가점(치킨앤비어)</p>
+					<p class="txt2"><strong>주문번호</strong><span>A0000000000</span></p>
+				</dt>
+				<dd class="info">
+					<ul class="ul">
+						<li>
+							<div class="tit">승인번호</div>
+							<div class="txt">B00000000000</div>
+						</li>
+						<li>
+							<div class="tit">결제수단</div>
+							<div class="txt">
+								<p>국민은행</p>
+								<p>123456-02-07****</p>
+							</div>
+						</li>
+						<li>
+							<div class="tit">캐시백할인</div>
+							<div class="txt point">-500원</div>
+						</li>
+					</ul>
+				</dd>
+				<dd class="sum">
+					<strong class="tit">결제금액</strong>
+					<span class="txt"><em>16,000</em><em class="won">원</em></span>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!-- //개발사용 : 팝업 -->
+
+	<script type="text/javascript">
+	$(function(){
+		jconfirm.defaults = {
+			draggable: false,
+			animationSpeed: 0,
+			useBootstrap: false,
+		};
+
+		$('#layerOpen').on("click", function() {
+			$.alert({
+				title: false,
+				titleClass:'noTit',
+				buttons: {
+					yes: {
+						btnClass: 'btn-yes',
+						text: '확인'
+					}
+				},
+				content: $('#html-content').html(),
+				boxWidth: '90%',
+			});
+		});
+	});
+	</script>
+
+</body>
+</html>

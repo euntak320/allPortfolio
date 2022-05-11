@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("../include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("../include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">연계 대상 자원 설정을 수정합니다.</p>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">연계시스템정보</h4>
+					</div>
+				</div>
+				<div class="com-table-enroll">
+					<table>
+						<caption>연계기관정보 입력 표</caption>
+						<tbody>
+							<tr>
+								<th>연계기관 ID</th>
+								<td>
+									XX00
+								</td>
+								<th>운영기관</th>
+								<td>
+									OOOO 문화재단
+								</td>
+							</tr>
+							<tr>
+								<th>연계시스템명</th>
+								<td colspan="3">
+									OOOO 공연포탈시스템
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">연계시스템정보</h4>
+					</div>
+				</div>
+				<!-- 181119 수정 -->
+				<div class="com-table-enroll">
+					<table>
+						<caption>연계시스템정보 입력 표</caption>
+						<tbody>
+							<tr>
+								<th>자원 ID</th>
+								<td>
+									XX00-001
+								</td>
+								<th>자원명</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="OOOO 공연정보" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>연계유형</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">Web-Crawling</option>
+										</select>
+									</div>
+								</td>
+								<th>문화 주제 분야</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">문화예술</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>자원설명</th>
+								<td colspan="3">
+									<div class="row-form">
+										<textarea name="" id="" cols="30" rows="10" aria-invalid="false">
+OOOO 문화재단 공연정보
+										</textarea>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>수집결과물형식</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">TEXT</option>
+										</select>
+									</div>
+								</td>
+								<th>메타데이터표준-중분류</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">행사</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>사용여부</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">사용</option>
+										</select>
+									</div>
+								</td>
+								<th>메타데이터표준-소분류</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">행사_유형</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 181119 수정 -->
+				<div class="com-btn">
+					<a href="#none">삭제</a>
+					<a href="#none" class="send">저장</a>
+				</div>
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("../include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

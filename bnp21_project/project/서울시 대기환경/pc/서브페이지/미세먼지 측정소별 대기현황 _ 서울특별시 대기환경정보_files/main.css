@@ -1,0 +1,274 @@
+@charset "utf-8";
+/* CSS Document */
+@import url("default.css");
+@import url("layout.css");
+@import url("common.css");
+@import url("NotoSansKR-Hestia.css");
+
+#main {background:url(../img/layout/bg_footer.gif) repeat-x 0 687px}
+#main #wrap {height:100%; margin:0 auto;}
+.colgrp1 {overflow:hidden; width:100%;}
+.colgrp2 {overflow:hidden;}
+.colgrp2 div h3 {margin-top:10px; font-family:"Noto Sans Korean"; font-weight:500}
+.colgrp2 .last{margin-right:0;}
+.colgrp3 {overflow:hidden; width:100%; height:62px; margin:0; background:#f5f5f5}
+
+/* 측정소지도 및 정보 */
+#tabNav1 {width:706px; height:40px; line-height:40px; background:#bac9de; font-family:"Noto Sans Korean";}
+#tabNav1 li {float:left; text-align:center;}
+#tabNav1 li span {visibility:hidden}
+#tabNav1 li a {float:left; display:block; height:40px;font-size:14px;font-weight:400; color:#666 }
+#tabNav1 li a{width:173px;}
+#tabNav1 li a:hover,
+#tabNav1 li a.on,
+#tabNav1 li a.hover{ font-size:17px; background:url(../img/main/bg_tab_on.gif) no-repeat 12px 4px; color:#fff; font-weight:400;}
+
+.tabContents1, .tabContents2, .tabContents3, .tabContents4 {overflow:hidden; position:relative;  width:706px; height:363px; background:url(../img/map/bg_map.jpg) no-repeat left bottom;}
+
+.tower{ position:absolute; top:58px; left:21px}
+
+.map { position:relative;}
+.all{position:absolute; top:11px; left:95px; z-index:110}
+.Jongno { position:absolute; top:101px; left:279px; z-index:100}
+.Jung { position:absolute; top:175px; left:291px; z-index:99}
+.Yongsan { position:absolute; top:195px; left:273px; z-index:98}
+.Seongdong { position:absolute; top:170px; left:338px; z-index:97}
+.Gwangjin { position:absolute; top:172px; left:385px; z-index:96}
+
+.Dongdaemun { position:absolute; top:131px; left:350px; z-index:95}
+.Jungnang { position:absolute; top:111px; left:390px; z-index:94}
+.Seongbuk { position:absolute; top:93px; left:306px; z-index:93}
+.Gangbuk { position:absolute; top:32px; left:309px; z-index:92}
+.Dobong {position:absolute; top:12px; left:335px; z-index:91}
+
+.Nowon { position:absolute; top:18px; left:370px; z-index:90}
+.Eunpyung { position:absolute; top:67px; left:218px; z-index:89}
+.Seodaemun { position:absolute; top:130px; left:233px; z-index:88}
+.Mapo { position:absolute; top:147px; left:188px; z-index:87}
+.Yangcheon { position:absolute; top:202px; left:151px; z-index:86}
+
+.Gangseo { position:absolute; top:132px; left:95px; z-index:85}
+.Guro { position:absolute; top:242px; left:141px; z-index:84}
+.Geumcheon { position:absolute; top:277px; left:204px; z-index:83}
+.Yeongdeungpo { position:absolute; top:200px; left:211px; z-index:82}
+.Dongjak { position:absolute; top:237px; left:232px; z-index:81}
+
+.Gwanak { position:absolute; top:269px; left:228px; z-index:80}
+.Seocho { position:absolute; top:229px; left:308px; z-index:79}
+.Gangnam { position:absolute; top:214px; left:340px; z-index:78}
+.Songpa { position:absolute; top:208px; left:396px; z-index:77}
+.Gangdong { position:absolute; top:162px; left:438px; z-index:76}
+
+.monitor{position:absolute; top:5px; right:5px}
+.monitor_t, .notes_t{width:161px; height:22px; line-height:22px; padding-top:4px; background:url(../img/main/box_map_top.png) no-repeat; text-align:center}
+.monitor_m, .notes_m{width:159px; background:url(../img/main/box_map_mid.png) repeat-y; padding:0 1px}
+.monitor_b, .notes_b{width:161px; height:5px; background:url(../img/main/box_map_bot.png) no-repeat}
+.monitor_m table th, .monitor_m table td, .notes_m table th, .notes_m table td{ border-bottom:1px solid #eee; line-height:21px; text-align:center}
+.monitor_m table td, .notes_m table td{ border-left:1px solid #eee;}
+.monitor_m table tr.bdr_none th, .monitor_m table tr.bdr_none td,
+.notes_m table tr.bdr_none th, .notes_m table tr.bdr_none td{border-bottom:none}
+
+.monitor_m table thead th{ background:#f0f7ff; border-bottom:none; color:#688acb}
+.btn_arw_l{position:absolute; top:30px; left:0px; width:20px; height:20px; z-index:99}
+.btn_arw_r{position:absolute; top:30px; right:0px; width:20px; height:20px; z-index:98}
+.notes_m table thead th{ border-top:1px solid #eee; border-right:1px solid #eee }
+.notes_m table thead td{ border-top:1px solid #eee; }
+.notes_t{ color:#688acb; font-weight:400}
+.notes_t .s{font-size:11px}
+
+.notes{position:absolute; top:192px; right:5px}
+/*.num_01{ background:#0000ff; color:#fff}
+.num_02{ background:#00ff00; color:#333}
+.num_03{ background:#ffff00; color:#333}
+.num_04{ background:#cc0000; color:#fff}
+.num_05{ background:#fff}*/
+.num_01{ background:#62bcef; color:#333}
+.num_02{ background:#bde77a; color:#333}
+.num_03{ background:#f8d75d; color:#333}
+.num_04{ background:#f65e63; color:#333}
+.num_05{ background:#f7f7f7; color:#333}
+
+
+
+/* 탭 미세먼지,오존,황사 예보경보 */
+#situation { position:relative; width:294px; height:299px; margin:0;}
+#tabNav2 {width:294px; height:40px; font-family:"Noto Sans Korean"; font-weight:500}
+#tabNav2 li {float:left; width:147px; height:40px; text-align:center}
+#tabNav2 li a {display:inline-block;float:left; width:147px; height:40px; line-height:40px;font-size:14px; color:#666; background:#e6f1f5;}
+#tabNav2 li a:hover,
+#tabNav2 li a.on,
+#tabNav2 li a.hover{ font-size:16px; color:#000; background:#c7e0e8;font-weight:500;}
+#situation ul li{ padding:0; vertical-align: middle}
+.tabscon1, .tabscon2{ position:absolute; top:40px; left:0}
+.tabscon1 li, .tabscon2 li { clear:both;}
+.tabscon1 .h3, .tabscon2 .h3{ color:#333; margin-top:4px; font-weight:bold}
+#situation li a.more{ position: absolute;}
+#more1{ z-index:99; right:0; top:3px;}
+#more2{ z-index:98; right:0; top:3px;}
+#more3{ z-index:97; right:0; top:70px;}
+#more4{ z-index:96; right:0; top:70px;}
+#more5{ z-index:95; right:0; top:134px;}
+#more6{ z-index:94; right:0; top:134px;}
+#more7{ z-index:93; right:0; top:198px;}
+#more8{ z-index:92; right:0; top:205px;}
+.date{ font-size:11px; word-spacing:-1px;}
+#situation .tabscon1 dl.bdr_none, #situation #tabscon2 dl.bdr_none{border-bottom:none}
+#situation .tabscon1 li,
+#situation .tabscon2 li {padding:0 0 0 10px}
+#situation .tabscon1 dl,
+#situation .tabscon2 dl {overflow:hidden; width:100%;}
+#situation .tabscon1 dt,
+#situation .tabscon2 dt {float:left; margin:1px; width:40px}
+#situation .tabscon1 dd,
+#situation .tabscon2 dd { float:right; margin:1px; width:220px; }
+.ment { background-color:#f7f7f7; color:#3399cc; padding:5px; line-height:20px}
+.warning { display:block; float:left; width:128px;}
+.action{ position:absolute; top:0; right:5px; font-size:11px;}
+.action2{ position:absolute; top:1px; right:5px;}
+table td.action2{padding-right:5px; text-align:right;}
+.action a, table td.action2 a {color:#6699cc!important}
+#situation #tabscon2 dd .ft_point2, #situation #tabscon1 dd .ft_point2 {color:#688acb}
+
+/* 서울의 날씨 */
+#weather { width:293px; height:153px; padding:0; margin:0 0 0 1px;float:left; line-height:16px; background:#e1edf0}
+#weather h3 { margin:16px 10px 10px 10px; padding:0 12px 12px 12px; font-size:16px; font-family:"Noto Sans Korean"; font-weight:500; color:#000; border-bottom:1px solid #ddd;}
+#weather dl{ overflow:hidden; width:100%; padding-left:10px}
+#weather dt { width:40px; margin:3px 10px 0 16px; text-align:center;}
+#weather dt, #weather dd {display:block; float:left;}
+#weather dd { line-height:22px}
+#weather dd {width:180px;}
+.point{line-height:42px}
+#weather table td {border-top:1px dashed #cccccc;}
+#weather table th, #weather table td { padding:1px 1px; font-weight:normal; border-left:1px dashed #cccccc;}
+
+
+/* 공지사항 자료실*/
+#notice{ position:relative; float:left; width:260px; height:153px; padding:0; margin-left:1px}
+#notice h3{ font-size:16px; font-weight:normal; text-align:left; padding-left:18px; margin:16px 10px 0 10px; padding-bottom:12px; color:#000; font-weight:500; border-bottom:1px solid #ddd;}
+#notice p.more{ position:absolute; top:16px; right:20px}
+.notice, .inform{overflow:hidden; position:relative;  width:260px; height:82px; padding:10px;}
+.notice li, .inform li { background:url(../img/bullet/sq_3x3_green.gif) no-repeat 7px 7px; padding-left:18px; padding-top:2px}
+
+#tabNav3 {overflow:hidden; width:260px; height:40px;}
+#tabNav3 li {float:left; width:130px; height:40px; text-align:center;}
+#tabNav3 li a {display:inline-block; width:130px; height:40px; line-height:40px;font-size:14px; color:#666; background:#e6f1f5; font-family:"Noto Sans Korean"; font-weight:500}
+#tabNav3 li a:hover,
+#tabNav3 li a.on,
+#tabNav3 li a.hover{ font-size:16px; color:#000; background:#c7e0e8; font-weight:500}
+
+/* 문자서비스 */
+#eco_sns {float:left; width:128px; height:133px; margin:0 0 0 8px; padding:0; vertical-align:top}
+#eco_sns2 {float:left; width:129px; height:133px; margin:0 0 0 0px; padding:0; vertical-align:top}
+/*미세먼지,황사*/
+#dust{float:left; width:166px; height:133px; margin:0 0 0 8px; padding:0}
+/* 알림창 */
+#listRotation {float:left; position:relative; width:293px; height:153px; margin:0; padding:0; text-align:center;}
+#listRotation h3 { font-size:16px; font-weight:normal; text-align:left; padding-left:28px; margin-top:16px; color:#000; font-weight:500}
+#listRotation .list-btn {position:absolute; top:15px; left:80px}
+#listRotation .btn {position:absolute; top:20px; right:16px}
+#listRotation .btn .rolling-auto, #listRotation .btn .rolling-stop {display:inline-block; vertical-align:top; margin:0; padding:0;}
+#listRotation .list-btn .rolling-button {position:relative; overflow:hidden; display:inline-block; width:10px; height:10px; margin:0; padding:0; vertical-align:middle; border:none; background:transparent;}
+#listRotation .list-btn .rolling-button img {vertical-align:middle;}
+#listRotation .list-btn .current img {margin-top:-10px; vertical-align:middle;}
+*+html #listRotation .list-btn .current img {margin-top:-14px;vertical-align:middle;}
+#listRotation ul.list-bnnr li img {vertical-align:middle; border:1px solid #ccc; margin-top:15px}
+
+/* 배너 */
+#banner {overflow:hidden; width:100%; border-top:1px solid #dfdfdd}
+#banner li {float:left;  padding:10px 7px 4px 7px; background:url(../img/main/bg_ban.gif) no-repeat left center}
+#banner li.bgnone { background:none}
+
+/*more*/
+.tabContents, #livecam, #notice, #inform, #slider, #thermo, #info, #climate, #stats, #weather, #factor { position:relative}
+#notice .more, #inform .more, #slider .more, #info .more, #climate .more, #stats .more, #weather .more, #factor .more { position:absolute; top:20px; right:10px;}
+.tabContents .more{ position:absolute; top:10px; right:10px;}
+
+#livecam .more, #thermo .more {position:absolute; top:100px; right:20px; height:24px}
+#info li, #stats li { background:url(../img/bullet/sq_3x3_green.gif) no-repeat 7px 11px; padding-left:18px; padding-top:4px}
+
+#info ul, #stats ul { padding-top:7px}
+caption {position:absolute; left:-10000px; top:auto; overflow:hidden;width:1px;height:1px;font-size:0;line-height:0}/*2018.11.28 수정*/
+.space {word-spacing: 18px;}
+table .brl_none {border-left:none!important}
+h4 {}
+.comment { display:block; margin-top:5px; color:#3399cc}
+
+*+html .kma1{ margin-left:0}
+*+html .kma2{ margin-left:0}
+*+html .kma3{ margin-left:0}
+*+html .kma4{ margin-left:0}
+*+html .kma5{ margin-left:0}
+*+html .kma6{ margin-left:0}
+/*ie6*/
+* html .kma1{ margin-left:0}
+* html .kma2{ margin-left:0}
+* html .kma3{ margin-left:0}
+* html .kma4{ margin-left:0}
+* html .kma5{ margin-left:0}
+* html .kma6{ margin-left:0}
+.kma4 { width:52px; height:12px; padding:3px 0 1px 0; line-height:12px; text-align:center; font-size:11px; font-weight:bold; margin-left:4px}
+.kma1, .kma2, .kma3, .kma5, .kma6 { width:26px; height:12px; padding:3px 0 1px 0; line-height:12px; text-align:center; font-size:11px; font-weight:bold; margin-left:4px}
+.kma1 {background:url(../img/s_information/ico_kma1.gif) no-repeat left top; color:#fff;}
+.kma2 {background:url(../img/s_information/ico_kma2.gif) no-repeat left top; color:#000;}
+.kma3 {background:url(../img/s_information/ico_kma3.gif) no-repeat left top; color:#000;}
+.kma4 {background:url(../img/s_information/ico_kma4-1.gif) no-repeat left top; color:#000;}
+.kma5 {background:url(../img/s_information/ico_kma5.gif) no-repeat left top; color:#fff;}
+.kma6 {background:url(../img/s_information/ico_kma6.gif) no-repeat left top; color:#fff;}
+/*관심지역설정*/
+.pop_btn{position:absolute; top:70px; right:322px; width:100px; height:20px; z-index:100}
+.pop_btn a{ display:block; width:100px;}
+.pop{ position:absolute; top:50px; left:100px; width:405px; height:400px; z-index:1000; font-size:11px}
+.pop .pop_t{ width:405px; height:36px; background:url(../img/main/pop_title.png) no-repeat}
+.pop .pop_m{width:395px; background:url(../img/main/bg_pop_mid.png) repeat-y; padding:0 0 0 30px}
+.pop .pop_m label{ display:inline-block; width:50px}
+.pop .pop_b{width:405px; height:13px; background:url(../img/main/bg_pop_bot.png) no-repeat}
+#layer{ display:none}
+.pop .cls{ position:absolute; top:10px; right:10px}
+.pop .tit{ background:url(../img/main/blt_area.gif) no-repeat left center; padding-left:16px; font-weight:bold; color:#06C; margin:14px 0}
+.pop .rdo{ margin-bottom:3px}
+
+/*SNS****2018.12.28 수정 */
+#sns_pop{position: fixed;width: 100%;height: 2000px;top: 0px;left: 0px;background: url(../img/main/dark_bg.png);display:none;z-index:100000}
+#sns_pop2{position: fixed;width: 100%;height: 2000px;top: 0px;left: 0px;background: url(../img/main/dark_bg.png);display:none;z-index:100001}
+#sns_pop .pop_cont, #sns_pop2 .pop_cont2 {position: absolute;}
+.btn_close {display:block;font-weight:bold; color:#fff !important; padding:3px;text-align: right; font-size:24px; font-weight:700}
+.btn_close2 {display:block;font-weight:bold; color:#fff !important; padding:3px;text-align: right; font-size:24px; font-weight:700}
+#confirm_num { position:absolute; top:0; left:40%; line-height:28px; text-align:left; padding-left:4px}
+.cont p.title{ font-size:28px; font-weight:700; text-align:center; padding:0 0 30px 0; border-bottom:1px solid #555}
+.cont p.title_s{ font-size:14px; font-weight:700; margin:15px 0 15px 0; color:#464646}
+.cont input.line, .cont select.line, .cont textarea.line{border:1px solid #d6d6d6;}
+.cont .box{ background:#f7f7f7; padding:10px; line-height:18px; margin:10px 0}
+.cont{width:400px; background:#fff; padding:30px}
+.cont input, .cont select{ height:32px; line-height:32px; padding-left:6px}
+.cont p{ margin:5px 0}
+.cont textarea{ padding:6px}
+.btn_sns_01, .btn_sns_02, .btn_sns_03, .btn_sns_04 {padding:0px; font-weight:bold;text-decoration:none!important;text-indent:0px; text-align:center;vertical-align:middle;display:inline-block;cursor:pointer;border:none}
+.btn_sns_01 {width:124px; height:35px; line-height:35px; color:#666; background:#c7e0e8; font-size:12px;}
+.btn_sns_02 {width:90px; height:43px; line-height:40px; color:#fff; background:#688acb; font-size:14px}
+.btn_sns_03 {width:90px; height:43px; line-height:40px; color:#333; background:#bac9de; font-size:14px}
+.btn_sns_04 {width:90px; height:43px; line-height:40px; color:#fff; background:#555555; font-size:14px}
+.btn_sns_02:active, .btn_sns_03:active, .btn_sns_04:active  {position:relative;top:2px}
+.btn_sns_02:hover, .btn_sns_03:hover{background:#464646; color:#fff}
+.btn_sns_04:hover {background:#000; color:#fff}
+
+/*2018.2.7 추가*/
+#social{ position:absolute; width:70px; top:10px; left:740px;}
+#social li{ float:left; padding-left:10px}
+
+/*2018.12.28 추가*/
+.sms_pollutant dt{ float:left; width:70px; height:200px}
+.sms_pollutant dd{ float:left; width:280px;}
+.sms_pollutant dd input{ margin-bottom:3px; height:16px}
+.blt_01 {padding-left:16px; background:url(../img/layout/blt.gif) 6px 6px no-repeat}
+
+/* 2019.05.07 추가 */
+#tab1_04 .left_menu{position: absolute; left:30px; top:65px; width:130px;}
+#tab1_04 .left_menu .left_list_box{position: relative; display: block; width:100%; height:60px; color:#333; font-size:14px; text-align: center; line-height: 60px; cursor: pointer;}
+#tab1_04 .left_menu .left_list_box::after{content: "";position: absolute; bottom:0; width:20px; height: 2px; background:#959595; left:50%; margin-left: -10px;}
+#tab1_04 .left_menu .left_list_box:hover, #tab1_04 .left_menu .left_list_box.on{background:#688acb; color:#fff;}
+#tab1_04 .left_menu .left_list_box:last-child::after,#tab1_04 .left_menu .left_list_box:hover::after, #tab1_04 .left_menu .left_list_box.on::after{display: none;}
+#tab1_04 .right_menu{position: absolute; right:30px; top:65px; width:495px;}
+#tab1_04 .right_menu .show_area{display: none; overflow: hidden;}
+#tab1_04 .right_menu .show_area.on{display: block;}
+#tab1_04 .right_menu .show_area .img_area_box{float: left; width:235px; height: 235px; margin-right:25px; background: #959595; text-align: center; line-height: 235px; color:#ffff;}
+#tab1_04 .right_menu .show_area .img_area_box:last-child{margin: 0;}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no" />
+<title>이용약관 &lt; 본인인증 &lt; 디지털 헌금 바구니</title>
+<!-- //<![CDATA[ -->
+<link rel="stylesheet" href="../css/style.css" />
+<script src="../js/jquery-2.2.4.js"></script>
+<script src="../js/common.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- subHeader -->
+	<div id="subHeader">
+		<div class="inner">
+			<h1><a href=""><img src="../images/common/logo01.png" alt="사랑의 교회"></a></h1>
+			<!-- menuArea -->
+			<ul class="menuArea">
+				<li><button>헌금하기</li>
+				<li><button>설정</button></li>
+				<li><button>조회</button></li>
+			</ul>
+			<!--// menuArea -->
+		</div>
+		<h2>본인인증</h2>
+		<button class="btnBack">이전 페이지</button>
+	</div>
+	<!--// subHeader -->
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<button class="btn btnYellow" onclick="fn_layer('layer1','1024')">이용약관 팝업버튼</button>
+		</div>
+	</div>
+	<!--// container -->
+</div>
+<!--// wrap -->
+<!-- 팝업 -->
+<div class="layer fullPop layer1">
+	<div class="inner">
+		<p class="tit">이용약관</p>
+		<!-- popCont --> 
+		<div class="popCont">
+			<button class="btn ss btnYellow"><span class="icoDownload">PDF 다운로드</span></button>
+			<div class="termsArea">
+				<strong>전자금융거래기본약관</strong>
+				<dl>
+					<dt>제 1 조 (목적)</dt>
+					<dd>이 약관은 국민은행(이하 "은행"이라 합니다.)과 이용자 사이의 전자금융 거래에 관한 기본적인 사항을 정함으로써, 거래의 신속하고 효율적인 처리를 도모하고 거래당사자 상호간의 이해관계를 합리적으로 조정하는 것을 목적으로 합니다.</dd>
+				</dl>
+				<dl>
+					<dt>제2조(용어의 정의)</dt>
+					<dd>
+						<ol>
+							<li>① 이 약관에서 사용하는 용어의 의미는 다음 각호와 같습니다.
+								<ol>
+									<li>1. "전자금융거래"라 함은 은행이 전자적 장치를 통하여 제공하는 금융상품 및 서비스를 이용자가 전자적 장치를 통하여 비대면·자동화된 방식으로 직접 이용하는 거래를 말합니다.</li>
+									<li>2. "이용자"라 함은 전자금융거래를 위하여 은행과 체결한 계약(이하 "전자금융거래계약"이라 합니다.)에 따라 전자금융거래를 이용하는 고객을 말합니다.</li>
+									<li>3. "지급인"이라 함은 전자금융거래에 의하여 자금이 출금되는 계좌(이하 "출금계좌"라 합니다.)의 명의인을 말합니다.</li>
+									<li>4. "수취인"이라 함은 전자금융거래에 의하여 자금이 입금되는 계좌(이하 "입금계좌"라 합니다.)의 명의인을 말합니다.</li>
+									<li>5. "전자적 장치"라 함은 현금자동지급기, 자동입출금기, 지급용단말기, 컴퓨터, 전화기 그 밖에 전자적 방법으로 전자금융거래정보를 전송하거나 처리하는데 이용되는 장치를     말합니다.</li>
+									<li>6. "접근매체"라 함은 전자금융거래에 있어서 거래지시를 하거나 이용자 및 거래내용의 진정성을 확보하기 위하여 사용되는 다음 각목의 어느 하나에 해당하는 수단 또는 정보를말합니다.</li>
+								</ol>
+							</li>
+							<li>② 이용시간은 은행의 사정에 따라 달라질 수 있으며, 은행이 이용 시간을 변경하고자 하는 경우에는 그 내용을 이용자가 접근하기 용이한 전자적 장치 및 영업점을 통하여 변경 1개월 전부터 1개월간 알립니다. 다만, 시스템 장애복구, 긴급한 프로그램 보수, 외부요인 등 불가피한 경우에는 예외로 합니다.</li>
+						</ol>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--// popCont -->
+		<a href="javascript:void(0)" onclick="fn_layer_close(this)">닫기</a>
+	</div>
+</div>
+<!--// 팝업 -->
+</body>
+</html>

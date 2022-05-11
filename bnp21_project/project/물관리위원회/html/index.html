@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>국가물관리위원회</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/jquery.rwdImageMaps.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        $(function () {
+
+            var fisrtSwiper = new Swiper('.mainSlideArea', {
+                slidesPerView: 1,
+                loop: true,
+                autoplay: {
+                    delay: 7000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    767: {
+                        slidesPerView: 1,
+                    },
+                    500: {
+                        slidesPerView: 1,
+                    }
+                }
+            })
+
+            $(".mainSlideArea .swiperBtn button").on('click', function () {
+                if ($(this).hasClass("stop")) {
+                    fisrtSwiper.autoplay.stop();
+                    $(this).removeClass("stop");
+                    $(this).addClass("start");
+                    return false;
+                } else {
+                    fisrtSwiper.autoplay.start();
+                    $(this).removeClass("start");
+                    $(this).addClass("stop");
+                    return false;
+                }
+            });
+
+
+            var secondSwiper = new Swiper('.miniGallery', {
+                slidesPerView: 1,
+                loop: true,
+                autoplay: {
+                    delay: 7000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    clickable: true,
+                    el: '.swiper-pagination',
+                },
+                breakpoints: {
+                    500: {
+                        slidesPerView: 1,
+                    }
+                },
+            });
+
+            $(".miniGallery button").on('click', function () {
+                if ($(this).hasClass("stop")) {
+                    fisrtSwiper.autoplay.stop();
+                    $(this).removeClass("stop");
+                    $(this).addClass("start");
+                    return false;
+                } else {
+                    fisrtSwiper.autoplay.start();
+                    $(this).removeClass("start");
+                    $(this).addClass("stop");
+                    return false;
+                }
+            });
+            
+            // 이미지맵변경
+            var maphover = $(".maphover area");
+
+            maphover.on({
+                mouseenter:function(){
+                    var i = $(this).attr("class");
+                    $(".map").addClass(i);
+                },
+                mouseleave: function(){
+                    $(".map").removeAttr("class").addClass("map");
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <!-- skip -->
+    <div id="skipnav">
+        <ul>
+            <li>
+                <a href="#header">상단메뉴로 이동</a>
+            </li>
+            <li>
+                <a href="#section">본문으로 이동</a>
+            </li>
+            <li>
+                <a href="#footer">하단메뉴로 이동</a>
+            </li>
+        </ul>
+    </div>
+    <!-- skip -->
+    <div id="main">
+        <!-- header -->
+        <div class="header">
+            <div class="topArea">
+                <div class="comLayout">
+                    <h1>
+                        <a href="index.html" class="logo">로고</a>
+                    </h1>
+                </div>
+                <button type="button" class="mBtn" title="모바일버튼">모바일버튼</button>
+            </div>
+            <div class="menuListArea">
+                <div class="searchArea">
+                    <input type="text" title="검색어를 입력해주세요." placeholder="검색어를 입력해주세요">
+                    <button type="button" class="search" title="검색" onClick="location.href='resultAll.html'">검색</button>
+                </div>
+                <div class="menuList">
+                    <div class="comLayout">
+                        <ul>
+                            <li class="first"><a href="" title="위원회 소개">위원회 소개</a>
+                                <div>
+                                    <ul class="subMenu">
+                                        <li><a href="page_1100.html" title="국가물관리위원회 인사말">국가물관리위원회 인사말</a></li>
+                                        <li class="addMenu"><a href="page_1210.html" title="국가물관리위원회 안내">국가물관리위원회 안내</a>
+                                            <ul>
+                                                <li><a href="page_1210.html" title="목적 / 기능">- 목적 / 기능</a></li>
+                                                <li><a href="page_1220.html" title="구성 / 연혁">- 구성 / 연혁</a></li>
+                                                <li><a href="page_1230.html" title="지원단 조직">- 지원단 조직</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="page_1310.html" title="4대 유역위원회 소개">4대 유역위원회 소개</a></a></li>
+                                        <li><a href="page_1400.html" title="국가물관리위원회 BI">국가물관리위원회 BI</a></a></li>
+                                        <li><a href="page_1500.html" title="찾아오시는길">찾아오시는길</a></li>
+                                    </ul>
+                                    <div class="menuBoxList">
+                                        <div class="boxFrame">
+                                            <div class="box ">
+                                                <span>한강<br>유역물<br class="mobile">관리위원회</span>
+                                                <div class="linkBox">
+                                                    <a href="page_1310.html" title="소개">소개</a>
+                                                </div>
+                                                <div class="linkBox">
+                                                    <a href="" title="회의결과">회의결과</a>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <span>낙동강<br>유역물<br class="mobile">관리위원회</span>
+                                                <div class="linkBox">
+                                                    <a href="page_1320.html" title="소개">소개</a>
+                                                </div>
+                                                <div class="linkBox">
+                                                    <a href="" title="회의결과">회의결과</a>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <span>금강<br>유역물<br class="mobile">관리위원회</span>
+                                                <div class="linkBox">
+                                                    <a href="page_1330.html" title="소개">소개</a>
+                                                </div>
+                                                <div class="linkBox">
+                                                    <a href="" title="회의결과">회의결과</a>
+                                                </div>
+                                            </div>
+                                            <div class="box">
+                                                <span>영산강·섬진강<br>유역물<br class="mobile">관리위원회</span>
+                                                <div class="linkBox">
+                                                    <a href="page_1340.html" title="소개">소개</a>
+                                                </div>
+                                                <div class="linkBox">
+                                                    <a href="" title="회의결과">회의결과</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="sec"><a href="" title="위원회 활동">위원회 활동</a>
+                                <div>
+                                    <ul class="subMenu">
+                                        <li><a href="page_2110.html" title="위원회 회의결과">위원회 회의결과</a></li>
+                                        <li><a href="page_2200.html" title="위원동정">위원동정</a></li>
+                                        <li><a href="page_2300.html" title="인터뷰 / 기고">인터뷰 / 기고</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="" title="알림마당">알림마당</a>
+                                <div>
+                                    <ul class="subMenu">
+                                        <li><a href="page_3100.html" title="공지사항">공지사항</a></li>
+                                        <li><a href="page_3200.html" title="보도자료">보도자료</a></li>
+                                        <li><a href="page_3300.html" title="홍보자료">홍보자료</a></li>
+                                        <li><a href="page_3400.html" title="물관련 법정계획">물관련 법정계획</a></li>
+                                        <li><a href="page_3500.html" title="관련법령">관련법령</a></li>
+                                        <li><a href="page_3600.html" title="관련기관 안내">관련기관 안내</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="" title="위원회 소개">참여마당</a>
+                                <div>
+                                    <ul class="subMenu">
+                                        <li><a href="page_4100.html" title="국민제안">국민제안</a></li>
+                                        <li><a href="page_4200.html" title="민원신청">민원신청</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header -->
+        <div class="section">
+            <div class="mainSlideArea swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- 변경된 부분 20-08-26  -->
+                    <div class="swiper-slide one">
+                        <div class="txtBox">
+                            <span class="small">물관리 패러다임을 새롭게 바꾸는</span>
+                            <span>국민과 함께하는</span>
+                            <span class="bold">물관리일원화!</span>
+                            <span class="btmTxt">대통령 직속 국가물관리위원회가 실현하고 있습니다.</span>
+                        </div>
+                    </div>
+                    <!-- 변경된 부분 20-08-26  -->
+                    <div class="swiper-slide two">
+                        <div class="txtBox v2">
+                            <span>대통령직속</span>
+                            <span class="bold">국가물관리일원화!</span>
+                            <span class="btmTxt">하나의 물결처럼, <br>유역중심의 통합물관리로 새로운 역사를 펼쳐가겠습니다.</span>
+                        </div>
+                    </div>
+                    <!-- 변경된 부분 20-08-25  -->
+                </div>
+                <div class="swiperBtn">
+                    <div class="swiper-button-prev"></div>
+                    <button type="button" class="stop">일시정지</button>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="listBoxArea">
+                <div class="comLayout">
+                    <div class="concilArea fr">
+                        <div class="titleArea">
+                            <span class="title">국가물관리위원회 소개</span>
+                        </div>
+                        <div class="infoArea">
+                            <ul>
+                                <li><a href="" class="mail" title="위원장 인사말">위원장 인사말</a></li>
+                                <li><a href="" class="people" title="위윈회 구성">위원회 구성</a></li>
+                                <li><a href="" class="setting" title="위윈회 기능">위원회 기능</a></li>
+                                <li><a href="" class="history" title="위윈회 연혁">위원회 연혁</a></li>
+                                <li><a href="" class="idea" title="위윈회 목적">위윈회 목적</a></li>
+                                <li><a href="" class="org" title="지원단 조직">지원단 조직</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mapArea fr">
+                        <div class="titleArea">
+                            <span class="title">유역물관리위원회</span>
+                        </div>
+                        <div class="map">
+                            <img src="assets/images/map_all.svg" alt="유역물관리위원회 지도" usemap="#map">
+                            
+                            <map name="map" class="maphover">
+                                <area shape="poly" coords="147,34,152,34,153,34,151,31,151,27,158,25,158,21,167,15,175,14,180,13,188,15,197,15,201,15,207,6,212,16,212,21,216,27,221,35,230,47,232,54,235,56,237,62,238,65,235,66,228,63,226,60,220,66,219,70,211,69,207,69,207,76,206,78,199,78,194,78,194,83,193,87,192,89,185,85,181,82,184,80,186,76,184,73,181,70,177,67,176,72,174,71,170,70,162,72,158,67,157,65,159,65,153,66,152,65,152,63,149,63,148,65,144,60,150,59,157,59,150,53,151,51,152,50,152,48,150,48,144,48,140,46,141,41,134,38,138,34,142,32,147,34,149,34,152,34,153,33" href="page_1310.html" class="v1" title="한강유역물관리위원회">
+                                <area shape="poly" coords="191,87,194,78,203,78,208,75,209,70,215,68,217,70,221,68,225,59,232,65,236,66,238,65,240,67,240,71,240,73,243,76,242,79,240,83,239,86,240,87,240,93,239,98,240,102,241,104,240,107,240,109,244,106,245,111,241,127,240,129,240,130,239,132,235,139,227,147,224,145,222,148,221,147,221,145,216,146,210,148,210,151,213,151,215,150,217,152,219,157,215,159,212,157,211,161,209,161,208,158,205,155,205,153,202,152,199,152,197,152,197,159,194,159,193,160,189,159,188,154,187,148,191,143,191,139,189,136,185,134,182,134,181,134,180,131,180,129,182,127,184,122,183,121,185,118,186,115,191,112,193,111,191,107,194,104,196,99,197,94,194,90,192,88" href="page_1320.html" class="v3" title="낙동강 유역물관리위윈회">
+                                <area shape="poly" coords="161,71,164,72,168,72,171,70,172,69,176,73,178,69,181,69,185,73,186,77,183,81,183,82,183,83,186,84,193,90,197,94,196,100,191,106,193,110,187,115,183,120,179,117,177,113,172,114,168,117,168,122,168,123,164,122,162,122,161,124,162,126,160,127,159,127,157,127,154,131,151,131,150,127,149,125,146,126,145,124,154,118,151,113,151,111,151,107,151,106,149,105,147,105,147,103,148,101,148,93,149,90,147,87,148,87,148,86,147,84,145,84,143,85,144,90,146,93,146,95,144,95,142,92,140,86,141,84,138,84,136,84,135,82,134,80,136,76,140,73,143,72,148,72,147,70,148,71,154,71,159,74,160,70" href="page_1330.html" class="v2" title="금강유역물관리위윈회">
+                                <area shape="poly" coords="147,127,148,127,150,129,153,132,156,131,157,126,161,126,162,124,162,122,169,123,169,119,169,115,174,114,176,112,181,118,183,119,184,124,181,127,179,129,181,134,183,133,189,137,191,141,189,147,187,152,188,157,187,160,185,161,188,164,190,169,188,171,187,167,184,166,182,163,180,161,181,157,178,155,176,154,175,156,176,158,177,159,179,160,180,162,181,164,179,165,179,167,180,169,180,170,177,170,176,167,174,165,174,167,173,170,172,169,171,169,172,172,171,172,169,171,166,172,166,173,164,174,164,170,167,167,169,163,169,161,165,161,164,164,162,167,162,170,160,172,160,175,157,176,154,174,151,174,149,175,146,173,144,166,141,173,139,173,136,172,133,172,132,169,138,165,139,165,139,162,143,157,142,155,139,152,138,151,140,149,139,148,138,147,141,146,139,147,137,147,135,149,134,148,132,146,130,145,132,142,136,142,140,142,142,142,144,142,143,134,146,128" href="page_1340.html" class="v4" title="영산강, 섬진강 유역물관리위원회">
+                            </map>
+                        </div>
+                    </div>
+
+                    <div class="noticeArea fr">
+                        <div class="titleArea">
+                            <button type="button" class="title">공지사항</button>
+                            <button type="button">보도자료</button>
+                            <button type="button">정책자료</button>
+                            <button type="button">관련법령</button>
+                            <a href="" class="plusBtn">더보기버튼</a>
+                        </div>
+                        <div class="noticeList">
+                            <div class="view on">
+                                <ul class="listBox">
+                                    <li>
+                                        <a href="#" class="fl">폐기물관리법 개정사항 온라인 설명회가 곧 개최됩니다.</a>
+                                        <span class="fr">2019-04-12</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">4대강 정보를 한곳에서 확인하실 수 있습니다 </a>
+                                        <span class="fr">2019-03-19</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">초분광영상을 이용한 조류 원격모니터를 오픈하였습니다.</a>
+                                        <span class="fr">2019-03-18</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">4대강 정보를 한곳에서 확인하실 수 있습니다.</a>
+                                        <span class="fr">2019-03-17</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">인간과 자연이 함께 누리는 생명의물 다함께 즐겨보세요 </a>
+                                        <span class="fr">2019-03-16</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">국가물관리워원회 홈페이지 오픈</a>
+                                        <span class="fr">2019-03-15</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="view">
+                                <ul class="listBox">
+                                    <li>
+                                        <a href="#" class="fl">폐기물관리법 개정사항 온라인 설명회가 곧 개최됩니다.</a>
+                                        <span class="fr">2019-04-12</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">4대강 정보를 한곳에서 확인하실 수 있습니다 </a>
+                                        <span class="fr">2019-03-19</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">초분광영상을 이용한 조류 원격모니터를 오픈하였습니다.</a>
+                                        <span class="fr">2019-03-18</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">4대강 정보를 한곳에서 확인하실 수 있습니다.</a>
+                                        <span class="fr">2019-03-17</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">인간과 자연이 함께 누리는 생명의물 다함께 즐겨보세요 </a>
+                                        <span class="fr">2019-03-16</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">국가물관리워원회 홈페이지 오픈</a>
+                                        <span class="fr">2019-03-15</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="view">
+                                <ul class="listBox">
+                                    <li>
+                                        <a href="#" class="fl">폐기물관리법 개정사항 온라인 설명회가 곧 개최됩니다.</a>
+                                        <span class="fr">2019-04-12</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">4대강 정보를 한곳에서 확인하실 수 있습니다 </a>
+                                        <span class="fr">2019-03-19</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">초분광영상을 이용한 조류 원격모니터를 오픈하였습니다.</a>
+                                        <span class="fr">2019-03-18</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">4대강 정보를 한곳에서 확인하실 수 있습니다.</a>
+                                        <span class="fr">2019-03-17</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">인간과 자연이 함께 누리는 생명의물 다함께 즐겨보세요 </a>
+                                        <span class="fr">2019-03-16</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">국가물관리워원회 홈페이지 오픈</a>
+                                        <span class="fr">2019-03-15</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="view">
+                                <ul class="listBox">
+                                    <li>
+                                        <a href="#" class="fl">폐기물관리법 개정사항 온라인 설명회가 곧 개최됩니다.</a>
+                                        <span class="fr">2019-04-12</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">4대강 정보를 한곳에서 확인하실 수 있습니다 </a>
+                                        <span class="fr">2019-03-19</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">초분광영상을 이용한 조류 원격모니터를 오픈하였습니다.</a>
+                                        <span class="fr">2019-03-18</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">4대강 정보를 한곳에서 확인하실 수 있습니다.</a>
+                                        <span class="fr">2019-03-17</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">인간과 자연이 함께 누리는 생명의물 다함께 즐겨보세요 </a>
+                                        <span class="fr">2019-03-16</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fl">국가물관리워원회 홈페이지 오픈</a>
+                                        <span class="fr">2019-03-15</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="linkArea fl">
+                        <a href="" class="linkBox file">위원회<br>회의결과</a>
+                        <a href="" class="linkBox family">위원 동정</a>
+                        <a href="" class="linkBox think">물관련<br>법정계획</a>
+                        <a href="" class="linkBox mic">인터뷰 및<br>기고</a>
+                    </div>
+                    <div class="alertArea fl">
+                        <span class="title">알림공간</span>
+                        <div class="miniGallery">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/images/bg.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/bg.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/bg.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/bg.png" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <button type="button" class="controll stop">정지</button>
+                        </div>
+                    </div>
+                    <div class="joinArea fl">
+                        <div class="topArea">
+                            <span class="title">참여마당</span>
+                            <span>국민과 함께하는 열려 있는 국가물관리위원회</span>
+                            <div class="fr">
+                                <a href="" title="민원신청">민원신청</a>
+                                <a href="" title="국민제안">국민제안</a>
+                            </div>
+                        </div>
+                        <div class="btmArea">
+                            <span class="title">물관리위원회 SNS (소통공간)</span>
+                            <div class="fr">
+                                <a href="" class="twitter" title="트위터">트위터</a>
+                                <a href="" class="blog" title="블로그">블로그</a>
+                                <a href="" class="facebook" title="페이스북">페이스북</a>
+                                <a href="" class="insta" title="인스타그램">인스타그램</a>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="comLayout">
+                <div class="txtArea">
+                    <a href="" title="개인정보처리방침">개인정보처리방침</a>
+                    <a href="" title="저작권보호정책">저작권보호정책</a>
+                    <span class="address">(우 ) 30116 세종특별자치시 도움 3 로 19 엠브릿지 T2, 7층 / 대표전화 044 204 8921</span>
+                    <span class="address"> Copyright©Water Commission Support Department. All Right Reserved.</span>
+                </div>
+                <div class="footerLink">
+                    <a href="http://www.president.go.kr" target="_blank" class="bluehouse" title="청와대">청와대</a>
+                    <a href="https://www.gov.kr/portal/main" target="_blank" class="goverment" title="대한민국정부">대한민국정부</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>스타플랫폼 관리시스템 &gt; 교회서비스 &gt; 헌금입금내역조회</title>
+	<!-- 공통 웹자원 : 맨 위에 위치 -->
+	<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+	<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+	<!-- 해당페이지에서만 사용 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery.datetimepicker.css">
+	<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+	<!-- 공통 웹자원 : 맨 마지막 위치 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+	<script type="text/javascript" src="../common/js/extension.js"></script>
+	<script>
+		$(function () {
+			// 파일 업로드시 나오는 경로 텍스트
+			$("#file").on('change', function () {
+				var fileName = $("#file").val();
+				$(".upload-name").val(fileName);
+			});
+
+			// x버튼 클릭시 삭제
+			$(".addFileList .fileTxt a").click(function () {
+				$(this).closest("div").hide();
+			});
+
+			// 전화번호 입력시 "-" 자동 입력
+			$('.phoneHypen').keydown(function (event) {
+				var key = event.charCode || event.keyCode || 0;
+				$text = $(this);
+				if (key !== 8 && key !== 9) {
+					if ($text.val().length === 3) {
+						$text.val($text.val() + '-');
+					}
+					if ($text.val().length === 8) {
+						$text.val($text.val() + '-');
+					}
+				}
+
+				return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <=
+					105));
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap" class="sub">
+		<!-- header -->
+		<header id="header">
+			<div class="inner">
+				<div class="gnbWrap">
+					<div class="fl">
+						<h1 class="logo"><a href="#">스타플랫폼<span>관리 시스템</span></a></h1>
+					</div>
+
+				</div>
+			</div>
+		</header>
+		<!-- //header -->
+
+		<!-- left menu -->
+		<div class="leftMenu">
+			<div class="inner">
+				<ul class="ul">
+					<li class="li">
+						<ul>
+							<!-- 개발 : 페이지 진입시 해당 메뉴가 활성화되어야할때 li에 클래스 on 추가 -->
+							<li ><a href="#" class="mm">거래 관리</a></li>
+							<li><a href="#" class="mm">정산 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">고객 관리</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">회원정보 조회</a></li>
+									<li><a href="#">기업 관리</a></li>
+									<li><a href="#">가맹점 관리</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">서비스 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">운영 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li class="on"><a href="#" class="mm">교회 서비스</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">교회정보관리</a></li>
+									<li><a href="#">성경문구관리</a></li>
+									<li><a href="#">헌금종류관리</a></li>
+									<li><a href="#">성도관리</a></li>
+									<li><a href="#">헌금 기도내용 조회</a></li>
+									<li class="on"><a href="#">헌금 입금내역 조회</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //left menu -->
+		<!-- container -->
+		<div id="container">
+			<!-- content -->
+			<div class="content">
+				<h2 class="hTit">헌금 입금내역 조회</h2>
+				<!-- 조회영역 -->
+				<div class="schTopBox v2">
+					<div class="in">
+						<div class="tbw">
+							<!-- table -->
+							<table>
+								<caption></caption>
+								<colgroup>
+									<col style="width:10%;">
+									<col style="width:auto;">
+									<col style="width:10%;">
+									<col style="width:auto;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">교회</th>
+										<td class="txtL">
+											<select class="select">
+												<option>선택</option>
+											</select>
+										</td>
+										<th scope="row">입금계좌</th>
+										<td class="txtL">
+											<select class="select">
+												<option>전체</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">헌금기간</th>
+										<td colspan="5" class="txtL">
+											<ul class="dateIntWrap">
+												<li class="datepickerBox"><input type="text" class="datepicker input" title="년월일 입력"></li>
+												<li class="datepickerBox"><input type="text" class="datepicker input" title="년월일 입력"></li>
+											</ul>
+											<div class="rdoTermList">
+												<ul>
+													<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">어제</span></label></li>
+													<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">1주</span></label></li>
+													<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">1개월</span></label></li>
+													<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">3개월</span></label></li>
+													<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">6개월</span></label></li>
+													<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">1 년</span></label></li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							<!-- //table -->
+						</div>
+					</div>
+					<!-- cnt button -->
+					<div class="cntBtmBtn">
+						<a href="#" class="btn md ye">검색</a>
+					</div>
+					<!-- cnt button -->
+				</div>
+				<!-- table top -->
+				<div class="tblTopWrap">
+					<div class="fl">
+						<strong>총 <span>5000</span>건</strong>
+					</div>
+					<div class="fr">
+						<a href="#" class="btn sm de">엑셀 다운로드</a>
+					</div>
+				</div>
+				<!-- //table top -->
+				<!-- table -->
+				<div class="tbl">
+					<table>
+						<caption></caption>
+						<colgroup>
+							<col style="width:3%;">
+							<col style="width:5%;">
+							<col style="width:5%;">
+							<col style="width:8%;">
+							<col style="width:5%;">
+							<col style="width:10%;">
+							<col style="width:10%;">
+							<col style="width:10%;">
+							<col style="width:10%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">No</th>
+								<th scope="col">계좌별칭</th>
+								<th scope="col">입금계좌</th>
+								<th scope="col">헌금일</th>
+								<th scope="col">헌금자수</th>
+								<th scope="col">헌금액</th>
+								<th scope="col">수수료</th>
+								<th scope="col">입금(예정)액</th>
+								<th scope="col">입금(예정)일</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>정산계좌</td>
+								<td>국민은행 123123123123</td>
+								<td>2020.04.01</td>
+								<td>2,011</td>
+								<td>52,000,000</td>
+								<td>52,000</td>
+								<td>51,948,000</td>
+								<td>2020.04.02</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>정산계좌</td>
+								<td>국민은행 123123123123</td>
+								<td>2020.04.01</td>
+								<td>2,011</td>
+								<td>52,000,000</td>
+								<td>52,000</td>
+								<td>51,948,000</td>
+								<td>2020.04.02</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>정산계좌</td>
+								<td>국민은행 123123123123</td>
+								<td>2020.04.01</td>
+								<td>2,011</td>
+								<td>52,000,000</td>
+								<td>52,000</td>
+								<td>51,948,000</td>
+								<td>2020.04.02</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //table -->
+				<!-- pagingWrap -->
+				<div class="pagingWrap">
+					<a href="#" class="p_btn first ico">처음으로</a><a href="#" class="p_btn prev ico">이전</a>
+					<div class="number"><!-- page selected일때 a태그에 class "on"을 넣어주세요. -->
+						<a href="#" class="num on">1</a><a href="#" class="num">2</a><a href="#" class="num">3</a><a href="#" class="num">4</a><a href="#" class="num">5</a><a href="#" class="num">6</a><a href="#" class="num">7</a><a href="#" class="num">8</a><a href="#" class="num">9</a><a href="#" class="num">10</a>
+					</div>
+					<a href="#" class="p_btn next ico">다음</a><a href="#" class="p_btn end ico">맨끝</a>
+				</div>
+				<!-- //pagingWrap -->
+			<!-- //content -->
+		</div>
+	</div>
+	<!-- //container -->
+	</div>
+	<!-- //wrap -->
+
+</body>
+
+</html>

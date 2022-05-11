@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <script src="assets/js/jquery.fullPage.js"></script>
+  <script src="assets/js/script.js"></script>
+  <title>상상알파국어</title>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".choice_txt.click").click(function(){
+        $(".select_area").show();
+      });
+      $(".close_btn").click(function(){
+        $(".select_area").hide();
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+	<div class="top_menu">
+		<div class="title">
+			<a href="/main.do" class="logo">로고이미지</a>
+		</div>
+		<div class="login_menu">
+			<c:choose>
+				<c:when test="${cneUserSession eq null}">
+					<a href="/login.do" class="login">로그인</a>
+					<a href="/regulation.do" class="join">회원가입</a>
+				</c:when>
+				<c:otherwise>
+					<a href="/personal/check.do" class="login name">${cneUserSession.user_name}</a>
+					<a href="/logout.do" class="join out">로그아웃</a>
+				</c:otherwise>
+			</c:choose>
+		</div>
+	</div>
+
+	<nav class="pc_on">
+		<div class="menu" id="menu">
+			<ul class="menu_list">
+				<li><a href="/info.do">연구소 소개</a></li>
+				<li><a href="/subject.do">교재</a></li>
+				<li><a href="/strategy.do">프로그램</a></li>
+				<li><a href="/bbs/qna/list.do">게시판</a></li>
+				<li><a href="/solution.do">해설강의</a></li>
+				<li><a href="http://61.251.18.249" target="blank" class="img">성적확인</a></li>
+			</ul>
+			<div class="menu_list_frame">
+				<div class="menu_list_1">
+					<a href="/info.do">· 상상국어평가연구소</a>
+					<a href="/academy.do">· 모의고사 시행학원 찾기</a>
+				</div>
+				<div class="menu_list_2">
+					<a href="/subject.do">· 상상국어모의고사 연간패키지</a>
+					<a href="/subject.do#book2">· 상상국어모의고사</a>
+					<a href="/subject.do#book3">· 상상국어N제</a>
+					<a href="/subject.do#book4">· 상상력</a>
+					<a href="/subject.do#book7">· 상상국어 수능기출문제집</a>
+					<a href="/subject.do#book8">· 상상알파국어</a>
+				</div>
+				<div class=" menu_list_3">
+					<a href="/strategy.do#textbook">· 교재별 특징</a>
+					<a href="/strategy.do#schedule">· 일정표</a>
+				</div>
+				<div class="menu_list_4">
+
+					<a href="/bbs/data/list.do">· 자료실</a>
+					<a href="/bbs/notice/list.do">· 공지사항</a>
+					<a href="/bbs/qna/list.do">· Q&A</a>
+				</div>
+				<div class="menu_list_5">
+					<a href="/solution.do">· 해설강의</a>
+					<a href="">· 성적관리</a><!-- 2019-10-25 수정 -->
+				</div>
+				<div class="menu_list_6">
+					<span class="grade_img">
+						<a href="https://www.sangsangalpha.com/intro.do" target="blank">성적확인</a>
+					</span>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<nav class="mobile_on">
+		<div class="menu" id="menu">
+			<div class="menu_list">
+				<div class="m_login_area">
+					<c:choose>
+						<c:when test="${cneUserSession eq null}">
+							<a href="/login.do" class="login">로그인</a>
+							<a href="/regulation.do" class="join">회원가입</a>
+						</c:when>
+						<c:otherwise>
+							<a href="/personal/check.do" class="login name">${cneUserSession.user_name}</a>
+							<a href="/logout.do" class="join out">로그아웃</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"><a href="javascript:;">연구소 소개</a></span>
+					<!-- <span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/info.do">CEO</a>
+						<br>
+						<a href="/info.do#content2">상상국어평가연구소</a>
+						<br>
+						<a href="/info.do#content3">상상 vision</a>
+						<br>
+						<a href="/info.do#content4">상상국어평가연구소 출제시스템</a>
+						<br>
+						<a href="/info.do#content5">상상국어 모의고사 참여 인력</a>
+						<br>
+						<a href="/academy.do">모의고사 시행학원 찾기 <span class="find">찾기이미지</span></a>
+					</div> -->
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">교재</a>
+					</span> <span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/subject.do">상상국어모의고사</a>
+						<br>
+						<a href="/subject.do#book2">상상국어모의고사(현장강의용)</a>
+						<br>
+						<a href="/subject.do#book3">상상국어N과제</a>
+						<br>
+						<a href="/subject.do#book4">상상력</a>
+						<br>
+						<!-- <a href="/subject.do#book5">상상매미</a>
+						<br>
+						<a href="/subject.do#book6">상상EBS</a>
+						<br> -->
+						<a href="/subject.do#book7">기출문제집</a>
+						<br>
+						<a href="/subject.do#book8">상상알파국어</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">프로그램</a></span>
+					<span class="slide_frame"></span>
+					<div class="menu_sub">
+						<!-- <a href="/strategy.do">line up</a> -->
+						<br>
+						<a href="/strategy.do#textbook">교재별 특징</a>
+						<br>
+						<a href="/strategy.do#schedule">일정표</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">게시판</a></span>
+					<span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/bbs/qna/list.do">Q&A</a>
+						<br>
+						<a href="/bbs/data/list.do">자료실</a>
+						<br>
+						<a href="/bbs/notice/list.do">공지사항</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:alert('준비중입니다.');">성적확인</a></span>
+					<span class="slide_frame"></span>
+				</div>
+				<!-- <div class="m_menu_list">
+					<span class="title"><a href="javascript:alert('준비중입니다.');">SHOP</a></span>
+					 <span class="slide_frame"></span>
+				</div> -->
+			</div>
+		</div>
+	</nav>
+	<a href="#" class="mobile_menu">모바일메뉴</a>
+</header>
+  <!-- header -->
+  <!-- content -->
+  <section>
+	<div class="banner_layer">
+    <a href="academy.do" class="layer_img one">찾기이미지</a>
+    <a href="mailto:imaginecne@imaginecne.com" class="layer_img two">도입문의이미지</a>
+  </div>
+	<div class="content_area">
+		<div class="grade_conf">
+			<div class="infoWrap">
+				<div class="inBox">
+					<strong>모의고사 개인 구매자를 위한<br />성적 입력 페이지입니다.</strong>
+					<p>학원에서 시행하신 분들은<br />해당 학원에 제출한 OMR을 통해<br />성적이 입력됩니다.</p>
+				</div>
+			</div>
+			<div class="inputWrap">
+				<div class="com_table join">
+					<table>
+						<colgroup>
+							<col width="210px">
+							<col width="auto">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row" class="txt_left">학교</th>
+								<td>
+									<select title="학교선택">
+										<option value="">선택해주세요.</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="txt_left">학년도</th>
+								<td>
+									<input type="text" title="학년도">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="txt_left">회차/유형</th>
+								<td class="input-area v2R">
+									<select title="회차 선택">
+										<option value="">회차</option>
+									</select>
+									<select title="유형 선택">
+										<option value="">유형</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="txt_left">생년월일</th>
+								<td><input type="text" title="생년월일" value="19890222" readonly></td>
+							</tr>
+							<tr>
+								<th scope="row" class="txt_left">성명</th>
+								<td><input type="text" title="성명" value="조미정" readonly></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="com_table sub mt60">
+					<table>
+						<colgroup>
+							<col style="width:8.5%">
+							<col style="width:auto">
+							<col style="width:8.5%">
+							<col style="width:auto">
+							<col style="width:8.5%">
+							<col style="width:auto">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">번호</th>
+								<th scope="col">정답이력</th>
+								<th scope="col">번호</th>
+								<th scope="col">정답이력</th>
+								<th scope="col">번호</th>
+								<th scope="col">정답이력</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>2</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>3</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>5</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>6</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>8</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>9</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>10</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>11</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>12</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>14</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>15</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>17</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>18</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>19</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>20</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>21</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>22</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>23</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>24</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>25</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>26</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>27</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>28</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>29</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>30</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>31</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>32</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>33</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>34</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>35</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>36</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>37</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>38</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>39</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>40</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>41</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>42</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+							<tr>
+								<td>43</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>44</td>
+								<td><input type="text" title="정답입력"></td>
+								<td>45</td>
+								<td><input type="text" title="정답입력"></td>
+							</tr>
+						</tbody>
+					</table>
+				  </div>
+				  <div class="btn_bottom">
+						<a href="#" class="btn btnGray">취소</a>
+						<a href="#" class="btn btnBlue">확인</a>
+				  </div>
+			</div>
+		</div>
+	</div>
+</section>
+  <!-- content -->
+  <!-- footer -->
+  <footer>
+    <div class="footer_content">
+      <div class="footer_logo_area fl">
+        <span class="footer_title">로고이미지</span>
+      </div>
+      <div class="deatil_area fr">
+        <p>
+          <span>(주)이매진C&E · 상상국어평가연구소</span>
+          <span>대표 : 강상희</span>
+          <span>서울시 서초구 강남대로 30길(양재동, 산수빌딩)5층</span>
+          <span>TEL : 02-578-3881</span>
+          <span>FAX : 02-574-9881</span>
+        </p>
+        <p>
+          <span>사업자등록번호 : 264-81-36246</span>
+          <span>통신판매신고번호 : 2014-서울서초-1073호</span>
+          <span>출판사신고번호 : 제2014-000114호</span>
+        </p>
+        <p>
+          <span>COPYRIGHT 2014 IMAGINECNE.CO.KR ALL RIGHTS RESERVED</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer -->
+  <div class="select_area">
+    <div class="top_area">
+      <span>찾고 싶은 교재의 조건을 설정해주세요</span>
+      <span class="close_btn">팝업닫기</span>
+    </div>
+    <div class="content_area layer">
+      <div class="select_content">
+        <span class="select_title fl">학년</span>
+        <div class="selection fr">
+          <span class="choice_box on fl">중3</span>
+          <span class="choice_box fl">고1</span>
+          <span class="choice_box fl">고2</span>
+          <span class="choice_box fl">고3</span>
+          <span class="choice_box fl">재수</span>
+          <span class="choice_box fl">N수</span>
+        </div>
+      </div>
+      <div class="select_content">
+        <span class="select_title fl">등급</span>
+        <div class="selection fr">
+          <span class="choice_box on fl">1등급</span>
+          <span class="choice_box fl">2등급</span>
+          <span class="choice_box fl">3등급</span>
+          <span class="choice_box fl">4등급</span>
+          <span class="choice_box fl">5등급</span>
+          <span class="choice_box fl">6등급</span>
+          <span class="choice_box fl">7등급</span>
+          <span class="choice_box fl">8등급</span>
+          <span class="choice_box fl">9등급</span>
+        </div>
+      </div>
+      <div class="select_content">
+        <span class="select_title fl">수강유무</span>
+        <div class="selection fr">
+          <span class="choice_box on fl">유</span>
+          <span class="choice_box fl">무</span>
+        </div>
+      </div>
+      <div class="btm-area">
+        <span>검색하기</span>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

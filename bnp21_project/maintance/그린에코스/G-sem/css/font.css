@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/* 본고딕 */
+@font-face{
+	font-family:'NotoKr';
+	font-weight: 100;
+	src:url("font/NotoSansKR-Thin-Hestia.eot");
+	src:url("font/NotoSansKR-Thin-Hestia.eot?#iefix") format('embedded-opentype'),
+	url("font/NotoSansKR-Thin-Hestia.woff") format('woff');
+}
+@font-face{
+	font-family:'NotoKr';
+	font-weight: 300;
+	src:url("font/NotoSansKR-Light-Hestia.eot");
+	src:url("font/NotoSansKR-Light-Hestia.eot?#iefix") format('embedded-opentype'),
+	url("font/NotoSansKR-Light-Hestia.woff") format('woff');
+}
+@font-face{
+	font-family:'NotoKr';
+	font-weight: 350;
+	src:url("font/NotoSansKR-DemiLight-Hestia.eot");
+	src:url("font/NotoSansKR-DemiLight-Hestia.eot?#iefix") format('embedded-opentype'),
+	url("font/NotoSansKR-DemiLight-Hestia.woff") format('woff');
+}
+@font-face{
+	font-family:'NotoKr';
+	font-weight: 400;
+	src:url("font/NotoSansKR-Regular-Hestia.eot");
+	src:url("font/NotoSansKR-Regular-Hestia.eot?#iefix") format('embedded-opentype'),
+	url("font/NotoSansKR-Regular-Hestia.woff") format('woff');
+}
+@font-face{
+	font-family:'NotoKr';
+	font-weight: 500;
+	src:url("font/NotoSansKR-Medium-Hestia.eot");
+	src:url("font/NotoSansKR-Medium-Hestia.eot?#iefix") format('embedded-opentype'),
+	url("font/NotoSansKR-Medium-Hestia.woff") format('woff');
+}
+@font-face{
+	font-family:'NotoKr';
+	font-weight: 700;
+	src:url("font/NotoSansKR-Bold-Hestia.eot");
+	src:url("font/NotoSansKR-Bold-Hestia.eot?#iefix") format('embedded-opentype'),
+	url("font/NotoSansKR-Bold-Hestia.woff") format('woff');
+}
+@font-face{
+	font-family:'NotoKr';
+	font-weight: 900;
+	src:url("font/NotoSansKR-Black-Hestia.eot");
+	src:url("font/NotoSansKR-Black-Hestia.eot?#iefix") format('embedded-opentype'),
+	url("font/NotoSansKR-Black-Hestia.woff") format('woff');
+}
+
+/* 나눔바른고딕 */
+@font-face{
+	font-family:'NanumBarun';
+	font-weight: 700;
+	src:url("font/NanumBarunGothicBold.eot");
+	src:url("font/NanumBarunGothicBold.eot?#iefix") format('embedded-opentype'),
+	url("font/NanumBarunGothicBold.woff") format('woff');
+}
+
+/* 나눔고딕 */
+@font-face{
+	font-family:'NanumG';
+	font-weight: 700;
+	src:url("font/NanumGothic-Bold.eot");
+	src:url("font/NanumGothic-Bold.eot?#iefix") format('embedded-opentype'),
+	url("font/NanumGothic-Bold.woff2") format('woff');
+}

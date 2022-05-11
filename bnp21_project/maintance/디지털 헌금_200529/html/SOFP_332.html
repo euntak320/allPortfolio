@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no" />
+<title>헌금 하기 &lt; 디지털 헌금 바구니</title>
+<!-- //<![CDATA[ -->
+<link rel="stylesheet" href="../css/style.css" />
+<script src="../js/jquery-2.2.4.js"></script>
+<script src="../js/common.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- subHeader -->
+	<div id="subHeader">
+		<div class="inner">
+			<h1><a href=""><img src="../images/common/logo01.png" alt="사랑의 교회"></a></h1>
+			<!-- menuArea -->
+			<ul class="menuArea">
+				<li><button>헌금하기</li>
+				<li><button>설정</button></li>
+				<li><button>조회</button></li>
+			</ul>
+			<!--// menuArea -->
+		</div>
+		<h2>헌금하기</h2>
+		<button class="btnBack">이전 페이지</button>
+	</div>
+	<!--// subHeader -->
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<button class="btn btnYellow" onclick="fn_layer('layer1','400')">계좌선택 팝업버튼</button>
+			<button class="btn btnYellow" onclick="fn_layer('layer2','400')">등록계좌 없음 팝업버튼</button>
+		</div>
+	</div>
+	<!--// container -->
+</div>
+<!--// wrap -->
+<!-- 계좌선택 팝업 -->
+<div class="layer layer1">
+	<div class="inner">
+		<p class="tit">성도님의 계좌를 선택해주세요.</p>
+		<!-- popCont --> 
+		<div class="popCont">
+			<ul class="accoList">
+				<li>
+					<p class="bankName"><img src="../images/logo-kb.png" alt="">국민은행</p>
+					<p class="accoNum">123456******789</p>
+					<button class="btnStar">선택</button>
+				</li>
+				<li>
+					<p class="bankName"><img src="../images/logo-kb.png" alt="">국민은행</p>
+					<p class="accoNum">123456******789</p>
+					<button class="btnStar">선택</button>
+				</li>
+				<li>
+					<p class="bankName"><img src="../images/logo-kb.png" alt="">국민은행</p>
+					<p class="accoNum">123456******789</p>
+					<button class="btnStar">선택</button>
+				</li>
+				<li>
+					<p class="bankName"><img src="../images/logo-kb.png" alt="">국민은행</p>
+					<p class="accoNum">123456******789</p>
+					<button class="btnStar">선택</button>
+				</li>
+				<li>
+					<p class="bankName"><img src="../images/logo-kb.png" alt="">국민은행</p>
+					<p class="accoNum">123456******789</p>
+					<button class="btnStar">선택</button>
+				</li>
+			</ul>
+			<button class="btnAdd">+ 추가 등록</button>
+		</div>
+		<!--// popCont -->
+		<!-- btnArea -->
+		<div class="btnArea">
+			<button class="btn btnYellow" onclick="fn_layer_close(this)">닫기</button>
+		</div>
+		<!--// btnArea -->
+	</div>
+</div>
+<!--// 계좌선택 팝업 -->
+<!-- 등록계좌 없음 팝업 -->
+<div class="layer layer2">
+	<div class="inner">
+		<!-- popCont --> 
+		<div class="popCont">
+			<!-- 2020-05-28 -->
+			<ul class="accoList">
+				<li class="noData">
+					<img src="../images/img06.png" alt="">
+					<p>등록된 계좌가 없습니다.</p>
+				</li>
+			</ul>
+			<button class="btnAdd">+ 추가 등록</button>
+			<!--// 2020-05-28 - 전체수정 -->
+		</div>
+		<!--// popCont -->
+		<!-- btnArea -->
+		<div class="btnArea">
+			<button class="btn btnYellow" onclick="fn_layer_close(this)">닫기</button>
+		</div>
+		<!--// btnArea -->
+	</div>
+</div>
+<!--// 등록계좌 없음 팝업 -->
+</body>
+</html>

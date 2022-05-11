@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/echarts.min.js"></script>
+	<script src="../assets/js/script.js"></script>	
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("../include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("../include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">외부 지식베이스 사전 연계 통계 현황 페이지</p>
+				<div class="com-table-search">
+					<table>
+						<caption>검색 표</caption>
+						<tbody>
+							<tr>
+								<th>외부지식베이스</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">전체 지식베이스</option>
+										</select>
+									</div>
+								</td>
+								<th>기간</th>
+								<td>
+									<div class="com-radio">
+										<input type="radio" id="inp_rad01" name="sel_term" checked>
+										<label for="inp_rad01">주</label>
+									</div>
+									<div class="com-radio">
+										<input type="radio" id="inp_rad02" name="sel_term">
+										<label for="inp_rad02">월</label>
+									</div>
+									<div class="com-radio">
+										<input type="radio" id="inp_rad03" name="sel_term">
+										<label for="inp_rad03">년</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>기간 설정</th>
+								<td colspan="3">
+									<div class="datepicker">
+										<input type="text">
+										<span>~</span>
+										<input type="text">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="com-btn">
+					<a href="#none">초기화</a>
+					<a href="#none" class="send">검색</a>
+				</div>
+				<div class="chart-area">
+					<div id="myChart"></div>
+				</div>
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("../include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+	
+	<script type="text/javascript">
+    	var dom = document.getElementById("myChart");
+		var myChart = echarts.init(dom);
+		var app = {};
+		option = null;
+
+		option = {
+			title: {
+				x: 'center',
+				textStyle:{fontWeight:'bold', color:'#333', fontSize:'15'},
+				text:'외부 지식베이스 사전 연계 수',
+			},
+		    tooltip: {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b}: {c} ({d}%)"
+		    },
+		    legend: {
+				y: 'bottom',
+        		left: 'center',
+		        itemWidth : 16,
+		        itemHidth : 15,
+		        itemGap : 20,
+		        width : 600,
+		        textStyle:{fontWeight:'bold', color:'#333', fontSize:'12'},
+		        data:[
+		        	'향토문화전자대전','한국영상자료원','한국관광공사','제주특별자치도(인물)','한국어기초사전','국립중앙도서관','한국민속대백과사전','문화융합키워드'
+		        ],
+		    },
+		    color: ['#4f81bd','#c0504d','#9bbb59','#8064a2','#4bacc6','#f79646','#2c4d75','#772c2a'],
+		    series: [
+		        {
+		            name:'분류현황',
+		            type:'pie',
+		            radius: ['45%', '70%'],
+		            avoidLabelOverlap: false,
+		            label: {
+		                normal: {
+		                    show: false,
+		                    position: 'center'
+		                },
+		                emphasis: {
+		                    show: true,
+		                    textStyle: {
+		                        fontSize: '18',
+		                        fontWeight: 'bold'
+		                    }
+		                }
+		            },
+		            labelLine: {
+		                normal: {
+		                    show: false
+		                }
+		            },
+		            data:[
+		                {value:580, name:'향토문화전자대전'},
+		                {value:800, name:'한국영상자료원'},
+		                {value:789, name:'한국관광공사'},
+		                {value:230, name:'제주특별자치도(인물)'},
+		                {value:652, name:'한국어기초사전'},
+		                {value:865, name:'국립중앙도서관'},
+		                {value:452, name:'한국민속대백과사전'},
+		                {value:1100, name:'문화융합키워드'},
+		            ],
+		        },
+		    ],
+		};
+		if (option && typeof option === "object") {
+		    myChart.setOption(option, true);
+		}
+    </script>
+</body>
+</html>

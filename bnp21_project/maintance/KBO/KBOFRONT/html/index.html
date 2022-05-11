@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!-- E : mobile -->
+<title>KBO REPLAY CENTER</title><!-- 2020-04-13 -->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="../js/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<!-- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="js/selectivizr.js">
+ -->
+<!--[if lte IE 9]>
+</script>
+<![endif]-->
+
+<!-- 쿠키 설정 20-06-18 -->
+
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- container -->
+	<div id="container">
+		<!-- statsArea -->
+		<div class="statsArea">
+			<div class="inBox">
+				<h1><a href=""><img src="../images/common/logo.png" alt="KBO REPLAY CENTER"></a></h1><!-- 2020-04-13 -->
+				<dl>
+					<dt>2020 KBO 정규시즌<br /> 비디오판독 요청</dt><!-- 2020-04-13 -->
+					<dd><strong>20</strong> <span>건</span></dd>
+				</dl>
+			</div>
+			<div class="chartArea">
+				<dl>
+					<dt>원심<span>(건)</span></dt>
+					<dd>
+						<canvas style="background:#89cdef; border-radius:50%"></canvas><!-- style은 영역확인용이니 개발시 삭제요망 -->
+						<span>15</span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>번복<span>(건)</span></dt>
+					<dd>
+						<canvas style="background:#89cdef; border-radius:50%"></canvas><!-- style은 영역확인용이니 개발시 삭제요망 -->
+						<span>4</span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>번복률<span>(%)</span></dt>
+					<dd>
+						<canvas style="background:#89cdef; border-radius:50%"></canvas><!-- style은 영역확인용이니 개발시 삭제요망 -->
+						<span>30.95</span>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--// statsArea -->
+		<!-- 2020-04-10 -->
+		<!-- btnArea -->
+		<div class="btnArea">
+			<button class="btn" onclick="fn_layer('layer2','1100')">비디오판독 규정 보기</button>
+		</div>
+		<!--// btnArea -->
+		<!--// 2020-04-10 -->
+		<!-- searchArea -->
+		<div class="searchArea">
+			<div class="inBox">
+				<dl>
+					<dt>경기구분</dt>
+					<dd>
+						<div class="selectbox">
+							<span>선택</span>
+							<select title="경기구분 선택">
+								<option value="">선택</option>
+								<option value="">경기구분분</option>
+							</select>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>유형</dt>
+					<dd class="v2"><!-- 2020-04-22 -->
+						<div class="selectbox">
+							<span>선택</span>
+							<select title="유형 선택">
+								<option value="">선택</option>
+							</select>
+						</div>
+						<div class="selectbox">
+							<span>선택</span>
+							<select title="유형 선택">
+								<option value="">선택</option>
+							</select>
+						</div>
+					</dd>
+				</dl>
+				<dl>
+					<dt>일자</dt>
+					<dd class="dateWrap">
+						<span class="date"><input type="text" title="시작날짜선택"></span>
+						<em>~</em>
+						<span class="date"><input type="text" title="종료날짜선택"></span>
+					</dd>
+				</dl>
+				<dl>
+					<dt>요청팀</dt>
+					<dd class="btnInput">
+						<div class="selectbox">
+							<span>팀 선택</span>
+							<select title="요청팀 선택">
+								<option value="">팀 선택</option>
+								<option value="">팀팀팀팀팀팀팀</option>
+							</select>
+						</div>
+						<button class="btnSearch">검색</button>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--// searchArea -->
+		
+		<!-- videoList -->
+		<div class="videoList">
+			<ul>
+				<li>
+					<a href="javascript:void(0)" onclick="fn_layer('layer1','1100')">
+						<div class="imgArea"><img src="../images/no-media.png" alt="미디어 없음"></div><!-- 2020-04-08 -->
+						<div class="txtArea">
+							<strong><span>12.28</span><em>(대구대구) SPOTVSPOTV</em></strong>
+							<p>1회말 / KIA 요청 / 1분20초 / 홈런1회말 / KIA 요청 / 1분20초 / 홈런</p>
+							<div class="game">
+								<span class="emblem OB">두산 베어스</span> : <span class="emblem NC">NC 다이노스</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="fn_layer('layer1','1100')">
+						<div class="imgArea"><img src="../images/@img.png" alt="영상썸네일"></div>
+						<div class="txtArea">
+							<strong><span>3.28</span><em>(대구) SPOTV</em></strong>
+							<p>1회말 / KIA 요청 / 1분20초 / 홈런</p>
+							<div class="game">
+								<span class="emblem WO">키움 히어로</span> : <span class="emblem LG">LG 트윈스</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="fn_layer('layer1','1100')">
+						<div class="imgArea"><img src="../images/@img.png" alt="영상썸네일"></div>
+						<div class="txtArea">
+							<strong><span>3.28</span><em>(대구) SPOTV</em></strong>
+							<p>1회말 / KIA 요청 / 1분20초 / 홈런</p>
+							<div class="game">
+								<span class="emblem HT">기아 타이거즈</span> : <span class="emblem SK">SK 와이번스</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="fn_layer('layer1','1100')">
+						<div class="imgArea"><img src="../images/@img.png" alt="영상썸네일"></div>
+						<div class="txtArea">
+							<strong><span>3.28</span><em>(대구) SPOTV</em></strong>
+							<p>1회말 / KIA 요청 / 1분20초 / 홈런</p>
+							<div class="game">
+								<span class="emblem HH">한화 이글스</span> : <span class="emblem LT">롯데 자이언츠</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="fn_layer('layer1','1100')">
+						<div class="imgArea"><img src="../images/@img.png" alt="영상썸네일"></div>
+						<div class="txtArea">
+							<strong><span>3.28</span><em>(대구) SPOTV</em></strong>
+							<p>1회말 / KIA 요청 / 1분20초 / 홈런</p>
+							<div class="game">
+								<span class="emblem SS">삼성 라이온</span> : <span class="emblem KT">KT 위즈</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="fn_layer('layer1','1100')">
+						<div class="imgArea"><img src="../images/@img.png" alt="영상썸네일"></div>
+						<div class="txtArea">
+							<strong><span>3.28</span><em>(대구) SPOTV</em></strong>
+							<p>1회말 / KIA 요청 / 1분20초 / 홈런</p>
+							<div class="game">
+								<span class="emblem OB">두산 베어스</span> : <span class="emblem NC">NC 다이노스</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="fn_layer('layer1','1100')">
+						<div class="imgArea"><img src="../images/@img.png" alt="영상썸네일"></div>
+						<div class="txtArea">
+							<strong><span>3.28</span><em>(대구) SPOTV</em></strong>
+							<p>1회말 / KIA 요청 / 1분20초 / 홈런</p>
+							<div class="game">
+								<span class="emblem WO">키움 히어로</span> : <span class="emblem LG">LG 트윈스</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="fn_layer('layer1','1100')">
+						<div class="imgArea"><img src="../images/@img.png" alt="영상썸네일"></div>
+						<div class="txtArea">
+							<strong><span>3.28</span><em>(대구) SPOTV</em></strong>
+							<p>1회말 / KIA 요청 / 1분20초 / 홈런</p>
+							<div class="game">
+								<span class="emblem HT">기아 타이거즈</span> : <span class="emblem SK">SK 와이번스</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)" onclick="fn_layer('layer1','1100')">
+						<div class="imgArea"><img src="../images/@img.png" alt="영상썸네일"></div>
+						<div class="txtArea">
+							<strong><span>12.28</span><em>(대구) SPOTVSPOTV</em></strong>
+							<p>1회말 / KIA 요청 / 1분20초 / 홈런</p>
+							<div class="game">
+								<span class="emblem HH">한화 이글스</span> : <span class="emblem LT">롯데 자이언츠</span>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!--// videoList -->
+
+		<!-- paging -->
+		<div class="paging">
+			<div class="inner">
+				<a href="" class="btnFirst">처음 페이지</a>
+				<a href="" class="btnPrev">이전 페이지</a>
+				<div class="page">
+					<a href="">1</a>
+					<a href="">2</a>
+					<a href="">3</a>
+					<strong>4</strong>
+					<a href="">5</a>
+				</div>
+				<a href="" class="btnNext">다음 페이지</a>
+				<a href="" class="btnLast">마지막 페이지</a>
+			</div>
+		</div>
+		<!--// paging -->
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<div class="inner">
+			<p class="logo">KOREA BASEBALL KBO 비디오판독 센터 관리자</p>
+			<div class="footCenter">
+				<address><strong>(사)한국야구위원회</strong>02) 3460-4600 서울시 강남구 강남대로 278</address>
+				<p>Copyrightⓒ KBO, All Rights Reserved.</p>
+			</div>
+			<div class="footRight">
+				<dl class="logoArea">
+					<dt>재정후원 :</dt>
+					<dd>
+						<a href=""><img src="../images/common/logo02.png" alt=""></a>
+						<a href=""><img src="../images/common/logo03.png" alt=""></a>
+					</dd>
+				</dl>
+				<p>이 사업은 문화체육관광부와 국민체육진흥공단의 재정후원을 받고 있습니다.</p>
+			</div>
+		</div>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+<!-- 팝업 -->
+<div class="layer layer1">
+	<div class="inner">
+		<p class="tit">3.28 <span>기아 : 삼성(대구삼성라이온즈파크)</span></p>
+		<!-- popCont --> 
+		<div class="popCont">
+			<div class="videoArea"><img src="../images/no-media.png" alt="미디어 없음"></div><!-- 2020-04-08 -->
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>판독정보</h3>
+			</div>
+			<!--// titArea -->
+			<!-- infoTable -->
+			<div class="infoTable">
+				<table>
+					<caption>판독이닝, 요청팀, 소요시간, 최초판정, 최종판정, 판독결과, 유형, 방송국, 판독내용, 판독근거 항목으로 구성된 판독정보 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:80px">
+						<col style="width:auto">
+						<col style="width:80px">
+						<col style="width:auto">
+						<col style="width:80px">
+						<col style="width:auto">
+						<col style="width:80px"><!-- 2020-04-07 - 추가 -->
+						<col style="width:auto"><!-- 2020-04-07 - 추가 -->
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">판독이닝</th>
+							<td>1회말</td>
+							<th scope="row">요청팀</th>
+							<td>삼성</td>
+							<th scope="row">소요시간</th>
+							<td>10초</td>
+							<th scope="row">최초판정</th>
+							<td>아웃</td>
+						</tr>
+						<tr>
+							<th scope="row">최종판정</th>
+							<td>세이프</td>
+							<th scope="row">판독결과</th>
+							<td>원심</td>
+							<th scope="row">유형</th>
+							<td>포스1루</td>
+							<th scope="row">방송국</th>
+							<td>SPOTV</td>
+						</tr>
+						<tr class="line"><!-- 2020-04-07 - class 추가 -->
+							<th scope="row">판독내용</th>
+							<td colspan="7">어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고어쩌고 저쩌고</td><!-- 2020-04-07 - colspan 수정 -->
+						</tr>
+						<tr class="line"><!-- 2020-04-07 - class 추가 -->
+							<th scope="row">판독근거</th>
+							<td colspan="7">어쩌고 저쩌고</td><!-- 2020-04-07 - colspan 수정 -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// infoTable -->
+			<p>※ 판독 소요시간은 현장에서의 시그널 통해 시작되기 때문에 실제 영상 시간과 오차가 있을 수 있습니다.</p><!-- 2020-03-26 추가 -->
+		</div>
+		<!--// popCont -->
+		<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">close</a>
+	</div>
+</div>
+<!--// 팝업 -->
+
+<!-- 2020-04-10 -->
+<!-- 규정 팝업 -->
+<div class="layer layer2">
+	<div class="inner">
+		<p class="tit">2020 KBO 리그 규정</p>
+		<!-- popCont --> 
+		<div class="popCont terms">
+			<strong>제28조 비디오 판독</strong>
+			<p>비디오 판독 제도는 KBO 리그(시범경기, 정규시즌, 올스타전, 포스트시즌)에서 아래 3항(비디오 판독 대상 플레이)의 규정에 의거 실시된다.</p>
+
+			<dl>
+				<dt>1. 비디오 판독 대상경기</dt>
+				<dd>
+					<ol>
+						<li>① 중계가 편성되어 있는 경기에 한해 비디오 판독을 실시한다.</li>
+						<li>② 비디오 판독은 중계용 영상 화면과 KBO 카메라 영상을 바탕으로 판독센터에서 실시한다.</li>
+						<li>③ 중계가 없을 경우 비디오 판독을 실시하지 않는다.</li>
+						<li>④ 중계용 영상 화면과 KBO 카메라 영상에 노출되지 않았거나, 경기지연에 따른 방송중단 등 중계용 영상 화면과 KBO 카메라 영상에 의한 비디오 판독이 불가능할 경우 심판의 판정을 최종으로 한다. 감독은 심판팀장의판정에 이의를 제기할 수 없다.</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl>
+				<dt>2. 비디오 판독 장소 및 책임자, 판독인원</dt>
+				<dd>
+					<ol>
+						<li>① 비디오 판독은 판독센터에서 실시한다.</li>
+						<li>② 비디오 판독의 책임자는 판독센터장이며 판독인원은 판독센터장을 포함하여 총 3인(비디오 판독 동시 발생시 1인으로 판독 진행 가능) 이내로 한다.</li>
+						<li>③ 심판팀장이 대기심일 경우 해당심판팀에서 심판팀장 외에 최고 경력을 가진 심판이 경기 중 심판팀장의 역할을 한다.</li>
+						<li>④ 비디오 판독이 실시되는 동안 그라운드에 남아있는 심판들은 비디오 판독 이전의 판정이 내려진 상태로 양 구단 선수단을 위치시켜야 할 책임이 있다.</li>
+						<li>⑤ 비디오 판독 실시 후 전달 받은 최종 결과는 심판팀장이 내린다.</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl>
+				<dt>3. 비디오 판독 대상 플레이</dt>
+				<dd>
+					<ol>
+						<li>① 홈런에 대한 판정</li>
+						<li>② 외야 타구의 페어/파울</li>
+						<li>③ 포스/태그 플레이에서의 아웃/세이프<br />단, 다음의 플레이는 비디오 판독 대상이 아니다.
+							<ol>
+								<li>(a) 주자가 다음 베이스로 진루하기 위해서 태그 업할 때 일찍했는지에 대한 심판의 판정</li>
+								<li>(b) 주자가 2루로 진루하기 위한 시도 중 1루 베이스를 돌아 2루로 향했는지에 대한 심판의 판정</li>
+								<li>(c) 공식야구규칙 5.09(b)(2)에 의거하여 주자가 다음 베이스로 가려고 하는 의사를 버렸는지 여부에 대한 심판의 판정 (2019.1.15 개정)</li>
+							</ol>
+						</li>
+						<li>④ 야수의 포구(파울팁 포함)</li>
+						<li>⑤ 몸에 맞는 공<br />타자가 공에 맞았을 때 스트라이크 존을 통과했는지, 스윙을했는지, 피하려는 시도를 했는지는 비디오 판독 대상이 아님<br />
+						예)<br />
+						투구가 배트에 맞았으나 심판은 몸에 맞는 공이라고 판정한다. 수비구단 감독이 비디오 판독을 요청하여 심판팀장이 공이 배트에 맞았다고 최초 판정을 번복한다. 타구가 파울이었다면 심판팀장은 파울이라고 판정하고, 페어일 경우 타자주자의 위치를 배정하는데 있어 수비구단이 타자 주자를 아웃시키려고 시도했는지 여부, 타자주자가 진루하려고 시도했는지 여부 등의 사실을 고려해야 한다.
+						</li>
+						<li>⑥ 타자의 파울/헛스윙(타구가 타석에서 타자의 몸 또는 타자가 착용한 경기용구나 배트에 맞는 경우 포함) (2017.8.14 개정)</li>
+						<li>⑦ 홈 플레이트에서의 충돌</li>
+						<li>⑧ 더블 플레이 시도시 슬라이딩 규정<br />
+						* 공식야구규칙 6.01(j)에 대한 심판의 결정만 비디오 판독 대상이 되며 더블 플레이의 방해가 6.01(a)(6) 또는 (7)에 해당할 경우 이는 비디오 판독 대상이 아니다. (2019.1.15 개정)</li>
+						<li>⑨ 3피트 라인 위반 수비방해<br />* 공식야구규칙 5.09(a)(8) 및 6.01(a)(10)에 의거하여 타자 또는 주자가 수비하는 야수를 방해하였는지 여부 (2019.6.18 ➜ 2020.1.10 개정)</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl>
+				<dt>4. 비디오 판독의 신청</dt>
+				<dd>
+					<ol>
+						<li>① 비디오 판독은 각 구단의 감독만이 판정을 내린 심판에게 신청할 수 있다.</li>
+						<li>② 감독이 부상, 질병, 퇴장 등 합당한 이유로 감독의 임무를 수행할 수 없게 된 경우 총재에게 감독의 역할을 대신 맡게 된다고 통보한 코치가 비디오 판독을 신청할 수 있다.</li>
+						<li>③ 감독이 있음에도 불구하고 코치가 신청한 경우 심판은 비디오 판독을 거부해야 한다.</li>
+						<li>④ 하나의 상황에서 두 가지 이상의 플레이에 대한 비디오 판독은 해당심판팀의 팀장에게 신청하여야 한다.</li>
+						<li>⑤ 감독은 심판판정 후 30초 이내에 비디오 판독을 구두로써 심판에게 신청하여야 하며, 해당심판은 오른손을 위로 들어 비디오 판독 신청이 있었음을 경기운영위원, 기록위원에게 시그널로 알려주어야 한다.</li>
+						<li>⑥ 심판은 감독의 비디오 판독 신청이 적절한 시간 안에 이루어 졌는지 판단하여 비디오 판독을 실시해야 한다. 감독의 신청이 늦었을 경우 심판은 재량으로 비디오 판독 신청을 받아들이지 않을 수 있다.</li>
+						<li>⑦ 경기가 종료되는 아웃카운트에 대하여 감독이 비디오 판독을 신청할 경우 감독은 심판의 최초 판정 후 10초 안에 덕아웃 또는 필드 안에서 신청해야 하며, 심판팀장은 비디오 판독 결과가 나올 때까지 양 구단을 덕아웃에 남아있도록 해야 한다. (2018.3.5 규칙위원회)</li>
+						<li>⑧ 이닝의 3번째 아웃카운트에 대하여 감독이 비디오 판독을 신청할 경우 감독은 심판의 최초 판정 후 10초 안에 덕아웃 또는 필드 안에서 신청해야 하며, 심판팀장은 수비구단 선수들이 필드에 남아있도록 해야 한다. (2018.3.5 규칙위원회)</li>
+						<li>⑨ 플레이 종료 후 투수교체를 하는 경우 수비구단 감독은 투수교체 사인을 내기 전에 비디오 판독을 먼저 신청해야 하며, 공격구단 감독은 새로 경기에 들어올 구원투수가 워닝트랙을 밟기 전이나 필드에 불펜이 있는 구장의 경우 파울라인을 넘기 전에 신청해야 한다. 만약 수비구단 감독이 공격구단이 비디오 판독을 신청할 것이라고 예상하여 서둘러 구원투수를 투입할 경우 심판팀장은 자신의 재량으로 공격 구단 감독에게 비디오 판독 기회를 허용해야 한다.</li>
+						<li>⑩ 심판이 비디오 판독에 참여하고 있는 도중에는 선수교체가 허용되지 않는다.</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl>
+				<dt>5. 비디오 판독의 기회</dt>
+				<dd>
+					<ol>
+						<li>① 기회는 심판의 판정번복 여부와 관계없이 2번으로 한다. 연장전에 한해 구단당 1번의 기회가 추가된다. (2018.7.4 ➜ 2019.1.15 ➜ 2019.12.16 개정)</li>
+						<li>② 홈런 타구 비디오 판독은 감독에게 주어진 2번의 기회와 상관없이 언제라도 신청할 수 있다.</li>
+						<li>③ 만약 감독이 대상이 아닌 판정에 대해 비디오 판독을 요청하면 심판팀장은 감독에게 이는 비디오 판독 대상이 아님을 알리고 구단은 비디오 판독 기회를 유지한다. 감독이 요청한 플레이가 비디오 판독 대상이 되는지 확신하지 못할경우 심판팀장은 결정을 내리기 전 다른 심판과 의논할 수있다.</li>
+						<li>④ 하나의 상황에서 두 가지 이상의 플레이에 대한 논란이 발생하였을 경우 감독은 두 가지 이하의 플레이에 대하여만 비디오 판독을 요청할 수 있다. 이 때 감독의 기회는 각각의 플레이에 대한 기회를 별개로 사용한 것으로 간주한다. 이 경우 두 가지 플레이에 대한 비디오 판독 요청은 동시에 이루어져야 한다.<br />
+						예)<br />1사 1루 상황. 타자가 2루수 앞 땅볼을 쳤다. 심판은 1루주자가 2루에서 아웃되고 타자주자도 1루에서 아웃되었다고 판정한다.<br />이 때 공격팀 감독은 2루 아웃, 1루 아웃 두 가지 모두에 대하여 비디오 판독을 요청할 수 있다. 이 때 감독은 2번의 기회를 모두 사용한 것으로 간주한다.</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl>
+				<dt>6. 비디오 판독의 절차</dt>
+				<dd>
+					<ol>
+						<li>① 비디오 판독에 참여하는 판독위원은 판독센터장을 포함하여 총 3인 이내로 한다.</li>
+						<li>② 감독으로부터 비디오 판독 요청을 받은 심판은 심판팀장에게 이를 보고하고 오른손을 위로 들어 경기운영위원, 기록위원에게 시그널로 통보하고, 기록위원은 이를 방송해야 한다. 이 사이 해당루심과 심판팀장(심판팀장이 해당루심인 경우 최고 경력을 가진 심판)은 운영요원으로부터 인터컴 장비를 전달 받아 착용하고 판독센터의 판독 결과를 수신한다.<br />비디오 판독이 시작된 후 3분 안에 판정을 뒤집을만한 근거를 발견하지 못할 경우 원심 유지로 판정한다. 단, 기술적인 문제로 인해 판독이 지연되거나 복합적인 규칙 등을 적용하여 판단해야 하는 경우는 예외적으로 판독시간 3분을 초과할 수 있도록 허용한다.<br />비디오 판독시간은 심판팀장이 인터컴 장비를 착용하는 시점부터 벗는 시점까지로 계측한다.<br />(2018.1.24 규칙위원회 ➜ 2019.12.16 개정)</li>
+						<li>③ 심판팀장은 판정번복 여부를 심판과 기록위원에게 통보하고, 만약 비디오 판독을 통해 최초 판정이 번복되었다면 주자의 위치 배정 등 필요하다고 생각되는 모든 조치를 취해야 한다.</li>
+						<li>④ 심판팀장은 이를 기록위원을 통해 방송하도록 해야 하며, 양 구단 감독에게 결과를 알려주어야 한다.</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl>
+				<dt>7. 경기의 지연 및 제재</dt>
+				<dd>만약 심판의 판단으로 감독, 코치, 선수 또는 구단의 임직원이 해당 구단의 비디오 판독 결정을 위한 시간을 벌기 위해 고의로 경기를 지연시키고 있다면, 심판은 감독에게 즉시 비디오 판독 기회 사용 여부를 결정할 것을 통보하고 경고할 수 있다. 심판의 경고에도 고의적으로 계속 지연을 시킨다면 심판팀장은 재량으로 해당 구단의 비디오 판독 기회를소멸시킬 수 있다. 총재는 이 조항을 위반한 구단을 추후 제재할 수 있다.</dd>
+			</dl>
+			<dl>
+				<dt>8. 양 구단 감독의 비디오 판독 요청</dt>
+				<dd>
+					<ol>
+						<li>① 하나의 상황에서 두 가지 이상의 플레이에 대한 논란이 발생하였을 경우 양 구단 감독 모두 비디오 판독을 요청할 수 있다.</li>
+						<li>② 비디오 판독은 요청한 순서에 따라 실시해야 한다. 만약 먼저 비디오 판독된 판정에 대해 심판팀장이 내린 결정이 그 뒤에 판정을 판독할 필요가 없게 된다면 심판팀장은 그 뒤의 비디오 판독을 하지 말아야 한다. 만약 구단에서 요청한 기회가 비디오 판독되지 않았다면 해당 구단 감독의 비디오 판독 요청은 없던 것이 되며 그 구단의 비디오 판독 기회는 유지된다.</li>
+						<li>③ 만약 양 구단의 비디오 판독 요청이 동시에 일어나지 않았다면, 후에 비디오 판독을 요청하는 구단은 해당루심과 심판팀장(심판팀장이 해당루심인 경우 최고 경력을 가진 심판)이 인터컴 장비를 착용하기 전에 요청해야 한다. 하지만 심판팀장의 최초 판정번복에 의해 불리하게 영향을 받은 구단의 감독은 심판팀장에게 같은 플레이 안에서 디오 판독이 가능한 다른 판정을 비디오 판독해 달라고 요청할 수 있다.<br />
+						예1)<br />
+						2사 주자 없는 상황. 타자가 외야로 라인드라이브성 타구를 쳤다. 심판은 이 공이 그라운드에 먼저 바운드 된 후 야수의 글러브로 들어갔다고 판정하고, 이 때 2루까지 진루하려던 타자 주자는 2루에서 아웃된다. 수비구단은 타자주자가 2루에서 아웃되며 이닝이 종료되었기 때문에 타자가 타격한 라인드라이브성 타구가 바운드가 먼저 되고 글러브로 들어갔는지 아닌지에 대해 비디오 판독을 요청할 이유가 없다. 하지만 만약 공격구단이 2루에서 타자주자가 태그 아웃된 플레이에 대해 비디오 판독을 요청하고 심판팀장이 이를 번복한다면, 수비구단은 심판팀장의 번복 결정이 내려지는 즉시, 외야에서 타자의 타구가 바운드가 되었는지 아닌지에 대해 비디오 판독을 요청할 수 있다.<br />
+						예2)<br />
+						2사 주자 1루 상황. 타자가 외야로 플라이볼을 치고 이 타구는 수비수가 포구하지 못한 것으로 판정된다. 그리고 주자는 3루까지 진루하려는 과정에서 3루에서 아웃이 선언되며 이닝이 종료된다. 공격구단 감독은 3루에서의 플레이에 대해 비디오 판독을 요청하고 심판팀장은 이를 세이프로 번복한다. 그러자라이에 대해 비디오 판독을 요청하고 심판팀장은 이를 이닝의 3번째 아웃이 되는 플라이 타구라고 번복한다.<br />
+						이 경우 타자의 플라이 타구가 외야에서 포구되며 3아웃으로 이닝이 종료된 것이기 때문에 3루에서 있었던 플레이에 대한 이전의 비디오 판독은 무의미한 것이 된다. 그러므로 3루에서 있었던 플레이에 대한 이전의 비디오 판독 요청은 무효로 간주된다.</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl>
+				<dt>9. 비디오 판독 후 감독의 결정</dt>
+				<dd>
+					비디오 판독으로 인해 판정이 번복되면 플레이 이후 잘못된 판정으로 영향을 받아 내려진 감독의 결정은 무효화된다. 이 경우 감독은 심판팀장이 결정한 내용을 바탕으로 하여 전략적인 결정을 유지하거나 바꿀 수 있다.<br />
+					예1)<br />
+					플레이가 이루어진 후 수비구단 감독이 투수교체 사인을 낸 직후 공격구단 감독이 비디오 판독을 요청한다. 비디오 판독 결과 판정이 번복된다. 이 때 심판팀장의 결정이 발표된 후 수비 구단 감독은 직전에 이루어졌던 투수교체를 무효화할 수 있다.<br />
+					예2)<br />
+					무사 주자 3루 상황. 타자가 투수의 투구에 스윙을 하면서 배트가 포수의 글러브를 쳤고 포수의 방해가 선언된다. 스윙을 하면서 타격한 공은 좌측 외야로 날아가 포구된다. 3루주자는 이 때 태그 업을 하고 아슬아슬하게 홈에서 득점한다. 공식야구규칙 5.05(b)(3)에 따르면 포수의 방해가 선언되었기 때문에 공격구단 감독은 방해 페널티(타자는 1루로 진루권을 얻고 주자는 3루로 돌아간다) 또는 플레이의 결과(타자는 아웃, 3루주자는 득점) 중 선택할 수 있다. 공격구단 감독은 플레이의 결과를 선택하기로 한다. 수비구단 감독은 3루주자가 홈에서 득점했을 때의 판정에 대해 비디오 판독을 신청하고 심판팀장이 최초 판정을 번복해 주자가 홈에서 아웃된다. 심판팀장이 결정한 바에 따라 최종 결과를 알게 되면, 공격구단 감독은 플레이의 결과를 택하기로 했던 최초 결정을 무효화할 수 있다(포수의 방해, 타자의 방해는 비디오 판독 대상이 아님).
+				</dd>
+			</dl>
+			<dl>
+				<dt>10. 비디오 판독의 특수성</dt>
+				<dd>감독이 비디오 판독 기회를 사용할 경우 감독은 어느 특정 판정에 대하여 비디오 판독을 원하는 것인지 말해야 한다. 하지만 그 판정이 잘못되었다고 생각하는 이유에 대해선 언급할 필요는 없다.<br />
+				예)<br />
+				1루에서 벌어진 포스 플레이의 ‘아웃’에 대하여 비디오 판독을 요청할 때 감독은 ‘송구를 받는 수비수의 발이 베이스에서 떨어졌다, 공이 1루에 닿기 전 주자가 먼저 베이스를 밟았다’ 등의 얘기를 할 필요 없다.<br />
+				또한 감독의 신청에 포함되지 않은 다른 판정에 대해서는 판독센터에서 비디오 판독을 실시하지 않는다.<br />
+				예)<br />
+				주자가 런다운에 걸렸을 때 심판이 수비수가 태그를 못했다고 판정하고 주자의 세이프를 선언한다.<br />
+				수비구단은 이 최초 판정에 대해 비디오 판독을 신청한다. 심판팀장은 수비수가 주자를 태그하지 못한 것을 재확인했으나 세이프로 선언된 주자가 선행주자에 의해 추월당하는, 공식야구규칙 5.09(b)(9)의 위반을 발견한다. 감독은 오직 태그 플레이에 관해서만 비디오 판독을 요청했기 때문에 심판팀장은 추월주자에 관해 심판이 판정하지 않은 사실을 바로잡을 수 없다(스리피트 위반 여부는 비디오 판독 대상이 아님).</dd>
+			</dl>
+			<dl>
+				<dt>11. 비디오 판독 신청 및 결과는 최종적</dt>
+				<dd>
+					<ol>
+						<li>① 감독이 심판에게 비디오 판독을 요청하면 이를 철회할 수 없다.</li>
+						<li>② 심판팀장이 비디오 판독에 의해 결정한 하나 또는 복수의 판정에 대한 판정 유지나 번복, 그리고 주자의 위치 배정 등 필요에 의해 실시된 모든 행위는 최종이고 양 구단에 적용되며 이는 더 이상의 검토나 수정의 대상이 아니다.</li>
+						<li>③ 비디오 판독이 실시되면 선수단 및 양 구단의 관계자는 더 이상 심판팀장의 결정에 대해 이의를 제기할 수 없다. 이 조항을 위반할 경우 심판은 선수단 및 관계자에게 퇴장을 명한다.</li>
+						<li>④ 심판팀장이 결정한 판정에 대해서는 제소가 허락되지 않는다. 또한, 여기에 제시된 어떤 규칙이나 절차의 위반도 경기제소의 이유로 허용되지 않는다.</li>
+						<li>⑤ 비디오 판독이 가능하지 않은 상황(예 : 플레이가 대상이 아니거나, 심판팀장이 비디오 판독 사용 요청을 거부함)에서 감독, 코치 또는 선수가 논란이 되는 판정 결과와 반대되는 내용의 화면을 봤다는 언급을 한다면 이 사람은 경기에서 즉각 퇴장의 대상이 된다.</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl>
+				<dt>12. 비디오 판독의 정정</dt>
+				<dd>
+					<p>비디오 판독 결과 최초의 판정이 번복된다면, 심판팀장은 처음부터 옳은 판정이 이루어졌을 경우를 가정하고 양 구단이 위치해야 할 상황을 만들도록 정정해야 한다. 또한, 이 규정에 의해서 번복되는 모든 판정에서 나오는 주자의 배치에 대한 결정은 공식야구규칙에서 정한 기준에 따라 심판팀장이 결정한다.</p>
+					<ol>
+						<li>① 주자를 배치할 때는 플라이볼의 깊이, 주자의 스피드, 플레이가 이루어졌을 때 주자의 위치, 아웃카운트, 잘못된 판정이 공격 또는 수비구단 선수들의 이어지는 행동이나 위치에 영향을 끼쳤는지의 여부를 고려해야 한다.</li>
+						<li>② 심판팀장이 잘못된 판정으로 공격, 수비구단 선수들의 이어지는 행동이나 처신에 영향을 끼치지 않았다고 판단한다면 판정은 바꾸지만 영향 받지 않은 주자들의 위치에 대한 원심은 그대로 유지한다.</li>
+						<li>③ 심판팀장은 판정이 옳게 내려졌을 경우를 가정하고 구단의 득점을 인정하거나 무효화할 수 있다.</li>
+						<li>④ 주자의 위치 배정이나 주자 아웃 선언, 득점 및 득점 무효에 대한 심판팀장의 결정은 최종이며 양 구단에 구속력을 갖는다. 이에 대해 논란하거나 항의하는 감독 및 구단 관계자에게는 퇴장을 명한다.</li>
+					</ol>
+				</dd>
+			</dl>
+			<dl>
+				<dt>13. 비디오 판독 중계화면의 전광판 상영</dt>
+				<dd>비디오 판독시 구단은 전광판에 중계 리플레이 또는 판독화면 을 상영할 수 있다. (2018.3.5 규칙위원회)</dd>
+			</dl>
+			<dl>
+				<dt>14. 공식기록원</dt>
+				<dd>심판팀장은 비디오 판독시 공식야구규칙 9조의 적용과 관련한 모든 결정을 내리는 공식기록원의 권한을 침해해서는 안 된다. (2017.2.7 개정)</dd>
+			</dl>
+		</div>
+		<!--// popCont -->
+		<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">close</a>
+	</div>
+</div>
+<!--// 규정 팝업 -->
+<!--// 2020-04-10 -->
+
+<!-- 2020-06-18 -->
+<div id="pop" class="layer layer3" style="display: block;"> 
+	<div class="inner">
+		<img src="../images/temp-img2.jpg" alt="KBO비디오 판독센터 시스템 점검 안내 공지문">
+		<div class="checkBoxArea">
+			<input type="checkbox" id="chk1" name="chkbox">
+			<label for="chk1">오늘하루보지않기</label>
+		</div>
+		<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">닫기 <img src="../images/w-close.png" alt="닫기"></a>
+	</div>
+</div>
+</body>
+</html>

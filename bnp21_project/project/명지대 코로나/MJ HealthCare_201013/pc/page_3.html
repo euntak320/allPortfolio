@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>MJ CORONA</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    
+</head>
+
+<body>
+    <div id="subPage">
+        <!-- header -->
+        <div class="header">
+            <div class="topArea">
+                <h1><a href="">logo</a></h1>
+                <div class="topBtm">
+                    <span>고객센터 담당자 2님</span>
+                    <button>로그아웃</button>
+                </div>
+            </div>
+            <div class="bottomArea">
+                <span>
+                    <a href="">고객문의</a>
+                </span>
+                <span>
+                    <a href="">예진표관리</a>
+                </span>
+                <span>
+                    <a href=""  class="on">관리자관리</a>
+                </span>
+                <span>
+                    <a href="">병원관리</a>
+                </span>
+            </div>
+        </div>
+        <!-- header -->
+
+        <!-- content -->
+        <div class="contentArea v3">
+            <div class="comLayout">
+                <div class="comTableArea">
+                    <span class="title">관리자 리스트</span>
+                    <div class="table v2">
+                        <table>
+                            <caption>해당 테이블은 no, 이름, 로그인 아이디, 로그인 비밀번호로 구분되어 있습니다.</caption>
+                            <colgroup>
+                                <col style="width:5%">
+                                <col style="width:20%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>이름 <span>(필수)</span></th>
+                                    <th>로그인 아이디 <span>(필수)</span></th>
+                                    <th>로그인 비밀번호 <span>(필수)</span></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>기본</td>
+                                    <td>관리자</td>
+                                    <td>admin</td>
+                                    <td>12345789</td>
+                                    <td>
+                                        <div class="btn">
+                                            <button type="button">삭제</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>고객센터 담당자1</td>
+                                    <td>cs_user01</td>
+                                    <td>11111111</td>
+                                    <td>
+                                        <div class="btn">
+                                            <button type="button" class="on">추가</button>
+                                            <button type="button">삭제</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>고객센터 담당자2</td>
+                                    <td>cs_user02</td>
+                                    <td>1111111122</td>
+                                    <td>
+                                        <div class="btn">
+                                            <button type="button" class="on">추가</button>
+                                            <button type="button">삭제</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="comBtm">
+                        <button type="button">저장</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+
+        <!-- footer -->
+        <div class="footer">
+            <span>2020 &copy; MJ. All Rights Reserved.</span>
+        </div>
+        <!-- footer -->
+    </div>
+</body>
+
+</html>

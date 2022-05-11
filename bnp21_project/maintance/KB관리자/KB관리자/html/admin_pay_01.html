@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>결제내역조회 | 관리자 | KB스타게이트</title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 해당페이지에서만 사용 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery.datetimepicker.css">
+<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="gnbWrap">
+				<div class="fl"><h1 class="logo"><a href="#">스타게이트<span>관리시스템</span></a></h1></div>
+				<div class="fr">
+					<ul class="menu">
+						<li>관리자명(ID)님</li>
+						<li><a href="#" class="btn logout">로그아웃</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- left menu -->
+		<div class="leftMenu">
+			<div class="inner">
+				<ul class="ul">
+					<li class="li">
+						<ul><!-- 개발 : 페이지 진입시 해당 메뉴가 활성화되어야할때 li에 클래스 on 추가 -->
+							<li class="on"><a href="#" class="mm">결제내역 조회</a></li>
+							<li><a href="#" class="mm">정산 조회</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">서비스관리</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">공지사항</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+							<li><a href="#" class="mm">FAQ</a></li>
+							<li><a href="#" class="mm">약관 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">관리자 계정 관리</a></li>
+							<li><a href="#" class="mm">(공통) 계정 관리</a></li>
+							<li><a href="#" class="mm">회원정보 조회</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">배너 관리</a></li>
+							<li><a href="#" class="mm">캐시백 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">코드 관리</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //left menu -->
+
+		<!-- content -->
+		<div class="content">
+			<h2 class="hTit">결제내역조회</h2>
+
+			<!-- 조회영역 -->
+			<div class="schTopBox">
+				<div class="in">
+					<div class="tbw">
+						<!-- table -->
+						<table>
+							<caption>검색</caption>
+							<colgroup>
+								<col style="width:120px;">
+								<col style="width:auto;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">기업</th>
+									<td>
+										<select class="select">
+											<option>선택</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">가맹점</th>
+									<td>
+										<div>
+											<select class="select">
+												<option>가맹점명</option>
+											</select>
+											<div class="schIntWrap">
+												<input type="text" class="input" style="width:200px;">
+												<a href="#" class="btn sch"><span class="ico"></span></a>
+											</div>
+										</div>
+										<p class="noteTxt">가맹점 검색 시 선택 가맹점에 대한 정보 조회가 가능합니다.</p>
+
+										<!-- 선택된 가맹점 정보 -->
+										<div class="tbStoreResult">
+											<div class="infoWrap">
+												<span>가맹점명 : 방배본점 / 사업자 번호 : 78-789-78945</span>
+												<a href="#" class="btn close"><span class="ico"></span></a>
+											</div>
+										</div>
+										<!-- //선택된 가맹점 정보 -->
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //table -->
+
+					</div>
+					<div class="tbw">
+						<!-- table -->
+						<table>
+							<caption>검색</caption>
+							<colgroup>
+								<col style="width:120px;">
+								<col style="width:150px;">
+								<col style="width:120px;">
+								<col style="width:150px;">
+								<col style="width:120px;">
+								<col style="width:auto;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">기간</th>
+									<td colspan="5">
+										<ul class="dateIntWrap">
+											<li class="datepickerBox"><input type="text" class="datepicker input" title="년월일 입력"></li>
+											<li class="datepickerBox"><input type="text" class="datepicker input" title="년월일 입력"></li>
+										</ul>
+										<div class="rdoTermList">
+											<ul>
+												<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">오늘</span></label></li>
+												<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">1주</span></label></li>
+												<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">1개월</span></label></li>
+												<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">3개월</span></label></li>
+												<li><label class="label type2"><input type="radio" class="rdo" name="rdoTerm3"><span class="lTxt">6개월</span></label></li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">주문번호</th>
+									<td>
+
+									</td>
+									<th scope="row">결제수단</th>
+									<td>
+										<select class="select">
+											<option>전체</option>
+										</select>
+									</td>
+									<th scope="row">금융기관명</th>
+									<td>
+										<select class="select">
+											<option>전체</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">결제수단번호</th>
+									<td><input type="text" class="input" placeholder="숫자 4자리"></td>
+									<th scope="row">결제승인번호</th>
+									<td><input type="text" class="input" placeholder="숫자 10자리"></td>
+									<th scope="row">결제상태</th>
+									<td>
+										<select class="select">
+											<option>전체</option>
+										</select>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //table -->
+					</div>
+				</div>
+
+				<!-- cnt button -->
+				<div class="cntBtmBtn">
+					<a href="#" class="btn md ye">검색</a>
+				</div>
+				<!-- cnt button -->
+			</div>
+			<!-- //조회영역 -->
+
+			<!-- table top -->
+			<div class="tblTopWrap">
+				<div class="fr">
+					<a href="#" class="btn sm de">엑셀 다운로드</a>
+				</div>
+			</div>
+			<!-- //table top -->
+
+			<!-- table -->
+			<div class="tbl scroll-x">
+				<table>
+					<caption></caption>
+					<colgroup>
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:auto;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">기업</th>
+							<th scope="col">가맹점명</th>
+							<th scope="col">사업자번호</th>
+							<th scope="col">주문번호</th>
+							<th scope="col">결제일시</th>
+							<th scope="col">결제수단</th>
+							<th scope="col">금융기관명</th>
+							<th scope="col">결제수단번호</th>
+							<th scope="col">결제승인번호</th>
+							<th scope="col">결제금액</th>
+							<th scope="col">리워드금액</th>
+							<th scope="col">결제상태</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>99</td>
+							<td>BBQ</td>
+							<td>방배본점</td>
+							<td>78-789-78945</td>
+							<td>12345678</td>
+							<td>2019.05.04 15:16:17</td>
+							<td>계좌</td>
+							<td>KB국민은행</td>
+							<td>285101*****</td>
+							<td>1234567890</td>
+							<td class="tar">5,000원</td>
+							<td class="tar">0</td>
+							<td>결제</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="tar"></td>
+							<td class="tar"></td>
+							<td>
+								취소
+								<p>yyyy.mm.dd</p>
+							</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="tar"></td>
+							<td class="tar"></td>
+							<td>결제</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="tar"></td>
+							<td class="tar"></td>
+							<td>결제</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="tar"></td>
+							<td class="tar"></td>
+							<td>결제</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
+
+			<!-- pagingWrap -->
+			<div class="pagingWrap">
+                <a href="#" class="p_btn first ico">처음으로</a><a href="#" class="p_btn prev ico">이전</a>
+                <div class="number"><!-- page selected일때 a태그에 class "on"을 넣어주세요. -->
+                    <a href="#" class="num on">1</a><a href="#" class="num">2</a><a href="#" class="num">3</a><a href="#" class="num">4</a><a href="#" class="num">5</a><a href="#" class="num">6</a><a href="#" class="num">7</a><a href="#" class="num">8</a><a href="#" class="num">9</a><a href="#" class="num">10</a>
+                </div>
+                <a href="#" class="p_btn next ico">다음</a><a href="#" class="p_btn end ico">맨끝</a>
+            </div>
+			<!-- //pagingWrap -->
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

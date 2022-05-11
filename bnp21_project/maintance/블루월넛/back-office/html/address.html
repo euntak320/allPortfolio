@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>Bluewalnut | 전자계약서 가입신청</title>
+    </title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
+
+    <script>
+        $(function(){
+            $(".tabArea button").click(function(){
+                $(".tabArea button").removeClass("on");
+                $(".tabArea button").eq($(this).index()).addClass("on");
+                $(".tabArea .show").removeClass("on");
+                $(".tabArea .show").eq($(this).index()).addClass("on");
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="windowPopup">
+        <div class="title">
+            <span>우편번호검색</span>
+        </div>
+        <div class="addSelect">
+            <div class="tabArea">
+                <div class="tabBtn">
+                    <button type="button" class="on">도로명 주소</button>
+                    <button type="button">지번 주소</button>
+                </div>
+                <!-- 도로명 주소 -->
+                <div class="show on">
+                    <div class="findArea">
+                        <span>시/도 및 시/군/구 선택 후 주소명을 입력하신 후 [조회]버튼을 누르세요.</span>
+                        <div class="inputArea">
+                            <div class="inputBox w30">
+                                <span>시/도</span>
+                                <select name="" id="">
+                                    <option value="">서울특별시</option>
+                                </select>
+                            </div>
+                            <div class="inputBox w30">
+                                <span>시/군/구</span>
+                                <select name="" id="">
+                                    <option value="">영등포구</option>
+                                </select>
+                            </div>
+                            <div class="inputBox w30">
+                                <input type="text" placeholder="나머지주소를 적어주세요">
+                            </div>
+                            <button type="button">조회</button>
+                        </div>
+                    </div>
+                    <div class="resultArea">
+                        <table>
+                            <colgroup>
+                                <col style="width:20%;">
+                                <col style="width:80%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>우편번호</th>
+                                    <th>주소</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 지번 주소 -->
+                <div class="show">
+
+                    <div class="findArea">
+                        <span>주소의 동(읍/리/면) 또는 마지막 부분을 입력하신후 [조회]버튼을 누르세요.</span>
+                        <div class="inputArea left">
+                            <div class="inputBox w40">
+                                <span>지역명</span>
+                                <input type="text" placeholder="지역명을 적어주세요">
+                            </div>
+                            <button type="button">조회</button>
+                        </div>
+                    </div>
+                    <div class="resultArea">
+                        <table>
+                            <colgroup>
+                                <col style="width:20%;">
+                                <col style="width:80%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>우편번호</th>
+                                    <th>주소</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                <tr>
+                                    <td>07126</td>
+                                    <td class="left">서울특별시 영등포구 국회대로 529</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

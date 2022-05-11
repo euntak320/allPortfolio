@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>조회 &lt; KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/common.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li><a href="">대시보드</a></li>
+				<li><a href="">등록</a></li>
+				<li class="curr"><a href="">조회</a></li>
+				<li><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">유형별 상세</a></li>
+						<li><a href="">심판별</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li><a href="">관리</a>
+					<ul>
+						<li><a href="">경기관리</a></li>
+						<li><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>조회</h2>
+			<!-- searchArea -->
+			<div class="searchArea">
+				<div class="inBox">
+					<dl>
+						<dt>경기일자</dt>
+						<dd class="dateWrap">
+							<span class="date"><input type="text" title="시작날짜선택"></span>
+							<em>~</em>
+							<span class="date"><input type="text" title="종료날짜선택"></span>
+						</dd>
+					</dl>
+					<div class="btnArea">
+						<button class="btn btnYellowL"><span class="icoReset">초기화</span></button>
+						<button class="btn btnYellow"><span class="icoSearch">조회</span></button>
+					</div>
+				</div>
+			</div>
+			<!--// searchArea -->
+
+			<!-- tableTop -->
+			<div class="tableTop">
+				<div class="btnArea">
+					<button class="btn btnRedL"><span class="icoEx">엑셀다운로드</span></button>
+					<button class="btn btnRed"><span class="icoModi">수정</span></button>
+				</div>
+			</div>
+			<!--// tableTop -->
+
+			<!-- colTable -->
+			<div class="colTable emblemS v2">
+				<table>
+					<caption>선택, 날짜, 경기구분, 경기[원정, 홈], 장소, 더블헤더, 우천취소, 동시판독, 방송사, 영상판독[이닝, 요청팀, 소요시간, 판독영상], 심판[이름, 베이스, 횟수], 최종판전, 최종결과, 원심/번복, 유형, 판독내용/근거 항목으로 구성된 조회 리스트 테이블입니다.</caption>
+					<colgroup>
+						<col span="22" style="width:auto">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" rowspan="2">&nbsp;</th>
+							<th scope="col" rowspan="2">날짜</th>
+							<th scope="col" rowspan="2">경기<br />구분</th>
+							<th scope="col" colspan="2">경기</th>
+							<th scope="col" rowspan="2">장소</th>
+							<th scope="col" rowspan="2">더블<br />헤더</th>
+							<th scope="col" rowspan="2">우천<br />취소</th>
+							<th scope="col" rowspan="2">동시<br />판독</th>
+							<th scope="col" rowspan="2">방송사</th>
+							<th scope="col" colspan="4">영상 판독</th>
+							<th scope="col" colspan="3">심판</th>
+							<th scope="col" rowspan="2">최종<br />판전</th>
+							<th scope="col" rowspan="2">최종<br />결과</th>
+							<th scope="col" rowspan="2">원심<br />/번복</th>
+							<th scope="col" rowspan="2">유형</th>
+							<th scope="col" rowspan="2">판독내용<br />/근거</th>
+						</tr>
+						<tr>
+							<th scope="col">원정</th>
+							<th scope="col">홈</th>
+							<th scope="col">이닝</th>
+							<th scope="col">요청팀</th>
+							<th scope="col">소요시간</th>
+							<th scope="col">판독영상</th>
+							<th scope="col">이름</th>
+							<th scope="col">베이스</th>
+							<th scope="col">횟수</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="radio" name="chk01" title="선택"></td>
+							<td>12.28</td>
+							<td>코리안<br />시리즈</td>
+							<td><span class="emblem OB">두산 베어스</span></td>
+							<td><span class="emblem SK">SK 와이번스</span></td>
+							<td>대구</td>
+							<td>DH1</td>
+							<td>우천취소</td>
+							<td>1차</td>
+							<td>SPOTV</td>
+							<td>3회말</td>
+							<td><span class="emblem OB">두산 베어스</span></td>
+							<td>72</td>
+							<td>KBO</td>
+							<td>홍길동</td>
+							<td>1루</td>
+							<td>1</td>
+							<td>2루타<br />인플레이</td>
+							<td>2루타<br />인플레이</td>
+							<td>원심</td>
+							<td>홈런</td>
+							<td><button class="btnPlay" onclick="fn_layer('layer1','1100')">재생</button></td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="chk01" title="선택"></td>
+							<td>12.28</td>
+							<td>코리안시리즈</td>
+							<td><span class="emblem OB">두산 베어스</span></td>
+							<td><span class="emblem SK">SK 와이번스</span></td>
+							<td>대구</td>
+							<td>DH1</td>
+							<td>우천취소</td>
+							<td>1차</td>
+							<td>SPOTV</td>
+							<td>3회말</td>
+							<td><span class="emblem OB">두산 베어스</span></td>
+							<td>72</td>
+							<td>KBO</td>
+							<td>홍길동</td>
+							<td>1루</td>
+							<td>1</td>
+							<td>2루타 인플레이</td>
+							<td>2루타 인플레이</td>
+							<td>원심</td>
+							<td>홈런</td>
+							<td><button class="btnPlay" onclick="fn_layer('layer1','1100')">재생</button></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// colTable -->
+
+			<!-- paging -->
+			<div class="paging">
+				<div class="inner">
+					<a href="" class="btnFirst">처음 페이지</a>
+					<a href="" class="btnPrev">이전 페이지</a>
+					<div class="page">
+						<a href="">1</a>
+						<a href="">2</a>
+						<a href="">3</a>
+						<strong>4</strong>
+						<a href="">5</a>
+					</div>
+					<a href="" class="btnNext">다음 페이지</a>
+					<a href="" class="btnLast">마지막 페이지</a>
+				</div>
+			</div>
+			<!--// paging -->
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<p>Copyright&copy; KBO, All Rights Reserved.</p>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+<!-- 경기정보 선택 팝업 -->
+<div class="layer layer1">
+	<div class="inner">
+		<p class="tit">3.28 <span>기아 : 삼성(대구삼성라이온즈파크)</span></p>
+		<!-- popCont --> 
+		<div class="popCont">
+			<div class="videoArea"><img src="../images/no-media.png" alt="영상 없음"></div><!-- 2020-04-08 -->
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>판독정보</h3>
+			</div>
+			<!--// titArea -->
+			<!-- infoTable -->
+			<div class="infoTable">
+				<table>
+					<caption>판독이닝, 요청팀, 소요시간, 최초판정, 최종판정, 판독결과, 유형, 방송국, 판독내용, 판독근거 항목으로 구성된 판독정보 테이블입니다.</caption><!-- 2020-03-26 - 항목 추가 -->
+					<colgroup>
+						<col style="width:80px">
+						<col style="width:auto">
+						<col style="width:80px">
+						<col style="width:auto">
+						<col style="width:80px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">판독이닝</th>
+							<td>1회말</td>
+							<th scope="row">요청팀</th>
+							<td>삼성</td>
+							<th scope="row">소요시간</th>
+							<td>10초</td>
+							
+						</tr>
+						<tr>
+							<th scope="row">최초판정</th>
+							<td>아웃</td>
+							<th scope="row">최종판정</th>
+							<td>세이프</td>
+							<th scope="row">판독결과</th>
+							<td>원심</td>
+						</tr>
+						<!-- 2020-03-26 -->
+						<tr>
+							<th scope="row">유형</th>
+							<td>포스1루</td>
+							<th scope="row">방송국</th>
+							<td>SPOTV</td>
+						</tr>
+						<tr>
+							<th scope="row">판독내용</th>
+							<td colspan="5">어쩌고 저쩌고</td>
+						</tr>
+						<tr>
+							<th scope="row">판독근거</th>
+							<td colspan="5">어쩌고 저쩌고</td>
+						</tr>
+						<!--// 2020-03-26 완료 -->
+					</tbody>
+				</table>
+			</div>
+			<!--// infoTable -->
+			<p>※ 판독 소요시간은 현장에서의 시그널 통해 시작되기 때문에 실제 영상 시간과 오차가 있을 수 있습니다.</p><!-- 2020-03-26 추가 -->
+		</div>
+		<!--// popCont -->
+		<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">close</a>
+	</div>
+</div>
+<!--// 경기정보 선택 팝업 -->
+</body>
+</html>

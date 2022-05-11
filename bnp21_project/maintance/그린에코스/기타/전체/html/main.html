@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>대기정보 시군별 - 경기도 대기환경</title>
+    <script src="../assets/js/jquery-1.11.0.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+    <!-- 헤더부분 -->
+    <header>
+        <div class="top_area">
+            <h1>
+                <a href="#none">경기도대기환경 진단평가 시스템</a>
+            </h1>
+            <div class="login_area">
+                <a href="#none" class="admin">관리자</a>
+                <a href="#none" class="my_info">내 정보</a>
+                <a href="#none" class="login">로그아웃</a>
+                <!-- <a href="#none" class="login">로그인</a> -->
+            </div>
+        </div>
+        <div class="bottom_area">
+            <div class="menu_area">
+                <span class="menu_txt ">일일진단평가</span>
+                <span class="menu_txt">대기정보</span>
+                <span class="menu_txt ">기상현황</span>
+                <span class="menu_txt ">모델링결과</span>
+                <span class="menu_txt ">사이트맵</span>
+                <a href="#" class="menu_btn">햄버거 메뉴</a>
+            </div>
+        </div>
+    </header>
+    <!-- 헤더부분 -->
+    <section class="main_sec">
+        <div class="main_visual">
+            <div class="inner">
+                <p class="txt">사계절 깨끗한 공기와 건강한 라이프 스타일 <br><strong>경기도 대기환경진단 평가시스템</strong>이 함께 합니다</p>
+            </div>
+        </div>
+        <div class="main_content">
+            <h2>경기도 보건환경연구원 모델결과</h2>
+            <div class="tab_area">
+                <a href="#none" class="on">PM<sub>2.5</sub></a>
+                <a href="#none">PM<sub>10</sub></a>
+                <a href="#none">O<sub>3</sub></a>
+            </div>
+            <div class="m_row">
+                <div class="col">
+                   <h3>전국(9km) <small>2019년 06월 30일 09시</small></h3>
+                   <div class="graph_area">
+                        <img src="../assets/images/temp/temp_graph5.jpg" alt="그래프 샘플">
+                   </div>
+                </div>
+                <div class="col">
+                    <h3>경기도(3km) <small>2019년 06월 30일 09시</small></h3>
+                    <div class="graph_area">
+                        <img src="../assets/images/temp/temp_graph6.jpg" alt="그래프 샘플">
+                   </div>
+                </div>
+                <div class="col">
+                    <h3>권역별 모델평균 <small>2019년 06월 30일 09시</small></h3>
+                    
+                    <!-- 19-11-07 권역별지도 추가 -->
+                    <div class="map_area type2">
+                       <div class="north">
+                          <!-- 대기상태에 따른 이미지 파일명 
+                                좋음 : _good
+                                보통 : _normal
+                                나쁨 : _bad
+                                매우나쁨 : _worst
+                                점검중 : _checking     -->
+                           <img src="../assets/images/north_dongducheon_good.png" alt="동두천">
+                           <img src="../assets/images/north_goyang_good.png" alt="고양">
+                           <img src="../assets/images/north_kimpo_good.png" alt="김포">
+                           <img src="../assets/images/north_paju_good.png" alt="파주">
+                           <img src="../assets/images/north_pocheon_good.png" alt="포천">
+                           <img src="../assets/images/north_uijeongbu_good.png" alt="의정부">
+                           <img src="../assets/images/north_yangju_good.png" alt="양주">
+                           <img src="../assets/images/north_yeoncheon_good.png" alt="연천">
+                       </div>
+                       
+                       <div class="east">
+                           <img src="../assets/images/east_gapyeong_normal.png" alt="가평">
+                           <img src="../assets/images/east_guri_normal.png" alt="구리">
+                           <img src="../assets/images/east_gwangju_normal.png" alt="광주">
+                           <img src="../assets/images/east_hanam_normal.png" alt="하남">
+                           <img src="../assets/images/east_namyangju_normal.png" alt="남양주">
+                           <img src="../assets/images/east_seongnam_normal.png" alt="성남">
+                           <img src="../assets/images/east_yangpyeong_normal.png" alt="양평">
+                       </div>
+                       
+                       <div class="central">
+                           <img src="../assets/images/central_ansan_bad.png" alt="안산">
+                           <img src="../assets/images/central_anyang_bad.png" alt="안양">
+                           <img src="../assets/images/central_bucheon_bad.png" alt="부천">
+                           <img src="../assets/images/central_gunpo_bad.png" alt="군포">
+                           <img src="../assets/images/central_gwacheon_bad.png" alt="과천">
+                           <img src="../assets/images/central_gwangmyeong_bad.png" alt="광명">
+                           <img src="../assets/images/central_hwaseong_bad.png" alt="화성">
+                           <img src="../assets/images/central_siheung_bad.png" alt="시흥">
+                           <img src="../assets/images/central_suwon_bad.png" alt="수원">
+                           <img src="../assets/images/central_uiwang_bad.png" alt="의왕">
+                           <img src="../assets/images/central_osan_bad.png" alt="오산">
+                       </div>
+                       
+                       <div class="south">
+                           <img src="../assets/images/south_anseong_worst.png" alt="안성">
+                           <img src="../assets/images/south_icheon_worst.png" alt="이천">
+                           <img src="../assets/images/south_pyeongtaek_worst.png" alt="평택">
+                           <img src="../assets/images/south_yeoju_worst.png" alt="여주">
+                           <img src="../assets/images/south_yongin_worst.png" alt="용인">
+                       </div>
+                       <p style="position: absolute;top: 0; left: 0; z-index: 100;"><img src="../assets/images/bg_map_trans.png" usemap="#mapoverpos"></p>
+                       <map name="mapoverpos" id="mapoverpos">
+                           <area shape="poly" coords="212,69,175,133,148,148,149,200,122,228,129,247,170,247,183,274,217,231,286,240,301,197,245,179,232,134,250,97" href="#" alt="동부권" class="east" style="outline:none;">
+                           <area shape="poly" coords="211,73,188,108,175,139,148,150,126,163,95,195,36,182,15,182,16,143,63,90,140,10,213,53" href="#" alt="북부권" class="north" style="outline:none;">
+                           <area shape="poly" coords="289,242,202,228,210,244,187,276,175,244,148,250,129,282,136,315,109,317,82,338,101,365,151,349,188,365,270,300" href="#" alt="남부권" class="south" style="outline:none;">
+                           <area shape="poly" coords="119,223,88,227,72,199,57,208,47,253,35,280,69,334,93,317,141,319,160,284,131,277,141,249,120,245" href="#" alt="중부권" class="center" style="outline:none;">
+                       </map>
+                       
+                       
+                       <div class="m_info north" style="display: none">
+                            <p class="name">북부권</p>
+                            <p class="level"><span class="v1">좋음</span></p>
+                       </div>
+                       <div class="m_info east" style="display: none">
+                            <p class="name">동부권</p>
+                            <p class="level"><span class="v2">보통</span></p>
+                       </div>
+                       <div class="m_info center" style="display: none">
+                            <p class="name">중부권</p>
+                            <p class="level"><span class="v3">나쁨</span></p>
+                       </div>
+                       <div class="m_info south" style="display: none">
+                            <p class="name">남부권</p>
+                            <p class="level"><span class="v4">매우나쁨</span></p>
+                       </div>
+                      <!--<div class="m_info checking">
+                            <p class="name">남부권</p>
+                            <p class="level"><span class="v5">점검중</span></p>
+                      </div>-->
+                      
+                      <script>
+                          $.each($('#mapoverpos area'), function(){
+                              
+                              var that = $(this);
+                              var pos = that.attr('class');
+                              var layer = $('.m_info');
+                              var east = $('.m_info.east');
+                              var south = $('.m_info.south');
+                              var center = $('.m_info.center');
+                              var north = $('.m_info.north');
+                              
+                              that.on('mouseenter', function(){
+                                  layer.hide();
+                                  $('.m_info.'+pos).show();                                  
+                              });
+                              
+                          });
+                      </script>
+                    </div>
+                </div>
+            </div>
+
+            <h2>실시간 대기질현황(관측값)</h2>
+            <div class="m_row">
+                <div class="col table_left">
+                    <h3>대기질현황 <small>2019년 06월 30일 09시</small></h3>
+                    <div class="table_area center">
+                        <table>
+                            <caption>권역별 대기질현황</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">지역</th>
+                                    <th scope="col">PM<sub>2.5</sub></th>
+                                    <th scope="col">PM<sub>10</sub></th>
+                                    <th scope="col">O<sub>3</sub></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="bgGray">남부권</th>
+                                    <td>좋음</td>
+                                    <td>좋음</td>
+                                    <td>보통</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">중부권</th>
+                                    <td>좋음</td>
+                                    <td>좋음</td>
+                                    <td>보통</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">북부권</th>
+                                    <td>좋음</td>
+                                    <td>좋음</td>
+                                    <td>보통</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">중부권</th>
+                                    <td>좋음</td>
+                                    <td>좋음</td>
+                                    <td>보통</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table_area center">
+                        <table>
+                            <caption>시도별 대기질현황</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">지역</th>
+                                    <th scope="col">PM<sub>2.5</sub></th>
+                                    <th scope="col">PM<sub>10</sub></th>
+                                    <th scope="col">O<sub>3</sub></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="bgGray">경기도</td>
+                                    <td>좋음</td>
+                                    <td>좋음</td>
+                                    <td>보통</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">서울</td>
+                                    <td>좋음</td>
+                                    <td>좋음</td>
+                                    <td>보통</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">인천</td>
+                                    <td>좋음</td>
+                                    <td>좋음</td>
+                                    <td>보통</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">충남</td>
+                                    <td>좋음</td>
+                                    <td>좋음</td>
+                                    <td>보통</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col table_right">
+                    <h3>기상현황 <small>2019년 06월 30일 09시</small></h3>
+                    <div class="table_area center">
+                        <table>
+                            <caption>기상현황</caption>
+                            <colgroup>
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                                <col style="width: 25%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">지역</th>
+                                    <th scope="col">풍향</th>
+                                    <th scope="col">풍속</th>
+                                    <th scope="col">기온</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="bgGray">동두천</td>
+                                    <td>남서풍</td>
+                                    <td>4km/h</td>
+                                    <td>２9℃</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">파주</td>
+                                    <td>남서풍</td>
+                                    <td>4km/h</td>
+                                    <td>２9℃</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">수원</td>
+                                    <td>남서풍</td>
+                                    <td>4km/h</td>
+                                    <td>２9℃</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">양평</td>
+                                    <td>남서풍</td>
+                                    <td>4km/h</td>
+                                    <td>２9℃</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="bgGray">이천</td>
+                                    <td>남서풍</td>
+                                    <td>4km/h</td>
+                                    <td>２9℃</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+        <span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+    </footer>
+</body>
+
+</html>

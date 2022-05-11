@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>조회 &lt; KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/common.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li><a href="">대시보드</a></li>
+				<li><a href="">등록</a></li>
+				<li class="curr"><a href="">조회</a></li>
+				<li><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">유형별 상세</a></li>
+						<li><a href="">심판별</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li><a href="">관리</a>
+					<ul>
+						<li><a href="">경기관리</a></li>
+						<li><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>조회</h2>
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>경기정보</h3>
+				<div class="btnArea">
+					<button class="btn btnRed" onclick="fn_layer('layer1','1100')"><span class="icoImport">경기정보 불러오기</span></button>
+				</div>
+			</div>
+			<!--// titArea -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>일시, 대진, 장소, 방송사, 경기구분 항목으로 구성된 경기정보 테이블입니다.</caption><!-- 2020-03-20 - 경기구분 추가 -->
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">일시</th>
+							<td colspan="3">
+								<input type="text" title="일시 입력" readonly>
+								<!-- checkBox -->
+								<div class="checkBox">
+									<span><input type="checkbox" id="chk0101" disabled><label for="chk0101">더블헤더 경기</label></span>
+									<span><input type="checkbox" id="chk0102" disabled><label for="chk0102">우천취소</label></span>
+								</div>
+								<!--// checkBox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">대진</th>
+							<td><input type="text" title="대진 입력" readonly></td>
+							<th scope="row">장소</th>
+							<td><input type="text" title="장소 입력" readonly></td>
+						</tr>
+						<!-- 2020-03-20 -->
+						<tr>
+							<th scope="row">방송사</th>
+							<td><input type="text" title="방송사 입력" readonly></td>
+							<th scope="row">경기구분</th>
+							<td><input type="text" title="경기구분 입력" readonly></td>
+						</tr>
+						<!--// 2020-03-20 - 경기구분 추가 -->
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>심판정보</h3>
+			</div>
+			<!--// titArea -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>성명, 베이스, 횟수, 판독관 항목으로 구성된 심판정보 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">성명</th>
+							<td>
+								<input type="text" title="성명 입력" readonly>
+								<span>(0조)</span><!-- 2020-03-20 - 추가 -->
+								<button class="btn btnYellow" onclick="fn_layer('layer2','1100')"><span class="icoSearch">심판조회</span></button>
+							</td>
+							<th scope="row">베이스</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="베이스 선택">
+										<option value="">선택</option>
+										<option value="" selected>선택1</option>
+										<option value="">선택2</option>
+										<option value="">선택3</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">횟수</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>1회</span>
+									<select title="횟수 선택">
+										<option value="">1회</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+							<th scope="row">판독관</th>
+							<td>
+								<input type="text" title="판독관">
+								<!-- selectbox -->
+								<div class="selectbox w146">
+									<span>선택</span>
+									<select title="심판 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- selectbox -->
+								<div class="selectbox w146">
+									<span>선택</span>
+									<select title="심판 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>영상판독</h3>
+			</div>
+			<!--// titArea -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>판독 이닝, 요청팀, 판독 결과, 최초 판정, 최종 판정, 소요 시간, 동시판독, 판독 내용, 판독 근거, 유형 항목으로 구성된 영상판독 테이블입니다.</caption><!-- 2020-03-20 - 동시판독 추가 -->
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">판독 이닝</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="판독 이닝 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="판독 이닝 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+							<th scope="row">요청팀</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>팀 선택</span>
+									<select title="팀 선택">
+										<option value="">팀 선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">판독 결과</th>
+							<!-- 2020-03-20 -->
+							<td colspan="3">
+								<!-- checkBox -->
+								<div class="checkBox">
+									<span><input type="radio" name="chk02" id="chk0201" checked><label for="chk0201">원심</label></span>
+									<span><input type="radio" name="chk02" id="chk0202"><label for="chk0202">번복</label></span>
+									<span><input type="radio" name="chk02" id="chk0203"><label for="chk0203">판독거부</label></span>
+									<span><input type="checkbox" id="chk0204" checked><label for="chk0204">오독여부</label></span>
+								</div>
+								<!--// checkBox -->
+							</td>
+							<!--// 2020-03-20 -->
+						</tr>
+						<tr>
+							<th scope="row">최초 판정</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="최초 판정 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+							<th scope="row">최종 판정</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="최종 판정 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<!-- 2020-03-20 -->
+						<tr>
+							<th scope="row">소요 시간</th>
+							<td><input type="text" title="소요 시간 입력"><span>초</span></td>
+							<th scope="row">동시판독</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="동시판독 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<!--// 2020-03-20 - 동시판독 추가 -->
+						<tr>
+							<th scope="row">판독 내용</th>
+							<td colspan="3"><textarea title="판독 내용 입력"></textarea></td>
+						</tr>
+						<tr>
+							<th scope="row">판독 근거</th>
+							<td colspan="3"><textarea title="판독 근거 입력"></textarea></td>
+						</tr>
+						<tr>
+							<th scope="row">유형</th>
+							<td colspan="3">
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="유형 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="유형 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>오독보고서</h3><!-- 2020-03-20 - 오심 > 오독 변경 -->
+			</div>
+			<!--// titArea -->
+			<!-- 2020-03-20 -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>직전 상황, 오독 확인시점, 판정근거, 판독영상, 오독 결과, 비고 항목으로 구성된 오독보고서 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">직전 상황</th>
+							<td colspan="3"><textarea title="직전 상황 입력"></textarea></td>
+						</tr>
+						<tr>
+							<th scope="row">오독<br />확인시점</th>
+							<td colspan="3"><textarea title="오독 확인시점 입력"></textarea></td>
+						</tr>
+						<tr>
+							<th scope="row">판정근거</th>
+							<td colspan="3"><textarea title="판정근거 입력"></textarea></td>
+						</tr>
+						<tr>
+							<th scope="row">판독영상</th>
+							<td>
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="판독영상 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+							</td>
+							<th scope="row">오독 결과</th>
+							<td>
+								<!-- checkBox -->
+								<div class="checkBox">
+									<span><input type="radio" name="chk02" id="chk0301" checked><label for="chk0301">원심</label></span>
+									<span><input type="radio" name="chk02" id="chk0302"><label for="chk0302">번복</label></span>
+								</div>
+								<!--// checkBox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">비고</th>
+							<td colspan="3"><textarea title="비고 입력"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+			<!--// 2020-03-20 수정 -->
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>영상업로드</h3>
+			</div>
+			<!--// titArea -->
+			<!-- 2020-03-20 -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>판독영상 항목으로 구성된 영상업로드 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">판독영상</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>방송국 영상 선택</span>
+									<select title="방송국 영상 선택">
+										<option value="">방송국 영상 선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>방송국 선택</span>
+									<select title="방송국 선택">
+										<option value="">방송국 선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+								<!-- fileWrap -->
+								<div class="fileWrap">
+									<input type="text" readonly="readonly" title="첨부파일 입력" value="">
+									<input type="file" title="첨부파일 선택">
+								</div>
+								<!--// fileWrap -->
+								<input type="text" readonly="readonly" title="파일명" value="KBO cam 20200401 kia.mp4">
+								<button class="btn btnYellow"><span class="icoDownload">다운로드</span></button>
+								<button class="btn btnYellowL"><span class="icoTrash">삭제</span></button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- btnBottom -->
+			<div class="btnBottom">
+				<button class="btn btnBlueL">삭제</button>
+				<button class="btn btnGray">취소</button>
+				<button class="btn btnBlue">저장</button>
+			</div>
+			<!--// btnBottom -->
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<p>Copyright&copy; KBO, All Rights Reserved.</p>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+</body>
+</html>

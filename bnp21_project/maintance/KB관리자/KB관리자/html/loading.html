@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>관리자 | 스타 플랫폼 가입신청</title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 해당페이지에서만 사용 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery.datetimepicker.css">
+<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+<script>
+	
+	$(function(){
+		// 파일 업로드시 나오는 경로 텍스트
+		$("#file").on('change',function(){
+			var fileName = $("#file").val();
+			$(".upload-name").val(fileName);
+		});
+
+		// x버튼 클릭시 삭제
+		$(".addFileList .fileTxt a").click(function(){
+			$(this).closest("div").hide();
+		});
+		//  20-06-23 추가
+		$("#txtCheck").click(function(){
+			if ($(this).is(":checked")){
+				$(".tbw tr.active").show();
+			} else {
+				$(".tbw tr.active").hide();
+			}
+		});
+		//  20-06-23 추가
+		// 20-06-29 추가
+		$(".tblTopWrap .btnOpen").click(function(){
+			$(this).parents(".btm").find(".areaList .txtArea").slideToggle("on");
+			$(this).parents(".btm").find(".btnOpen").toggleClass("on");
+		});
+
+		$("#allCheck").click(function(){
+			if($("#allCheck").prop("checked")){
+				$("input[name = listCheck]").prop("checked" , true);
+			}
+			else{
+				$("input[name = listCheck]").prop("checked" , false);
+			}
+		});
+		// 20-06-29 추가
+	});
+</script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="gnbWrap">
+				<div class="fl"><h1 class="logo"><a href="#">스타플랫폼<span>비대면 가맹신청</span></a></h1></div>
+
+			</div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container" class="starGate">
+		<!-- content -->
+		<div class="content">
+			<h2 class="hTit">스타플랫폼 가맹점 가입신청</h2>
+			<!-- textarea -->
+			<div class="conditionsArea">
+				<!-- 20-06-26 btm 클래스 name="listCheck" 추가 -->
+				<div class="btm">
+					<div class="tblTopWrap">
+						<div class="fl">
+							<p class="yellowRect fl">스타게이트 플랫폼 가맹점 약관(필수)</p>
+							<button class="btnOpen fl">열기</button>
+						</div>
+						<div class="fr">
+							<a href="" class="download" target="_blank">PDF 다운로드</a>
+						</div>
+					</div>
+					<div class="areaList">
+						<div class="txtArea">
+							스타게이트 플랫폼 가맹점 약관에 대한 내용이 들어갈 자리입니다.
+						</div>
+						<div class="fr">
+							<span class="lTxt">상기약관에 동의합니다.</span>
+							<label class="label">
+								<input type="checkbox" class="chk" name="listCheck">
+								<span class="ico"></span>
+								
+							</label>
+						</div>
+					</div>
+				</div>
+				<!-- 20-06-26 btm 클래스 name="listCheck" 추가 -->
+				<div class="btm">
+					<div class="tblTopWrap">
+						<div class="fl">
+							<p class="yellowRect fl">정보 수집 &middot; 이용 동의</p>
+							<button class="btnOpen fl">열기</button>
+						</div>
+						<div class="fr">
+							<a href="" class="download" target="_blank">PDF 다운로드</a>
+						</div>
+					</div>
+					<div class="areaList">
+						<div class="txtArea">
+							정보 수집 &middot; 이용 동의에 대한 내용이 들어갈 자리입니다.
+						</div>
+						<div class="fr">
+							<span class="lTxt">상기약관에 동의합니다.</span>
+							<label class="label">
+								<input type="checkbox" class="chk" name="listCheck">
+								<span class="ico"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<!-- 20-06-26 btm 클래스 name="listCheck" 추가 -->
+				<div class="btm">
+					<div class="tblTopWrap">
+						<div class="fl">
+							<p class="yellowRect fl">정보 수집 &middot;이용 &middot;제공 동의(선택)</p>
+							<button class="btnOpen fl">열기</button>
+						</div>
+						<div class="fr">
+							<a href="" class="download" target="_blank">PDF 다운로드</a>
+						</div>
+					</div>
+					<div class="areaList">
+						<div class="txtArea">
+							정보 수집 &middot;이용 &middot;제공 동의(선택) 들어갈 자리입니다.
+						</div>
+						<div class="fr">
+							<span class="lTxt">정보 수집 &middot; 이용에 동의합니다.</span>
+							<label class="label">
+								<input type="checkbox" class="chk" name="listCheck">
+								<span class="ico"></span>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="fr mt30">
+					<span class="lTxt">전체 내용에 동의합니다.</span>
+					<label class="label">
+						<!-- 20-06-26 allCheck 아이디값 추가 추가 -->
+						<input type="checkbox" class="chk" id="allCheck">
+						<span class="ico"></span>
+					</label>
+				</div>
+
+				<!-- 20-06-29 추가 -->
+				<div class="certify">
+					<div class="txtBox">
+						<span>사업자등록번호</span>
+						<span>111-11-11111</span>
+					</div>
+					<button type="button">본인인증</button>
+					<span class="red">완료</span>
+				</div>
+				<!-- 20-06-29 추가 -->
+				
+				<div class="joinContent">
+					<div class="tblTopWrap">
+						<div class="fl">
+							<p class="yellowRect">정보작성</p>
+							<p>* 표시된 항목은 필수 입력 정보입니다.</p>
+						</div>
+					</div>
+					<!-- table -->
+					<div class="tbw">
+						<table>
+							<caption>정보작성 테이블</caption>
+							<colgroup>
+								<col style="width:10%">
+								<col style="width:15%">
+								<col style="width:22.5%">
+								<col style="width:15%">
+								<col style="width:22.5%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th rowspan="7" scope="row">사업장</th>
+									<td>* 본사 사업자명</td>
+									<td>
+										<!-- disalbe 처리 class none 처리 -->
+										<select name="" id="" class="none" disabled>
+											<option value="">A 사업자명</option>
+
+										</select>
+									</td>
+									<td>* 본사 사업자번호</td>
+									<td>
+										<input type="text" placeholder="123456789" disabled>
+									</td>
+								</tr>
+								<tr>
+									<td>* 상호명</td>
+									<td>
+										<input type="text">
+									</td>
+									<td style="border-bottom:0;">* 가맹점명(간판명) 한글</td>
+									<td style="border-bottom:0;">
+										<input type="text">
+									</td>
+								</tr>
+								<tr>
+									<td>* 사업자등록번호</td>
+									<td>
+										<input type="text" placeholder="-없이 숫자만 입력">
+									</td>
+									<td style="padding-right:8.5%; text-align: right;">영문</td>
+									<td>
+										<input type="text">
+									</td>
+								</tr>
+								<tr>
+									<td>* 영업개시일</td>
+									<td colspan="3">
+										<div class="datepickerBox fl">
+											<div class="inline w100">
+												<input type="text" class="datepicker input" placeholder="YYYY.MM.DD">
+											</div>
+										</div>
+										<span class="fl" style="margin:20px 10px;">YYYY.MM.DD 형식으로 입력해주세요. 예)2020.01.01</span>
+									</td>
+								</tr>
+								<tr>
+									<td>* 전화번호</td>
+									<td>
+										<div class="telArea">
+											<div class="select">
+												<select name="" id="">
+													<option value="">010</option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+										</div>
+									</td>
+									<td>* SMS &nbsp;안내 수신번호</td>
+									<td>
+										<div class="telArea">
+											<div class="select">
+												<select name="" id="">
+													<option value="">010</option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>* 업태</td>
+									<td>
+										<input type="text">
+									</td>
+									<td>* 종목</td>
+									<td>
+										<input type="text" style="width:40%;">
+										<span class="etcTxt">* 사업자등록증 상 내용을 기재해주세요</span>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4">
+										<span class="inline w8">* 주소</span>
+										<div class="inline w10">
+											<select name="" id="">
+												<option value="">국가선택</option>
+												<option value="">대한민국</option>
+												<option value="">미국</option>
+											</select>
+										</div>
+										<div class="inline w10">
+											<input type="text">
+										</div>
+										<div class="inline w8">
+											<!-- 20-03-25 수정 -->
+											<a href="#none" class="btn md de" onclick="window.open('office_number.html','우편번호','width=500,height=580,location=no,status=no,scrollbars=yes');">우편번호 검색</a>
+											<!-- 20-03-25 수정 -->
+										</div>
+										<div class="inline fr w65">
+											<input type="text">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th rowspan="4" scope="row">대표자</th>
+									<td>* 대표자명</td>
+									<td>
+										<input type="text" class="fl" style="width:55%;" disabled>
+										<a href="#none" class="btn md de fr" onclick="window.open('certify_phone.html','본인인증','width=500,height=650,location=no,status=no,scrollbars=yes');">본인인증</a>
+									</td>
+									<td>* 대표자 실명번호</td>
+									<td>
+										<input type="text" placeholder="0000000-0******" disabled>
+									</td>
+								</tr>
+								<tr>
+									<td>* 국적</td>
+									<td>
+										<select name="" id="">
+											<option value="">대한민국</option>
+											<option value=""></option>
+											<option value=""></option>
+											<option value=""></option>
+										</select>
+									</td>
+									<td>* 연락처1</td>
+									<td>
+										<div class="telArea">
+											<div class="select">
+												<select name="" id="">
+													<option value="">010</option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td >* Email</td>
+									<td class="email">
+										<div class="inline w26">
+											<input type="text">
+										</div>
+										<div class="inline w4">
+											<span class="dash">@</span>
+										</div>
+										<div class="inline">
+											<select name="" id="">
+												<option value="">naver.com</option>
+												<option value="">gmail.com</option>
+												<option value="">hanmail.net</option>
+												<option value="">kakao.com</option>
+											</select>
+										</div>
+										<div class="inline w40">
+											<input type="text">
+										</div>
+									</td>
+									<td>* 연락처2</td>
+									<td>
+										<div class="telArea">
+											<div class="select">
+												<select name="" id="">
+													<option value="">010</option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="4">
+										<span class="inline w8">* 자택주소</span>
+										<div class="inline w10">
+											<select name="" id="">
+												<option value="">국가선택</option>
+												<option value="">대한민국</option>
+												<option value="">미국</option>
+											</select>
+										</div>
+										<div class="inline w10">
+											<input type="text">
+										</div>
+										<div class="inline w8">
+											<!-- 20-03-25 수정 -->
+											<a href="#none" class="btn md de" onclick="window.open('office_number.html','우편번호','width=500,height=550,location=no,status=no,scrollbars=yes');">우편번호 검색</a>
+											<!-- 20-03-25 수정 -->
+										</div>
+										<div class="inline w65">
+											<input type="text">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th rowspan="4">담당자</th>
+									<td colspan="4">
+										<label class="label" id="">
+											<input type="checkbox" id="txtCheck" class="chk">
+											<span class="ico"></span>
+											<span class="lTxt">가맹점 실무 담당자가 있을 경우, 체크해주세요.</span>
+										</label>
+									</td>
+									
+								</tr>
+								<tr class="active" >
+									<td>담당자명</td>
+									<td class="doubleCheck">
+										<input type="text" class="fl" style="width:50%">
+									</td>
+									<td>직위</td>
+									<td>
+										<input type="text" >
+									</td>
+								</tr>
+								<tr class="active">
+									<td>* 연락처1</td>
+									<td>
+										<div class="telArea">
+											<div class="select">
+												<select name="" id="">
+													<option value="">010</option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+										</div>
+									</td>
+									<td>연락처2</td>
+									<td>
+										<div class="telArea">
+											<div class="select">
+												<select name="" id="">
+													<option value="">010</option>
+													<option value=""></option>
+													<option value=""></option>
+												</select>
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+											<span class="arrow">-</span>
+											<div class="number">
+												<input type="text">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr class="active">
+									<td class="email" colspan="4">
+										<span class="inline w8">* Email</span>
+										<div class="inline w10">
+											<input type="text">
+										</div>
+										<div class="inline w1">
+											<span class="dash">@</span>
+										</div>
+										<div class="inline w18">
+											<select name="" id="">
+												<option value="">naver.com</option>
+												<option value="">gmail.com</option>
+												<option value="">hanmail.net</option>
+												<option value="">kakao.com</option>
+											</select>
+										</div>
+										<div class="inline w65">
+											<input type="text">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tbw bt0">
+						<table>
+							<caption>관련 서류 이미지 업로드</caption>
+							<colgroup>
+								<col style="width:11.5%">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th rowspan="2">정산계좌</th>
+									<td>은행명</td>
+									<td>
+										<input type="text" placeholder="국민은행" disabled>
+									</td>
+									<td>예금주명</td>
+									<td>
+										<input type="text" placeholder="대표자명" >
+									</td>
+									<td>계좌번호</td>
+									<td>
+										<input type="text" placeholder="-없이 숫자만 입력">
+									</td>
+								</tr>
+								<tr>
+									<td colspan="6">
+										<div class="w100">
+											<span class="fl">상기 계좌를  「스타플랫폼 플랫폼가맹점 약관」에 따른 거래의 취소 및 환불처리 목적에 의해 출금에 동의합니다. </span>
+											<label class="label fr">
+												<input type="checkbox" class="chk">
+												<span class="ico"></span>
+											</label>
+										</div>
+										<div class="w100">
+											<div class="fl">
+												<span class="etcTxt">* 대표자 본인 명의의 계좌번호만 등록 가능합니다.</span>
+											</div>
+											<div class="fr">
+												<!-- 20-03-25 수정 -->
+												<a href="#none" class="btn md de" onclick="window.open('certify_account.html','우편번호','width=500,height=720,location=no,status=no,scrollbars=yes');">계좌인증 & 출금동의</a>
+												<!-- 20-03-25 수정 -->
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tblTopWrap mt30">
+						<div class="fl">
+							<p class="yellowRect">관련 서류 이미지 업로드</p>
+						</div>
+					</div>
+					<div class="tbw upload">
+						<table>
+							<caption>관련 서류 이미지 업로드 테이블</caption>
+							<colgroup>
+								<col style="width:10%">
+								<col style="width:90%">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>사업자등록증</th>
+									<td>
+										<input type="file" id="file">
+										<div class="addFileList">
+											<div class="fileTxt">
+												<span>BBQ 여의도점 사업자등록증.jpg</span>
+												<a href="#none">X</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>대표자신분증<br>(주민등록증&middot;운전면허증 중 택1)</th>
+									<td>
+										<input type="file" id="file">  
+									</td>
+								</tr>
+								<tr>
+									<th>영업신고&middot;등록&middot;허가증</th>
+									<td>
+										<input type="file" id="file"> 
+										
+									</td>
+								</tr>
+								<tr>
+									<th>기타이미지</th>
+									<td>
+										<input type="file" id="file">
+										<div class="addFileList">
+											<a class="btn xs gr">+ 파일추가</a>
+											<div class="fileTxt">
+												<span>홍대반가점_01.jpg</span>
+												<a href="#none">X</a>
+											</div>
+											<div class="fileTxt">
+												<span>홍대반가점_01.jpg</span>
+												<a href="#none">X</a>
+											</div>
+											<div class="fileTxt">
+												<span>홍대반가점_01.jpg</span>
+												<a href="#none">X</a>
+											</div>
+											<div class="fileTxt">
+												<span>홍대반가점_01.jpg</span>
+												<a href="#none">X</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				<!-- //table -->
+				</div>
+				<div class="fr mt10">
+					<a href="#" class="btn md de">제출</a>
+				</div>
+			</div>
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+<!-- loadingbar -->
+<div id="loading" style="display: block;"></div>
+<!-- loadingbar -->
+
+</body>
+</html>

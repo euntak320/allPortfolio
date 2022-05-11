@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>asiana</title>
+
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script>
+        $(function(){
+            $(".file_area .file_name").click(function(){
+                $(".file_list").toggle();
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header>
+        <div class="header_area">
+            <a href="approval_2.html" class="close_btn">모바일메뉴</a>
+            <span class="main_title">결재처리</span>
+            <!-- <a href="#none" class="search_btn">돋보기</a> -->
+            <div class="top_btn">
+                <!-- <a href="javascript:void(0);" class="btn fl">삭제</a> -->
+                <a href="javascript:void(0);" class="btn red fr">전송</a>
+            </div>
+        </div>
+        <div class="top_layer">
+            <div class="search_area">
+                <div class="frame">
+                    <a href="javascript:void(0);" class="close_btn">닫기버튼</a>
+                    <!-- <div class="select_box">
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div> -->
+                  
+                    <div class="input_box w80">
+                        <input type="text" name="" value="" placeholder="검색어를 입력해주세요">
+                    </div>
+                    <a href="javascript:void(0);" class="search_btn">찾기버튼</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- header -->
+
+    <!-- content -->
+    <section>
+        <div class="container bg_f5">
+            <div class="com_send_frame com_editor_area">
+                <div class="send_area" id="receiverForm">
+                    <span class="title">받은사람</span>
+                    <div class="people_list">
+                        <span style="padding-right:30px;">김민수 <a href="javascript:void(0);">X</a></span>
+                        <span style="padding-right:30px;">tak320@naver.com <a href="javascript:void(0);">X</a></span>
+                        <span style="padding-right:30px;">tpkyj@asianaidt.com <a href="javascript:void(0);">X</a></span>
+                        <a href="../approval/approval_4.html" class="share">공유버튼</a>
+                    </div>
+                </div>
+                <div id="refererForm" class="reference_area">
+                    <span class="title">참조</span>
+                    <div class="people_list">
+                        <span style="padding-right:30px;">김민수 <a href="javascript:void(0);">X</a></span>
+                        <span style="padding-right:30px;">tak320@naver.com <a href="javascript:void(0);">X</a></span>
+                        <span style="padding-right:30px;">tpkyj@asianaidt.com <a href="javascript:void(0);">X</a></span>
+                        <a href="../approval/approval_4.html" class="share">공유버튼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="content_area txt pd0">  
+                <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요"></textarea>
+            </div>
+        </div>
+        
+    </section>
+    <!-- content -->
+    
+
+</html>

@@ -1,0 +1,39 @@
+@charset "utf-8";
+@font-face {
+	font-family:'AppleSDGothic'; 
+	font-style:normal; 
+	font-weight:400; 
+	src:url("../fonts/AppleSDGothicNeoR.woff2") format('woff2'),
+		url("../fonts/AppleSDGothicNeoR.woff") format('woff'),
+		url("../fonts/AppleSDGothicNeoR.ttf") format('truetype'); 
+}
+@font-face {
+	font-family:'noto'; 
+	font-style:normal; 
+	font-weight:400; 
+	src:url("../fonts/NotoSansKR-Regular.woff2") format('woff2'),
+		url("../fonts/NotoSansKR-Regular.woff") format('woff'),
+		url("../fonts/NotoSansKR-Regular.ttf") format('truetype'); 
+}
+@font-face {
+	font-family:'noto'; 
+	font-style:normal; 
+	font-weight:500; 
+	src:url("../fonts/NotoSansKR-Medium.woff2") format('woff2'),
+		url("../fonts/NotoSansKR-Medium.woff") format('woff'),
+		url("../fonts/NotoSansKR-Medium.ttf") format('truetype'); 
+}
+
+/* reset */
+* {box-sizing:border-box}
+body {overflow-y:auto; position:relative; letter-spacing:-0.07em; font-size:20px; font-family:"AppleSDGothic" , "맑은 고딕", 'noto', sans-serif; color:#5f666a}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, address {margin:0; padding:0}
+pre {margin:0; padding:0; word-wrap:break-word; white-space:pre-line}
+table {border:0; border-collapse:collapse; border-spacing:0; width:100%}
+fieldset, img {border:0;vertical-align:top}
+ul, li {list-style:none}
+h1, h2, h3, h4, h5, h6 {font-size:100%; font-weight:normal; line-height:1em}
+a {text-decoration:none; cursor:pointer}
+body {position:relative}
+em {font-style:normal}
+legend, hr, caption {display:none}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>BC 페이북</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/slick.js"></script>	
+	<script>
+		$(function(){
+			$(".com-check label").click(function(){
+				$(".check-area").toggleClass("on");
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<!-- #wrap -->
+	<div id="wrap" class="selling">
+
+		<!-- 헤더 -->
+		<header>
+			<a href="#" class="back-btn">뒤로가기</a>
+			<h1>내 차 팔기 신청</h1>
+			<a href="#" class="close-btn">닫기</a>
+		</header>
+		<!-- //헤더 -->	
+		
+		<!-- 컨텐츠 -->		
+		<section class="container">
+			<div class="selling-table">
+				<table>
+					<colgroup>
+						<col style="width:30%;">
+						<col style="width:70%;">
+					</colgroup>
+					<tr>
+						<th>차량번호</th>
+						<td>
+							<input type="text" placeholder="00가 0000">
+							<div class="toggle-check-content">
+								<div class="check-area">
+									<div class="check-cnt">
+										<input type="radio" name="radio-3" id="radio-3-1" checked="">
+										<label for="radio-3-1">개인 차량</label>
+									</div>
+									<div class="check-cnt">
+										<input type="radio" name="radio-3" id="radio-3-2" >
+										<label for="radio-3-2">법인 차량</label>
+									</div>
+								</div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th>소유자명</th>
+						<td>
+							<input type="text" placeholder="홍길동">
+						</td>
+					</tr>
+					<tr>
+						<th>휴대폰번호</th>
+						<td>
+							<input type="text" placeholder="010-1234-1234">
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="check-agree-content">
+				<div class="check-area">
+					<div class="com-check">
+						<input type="checkbox" id="check-1" checked="">
+						<label for="check-1">개인정보 수집 및 이용동의(필수)</label>
+					</div>						
+				</div>
+				<div class="etc-area">
+					<span>수수료 기준 및 비용안내</span>
+				</div>
+			</div>
+		</section>
+		<!-- //컨텐츠 -->
+
+		<!-- 하단 버튼 -->
+		<div class="com-btn-content">
+			<!-- 190905 비활성시 disabled 클래스 추가 -->
+			<a href="#" class="full disabled">다음</a>
+			<!-- 190905 비활성시 disabled 클래스 추가 -->
+		</div>
+		<!-- //하단 버튼 -->
+
+	</section>
+	<!-- //#wrap -->
+	
+</body>
+</html>

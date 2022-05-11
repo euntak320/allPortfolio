@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<title>세종학당 IA</title>
+		<link rel="stylesheet" href="css/common.css" />
+		<script src="js/jquery-2.2.4.js"></script>
+		<style type="text/css">
+			body {
+				display: block !important;
+				overflow: auto;
+				min-width: 1600px;
+				box-sizing: border-box;
+				word-break: keep-all
+			}
+
+			* {
+				box-sizing: border-box
+			}
+
+			caption {
+				display: none
+			}
+
+			#wrap {
+				overflow: hidden;
+				width: 100%;
+				min-width: 1024px;
+				margin-bottom: 50px
+			}
+
+			#header {
+				overflow: hidden;
+				padding: 50px;
+				width: 100%
+			}
+
+			#header .tit_area {
+				position: relative;
+				overflow: hidden
+			}
+
+			#header .tit_area h1 {
+				overflow: hidden;
+				line-height: 50px;
+				font-size: 40px
+			}
+
+			#header .tit_area strong {
+				display: block;
+				overflow: hidden;
+				width: 169px;
+				line-height: 23px;
+				text-align: center;
+				font-size: 15px;
+				color: #fff;
+				text-align: center;
+				background: #000
+			}
+
+			#header .tit_area strong:before {
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				bottom: 23px;
+				left: 0;
+				content: "";
+				width: 100%;
+				border-top: 2px solid #000
+			}
+
+			#header .tit_area strong span {
+				overflow: hidden
+			}
+
+			#header .intro {
+				position: absolute;
+				top: 60px;
+				right: 50px;
+				overflow: hidden
+			}
+
+			#header .intro p {
+				overflow: hidden;
+				font-size: 10px;
+				line-height: 15px;
+				text-align: right
+			}
+
+			#contents {
+				position: relative;
+				overflow: hidden;
+				padding: 0 430px 0 50px
+			}
+
+			#contents iframe {
+				position: fixed;
+				right: 50px;
+				overflow-y: auto;
+				border: 1px solid #ccc;
+				width: 360px;
+				height: 640px;
+				background: #fff
+			}
+
+			#contents .table_style01 {
+				width: 100%;
+				max-width: 100%;
+				border-top: 3px solid #f00;
+				border-bottom: 1px solid #000
+			}
+
+			#contents .table_style01 table {
+				min-width: 100%;
+				width: auto;
+				table-layout: fixed
+			}
+
+			#contents .table_style01 table thead {
+				border-left: 1px solid #444
+			}
+
+			#contents .table_style01 table tr th {
+				padding: 10px;
+				border-right: 1px solid #444;
+				font-size: 13px;
+				text-align: left;
+				color: #fff;
+				background: #000
+			}
+
+			#contents .table_style01 table tr.bGray td {
+				background-color: #d8d8d8;
+			}
+
+			#contents .table_style01 table tr td {
+				padding: 10px;
+				border-top: 1px solid #eaeaea;
+				border-right: 1px solid #eaeaea;
+				font-size: 13px;
+				text-align: left;
+				color: #000
+			}
+
+			#contents .table_style01 table tr td:first-child {
+				border-left: 1px solid #eaeaea
+			}
+
+			#contents .table_style01 table tr td a {
+				text-decoration: underline;
+				color: #fa9999
+			}
+
+			#contents .table_style01 table tr td a:visited {
+				color: #00f
+			}
+
+			#contents .table_style01 table tr.today td {
+				border-color: #fccfcf;
+				background: #fcf2f2
+			}
+
+			#contents .table_style01 table tr.today td+td+td+td+td+td+td {
+				color: #ff0000
+			}
+
+			#contents .table_style01 table tr.depth td {
+				border-top: 1px solid #f00
+			}
+
+			/* 메뉴 구분 */
+			#contents .table_style01 table tr.point td {
+				border: 1px solid #f8b9b9;
+				background: #ffe7e7
+			}
+
+			/* 중요 내용 */
+			.noneSb td {
+				background: #f8fbc4
+			}
+
+			.modi td {
+				background: #ffd8d8
+			}
+
+			.bgGray td {
+				color: #ddd !important;
+				background: #fafafa
+			}
+
+			.bgGray td a {
+				color: #ddd !important
+			}
+		</style>
+		<script>
+			$(function () {
+				$(".btnIframe").click(function (e) {
+					e.preventDefault();
+					var i = $(this).attr("href");
+					$("iframe").attr("src", i);
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<!-- wrap -->
+		<div id="wrap">
+
+			<!-- header -->
+			<header id="header">
+				<div class="tit_area">
+					<h1>세종학당IA :) </h1>
+					<strong>국문 <span>(Mobile)</span></strong>
+				</div>
+				<div class="intro">
+					<p>HTML5 / utf-8</p>
+					<p>Browser - Crome, Safari</p>
+				</div>
+			</header>
+			<!--// header -->
+
+			<!-- section -->
+			<section id="contents">
+				<iframe src="" frameborder="0"></iframe>
+				<!-- 메뉴 구조도 -->
+				<div class="table_style01">
+					<table summary="1depth, 2depth, 3depth, 4depth, URL, 미리보기, 완료날짜, 수정날짜, 진행상태, 기타사항 항목으로 구성된 IA 표입니다.">
+						<caption>세종학당 IA</caption>
+						<colgroup>
+							<col style="width:auto" />
+							<col style="width:auto" />
+							<col style="width:auto" />
+							<col style="width:auto" />
+							<col style="width:7%" />
+							<col style="width:7%" />
+							<col style="width:7%" />
+							<col style="width:7%" />
+							<col style="width:auto" />
+							<col style="width:auto" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">1depth</th>
+								<th scope="col">2depth</th>
+								<th scope="col">3depth</th>
+								<th scope="col">4depth</th>
+								<th scope="col">URL</th>
+								<th scope="col">미리보기</th>
+								<th scope="col">완료날짜</th>
+								<th scope="col">수정날짜</th>
+								<th scope="col">진행상태</th>
+								<th scope="col">기타사항</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>검색결과없음</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="html/9999.html" target="_blank" title="새창으로 열기">9999.html</a></td>
+								<td><a href="html/9999.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-17</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>01.메인</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="html/index.html" target="_blank" title="새창으로 열기">index.html</a></td>
+								<td><a href="html/index.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-07</td>
+								<td>2020-12-02</td>
+								<td>완료</td>
+								<td>- 텍스트수정(국문->영문)<br />- footer 리스트 국문버전 정렬수정<br />- movie -> Korean Folktale로 텍스트수정<br />- 푸터영역 선끊김 수정<br />- Learning Materials모바일 수정<br />- Learning Materials search버튼 마우스오버효과,level superior삭제</td>
+							</tr>
+							<tr>
+								<td>02.로그인</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0300.html" target="_blank" title="새창으로 열기">0300.html</a></td>
+								<td><a href="html/0300.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-03</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>03.회원가입</td>
+								<td>유형선택</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0410.html" target="_blank" title="새창으로 열기">0410.html</a></td>
+								<td><a href="html/0410.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-03</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>동의하기</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0420.html" target="_blank" title="새창으로 열기">0420.html</a></td>
+								<td><a href="html/0420.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-03</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>학습자</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0431.html" target="_blank" title="새창으로 열기">0431.html</a></td>
+								<td><a href="html/0431.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-04</td>
+								<td></td>
+								<td>완료</td>
+								<td>- 인증팝업 포함<br />- 일반 / 14세미만(0433) 함께 작업<br />- 국적 한국선택시 14세 미만 라디오버튼 선택컨텐츠 노출 포함</td>
+							</tr>
+							<!--
+							<tr>
+								<td></td>
+								<td></td>
+								<td>인증팝업</td>
+								<td></td>
+								<td><a href="html/0432.html" target="_blank" title="새창으로 열기">0432.html</a></td>
+								<td><a href="html/0432.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-04</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>14세미만</td>
+								<td></td>
+								<td><a href="html/0433.html" target="_blank" title="새창으로 열기">0433.html</a></td>
+								<td><a href="html/0433.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>-->
+							<tr>
+								<td></td>
+								<td>교원</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0440.html" target="_blank" title="새창으로 열기">0440.html</a></td>
+								<td><a href="html/0440.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-04</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>04.가입완료</td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0450.html" target="_blank" title="새창으로 열기">0450.html</a></td>
+								<td><a href="html/0450.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-04</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>05.아이디/비밀번호 찾기</td>
+								<td>아이디/비밀번호 찾기</td>
+								<td>찾기</td>
+								<td></td>
+								<td><a href="html/0451.html" target="_blank" title="새창으로 열기">0451.html</a></td>
+								<td><a href="html/0451.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-04</td>
+								<td></td>
+								<td>완료</td>
+								<td>- TAB</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>결과</td>
+								<td></td>
+								<td><a href="html/0453.html" target="_blank" title="새창으로 열기">0453.html</a></td>
+								<td><a href="html/0453.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-04</td>
+								<td></td>
+								<td>완료</td>
+								<td>- TAB</td>
+							</tr>
+							<tr>
+								<td>06.통합검색</td>
+								<td>검색결과</td>
+								<td>전체</td>
+								<td></td>
+								<td><a href="html/0611.html" target="_blank" title="새창으로 열기">0611.html</a></td>
+								<td><a href="html/0611.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-04</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>개별</td>
+								<td></td>
+								<td><a href="html/0612.html" target="_blank" title="새창으로 열기">0612.html</a></td>
+								<td><a href="html/0612.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-04</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td>05.etc</td>
+								<td>01.세종학당소개</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0510.html" target="_blank" title="새창으로 열기">0510.html</a></td>
+								<td><a href="html/0510.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>02.이용약관</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0520.html" target="_blank" title="새창으로 열기">0520.html</a></td>
+								<td><a href="html/0520.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>03.저작권정책</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0530.html" target="_blank" title="새창으로 열기">0530.html</a></td>
+								<td><a href="html/0530.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>04.전자우편무단수집거부</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0540.html" target="_blank" title="새창으로 열기">0540.html</a></td>
+								<td><a href="html/0540.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>05.개인정보처리방침</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0550.html" target="_blank" title="새창으로 열기">0550.html</a></td>
+								<td><a href="html/0550.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>06.원격지원서비스</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0560.html" target="_blank" title="새창으로 열기">0560.html</a></td>
+								<td><a href="html/0560.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>98.세종학당재단</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0598.html" target="_blank" title="새창으로 열기">0598.html</a></td>
+								<td><a href="html/0598.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>99.온라인 세종학당</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/0599.html" target="_blank" title="새창으로 열기">0599.html</a></td>
+								<td><a href="html/0599.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>100.관련기관누리집</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/05100.html" target="_blank" title="새창으로 열기">05100.html</a></td>
+								<td><a href="html/05100.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>01. K-culture</td>
+								<td>00. 공통</td>
+								<td>자료없음</td>
+								<td></td>
+								<td><a href="html/1000.html" target="_blank" title="새창으로 열기">1000.html</a></td>
+								<td><a href="html/1000.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>01. korean wave</td>
+								<td>01. k-pop</td>
+								<td>목록_전체보기</td>
+								<td><a href="html/1111.html" target="_blank" title="새창으로 열기">1111.html</a></td>
+								<td><a href="html/1111.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-23</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- +버튼 마우스오버,가로스크롤 생성됨 수정(edge)<br />- 웹툰컨텐츠 서브텍스트삭제(클래스 추가됨)<br />-썸네일오버시 텍스트짤림 수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록_video</td>
+								<td><a href="html/1112.html" target="_blank" title="새창으로 열기">1112.html</a></td>
+								<td><a href="html/1112.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-23</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록_연계기관목록</td>
+								<td><a href="html/1113.html" target="_blank" title="새창으로 열기">1113.html</a></td>
+								<td><a href="html/1113.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-23</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/1114.html" target="_blank" title="새창으로 열기">1114.html</a></td>
+								<td><a href="html/1114.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-26</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>연계기관 이미지영역 수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록_text</td>
+								<td></td>
+								<td><a href="html/1115.html" target="_blank" title="새창으로 열기">1115.html</a></td>
+								<td><a href="html/1115.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세_text</td>
+								<td></td>
+								<td><a href="html/1116.html" target="_blank" title="새창으로 열기">1116.html</a></td>
+								<td><a href="html/1116.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02. Webdrama</td>
+								<td></td>
+								<td><a href="html/1120.html" target="_blank" title="새창으로 열기">1120.html</a></td>
+								<td><a href="html/1120.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>03. Movie</td>
+								<td></td>
+								<td><a href="html/1130.html" target="_blank" title="새창으로 열기">1130.html</a></td>
+								<td><a href="html/1130.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>02. Food</td>
+								<td>목록_전체보기</td>
+								<td></td>
+								<td><a href="html/1201.html" target="_blank" title="새창으로 열기">1201.html</a></td>
+								<td><a href="html/1201.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-23</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록_webtoon</td>
+								<td></td>
+								<td><a href="html/1202.html" target="_blank" title="새창으로 열기">1202.html</a></td>
+								<td><a href="html/1202.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-23</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/1203.html" target="_blank" title="새창으로 열기">1203.html</a></td>
+								<td><a href="html/1203.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-23</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>03. Tour</td>
+								<td>목록_전체보기</td>
+								<td></td>
+								<td><a href="html/1301.html" target="_blank" title="새창으로 열기">1301.html</a></td>
+								<td><a href="html/1301.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-23</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록_video</td>
+								<td></td>
+								<td><a href="html/1302.html" target="_blank" title="새창으로 열기">1302.html</a></td>
+								<td><a href="html/1302.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-23</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록_연계기관목록</td>
+								<td></td>
+								<td><a href="html/1303.html" target="_blank" title="새창으로 열기">1303.html</a></td>
+								<td><a href="html/1303.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-23</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/1304.html" target="_blank" title="새창으로 열기">1304.html</a></td>
+								<td><a href="html/1304.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-26</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>03. Tranditional</td>
+								<td>01. Teakwondo</td>
+								<td></td>
+								<td><a href="html/1410.html" target="_blank" title="새창으로 열기">1410.html</a></td>
+								<td><a href="html/1410.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02. Traditional Music</td>
+								<td></td>
+								<td><a href="html/1420.html" target="_blank" title="새창으로 열기">1420.html</a></td>
+								<td><a href="html/1420.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>03. Korean Folktale</td>
+								<td>목록_전체보기</td>
+								<td><a href="html/1431.html" target="_blank" title="새창으로 열기">1431.html</a></td>
+								<td><a href="html/1431.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-24</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록_animation</td>
+								<td><a href="html/1432.html" target="_blank" title="새창으로 열기">1432.html</a></td>
+								<td><a href="html/1432.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-24</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<!--
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세_animation</td>
+								<td><a href="html/" target="_blank" title="새창으로 열기">-</a></td>
+								<td><a href="html/" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>-->
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록_webtoons</td>
+								<td><a href="html/1433.html" target="_blank" title="새창으로 열기">1433.html</a></td>
+								<td><a href="html/1433.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-24</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세_webtoons</td>
+								<td><a href="html/1434.html" target="_blank" title="새창으로 열기">1434.html</a></td>
+								<td><a href="html/1434.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-24</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>05.Literature</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/1500.html" target="_blank" title="새창으로 열기">1500.html</a></td>
+								<td><a href="html/1500.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-24</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/1510.html" target="_blank" title="새창으로 열기">1510.html</a></td>
+								<td><a href="html/1510.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-24</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- 정렬깨짐 수정(edge)<br />- 검색창 텍스트 색상변경</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>06.King Sejong Intitute</td>
+								<td>01.목록</td>
+								<td>목록_전체보기</td>
+								<td><a href="html/1611.html" target="_blank" title="새창으로 열기">1611.html</a></td>
+								<td><a href="html/1611.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-24</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록_Video</td>
+								<td><a href="html/1612.html" target="_blank" title="새창으로 열기">1612.html</a></td>
+								<td><a href="html/1612.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-24</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02.상세</td>
+								<td>내용소개</td>
+								<td><a href="html/1621.html" target="_blank" title="새창으로 열기">1621.html</a></td>
+								<td><a href="html/1621.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-25</td>
+								<td></td>
+								<td>완료</td>
+								<td>TAB</td>
+							</tr>
+							<!--
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>구성</td>
+								<td><a href="html/1622.html" target="_blank" title="새창으로 열기">1622.html</a></td>
+								<td><a href="html/1622.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>-->
+							<tr>
+								<td>02. Learning</td>
+								<td>01. Text Books</td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/2110.html" target="_blank" title="새창으로 열기">2110.html</a></td>
+								<td><a href="html/2110.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-27</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td>학습지원/내용소개01</td>
+								<td><a href="html/2121.html" target="_blank" title="새창으로 열기">2121.html</a></td>
+								<td><a href="html/2121.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-28</td>
+								<td>2020-11-13</td>
+								<td>완료</td>
+								<td>- TAB<br />- 상단 회색박스 타이틀텍스트 가로길이조절</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>내용소개02/목차/구매안내</td>
+								<td><a href="html/2125.html" target="_blank" title="새창으로 열기">2125.html</a></td>
+								<td><a href="html/2125.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-29</td>
+								<td>2020-11-13</td>
+								<td>완료</td>
+								<td>- TAB<br />- 상단 회색박스 타이틀텍스트 가로길이조절</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>03. Lectures(intro)</td>
+								<td>내용소개/구성/강사소개</td>
+								<td></td>
+								<td><a href="html/2310.html" target="_blank" title="새창으로 열기">2310.html</a></td>
+								<td><a href="html/2310.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-02</td>
+								<td>2020-11-25</td>
+								<td>완료</td>
+								<td>- TAB<br />- 카테고리 슬라이더 bg변경<br />- tab 라운드깨짐 수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>04. Learning Materials</td>
+								<td>01. Video Clips</td>
+								<td>목록</td>
+								<td><a href="html/2411.html" target="_blank" title="새창으로 열기">2411.html</a></td>
+								<td><a href="html/2411.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-03</td>
+								<td>2020-11-23</td>
+								<td>완료</td>
+								<td>- 페이징 추가<br />- 두줄이상일 경우 말줄임</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/2412.html" target="_blank" title="새창으로 열기">2412.html</a></td>
+								<td><a href="html/2412.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-03</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- 반응형시 버튼 정렬안맞음 수정(ie)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02. Audio Clips</td>
+								<td>목록</td>
+								<td><a href="html/2421.html" target="_blank" title="새창으로 열기">2421.html</a></td>
+								<td><a href="html/2421.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-03</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- 페이징 추가<br />- 그림 클 경우 제목영역 침범 수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/2422.html" target="_blank" title="새창으로 열기">2422.html</a></td>
+								<td><a href="html/2422.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-03</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>03. Images</td>
+								<td>목록</td>
+								<td><a href="html/2431.html" target="_blank" title="새창으로 열기">2431.html</a></td>
+								<td><a href="html/2431.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-03</td>
+								<td>2020-11-05</td>
+								<td>완료</td>
+								<td>페이징 추가</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/2432.html" target="_blank" title="새창으로 열기">2432.html</a></td>
+								<td><a href="html/2432.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-03</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>04. Practice</td>
+								<td>목록</td>
+								<td><a href="html/2210.html" target="_blank" title="새창으로 열기">2210.html</a></td>
+								<td><a href="html/2210.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-30</td>
+								<td>2020-11-25</td>
+								<td>완료</td>
+								<td>- 메뉴위치변경/메뉴수정<br />- 카테고리 슬라이더 bg변경<br />- 제목텍스트 넘침 수정(m)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세_내용소개/구성</td>
+								<td><a href="html/2221.html" target="_blank" title="새창으로 열기">2221.html</a></td>
+								<td><a href="html/2221.html" class="btnIframe">미리보기</a></td>
+								<td>2020-10-30</td>
+								<td>2020-11-25</td>
+								<td>완료</td>
+								<td>- TAB<br />- 메뉴위치변경/메뉴수정<br />- 댓글 등록버튼 수정<br />- 첨부파일 마우스오버효과</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>05. Mobile App</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/2500.html" target="_blank" title="새창으로 열기">2500.html</a></td>
+								<td><a href="html/2500.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-05</td>
+								<td>2020-11-25</td>
+								<td>완료</td>
+								<td>어플화면 상단 텍스트 영역침범 수정(m)</td>
+							</tr>
+							<tr>
+								<td>03. Teaching</td>
+								<td>01. Teaching Materials</td>
+								<td>01. Instruction Book</td>
+								<td>목록</td>
+								<td><a href="html/3111.html" target="_blank" title="새창으로 열기">3111.html</a></td>
+								<td><a href="html/3111.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-06</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>이미지 비율에 따라 화면 달라짐 수정, img에 a태그 추가</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세_학습지원/내용소개/목차/구매안내</td>
+								<td><a href="html/3112.html" target="_blank" title="새창으로 열기">3112.html</a></td>
+								<td><a href="html/3112.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-06</td>
+								<td>2020-11-16</td>
+								<td>완료</td>
+								<td>- TAB<br />- 수정)모바일 화면에서 타이틀 텍스트 하단에 선이 밀려서 나타남(상단 회색박스 타이틀텍스트 가로길이조절)<br />- 텍스트 하단에 선 보이도록 수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02. References</td>
+								<td>목록/상세검색</td>
+								<td><a href="html/3121.html" target="_blank" title="새창으로 열기">3121.html</a></td>
+								<td><a href="html/3121.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-10</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- TAB<br />- advancedSrch클릭시 checked안됨 수정<br />- checkboxTabArea수정</r>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/3123.html" target="_blank" title="새창으로 열기">3123.html</a></td>
+								<td><a href="html/3123.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-10</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>03. Education Guidance</td>
+								<td>목록</td>
+								<td><a href="html/3131.html" target="_blank" title="새창으로 열기">3131.html</a></td>
+								<td><a href="html/3131.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-10</td>
+								<td>2020-11-13</td>
+								<td>완료</td>
+								<td>수정)모바일 화면에서 게시판 목록 영역 없어짐</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/3132.html" target="_blank" title="새창으로 열기">3132.html</a></td>
+								<td><a href="html/3132.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-10</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>수정/쓰기</td>
+								<td><a href="html/3133.html" target="_blank" title="새창으로 열기">3133.html</a></td>
+								<td><a href="html/3133.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-11</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- 개인정보동의 팝업 포함<br />- CCL상세설정 팝업 포함<br />- 등록유형에 URL 등록 버튼 클릭 시에는 Textbox만 노출되도록 수정(tab변경)<br />- URL등록 Textbox 삭제버튼추가<br />- placeholder 폰트수정<br />- 상세설정 버튼밀림 수정(ie)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>02. Articles</td>
+								<td>01. Research Reports</td>
+								<td>상세결과없음</td>
+								<td><a href="html/3210.html" target="_blank" title="새창으로 열기">3210.html</a></td>
+								<td><a href="html/3210.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-25</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- 검색결과 없을때 모바일 화면부분 태그위치 변경</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td><a href="html/3211.html" target="_blank" title="새창으로 열기">3211.html</a></td>
+								<td><a href="html/3211.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-25</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/3212.html" target="_blank" title="새창으로 열기">3212.html</a></td>
+								<td><a href="html/3212.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-25</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02. Academic Papers</td>
+								<td>상세결과없음</td>
+								<td><a href="html/3220.html" target="_blank" title="새창으로 열기">3220.html</a></td>
+								<td><a href="html/3220.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td><a href="html/3221.html" target="_blank" title="새창으로 열기">3221.html</a></td>
+								<td><a href="html/3221.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-11</td>
+								<td>2020-11-13</td>
+								<td>완료</td>
+								<td>수정)모바일 화면에서 게시판 목록 영역 없어짐</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/3222.html" target="_blank" title="새창으로 열기">3222.html</a></td>
+								<td><a href="html/3222.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>03. Community</td>
+								<td>01. Korean Education information</td>
+								<td>검색결과없음</td>
+								<td><a href="html/3310.html" target="_blank" title="새창으로 열기">3310.html</a></td>
+								<td><a href="html/3310.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td><a href="html/3311.html" target="_blank" title="새창으로 열기">3311.html</a></td>
+								<td><a href="html/3311.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-11</td>
+								<td>2020-11-13</td>
+								<td>완료</td>
+								<td>수정)모바일 화면에서 게시판 목록 영역 없어짐</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02. Recruitment</td>
+								<td>검색결과없음</td>
+								<td><a href="html/3320.html" target="_blank" title="새창으로 열기">3320.html</a></td>
+								<td><a href="html/3320.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td><a href="html/3321.html" target="_blank" title="새창으로 열기">3321.html</a></td>
+								<td><a href="html/3321.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-11</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- 수정)모바일 화면에서 게시판 목록 영역 없어짐<br />- 기관명 br제거</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/3322.html" target="_blank" title="새창으로 열기">3322.html</a></td>
+								<td><a href="html/3322.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-11</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- 첨부파일 두개일때 구분되도록 수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>수정/쓰기</td>
+								<td><a href="html/3323.html" target="_blank" title="새창으로 열기">3323.html</a></td>
+								<td><a href="html/3323.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-11</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- 미리보기 팝업 포함<br />- 등록요청 팝업 포함<br />- 업데이트된디자인으로 수정(파일 찾기 버튼 위치가 모바일화면과 다름 동일하게 수정)<br />- 모집기간영역수정(ie)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>03. Ask&Answer</td>
+								<td>검색결과없음</td>
+								<td><a href="html/3330.html" target="_blank" title="새창으로 열기">3330.html</a></td>
+								<td><a href="html/3330.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td><a href="html/3331.html" target="_blank" title="새창으로 열기">3331.html</a></td>
+								<td><a href="html/3331.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-12</td>
+								<td>2020-11-13</td>
+								<td>완료</td>
+								<td>수정)모바일 화면에서 게시판 목록 영역 없어짐</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세_답변쓰기</td>
+								<td><a href="html/3332.html" target="_blank" title="새창으로 열기">3332.html</a></td>
+								<td><a href="html/3332.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-12</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>수정/쓰기</td>
+								<td><a href="html/3333.html" target="_blank" title="새창으로 열기">3333.html</a></td>
+								<td><a href="html/3333.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-12</td>
+								<td>2020-11-13</td>
+								<td>완료</td>
+								<td>업데이트된디자인으로 수정(파일 찾기 버튼 위치가 모바일화면과 다름 동일하게 수정)</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>04. Korean Teacher Training</td>
+								<td>01.한국어교원소개</td>
+								<td>01.한국어교원소개<br />02.자격등급 및 취득방법<br />03.한국어교원자격심사</td>
+								<td><a href="html/3411.html" target="_blank" title="새창으로 열기">3411.html</a></td>
+								<td><a href="html/3411.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-12</td>
+								<td>2020-12-03</td>
+								<td>완료</td>
+								<td>- TAB<br />- 모바일에서 셀렉트박스 기능수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02.교원 온라인 연수과정</td>
+								<td>목록</td>
+								<td><a href="html/3421.html" target="_blank" title="새창으로 열기">3421.html</a></td>
+								<td><a href="html/3421.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-13</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/3422.html" target="_blank" title="새창으로 열기">3422.html</a></td>
+								<td><a href="html/3422.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-16</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>03.한국어 교육실습과정</td>
+								<td></td>
+								<td><a href="html/3430.html" target="_blank" title="새창으로 열기">3430.html</a></td>
+								<td><a href="html/3430.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-16</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>04.세종학당 교원 양성과정</td>
+								<td></td>
+								<td><a href="html/3440.html" target="_blank" title="새창으로 열기">3440.html</a></td>
+								<td><a href="html/3440.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-16</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>05.세종학당 교원 재교육과정</td>
+								<td>01.온라인 재교육과정 소개<br />02.과정 상세목록<br />03.온라인 재교육과정 홍보영상_01/02(+서브탭)</td>
+								<td><a href="html/3451.html" target="_blank" title="새창으로 열기">3451.html</a></td>
+								<td><a href="html/3451.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-17</td>
+								<td></td>
+								<td>완료</td>
+								<td>TAB</td>
+							</tr>
+							<tr>
+								<td>04. Participation</td>
+								<td>01. Notice</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/4100.html" target="_blank" title="새창으로 열기">4100.html</a></td>
+								<td><a href="html/4100.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-17</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- pagination, 모바일버전 태그 위치수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/4110.html" target="_blank" title="새창으로 열기">4110.html</a></td>
+								<td><a href="html/4110.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-17</td>
+								<td>2020-12-02</td>
+								<td>완료</td>
+								<td>- 구분카테고리 추가<br />- 비밀글 아이콘 추가</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/4120.html" target="_blank" title="새창으로 열기">4120.html</a></td>
+								<td><a href="html/4120.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-17</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>이미지 리사이징 작업</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>02. Event</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/4200.html" target="_blank" title="새창으로 열기">4200.html</a></td>
+								<td><a href="html/4200.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-18</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/4210.html" target="_blank" title="새창으로 열기">4210.html</a></td>
+								<td><a href="html/4210.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-18</td>
+								<td>2020-11-23</td>
+								<td>완료</td>
+								<td>- 페이징 추가 <br />- 목록세로크기 고정<br />- 모바일일때 크기수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/4220.html" target="_blank" title="새창으로 열기">4220.html</a></td>
+								<td><a href="html/4220.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-18</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>03. Online Level Test</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/4300.html" target="_blank" title="새창으로 열기">4300.html</a></td>
+								<td><a href="html/4300.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>04. Speaking Practice</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/4400.html" target="_blank" title="새창으로 열기">4400.html</a></td>
+								<td><a href="html/4400.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/4410.html" target="_blank" title="새창으로 열기">4410.html</a></td>
+								<td><a href="html/4410.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/4420.html" target="_blank" title="새창으로 열기">4420.html</a></td>
+								<td><a href="html/4420.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>수정/쓰기</td>
+								<td></td>
+								<td><a href="html/4430.html" target="_blank" title="새창으로 열기">4430.html</a></td>
+								<td><a href="html/4430.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- 개인정보동의 팝업 포함<br />- 비밀글 버튼 중복체크 수정<br />- 팝업버튼 간격조정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>05. Writing Practice</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/4500.html" target="_blank" title="새창으로 열기">4500.html</a></td>
+								<td><a href="html/4500.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/4510.html" target="_blank" title="새창으로 열기">4510.html</a></td>
+								<td><a href="html/4510.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/4520.html" target="_blank" title="새창으로 열기">4520.html</a></td>
+								<td><a href="html/4520.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>수정/쓰기</td>
+								<td></td>
+								<td><a href="html/4530.html" target="_blank" title="새창으로 열기">4530.html</a></td>
+								<td><a href="html/4530.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td>2020-11-23</td>
+								<td>완료</td>
+								<td>- 개인정보동의 팝업 포함<br />- 비밀글 버튼 중복체크 수정</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>06. Teachers Contest</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/4600.html" target="_blank" title="새창으로 열기">4600.html</a></td>
+								<td><a href="html/4600.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/4610.html" target="_blank" title="새창으로 열기">4610.html</a></td>
+								<td><a href="html/4610.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/4620.html" target="_blank" title="새창으로 열기">4620.html</a></td>
+								<td><a href="html/4620.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>수정/쓰기</td>
+								<td></td>
+								<td><a href="html/4630.html" target="_blank" title="새창으로 열기">4630.html</a></td>
+								<td><a href="html/4630.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-19</td>
+								<td>2020-11-30</td>
+								<td>완료</td>
+								<td>- CCL상세설정 팝업 포함<br />- 비밀글 버튼 중복체크 수정<br />- 상세설정 버튼밀림 수정(ie)</td>
+							</tr>
+							<tr>
+								<td>05. Korea Information</td>
+								<td>01. About Korea</td>
+								<td>01.General Information /<br /> 02.Climates/Currency/Bank /<br /> 03.Festivals and Holidays /<br /> 04.Clothing Culture /<br /> 05.Diet</td>
+								<td></td>
+								<td><a href="html/5110.html" target="_blank" title="새창으로 열기">5110.html</a></td>
+								<td><a href="html/5110.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-14</td>
+								<td></td>
+								<td>완료</td>
+								<td>TAB</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>02. Trip to Korea</td>
+								<td>01.지역의 맛! 전통시장을 찾아서</td>
+								<td>목록</td>
+								<td><a href="html/5211.html" target="_blank" title="새창으로 열기">5211.html</a></td>
+								<td><a href="html/5211.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-14</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/5212.html" target="_blank" title="새창으로 열기">5212.html</a></td>
+								<td><a href="html/5212.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-14</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02.지도로 보는 문화재 탐방</td>
+								<td>목록</td>
+								<td><a href="html/5221.html" target="_blank" title="새창으로 열기">5221.html</a></td>
+								<td><a href="html/5221.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-14</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/5222.html" target="_blank" title="새창으로 열기">5222.html</a></td>
+								<td><a href="html/5222.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-14</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>03.역사가 있는 여행이야기</td>
+								<td>목록</td>
+								<td><a href="html/5231.html" target="_blank" title="새창으로 열기">5231.html</a></td>
+								<td><a href="html/5231.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-14</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/5232.html" target="_blank" title="새창으로 열기">5232.html</a></td>
+								<td><a href="html/5232.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-14</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>Comming soon</td>
+								<td></td>
+								<td><a href="html/5240.html" target="_blank" title="새창으로 열기">5240.html</a></td>
+								<td><a href="html/5240.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-14</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>03. Study in Korea</td>
+								<td>01.Study abroad preparation</td>
+								<td></td>
+								<td><a href="html/5310.html" target="_blank" title="새창으로 열기">5310.html</a></td>
+								<td><a href="html/5310.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02.College Information</td>
+								<td>검색결과없음</td>
+								<td><a href="html/5320.html" target="_blank" title="새창으로 열기">5320.html</a></td>
+								<td><a href="html/5320.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td><a href="html/5321.html" target="_blank" title="새창으로 열기">5321.html</a></td>
+								<td><a href="html/5321.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/5322.html" target="_blank" title="새창으로 열기">5322.html</a></td>
+								<td><a href="html/5322.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>등록</td>
+								<td><a href="html/5323.html" target="_blank" title="새창으로 열기">5323.html</a></td>
+								<td><a href="html/5323.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>03.Application Guide</td>
+								<td>검색결과없음</td>
+								<td><a href="html/5330.html" target="_blank" title="새창으로 열기">5330.html</a></td>
+								<td><a href="html/5330.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td><a href="html/5331.html" target="_blank" title="새창으로 열기">5331.html</a></td>
+								<td><a href="html/5331.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td><a href="html/5332.html" target="_blank" title="새창으로 열기">5332.html</a></td>
+								<td><a href="html/5332.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>등록</td>
+								<td><a href="html/5333.html" target="_blank" title="새창으로 열기">5333.html</a></td>
+								<td><a href="html/5333.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>04. Korea History</td>
+								<td></td>
+								<td></td>
+								<td><a href="html/5400.html" target="_blank" title="새창으로 열기">5400.html</a></td>
+								<td><a href="html/5400.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-14</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>06. Guide</td>
+								<td>01. 학습이용안내</td>
+								<td>01. 메뉴소개</td>
+								<td></td>
+								<td><a href="html/6110.html" target="_blank" title="새창으로 열기">6110.html</a></td>
+								<td><a href="html/6110.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-27</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>02. 한국어학습로드맵</td>
+								<td></td>
+								<td><a href="html/6120.html" target="_blank" title="새창으로 열기">6120.html</a></td>
+								<td><a href="html/6120.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-11</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td></td>
+								<td>03. K-Culture contents</td>
+								<td></td>
+								<td><a href="html/6130.html" target="_blank" title="새창으로 열기">6130.html</a></td>
+								<td><a href="html/6130.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td></td>
+								<td>04. 원하는 콘텐츠 찾기</td>
+								<td></td>
+								<td><a href="html/6140.html" target="_blank" title="새창으로 열기">6140.html</a></td>
+								<td><a href="html/6140.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>02. 사이트이용안내</td>
+								<td>01.회원가입안내</td>
+								<td></td>
+								<td><a href="html/6210.html" target="_blank" title="새창으로 열기">6210.html</a></td>
+								<td><a href="html/6210.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td></td>
+								<td>02.아이디비밀번호찾기</td>
+								<td></td>
+								<td><a href="html/6220.html" target="_blank" title="새창으로 열기">6220.html</a></td>
+								<td><a href="html/6220.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td></td>
+								<td>03.콘텐츠이용안내</td>
+								<td></td>
+								<td><a href="html/6230.html" target="_blank" title="새창으로 열기">6230.html</a></td>
+								<td><a href="html/6230.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td></td>
+								<td>04.마이페이지이용안내</td>
+								<td></td>
+								<td><a href="html/6240.html" target="_blank" title="새창으로 열기">6240.html</a></td>
+								<td><a href="html/6240.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>03. 마일리지안내</td>
+								<td>01.마일리지소개 /<br /> 02.캐릭터소개_누리/나리/한글</td>
+								<td></td>
+								<td><a href="html/6310.html" target="_blank" title="새창으로 열기">6310.html</a></td>
+								<td><a href="html/6310.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>TAB</td>
+							</tr>
+							<tr class="bGray">
+								<td></td>
+								<td>04. 연계기관</td>
+								<td>01.정보제공하기 / 정보제공받기</td>
+								<td></td>
+								<td><a href="html/6410.html" target="_blank" title="새창으로 열기">6410.html</a></td>
+								<td><a href="html/6410.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>TAB</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>05. 자주하는질문(FAQ)</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/6500.html" target="_blank" title="새창으로 열기">6500.html</a></td>
+								<td><a href="html/6500.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-27</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>01.회원정보 /<br /> 02.학습콘텐츠이용 /<br /> 03.웹사이트이용 /<br /> 04.교재 /<br /> 05.세종학당한국어교원 /<br /> 06.기타 </td>
+								<td></td>
+								<td><a href="html/6510.html" target="_blank" title="새창으로 열기">6510.html</a></td>
+								<td><a href="html/6510.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-27</td>
+								<td></td>
+								<td>완료</td>
+								<td>TAB</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>06. 1:1문의</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/6600.html" target="_blank" title="새창으로 열기">6600.html</a></td>
+								<td><a href="html/6600.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-27</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/6610.html" target="_blank" title="새창으로 열기">6610.html</a></td>
+								<td><a href="html/6610.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-27</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/6620.html" target="_blank" title="새창으로 열기">6620.html</a></td>
+								<td><a href="html/6620.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-27</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>등록/수정</td>
+								<td></td>
+								<td><a href="html/6630.html" target="_blank" title="새창으로 열기">6630.html</a></td>
+								<td><a href="html/6630.html" class="btnIframe">미리보기</a></td>
+								<td>2020-11-27</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>07. My Page</td>
+								<td>01.개인정보수정</td>
+								<td>default</td>
+								<td>01.학습자</td>
+								<td><a href="html/7101.html" target="_blank" title="새창으로 열기">7101.html</a></td>
+								<td><a href="html/7101.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-05</td>
+								<td></td>
+								<td>완료</td>
+								<td>- 캐릭터등록 팝업 포함</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>02.교원</td>
+								<td><a href="html/7102.html" target="_blank" title="새창으로 열기">7102.html</a></td>
+								<td><a href="html/7102.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-05</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<!--
+							<tr>
+								<td></td>
+								<td></td>
+								<td>캐릭터등록</td>
+								<td></td>
+								<td><a href="html/7110.html" target="_blank" title="새창으로 열기">7110.html</a></td>
+								<td><a href="html/7110.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							-->
+							<tr>
+								<td></td>
+								<td>02.한국어진단평가</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/7200.html" target="_blank" title="새창으로 열기">7200.html</a></td>
+								<td><a href="html/7200.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-05</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/7210.html" target="_blank" title="새창으로 열기">7210.html</a></td>
+								<td><a href="html/7210.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-05</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>03.나의활동</td>
+								<td>01.나의이모티콘 /<br /> 02.마일리지적립</td>
+								<td></td>
+								<td><a href="html/7310.html" target="_blank" title="새창으로 열기">7310.html</a></td>
+								<td><a href="html/7310.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-05</td>
+								<td></td>
+								<td>완료</td>
+								<td>TAB</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>04.기록</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/7400.html" target="_blank" title="새창으로 열기">7400.html</a></td>
+								<td><a href="html/7400.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-05</td>
+								<td></td>
+								<td>완료</td>
+								<td>TAB</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>확인한 컨텐츠 이력표시</td>
+								<td>01.수강이력 /<br /> 02.모든이력 /<br /> 03.내가 올린 게시글</td>
+								<td><a href="html/7410.html" target="_blank" title="새창으로 열기">7410.html</a></td>
+								<td><a href="html/7410.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-05</td>
+								<td></td>
+								<td>완료</td>
+								<td>TAB</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>학습자 로그인시 보이는 화면</td>
+								<td>01.모든이력 /<br /> 02.내가 올린 게시글</td>
+								<td><a href="html/7420.html" target="_blank" title="새창으로 열기">7420.html</a></td>
+								<td><a href="html/7420.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-05</td>
+								<td></td>
+								<td>완료</td>
+								<td>TAB</td>
+							</tr>
+							<tr>
+								<td>T1강의실</td>
+								<td>01.학습하기</td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/T111.html" target="_blank" title="새창으로 열기">T111.html</a></td>
+								<td><a href="html/T111.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-01</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/T112.html" target="_blank" title="새창으로 열기">T112.html</a></td>
+								<td><a href="html/T112.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-02</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>02.공지사항</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/T120.html" target="_blank" title="새창으로 열기">T120.html</a></td>
+								<td><a href="html/T120.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-02</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/T121.html" target="_blank" title="새창으로 열기">T121.html</a></td>
+								<td><a href="html/T121.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-02</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/T122.html" target="_blank" title="새창으로 열기">T122.html</a></td>
+								<td><a href="html/T122.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-02</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>3.1:1상담</td>
+								<td>검색결과없음</td>
+								<td></td>
+								<td><a href="html/T130.html" target="_blank" title="새창으로 열기">T130.html</a></td>
+								<td><a href="html/T130.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-02</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>목록</td>
+								<td></td>
+								<td><a href="html/T131.html" target="_blank" title="새창으로 열기">T131.html</a></td>
+								<td><a href="html/T131.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-02</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>상세</td>
+								<td></td>
+								<td><a href="html/T132.html" target="_blank" title="새창으로 열기">T132.html</a></td>
+								<td><a href="html/T132.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-02</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>등록</td>
+								<td></td>
+								<td><a href="html/T133.html" target="_blank" title="새창으로 열기">T133.html</a></td>
+								<td><a href="html/T133.html" class="btnIframe">미리보기</a></td>
+								<td>2020-12-02</td>
+								<td></td>
+								<td>완료</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--// 메뉴 구조도 -->
+			</section>
+			<!--// section -->
+
+		</div>
+		<!--// wrap -->
+
+	</body>
+
+</html>

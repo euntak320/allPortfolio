@@ -1,0 +1,224 @@
+#wrap {position: relative;}
+.contentArea {position: relative; overflow: hidden; width:1140px; margin:0 auto; padding: 50px 0;}
+input[type="text"] {border-radius:5px; border:1px solid  #e6e6e6;}
+input.lightBg, select.lightBg {background: #f4f4f4;}
+
+/* btn */
+.comBtn {width:100px; height:40px; background: #0d4c98; font-size:16px; color:#fff; text-align: center; line-height:40px; border-radius:5px; cursor: pointer;}
+.comBtn.search {width:40px; height: 40px; border-radius: 5px; background:#707070 url(../images/icon-search.png) no-repeat center; text-indent: -9999px;}
+.comBtn.cancel {background: #707070;}
+.mainBtn {margin-top: 50px; text-align: center;}
+.mainBtn button {display: inline-block; width:165px; height:35px; border-radius: 35px;  background:#0d4c98; color:#fff; text-align: center; line-height: 35px;}
+
+
+/* login */
+#login {position:relative; height: 100vh;}
+.loginArea {position:absolute; top:50%; left:50%; width:1140px; transform: translate(-50%,-50%);}
+.loginArea .topArea {text-align:center;}
+.loginArea .topArea > *{display:inline-block; vertical-align:middle;}
+.loginArea .topArea span {margin-left:20px; font-size:46px; line-height: 26px; color:#212529;}
+.loginArea .btmArea{margin-top:40px; padding:30px 0 30px 510px; border-top:2px solid #212529; background: url(../images/loginBg.jpg) no-repeat 0 30px;}
+.loginArea .btmArea .input {display:flex; align-items:center; justify-content:space-around; padding:15px 0;}
+.loginArea .btmArea .input:first-child {border-bottom:1px solid #dedede;}
+.loginArea .btmArea .input:nth-child(2) input[type="text"]{background: #ececec;}
+.loginArea .btmArea .input:last-child{float: right; width:515px; padding:0;}
+.loginArea .btmArea .input:last-child input[type="text"]{background: #ececec;}
+.loginArea .btmArea .input span{display: block; width:115px;}
+.loginArea .btmArea .input div {display: flex; width:400px;}
+.loginArea .btmArea .input div input[type="text"] {margin:0 5px;}
+.loginArea .btmArea .input button {margin-left:10px;}
+.loginArea .btmArea .txtArea {margin-top:85px; line-height:26px;}
+
+/* header */
+.header {height:100px; line-height:100px; border-bottom:2px solid #212529;}
+.header .logo > * {display: inline-block; vertical-align: middle;}
+.header .logo img {width:180px;}
+.header .logo span {margin-left:30px; font-size:30px; color: #212529;} 
+
+/* footer */
+.footer {width:100%; padding:40px 0; border-top:1px solid #ccc;}
+.footer .contentArea {overflow: visible; position: relative; background: url(../images/footerBg.jpg) no-repeat right bottom;}
+.footer .contentArea:after {content: ""; clear: both; display: block;}
+.footer .topArea {position: relative;}
+.footer .topArea:after {content: ""; clear: both; display: block;}
+.footer .topArea ul {height: 43px; line-height: 43px;}
+.footer .topArea li {display: inline-block; margin-right:15px;}
+.footer .topArea li a {color:#212529; font-weight: 550;}
+.footer .topArea .familyBtn {position: relative; width:190px; height:43px; border-radius: 5px; border:1px solid #212529; background:url(../images/common/icon-UArrow.png) no-repeat 95% center; cursor: pointer;}
+.footer .topArea .familyBtn.on {background: url(../images/common/icon-DArrow.png) no-repeat 95% center;}
+.footer .topArea .familyBtn span {margin-left:10px; color:#333; line-height: 43px;}
+.footer .topArea .familyBtn .familySite {display: none; position: absolute; top:0; left:-950px; margin-top:-466px; width:1140px; background:#fff; padding:15px; border:1px solid #ddd;} 
+.footer .topArea .familyBtn.on .familySite {display: block;}
+.footer .btmArea .info span {margin-right:20px; color:#212529; font-weight: 550;}
+.footer .btmArea .txt span {display: inline-block; margin-top:20px;}
+.footer .btmArea .txt span:last-child {display: block;}
+
+/* layer */
+.layerFrame {position: fixed; top:0; left:0; right:0; bottom:0; display: none; background: rgba(0,0,0,0.5);}
+.layerFrame .layerArea {position: absolute; top:50%; left:50%; width:695px; padding:35px 40px; border:2px solid #0d4c98; background: #fff; transform: translate(-50%, -50%);}
+.layerFrame .layerArea .topArea .title {display: block; font-size:30px; text-align: center; color:#212529; font-weight: 550;}
+.layerFrame .layerArea .btmArea {margin-top:30px; padding-top:25px; border-top:1px solid #212529;}
+.layerFrame .layerArea .btmArea table th {text-align: left; color:#212529;}
+.layerFrame .layerArea .btmArea table th, .layerFrame .layerArea .btmArea table td {padding:5px 0 0;}
+.layerFrame .layerArea .btmArea table td .input{display: flex;}
+.layerFrame .layerArea .btmArea table td .input.v2 input {margin:0 5px;}
+.layerFrame .layerArea .btmArea table td .input.v2 input:first-child{margin:0; margin-right:5px;}
+.layerFrame .layerArea .btmArea table td .input.v2 input:last-child{margin:0; margin-left:5px;}
+.layerFrame .layerArea .mainBtn .gray {background: #707070;}
+.layerFrame .layerArea .mainBtn button {margin:0 5px; cursor: pointer;}
+.layerFrame .layerArea .closeLayer {position: absolute; top:45px; right:40px; width:25px; height:25px; background: url(../images/icon-close.png) no-repeat center; text-indent: -9999px;}
+.layerFrame .layerArea .btmArea .txtArea + .txtArea {margin-top:30px;}
+.layerFrame .layerArea .btmArea .txtArea .title {display: block; font-weight: 550; font-size:20px; color:#212529;}
+.layerFrame .layerArea .btmArea .txtArea .subTxt {margin-top:35px; }
+.layerFrame .layerArea .btmArea .txtArea .subTxt + .subTxt {margin-top:0;}
+.layerFrame .layerArea .btmArea .txtArea .subTxt span {font-weight: 550; color:#0d4c98}
+.layerFrame .layerArea .btmArea .txtArea .subTxt p {line-height: 26px;}
+
+/*  20-08-24 변경  */
+/* privacy */
+.pravicyArea {padding-top:30px; border-top:2px solid #333;}
+.pravicyArea .pravicyList {overflow: auto; height:300px; margin-top:20px; padding:15px; border:1px solid #ddd; border-radius: 10px;}
+.pravicyArea .pravicyList .title {font-size:18px; font-weight: bold; text-align: center; color:#333;}
+.pravicyArea .pravicyList .txtBox {margin-top:10px;}
+.pravicyArea .pravicyList .txtBox + .txtBox {margin-top:30px;}
+.pravicyArea .pravicyList .txtBox span {display: block; margin-top:10px; font-size:14px;}
+.pravicyArea .pravicyList .txtBox .mainTitle {color:#333; font-size:16px; font-weight: bold;}
+.pravicyArea .pravicyList .txtBox ul {margin-top:10px; padding-left:20px;}
+.pravicyArea .pravicyList .txtBox ul li {font-size:14px; line-height: 26px;}
+.pravicyArea .pravicyList .txtBox table {margin-top:15px; font-size:14px;}
+.pravicyArea .pravicyList .txtBox table th {background: #ddd;}
+.pravicyArea .pravicyList .txtBox table th, .pravicyArea .pravicyList .txtBox table td {padding:10px 0; border-bottom:1px solid #ddd; text-align: center; border-left:1px solid #ddd;}
+.pravicyArea .pravicyList .txtBox table th:first-child, .pravicyArea .pravicyList .txtBox table td:first-child{border-left:0;}
+/*  20-08-24 변경  */
+
+
+/* section */
+.section {padding:60px 0 100px;}
+
+.privacy {overflow: auto; height:200px; max-height:200px; padding:30px 20px; border:1px solid #e6e6e6; border-radius:5px;}
+.privacy .title {color: #212529; font-size:20px;}
+.privacy .listArea {margin-top:30px; line-height:26px;}
+.privacyCheck {overflow: hidden; margin-top:30px;}
+.privacyCheck .check input + label {padding:0; cursor:pointer;}
+.privacyCheck .check input[type=checkbox] + label {padding-right:25px; background-position: right center;}
+.privacyCheck .green {color:#65ab00}
+.etcTxt {display:block; margin-top:25px;}
+.presentArea {position: relative; padding:50px 35px; margin-top:60px; border:1px solid #ccc}
+.presentArea .posTxt {position: absolute; right:0; top:-30px;}
+.presentArea .presentBox {float: left; width:46%; padding:10px 0;}
+.presentArea .presentBox:nth-child(2n-1) {margin-left:8%;}
+.presentArea .presentBox > * {display:inline-block;}
+.presentArea .presentBox span {width:20%; font-weight:550; color:#212529;}
+.presentArea .presentBox .input, .presentArea .presentBox .select {width:79%;}
+
+.infoInput {margin-top:60px;}
+.infoInput .title {display: block;  font-size:22px; font-weight:550; color:#212529;}
+.infoInput .title.fl{margin-bottom: 20px;}
+.infoInput .title.fr{margin-bottom: 20px;}
+.infoInput .contentBox .dataArea {display:flex; border-bottom:1px solid #ccc;}
+.infoInput .contentBox .flexNone {display: block;}
+.infoInput .contentBox .bb0 {border-bottom:0;}
+.infoInput .contentBox .dataArea:first-child {margin-top:20px; border-top:2px solid #212529;}
+.infoInput .contentBox .dataArea {width:100%;}
+.infoInput .contentBox .dataArea .dbBox {width:50%; padding:16px 0;}
+.infoInput .contentBox .flexNone .dbBox {width:100%;}
+.infoInput .contentBox .dataArea .dbBox > * {display:inline-block; vertical-align: middle;}
+.infoInput .contentBox .dataArea .dbBox span {width:22%; font-weight: 550; color:#212529;}
+.infoInput .contentBox .dataArea .dbBox .input, .infoInput .contentBox .dataArea .dbBox .select {width:77%;}
+.infoInput .contentBox .dataArea .dbBox:last-child {margin-left:8%;}
+.infoInput .contentBox .dataArea .dbBox .input.number input {display: inline-block; width:31.15%; margin:0 1%;}
+.infoInput .contentBox .dataArea .dbBox .input.number input:last-child {margin:0; margin-left:1%;}
+.infoInput .contentBox .dataArea.w100 .dbBox {width:100%; margin:0;}
+.infoInput .contentBox .dataArea.w100 .dbBox span {width:10%;}
+.infoInput .contentBox .dataArea.w100 .top {vertical-align: top;}
+.infoInput .contentBox .dataArea.w100 .dbBox > .txtArea {width:89%;}
+.infoInput .contentBox .dataArea.w100 .dbBox > .txtArea textarea {width:100%; resize: none; border-radius: 5px;}
+.infoInput .contentBox .dataArea .address {width:89.5%;}
+.infoInput .contentBox .dataArea .address > * {margin:0 2px;}
+.infoInput .contentBox .dataArea .address input:nth-child(1) {width:20%;}
+.infoInput .contentBox .dataArea .address input:nth-child(3), .infoInput .contentBox .dataArea .address input:nth-child(4) {width:36.89%;}
+.infoInput .contentBox .dataArea .address input:nth-child(4) {margin:0; margin-left: 2px;}
+.infoInput .contentBox .dataArea .dbBox .check {margin-right:30px;}
+.infoInput .contentBox .dataArea .dbBox .inputArea {display: flex; }
+.infoInput .contentBox .dataArea .dbBox .inputArea button {width:50%;}
+.infoInput .contentBox .dataArea .dbBox .inputArea input{margin:0 5px;}
+.infoInput .contentBox .dataArea .dbBox .inputArea input:first-child {margin:0; margin-right:5px;}
+.infoInput .contentBox .dataArea .dbBox .inputArea input:last-child {margin:0; margin-left:5px;}
+.infoInput .contentBox .txtList {display: block; width:100%; margin-top:20px; line-height: 26px;}
+.infoInput .contentBox .txtList .layerBtn {width:70px; height: 22px; border-radius: 5px; background: #707070; color:#fff; font-size:14px; cursor: pointer;}
+.infoInput .contentBox .txtList li > * {display: inline-block; vertical-align: middle;}
+.infoInput .contentBox .dataArea .halfInput {position: relative; width:89%;}
+.infoInput .contentBox .dataArea .halfInput .comBtn {width:70px!important; color:#fff; font-weight: normal;}
+.infoInput .contentBox .dataArea .halfInput .v2 {position: absolute; top:0; right:0;}
+.infoInput .contentBox .dataArea .halfInput .layer {margin-left:5px;}
+
+.txtList {margin-top:60px;}
+.txtList .title {font-size:22px; color:#212529; font-weight: 550;}
+.txtList .addressArea {margin-top:20px; border-top:2px solid #212529;}
+.txtList .addressArea .download {display: block; margin-top:30px;}
+.txtList .addressArea .download > a {display: inline-block; width:70px; height:20px; margin-left:10px; border-radius: 5px; background: #707070; color:#fff; font-size:14px; text-align: center;}
+.txtList .addressArea dl {margin-top:60px;}
+.txtList .addressArea dl dt {font-size:20px; color:#212529; font-weight: 550;}
+.txtList .addressArea dl dd {padding-left:20px; margin-top:30px;}
+.txtList .addressArea dl dd + dd {margin-top:35px;}
+.txtList .addressArea dl dd .blue {color:#0d4c98; font-weight:550;}
+
+.tableArea .tableTxt {overflow: hidden;}
+.tableArea table {margin-top:20px; border-top:1px solid #333;}
+.tableArea table th { background: #f5f5f5; color:#212529; font-weight: bold;}
+.tableArea table td span{display: block;}
+.tableArea table th, .tableArea table td {padding:15px 0; border-bottom:1px solid #ccc; border-right:1px solid #ccc; text-align: center;}
+.tableArea table td.bdr{border-right:1px solid #ccc;}
+.tableArea table td.txtLeft {padding-left:20px; text-align: left; }
+.tableArea table td.input > * {display: inline-block;}
+.tableArea table td.input input[type="text"] {width:30%; height: auto; margin:0 5px; padding-left:0; border:0; border-radius: 0; border-bottom:1px solid #ccc; text-align: center;}
+.tableArea table td.input input.borderNone {border:0;}
+.tableArea table .check {display: block; margin: 2px 0;}
+.tableArea table .twoCheck .check{display: inline-block; width:49%;}
+.tableArea table .twoCheck .check input[type="text"] {position: static; width:30%; height:auto; padding-left:0; border:0; text-align: center;  opacity: 1;}  
+
+/* 신규영역 */
+.familySite {position: relative; overflow: hidden; margin-top:50px;}
+.familySite .title {display: block; font-size:30px; text-align: center; color:#333; font-weight:bold;}
+.familySite .listArea {overflow: hidden; margin-top:20px;}
+.familySite .listArea .linkList {float: left; width:calc(100% / 7); height:370px; margin-left:0;}
+.familySite .listArea .linkList span {margin-left:0;}
+.familySite .listArea .subTitle {display: block; font-size:18px; color:#333; font-weight: bold;}
+.familySite .listArea ul {margin-top:26px; line-height: 34px;}
+.familySite .listArea ul > li {display: block!important; margin-right:0;}
+.familySite .listArea ul a {display: block; color:#666!important; font-size:14px;}
+
+.windowPopup {padding:15px;}
+.windowPopup .show {display: none;}
+.windowPopup .show.on {display: block;}
+.windowPopup .title {display: block; padding-bottom: 15px; border-bottom: 1px solid #333; font-size: 30px; color: #333; text-align: center;}
+.windowPopup .addSelect {margin-top:30px;}
+.windowPopup .tabArea .tabBtn {display: flex; align-items: center; justify-content: center; background: #eee;} 
+.windowPopup .tabArea .tabBtn button {position: relative; width: 50%; height: 45px; line-height: 45px; color: #333; cursor: pointer;}
+.windowPopup .tabArea .tabBtn button:after {content: ""; position: absolute; top: 50%; right: 0; width: 1px; height: 30px; background: #aaa; transform: translateY(-50%);}
+.windowPopup .tabArea .tabBtn button:last-child:after {display: none;}
+.windowPopup .tabArea .tabBtn button.on {background: #0d4c98; color: #fff;}
+.windowPopup .tabArea .tabBtn button.on:after {display: none;}
+
+.windowPopup .findArea {padding:10px 15px; margin-top:20px; background:#efefef;}
+.windowPopup .findArea .inputArea {display: flex; align-items: center; justify-content: space-between; margin-top:15px;}
+.windowPopup .findArea .inputArea.left {justify-content: unset;}
+.windowPopup .findArea .inputArea.left button {margin-left:1%;}
+.windowPopup .findArea .inputArea select, 
+.windowPopup .findArea .inputArea input {padding-left:10px; border-radius: 5px;}
+.windowPopup .findArea .inputArea .inputBox {display: flex; align-items: center; margin-right:1%;}
+.windowPopup .findArea .inputArea .inputBox.w30 {width:30%;}
+.windowPopup .findArea .inputArea .inputBox.w40 {width:40%;}
+.windowPopup .findArea .inputArea .inputBox span {width:80px; font-size:14px; color:#333; font-weight: bold;}
+.windowPopup .findArea .inputArea button {width:60px; line-height:38px; background:#0d4c98; color:#fff; border-radius: 5px;}
+.windowPopup .resultArea {overflow: auto; height:250px; max-height: 250px; margin-top:30px; border-bottom:1px solid #ddd;}
+.windowPopup table th, .windowPopup table td {padding:9px 0; text-align: center; border-bottom:1px solid #ddd; border-left:1px solid #ddd; font-size:14px;}
+.windowPopup table th:first-child, .windowPopup .resultArea table td:first-child {border-left:0;}
+.windowPopup table th {border-top:1px solid #ddd; border-bottom:1px solid #ddd;  background:#efefef;}
+.windowPopup table td.left {padding-left:10px; text-align: left;}
+.windowPopup table tr:last-child td {border-bottom:0;}
+.windowPopup table a {color:#0d4c98; border-bottom:1px solid #0d4c98}
+.windowPopup .oneTable {border-bottom:1px solid #ddd;}
+.windowPopup .normalTable {margin-top:30px;}
+.windowPopup .normalTable .resultArea {margin-top:5px;}
+.windowPopup .normalTable button {float: right; margin-top:10px; padding:5px 15px; cursor: pointer; background: #ddd; color:#666;}

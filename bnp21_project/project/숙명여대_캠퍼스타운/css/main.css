@@ -1,0 +1,208 @@
+﻿@charset "utf-8";
+
+/* mainContainer */
+#mainContainer .visualArea {position:relative; overflow:hidden}
+#mainContainer .visualArea .swiper-slide {height:818px}
+#mainContainer .visualArea .swiper-slide.first {background:url("../images/mainVisual01.png") no-repeat center; background-size:cover; background-position: center center}
+#mainContainer .visualArea .swiper-slide.second {background:url("../images/mainVisual02.png") no-repeat center; background-size:cover; background-position: center center}
+#mainContainer .visualArea .swiper-slide.third {background:url("../images/mainVisual03.png") no-repeat center; background-size:cover; background-position: center center}
+
+#mainContainer .visualArea .swiper-slide .txtArea {margin:0 auto; padding:0 20px; width:1280px; text-align:left; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#mainContainer .visualArea .swiper-slide .txtArea .subTitle {display:block; line-height:22px; font-size:22px; font-weight:300; color:#fff}
+#mainContainer .visualArea .swiper-slide .txtArea .subTitle span {color:#fff}
+#mainContainer .visualArea .swiper-slide .txtArea h2 {margin-top:10px; line-height:60px; font-size:40px; font-weight:600; color:#fff}
+#mainContainer .visualArea .swiper-slide .txtArea h2 span {color:#fff}
+#mainContainer .visualArea .swiper-slide .txtArea strong {display:block; margin-left:24px; margin-top:22px; font-size:32px; font-weight:500; color:#fff; opacity:0.8}
+#mainContainer .visualArea .swiper-slide .txtArea strong span {font-weight:300; color:#fff}
+#mainContainer .visualArea .swiper-slide .txtArea p {margin-left:24px; margin-top:12px; width:445px; text-align:left; opacity:0.8}
+#mainContainer .visualArea .swiper-slide .txtArea p span {/* display:block;  */line-height:32px; font-size:18px; font-weight:400; color:#fff}
+.swiper-pagination {top:unset !important; bottom:200px; z-index:1}
+#mainContainer .visualArea .swiper-pagination-bullet {width:15px; height:15px}
+#mainContainer .visualArea .swiper-pagination-bullet-active {width:15px; height:15px; background-color:#2060AA}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {margin:0 7px}
+#mainContainer .visualArea .btnArea {position:absolute; left:54%; bottom:201px; z-index:2}
+#mainContainer .visualArea .btnArea a {display:inline-block; width:15px; height:15px; text-indent:-9999px; cursor:pointer}
+#mainContainer .visualArea .btnArea a.btnPlay {background:url("../images/ico_play.png") no-repeat center; background-size:15px auto} 
+#mainContainer .visualArea .btnArea a.btnStop {background:url("../images/ico_stop.png") no-repeat center; background-size:15px auto} 
+#mainContainer .visualArea .btnArea a.btnPause {background:url("../images/ico_pause.png") no-repeat center; background-size:15px auto} 
+#mainContainer .visualArea .btnArea a + a {margin-left:10px}
+
+#mainContainer .mainInfoWrap {/* overflow:hidden; */ position:relative; left:0; top:-100px; margin:0 auto; padding:0 20px; max-width:100%; width:1280px; z-index:3}
+#mainContainer .mainInfoWrap ul:after {display:block; content:""; clear:both}
+#mainContainer .mainInfoWrap ul li {float:left; margin:0 10px; padding:12px 20px 15px; border:1px solid #fff; border-radius:2px; width:18.5%; height:60px; text-align:center}
+#mainContainer .mainInfoWrap ul li:first-child {margin-left:0}
+#mainContainer .mainInfoWrap ul li:last-child {margin-right:0}
+
+#mainContainer .mainInfoWrap ul li > strong {line-height:32px; text-align:center; font-size:22px; font-weight:500; color:#fff; cursor:pointer}
+#mainContainer .mainInfoWrap ul li .apply {display:none; line-height:32px; text-align:center; font-size:22px; font-weight:500; color:#fff}
+#mainContainer .mainInfoWrap ul li .applyDetail {display:block; position:relative; left:-27px; bottom:185px; padding:32px; width:240px; height:240px; background:url("../images/bg01.png") no-repeat center; background-size:240px auto; visibility:hidden; transform:scaleY(0)}
+#mainContainer .mainInfoWrap ul li .applyDetail img {width:60px; height:60px}
+#mainContainer .mainInfoWrap ul li .applyDetail strong {display:inline-block; margin-left:10px; text-align:left; line-height:32px; font-size:22px; font-weight:500; color:#fff}
+#mainContainer .mainInfoWrap ul li .applyDetail span {display:block; margin-top:45px; line-height:26px; font-size:16px; color:#fff}
+
+#mainContainer .mainInfoWrap ul li:hover > strong {opacity:0}
+#mainContainer .mainInfoWrap ul li:hover .applyDetail {visibility:visible; transform:scaleY(1)}
+
+@media all and (max-width:1360px) {
+#mainContainer .mainInfoWrap ul li:hover .applyDetail {visibility:hidden}
+#mainContainer .mainInfoWrap ul li > strong {display:none} 
+#mainContainer .mainInfoWrap ul li:hover > strong {opacity:0}
+#mainContainer .mainInfoWrap ul li .apply {display:block}
+}
+
+@media all and (max-width:1161px) {
+	#mainContainer .visualArea .swiper-slide .txtArea {position:absolute; left:0; top:23%; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+	#mainContainer .visualArea .swiper-slide .txtArea .subTitle {line-height:20px; font-size:20px}
+	#mainContainer .visualArea .swiper-slide .txtArea h2 {font-size:35px}
+	#mainContainer .visualArea .swiper-slide .txtArea strong {margin-left:20px; margin-top:18px; font-size:28px}
+	#mainContainer .visualArea .swiper-slide .txtArea p {margin-left:20px}
+	#mainContainer .visualArea .swiper-slide .txtArea p span {line-height:26px; font-size:16px}
+	.swiper-pagination {bottom:202px}
+	#mainContainer .visualArea .btnArea {left:56%; bottom:202px}
+	#mainContainer .mainInfoWrap {top:-90px; height:230px}
+	#mainContainer .mainInfoWrap ul li {float:none; display:inline-block; padding:12px 16px 15px; width:17.5%; height:55px}
+	#mainContainer .mainInfoWrap ul li .apply {line-height:28px; font-size:16px}
+}
+
+@media all and (max-width:768px) {
+	#mainContainer .visualArea .swiper-slide .txtArea .subTitle {line-height:20px; font-size:18px}
+	#mainContainer .visualArea .swiper-slide .txtArea .subTitle span {display:block}
+	#mainContainer .visualArea .swiper-slide .txtArea h2 {line-height:40px; font-size:30px}
+	#mainContainer .visualArea .swiper-slide .txtArea h2 span {display:block; color:#fff}
+	#mainContainer .visualArea .swiper-slide .txtArea strong {margin-left:0}
+	#mainContainer .visualArea .swiper-slide .txtArea p {margin-left:0; width:320px}
+	#mainContainer .visualArea .swiper-slide .txtArea p span {line-height:24px; font-size:14px}
+	.swiper-pagination {bottom:325px} 
+	.swiper-container-horizontal > .swiper-pagination-bullets {left:-13%}
+	#mainContainer .mainInfoWrap {top:-245px}
+	#mainContainer .visualArea .btnArea {left:54%; bottom:325px}
+	#mainContainer .mainInfoWrap ul li {float:left; margin:5px; width:45%}
+	#mainContainer .mainInfoWrap ul li:first-child {margin-left:5px}
+	#mainContainer .mainInfoWrap ul li:last-child {margin-right:5px}
+	#mainContainer .mainInfoWrap ul li .apply {line-height:28px; font-size:15px}
+}
+
+@media all and (max-width:320px) {
+	#mainContainer .visualArea .swiper-slide .txtArea .subTitle {font-size:16px}
+	#mainContainer .visualArea .swiper-slide .txtArea .subTitle span {display:block}
+	#mainContainer .visualArea .swiper-slide .txtArea h2,
+	#mainContainer .visualArea .swiper-slide .txtArea.v2 h2 {margin-top:15px; line-height:30px; font-size:26px}
+	#mainContainer .visualArea .swiper-slide .txtArea h2 span {display:block; color:#fff}
+	#mainContainer .visualArea .swiper-slide .txtArea strong {margin-left:0; margin-top:18px; font-size:26px}
+	#mainContainer .visualArea .swiper-slide .txtArea p {margin-left:0; width:270px}
+	.swiper-container-horizontal > .swiper-pagination-bullets {}
+	#mainContainer .visualArea .btnArea {left:55%}
+	#mainContainer .mainInfoWrap ul li {float:left; padding:12px 10px 15px}
+	#mainContainer .mainInfoWrap ul li .apply {font-size:14px}
+}
+#mainContainer .content {margin:80px auto 0; padding:0 20px; max-width:100%; width:1280px}
+#mainContainer .content .inner:after {display:block; content:""; clear:both}
+#mainContainer .content .inner > div {position:relative; float:left; width:46%}
+#mainContainer .content .inner > div + div {margin-left:80px}
+#mainContainer .content .inner > div .contTitle {margin-bottom:10px}
+#mainContainer .content .inner > div .contTitle.v2 {border-bottom:1px solid #aaa}
+#mainContainer .content .inner > div .contTitle .cBlue {display:block; line-height:22px; font-size:16px; font-weight:300; color:#2060AA}
+#mainContainer .content .inner > div .contTitle h3 {margin-top:3px; padding:15px 0 13px; font-size:32px; font-weight:500; color:#000}
+
+#mainContainer .content .inner .newsWrap  {overflow:hidden}
+#mainContainer .content .inner .newsWrap ul {margin-top:27px}
+#mainContainer .content .inner .newsWrap ul li:after {display:block; content:''; clear:both}
+#mainContainer .content .inner .newsWrap ul li + li {margin-top:14px}
+#mainContainer .content .inner .newsWrap ul li a {overflow:hidden; float:left; width:80%; line-height:30px; font-size:20px; font-weight:400; color:#000; text-overflow:ellipsis; white-space:nowrap}
+#mainContainer .content .inner .newsWrap ul li span {float:right; width:20%; text-align:right; line-height:32px; font-size:18px; font-weight:400; color:#999}
+#mainContainer .content .inner > div a.more {display:block; position:absolute; right:0; top:43px; line-height:22px; font-weight:500; font-size:16px; color:#999}
+#mainContainer .content .inner > div a.more:after {display:inline-block; content:''; width:16px; height:16px; background:url("../images/ico_more.png") no-repeat center; background-size:16px auto}
+
+#mainContainer .content .inner .pfWrap {margin-left:80px; overflow:hidden}
+#mainContainer .content .inner .pfWrap .swiper-slide {height:auto}
+#mainContainer .content .inner .pfWrap .swiper-slide > div {height:290px}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent {box-shadow:0px 3px 6px #00000029}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent:after {display:block; content:""; clear:both}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent .imgArea {float:left; width:50%}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent .imgArea a {display:block; width:300px}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent .imgArea a img {width:100%}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent .txtArea {float:left; padding:32px 20px 18px 32px; width:50%; text-align:left; background-color:#F6F6F6}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent .txtArea strong {line-height:32px; font-size:22px; font-weight:600; color:#2060AA}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent .txtArea p {margin-top:12px; line-height:28px; font-size:18px; font-weight:400; color:#666}
+#mainContainer .content .inner .pfWrap .swiper-button-prev {top:70px; left:unset; right:33px !important; width:25px; height:25px; background-size:16px auto}
+#mainContainer .content .inner .pfWrap .swiper-button-next {top:70px; right:0 !important; width:25px; height:25px; background-size:16px auto}
+
+.btnRight {margin-top:20px; text-align:right}
+.btn {padding:0 12px; border-radius:4px; border:1px solid #ccc; text-align:center; line-height:26px; font-size:16px; font-weight:500}
+.btnBlue {border-color:#2060AA; color:#fff; background-color:#2060AA}
+
+#mainContainer .content .inner .contWrap {margin:80px auto 100px; width:100%}
+#mainContainer .content .inner .contWrap:after {display:block; content:""; clear:both}
+#mainContainer .content .inner .bizWrap {overflow:hidden; position:relative; float:left; width:47%}
+#mainContainer .content .inner .bizWrap .swiper-slide {height:auto}
+#mainContainer .content .inner .bizWrap .swiper-slide > div {width:575px; height:280px}
+#mainContainer .content .inner .bizWrap .swiper-slide > div:after {display:block; content:''; clear:both}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont {float:left; padding:63px 35px 20px; width:47%; box-shadow:0px 3px 6px #00000029}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont + .bizCont {margin-left:28px}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont a {display:block}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont a strong {display:block; position:relative; text-align:left; line-height:38px; font-size:20px; font-weight:500; color:#666; transform:scale(0.9); -webkit-transform:scale(0.9); -moz-transform:scale(0.9); transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont a strong:before {display:block; content:''; position:absolute; left:-18px; top:-40px; width:42px; height:42px; background:url("../images/ico01.png") no-repeat center; background-size:42px auto}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont a strong:after {display:block; content:''; position:absolute; right:-25px; bottom:-20px; width:42px; height:42px; background:url("../images/ico02.png") no-repeat center; background-size:42px auto}
+
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont a > span {display:block; text-align:left; margin-top:80px; line-height:32px; font-size:16px; font-weight:500; color:#2060AA}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont a span.cBlue {display:inline-block; width:49%; font-weight:500; color:#2060AA}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont a span.cGray {display:inline-block; width:49%; text-align:right; font-weight:400; color:#999}
+#mainContainer .content .inner .bizWrap .swiper-button-prev {top:70px; left:unset; right:33px !important; width:25px; height:25px; background-size:16px auto}
+#mainContainer .content .inner .bizWrap .swiper-button-next {top:70px; right:0 !important; width:25px; height:25px; background-size:16px auto}
+
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont a:hover strong {transform:scale(1); -webkit-transform:scale(1); -moz-transform:scale(1)}
+
+#mainContainer .content .inner .localWrap {overflow:hidden; position:relative; float:left; margin-left:80px; width:45.8%}
+#mainContainer .content .inner .localWrap .swiper-slide {height:auto}
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont {padding:10px 0; border-bottom:1px solid #efefef; width:100%; height:50%} 
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont:after {display:block; content:''; clear:both} 
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .imgArea {float:left; width:20%} 
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .imgArea a {display:block; width:113px} 
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .imgArea a img {width:100%} 
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea {float:right; margin-left:15px; width:77%} 
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea a {display:block; text-align:left} 
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea a strong {display:block; overflow:hidden; padding:6px 0; line-height:30px; font-size:20px; font-weight:400; color:#000; text-overflow:ellipsis; white-space:nowrap} 
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea a span {display:block; overflow:hidden; margin-top:11px; line-height:28px; font-size:18px; font-weight:400; color:#666; text-overflow:ellipsis; display:-webkit-box; word-wrap:break-word; -webkit-line-clamp:2; -webkit-box-orient:vertical}
+#mainContainer .content .inner .localWrap .swiper-button-prev {top:70px; left:unset; right:33px !important; width:25px; height:25px; background-size:16px auto}
+#mainContainer .content .inner .localWrap .swiper-button-next {top:70px; right:0 !important; width:25px; height:25px; background-size:16px auto}
+
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea:hover a strong,
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea:hover a span {text-decoration:underline}
+@media all and (max-width:1360px) {
+#mainContainer .content .inner > div {margin:30px auto; float:none; width:100%}
+#mainContainer .content .inner .contWrap {margin:0 auto 100px}
+#mainContainer .content .inner .pfWrap,
+#mainContainer .content .inner .bizWrap,
+#mainContainer .content .inner .localWrap {margin:80px auto 0; margin-left:auto !important; width:100%}
+}
+@media all and (max-width:1161px) {
+#mainContainer .content {margin:-185px auto 0}
+#mainContainer .content .inner > div .contTitle h3 {font-size:28px}
+}
+
+@media all and (max-width:768px) {
+#mainContainer .content .inner > div .contTitle h3 {font-size:24px}
+#mainContainer .content .inner .newsWrap ul li a,
+#mainContainer .content .inner .newsWrap ul li span {width:50%; line-height:27px; font-size:18px}
+
+#mainContainer .content .inner .pfWrap .swiper-slide > div {width:268px; height:590px}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent .imgArea {float:none; width:100%}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent .imgArea a {width:265px}
+#mainContainer .content .inner .pfWrap .swiper-slide > div .pfContent .txtArea {float:none; width:100%}
+
+#mainContainer .content .inner .bizWrap .swiper-slide > div {height:560px}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont {float:none; width:100%}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont + .bizCont {margin-left:0; margin-top:10px}
+#mainContainer .content .inner .bizWrap .swiper-slide > div .bizCont a strong {text-align:center}
+
+#mainContainer .content .inner .localWrap .swiper-slide > div {width:inherit; height:400px}
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea {position:relative; width:55%}
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea a strong {padding:35px 0; font-size:18px}
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea a.cont {position:absolute; left:-120px; bottom:-78px}
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea a span {font-size:16px}
+}
+
+@media all and (max-width:320px) {
+#mainContainer .content .inner .bizWrap .swiper-slide > div {height:638px}
+#mainContainer .content .inner .localWrap .swiper-slide > div .localCont .txtArea {width:50%}
+}

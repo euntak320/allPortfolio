@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/script.js"></script>	
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("../include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("../include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">기관의 DB 정보 상세 내용을 표시 합니다.</p><!-- // 181031 수정 -->
+				<div class="table-top-btn">
+					<a href="#none" class="list-btn">목록</a>
+				</div>
+				<!-- 181031 수정 -->
+				<div class="com-table-detail">
+					<table>
+						<caption>상세내용 표</caption>						
+						<tbody>
+							<tr>
+								<th>기관명</th>
+								<td colspan="3">국악방송</td>
+							</tr>
+							<tr>
+								<th>DB 명</th>
+								<td>gugakdb</td>
+								<th>세부 DB 명</th>
+								<td>국악방송DB</td>
+							</tr>
+							<tr>
+								<th>전체 보유 건수</th>
+								<td colspan="3">
+									<table class="data-table">
+										<caption>전체 보유 건수</caption>
+										<tbody>
+											<thead>
+												<tr>
+													<th>텍스트</th>
+													<th>이미지</th>
+													<th>동영상</th>
+													<th>사운드</th>
+													<th>기타</th>
+													<th>합계</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2,273</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>52</td>
+													<td class="sum">2,842</td>
+												</tr>
+											</tbody>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th>연계 대상 건수</th>
+								<td colspan="3">
+									<table class="data-table">
+										<caption>연계 대상 건수</caption>
+										<tbody>
+											<thead>
+												<tr>
+													<th>텍스트</th>
+													<th>이미지</th>
+													<th>동영상</th>
+													<th>사운드</th>
+													<th>기타</th>
+													<th>합계</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>2,273</td>
+													<td>0</td>
+													<td>0</td>
+													<td>0</td>
+													<td>52</td>
+													<td class="sum">2,842</td>
+												</tr>
+											</tbody>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th>사이트 명</th>
+								<td colspan="3">국악방송</td>
+							</tr>
+							<tr>
+								<th>사이트 URL</th>
+								<td colspan="3">gugakfm.com</td>
+							</tr>
+							<tr>
+								<th>메뉴 명</th>
+								<td colspan="3">WebTV, 자료마당, 라디오</td>
+							</tr>
+							<tr>
+								<th>저작권 보유 주체</th>
+								<td>일부 자체보유</td>
+								<th>공개 제한 범위</th>
+								<td>공개제한없음</td>
+							</tr>
+							<tr>
+								<th>대국민 서비스 여부</th>
+								<td>일부 자체 보유</td>
+								<th>공개 제한 범위</th>
+								<td>공개제한없음</td>
+							</tr>
+							<tr>
+								<th>통합플랫폼 연계방식</th>
+								<td>Open API</td>
+								<th>문화데이터광장 공개여부</th>
+								<td>공개</td>
+							</tr>
+							<tr>
+								<th>DB 품질 진단 여부</th>
+								<td>N</td>
+								<th>DB 보안 여부</th>
+								<td>Y</td>
+							</tr>
+							<tr>
+								<th>공공데이터포털 등록여부</th>
+								<td>N</td>
+								<th>DB 연계 서비스 수</th>
+								<td>14개</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- // 181031 수정 -->
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("../include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

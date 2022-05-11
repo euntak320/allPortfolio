@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<title>퍼블 가이드 | KB스타게이트</title>
+<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon" href="">
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 해당페이지만 사용 : 슬라이드  -->
+<link type="text/css" rel="stylesheet" href="../common/css/slick.css">
+<script type="text/javascript" src="../common/js/slick.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<link rel="stylesheet" type="text/css" href="../common/css/guide.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	var _valueTit = $(".guideMenu li.on").text();
+	$(".guideMenu .gmTit").text(_valueTit);
+
+	$(".gmTit").on("click", function(){
+		$(this).siblings("div").toggle();
+	});
+
+	$(".guideMenu li").on("click", function(){
+		$(this).addClass("on").siblings().removeClass("on");
+		var _valueTit = $(this).text();
+		$(".guideMenu .gmTit").text(_valueTit);
+	});
+
+	var fact = function factorial(n){
+		if(n<=1){
+			return 1;
+		}else{
+			return n*factorial(n-1);
+		}
+	}
+
+	console.log(fact(3));
+
+});
+</script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="guide">
+	<!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="fl"><h1 class="logo"><a href="#">Publishing Guide</a></h1></div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="guideMenu">
+			<a href="#" class="gmTit"></a>
+			<div>
+				<ul>
+					<li class="on"><a href="guide.html">텍스트</a></li>
+					<li><a href="guide02.html">폼</a></li>
+					<li><a href="guide03.html">버튼</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- content -->
+		<div class="content">
+			<h2 class="g_tit2">텍스트</h2>
+
+			<h3 class="g_tit3">폰트 정보</h3>
+			<div class="g_box">
+				font family : 시스템 폰트, font size: 14px
+			</div>
+
+			<h3 class="g_tit3">1. 타이틀</h3>
+			<div class="g_box">
+				<h2 class="h_tit2" style="font-size:18px; font-weight:bold;">페이지 타이틀 : 18px, bold</h2>
+			</div>
+
+			<h3 class="g_tit3">2. 텍스트</h3>
+			<h4 class="g_tit4">- 일반 텍스트</h4>
+			<div class="g_box">
+				<p class="tit" style="font-size:16px; font-weight:bold;">바디 타이틀 : 16px, bold</p>
+				<p class="fwb">기본 강조 텍스트 : 14px, bold</p>
+				<p>기본 텍스트 : 14px</p>
+			</div>
+
+			<h4 class="g_tit4">- 보조 텍스트</h4>
+			<div class="g_box">
+				<p class="noteTxt">한줄 메세지가 노출되는 곳입니다.</p>
+
+				<ul class="guideList btm">
+					<li>하단 가이드 리스트 내용이 나오는 곳.</li>
+					<li>하단 가이드 리스트 내용이 나오는 곳.</li>
+				</ul>
+			</div>
+
+			<h4 class="g_tit4">- 포인트 텍스트</h4>
+			<div class="g_box">
+				<p>
+					<span class="point">포인트 컬러</span>&nbsp;
+					<span class="point1">포인트 컬러</span>&nbsp;
+					<span class="point2">포인트 컬러</span>
+				</p>
+				<p><span class="fwb">포인트 볼드</span></p>
+			</div>
+
+			<h3 class="g_tit3">3. 컨텐츠 텍스트</h3>
+			<h4 class="g_tit4">- 리스트 마지막 메세지</h4>
+			<div class="g_box">
+				<!-- 리스트 마지막 메세지 -->
+				<div class="listLastTxt"><span class="txt">마지막 결제 내역입니다</span></div>
+				<!-- //리스트 마지막 메세지 -->
+			</div>
+			</div>
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no" />
+<title>계좌 등록 &lt; 계좌 관리 &lt; 설정 &lt; 디지털 헌금 바구니</title>
+<!-- //<![CDATA[ -->
+<link rel="stylesheet" href="../css/style.css" />
+<script src="../js/jquery-2.2.4.js"></script>
+<script src="../js/common.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- subHeader -->
+	<div id="subHeader">
+		<div class="inner">
+			<h1><a href=""><img src="../images/common/logo01.png" alt="사랑의 교회"></a></h1>
+			<!-- menuArea -->
+			<ul class="menuArea">
+				<li><button>헌금하기</li>
+				<li><button>설정</button></li>
+				<li><button>조회</button></li>
+			</ul>
+			<!--// menuArea -->
+		</div>
+		<h2>계좌정보 등록</h2>
+		<button class="btnBack">이전 페이지</button>
+	</div>
+	<!--// subHeader -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<p class="topTxt"><strong>이용하실 <span>계좌정보</span>를 <em>입력해주십시오.</em></strong></p><!-- 2020-05-28 - 수정 -->
+			<!-- inputList -->
+			<div class="inputList">
+				<input type="text" title="은행 선택 입력" placeholder="은행 선택">
+				<input type="text" title="계좌번호 입력" placeholder="계좌번호 –없이 입력">
+				<input type="text" title="이메일주소 입력" placeholder="이메일주소 입력">
+				<p class="msg">※본 서비스 이용을 위해 이메일 등록을 하셔야 합니다.</p>
+			</div>
+			<!--// inputList -->
+
+			<!-- 2020-05-28 -->
+			<dl class="agreeWrap">
+				<dt><span class="check"><input type="checkbox" id="chkAll" checked><label for="chkAll">전체 동의하기</label></span></dt>
+				<dd>
+					<ul>
+						<li><span class="check"><input type="checkbox" id="chk0101" checked><label for="chk0101">(필수) 필수 개인(신용)정보 수집&middot;이용&middot;제공 동의서</label><a href="">자세히 보기</a></span></li>
+						<li><span class="check"><input type="checkbox" id="chk0102" checked><label for="chk0102">(필수) 금융거래정보 등의 제공사실 통지 동의</label><a href="">자세히 보기</a></span></li>
+					</ul>
+				</dd>
+			</dl>
+			<!-- 2020-05-28 - 추가 -->
+
+			<!-- agreeCheck -->
+			<div class="agreeCheck v2">
+				<span>오픈뱅킹 서비스 이용약관 동의</span>
+				<ul>
+					<li><span class="check"><input type="checkbox" id="chk0101"><label for="chk0101">오픈뱅킹 서비스 이용 필수 동의</label><a href="">리스트 보기</a></span>
+						<div>
+							<ul>
+								<li><span class="check"><input type="checkbox" id="chk0201"><label for="chk0201">(필수) 오픈뱅킹 서비스 이용약관 및 서비스 설명서</label><a href="">보기</a></span></li>
+								<li><span class="check"><input type="checkbox" id="chk0202"><label for="chk0202">(필수) 오픈뱅킹공동업무 금융정보조회 약관</label><a href="">보기</a></span></li>
+								<li><span class="check"><input type="checkbox" id="chk0203"><label for="chk0203">(필수) 오픈뱅킹공동업무 자동계좌이체 약관</label><a href="">보기</a></span></li>
+								<li><span class="check"><input type="checkbox" id="chk0204"><label for="chk0204">(필수) 금융거래정보제공 동의서 (오픈뱅킹용)</label><a href="">보기</a></span></li>
+								<li><span class="check"><input type="checkbox" id="chk0205"><label for="chk0205">(필수) 개인정보 수집이용제공 동의서 (오픈뱅킹용)</label><a href="">보기</a></span></li>
+							</ul>
+						</div>
+					</li>
+					<li><span class="check"><input type="checkbox" id="chk0102"><label for="chk0102">오픈뱅킹 서비스 이용 선택 동의</label><a href="">자세히 보기</a></span></li>
+					<li><span class="check"><input type="checkbox" id="chk0103"><label for="chk0103">(선택) 개인(신용)정보 수집·이용 동의서 (상품서비스 안내 등)</label><a href="">리스트 보기</a></span><!-- 2020-05-28 -->
+						<div class="checkWrap">
+							<span class="check"><input type="checkbox" id="chk0301"><label for="chk0301">문자</label></span>
+							<span class="check"><input type="checkbox" id="chk0302"><label for="chk0302">이메일</label></span>
+							<span class="check"><input type="checkbox" id="chk0303"><label for="chk0303">전화</label></span>
+							<span class="check"><input type="checkbox" id="chk0304"><label for="chk0304">DM</label></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!--// agreeCheck -->
+			<strong class="txt">* (선택) 사항은 동의하지 않을 수 있습니다.</strong>
+
+			<p class="msg txtC">에러메시지 영역</p>
+			
+			<!-- btnFixed -->
+			<div class="btnFixed">
+				<button class="btn btnYellow">다음</button>
+			</div>
+			<!--// btnFixed -->
+		</div>
+	</div>
+	<!--// container -->
+</div>
+<!--// wrap -->
+</body>
+</html>

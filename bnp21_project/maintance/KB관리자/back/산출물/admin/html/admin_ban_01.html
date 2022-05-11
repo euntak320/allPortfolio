@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>배너관리 | 관리자 | KB스타게이트</title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="gnbWrap">
+				<div class="fl"><h1 class="logo"><a href="#">스타게이트<span>관리시스템</span></a></h1></div>
+				<div class="fr">
+					<ul class="menu">
+						<li>관리자명(ID)님</li>
+						<li><a href="#" class="btn logout">로그아웃</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- left menu -->
+		<div class="leftMenu">
+			<div class="inner">
+				<ul class="ul">
+					<li class="li">
+						<ul><!-- 개발 : 활성화 메뉴의 li에 클래스 on 추가 -->
+							<li><a href="#" class="mm">결제내역 조회</a></li>
+							<li><a href="#" class="mm">정산 조회</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">서비스관리</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">공지사항</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+							<li><a href="#" class="mm">FAQ</a></li>
+							<li><a href="#" class="mm">약관 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">관리자 계정 관리</a></li>
+							<li><a href="#" class="mm">(공통) 계정 관리</a></li>
+							<li><a href="#" class="mm">회원정보 조회</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li class="on"><a href="#" class="mm">배너 관리</a></li>
+							<li><a href="#" class="mm">캐시백 관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">코드 관리</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //left menu -->
+
+		<!-- content -->
+		<div class="content">
+			<h2 class="hTit">배너관리</h2>
+
+			<!-- 조회영역 -->
+			<div class="schTopBox">
+				<div class="in">
+					<div class="tbw">
+						<!-- table -->
+						<table>
+							<caption>검색</caption>
+							<colgroup>
+								<col style="width:120px;">
+								<col style="width:auto;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">기업</th>
+									<td>
+										<select class="select">
+											<option>전체</option>
+										</select>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //table -->
+					</div>
+				</div>
+			</div>
+			<!-- //조회영역 -->
+
+			<!-- table top -->
+			<div class="tblTopWrap">
+				<div class="fl">
+					<p>* 배너는 20개까지 등록 가능하며 화면에서는 최대 3개까지 노출됩니다.</p>
+				</div>
+				<div class="fr">
+					<a href="#" class="btn sm de">노출설정</a>
+					<a href="#" class="btn sm de">등록</a>
+				</div>
+			</div>
+			<!-- //table top -->
+
+			<!-- table -->
+			<div class="tbl scroll-x">
+				<table>
+					<caption>배너 목록</caption>
+					<colgroup>
+						<col style="width:8%;">
+						<col style="width:auto;">
+						<col style="width:10%;">
+						<col style="width:12%;">
+						<col style="width:12%;">
+						<col style="width:12%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">제목</th>
+							<th scope="col">노출여부</th>
+							<th scope="col">노출순서</th>
+							<th scope="col">노출기간</th>
+							<th scope="col">등록일</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="trPoint">
+							<td>20</td>
+							<td class="tal"><a href="#" class="link">타이틀 노출</a></td>
+							<td>Y</td>
+							<td>1</td>
+							<td>2019.05.05 ~ 2019.05.10</td>
+							<td>2019.05.05</td>
+						</tr>
+						<tr class="trPoint">
+							<td></td>
+							<td class="tal"><a href="#" class="link"></a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="tal"><a href="#" class="link"></a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="tal"><a href="#" class="link"></a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="tal"><a href="#" class="link"></a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="tal"><a href="#" class="link"></a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="tal"><a href="#" class="link"></a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="tal"><a href="#" class="link"></a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr class="noData">
+							<td colspan="6">데이터가 없습니다.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

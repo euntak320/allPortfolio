@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>팝업 | 관리자 | 우편번호검색</title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 개발 : 팝업 -->
+<script type="text/javascript" src="../common/js/jquery-confirm.min.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body id="layer">
+	<div class="schTopBox newWindow">
+		<div class="in officeNumber">
+			<h2 class="layerTitle">우편번호</h2>
+			<div class="contentArea">
+				<!-- 검색 영역 -->
+				<div class="topArea">
+					<div class="fl">
+						<input type="text">
+					</div>
+					<div class="fr">
+						<a href="#" class="btn md de">검색</a>
+					</div>
+				</div>
+				<!-- 검색 영역 -->
+				<!-- <div class="list txt">
+					<ul>
+						<li>우편번호 통합검색 Tip</li>
+						<li>- 도로명 + 건물번호 (예: 국제금융로8길 26)</li>
+						<li>- 동/읍/면/리 + 번지 (예: 여의도동 36-3)</li>
+					</ul>
+				</div> -->
+				<!-- 검색결과 -->
+				<div class="resultArea txt">
+					<span class="count">16건</span>
+					<div class="resultList">
+						<div class="listBox">
+							<div class="fl">
+								<div class="topTxt">
+									<span class="w20">도로명</span>
+									<span class="w80">서울특별시 영등포구 국제금융로 8길 22</span>
+								</div>
+								<div class="bottomTxt">
+									<span class="w20">지번</span>
+									<span class="w80">서울특별시 영등포구 여의도동 34-7 
+
+									</span>
+								</div>
+							</div>
+							<div class="fr">
+								<span>07333</span>
+							</div>
+						</div>
+						<div class="listBox">
+							<div class="fl">
+								<div class="topTxt">
+									<span class="w20">도로명</span>
+									<span class="w80">서울특별시 영등포구 국제금융로 8길 22</span>
+								</div>
+								<div class="bottomTxt">
+									<span class="w20">지번</span>
+									<span class="w80">서울특별시 영등포구 여의도동 34-7 
+
+									</span>
+								</div>
+							</div>
+							<div class="fr">
+								<span>07333</span>
+							</div>
+						</div>
+						<div class="listBox">
+							<div class="fl">
+								<div class="topTxt">
+									<span class="w20">도로명</span>
+									<span class="w80">서울특별시 영등포구 국제금융로 8길 22</span>
+								</div>
+								<div class="bottomTxt">
+									<span class="w20">지번</span>
+									<span class="w80">서울특별시 영등포구 여의도동 34-7 
+
+									</span>
+								</div>
+							</div>
+							<div class="fr">
+								<span>07333</span>
+							</div>
+						</div>
+						<div class="listBox">
+							<div class="fl">
+								<div class="topTxt">
+									<span class="w20">도로명</span>
+									<span class="w80">서울특별시 영등포구 국제금융로 8길 22</span>
+								</div>
+								<div class="bottomTxt">
+									<span class="w20">지번</span>
+									<span class="w80">서울특별시 영등포구 여의도동 34-7 
+
+									</span>
+								</div>
+							</div>
+							<div class="fr">
+								<span>07333</span>
+							</div>
+						</div>
+						<div class="listBox">
+							<div class="fl">
+								<div class="topTxt">
+									<span class="w20">도로명</span>
+									<span class="w80">서울특별시 영등포구 국제금융로 8길 22</span>
+								</div>
+								<div class="bottomTxt">
+									<span class="w20">지번</span>
+									<span class="w80">서울특별시 영등포구 여의도동 34-7 
+
+									</span>
+								</div>
+							</div>
+							<div class="fr">
+								<span>07333</span>
+							</div>
+						</div>
+						<div class="listBox">
+							<div class="fl">
+								<div class="topTxt">
+									<span class="w20">도로명</span>
+									<span class="w80">서울특별시 영등포구 국제금융로 8길 22</span>
+								</div>
+								<div class="bottomTxt">
+									<span class="w20">지번</span>
+									<span class="w80">서울특별시 영등포구 여의도동 34-7 
+
+									</span>
+								</div>
+							</div>
+							<div class="fr">
+								<span>07333</span>
+							</div>
+						</div>
+						<div class="listBox">
+							<div class="fl">
+								<div class="topTxt">
+									<span class="w20">도로명</span>
+									<span class="w80">서울특별시 영등포구 국제금융로 8길 22</span>
+								</div>
+								<div class="bottomTxt">
+									<span class="w20">지번</span>
+									<span class="w80">서울특별시 영등포구 여의도동 34-7 
+
+									</span>
+								</div>
+							</div>
+							<div class="fr">
+								<span>07333</span>
+							</div>
+						</div>
+						<div class="listBox">
+							<div class="fl">
+								<div class="topTxt">
+									<span class="w20">도로명</span>
+									<span class="w80">서울특별시 영등포구 국제금융로 8길 22</span>
+								</div>
+								<div class="bottomTxt">
+									<span class="w20">지번</span>
+									<span class="w80">서울특별시 영등포구 여의도동 34-7 
+
+									</span>
+								</div>
+							</div>
+							<div class="fr">
+								<span>07333</span>
+							</div>
+						</div>
+						<div class="listBox">
+							<div class="fl">
+								<div class="topTxt">
+									<span class="w20">도로명</span>
+									<span class="w80">서울특별시 영등포구 국제금융로 8길 22</span>
+								</div>
+								<div class="bottomTxt">
+									<span class="w20">지번</span>
+									<span class="w80">서울특별시 영등포구 여의도동 34-7 
+
+									</span>
+								</div>
+							</div>
+							<div class="fr">
+								<span>07333</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 검색결과 -->
+				<!-- 검색결과 후 -->
+				<!-- <div class="resultAfter txt">
+					<div class="infoArea">
+						<span>07333</span>
+						<div class="detailArea">
+							<span class="fl">[도로명]</span>	
+							<span class="fr">서울시 영등포구 국제금융로8길 26 서울시 영등포구 국제금융로8길 26서울시 영등포구 국제금융로8길 26서울시 영등포구 국제금융로8길 26서울시 영등포구 국제금융로8길 26서울시 영등포구 국제금융로8길 26</span>
+						</div>
+						<div class="selfInput">
+							<input type="text" placeholder="상세주소">
+						</div>
+					</div>
+				</div> -->
+				<!-- 검색결과 후 -->
+			</div> 
+			<!-- 버튼 종류 -->
+			
+			
+		</div>
+	</div>
+</div>
+<div class="btnArea">
+	<a href="#" class="btn md de">닫기</a>
+	<a href="#" class="btn md ye">입력</a>
+</div>
+</body>
+</html>

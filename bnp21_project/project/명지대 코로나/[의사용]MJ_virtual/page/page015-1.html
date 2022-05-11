@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MJ Virtual care center</title>
+	<script type="text/javascript" async="" src="../js/jquery-3.3.1.min.js"></script>	
+	<script type="text/javascript" async="" src="../js/jquery-ui.js"></script>	
+	<link rel="stylesheet" href="../css/jquery-ui.css">	
+	<link rel="stylesheet" href="../css/jquery.scrollbar.css">	
+	<link rel="stylesheet" href="../css/reset.css">	
+	<link rel="stylesheet" href="../css/layout.css">
+
+
+</head>
+<body>
+
+	<div id="treatment-wrap">
+		<div class="treat-menu">
+			<ul>
+				<li>
+					<button type="button" class="btn-menu open-sec"> <!-- open-sec -->
+						<span class="ico-menu1"></span>
+						<p class="menu-name">환자정보 보기</p>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn-menu">
+						<span class="ico-menu2"></span>
+						<p class="menu-name">진료내용 작성</p>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn-menu">
+						<span class="ico-menu3"></span>
+						<p class="menu-name">채팅창 열기</p>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn-menu">
+						<span class="ico-menu4"></span>
+						<p class="menu-name">마이크</p>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn-menu">
+						<span class="ico-menu5"></span>
+						<p class="menu-name">카메라</p>
+					</button>
+				</li>
+				<li>
+					<button type="button" class="btn-menu">
+						<span class="ico-menu6"></span>
+						<p class="menu-name">종료하기</p>
+					</button>
+				</li>
+			</ul>
+		</div>
+
+		<div class="treat-container">
+			<div class="treat-area">
+				<!-- 환자 정보 -->
+				<div id="patient-info" class="treat-pop">
+					<div class="pop-head">
+						환자 정보
+						<button type="button" class="btn-treat-close">닫기</button>
+					</div>
+					<div class="pop-content">
+						<dl class="treat-sec">
+							<dt>환자정보</dt>
+							<dd class="v-table">
+								<table>
+									<colgroup>														
+										<col class="m-hide" style="width:20%;"/>
+										<col class="m-hide" style="width:30%;"/>
+										<col class="m-hide" style="width:20%;"/>
+										<col class="p-hide" style="width:40%;"/>
+										<col />
+									</colgroup>
+									<tr>
+										<th>이름</th>
+										<td>김기환</td>
+									</tr class="p-hide">
+									<tr class="p-hide">
+										<th>휴대전화 번호</th>
+										<td>01022335577</td>
+									</tr>
+									<tr>
+										<th>생년월일</th>
+										<td>1968-07-14</td>
+									</tr class="p-hide">
+									<tr class="p-hide">
+										<th>성별</th>
+										<td>남</td>
+									</tr>
+									<tr>
+										<th>기업회원 여부</th>
+										<td colspan="3" class="m-hide">기업회원 / 개인회원</td>
+										<td class="p-hide">기업회원 / 개인회원</td>
+									</tr>
+								</table>
+							</dd>
+						</dl>
+						<dl class="treat-sec">
+							<dt>환자 문진 정보</dt>
+							<dd class="v-table">
+								<table>
+									<colgroup>
+										<col class="m-hide" style="width:20%;"/>
+										<col class="p-hide" style="width:40%;"/>
+										<col />
+									</colgroup>
+									<tr>
+										<th>증상 지속 여부</th>
+										<td>24시간 이내</td>
+									</tr>
+									<tr>
+										<th>증상 내용</th>
+										<td>자다가 일어났는데 목이 뻐근하고 어깨 날개뼈 안쪽이 콕콕 찌르는 듯 아픕니다...</td>
+									</tr>
+									<tr>
+										<th>첨부파일 <br/>(최대 8개)</th>
+										<td>
+											<div class="file-list">
+												<button type="button" class="file-img"></button>
+												<button type="button" class="file-img"></button>
+												<button type="button" class="file-img"></button>
+												<button type="button" class="file-img"></button>
+												<button type="button" class="file-img"></button>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</dd>
+						</dl>
+						<dl class="treat-sec">
+							<dt>환자 기초 정보</dt>
+							<dd class="v-table">
+								<table>
+									<colgroup>														
+										<col class="m-hide" style="width:20%;"/>
+										<col class="m-hide" style="width:30%;"/>
+										<col class="m-hide" style="width:20%;"/>
+										<col class="p-hide" style="width:40%;"/>
+										<col />
+									</colgroup>
+									<tr>
+										<th>키(cm)</th>
+										<td>177</td>
+									</tr class="p-hide">
+									<tr class="p-hide">
+										<th>체중(kg)</th>
+										<td>85</td>
+									</tr>
+									<tr>
+										<th>흡연 여부</th>
+										<td>흡연 안함</td>
+									</tr class="p-hide">
+									<tr class="p-hide">
+										<th>음주 여부</th>
+										<td>음주 안함</td>
+									</tr>
+									<tr>
+										<th>과거 병력</th>
+										<td colspan="3" class="m-hide">---</td>
+										<td class="p-hide">---</td>
+									</tr>
+									<tr>
+										<th>가족력</th>
+										<td colspan="3" class="m-hide">---</td>
+										<td class="p-hide">---</td>
+									</tr>
+									<tr>
+										<th>입원 및 수술 경험</th>
+										<td colspan="3" class="m-hide">---</td>
+										<td class="p-hide">---</td>
+									</tr>
+									<tr>
+										<th>복용 중인 약물</th>
+										<td colspan="3" class="m-hide">---</td>
+										<td class="p-hide">---</td>
+									</tr>
+								</table>
+							</dd>
+						</dl>
+					</div>
+				</div>
+				<!-- //환자 정보 -->
+				<!-- 진료 내용 작성 -->
+				<div id="write-treat" class="treat-pop">
+					<div class="pop-head">
+						진료 내용 작성
+						<button type="button" class="btn-treat-close">닫기</button>
+					</div>
+					<div class="pop-content">
+						<dl class="treat-sec">
+							<dt>Subjective 증상에 대한 추가 의견​</dt>
+							<dd>
+								<textarea name="" id="" placeholder="내용 작성"></textarea>
+							</dd>
+						</dl>
+						<dl class="treat-sec">
+							<dt>Objective 객관적 진료 의견​</dt>
+							<dd>
+								<textarea name="" id="" placeholder="내용 작성" ></textarea>
+							</dd>
+						</dl>
+						<dl class="treat-sec">
+							<dt>Assessment 진단​</dt>
+							<dd>
+								<textarea name="" id="" placeholder="내용 작성" ></textarea>
+							</dd>
+						</dl>
+						<dl class="treat-sec">
+							<dt>Plan 치료 계획 및 처방 의약품​</dt>
+							<dd>
+								<textarea name="" id="" placeholder="내용 작성" ></textarea>
+							</dd>
+						</dl>
+						<div class="treat-btn-area align-r">
+							<button type="button" class="btn-save">저장</button>
+						</div>
+					</div>
+				</div>
+				<!-- //진료 내용 작성 -->
+				<!-- 채팅창 열기 1127 -->
+				<div id="chat-treat">
+					<div id="chat-area" class="treat-pop">
+						<div class="pop-head">
+							채팅 진료
+							<button type="button" class="btn-treat-close">닫기</button>
+						</div>
+						<div class="pop-content">
+							<div class="chat-area">
+								<div class="chat-wrap">
+									<div class="chat-box chat-box-left">
+										<p class="message-date">2020.08.24 오후1:40</p>
+										<div class="message-text">
+											<p class="name">김기환 환자</p>
+											<p class="message">
+												문진표<br/>
+												· 신장/체중: 177cm / 85kg​<br/>
+												· 흡연 여부 : 흡연 안함​<br/>
+												· 음주 여부 : 음주 안함<br/>
+												​· 과거 병력 : --- <br/>
+												· 가족력 : --- <br/>
+												· 입원 및 수술경험 : --- <br/>
+												· 복용 중인 약물 : ---
+											</p>
+										</div>
+									</div>
+									<div class="chat-box chat-box-left">
+										<p class="message-date">2020.08.24 오후1:40</p>
+										<div class="message-text">
+											<p class="name">김기환 환자</p>
+											<p class="message">
+												문진표<br/>
+												· 신장/체중: 177cm / 85kg​<br/>
+												· 흡연 여부 : 흡연 안함​<br/>
+												· 음주 여부 : 음주 안함<br/>
+												​· 과거 병력 : --- <br/>
+												· 가족력 : --- <br/>
+												· 입원 및 수술경험 : --- <br/>
+												· 복용 중인 약물 : ---
+											</p>
+										</div>
+									</div>
+									<div class="chat-box chat-box-right">
+										<p class="message-date">2020.08.24 오후1:43</p>
+										<div class="message-text">
+											안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+										</div>
+										<div class="message-img-area">
+											<div class="file-list">
+												<button type="button" class="file-img"></button>
+												<button type="button" class="file-img"></button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="chat-bottom">
+								<div class="write-area">
+									<div class="write-box">
+										<button type="button" class="btn-camera">카메라</button>
+										<div class="message-box" style="max-height:60px;"> <!-- 3줄입니다 / 1줄당 20px -->
+											<textarea name="" id=""  class="write-ip" placeholder="메시지를 입력하세요."></textarea>		
+										</div>
+										<button type="button" class="btn-send">보내기</button>
+									</div>
+								</div>
+								<div class="chat-btn-area">
+									<button class="btn-btm"><i class="ico-cam"></i>화상진료 진행하기</button>
+									<button class="btn-btm"><i class="ico-word-list"></i>자주 사용하는 문장 보기</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script>
+						$(document).ready(function() {
+							$('.write-area').on( 'keyup', '.write-ip', function (e){
+								$(this).css('height', 'auto' );
+								$(this).height( this.scrollHeight );
+							});
+							//$('.write-area').find( '.write-ip' ).keyup();
+						});
+					</script>
+
+					<div id="sentences" class="treat-pop">
+						<div class="pop-head">
+							자주 사용하는 문장
+							<button type="button" class="btn-treat-close">닫기</button>
+						</div>
+						<div class="pop-content">
+							<p class="cont-tt">문장을 클릭하면 채팅창에 자동으로 입력됩니다.</p>
+							<div class="sentences-area">
+								<dl class="treat-sec">
+									<dt>인사말</dt>
+									<dd>
+										<ul class="sentences-list">
+											<li>
+												<button type="button" class="txt-button"><span>안녕하세요? 김철민 의사입니다.</span></button>
+												<div class="control-box">
+													<i class="ico-enter"></i>
+												</div>
+											</li>
+											<li>
+												<button type="button" class="txt-button"><span>무엇을 도와드릴까요?</span></button>		
+												<div class="control-box">
+													<i class="ico-enter"></i>
+												</div>
+											</li>
+										</ul>
+										<div class="sentences-write"> <!-- 아래 추가 버튼 눌렀을때 write-open 클래스 추가, 클래스 추가후 아래 추가 버튼 클릭시 sentences-list의 li 생성 -->
+											<input type="text" id="" name="" class="sentences-ip">
+											<button type="button" class="btn-add">추가<i class="ico-word-add"></i></button>
+										</div>
+									</dd>
+								</dl>
+								<dl class="treat-sec">
+									<dt>맺음말</dt>
+									<dd>
+										<ul class="sentences-list">
+											<li>
+												<button type="button" class="txt-button"><span>오늘 진료는 어떠셨나요?</span></button>	
+												<div class="control-box">
+													<i class="ico-enter"></i>
+												</div>
+											</li>
+											<li>
+												<button type="button" class="txt-button"><span>예약이 불가능하거나 상황이 급할 경우에는 가까운 ​응급실을 방문해주세요.​</span></button>
+												<div class="control-box">
+													<i class="ico-enter"></i>
+												</div>
+											</li>
+											<li class="pstv-del"><!--삭제 가능한 영역일 때-->
+												<button type="button" class="txt-button"><span>예약이 불가능하거나 상황이 급할 경우에는 가까운 ​응급실을 방문해주세요.​</span></button>
+												<div class="control-box">
+													<i class="ico-enter"></i>
+													<button type="button" class="btn-del">삭제</button>
+												</div>
+											</li>
+											<li class="pstv-del"><!--삭제 가능한 영역일 때-->
+												<button type="button" class="txt-button"><span>예약이 불가능하거나 상황이 급할 경우에는 가까운 ​응급실을 방문해주세요.​</span></button>
+												<div class="control-box">
+													<i class="ico-enter"></i>
+													<button type="button" class="btn-del">삭제</button>
+												</div>
+											</li>											
+										</ul>
+										<div class="sentences-write write-open"> <!-- 아래 추가 버튼 눌렀을때 write-open 클래스 추가, 클래스 추가후 아래 추가 버튼 클릭시 sentences-list의 li 생성 -->
+											<input type="text" id="" name="" class="sentences-ip">
+											<button type="button" class="btn-add">추가<i class="ico-word-add"></i></button>
+										</div>
+									</dd>
+								</dl>
+								<dl class="treat-sec">
+									<dt>추임새</dt>
+									<dd>
+										<ul class="sentences-list">
+											<li>
+												<button type="button" class="txt-button"><span>아 그러시군요.</span></button>
+												<div class="control-box">
+													<i class="ico-enter"></i>
+												</div>
+											</li>
+											<li>
+												<button type="button" class="txt-button"><span>계속 증상이 지속된다면, 다시 한번 예약해주세요.​</span></button>		
+												<div class="control-box">
+													<i class="ico-enter"></i>
+												</div>
+											</li>
+										</ul>
+										<div class="sentences-write"> <!-- 아래 추가 버튼 눌렀을때 write-open 클래스 추가, 클래스 추가후 아래 추가 버튼 클릭시 sentences-list의 li 생성 -->
+											<input type="text" id="" name="" class="sentences-ip">
+											<button type="button" class="btn-add">추가<i class="ico-word-add"></i></button>
+										</div>										
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //채팅창 열기 1127 -->
+
+				<!-- 카메라 열기 -->
+				<div id="camera-area" class="treat-pop">
+					<div class="pop-head">
+						<i class="head-camera"></i>
+						나
+						<button type="button" class="btn-treat-big">전체화면</button>
+					</div>
+					<div class="pop-content">
+						<div class="camera-off">
+							<dl>
+								<dt><i class="ico-camera-off"></i></dt>
+								<dd>카메라가 OFF상태입니다.</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+
+				<div id="camera-area" class="treat-pop">
+					<div class="pop-head">
+						<i class="head-camera"></i>
+						나
+						<button type="button" class="btn-treat-big">전체화면</button>
+					</div>
+					<div class="pop-content">
+						<img src="../images/treat-cam-sample.png" alt="">
+					</div>
+				</div>
+
+				<!-- //카메라 열기 -->
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- 진료 종료 팝업 -->
+	<div class="end-wrap" style="display:block;">	
+		<div class="popup-wrap">
+			<div class="end-pop">			
+				<button type="button" class="btn-end-close">닫기</button>
+				<div class="end-tt">진료를 종료하시겠습니까?</div>				
+				<div class="end-cont end-treatment">
+					<div class="end-title"><i class="ico-end"></i>진료하시느라 <br class="p-hide"/>수고하셨습니다.</div>
+					<div class="end-btn-area">
+						<button type="button" class="btn btn-full"><i class="ico-chk"></i>네, 진료를 종료합니다.</button>
+					</div>
+				</div>
+				<div class="end-cont end-out">
+					<dl class="out-txt">
+						<dt>진료를 종료하시면 환자에게 <br class="p-hide"/>진료실이 보이지 않습니다.​</dt>
+						<dd>원격진료실을 나가시려면 <br class="p-hide"/>아래의 버튼을 눌러주세요.​</dd>
+					</dl>
+					<div class="end-btn-area">
+						<button type="button" class="btn btn-full"><i class="ico-out"></i>나가기</button>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<!-- //진료 종료 팝업 -->
+
+	<script>
+	$(document).ready(function(){
+		
+		$('.end-wrap .btn-end-close').on('click',function(){
+			$(this).parents('.end-wrap').fadeOut();
+		});
+
+
+		$('#header .btn-menu').on('click',function(){
+			$('body').toggleClass('open-menu');
+		});
+		
+	});
+	</script>
+</body>
+</html>

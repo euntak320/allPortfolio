@@ -1,0 +1,195 @@
+@charset "UTF-8";
+
+/* visual */
+#wrap.recruit #container {
+	background-image: url("../images/recruit/bg_visual.jpg");
+}
+
+/* 인재상 */
+.talent {
+	overflow: hidden;
+	padding-top: 60px;
+}
+.talent .list {
+	margin: 0 -2%;
+}
+.talent .list:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.talent .list > li {
+	float: left;
+	position: relative;
+	width: calc(100% / 3 - 4%);
+	margin: 0 2%;
+}
+.talent .list > li:nth-child(3n) {
+	margin-right: -3px;
+}
+.talent .list > li:before {
+	content: '';
+	display: block;
+	padding-top: 100%;
+}
+.talent .list > li .inner {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 0 15px;
+	border-radius: 50%;
+	text-align: center;
+}
+.talent .list > li:nth-child(odd) .inner {
+	background-color: #c8dcff;
+}
+.talent .list > li:nth-child(even) .inner {
+	border: 2px solid #3a69bb;
+}
+.talent .list .inner em {
+	display: block;
+	position: relative;
+	margin-bottom: 45px;
+	padding-bottom: 25px;
+	color: #333;
+	font-family: 'nsbd';
+	font-size: 30px;
+
+}
+.talent .list .inner em:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 24px;
+	height: 3px;
+	margin-left: -12px;
+	background-color: #202cce;
+}
+
+/* 제도 */
+[class^="institution_list"] .blt_txt-diamond {
+	color: #333;
+	font-family: 'nsbd';
+	font-size: 22px;
+}
+[class^="institution_list"] .blt_txt-diamond {
+	display: block;
+	margin-bottom: 25px;
+}
+[class^="institution_list"] > li:not(:first-child) {
+	margin-top: 65px;
+}
+.institution_list-thumb > li {
+	position: relative;
+	min-height: 192px;
+	padding-left: 245px;
+}
+.institution_list-thumb > li:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 192px;
+	height: 191px;
+	background-repeat: no-repeat;
+	background-image: url("../images/recruit/bg_institution_sprite.png");
+}
+.institution_list-thumb > li.promotion:before {
+	background-position: 0 0;
+}
+.institution_list-thumb > li.pay:before {
+	background-position: -192px 0;
+}
+.institution_list-thumb > li.evaluation:before {
+	background-position: -384px 0;
+}
+.institution_list-thumb > li.reward:before {
+	background-position: -576px 0;
+}
+.institution_list-thumb > li.life:before {
+	background-position: -768px 0;
+}
+.institution_list-thumb > li.condolence:before {
+	background-position: 0 -191px;
+}
+.institution_list-thumb > li.traffic:before {
+	background-position: -192px -191px;
+}
+.institution_list-thumb > li.vacation:before {
+	background-position: -384px -191px;
+}
+.institution_list-thumb > li.insurance:before {
+	background-position: -576px -191px;
+}
+.institution_list-thumb > li.health:before {
+	background-position: -768px -191px;
+}
+.institution_list-thumb > li.bonus:before {
+	background-position: 0 -382px;
+}
+@media screen and (max-width:720px) {
+	[class^="institution_list"] > li:not(:first-child) {
+		margin-top: 40px;
+	}
+	.institution_list-thumb > li {
+		min-height: 95.5px;
+		padding-left: 126px;
+	}
+	.institution_list-thumb > li:before {
+		width: 96px;
+		height: 95.5px;
+		background-size: 480px auto;
+	}
+	.institution_list-thumb > li.promotion:before {
+		background-position: 0 0;
+	}
+	.institution_list-thumb > li.pay:before {
+		background-position: -96px 0;
+	}
+	.institution_list-thumb > li.evaluation:before {
+		background-position: -192px 0;
+	}
+	.institution_list-thumb > li.reward:before {
+		background-position: -288px 0;
+	}
+	.institution_list-thumb > li.life:before {
+		background-position: -384px 0;
+	}
+	.institution_list-thumb > li.condolence:before {
+		background-position: 0 -95.5px;
+	}
+	.institution_list-thumb > li.traffic:before {
+		background-position: -96px -95.5px;
+	}
+	.institution_list-thumb > li.vacation:before {
+		background-position: -192px -95.5px;
+	}
+	.institution_list-thumb > li.insurance:before {
+		background-position: -288px -95.5px;
+	}
+	.institution_list-thumb > li.health:before {
+		background-position: -384px -95.5px;
+	}
+	.institution_list-thumb > li.bonus:before {
+		background-position: 0 -191px;
+	}
+}
+
+/* 채용정보 */
+.recruit_process {
+	margin-bottom: 100px;
+}
+.recruit_process img {
+	width: 100%;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>System Setting</title>
+<link rel="stylesheet" href="../assets/css/style.css" type="text/css">
+</head>
+
+<style>
+	/* error */
+.errorArea{position: relative; height: 100vh;} 
+.error {position: absolute; top:50%; left: 50%; width:635px; height:335px; color: #333; text-align: center; font-family: 'Noto Sans KR', sans-serif; transform: translate(-50%, -50%);}
+.error .group {display: inline-block; text-align: left;}
+.error .error_img {display: block; margin: 0 auto;}
+.error [class^="errorTitle"] {position: relative; margin: 30px 0 40px; padding-left: 25px;	color: #013877; font-size: 30px;}
+.error [class^="errorTitle"]:before {content: ''; display: block; position: absolute; left: 0; top: 0; width: 6px; height: 100%; background-color: #186dc2;}
+.error [class^="errorTitle"] span {display: block; color: #333; font-size: 18px;}
+.error .mgsCheck { margin-top: 25px; padding-left: 10px;}
+.error .btnArea {margin-top: 40px; text-align: center;}
+.error .btnArea .mgsCheck {display: block; margin-bottom: 30px;line-height: 24px;}
+.error .btnArea .btn{display: inline-block; margin: 0 8px; min-width:168px; height:50px; padding:0 15px; border:0; border-radius: 5px; color:#fff; font-size:14px; line-height: 50px; text-decoration: none;}
+.error .btnArea .Default{background: #666;}
+.error .btnArea .Normal{background: #186dc2;}
+</style>
+<body>
+	<div class="errorArea">
+		<div class="error">
+			<div class="group">
+				<!-- <img src="../assets/images/img_error.png" class="error_img" alt="error"> -->
+				<p class="errorTitle">시스템 점검 중</p>
+				<ul class="blt_txt-square">
+					<li>서비스 이용에 불편을 드려서 죄송합니다 </li>
+					<li>보다 좋은 서비스를 제공하기 위해서 시스템 점검 중입니다.</li>
+					<!-- <li>점검 기간: YYYY년 MM월 DD일 HH시 MM분 ~ YYYY년 MM월 DD일 HH시 MM분 까지</li> -->
+				</ul>
+				<!-- <p class="mgsCheck">예정 기간 중에 마치도록 하겠습니다.</p> -->
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>MJ CORONA</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    
+</head>
+
+<body>
+    <div id="subPage">
+        <!-- header -->
+        <div class="header">
+            <div class="topArea">
+                <h1><a href="">logo</a></h1>
+                <div class="topBtm">
+                    <span>고객센터 담당자 2님</span>
+                    <button>로그아웃</button>
+                </div>
+            </div>
+            <div class="bottomArea">
+                <span>
+                    <a href="" class="on">병원등록</a>
+                </span>
+                <span>
+                    <a href="">기업등록</a>
+                </span>
+                <span>
+                    <a href="">의료진관리</a>
+                </span>
+                <span>
+                    <a href="">병원관리</a>
+                </span>
+            </div>
+        </div>
+        <!-- header -->
+
+        <!-- content -->
+        <div class="contentArea">
+            <div class="comLayout">
+                <div class="filterArea">
+                    <div class="top">
+                        <span class="title">문의상태</span>
+                        <div class="radioArea">
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_1">
+                                <label for="rd_1">전체</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_2">
+                                <label for="rd_2">문의</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_3">
+                                <label for="rd_3">접수</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_4">
+                                <label for="rd_4">완료</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="fl">
+                            <div class="select">
+                                <select name="" id="">
+                                    <option value="">문의일</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+
+                                </select>
+                            </div>
+                            <div class="date">
+                                <div class="input">
+                                    <input type="text" placeholder="YYYY-MM-DD" class="datepicker">
+                                </div>
+                                <span>~</span>
+                                <div class="input">
+                                    <input type="text" placeholder="YYYY-MM-DD" class="datepicker">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fr">
+                            <div class="select">
+                                <select name="" id="">
+                                    <option value="">내용</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+
+                                </select>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="검색어를 입력해주세요">
+                                <button>검색</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comTableArea">
+                    <div class="topTxt">
+                        <span class="fl">총 0,000건</span>
+                        <div class="fr">
+                            <span>목록 개수</span>
+                            <div class="select">
+                                <select name="" id="">
+                                    <option value="">10</option>
+                                    <option value="">9</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <caption>해당 테이블은 no, 문의자기업회원코드, 이름, 성별, 생년월일, 연락처, 문의내용, 댓글 수, 문의일시, 문의상태, 처리자, 처리일시로 구분되어 있습니다.</caption>
+                            <colgroup>
+                                <col style="width:1%">
+                                <col style="width:3%">
+                                <col style="width:3%">
+                                <col style="width:3%">
+                                <col style="width:3%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>NO</th>
+                                    <th>문의자<br>기업회원코드</th>
+                                    <th>이름</th>
+                                    <th>성별</th>
+                                    <th>생년월일</th>
+                                    <th>연락처</th>
+                                    <th>문의내용</th>
+                                    <th>댓글 수</th>
+                                    <th>문의일시</th>
+                                    <th>문의상태</th>
+                                    <th>처리자</th>
+                                    <th>처리일시</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>33</td>
+                                    <td>1234567890</td>
+                                    <td>홍길동</td>
+                                    <td>남</td>
+                                    <td>19750305</td>
+                                    <td>010-2345-6789</td>
+                                    <td>
+                                        <a href="">문의드립니다.</a>
+                                    </td>
+                                    <td>3</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                    <td>
+                                        <span class="state orange">문의</span>
+                                    </td>
+                                    <td>고객센터<br>담당자1</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>33</td>
+                                    <td>1234567890</td>
+                                    <td>홍길동</td>
+                                    <td>남</td>
+                                    <td>19750305</td>
+                                    <td>010-2345-6789</td>
+                                    <td>
+                                        <a href="">문의드립니다.</a>
+                                    </td>
+                                    <td>3</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                    <td>
+                                        <span class="state gray">완료</span>
+                                    </td>
+                                    <td>고객센터<br>담당자1</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>33</td>
+                                    <td>1234567890</td>
+                                    <td>홍길동</td>
+                                    <td>남</td>
+                                    <td>19750305</td>
+                                    <td>010-2345-6789</td>
+                                    <td>
+                                        <a href="">문의드립니다.</a>
+                                    </td>
+                                    <td>3</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                    <td>
+                                        <span class="state blue">접수</span>
+                                    </td>
+                                    <td>고객센터<br>담당자1</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>33</td>
+                                    <td>1234567890</td>
+                                    <td>홍길동</td>
+                                    <td>남</td>
+                                    <td>19750305</td>
+                                    <td>010-2345-6789</td>
+                                    <td>
+                                        <a href="">문의드립니다.</a>
+                                    </td>
+                                    <td>3</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                    <td>
+                                        <span class="state gray">완료</span>
+                                    </td>
+                                    <td>고객센터<br>담당자1</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>33</td>
+                                    <td>1234567890</td>
+                                    <td>홍길동</td>
+                                    <td>남</td>
+                                    <td>19750305</td>
+                                    <td>010-2345-6789</td>
+                                    <td>
+                                        <a href="">문의드립니다.</a>
+                                    </td>
+                                    <td>3</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                    <td>
+                                        <span class="state blue">접수</span>
+                                    </td>
+                                    <td>고객센터<br>담당자1</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>33</td>
+                                    <td>1234567890</td>
+                                    <td>홍길동</td>
+                                    <td>남</td>
+                                    <td>19750305</td>
+                                    <td>010-2345-6789</td>
+                                    <td>
+                                        <a href="">문의드립니다.</a>
+                                    </td>
+                                    <td>3</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                    <td>
+                                        <span class="state gray">접수</span>
+                                    </td>
+                                    <td>고객센터<br>담당자1</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>33</td>
+                                    <td>1234567890</td>
+                                    <td>홍길동</td>
+                                    <td>남</td>
+                                    <td>19750305</td>
+                                    <td>010-2345-6789</td>
+                                    <td>
+                                        <a href="">문의드립니다.</a>
+                                    </td>
+                                    <td>3</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                    <td>
+                                        <span class="state blue">접수</span>
+                                    </td>
+                                    <td>고객센터<br>담당자1</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>33</td>
+                                    <td>1234567890</td>
+                                    <td>홍길동</td>
+                                    <td>남</td>
+                                    <td>19750305</td>
+                                    <td>010-2345-6789</td>
+                                    <td>
+                                        <a href="">문의드립니다.</a>
+                                    </td>
+                                    <td>3</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                    <td>
+                                        <span class="state orange">접수</span>
+                                    </td>
+                                    <td>고객센터<br>담당자1</td>
+                                    <td>
+                                        <span>2020-08-24</span>
+                                        <span>11:30</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagingArea">
+                        <!-- 남은 페이지가 있을땐 on 클래스 추가 -->
+                        <a href="" class="arrow prev">전 10페이지</a>
+                        <a href="" class="arrow before">전 페이지</a>
+                        <a href="" class="txt">1</a>
+                        <a href="" class="txt">2</a>
+                        <a href="" class="txt">3</a>
+                        <a href="" class="txt">4</a>
+                        <a href="" class="txt">5</a>
+                        <a href="" class="arrow after on">다음 페이지</a>
+                        <a href="" class="arrow next on">다음 10페이지</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+
+        <!-- footer -->
+        <div class="footer">
+            <span>2020 &copy; MJ. All Rights Reserved.</span>
+        </div>
+        <!-- footer -->
+    </div>
+</body>
+
+</html>

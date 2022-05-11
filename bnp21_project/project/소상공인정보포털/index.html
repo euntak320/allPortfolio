@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="서울시 소재 소상공인의 창업 및 경영 안정을 지원하여 일자리 창출과 서울 경제 활성화에 기여하기 위하여 설립된 서울시 소상공인 종합지원센터입니다.">
+	<meta name="keywords" content="창업, 경영교육, 사업안내, 맞춤형사업, 소상공인, 종합지원포털, 시장정보, 자영업, 현장체험, 멘토링, 자영업 협업화, 시장정보, 농수산물 가격정보, 서울시 물가정보, 유통시장 정보, 소상공인 입찰정보, 관광공사 추천업소, 착한가격 선정업소, 소상공인 홍보관, 소상공인아카데미, 정보광장, 창업상담, 경영지원활동, 일자리, 컨설팅, 서울신용보증재단, 신용보증, 신용, 보증">
+	<title>서울특별시 자영업지원센터</title>
+
+	<!-- styles -->
+	<!-- <link href="nassets/css/bootstrap.min.css" rel="stylesheet"> -->
+	<link href="nassets/css/style.css" rel="stylesheet">
+	<link href="nassets/css/main.css" rel="stylesheet">
+	<!-- <link href="nassets/css/font-awesome.min.css" rel="stylesheet"> -->
+	<link href="assets/css/swiper.min.css" rel="stylesheet">
+
+	<!--[if lt IE 9]><script src=./assets/js/ie8-responsive-file-warning.js></script><![endif]-->
+	
+	<script src="nassets/js/ie-emulation-modes-warning.js"></script>
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js"></script> -->
+
+
+	<!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]-->
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon-precomposed" href="nassets/ico/apple-touch-icon-precomposed.png">
+	<link rel="icon" href="nassets/ico/favicon.ico">
+
+	<!-- JS -->
+	<!-- <script type="text/javascript" src="/js/jquery/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery/jquery-3.1.1.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+	<script type="text/javascript" src="js/jquery/jquery-ui-1.8.16.min.js"></script>
+	<!--  
+		<script type="text/javascript" src="/js/jquery/jquery.dialog.min.js"></script>
+		-->
+	<!-- <script type="text/javascript" src="js/jquery/jquery.popupWindow.js"></script> -->
+	<!-- <script src="https://unpkg.com/swiper/swiper-bundle.js"></script> -->
+	<script text="text/javascript" src="assets/js/swiper.js"></script>
+
+
+	<!-- JavaScript -->
+	<!-- <script type="text/javascript" src="js/common-util.js"></script> -->
+	<!-- <script type="text/javascript" src="js/sbdcCommon.js"></script> -->
+	<!-- <script type="text/javascript" src="assets/js/default.js"></script> -->
+	<!-- 서울 GNB -->
+	<!-- <script type="text/javascript" src="https://www.seoul.go.kr/seoulgnb/gnb.js"></script> -->
+	<script type="text/javascript">
+		$(function () {
+			// GNB 로딩 스크립트
+			// Yjs.Gnb.init('C001', 'seoul-common-gnb');
+
+			// $('.btnEdu').click(function () {
+			// 	if (true) {
+			// 		location.href = 'http://edu.seoulsbdc.or.kr';
+			// 	} else {
+			// 		//location.href = 'http://www.seoulsbdc.or.kr/ed/ED_10100.do';
+			// 		location.href = '/ed/ED_10100.do';
+			// 	}
+
+			// });
+
+			//  top버튼 애니메이션
+			$("#topBtn").click( function() {
+				$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+				return false;
+			} );
+
+			
+			var allWindow = $(window).width();
+			$(window).resize(function(){
+				if(allWindow > 768) {
+					$("#gnb .comLayout > ul > li").on({
+						mouseenter :function(){
+							$("#gnb .gnbFrame").addClass("on");
+							$("#gnb .submenu").addClass("on");
+						},
+						mouseleave :function (){
+							$("#gnb .gnbFrame").removeClass("on");
+							$("#gnb .submenu").removeClass("on");
+						}
+					});
+				}
+			}).resize();
+
+			$(window).scroll(function(){
+				var topScroll = 0;
+				var scroll = $(this).scrollTop();
+				if(scroll > 111){
+					$("#headerLayout, #header").addClass("active");
+					$("#topBtn").addClass("on");
+				}
+				else{
+					$("#headerLayout,  #header").removeClass("active")
+					$("#topBtn").removeClass("on");
+				}
+
+			});
+
+			
+			$("#gnb .gnbFrame .comLayout > ul > li").click(function(){
+				$(this).find("div").slideToggle();
+				$(this).find("a").toggleClass("on")
+			});			
+
+			// 메인 비주얼
+			var fisrtSwiper = new Swiper('.visualArea', {
+				slidesPerView: 1,
+				loop: true,
+				speed: 1500,
+				autoplay: {
+					delay: 10000,
+				},
+				autoplay: {
+					delay: 10000,
+				},
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				breakpoints: {
+					767: {
+						slidesPerView: 1,
+						slidesPerGroup: 1,
+					},
+
+					500: {
+						slidesPerView: 1,
+						slidesPerGroup: 1,
+					},
+				},
+			});
+
+			// 2020-09-16 주요사업 바로가기 시작
+			var forthSwiper;
+			$(window).on('resize', function(){
+				if( $(window).width() > 768 && forthSwiper ){
+					if(!forthSwiper) return;
+					forthSwiper.destroy();
+					forthSwiper = undefined;
+				}else{
+
+				if($(window).width() < 768 && forthSwiper == undefined){
+					forthSwiper = new Swiper('.linkBox', {
+						slidesPerView: "2",
+						speed: 1500,
+						loop: false,
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+					});
+				}
+				}
+			});
+			$(window).trigger("resize");
+			// 2020-09-16 주요사업 바로가기 끝
+
+
+			// 소상공인 성공사례
+			// 첫번째 라인
+
+			var secSwiper;
+			$(window).on('resize', function(){
+				if( $(window).width() > 768 && secSwiper ){
+					if(!secSwiper) return;
+					secSwiper.destroy();
+					secSwiper = undefined;
+				}else{
+
+				if($(window).width() < 768 && secSwiper == undefined){
+					secSwiper = new Swiper('.linkArea .one', {
+						slidesPerView: "2",
+						speed: 1500,
+						loop: false,
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+					});
+				}
+				}
+			});
+			$(window).trigger("resize");
+
+			var thirdSwiper;
+			$(window).on('resize', function(){
+				if( $(window).width() > 768 && thirdSwiper ){
+					if(!thirdSwiper) return;
+					thirdSwiper.destroy();
+					thirdSwiper = undefined;
+				}else{
+
+				if($(window).width() < 768 && thirdSwiper == undefined){
+					thirdSwiper = new Swiper('.linkArea .two', {
+						slidesPerView: "2",
+						speed: 1500,
+						loop: false,
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+					});
+				}
+				}
+			});
+			$(window).trigger("resize");
+
+			$("#top_menu .topnav > li > a").click(function(){
+				$(this).parent().toggleClass("active");
+			});
+
+			$("#header .m-btn").click(function(){
+				$("#gnb").addClass("on");
+				$("body").css({
+					"overflow":"hidden"
+				});
+			});
+
+			$("#gnb .m-close").click(function(){
+				$("#gnb").removeClass("on");
+				$("body").css({
+					"overflow":"visible"
+				});
+			});
+			
+
+			$("#footer .familyLink").mouseenter(function () {
+				$(this).addClass("on");
+				$("#footer .mainList .menuList > li").addClass("on");
+			});
+			$("#footer .familyLink").mouseleave(function () {
+				$(this).removeClass("on");
+				$("#footer .mainList .menuList > li").removeClass("on");
+			});
+
+			// tab
+			$("#newsTab .tabBtn").click(function () {
+				$("#newsTab .tabBtn").removeClass("on");
+				$("#newsTab .tabBtn").eq($(this).index()).addClass("on");
+				$("#newsTab .view").removeClass("on");
+				$("#newsTab .view").eq($(this).index()).addClass("on");
+			});
+
+				// 뉴스 탭
+			$(".tabArea .title").click(function () {
+				$(".tabArea .title").removeClass("on");
+				$(".tabArea .title").eq($(this).index()).addClass("on");
+				$(".leftArea .view").removeClass("on");
+				$(".leftArea .view").eq($(this).index()).addClass("on");
+			});
+
+			swiperTabsNav = new Swiper('.swiper-tabs-nav', {
+				spaceBetween: 0,
+				slidesPerView: 'auto',
+				loop: false,
+				autoHeight: false,
+				resistanceRatio: 0,
+				watchOverflow: true,
+				watchSlidesVisibility: true,
+				watchSlidesProgress: true,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+
+			// Swiper Content
+			swiperTabsContent = new Swiper('.swiper-tabs-content', {
+				spaceBetween: 0,
+				loop:false,
+				autoHeight: true,
+				longSwipes: true,
+				resistanceRatio: 0, // Disable First and Last Swiper
+				watchOverflow: true,
+				loopedSlides: 5,
+				thumbs: {
+					swiper: swiperTabsNav,
+				},
+			});
+
+		});
+		
+
+	</script>
+</head>
+
+<body id="main">
+	
+	<div class="gnbwrap">
+		<!-- 서울시 GNB    -->
+		<div id="seoul-common-gnb"></div>
+	</div>
+	<!-- header -->
+	<div id="main">
+		<div id="headerLayout">
+			<div id="header">
+				<div class="comLayout">
+					<h1>
+						<a href="" class="logo">서울시 자영업지원센터 소상공인지원포털</a>
+					</h1>
+					<div class="searchBar">
+						<div class="input">
+							<input type="text" placeholder="검색어를 입력해주세요">
+							<button type="button">검색</button>
+						</div>
+					</div>
+				</div>
+				<button type="button" class="m-btn">모바일버튼</button>
+			</div>
+			<!-- header -->
+
+			<!-- gnb -->
+			<div id="gnb">
+				<div class="gnbFrame">
+					<div class="comLayout">
+						<button type="button" class="m-close">닫기버튼</button>
+						<!-- 메뉴가 6개일때 v2 클래스 추가 -->
+						<ul class="">
+							<li><a href="javascript:void(0);">사업찾기</a>
+								<div class="submenu">
+									<ul>
+										<li><a href="">· 맞춤형 사업찾기</a></li>
+										<li><a href="">· 인기사업안내</a></li>
+										<li><a href="">· 유관기관 네트워크</a></li>
+										<li><a href="">· 채용정보</a></li>
+										<li><a href="">· 구직자정보</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="javascript:void(0);">사업안내</a>
+								<div class="submenu">
+									<ul>
+										<li><a href="">· 종합안내</a></li>
+										<li><a href="">· 창업컨설팅</a></li>
+										<li><a href="">· 자영업클리닉</a></li>
+										<li><a href="">· 시설개선 지원 사업</a></li>
+										<li><a href="">· 사업정리 및 제기지원</a></li>
+										<li><a href="">· 현장체험(멘토링)</a></li>
+										<li><a href="">· 자영업협업화</a></li>
+										<li><a href="" class="twoline">· 소상공인 고용<br>보험료지원</a></li>
+										<li><a href="">· 광악상권 르네상스</a></li>
+										<li><a href="">· 코로나19 희망드림</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="javascript:void(0);">시장정보</a>
+								<div class="submenu">
+									<ul>
+										<li><a href="">· 농수산물 가격정보</a></li>
+										<li><a href="">· 서울시물가정보</a></li>
+										<li><a href="">· 소상공인 입찰정보</a></li>
+										<li><a href="">· 도매시장 정보</a></li>
+										<li><a href="">· 도매시장 점포찾기</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="javascript:void(0);">홍보의장</a>
+								<div class="submenu">
+									<ul>
+										<li><a href="">· 관광공사 선정업소</a></li>
+										<li><a href="">· 착한가격 선정업소</a></li>
+										<li><a href="">· 소상공인 홍보관</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="javascript:void(0);">지원센터</a>
+								<div class="submenu">
+									<ul>
+										<li><a href="">· 공지사항</a></li>
+										<li><a href="">· 유관기관 공지사항</a></li>
+										<li><a href="">· 궁금합니다</a></li>
+										<li><a href="">· 자주하는 질문</a></li>
+										<li><a href="">· 칭찬한마디</a></li>
+										<li><a href="">· 고객제안</a></li>
+										<li><a href="">· 찾아오시는길</a></li>
+									</ul>
+								</div>
+							</li>
+							<!-- <li><a href="javascript:void(0);">지원센터</a>
+								<div class="submenu">
+									<ul>
+										<li><a href="">· 공지사항</a></li>
+										<li><a href="">· 유관기관 공지사항</a></li>
+										<li><a href="">· 궁금합니다</a></li>
+										<li><a href="">· 자주하는 질문</a></li>
+										<li><a href="">· 칭찬한마디</a></li>
+										<li><a href="">· 고객제안</a></li>
+										<li><a href="">· 찾아오시는길</a></li>
+									</ul>
+								</div>
+							</li> -->
+						</ul>
+						<div class="loginArea">
+							<ul>
+								<li class="login"><a href="">로그인</a>
+									<ul>
+										<li><a href="">· 로그인</a></li>
+										<li><a href="">· 회원가입</a></li>
+										<li><a href="">· 아이디 찾기</a></li>
+										<li><a href="">· 비밀번호 찾기</a></li>
+									</ul>
+								</li>
+								<li><a href="">이용안내</a></li>
+								<li><a href="">사이트맵</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- gnb -->
+		</div>
+
+		<div class="mainArea">
+			<div class="visualArea">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide one">
+						<div class="txtArea">
+							<span class="bold">2020년<br>일터혁신 컨설팅 지원사업</span>
+							<span>참가사업장 모집 공고</span>
+							<div class="infoTxt">
+								<ul>
+									<li>
+										<span class="title">주관기관</span>
+										<span>노사발전재단</span>
+									</li>
+									<li>
+										<span class="title">신청기간</span>
+										<span>상시접수</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide two">
+						<div class="txtArea">
+							<span class="bold">2020년<br>일터혁신 컨설팅 지원사업</span>
+							<span>참가사업장 모집 공고</span>
+							<div class="infoTxt">
+								<ul>
+									<li>
+										<span class="title">주관기관</span>
+										<span>노사발전재단</span>
+									</li>
+									<li>
+										<span class="title">신청기간</span>
+										<span>상시접수</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide three">
+						<div class="txtArea">
+							<span class="bold">2020년<br>일터혁신 컨설팅 지원사업</span>
+							<span>참가사업장 모집 공고</span>
+							<div class="infoTxt">
+								<ul>
+									<li>
+										<span class="title">주관기관</span>
+										<span>노사발전재단</span>
+									</li>
+									<li>
+										<span class="title">신청기간</span>
+										<span>상시접수</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide four">
+						<div class="txtArea">
+							<span class="bold">2020년<br>일터혁신 컨설팅 지원사업</span>
+							<span>참가사업장 모집 공고</span>
+							<div class="infoTxt">
+								<ul>
+									<li>
+										<span class="title">주관기관</span>
+										<span>노사발전재단</span>
+									</li>
+									<li>
+										<span class="title">신청기간</span>
+										<span>상시접수</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide five">
+						<div class="txtArea">
+							<span class="bold">2020년<br>일터혁신 컨설팅 지원사업</span>
+							<span>참가사업장 모집 공고</span>
+							<div class="infoTxt">
+								<ul>
+									<li>
+										<span class="title">주관기관</span>
+										<span>노사발전재단</span>
+									</li>
+									<li>
+										<span class="title">신청기간</span>
+										<span>상시접수</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+			<div class="topArea">
+				<div class="comLayout">
+					<div class="shortcutArea">
+						<div class="leftArea">
+							<span class="title">주요사업 바로가기</span>
+							<div class="linkBox">
+								<div class="swiper-wrapper">
+									<a href="" class="swiper-slide">
+										<img src="assets/images/main/consulting.png" alt="창업 컨설팅">
+										<span>창업 컨설팅</span>
+									</a>
+									<a href="" class="swiper-slide real">
+										<img src="assets/images/main/group.png  " alt="현장 체험">
+										<span>현장 체험</span>
+									</a>
+									<a href="" class="swiper-slide teamup">
+										<img src="assets/images/main/hand.png" alt="자영업 협업화">
+										<span>자영업 협업화</span>
+									</a>
+									<a href="" class="swiper-slide bizClear">
+										<img src="assets/images/main/box.png" alt="사업 정리">
+										<span>사업 정리</span>
+									</a>
+									<a href="" class="swiper-slide support">
+										<img src="assets/images/main/support.png" alt="고용보험 지원">
+										<span>고용보험 지원</span>
+									</a>
+								</div>
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div>
+						</div>
+						<div class="rightArea">
+							<span class="title">서비스 바로가기</span>
+							<div class="linkList">
+								<a href="">
+									<img src="assets/images/main/folder.png" alt="">
+									<span>정보광장</span>
+								</a>
+								<a href="">
+									<img src="assets/images/main/graduation.png" alt="">
+									<span>소상공인아카데미</span>
+								</a>
+								<a href="">
+									<img src="assets/images/main/chart.png" alt="">
+									<span>상권분석시스템</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="listArea">
+						<div class="newsList" id="newsTab">
+							<div class="topTxt">
+								<div class="tabBtn on">
+									<span>뉴스</span>
+									<a href="" class="plus">더보기</a>
+								</div>
+								<div class="tabBtn">
+									<span>공지</span>
+									<a href="" class="plus">더보기</a>
+								</div>
+							</div>
+							<div class="btmTxt">
+								<div class="view on">
+									<ul>
+										<li><a href="">· 2020년 자영업 협업화 지원사업 지원대상 협업체협약 안내입니다.</a></li>
+										<li><a href="">· 2020년 소상공인 동행 프로젝트 지원업체 모집공고</a></li>
+										<li><a href="">· 2020년 시설개선 지원사업 모집공고</a></li>
+										<li><a href="">· 2020년 자영업클리닉 모집공고</a></li>
+										<li><a href="">· 서울 50+ 인턴십 '찾아가는 우리동네 자영업반장안내 모집공고'</a></li>
+									</ul>
+								</div>
+								<div class="view">
+									<ul>
+										<li><a href="">· 2021년 자영업 협업화 지원사업 지원대상 협업체협약 안내입니다.</a></li>
+										<li><a href="">· 2021년 소상공인 동행 프로젝트 지원업체 모집공고</a></li>
+										<li><a href="">· 2021년 시설개선 지원사업 모집공고</a></li>
+										<li><a href="">· 2021년 자영업클리닉 모집공고</a></li>
+										<li><a href="">· 서울 51+ 인턴십 '찾아가는 우리동네 자영업반장안내 모집공고'</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="startupArea">
+							<div class="topTxt">
+								<span class="title">창업체험관</span>
+								<a href="" class="plus">더보기</a>
+							</div>
+							<div class="btmTxtArea">
+								<div>
+									<a href="">
+										<img src="assets/images/main/plan.png" alt="사업계획 체험">
+										<span>사업계획 체험</span>
+									</a>
+								</div>
+								<div>
+									<a href="">
+										<img src="assets/images/main/checkList.png" alt="창업적성 체험">
+										<span>창업적성 체험</span>
+									</a>
+								</div>
+								<div>
+									<a href="">
+										<img src="assets/images/main/research.png" alt="경영성과 체험">
+										<span>경영성과 체험</span>
+									</a>
+								</div>
+								<div>
+									<a href="">
+										<img src="assets/images/main/listPencil.png" alt="사업자 적성검사">
+										<span>사업자 적성검사</span>
+									</a>
+								</div>
+								<div>
+									<a href="">
+										<img src="assets/images/main/strategic.png" alt="손익분기점 체험">
+										<span>손익분기점 체험</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="middleArea">
+				<div class="comLayout">
+					<div class="successArea">
+						<div class="topTxt">
+							<span class="title">소상공인 성공사례</span>
+							<a href="" class="plus">더보기</a>
+						</div>
+						<div class="linkArea">
+							<div class="one">
+								<ul class="swiper-wrapper">
+									<li class="swiper-slide">
+										<a href="">
+											<span class="imgArea">
+												<img src="" alt="">
+											</span>
+											<span class="white">[소상공인이야기①] 사례와 이야기입니다.</span>
+											<span>지원 사례로 알아보는 창업컨설팅!</span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="">
+											<span class="imgArea">
+												<img src="" alt="">
+											</span>
+											<span class="white">[소상공인이야기②] 사례와 ..</span>
+											<span>지원 사례로 알아보는 창업컨설팅! </span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="">
+											<span class="imgArea">
+												<img src="" alt="">
+											</span>
+											<span class="white">[소상공인이야기③] 사례와 ..</span>
+											<span>지원 사례로 알아보는 창업컨설팅!</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="two">
+								<ul class="swiper-wrapper">
+									<li class="swiper-slide">
+										<a href="">
+											<span class="imgArea">
+												<img src="" alt="">
+											</span>
+											<span class="white">창업 준비와 마케팅, ‘우리..</span>
+											<span>지원 사례로 알아보는 창업컨설팅!</span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="">
+											<span class="imgArea">
+												<img src="" alt="">
+											</span>
+											<span class="white">[사례 ①] 구로시장의 대표 ..</span>
+											<span>지원 사례로 알아보는 창업컨설팅!</span>
+										</a>
+									</li>
+									<li class="swiper-slide">
+										<a href="">
+											<span class="imgArea">
+												<img src="" alt="">
+											</span>
+											<span class="white">[사례 ②] 환골탈태의 장인..</span>
+											<span>지원 사례로 알아보는 창업컨설팅!</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="bizfindArea">
+						<div class="topTxt">
+							<span class="title">사업찾기</span>
+						</div>
+						<ul>
+							<li>
+								<a href="">
+									<img src="assets/images/main/diploma.png" alt="정책">
+									<span>정책</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="assets/images/main/book.png" alt="교육">
+									<span>교육</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="assets/images/main/consulting2.png" alt="컨설팅">
+									<span>컨설팅</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="assets/images/main/building.png" alt="시설">
+									<span>시설</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="assets/images/main/analytics.png" alt="사업화">
+									<span>사업화</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="assets/images/main/event.png" alt="행사">
+									<span>행사</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="assets/images/main/etc.png" alt="기타">
+									<span>기타</span>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<img src="assets/images/main/seoulfolder.png" alt="기타">
+									<span>서울시 기타자료</span>
+								</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+			<div class="btmArea">
+				<div class="comLayout">
+					<div class="lastTxt">
+						<div class="top">
+							<div class="leftArea">
+								<div class="topTxt tabArea">
+									<span class="title on">최근 등록된 사업</span>
+									<span class="title">인기 사업</span>
+									<a href="" class="plus">더보기</a>
+								</div>
+								<div class="btmTxtArea">
+									<div class="view on">
+										<div class="txtbox">
+											<span class="blue">진행</span>
+											<span class="green">Online</span>
+											<dl>
+												<dt>2020 ESteem(에스팀 중국 라이어)</dt>
+												<dd>중국 진출을 희망하는 중소기업의 유통구조 구축 및 브랜드 인지도 향상을 위하여 한국 연예인 및...</dd>
+											</dl>
+										</div>
+										<div class="txtbox">
+											<span class="gray">마감</span>
+											<dl>
+												<dt>[서울] 남부권 2020년 스마트웨어러...</dt>
+												<dd>서울 남부권 지역의 패션제조업 활성화를 위하여 패션제조업체ㆍ패션디자이너ㆍ스마트웨어러블...</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="view">
+										<div class="txtbox">
+											<span class="blue">진행</span>
+											<span class="green">Online</span>
+											<dl>
+												<dt>2021 ESteem(에스팀 중국 라이어)</dt>
+												<dd>중국 진출을 희망하는 중소기업의 유통구조 구축 및 브랜드 인지도 향상을 위하여 한국 연예인 및...</dd>
+											</dl>
+										</div>
+										<div class="txtbox">
+											<span class="gray">마감</span>
+											<dl>
+												<dt>[서울] 남부권 2021년 스마트웨어러...</dt>
+												<dd>서울 남부권 지역의 패션제조업 활성화를 위하여 패션제조업체ㆍ패션디자이너ㆍ스마트웨어러블...</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="rightArea">
+								<div class="topTxt">
+									<div class="tabV2 swiper-tabs-nav">
+										<div class="swiper-wrapper">
+											<span class="swiper-slide title">자주하는 질문</span>
+											<span class="swiper-slide title">궁금합니다.</span>
+										</div>
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
+									</div>
+									<a href="" class="plus">더보기</a>
+								</div>
+								<div class="btmTxtArea swiper-tabs-content">
+									<div class="swiper-wrapper ">
+										<div class="swiper-slide view ">
+											<ul>
+												<li>
+													<a href="">Q [기타]Windows XP 사용자를 위한 안내1</a>
+												</li>
+												<li>
+													<a href="">Q [기타]회원가입 중 주소창이 나타나지 않는 경우</a>
+												</li>
+												<li>
+													<a href="">Q [기타]소상공인아카데미 아이콘이 클릭되지 않을...</a>
+												</li>
+												<li>
+													<a href="">Q [기타]크롬(Chrome)설치방법</a>
+												</li>
+												<li>
+													<a href="">Q [기타][컨설팅] 과거 활동했던 컨설턴트의 수행확...</a>
+												</li>
+											</ul>
+										</div>
+										<div class="swiper-slide  view">
+											<ul>
+												<li>
+													<a href="">Q [기타]Windows XP 사용자를 위한 안내2</a>
+												</li>
+												<li>
+													<a href="">Q [기타]회원가입 중 주소창이 나타나지 않는 경우</a>
+												</li>
+												<li>
+													<a href="">Q [기타]소상공인아카데미 아이콘이 클릭되지 않을...</a>
+												</li>
+												<li>
+													<a href="">Q [기타]크롬(Chrome)설치방법</a>
+												</li>
+												<li>
+													<a href="">Q [기타][컨설팅] 과거 활동했던 컨설턴트의 수행확...</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="btm">
+							<div class="topTxt">
+								<span class="title">찾아오는 길</span>
+								<div class="select">
+									<select name="" id="">
+										<option value="">본점</option>
+										<option value=""></option>
+										<option value=""></option>
+										<option value=""></option>
+									</select>
+								</div>
+							</div>
+							<div class="btmMapArea">
+								<div>
+									<img src="assets/images/main/map.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="infoArea">
+						<div class="topTxt">
+							<span class="title">정보 조회</span>
+						</div>
+						<div class="btmTxtArea">
+							<a href="" class="infoBox">
+								<img src="assets/images/main/info-1.jpg" alt="">
+								<span>농수산물 가격정보</span>
+							</a>
+							<a href="" class="infoBox">
+								<img src="assets/images/main/info-2.jpg" alt="">
+								<span>서울시 물가정보</span>
+							</a>
+							<a href="" class="infoBox">
+								<img src="assets/images/main/info-3.jpg" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- footer -->
+		<div id="footer">
+			<div class="top">
+				<div class="comLayout">
+					<a href="">센터소개</a>
+					<a href="">이용안내</a>
+					<a href="">개인정보처리방침</a>
+					<a href="">저작권보호정책</a>
+					<a href="">이메일무단수집거부</a>
+					<a href="">정보공개 3.0</a>
+					<a href="">원격지원</a>
+				</div>
+			</div>
+
+			<div class="btm">
+				<div class="comLayout">
+					<div class="txt">
+						<p>
+							<span>(우)04130 서울특별시 마포구 마포대로 163, 7층 (공덕동, 서울신용보증재단빌딩) </span>
+							<span>TEL: 1577-6119 FAX: 02-3278-8120</span>
+							<span>&copy; Seoul Credit Guarantee Foundation, All Rights Reserved.</span>
+						</p>
+					</div>
+					<div class="familyLink">
+						<span>패밀리 사이트
+							<ul class="familyList">
+								<li><a href="" target="_blank">서울특별시</a></li>
+							</ul>
+						</span>
+						<button type="button">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
+
+		<div id="topBtn">
+			<a href="#">상단으로</a>
+		</div>
+	</div>
+</body>
+
+</html>

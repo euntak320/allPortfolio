@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>기아자동차</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-3.4.1.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+	<div id="wrap">
+		<!-- 헤더 -->
+		<header>
+			<h1><a href="#" class="logo">기아자동차 보증연장 서비스</a></h1>
+			<div class="menu-content">
+				<a href="#" class="menu-btn">메뉴보기</a>
+				<div class="menu-area">
+					<div class="info-box">
+						기아자동차 여의도대리점 <br>
+						홍길동 대리
+					</div>
+					<div class="btn-box">
+						<a href="#">홈</a>
+						<a href="#">로그아웃</a>
+						<a href="#">정보변경</a>
+					</div>
+					<div class="link-box">
+						<a href="#">SMS 발송</a>
+						<a href="#">SMS 발송 내역조회</a>
+						<a href="#">거래내역</a>
+						<a href="#">정산내역</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- //헤더 -->
+		<!-- 컨텐츠 -->
+		<section class="container">
+			<div class="join-content">
+				<div class="search-area">
+					<div class="txt-box">
+						<span class="title">아이디 찾기</span>
+					</div>
+					<div class="info-box">
+						<span class="title">휴대폰 인증</span>
+						<div class="input-cnt">
+							<div class="line check">
+								<div class="tel-input">
+									<div class="number-1">
+										<select>
+											<option value="#">010</option>
+											<option value="#">011</option>
+											<option value="#">016</option>
+											<option value="#">017</option>
+										</select>
+									</div>
+									<div class="number-2">
+										<input type="text">
+									</div>
+									<div class="number-3">
+										<input type="text">
+									</div>
+								</div>
+								<a href="#" class="check-btn" onclick="$(this).parents('.line').next('.repeat').show();return false;">인증번호</a>
+							</div>
+							<div class="line check repeat">
+								<input type="text" placeholder="인증번호를 입력하세요.">
+								<span class="time">03:00</span>
+                                <div class="bottom-btn">
+								    <a href="#">인증</a>
+							    </div>
+							</div>
+						</div>
+                        <div class="detail-info-cnt">
+							<!-- 2019-10-17 -->가입하신 ID는 abcd156입니다.<br>입력하신 정보와 일치하는 회원이 없습니다.
+						</div>
+					</div>
+				</div>
+                <div class="btn-cnt">
+					<!-- 2019-10-17 --><a href="#" class="confirm2">패스워드 찾기</a>
+					<!-- 2019-10-17 --><a href="#" class="next">확인</a>
+				</div>
+			</div>
+		</section>
+		<!-- //컨텐츠 -->
+	</div>
+	
+</body>
+</html>

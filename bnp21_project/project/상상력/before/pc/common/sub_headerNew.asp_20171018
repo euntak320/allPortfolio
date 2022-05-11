@@ -1,0 +1,27 @@
+﻿
+	<div class="header">
+		<h1><a href="/pc/main.asp"><img src="images/img_logo.png" alt="" /></a></h1>
+		<ul class="navigation">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<a href="/pc/register.asp" class="regist">사전접수</a>
+		<p class="movie">
+			<a href="javascript:moviepop('show', 'https://www.youtube.com/embed/AYLMhPSP5Ys?autoplay=1&amp;autohide=1&amp;showinfo=0&amp;fs=0&amp;rel=0&amp;wmode=transparent');">
+			<img src="images/btn_movie.png" alt="" width="350" height="214" /><img src="images/btn_movie_hover.png" alt="" /></a>
+		</p>
+	</div>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <script src="assets/js/jquery.fullPage.js"></script>
+  <script src="assets/js/script.js"></script>
+  <title>상상알파국어</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+	<div class="top_menu">
+		<div class="title">
+			<a href="/main.do" class="logo">로고이미지</a>
+		</div>
+		<div class="login_menu">
+			<c:choose>
+				<c:when test="${cneUserSession eq null}">
+					<a href="/login.do" class="login">로그인</a>
+					<a href="/regulation.do" class="join">회원가입</a>
+				</c:when>
+				<c:otherwise>
+					<a href="/personal/check.do" class="login name">${cneUserSession.user_name}</a>
+					<a href="/logout.do" class="join out">로그아웃</a>
+				</c:otherwise>
+			</c:choose>
+		</div>
+	</div>
+
+	<nav class="pc_on">
+		<div class="menu" id="menu">
+      <ul class="menu_list">
+				<li>
+					<a href="/info.do">연구소 소개</a>
+					<!-- <ul class="menu_sub sub1">
+						<li><a href="/info.do">CEO</a></li>
+						<li><a href="/info.do#content2">상상국어평가연구소</a></li>
+						<li><a href="/info.do#content3">상상 vision</a></li>
+						<li><a href="/info.do#content4">상상국어평가연구소 출제시스템</a></li>
+						<li><a href="/info.do#content5">상상국어 모의고사 참여 인력</a></li>
+						<li><a href="/academy.do">모의고사 시행학원 찾기 <span class="find">찾기이미지</span></a></li>
+					</ul> -->
+				</li>
+				<li>
+					<a href="/subject.do">교재</a>
+				</li>
+				<li>
+					<a href="/strategy.do">프로그램</a>
+				</li>
+				<li>
+					<a href="/bbs/qna/list.do">게시판</a>
+				</li>
+				<li>
+          <a href="javascript:alert('준비중입니다.');" class="img">성적확인</a>
+        </li>
+				<!-- <li><a href="javascript:alert('준비중입니다.');">SHOP</a></li> -->
+			</ul>
+      <div class="menu_list_frame">
+  			<div class="menu_list_1">
+          <a href="/info.do">· 상상국어평가연구소</a>
+          <a href="/info.do">· 모의고사 시행학원 찾기</a>
+        </div>
+        <div class="menu_list_2">
+  				<a href="/subject.do">· 상상국어모의고사</a>
+  				<a href="/subject.do#book2">· 상상국어모의고사(현장강의용)</a>
+  				<a href="/subject.do#book3">· 상상국어N과제</a>
+  				<a href="/subject.do#book4">· 상상력</a>
+  				<a href="/subject.do#book7">· 기출문제집</a>
+  				<a href="/subject.do#book8">· 상상알파국어</a>
+        </div>
+        <div class=" menu_list_3">
+  	    	<a href="/strategy.do#textbook">· 교재별 특징</a>
+  	      <a href="/strategy.do#schedule">· 일정표</a>
+        </div>
+        <div class="menu_list_4">
+  				<a href="/bbs/qna/list.do">· Q&A</a>
+  				<a href="/bbs/data/list.do">· 자료실</a>
+  				<a href="/bbs/notice/list.do">· 공지사항</a>
+        </div>
+        <div class="menu_list_5">
+  				<span class="grade_img"><a href="#">성적확인</a></span>
+       </div>
+  			</ul>
+  		</div>
+    </div>
+	</nav>
+	<nav class="mobile_on">
+		<div class="menu" id="menu">
+			<div class="menu_list">
+				<div class="m_login_area">
+					<c:choose>
+						<c:when test="${cneUserSession eq null}">
+							<a href="/login.do" class="login">로그인</a>
+							<a href="/regulation.do" class="join">회원가입</a>
+						</c:when>
+						<c:otherwise>
+							<a href="/personal/check.do" class="login name">${cneUserSession.user_name}</a>
+							<a href="/logout.do" class="join out">로그아웃</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"><a href="javascript:;">연구소 소개</a></span>
+					<!-- <span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/info.do">CEO</a>
+						<br>
+						<a href="/info.do#content2">상상국어평가연구소</a>
+						<br>
+						<a href="/info.do#content3">상상 vision</a>
+						<br>
+						<a href="/info.do#content4">상상국어평가연구소 출제시스템</a>
+						<br>
+						<a href="/info.do#content5">상상국어 모의고사 참여 인력</a>
+						<br>
+						<a href="/academy.do">모의고사 시행학원 찾기 <span class="find">찾기이미지</span></a>
+					</div> -->
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">교재</a>
+					</span> <span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/subject.do">상상국어모의고사</a>
+						<br>
+						<a href="/subject.do#book2">상상국어모의고사(현장강의용)</a>
+						<br>
+						<a href="/subject.do#book3">상상국어N과제</a>
+						<br>
+						<a href="/subject.do#book4">상상력</a>
+						<br>
+						<!-- <a href="/subject.do#book5">상상매미</a>
+						<br>
+						<a href="/subject.do#book6">상상EBS</a>
+						<br> -->
+						<a href="/subject.do#book7">기출문제집</a>
+						<br>
+						<a href="/subject.do#book8">상상알파국어</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">프로그램</a></span>
+					<span class="slide_frame"></span>
+					<div class="menu_sub">
+						<!-- <a href="/strategy.do">line up</a> -->
+						<br>
+						<a href="/strategy.do#textbook">교재별 특징</a>
+						<br>
+						<a href="/strategy.do#schedule">일정표</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">게시판</a></span>
+					<span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/bbs/qna/list.do">Q&A</a>
+						<br>
+						<a href="/bbs/data/list.do">자료실</a>
+						<br>
+						<a href="/bbs/notice/list.do">공지사항</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:alert('준비중입니다.');">성적확인</a></span>
+					<span class="slide_frame"></span>
+				</div>
+				<!-- <div class="m_menu_list">
+					<span class="title"><a href="javascript:alert('준비중입니다.');">SHOP</a></span>
+					 <span class="slide_frame"></span>
+				</div> -->
+			</div>
+		</div>
+	</nav>
+	<a href="#" class="mobile_menu">모바일메뉴</a>
+</header>
+  <!-- header -->
+  <!-- content -->
+  <section>
+	<div class="banner_layer">
+    <a href="academy.do" class="layer_img one">찾기이미지</a>
+    <a href="mailto:imaginecne@imaginecne.com" class="layer_img two">도입문의이미지</a>
+  </div>
+  <div class="content_area">
+		<!-- <div class="title_area" id="lineup">
+			<span class="title">상상 Line up</span>
+			<div class="over_frame">
+				<span class="line_up_img">상상라인업이미지</span>
+				<span class="icon"></span>
+			</div>
+		</div> -->
+		<div class="title_area" id="textbook">
+			<span class="title">교재별 특징</span>
+		</div>
+		<div class="over_frame">
+			<div class="com_table sub w1200">
+				<table>
+					<colgroup>
+						<col style="width: 9%">
+						<col style="width: 9%">
+						<col style="width: 9%">
+						<col style="width: 9%">
+						<col style="width: 9%">
+						<col style="width: 9%">
+						<col style="width: 9%">
+						<col style="width: 9%">
+						<col style="width: 9%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>프로그램</th>
+							<th>상품</th>
+							<th>가격</th>
+							<th>판매기간</th>
+							<th>판매처</th>
+							<th>EBS연계</th>
+							<th>출처</th>
+							<th>문제수</th>
+							<th>회차</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td rowspan="2">실전 모의고사</td>
+							<td>상상국어모의고사</td>
+							<td>140,000원</td>
+							<td>1~10월</td>
+							<td>대성마이맥</td>
+							<td>O</td>
+							<td>신규</td>
+							<td>각 45문항</td>
+							<td>12회</td>
+						</tr>
+						<tr>
+							<td>상상국어모의고사<br>(학원용)</td>
+							<td></td>
+							<td>5월/파이널</td>
+							<td>학원용</td>
+							<td>O</td>
+							<td>신규</td>
+							<td>각 45문항</td>
+							<td>15회</td>
+						</tr>
+						<tr>
+							<td>주간 학습</td>
+							<td>상상력</td>
+							<td></td>
+							<td>1~10월</td>
+							<td>학원용</td>
+							<td>O (70%)</td>
+							<td>상상re + 기출</td>
+							<td>각 70문항 내외</td>
+							<td>38회</td>
+						</tr>
+						<tr>
+							<td rowspan="2">취약점 보완</td>
+							<td>출제자의 눈</td>
+							<td>비매품</td>
+							<td>1월, 7월, 9월</td>
+							<td>모의고사 특별 부록</td>
+							<td>O (70%)</td>
+							<td>상상re + 기출</td>
+							<td>각 200문항 내외</td>
+							<td>3회</td>
+						</tr>
+						<tr>
+							<td>상상국어 N제</td>
+							<td>70,000원(4권)</td>
+							<td>1월 ~</td>
+							<td>대성마이맥</td>
+							<td></td>
+							<td>상상re</td>
+							<td>1,300제</td>
+							<td>총 4권</td>
+						</tr>
+						<tr>
+							<td>개인화 시스템</td>
+							<td>상상알파국어</td>
+							<td>4,900/월</td>
+							<td>연중</td>
+							<td>사이트결제</td>
+							<td>큐레이션</td>
+							<td>상상re+기출</td>
+							<td>20,000제</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+				<span class="icon"></span>
+			</div>
+		</div>
+		<div class="title_area mt40" id="schedule">
+			<span class="title">일정표</span>
+		</div>
+		<div class="over_frame">
+			<div class="com_table sub w1200">
+				<table>
+					<colgroup>
+						<col style="width: 10%">
+						<col style="width: 15%">
+						<col style="width: 15%">
+						<col style="width: 10%">
+						<col style="width: 20%">
+						<col style="width: 20%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th></th>
+							<th>상상국어모의고사<br>연간패키지</th>
+							<th>상상국어모의고사 <br>(학원 현장강의용)</th>
+							<th>상상국어N제</th>
+							<th>상상력<br>(학원 현장강의용)</th>
+							<th>상상알파국어</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1월</td>
+							<td>1회+출제자의눈</td>
+							<td></td>
+							<td>출간</td>
+							<td rowspan="2"><span class="season">시즌 1</span>수능 기초 개념 유형 접수하기(10주)</td>
+							<td>버전 2.0 론칭</td>
+						</tr>
+						<tr>
+							<td>2월</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>단계별 학습 매일 기출</td>
+						</tr>
+						<tr>
+							<td>3월</td>
+							<td>2회, 3회</td>
+							<td></td>
+							<td></td>
+							<td><span class="season">시즌 2</span> EBS 수특 연계(6주)</td>
+							<td rowspan="2">[행갈이] <br/> EBS 수능완성고난도 큐레이션</td>
+						</tr>
+						<tr>
+							<td>4월</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="border-right"></td>
+						</tr>
+						<tr>
+							<td>5월</td>
+							<td>4회, 5회</td>
+							<td>6모 대비(4회)</td>
+							<td></td>
+							<td><span class="season">시즌 3</span>  6모 대비(4주)</td>
+							<td>6모 대비 큐레이션</td>
+						</tr>
+						<tr>
+							<td>6월</td>
+							<td></td>
+							<td></td>
+							<td class="border-right"></td>
+							<td></td>
+							<td rowspan="3">파이널 전 총정리(7주)</td>
+						</tr>
+						<tr>
+							<td>7월</td>
+							<td>6회 + 출제자의 눈</td>
+							<td></td>
+							<td></td>
+							<td rowspan="2" class="border-right"><span class="season ">시즌 4</span> 파이널 전 총정리(7주)</td>
+						</tr>
+						<tr>
+							<td>8월</td>
+							<td>7회, 8회</td>
+							<td>1~2회</td>
+							<td class="border-right"></td>
+						</tr>
+						<tr>
+							<td>9월</td>
+							<td>9, 10회  + 출제자의 눈</td>
+							<td>3~6회</td>
+							<td></td>
+							<td rowspan="3">
+							<span class="season">시즌 5</span> 수능 대비 파이널(11주)</td>
+							<td rowspan="3">수능 대비 주간 모의고사</td>
+						</tr>
+						<tr>
+							<td>10월</td>
+							<td>11, 12회</td>
+							<td>7~10회</td>
+							<td class="border-right"></td>
+						</tr>
+						<tr>
+							<td>11월</td>
+							<td></td>
+							<td>11회</td>
+							<td class="border-right"></td>
+						</tr>
+					</tbody>
+				</table>
+				<span class="icon"></span>
+			</div>
+		</div>
+	</div>
+</section>
+  <!-- content -->
+  <!-- footer -->
+  <footer>
+    <div class="footer_content">
+      <div class="footer_logo_area fl">
+        <span class="footer_title">로고이미지</span>
+      </div>
+      <div class="deatil_area fr">
+        <p>
+          <span>(주)이매진C&E · 상상국어평가연구소</span>
+          <span>대표 : 강상희</span>
+          <span>서울시 서초구 강남대로 30길(양재동, 산수빌딩)5층</span>
+          <span>TEL : 02-578-3881</span>
+          <span>FAX : 02-574-9881</span>
+        </p>
+        <p>
+          <span>사업자등록번호 : 264-81-36246</span>
+          <span>통신판매신고번호 : 2014-서울서초-1073호</span>
+          <span>출판사신고번호 : 제2014-000114호</span>
+        </p>
+        <p>
+          <span>COPYRIGHT 2014 IMAGINECNE.CO.KR ALL RIGHTS RESERVED</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer -->
+</body>
+
+</html>

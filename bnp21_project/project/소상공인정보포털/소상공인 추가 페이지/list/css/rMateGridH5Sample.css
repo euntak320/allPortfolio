@@ -1,0 +1,63 @@
+
+#gridHolder {
+ 	margin: 15px 0px 0px 0px; 
+	
+	height: 350px;
+	
+	margin-bottom: 10px;
+}
+
+
+
+.button {
+	float: right;
+	color: #666666;
+	background-color: #f9f9f9;
+	font-family: arial, 留묒� 怨좊뵓;
+	font-size: 11px;
+	text-align: center;
+	margin: 0px 0px 0px 5px;
+	padding: 3px 10px 5px 10px;
+	letter-spacing: 1px;
+	cursor: pointer;
+	border: solid 1px #cccccc;
+	border-bottom: solid 1px #ababab;
+}
+
+/*
+ button mouseover
+ */
+.button:hover {
+	color: #454545;
+	background-color: #a6f4ff;
+	border: solid 1px #26a0da;
+}
+
+.button_top {
+	float: left;
+	/*margin-top:24px;*/
+}
+
+.button_top:hover {
+	color: #454545;
+	background-color: #a6f4ff;
+	border: solid 1px #26a0da;
+}
+
+.more {
+	color: #f66200;
+	text-decoration: underline;
+}
+
+.textForm {
+	float: left;
+	height:19px;
+	color: #666666;
+	background-color: #f9f9f9;
+	font-family: arial, 留묒� 怨좊뵓;
+	font-size: 11px;
+	text-align: center;
+	margin: 0px 0px 0px 5px;
+	padding: 0px;
+	letter-spacing: 1px;
+}

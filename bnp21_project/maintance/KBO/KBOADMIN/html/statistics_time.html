@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>시간별 분석표 &lt; 통계 &lt; KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/common.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li><a href="">대시보드</a></li>
+				<li><a href="">등록</a></li>
+				<li><a href="">조회</a></li>
+				<li class="curr"><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">유형별 상세</a></li>
+						<li><a href="">심판별</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li class="curr"><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li><a href="">관리</a>
+					<ul>
+						<li><a href="">경기관리</a></li>
+						<li><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>시간별 분석표</h2>
+			<!-- searchArea -->
+			<div class="searchArea">
+				<div class="inBox">
+					<dl>
+						<dt>경기구분</dt>
+						<dd>
+							<!-- selectbox -->
+							<div class="selectbox">
+								<span>선택</span>
+								<select title="경기구분 선택">
+									<option value="">선택</option>
+								</select>
+							</div>
+							<!--// selectbox -->
+						</dd>
+					</dl>
+					<dl>
+						<dt>경기일자</dt>
+						<dd class="dateWrap">
+							<span class="date"><input type="text" title="시작날짜선택"></span>
+							<em>~</em>
+							<span class="date"><input type="text" title="종료날짜선택"></span>
+						</dd>
+					</dl>
+					<div class="btnArea">
+						<button class="btn btnYellowL"><span class="icoReset">초기화</span></button>
+						<button class="btn btnYellow"><span class="icoSearch">조회</span></button>
+					</div>
+				</div>
+			</div>
+			<!--// searchArea -->
+
+			<!-- 2020-03-26 -->
+			<!-- tableTop -->
+			<div class="tableTop">
+				<div class="btnArea">
+					<button class="btn btnRedL"><span class="icoEx">엑셀다운로드</span></button>
+				</div>
+			</div>
+			<!--// tableTop -->
+			<!--// 2020-03-26 - class 변경 & title 삭제 -->
+			<!-- colTable -->
+			<div class="colTable">
+				<table>
+					<caption>판정 시간별, 비율, 총 횟수 항목으로 구성된 2019년 KBO (경기구분) 시간별 분석표 입니다.</caption><!-- 2020-03-26 - 수정 -->
+					<colgroup>
+						<col span="3" style="width:auto">
+					</colgroup>
+					<!-- 2020-03-26 -->
+					<thead>
+						<tr>
+							<th scope="col" colspan="3">2019년 KBO (경기구분) 시간별 분석표</th>
+						</tr>
+						<tr>
+							<th scope="col">판정 시간별</th>
+							<th scope="col">비율</th>
+							<th scope="col">총 횟수</th>
+						</tr>
+					</thead>
+					<!--// 2020-03-26 - 수정 -->
+					<tfoot>
+						<tr>
+							<th scope="row">평균 판독 시간</th>
+							<td colspan="2">1:02</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<th scope="row">~ 1분 미만</th>
+							<td>66.10%</td>
+							<td>538</td>
+						</tr>
+						<tr>
+							<th scope="row">1분 ~ 2분 미만</th>
+							<td>19.00%</td>
+							<td>155</td>
+						</tr>
+						<tr>
+							<th scope="row">2분 ~ 3분 미만</th>
+							<td>8.10%</td>
+							<td>66</td>
+						</tr>
+						<tr>
+							<th scope="row">3분 ~ 4분 미만</th>
+							<td>3.90%</td>
+							<td>32</td>
+						</tr>
+						<tr>
+							<th scope="row">4분 ~ 5분 미만</th>
+							<td>1.80%</td>
+							<td>23</td>
+						</tr>
+						<tr>
+							<th scope="row">5분 이상</th>
+							<td>1.00%</td>
+							<td>15</td>
+						</tr>
+						<tr>
+							<th scope="row">합계</th>
+							<td>100%</td>
+							<td>814</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// colTable -->
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<p>Copyright&copy; KBO, All Rights Reserved.</p>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+</body>
+</html>

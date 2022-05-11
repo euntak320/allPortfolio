@@ -1,0 +1,38 @@
+@font-face {
+ font-family: "nsrg";
+ src: url("../font/NotoSansCJKkr-Regular.eot");
+ src: url("../font/NotoSansCJKkr-Regular.eot") format("embedded-opentype"),
+ url("../font/NotoSansCJKkr-Regular.woff") format("woff"),
+ url("../font/NotoSansCJKkr-Regular.otf") format("truetype");
+}
+
+@font-face {
+ font-family: "nsmd";
+ src: url("../font/NotoSansCJKkr-Medium.eot");
+ src: url("../font/NotoSansCJKkr-Medium.eot") format("embedded-opentype"),
+ url("../font/NotoSansCJKkr-Medium.woff") format("woff"),
+ url("../font/NotoSansCJKkr-Medium.otf") format("truetype");
+}
+
+@font-face {
+ font-family: "nsbk";
+ src: url("../font/NotoSansCJKkr-Black.eot");
+ src: url("../font/NotoSansCJKkr-Black.eot") format("embedded-opentype"),
+ url("../font/NotoSansCJKkr-Black.woff") format("woff"),
+ url("../font/NotoSansCJKkr-Black.otf") format("truetype");
+}
+
+@font-face {
+ font-family: "nsbd";
+ src: url("../font/NotoSansCJKkr-Bold.eot");
+ src: url("../font/NotoSansCJKkr-Bold.eot") format("embedded-opentype"),
+ url("../font/NotoSansCJKkr-Bold.woff") format("woff"),
+ url("../font/NotoSansCJKkr-Bold.otf") format("truetype");
+}
+@font-face {
+ font-family: "nsth";
+ src: url("../font/NotoSansCJKkr-Thin.eot");
+ src: url("../font/NotoSansCJKkr-Thin.eot") format("embedded-opentype"),
+ url("../font/NotoSansCJKkr-Thin.woff") format("woff"),
+ url("../font/NotoSansCJKkr-Thin.otf") format("truetype");
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>[의사용] MJ_virtual</title>
+	<style type="text/css">
+	*{box-sizing:border-box}
+	#wrap{overflow:hidden;width:100%;min-width:1024px}
+	#header{overflow:hidden;padding:50px;width:100%}
+	#header .tit_area{position:relative;overflow:hidden}
+	#header .tit_area h1{overflow:hidden;margin-bottom:20px;font-size:40px}
+	#header .tit_area strong{display:inline-block;overflow:hidden;width:169px;line-height:23px;text-align:center;font-size:15px;color:#fff;text-align:center;background:#000}
+	#header .tit_area strong:before{display:block;overflow:hidden;position:absolute;top:60px;left:0;content:"";width:100%;border-top:2px solid #000}
+	#header .tit_area strong span{overflow:hidden}
+	#header .intro{position:absolute;top:60px;right:50px;overflow:hidden}
+	#header .intro p{overflow:hidden;font-size:10px;line-height:15px;text-align:right}
+
+	#contents{overflow:hidden;padding:0 50px}
+	#contents .table_style01{overflow:hidden;width:100%;border-top:3px solid #f00;border-bottom:1px solid #000}
+	#contents .table_style01 table{overflow:hidden;width:100%; text-align: center;}
+	#contents .table_style01 table thead{border-left:1px solid #444}
+	#contents .table_style01 table tr th{padding:10px 0 10px 10px;border-right:1px solid #444;font-size:13px;text-align:left;color:#fff;background:#000}
+	#contents .table_style01 table tr td{padding:10px 0 10px 10px;border-top:1px solid #eaeaea;border-right:1px solid #eaeaea;font-size:13px;text-align:center;color:#000}
+	#contents .table_style01 table tr td:first-child{border-left:1px solid #eaeaea}
+	#contents .table_style01 table tr td + td + td + td + td + td + td + td{color:#a60a0a}
+	#contents .table_style01 table tr td + td + td + td + td + td + td + td + td{color:#000}
+	#contents .table_style01 table tr.depth td{border-top:1px solid #f00}/* 메뉴 구분 */
+	#contents .table_style01 table tr.point td{border:1px solid #f8b9b9;background:#ffe7e7} /* 중요 내용 */
+	</style>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		
+		<!-- header -->
+		<header id="header">
+			<div class="tit_area">
+				<h1>[의사용] MJ_virtual</h1>
+			</div>
+			<div class="intro">
+				<p>HTML5 / utf-8</p>
+			</div>
+		</header>
+		<!--// header -->
+
+		<!-- section -->
+		<section id="contents">
+
+			<!-- <div class="info">
+				<div class="box">
+					
+				</div>
+			</div> -->
+
+			<!-- 메뉴 구조도 -->
+			<div class="table_style01">
+				<table summary="1depth, 2depth, 3depth, 4depth, 폴더명, URL, 완료날짜, 수정날짜, 진행상태, 기타사항 항목으로 구성된 IA 표입니다.">
+					<colgroup>
+						<col style="width:7%"/>
+						<col style="width:10%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:10%"/>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">페이지명</th>
+							<th scope="col">URL</th>
+							<th scope="col">완료날짜</th>
+							<th scope="col">수정날짜</th>
+							<th scope="col">진행상태</th>
+							<th scope="col">전달사항</th>
+						</tr>
+					</thead>
+					<tbody>						
+						<tr>
+							<td>로그인</td>
+							<td>휴대전화번호 입력</td>
+							<td>
+								<a href="./page/page001.html" target="_blank">page001.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>의사등록하기</td>
+							<td>의사 기본 정보</td>
+							<td>
+								<a href="./page/page002-1_003-1.html" target="_blank">page002-1_003-1.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>진료과목 선택</td>
+							<td>
+								<a href="./page/page004-1.html" target="_blank">page004-1.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>병원 정보</td>
+							<td>
+								<a href="./page/page005.html" target="_blank">page005.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>계좌 정보</td>
+							<td>
+								<a href="./page/page006.html" target="_blank">page006.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>간호사 등록하기</td>
+							<td>간호사 기본 정보</td>
+							<td>
+								<a href="./page/page002-2.html" target="_blank">page002-2.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>진료과목 선택</td>
+							<td>
+								<a href="./page/page004-2.html" target="_blank">page004-2.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>진료현황</td>
+							<td>진료현황 리스트</td>
+							<td>
+								<a href="./page/page008.html" target="_blank">page008.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td>PC쪽만 완료 된 상황입니다.</td>
+							<td>008 ~ 014까지의 내용입니다.</td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>진료현황 리스트 없음</td>
+							<td>
+								<a href="./page/page008-1.html" target="_blank">page008-1.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td>PC쪽만 완료 된 상황입니다.</td>
+							<td></td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>원격 진료화면</td>
+							<td>
+								<a href="./page/page015-1.html" target="_blank">page015-1.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td>PC쪽만 완료 된 상황입니다.</td>
+							<td>015-1 ~ 020-2까지의 내용입니다.</td>
+						</tr>	
+						<tr>
+							<td>스케줄</td>
+							<td>스케줄 등록</td>
+							<td>
+								<a href="./page/page025.html" target="_blank">page025.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td>PC쪽만 완료 된 상황입니다.</td>
+							<td>025 ~ 025-2까지의 내용입니다.</td>
+						</tr>	
+						<tr>
+							<td>마이페이지</td>
+							<td>의사 기본 정보</td>
+							<td>
+								<a href="./page/page026-1.html" target="_blank">page026-1.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td>PC쪽만 완료 된 상황입니다.</td>
+							<td>026-1 ~ 026-2까지의 내용입니다.</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>진료과목 선택</td>
+							<td>
+								<a href="./page/page026-3.html" target="_blank">page026-3.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td>PC쪽만 완료 된 상황입니다.</td>
+							<td>026-3 ~ 026-3-1까지의 내용입니다.</td>
+						</tr>	
+						<tr>
+							<td></td>
+							<td>병원정보</td>
+							<td>
+								<a href="./page/page026-4.html" target="_blank">page026-4.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td>PC쪽만 완료 된 상황입니다.</td>
+							<td</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>계좌정보</td>
+							<td>
+								<a href="./page/page026-5.html" target="_blank">page026-5.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td>PC쪽만 완료 된 상황입니다.</td>
+							<td></td>
+						</tr>	
+
+					</tbody>
+				</table>
+			</div>
+			<!--// 메뉴 구조도 -->
+
+		</section>
+		<!--// section -->
+
+	</div>
+	<!--// wrap -->
+
+</body>
+</html>

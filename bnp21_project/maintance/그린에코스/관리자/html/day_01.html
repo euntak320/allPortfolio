@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>일일진단평가 - 경기도 대기환경</title>
+    <script src="../assets/js/jquery-1.11.0.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+    <!-- 헤더부분 -->
+    <header>
+        <div class="top_area">
+            <h1>
+                <a href="#none">경기도대기환경 진단평가 시스템</a>
+            </h1>
+            <div class="login_area">
+                <a href="#none" class="admin">관리자</a>
+                <a href="#none" class="my_info">내 정보</a>
+                <a href="#none" class="login">로그아웃</a>
+                <!-- <a href="#none" class="login">로그인</a> -->
+            </div>
+        </div>
+        <div class="bottom_area">
+            <div class="menu_area">
+                <span class="menu_txt on">일일진단평가</span>
+                <span class="menu_txt">대기정보</span>
+                <span class="menu_txt ">기상현황</span>
+                <span class="menu_txt ">모델링결과</span>
+                <span class="menu_txt ">사이트맵</span>
+                <a href="#" class="menu_btn">햄버거 메뉴</a>
+            </div>
+        </div>
+    </header>
+    <!-- 헤더부분 -->
+    <section>
+        <div class="content_frame">
+            <div class="left_menu">
+                <span class="menu_title">일일진단평가</span>
+            </div>
+            <div class="content_area">
+                <div class="title_area">
+                    <span class="title">일일진단평가</span>
+                    <div class="nav_area">
+                        <span class="home">처음</span>
+                        <span class="left">일일진단평가</span>
+                    </div>
+                </div>
+                <div class="input_data">
+                    <fieldset>
+                        <legend>검색</legend>
+                        <div class="left_input">
+                            <span><label for="src_cal" class="hidden">조회일</label></span>
+                            <div class="com_input mg0">
+                                <input type="text" class="cal" id="src_cal">
+                            </div>
+                            <button type="button" class="btn">조회</button>
+                        </div>
+                        <div class="right_input">
+                            <button class="doc">문서다운로드</button>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="table_area">
+                    <p class="tit_h3">일일 대기질 진단평가 결과 <small>2019년 06월 20일 (목) 경기도보건환경연구원</small></p>
+                    <table>
+                        <caption>진단평가 결과</caption>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 80%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col" colspan="2">진단평가 결과</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">오늘(20일)</th>
+                                <td>
+                                    [초미세먼지] 중부권과 남부권은 대체로 보통<br>
+                                    [미세먼지] 대체적으로 보통
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table_area center">
+                    <p class="tit_h3">모델결과(3km)</p>
+                    <table>
+                        <caption> PM2.5, PM10, O3의 모델결과(3km)</caption>
+                        <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width: 30%;">
+                            <col style="width: 30%;">
+                            <col style="width: 30%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">구분</th>
+                                <th scope="col">PM2.5</th>
+                                <th scope="col">PM10</th>
+                                <th scope="col">O3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="bgGray">오늘 9시</th>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/no_image.png" alt="no image"></td><!-- //2019-12-16 이미지 없을 때 -->
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">오늘 17시</th>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">오늘 21시</th>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                                <td><img src="../assets/images/temp/temp_graph3.jpg" alt=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn_area">
+                    <a href="#none" class="navy">작성</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+        <span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+    </footer>
+</body>
+
+</html>

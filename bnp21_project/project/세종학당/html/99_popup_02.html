@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>문항작성</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+	<div id="popup">
+
+		<h1>문항작성</h1>
+
+		<form id="form_box">
+
+			<div class="pop_wrap">
+
+				<!-- 테이블 컨트롤 버튼 영역 -->
+				<div class="pop_top_area">
+					<div class="btn_left">
+						<button type="button" class="btn red">추가</button>
+					</div>
+					<div class="btn_right">
+						<button type="button" class="btn blue">추가</button>
+						<button type="button" class="btn gray">삭제</button>
+					</div>
+				</div>
+				<!-- //테이블 컨트롤 버튼 영역 -->
+
+				<div class="table_wrap">
+					<table class="row_type">
+						<caption>유형, 문항, 보기로 구성된 테이블</caption>
+						<colgroup>
+							<col style="width: 15%;" />
+							<col style="width: 85%;" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="temp01">유형</label></th>
+								<td>
+									<select id="temp01">
+										<option value="선택">선택</option>
+										<option value="객관식">객관식</option>
+										<option value="주관식">주관식</option>
+									</select>
+									<input type="checkbox" id="temp02" name="temp02" /><label for="temp02">복수선택가능</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="temp03">문항</label></th>
+								<td><textarea name="textarea01" id="temp03" title="문항 입력" rows="5" style="width: 98%;"></textarea></td>
+							</tr>
+							<tr>
+								<th scope="row" rowspan="2"><label for="temp04">보기</label></th>
+								<td>
+									<select id="temp04">
+										<option value="보기 템플릿에서 선택">보기 템플릿에서 선택</option>
+										<option value="보기 템플릿에서 선택">보기 템플릿에서 선택</option>
+										<option value="보기 템플릿에서 선택">보기 템플릿에서 선택</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" id="temp05" title="문항" class="basic" style="width:240px;" />
+									<button type="button" class="btn blue">보기추가</button>
+									<button type="button" class="btn sky">보기수정</button>
+									<button type="button" class="btn gray">보기삭제</button>
+									<br /><br />
+									<div class="survey_listbox">
+										보기 리스트
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> <!-- //table_wrap -->
+				
+				<!-- 테이블 컨트롤 버튼 영역 -->
+				<div class="pop_bottom_area">
+					<div class="btn_left">
+						<a href="#" class="btn sky down">다운로드</a>
+					</div>
+					<div class="btn_right">
+						<button type="button" class="btn brown">수정</button>
+						<button type="button" class="btn gray">취소</button>
+					</div>
+				</div>
+				<!-- //테이블 컨트롤 버튼 영역 -->
+
+			</div>
+			
+			<!-- 팝업창 제어 버튼 영역 -->
+			<div class="pop_btn_area">
+				<div class="btn_left">
+					<a href="#" class="btn green">저장</a>
+				</div>
+				<div class="btn_right">
+					<button type="button" class="btn blue">확인</button>
+					<button type="button" class="btn gray">닫기</button>
+				</div>
+			</div>
+			<!-- //팝업창 제어 버튼 영역 -->
+
+		</form>
+
+	</div>
+
+</body>
+</html>

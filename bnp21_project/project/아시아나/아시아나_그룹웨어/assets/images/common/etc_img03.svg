@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25.55" height="23.55" viewBox="0 0 25.55 23.55">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#333;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.4px}.cls-2{fill:#333}
+        </style>
+    </defs>
+    <g id="icon_appcenter" transform="translate(.1 .1)">
+        <path id="패스_28" d="M24.75 8.19v10.7a3.862 3.862 0 0 1-3.86 3.86H4.46A3.862 3.862 0 0 1 .6 18.89V8.19a1.874 1.874 0 0 1 1.87-1.87h20.42a1.871 1.871 0 0 1 1.86 1.87z" class="cls-1" data-name="패스 28"/>
+        <path id="패스_29" d="M8.58 9.78V4.69A4.089 4.089 0 0 1 12.67.6a4.089 4.089 0 0 1 4.09 4.09v5.09" class="cls-1" data-name="패스 29"/>
+        <circle id="타원_9" cx="1" cy="1" r="1" class="cls-2" data-name="타원 9" transform="translate(7.6 12.6)"/>
+        <circle id="타원_14" cx="1" cy="1" r="1" class="cls-2" data-name="타원 14" transform="translate(7.6 16.6)"/>
+        <circle id="타원_10" cx="1" cy="1" r="1" class="cls-2" data-name="타원 10" transform="translate(11.6 12.6)"/>
+        <circle id="타원_13" cx="1" cy="1" r="1" class="cls-2" data-name="타원 13" transform="translate(11.6 16.6)"/>
+        <circle id="타원_11" cx="1" cy="1" r="1" class="cls-2" data-name="타원 11" transform="translate(15.6 12.6)"/>
+        <circle id="타원_12" cx="1" cy="1" r="1" class="cls-2" data-name="타원 12" transform="translate(15.6 16.6)"/>
+    </g>
+</svg>

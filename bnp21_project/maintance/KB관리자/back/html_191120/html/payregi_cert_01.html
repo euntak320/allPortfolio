@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<title>본인인증 | 결제수단등록 | KB스타게이트</title>
+<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon" href="">
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub bg">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="tit"><h1>본인인증</h1></div>
+			<div class="fr"><a href="#" class="btnNavi close"><span class="ico">닫기</span></a></div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div class="content">
+			<div class="cBox">
+				<div class="in type2">
+					<ul class="c_ul">
+						<li class="li"><input type="text" class="input" placeholder="이름 입력"></li>
+						<li class="li"><input type="text" class="input" placeholder="생년월일 숫자 6자리 입력"></li>
+						<li class="li">
+							<div class="formChkRdo">
+								<ul>
+									<li><label class="label"><input type="radio" class="rdo" name="rdoSex" checked=""><span class="ico"></span><span class="lTxt">남</span></label></li>
+			                        <li><label class="label"><input type="radio" class="rdo" name="rdoSex"><span class="ico"></span><span class="lTxt">여</span></label></li>
+			                    </ul>
+							</div>
+						</li>
+						<li class="li" style="padding-right:6px;">
+							<select  class="select" required>
+								<option value="" disabled selected>통신사 선택</option>
+								<option value="">KT</option>
+								<option value="">SKT</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+				<div class="in type2 toggAct">
+					<div class="termsAllAgree toggTit">
+						<label class="label"><input type="checkbox" class="chk" name=""><span class="ico"></span><span class="lTxt">휴대폰 본인인증 전체동의</span></label>
+						<a href="#" class="toggBtn"><span class="ico"></span></a>
+					</div>
+					<div class="termsAgreeList type1 toggCnt">
+						<ul class="">
+							<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(필수) 개인정보 수집/이용 동의</span></label><a href="#" class="btn arr"></a></li>
+							<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(필수) 고유식별정보 처리 동의</span></label><a href="#" class="btn arr"></a></li>
+							<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(필수) 통신사 이용약관</span></label><a href="#" class="btn arr"></a></li>
+							<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(필수) 서비스 이용약관</span></label><a href="#" class="btn arr"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="in type2">
+					<ul class="c_ul">
+						<li class="li"><input type="text" class="input" placeholder="휴대폰 번호 -없이 숫자만 입력"></li>
+					</ul>
+				</div>
+				<!-- button area -->
+				<div class="cntBtnWrap">
+					<ul>
+						<li><a href="#" class="btn lg tr"><span>인증번호 재발송</span><em class="time">1:05</em></a></li>
+					</ul>
+				</div>
+				<!-- //button area -->
+
+				<div class="in type2">
+					<ul class="c_ul">
+						<li class="li"><input type="text" class="input" placeholder="인증번호 숫자 6자리 입력"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //content -->
+
+		<!-- button area -->
+		<div class="btmBtnWrap">
+			<ul>
+				<li><a href="#" class="btn lg de">확인</a></li>
+			</ul>
+		</div>
+		<!-- //button area -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

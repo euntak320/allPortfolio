@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<title>캠퍼스타운 이용 &lt; 숙명여대 캠퍼스타운 관리자</title>
+
+	<!-- css -->
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- js -->
+	<script src="assets/js/jquery-1.11.0.min.js"></script>
+	<script src="assets/js/jquery-ui.min.js"></script>
+	<script src="assets/js/script.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div class="comLayout">
+				<div class="infoArea">
+					<a href="" class="info">OOO님</a>
+					<a href="" class="login">로그인</a>
+				</div>
+				<div class="meunList">
+					<h1 class="logo">
+						<a href="">로고</a>
+					</h1>
+					<ul>
+						<li>
+							<a href="">기초정보</a>
+							<div class="subMenu">
+								<ul>
+									<li><a href="">팝업관리</a></li>
+									<li><a href="">장소등록</a></li>
+									<li><a href="">기자재 등록</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">프로그램</a>
+							<div class="subMenu two">
+								<ul>
+									<li><a href="">프로그램 등록</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">참여팀 관리</a>
+							<div class="subMenu three">
+								<ul>
+									<li><a href="">참여팀 관리</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">커뮤니티</a>
+							<div class="subMenu four">
+								<ul>
+									<li><a href="">캠퍼스타운 뉴스</a></li>
+									<li><a href="">지원사업 정보</a></li>
+									<li><a href="">아카이브</a></li>
+									<li><a href="">설문조사</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">캠퍼스타운 이용</a>
+							<div class="subMenu five">
+								<ul>
+									<li><a href="">프로그램 신청관리</a></li>
+									<li><a href="">장소 신청관리</a></li>
+									<li><a href="">기자재 신청관리</a></li>
+									<li><a href="">수료증 발급관리</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="comLayout">
+				<!-- topArea -->
+				<div class="topArea">
+					<span class="title">프로그램 신청관리</span>
+					<div class="navArea">
+						<span>홈</span>
+						<span>캠퍼스타운 이용</span>
+						<span>프로그램 신청관리</span>
+					</div>
+				</div>
+				<!--// topArea -->
+				<button type="button" class="btn" onclick="fn_layer('layer1','900')">프로그램 신청관리</button>
+
+				<!-- popup -->
+				<div class="layer layer1">
+					<div class="inner">
+						<p class="tit">프로그램 신청관리</p>
+						<!-- popCont --> 
+						<div class="popCont">
+							<!-- acceptTable -->
+							<div class="acceptTable">
+								<table>
+									<colgroup>
+										<col style="width:15%">
+										<col style="width:auto">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">캠퍼스 관리자</th>
+											<td>
+												<div class="checkArea">
+													<div class="radio">
+														<input type="radio" name="AD_05_01_1_chk01" id="AD_05_01_chk0101">
+														<label for="AD_05_01_chk0101">확인</label>
+													</div>
+													<div class="radio">
+														<input type="radio" name="AD_05_01_1_chk01" id="AD_05_01_chk0102">
+														<label for="AD_05_01_chk0102">미확인</label>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">신청일</th>
+											<td>
+												<div class="dateArea">
+													<div class="input">
+														<input type="text" class="datepicker" placeholder="YYYY-MM-DD">
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">참여팀</th>
+											<td></td>
+										</tr>
+										<tr>
+											<th scope="row">대표연락처</th>
+											<td>010-3849-3947</td>
+										</tr>
+										<tr>
+											<th scope="row">대표이메일</th>
+											<td>email@email.com</td>
+										</tr>
+										<tr>
+											<th scope="row">참여프로그램</th>
+											<td><a href="">가치업! 아이디어 공모전</a></td>
+										</tr>
+										<tr>
+											<th scope="row">첨부서류</th>
+											<td>
+												<div class="contentBox">
+													<a href="">창업공간 지원자료.zip</a>
+													<a href="">창업공간 지원자료.zip</a>
+													<a href="">창업공간 지원자료.zip</a>
+													<a href="">창업공간 지원자료.zip</a>
+													<a href="">창업공간 지원자료.zip</a>
+													<a href="">창업공간 지원자료.zip</a>
+													<a href="">창업공간 지원자료.zip</a>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!--// acceptTable -->
+						<div class="comBtn">
+							<button type="button" class="save">저장</button>
+							<button type="button" class="normal">삭제</button>
+							<button type="button" class="list">목록</button>
+						</div>
+						<!--// popCont -->
+						<a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeLayer">close</a>
+					</div>
+				</div>
+				<!--// popup -->
+			</div>
+		</div>
+		<div id="footer">
+			<span>Copyright 2017 Sookmyung Women's University. All right Reserved</span>
+		</div>
+	</div>
+</body>
+
+</html>

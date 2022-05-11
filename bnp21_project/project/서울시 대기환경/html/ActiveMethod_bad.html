@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>서울시특별시 대기환경정보</title>
+  <link rel="stylesheet" href="assets/css/slick.css" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="assets/js/slick.min.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="header_area">
+        <a href="javascript:void();" class="m_menu">햄버거메뉴</a>
+        <span class="logo_area">로고</span>
+        <a href="javascript:void();" class="spot_icon">위치표시</a>
+      </div>
+    </header>
+    <div class="left_menu">
+      <div class="slide_nav">
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img cloud">구름이미지</span>
+            <span class="txt">대기현황</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">미세먼지</span>
+            <span class="menu_txt">초미세먼지</span>
+            <span class="menu_txt">오존</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img act">행동요령 이미지</span>
+            <span class="txt">행동요령</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt sub_menu">예보</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+            <span class="menu_txt sub_menu">경보</span>
+            <span class="hidden_menu_area ">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img list">대기통계 이미지</span>
+            <span class="txt">대기통계</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">평균대기오염도</span>
+            <span class="menu_txt">기간별</span>
+            <span class="menu_txt">경보발령</span>
+            <span class="menu_txt">장기간추이</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img look">정보마당 이미지</span>
+            <span class="txt">정보마당</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">대기환경기준</span>
+            <span class="menu_txt sub_menu">대기오염물질</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 test">진단평가결과</span>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 moblie">문자서비스신청</span>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="sub_title_area">
+        <span class="title_sub">행동요령</span>
+      </div>
+      <div class="radio_check_area red">
+        <table>
+          <colgroup>
+            <col style="width:15%;">
+            <col style="width:20%;">
+            <col style="width:23%;">
+            <col style="width:20%;">
+          </colgroup>
+          <tbody>
+            <tr>
+              <td>오염물질</td>
+              <td>
+                <div class="com_raido">
+                  <div class="radio">
+                    <input type="radio" name="" value="" id="radio_1">
+                    <label for="radio_1">미세먼지</label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="com_raido">
+                  <div class="radio">
+                    <input type="radio" name="" value="" id="radio_2">
+                    <label for="radio_2">초미세먼지</label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="com_raido">
+                  <div class="radio">
+                    <input type="radio" name="" value="" id="radio_3">
+                    <label for="radio_3">오존</label>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>예·경보</td>
+              <td>
+                <div class="com_raido">
+                  <div class="radio">
+                    <input type="radio" name="" value="" id="radio_4">
+                    <label for="radio_4">예보</label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="com_raido">
+                  <div class="radio">
+                    <input type="radio" name="" value="" id="radio_5">
+                    <label for="radio_5">경보</label>
+                  </div>
+                </div>
+              </td>
+              <!-- 2019-04-30 수정 -->
+              <td></td>
+              <!-- 2019-04-30 수정 -->
+            </tr>
+            <tr>
+              <td>단계</td>
+              <td>
+                <div class="com_raido">
+                  <div class="radio">
+                    <input type="radio" name="" value="" id="radio_6">
+                    <label for="radio_6">보통</label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="com_raido">
+                  <div class="radio">
+                    <input type="radio" name="" value="" id="radio_7">
+                    <label for="radio_7">나쁨</label>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="com_raido">
+                  <div class="radio">
+                    <input type="radio" name="" value="" id="radio_8">
+                    <label for="radio_8">매우나쁨</label>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content_frame">
+        <span class="blue_box">검색</span>
+        <div class="txt_area">
+          <span class="txt_title">시민 건강보호</span>
+          <div class="active_area">
+            <p>
+              <span class="indent">가. 민감군(어린이·노인·폐질환 및 심장질환자)은 실외활동 제한 및 실내생활 권고</span>
+              <span>나. 일반인은 장시간 또는 무리한 실외활동을 줄임</span>
+              <span class="gray">(특히, 눈이 아프거나, 기침 또는 목의 통증이 있는 경우 실외활동 자제)</span>
+              <span>다. 부득이 외출 시 황사(보호)마스크 착용</span>
+              <span class="gray">(폐기능 질환자는 의사와 충분한 상의 후 사용권고)</span>
+              <span>라. 교통량이 많은 지역 이동 자제</span>
+              <span>마. 유치원·초등학교 실외수업 단축 및 금지</span>
+              <span>바. 공공기관 운영 야외 체육시설 운영 제한</span>
+              <span class="indent">사. 공원·체육시설·고궁·터미널·철도 및 지하철 등을 이용하는 시민에게 과격한 실외활동 자제 홍보</span>
+              <span>아. 그 밖에 시민건강 보호를 위해 필요한 사항</span>
+            </p>
+          </div>
+        </div>
+        <div class="txt_area">
+          <span class="txt_title">대기오염 개선 노력</span>
+          <div class="active_area">
+            <p>
+              <span>가. 행정기관 관용차량 운행 감축(비상용차량 제외)</span>
+              <span>나. 자동차 운행 자제 및 대중교통 이용 권장</span>
+              <span>다. 공공기관 운영 대형 사업장 조업시간 단축</span>
+              <span>라. 주·정차시 공회전 금지</span>
+              <span>마. 도로 물청소 또는 진공청소 등 시행</span>
+              <span>사. 사업장의 연료사용량 감축 권고</span>
+              <span>아. 공사장의 조업시간 단축 또는 일부 작업중지 권고</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_area">
+        <div class="left_area">
+          <span>&copy; Seoul city</span>
+        </div>
+        <div class="right_area">
+          <span class="pc_btn">PC 화면보기</span>
+          <div class="com_select">
+            <select name="" id="">
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+            </select>
+          </div>
+          <a href="#top" class="black_btn">위로가기</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="position_area">
+    <div class="title_area">
+      <span class="x_btn">닫기버튼</span>
+      <span class="title">관심지역 설정하기</span>
+    </div>
+    <div class="choice_area">
+      <span class="align">가나다 순</span>
+      <div class="com_radio">
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강남구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강서구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">관악구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">광진구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">구로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">금천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">노원구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">도봉구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동대문구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동작구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">마포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">서초구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">양천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">영등포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">용산구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">은평구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">종로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중량구</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

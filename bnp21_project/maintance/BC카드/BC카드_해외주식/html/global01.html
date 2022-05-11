@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>BC 페이북</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/slick.js"></script>	
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<!-- #wrap -->
+	<div id="wrap" class="stock">
+
+		<!-- 헤더 -->
+		<header>
+			<a href="#" class="back-btn">뒤로가기</a>
+			<h1>종목 정보</h1><!-- 2019-09-17 -->
+			<a href="#" class="close-btn">닫기</a>
+		</header>
+		<!-- //헤더 -->	
+		
+		<!-- 컨텐츠 -->
+		<section class="container">	
+			<div class="stock-info-content">
+				<div class="brand-area">
+					<span class="brand">넷플릭스</span>
+					<!-- 190920 수정 -->
+					<span class="e-brand">NETFLIX Inc. Class A (SNMK)</span>
+					<!-- 190920 수정 -->
+				</div>
+				<div class="money-area">
+					<div class="top-cnt">
+						<span class="tit">내 투자 현황</span>
+						<a href="#" class="toggle-btn">투자중인 금액 자세히 보기</a>
+					</div>
+					<div class="info-cnt">
+						<span class="period">20.3주</span>
+						<span class="cost">311,150원</span>
+						<span class="percent">
+							<span class="up">7.5%</span><!-- up : 상승 , down : 하강 클래스// -->
+						</span>
+					</div>					
+				</div>				
+				<div class="graph-area">
+					<div class="top-cnt">
+						<span class="cost">411,555원</span>
+						<span class="percent">
+							<span class="up">2.58%</span>
+						</span>
+					</div>
+					<div class="graph-cnt">
+						<div class="choice-date">
+							<span class="txt on">1M</span>
+							<span class="txt">3M</span>
+							<span class="txt">5M</span>
+							<span class="txt">1Y</span>
+							<span class="txt">3Y</span>
+							<span class="txt">5Y</span>
+						</div>
+						<script>
+							$(function(){
+								$(".choice-date .txt").click(function(){
+									$(".choice-date .txt").removeClass("on");
+									$(this).eq($(".choice-date .txt").index()).addClass("on");
+								});
+							});
+						</script>
+						<img src="../assets/images/@temp_stock_graph.jpg" alt="임시 그래프 이미지" style="width:100%;">
+					</div>
+				</div>
+			</div>
+			<div class="stock-max-content">
+				<div class="day-area">
+					<span class="title">1일</span>
+					<div class="cost-line">
+						<span class="imp">최고</span>
+						<span class="cost">411,624원</span>
+					</div>
+					<div class="cost-line">
+						<span class="imp">최저</span>
+						<span class="cost">401,608원</span>
+					</div>			
+				</div>
+				<div class="year-area">
+					<span class="title">1년</span>
+					<div class="cost-line">
+						<span class="imp">최고</span>
+						<span class="cost">483,348원</span>
+					</div>
+					<div class="cost-line">
+						<span class="imp">최저</span>
+						<span class="cost">264,087원</span>
+					</div>
+				</div>
+			</div>
+			<div class="stock-company-content">
+				<div class="info-area">
+					<span class="title">기업정보</span>
+					<p class="detail">넷플릭스는 1997년에 설립된 주문형 인터넷 엔터테인먼트 회사입니다. 집까지 DVD를 배달하는 서비스를 시작으로, 현재는 영화/드라마/자체제작 영화나 드라마 등의 컨텐츠를 전세계에 공급하고 있습니다. 2016년 이후, 넷플릭스는 북한, 시리아, 크림반도 및 중국을 제외한 모든 국가에서 서비스가 가능해졌습니다.</p>
+				</div>
+				<ul class="list-area">
+					<li>
+						<span class="tit">산업구분</span>
+						<span class="text">엔터테인먼트</span>
+					</li>
+					<li>
+						<span class="tit">시가총액</span>
+						<span class="text">USD133,091백만</span>
+					</li>
+					<li>
+						<span class="tit">발행주식수</span>
+						<span class="text">433백만</span>
+					</li>
+					<li>
+						<span class="tit">EPS <a href="#" class="toggle-btn">EPS 자세히 보기</a></span>
+						<span class="text">0.33</span>
+					</li>
+					<li>
+						<span class="tit">PER <a href="#" class="toggle-btn">PER 자세히 보기</a></span>
+						<span class="text">367.49</span>
+					</li>
+					<li>
+						<span class="tit">배당수익율</span>
+						<span class="text">6.48%</span>
+					</li>
+				</ul>
+			</div>
+			<div class="stock-news-content">
+				<span class="title">뉴스</span>
+				<ul class="list">
+					<li>
+						<a href="#">Netflix(NFLX), 미국과 일본에서 보급률 확대에 Netflix(NFLX), 미국과 일본에서 보급률 Netflix(NFLX), 미국과 일본에서 보급률 확대에</a>
+					</li>
+					<li>
+						<a href="#">Netflix(NFLX), 미국과 일본에서 보급률 확대에 Netflix(NFLX), 미국과 일본에서 보급률 Netflix(NFLX), 미국과 일본에서 보급률 확대에</a>
+					</li>
+					<li>
+						<a href="#">Netflix(NFLX), 미국과 일본에서 보급률 확대에 Netflix(NFLX), 미국과 일본에서 보급률 Netflix(NFLX), 미국과 일본에서 보급률 확대에</a>
+					</li>
+					<li>
+						<a href="#">Netflix(NFLX), 미국과 일본에서 보급률 확대에 Netflix(NFLX), 미국과 일본에서 보급률 Netflix(NFLX), 미국과 일본에서 보급률 확대에</a>
+					</li>
+					<li>
+						<a href="#">Netflix(NFLX), 미국과 일본에서 보급률 확대에 Netflix(NFLX), 미국과 일본에서 보급률 Netflix(NFLX), 미국과 일본에서 보급률 확대에</a>
+					</li>
+				</ul>
+			</div>
+			<div class="stock-point-content">
+				<span class="title">연관주식</span>
+				<ul class="list">
+					<li>
+						<span class="brand-txt">
+							<span class="brand">디즈니</span>
+							<span class="e-brand">Disney</span>
+						</span>
+						<span class="cost">151,191원</span>
+						<span class="percent">
+							<span class="up">1.58%</span>
+						</span>
+					</li>
+					<li>
+						<span class="brand-txt">
+							<span class="brand">구글</span>
+							<span class="e-brand">Alphabet Inc.</span>
+						</span>
+						<span class="cost">1,417,138원</span>
+						<span class="percent">
+							<span class="down">2.11%</span>
+						</span>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- //컨텐츠 -->
+
+		<!-- 하단 버튼 -->
+		<div class="com-btn-content">
+			<a href="#" class="left">매도하기</a>
+			<a href="#" class="right">투자하기</a>
+		</div>
+		<!-- //하단 버튼 -->
+
+	</div>
+	<!-- //#wrap -->
+	
+</body>
+</html>

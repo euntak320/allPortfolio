@@ -1,0 +1,322 @@
+@charset "utf-8";
+
+
+/* ***** main ***** */
+/* ** visual ** */
+.mainVbWrap{position: fixed; top:0; left:0; z-index: 2; display: table; table-layout:fixed; width: 100%; height:100%; padding:50px 0 150px; }
+.mainVbIn{display: table-cell; vertical-align: middle;}
+.mainVbIn .titleWrap{font-size: 0; padding:0 20px; margin-bottom: 12px;}
+.mainVbIn .titleWrap strong{display: inline-block; font-size: 1.6rem; line-height: 24px; color:#222; vertical-align: middle;}
+.mainVbIn .titleWrap p{display: inline-block; vertical-align: top;}
+.mainVbIn .titleWrap p:before{display: inline-block; content: ''; width:1px; height: 12px; margin:0 8px; vertical-align:middle; background: #ddd;}
+.mainVbIn .titleWrap p a{display: inline-block; font-size: 1.3rem; color: #888; font-weight: normal; line-height: 24px; vertical-align: middle;}
+
+.vbWrap .slick-nav{padding:0px 20px; margin-top: 13px}
+.vbWrap .dot{line-height: 0;}
+.vbWrap .slick-dots li{display: inline-block; line-height: 0;}
+.vbWrap .slick-dots li button,
+.vbWrap .slick-dots li button::before,
+.vbWrap .slick-dots li button::after{font-size: 0; width:6px; height: 6px; border-radius: 50px; background:#c2c2c2;}
+.vbWrap .slick-dots li.slick-active button,
+.vbWrap .slick-dots li.slick-active button::before,
+.vbWrap .slick-dots li.slick-active button::after{background: #666;}
+.vbWrap .slick-dots li + li{margin-left: 8px;}
+.vbWrap .slick-dots li:first-child{position: relative;}
+.vbWrap .slick-dots li:first-child button{width:8px; height: 8px; border-radius: 0; background: none;}
+.vbWrap .slick-dots li:first-child button::before{position: absolute; left:0; top:3px; display: block; content: ''; width:8px; height: 2px;}
+.vbWrap .slick-dots li:first-child button::after{position: absolute; left:3px; top:0px; display: block; content: ''; width:2px; height: 8px;}
+
+.vbSlider .slick-list{height: 264px; padding-left:20px;}
+.vbSlider .slick-slide{width:180px !important;}
+.vbSlider .item{width:100%; height:264px; padding:0 8px 0 0; }
+.vbSlider .item .in{position: relative; height:264px; border-radius: 10px; background-color: #eaeaea;}
+.vbSlider .item .btn.star{position: absolute; right:16px; bottom:20px; width:28px; height:28px;}
+.vbSlider .item .btn.star .ico{width:100%; height:100%; background-position: -244px 0;}
+.vbSlider .item.on .bank .name,
+.vbSlider .item.on .bank .num{color:#fff;}
+.vbSlider #bn_004.item.on .bank .name,
+.vbSlider #bn_004.item.on .bank .num,
+.vbSlider #bn_090.item.on .bank .name,
+.vbSlider #bn_090.item.on .bank .num{color:#222;}
+.vbSlider .item.on .btn.star .ico{background-position: -272px 0;}
+.vbSlider .bankLogo{position: absolute; left:16px; top:16px; z-index: 1;}
+.vbSlider .bankLogo img{width:auto; height: 28px;}
+.vbSlider .text{position: absolute; left:0; bottom:0; z-index: 1; width:100%; padding:24px 20px;}
+.vbSlider .bank .name{font-size: 1.6rem; font-weight: bold; word-break: break-all;}
+.vbSlider .bank .num{font-size: 1.3rem; margin-top: 4px;}
+.vbSlider .slick-slide:first-child .in{text-align: left; border:1px solid #ddd; background-color: #fff;}
+.vbSlider .slick-slide:first-child .btn.add{display: inline-block; height:100%; text-align: center;}
+.vbSlider .slick-slide:first-child .btn.add .ico{width:32px; height:32px; background-position: 0 -77px;}
+.vbSlider .slick-slide:first-child .txt{font-size: 1.4rem; line-height: 20px; margin-top: 12px;}
+
+
+.mainBanWrap{position: fixed; bottom:35px; left:0; z-index: 3; width:100%;}
+.mainBanWrap .slick-nav{position: absolute; left:0; bottom:16px; z-index: 1; width:100%; margin: 0; padding:0px 20px;}
+.mainBanWrap .dot{line-height: 0; padding:0px 20px;}
+.mainBanWrap .slick-dots li{display: inline-block; line-height: 0;}
+.mainBanWrap .slick-dots li button{font-size: 0; width:4px; height: 4px; border-radius: 50px; background: rgba(88,88,88,0.4);}
+.mainBanWrap .slick-dots li.slick-active button{background: #888;}
+.mainBanWrap .slick-dots li + li{margin-left: 4px;}
+
+.vbSlider2 .item{padding:0 20px; vertical-align: top;}
+.vbSlider2 .item .in{display: block; position: relative; border-radius: 8px; overflow: hidden;}
+.vbSlider2 .item .im{width:100%;}
+
+.copyright{position: fixed; left:0; bottom:12px; z-index: 1; width:100%; font-size: 1rem; color:rgba(22,22,22,0.4); line-height: 15px; text-align: center;}
+
+.l_mainPaySel{font-size: 0;}
+.l_mainPaySel li{display: inline-block; width:50%;}
+.l_mainPaySel li a{display: block; font-size: 1.6rem; color:#222; line-height: 24px; padding:36px 0;}
+.l_mainPaySel li + li{border-left:1px solid #e7e7e7;}
+.l_mainPaySel li .ico{width:48px; height:48px;}
+.l_mainPaySel li .ico.i1{background-position: -131px -115px;}
+.l_mainPaySel li .ico.i2{background-position: -184px -115px;}
+.l_mainPaySel li p{font-size:1.8rem; font-weight: 700; line-height: 27px; margin-top: 8px;}
+
+
+/* ***** payment method ***** */
+.dragListWrap.modi .switch{display: block;}
+.dragListWrap.modi .dragList.type2 .dragBtn{display: block;}
+.dragList .dragBtn{display: none;}
+.dragList .switch{display: none;}
+.dragList.type3{margin-top: 50px;}
+
+.setPayManBox .icoOnly .ico{width:px; height: px;}
+.setPayManBox .icoOnly .ico.add{background-position: -px -px;}
+.setPayManBox .icoOnly .ico.trans{background-position: -px -px;}
+
+.setPayManBox{margin-top: -12px;}
+.setPayManBox .setPayTop{height:45px; margin:0 -20px;}
+.setPayManBox .setPayTop .in{padding:0 20px;}
+.setPayManBox .setPayTop .infoWrap{padding:13px 0 12px;}
+.setPayManBox .setPayTop .infoWrap .fl{font-size: 0; line-height: 0;}
+.setPayManBox .setPayTop .infoWrap span{font-size: 1.3rem; line-height: 18px;}
+.setPayManBox .setPayTop .infoWrap .fl .txt .fwb{color:#222;}
+.setPayManBox .setPayTop .infoWrap .fl .txt{color:#888; margin-left: 8px;}
+.setPayManBox .setPayTop .btnWrap .btnTxt{vertical-align: top;}
+.setPayManBox .setPayTop .btnWrap .btnTxt + .btnTxt{margin-left: 20px;}
+.setPayManBox .setPayTop .btnWrap.b2{display: none;}
+.setPayManBox .primCard{position: relative; padding:16px 64px 16px 20px; border-radius: 4px; background: #fff; box-shadow: 0px 1px 2px 0px rgba(34,34,34,0.08);}
+.setPayManBox .primCard .logo{height:28px;}
+.setPayManBox .primCard .name .txt{display: inline-block; font-size: 1.6rem; line-height: 24px; color:#222; font-weight: bold; vertical-align: middle; max-width: 80%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.setPayManBox .primCard .num{color:#666; margin-top: 6px;}
+.setPayManBox .primCard .icoOnly{position: absolute; right:20px; top:50%; width:24px; height:24px; margin-top: -12px;}
+.setPayManBox .primCard .icoOnly .ico{width:100%; height: 100%; background-position: -276px -32px;}
+
+.setCardList {margin-top: 24px;}
+.setCardList .li{display: table; table-layout: fixed; width:100%;}
+.setCardList .li.drag{border: 1px solid #333; border-radius: 4px !important; box-shadow: 0px 3px 6px 0px rgba(34,34,34,0.2) !important;}
+.setCardList .col{display: table-cell; vertical-align: middle; }
+.setCardList .col1{display: none; position: relative; width:60px; text-align: center;}
+.setCardList .col2{width:auto; padding:18px 0px 16px 20px;}
+.setCardList .col3{width:64px;}
+.setCardList .dragBtn{display: block; position: absolute; left:0; top:50%; z-index: 1; width:100%; height: 24px; margin-top: -12px;}
+.setCardList .dragBtn .ico{width:20px; height:20px; background-position: -75px -28px;}
+.setCardList .name{font-size: 0;}
+.setCardList .name .logo{height:28px; margin-right: 8px;}
+.setCardList .name .txt{display: inline-block; font-size: 1.6rem; line-height: 24px; color:#222; font-weight: bold; word-break: break-all; vertical-align: middle;}
+.setCardList .num{color:#666;}
+.setCardList .btnArea {display: block; font-size: 0;}
+.setCardList .btnArea li{display: inline-block; width:100%; text-align: center; vertical-align: top;}
+.setCardList .btnArea li + li{position: relative;}
+.setCardList .btnArea li + li::before{display: inline-block; position: absolute; left:0; top:50%; content: ''; width:1px; height:24px; margin-top: -12px; background: #eaeaea;}
+.setCardList .btnArea .ba2{display: none;}
+.setCardList .btn.add .ico{width:24px; height: 24px; background-position: -252px -32px;}
+.setCardList .btn.trans .ico{width:24px; height: 24px; background-position: -228px -32px;}
+
+.setPayManBox.on .setPayTop .btnWrap.b1{display: none;}
+.setPayManBox.on .setPayTop .btnWrap.b2{display: block;}
+.setPayManBox.on .setCardList{background: none; border-radius: 0; box-shadow: none;}
+.setPayManBox.on .setCardList .li{border-radius: 4px;background: #fff; box-shadow: 0px 1px 2px 0px rgba(34,34,34,0.08);}
+.setPayManBox.on .setCardList .li + .li{margin-top: 8px;}
+.setPayManBox.on .setCardList .col1{display: table-cell;}
+.setPayManBox.on .setCardList .col2{padding-left:0;}
+.setPayManBox.on .setCardList .col3{width:128px;}
+.setPayManBox.on .setCardList .btnArea li{width:50%;}
+.setPayManBox.on .setCardList .btnArea .ba2{display: inline-block;}
+
+.setPayManBox .setPayTop.fixed .in{position: fixed; left:0; top:50px; z-index: 10; width:100%; padding:0; border-top:1px solid rgba(34,34,34,0.08); background: #fff;}
+.setPayManBox .setPayTop.fixed .infoWrap{padding-left:20px; padding-right:20px; border-bottom:1px solid rgba(34,34,34,0.08)}
+.setPayManBox .setPayTop.fixed .primCard{padding:16px 20px; border-radius: 0; box-shadow: 0px 1px 0px 0px rgba(34,34,34,0.12);}
+
+.bankList{border-radius: 4px; background: #fff; box-shadow: 0px 1px 2px 0px rgba(34,34,34,0.08); overflow: hidden;}
+.bankList ul{font-size: 0; margin:0 -1px;}
+.bankList li{display: table; float:left; width:33%; height:116px; text-align: center; border-top:1px solid #e7e7e7; border-left:1px solid #e7e7e7;}
+.bankList li a{display: table-cell; padding:24px 5px 5px; vertical-align: top;}
+.bankList li .im{height:35px; margin-bottom: 15px;}
+.bankList li .txt{font-size: 1.3rem; line-height: 19px; word-break: break-all; margin:0 auto;}
+.bankList li:nth-child(3n+1){width:34%; border-left:0;}
+.bankList li:nth-child(1),
+.bankList li:nth-child(2),
+.bankList li:nth-child(3){border-top:0;}
+
+.arsNumInfo{text-align: center;}
+.arsNumInfo .tit{font-size: 1.3rem; line-height: 19px;}
+.arsNumInfo .txt{font-size: 4.2rem; line-height: 62px; font-weight: 700;}
+
+
+/* ***** usage details ***** */
+.useList .li .dl dt{display: inline-block; font-size: 1.3rem; color:#fff; line-height: 26px; font-weight: bold; padding:0 12px; border-radius: 17px; background: #333;}
+.useList .li .dl dd{padding:16px 0; }
+.useList .li .dl dd:last-child{padding-bottom: 0;}
+.useList .li .dl dd + dd{border-top:1px solid #e7e7e7;}
+.useList .li .dl .date{position: relative; color:#666;}
+.useList .li .dl .date .state{position: absolute; right:0; top:0; font-size: 1.1rem; color: #fff; line-height: 18px; padding: 0 5px; border-radius: 2px; background: #ee1717;}
+.useList .li .dl .text{display: table; table-layout: fixed; width:100%; margin-top: 4px;}
+.useList .li .dl .text strong{display: table-cell; font-size: 1.6rem; font-weight: normal; width:70%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.useList .li .dl .text span{display: table-cell; font-size: 1.6rem; font-weight: bold; width:auto; text-align: right;}
+.useList .li dd.cancel .text{color:rgba(34,34,34,0.3);}
+
+.l_useDetailBox{padding:0 20px; text-align: left;}
+.l_useDetailBox .useTitWrap .date{font-size: 1.4rem; color:#888; line-height: 20px;}
+.l_useDetailBox .useTitWrap .date .state{display: inline-block; font-size: 1.1rem; color:#fff; padding:0 5px; line-height: 18px; margin-left: 8px; border-radius: 2px; background: #ee1717; }
+.l_useDetailBox .useTitWrap .name{font-size: 1.8rem; line-height: 27px; color:#000; margin-top: 4px;}
+.l_useDetailBox dt{font-size: 1.4rem; padding-bottom: 20px;}
+.l_useDetailBox dt .txt1{color:#222; line-height: 20px;}
+.l_useDetailBox dt .txt2{color:#888; line-height: 20px; margin-top: 4px;}
+.l_useDetailBox dt .txt2 strong{font-weight:normal; margin-right: 8px;}
+.l_useDetailBox dd{padding:20px 0; border-top:1px solid #e7e7e7;}
+.l_useDetailBox dd:last-child{padding-bottom:0;}
+.l_useDetailBox .useTitWrap{text-align: left;}
+.l_useDetailBox .useCntWrap{margin-top: 16px;}
+.l_useDetailBox .ul li{display: table; table-layout: fixed; width: 100%;}
+.l_useDetailBox .ul li + li{margin-top: 13px;}
+.l_useDetailBox .ul .tit{display: table-cell; font-size: 1.3rem; color:#888; line-height: 20px; width: 30%;}
+.l_useDetailBox .ul .txt{display: table-cell; font-size: 1.4rem; line-height: 20px; width: auto; text-align: right;}
+.l_useDetailBox dd.sum{display: table; table-layout: fixed; line-height: 28px; width: 100%;}
+.l_useDetailBox dd.sum .tit{display: table-cell; font-size: 1.3rem; width: 30%; vertical-align: middle;}
+.l_useDetailBox dd.sum .txt{display: table-cell; font-size: 2.4rem; width: auto; text-align: right; vertical-align: middle;}
+.l_useDetailBox dd.sum .txt em{font-weight: bold; }
+.l_useDetailBox dd.sum .txt .won{font-size: 2rem; margin-left: 4px;}
+
+
+/* ***** setting ***** */
+/* ** 회원정보관리 ** */
+.setMemList .tit{display: block; font-size: 1.2rem; line-height: 18px; font-weight: normal;}
+.setMemList .txt{font-size: 1.6rem; color:#888; line-height: 24px; margin-top: 4px;}
+.setMemList .setEmail .s-email{position: relative; height:46px; padding-right:78px;}
+.setMemList .setEmail .s-email .btn{position: absolute; right:0; top:0; width:74px;}
+
+.setCashList .li + .li{margin-top: 24px;}
+.setCashList .in{display: block; position: relative; font-size: 1.6rem; line-height: 24px; padding: 20px; border-radius: 4px; background: #fff; box-shadow: 0px 1px 2px 0px rgba(34,34,34,0.08);}
+.setCashList .in + .in{margin-top: 8px;}
+.setCashList .in .ul{margin:0 -20px;}
+.setCashList .in .ul li{padding:0;}
+.setCashList .in .ul li + li{padding-top:20px; margin-top: 20px; border-top:1px solid #eaeaea;}
+.setCashList .cTit{font-size: 1.3rem; line-height: 19px; color:#888; margin-bottom: 8px;}
+.setCashList .tit{font-weight: normal;}
+.setCashList .row .in{display: table; table-layout: fixed; width:100%;}
+.setCashList .row .tit{display: table-cell; width:60%; vertical-align: middle;}
+.setCashList .row .txt{display: table-cell; width:auto; text-align: right;}
+.setCashList .in + .intFocsUl,
+.setCashList .intFocsUl + .in{margin-top: 8px;}
+
+.setMemUn{margin-top: 24px; text-align: right;}
+
+
+
+/* ***** customer ***** */
+/* noti */
+.notiList .tit > span{display: inline-block; font-size: 1.6rem; line-height: 24px; font-weight: 700; max-width: 86%; vertical-align: top; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.notiList .tit .ico.new{width:20px; height: 20px; margin-top: 2px; margin-left: 4px; vertical-align: top; background-position: -12px -28px;}
+.notiList .txt{font-size: 1.3rem; line-height: 19px; color:#888;}
+
+.notiView{margin: 0 -20px;}
+.notiView dt{padding:0 20px;}
+.notiView dt .tit{font-size: 1.6rem; line-height: 24px; font-weight: 700;}
+.notiView dt .info{font-size: 1.3rem; line-height: 19px; color:#888; margin-top: 8px;}
+.notiView dd{line-height: 20px; padding:24px 20px; margin-top: 24px; border-top:1px solid #e7e7e7;}
+
+/* faq */
+.faqList{margin: 0 -20px 0;}
+.faqList .list li{border-bottom:1px solid #e7e7e7;}
+.faqList .list li:first-child dt{padding-top:0;}
+.faqList .list li:first-child .accTit::before{top:0;}
+.faqList .list li:first-child .accTit::after{top:6px; margin-top: 0px;}
+.faqList .accTit{position: relative; padding:20px 56px 20px 42px;}
+.faqList .accTit::before{display: inline-block; content: 'Q'; position: absolute; top:20px; left:20px; z-index: 1; font-size: 1.6rem; font-weight: bold; color:#111; line-height: 24px;}
+.faqList .accTit::after{display: inline-block; content: ''; position: absolute; right:20px; top:50%; width:16px; height: 8px; margin-top: -4px; background: url("../img/ico_com.png") no-repeat; background-size: 300px auto; background-position: -35px -28px;}
+.faqList .accTit .tit{font-size: 1.6rem; line-height: 24px;}
+.faqList .accTit.on::after{background-position: -52px -28px;}
+.faqList .accTit.on .tit{font-weight: 700;}
+.faqList .accCnt{position: relative; line-height: 20px; padding:20px 20px 20px 42px; border-top:1px solid #e7e7e7; background: #f7f7f7;}
+.faqList .accCnt::before{display: inline-block; content: 'A'; position: absolute; top:20px; left:20px; z-index: 1; font-size: 1.6rem; font-weight: bold; color:#111; line-height: 24px;}
+
+
+/* service */
+.custServList li + li{margin-top: 8px;}
+.custServList + .termsAgreeList{margin-top: 24px;}
+
+
+
+
+/* ***** pay ***** */
+.paySliderWrap{height:267px; padding:8px 0 24px 0; margin: -17px -20px 0px; overflow: hidden;}
+.paySlider .slick-list{padding:0 20px; padding-right:8px !important; overflow: inherit;}
+.paySlider .slick-slide{}
+.paySlider .item{width:142px !important; height:195px; padding:0 12px 0 0;}
+.paySlider .item .in{position: relative; height:100%; padding:12px; border-radius: 8px; background: #eaeaea;}
+.paySlider .item .in .chk.ico{position: absolute; right:-8px; top:-8px; z-index: 1; display: inline-block; width: 32px; height: 32px; margin: 0px 0; background: url("../img/ico_rdo2.png") no-repeat; background-size: auto 32px; background-position: center;}
+.paySlider .bankLogo{position: absolute; left:14px; top:16px; z-index: 1;}
+.paySlider .bankLogo img{width:auto; height: 28px;}
+.paySlider .text{position: absolute; left:0; bottom:0; z-index: 1; width:100%; padding:14px; padding-top:0;}
+.paySlider .item.preim .btn.star{margin:0 0 13px -4px;}
+.paySlider .item.preim .btn.star .ico{width:28px; height: 28px; background-position: -244px 0;}
+.paySlider .bank{line-height: 20px; margin-bottom: 8px;}
+.paySlider .bank .name{font-size: 1.3rem; color: #111; line-height: 19px; font-weight: bold; word-break: break-all;}
+.paySlider .bank .num{font-size: 1.3rem; line-height: 19px; }
+.paySlider .sum{font-size: 1.5rem; color:#000; line-height: 22px; font-weight: bold;}
+.paySlider .sum .won{font-size: 1.4rem; line-height: 20px; font-weight: bold; margin-left: 2px;}
+.paySlider .item.prim .text::before{display: inline-block; content:''; position: absolute; left:12px; top:-36px; width:24px; height:24px; vertical-align:middle; background: url("../img/ico_com.png") no-repeat; background-size: 300px auto;background-position: -276px -32px;}
+.paySlider .item.prim.on .text{padding:16px; padding-top:0;}
+.paySlider .item.prim.on .text::before{left:12px; top:-40px; width:28px; height:28px; background-position: -272px 0;}
+.paySlider .item.on{width: 166px !important; height: 231px !important;}
+.paySlider .item.on .in{box-shadow: 0px 30px 20px -23px rgba(0,0,0,0.4);}
+.paySlider .item.on .in .chk.ico{background-position: center right;}
+.paySlider .item.on .in .bank .name,
+.paySlider .item.on .in .bank .num{font-size: 1.4rem; color:#fff !important;}
+.paySlider .item.on .in .sum{font-size: 1.8rem; color:#fff !important; line-height: 27px;}
+.paySlider .item.on .in .sum .won{font-size: 1.6rem;line-height: 24px;}
+
+
+.paySlider #bn_004.item.on .in .bank .name,
+.paySlider #bn_004.item.on .in .bank .num,
+.paySlider #bn_090.item.on .in .bank .name,
+.paySlider #bn_090.item.on .in .bank .num{color:#111 !important;}
+.paySlider #bn_004.item.on .in .sum,
+.paySlider #bn_090.item.on .in .sum{color:#000 !important;}
+
+
+.payInfo li{display: table; table-layout: fixed; width:100%;}
+.payInfo .li + .li{padding-top:20px; margin-top: 20px; border-top:1px solid #e7e7e7;}
+.payInfo .li li + li{padding-top:12px;}
+.payInfo .tit{display: table-cell; font-size: 1.3rem; color:#888; width:30%; vertical-align: top;}
+.payInfo .txt{display: table-cell; font-size: 1.4rem; color:#222; width:auto; text-align: right; vertical-align: top;}
+.payInfo .txt .won{margin-left: 4px;}
+.payInfo .txt .moreWrap{display: inline-block; position: relative; height:20px; padding-right: 24px; vertical-align: top; overflow: hidden;}
+.payInfo .txt .moreWrap .btn{position: absolute; right:0; top:0; z-index: 1;}
+.payInfo .txt .moreWrap .btn .ico{width:20px; height: 20px; vertical-align: top; background-position: -204px -0px;}
+.payInfo .txt .moreWrap.on{height:auto;}
+.payInfo .txt .moreWrap.on .btn .ico{width:20px; height: 20px; vertical-align: top; background-position: -224px -0px;}
+.payInfo .amount .tit{color:#222; line-height: 28px; }
+.payInfo .amount .txt span{font-size: 22px; line-height: 28px; font-weight: bold; vertical-align: middle;}
+.payInfo .amount .txt .won{font-weight: bold; vertical-align: middle;}
+
+
+
+/* ***** layer cnt ***** */
+.layerWrap .txt1 + .txt1{margin-top: 14px;}
+.layerWrap .txt1 + .txt2{margin-top: 4px;}
+.layerWrap .txt1{font-size: 1.6rem; line-height: 24px;}
+.layerWrap .txt2{font-size: 1.4rem; color:#888; line-height: 20px;}
+
+
+
+@media (max-width: 320px) {
+    .paySlider .bankLogo{left:12px;}
+    .paySlider .sum{font-size: 1.5rem;}
+    .setPayManBox.on .setCardList .col1{width:50px;}
+    .setPayManBox.on .setCardList .col3{width:100px;}
+    .setPayManBox.on .setCardList .li + .li{margin-top: 8px;}
+
+}

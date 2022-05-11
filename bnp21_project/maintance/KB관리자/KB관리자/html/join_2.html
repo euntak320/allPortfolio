@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>관리자 | 스타 플랫폼 가입신청</title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 해당페이지에서만 사용 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery.datetimepicker.css">
+<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+<script>
+	
+	$(function(){
+		// 파일 업로드시 나오는 경로 텍스트
+		$("#file").on('change',function(){
+			var fileName = $("#file").val();
+			$(".upload-name").val(fileName);
+		});
+
+		// x버튼 클릭시 삭제
+		$(".addFileList .fileTxt a").click(function(){
+			$(this).closest("div").hide();
+		});
+
+		$(".starGate #btn1").click(function(){
+			$(this).parents().find("#firstArea").slideToggle();
+		});
+		$(".starGate #btn2").click(function(){
+			$(this).parents().find("#secArea").slideToggle();
+		});
+		
+	});
+</script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="gnbWrap">
+				<div class="fl"><h1 class="logo"><a href="#">스타플랫폼<span>비대면 가맹신청</span></a></h1></div>
+
+			</div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container" class="starGate">
+		<!-- content -->
+		<div class="content">
+			<h2 class="hTit">스타플랫폼 가맹점 고객확인제도</h2>
+			<!-- textarea -->
+			<div class="conditionsArea v2">
+				<div class="joinContent">
+					<div class="tblTopWrap">
+						<div class="fl">
+							<p>은행에서 제공하는 금융거래 및 서비스가 자금세탁 등의 불법행위에 이용되지 않도록 고객에 대하여 거래 목적을 확인하는 등 합당한 주의를 기울이는 제도로서 「특정 금융거래정보의 보고 및 이용 등에 관한 법률(이하, ‘특정금융정보법’)」 제 5조의 2에 의한 은행의 법률적 의무사항입니다. 
+							</p>
+							<span>· CDD : 고객 확인 (Customer Due Diligence)</span>
+							<span>· EDD : 강화된 고객확인 (Enhanced Due Diligence) 
+							</span>
+						</div>
+					</div>
+					<!-- table -->
+					<div class="tblTopWrap">
+						<div class="fl">
+							<p class="yellowRect">고객확인정보</p>
+						</div>
+					</div>
+					<div class="tbw">
+						<table>
+							<caption>정보작성 테이블</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>직업구분</th>
+									<td>개인사업자</td>
+								</tr>
+								<tr>
+									<th>거래목적</th>
+									<td>
+										<select name="" id="">
+											<option value="">급여 및 생화비</option>
+											<option value=""></option>
+											<option value=""></option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>거래자금의 원천</th>
+									<td>
+										<select name="" id="">
+											<option value="">근로 및 연금소득</option>
+											<option value=""></option>
+											<option value=""></option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>추정 자산 규모</th>
+									<td>
+										<select name="" id="">
+											<option value="">10억 미만</option>
+											<option value=""></option>
+											<option value=""></option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>실제소유자 여부</th>
+									<td>
+										<div class="formChkRdo">
+											<ul>
+												<li><label class="label"><input type="radio" class="rdo" name="viewRdo"><span class="ico"></span><span class="lTxt">예</span></label></li>
+												<li><label class="label"><input type="radio" class="rdo" name="viewRdo"><span class="ico"></span><span class="lTxt">아니오</span></label></li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				<!-- //table -->
+				<!-- table -->
+				<div class="moblieFrame">
+					<div class="tblTopWrap">
+						<div class="fl">
+							<p class="yellowRect">고객정보</p>
+							<!-- 20-09-07 추가 -->
+							<button type="button" id="btn1">닫기</button>
+						</div>
+					</div>
+					<!-- 20-09-07 추가 -->
+					<div class="tbw" id="firstArea">
+						<table>
+							<caption>고객정보 테이블</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>이름</th>
+									<td>대표자명</td>
+								</tr>
+								<tr>
+									<th>실명번호</th>
+									<td>대표자 실명번호</td>
+								</tr>
+								<tr>
+									<th>국적</th>
+									<td>대표자 국적</td>
+								</tr>
+								<tr>
+									<th>자택주소</th>
+									<td>대표자 자택주소</td>
+								</tr>
+								<tr>
+									<th>휴대폰 번호</th>
+									<td>대표자 연락처1</td>
+								</tr>
+								<tr>
+									<th>E-mail</th>
+									<td>사업장 - mail</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+					<!-- //table -->
+					<!-- table -->
+				<div class="moblieFrame">
+					<div class="tblTopWrap">
+						<div class="fl">
+							<p class="yellowRect">고객정보</p>
+							<!-- 20-09-07 추가 -->
+							<button type="button" id="btn2">닫기</button>
+						</div>
+					</div>
+					<div class="tbw"  id="secArea">
+						<table>
+							<caption>고객정보 테이블</caption>
+							<colgroup>
+								<col style="width:20%">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>직장/사업자명</th>
+									<td>사업장 - 상호명</td>
+								</tr>
+								<tr>
+									<th>연락처</th>
+									<td>사업장 - 전화번호</td>
+								</tr>
+								<tr>
+									<th>직장/ 사업장 주소</th>
+									<td>사업장 - 주소</td>
+								</tr>
+								<tr>
+									<th>부서명</th>
+									<td>사업장 - 가맹점(간판명) 한글</td>
+								</tr>
+								<tr>
+									<th>소재국가</th>
+									<td>사업장 - 주소의 "국적"</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- //table -->
+				<div class="fr mt10">
+					<a href="#" class="btn md de">정보 수정</a>
+					<a href="#" class="btn md de">제출</a>
+				</div>
+			</div>
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

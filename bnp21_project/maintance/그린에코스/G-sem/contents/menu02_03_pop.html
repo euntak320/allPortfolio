@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=yes" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!--[if lt IE 9]><script src=js/html5.js"></script><![endif]-->
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.placeholder.js"></script>
+    <script src="../js/tableHeadFixer.js"></script>
+    <title>경기도 대기배출원 관리시스템</title>
+    <script>
+        // 라디오 버튼 선택 부분
+        $(function () {
+            $('input[type=radio][name=btnRadio]').on('click',function(){
+                var radioBtn = $("input[type=radio][name=btnRadio]:checked").val();
+                if(radioBtn == "radioA"){
+                    $(".radioA").css("display","block");
+                    $(".radioB").css("display","none");
+                }
+                else if(radioBtn == "radioB"){
+                    $(".radioA").css("display","none");
+                    $(".radioB").css("display","block");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body style="background-color:rgba(0,0,0,.5)">
+    <!-- 팝업 -->
+    <div id="popup" class="output">
+        <div class="top_pop">
+            <h1>1 ~ 3종 사업장 휘발성 유기화합물질 조회</h1>
+            <a href="">닫기</a>
+        </div>
+        <div class="cont_pop">
+            <span style="display: block; float: right; font-size:12px; margin-bottom: 5px;">오염물질단위 : ton/yr</span>
+            <div style="width:100%; overflow: auto; margin-bottom:20px;">
+                <table class="bbsList" style="width:1500px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">프로필렌옥사이드</th>
+                            <th scope="col">벤젠</th>
+                            <th scope="col">사염화탄소</th>
+                            <th scope="col">클로로포름</th>
+                            <th scope="col">포름알데히드</th>
+                            <th scope="col">아세트알데히드</th>
+                            <th scope="col">1-3부타디엔</th>
+                            <th scope="col">스틸렌</th>
+                            <th scope="col">아크롤레인</th>
+                            <th scope="col">테트라클로로에틸렌</th>
+                            <th scope="col">1,2-디클로로에탄</th>
+                            <th scope="col">에틸벤젠</th>
+                            <th scope="col" style="width:130px">아크릴로니트릴</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="btnArea">
+                <a href="#none" class="blue">닫기</a>
+            </div>
+        </div>
+
+    </div>
+    <!-- //팝업 -->
+
+</body>
+
+</html>

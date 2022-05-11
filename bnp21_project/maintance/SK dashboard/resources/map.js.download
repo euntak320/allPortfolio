@@ -1,0 +1,23 @@
+/**
+ *
+ */
+$(function() {
+	function _addValueToKey(map, key, value) {
+		map[key] = map[key] || [];
+		map[key].push(value);
+	}
+	
+	window.Map = {
+		collectMap: function(key, values) {
+			var map = {};
+			values.forEach(function(value) {
+				_addValueToKey(map, value[key], value);
+			});
+			return map;
+		},
+		
+		addValueToKey: function(map, key, value) {
+			_addValueToKey(map, key, value);
+		}
+	}
+});

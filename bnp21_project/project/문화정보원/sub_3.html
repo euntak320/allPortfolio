@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	<script src="./assets/js/jquery-1.11.0.min.js"></script>
+	<script src="./assets/js/script.js"></script>	
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("./include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("./include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">관리자에게 기술지원 요청내용을 등록하고 기관 내 등록된 기술지원 요청사항을 조회하는 메뉴입니다.</p>			
+				<div class="table-top-btn">
+					<a href="#none" class="list-btn">목록</a>
+				</div>
+				<div class="com-table-search line-2">
+					<table>
+						<caption>상세 표</caption>						
+						<tbody>
+							<tr>
+								<th>분류</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">전체</option>
+											<option value="#">2전체</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>요청내역</th>
+								<td>@@@ 에디터 영역 @@@</td>
+							</tr>							
+						</tbody>
+					</table>
+				</div>
+				<div class="com-btn">
+					<a href="#none">취소</a>
+					<a href="#none" class="send">저장</a>
+				</div>
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("./include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

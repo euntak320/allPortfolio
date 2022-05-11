@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>국가물관리위원회</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</head>
+
+<body>
+    <!-- skip -->
+    <div id="skipnav">
+        <ul>
+            <li>
+                <a href="#header">상단메뉴로 이동</a>
+            </li>
+            <li>
+                <a href="#section">본문으로 이동</a>
+            </li>
+            <li>
+                <a href="#footer">하단메뉴로 이동</a>
+            </li>
+        </ul>
+    </div>
+    <!-- skip -->
+    <!-- header -->
+    <div class="header">
+        <div class="topArea">
+            <div class="comLayout">
+                <h1>
+                    <a href="index.html" class="logo">로고</a></a>
+                </h1>
+            </div>
+            <button type="button" class="mBtn" title="모바일버튼">모바일버튼</button>
+        </div>
+        <div class="menuListArea">
+            <div class="searchArea">
+                <input type="text" title="검색어를 입력해주세요." placeholder="검색어를 입력해주세요">
+                <button type="button" class="search" title="검색">검색</button>
+            </div>
+            <div class="menuList">
+                <div class="comLayout">
+                    <ul>
+                        <li class="first"><a href="" title="위원회 소개">위원회 소개</a>
+                            <div>
+                                <ul class="subMenu">
+                                    <li><a href="page_1100.html" title="국가물관리위원회 인사말">국가물관리위원회 인사말</a></li>
+                                    <li class="addMenu"><a href="page_1210.html" title="국가물관리위원회 안내">국가물관리위원회 안내</a>
+                                        <ul>
+                                            <li><a href="page_1210.html" title="목적 / 기능">- 목적 / 기능</a></li>
+                                            <li><a href="page_1220.html" title="구성 / 연혁">- 구성 / 연혁</a></li>
+                                            <li><a href="page_1230.html" title="지원단 조직">- 지원단 조직</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="page_1310.html" title="4대 유역위원회 소개">4대 유역위원회 소개</a></a></li>
+                                    <li><a href="page_1400.html" title="국가물관리위원회 BI">국가물관리위원회 BI</a></a></li>
+                                    <li><a href="page_1500.html" title="찾아오시는길">찾아오시는길</a></li>
+                                </ul>
+                                <div class="menuBoxList">
+                                    <div class="boxFrame">
+                                        <div class="box ">
+                                            <span>한강<br>유역물<br class="mobile">관리위원회</span>
+                                            <div class="linkBox">
+                                                <a href="page_1310.html" title="소개">소개</a>
+                                            </div>
+                                            <div class="linkBox">
+                                                <a href="" title="회의결과">회의결과</a>
+                                            </div>
+                                        </div>
+                                        <div class="box">
+                                            <span>낙동강<br>유역물<br class="mobile">관리위원회</span>
+                                            <div class="linkBox">
+                                                <a href="page_1320.html" title="소개">소개</a>
+                                            </div>
+                                            <div class="linkBox">
+                                                <a href="" title="회의결과">회의결과</a>
+                                            </div>
+                                        </div>
+                                        <div class="box">
+                                            <span>금강<br>유역물<br class="mobile">관리위원회</span>
+                                            <div class="linkBox">
+                                                <a href="page_1330.html" title="소개">소개</a>
+                                            </div>
+                                            <div class="linkBox">
+                                                <a href="" title="회의결과">회의결과</a>
+                                            </div>
+                                        </div>
+                                        <div class="box">
+                                            <span>영산강·섬진강<br>유역물<br class="mobile">관리위원회</span>
+                                            <div class="linkBox">
+                                                <a href="page_1340.html" title="소개">소개</a>
+                                            </div>
+                                            <div class="linkBox">
+                                                <a href="" title="회의결과">회의결과</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="sec"><a href="" title="위원회 활동">위원회 활동</a>
+                            <div>
+                                <ul class="subMenu">
+                                    <li><a href="page_2110.html" title="위원회 회의결과">위원회 회의결과</a></li>
+                                    <li><a href="page_2200.html" title="위원동정">위원동정</a></li>
+                                    <li><a href="page_2300.html" title="인터뷰 / 기고">인터뷰 / 기고</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" title="알림마당">알림마당</a>
+                            <div>
+                                <ul class="subMenu">
+                                    <li><a href="page_3100.html" title="공지사항">공지사항</a></li>
+                                    <li><a href="page_3200.html" title="보도자료">보도자료</a></li>
+                                    <li><a href="page_3300.html" title="홍보자료">홍보자료</a></li>
+                                    <li><a href="page_3400.html" title="물관련 법정계획">물관련 법정계획</a></li>
+                                    <li><a href="page_3500.html" title="관련법령">관련법령</a></li>
+                                    <li><a href="page_3600.html" title="관련기관 안내">관련기관 안내</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="" title="위원회 소개">참여마당</a>
+                            <div>
+                                <ul class="subMenu">
+                                    <li><a href="page_4100.html" title="국민제안">국민제안</a></li>
+                                    <li><a href="page_4200.html" title="민원신청">민원신청</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header -->
+    <div id="subPage">
+        <div id="section" class="section">
+            <div class="waterAdminArea">
+
+                <!-- sub Visual -->
+                <div class="mainVisual hangang">
+                    <span class="title">한강<br class="mobile">유역물관리위원회</span>
+                    <div class="comSelectArea">
+                        <a href="index.html">처음으로</a>
+                        <select name="" id="firstMenu">
+                            <option value="" selected>위원회 소개</option>
+                            <option value="">위원회 활동</option>
+                            <option value="">알림 마당</option>
+                            <option value="">참여 마당</option>
+                        </select>
+                        <select name="" id="secMenu">
+                            <option value="">국가물관리위원회</option>
+                            <option value="">국가물관리위원회 안내</option>
+                            <option value="" selected>4대 유역위원회 소개</option>
+                            <option value="">국가물관리위원회 BI</option>
+                            <option value="">찾아오시는길</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- sub Visual -->
+
+                <div class="comLayout">
+                    <span class="title">4대 유역위원회 소개</span>
+                    <div class="tabArea">
+                        <div class="tabTxt v4">
+                            <button type="button" class="tabBtn on" onClick="location.href='page_1310.html'">한강<br class="mobile">유역물관리위원회</button>
+                            <button type="button" class="tabBtn " onClick="location.href='page_1320.html'">낙동강<br class="mobile">유역물관리위원회</button>
+                            <button type="button" class="tabBtn " onClick="location.href='page_1330.html'">금강<br class="mobile">유역물관리위원회</button>
+                            <button type="button" class="tabBtn " onClick="location.href='page_1340.html'">영산강·섬진강<br class="mobile">유역물관리위원회</button>
+                        </div>
+                        <div class="viewArea">
+                            <div class="introduceArea">
+                                <div class="txtArea">
+                                    <div class="txtBox">
+                                        <p>
+                                            “유역 구성원이 함께하는유역 중심 통합물관리<br><span>한강유역물관리위원회</span>가 실현하겠습니다.”
+                                        </p>
+                                        <p class="normal">유역(basin)은 ‘빗물이 하천으로 모여드는 지역’으로 쉽게 말해 ‘함께 쓰는 하나의 물그릇’이라고 할 수 있습니다. <br><br> 그런 의미에서 수도권 2,600만명의 물그릇인 한강 유역을 잘 관리하고 올바르게 사용하는 일은 매우 중요합니다. 하지만 유역을 따라 수많은 이해당사자가 존재하고 영향을 미치는 요소들이 다양하기 때문에 유역을 관리하는 일은 많은 어려움이 따릅니다.여러 지자체와 관계부처가 나누어 관리하는 한강하구의 악화된 수질과 수생태계 문제에서 유역관리의 어려움을 엿볼 수 있습니다. 또한 현장의 목소리에 귀 기울이지 못했던 하향식 유역관리 또한 많은 사회적 갈등을 초래했습니다.<br><br>앞으로 한강유역물관리위원회는 유역 구성원이 함께 참여하여 물 문제를 해결하는 거버넌스의 플랫폼 역할을 수행하겠습니다. 건강한 한강을 회복할 수 있도록 노력하겠습니다.<br><br>여러분들의 적극적인 참여와 관심 부탁드립니다.<br><br>감사합니다.</p>
+                                </div>
+                                <div class="comBtm">
+                                    <a href="" class="window">위원회 회의결과</a>
+                                </div>
+                                <div class="stateArea" id="hangangState">
+                                    <div class="basicTxtBox">
+                                        <span class="subTitle">한강유역물관리위원회 위원현황</span>
+                                        <div class="buttonArea">
+                                            <button type="button" title="민간 위원현황 보기" class="on">민간 위원현황 보기</button>
+                                            <button type="button" title="정부 위원현황 보기" >정부 위원현황 보기</button>
+                                            
+                                        </div>
+                                        <div class="viewList">
+                                            <!-- 민간 위원현황 보기 -->
+                                            <div class="list on">
+                                                <div class="boxList v2">
+                                                    <span class="txt circle">민간위원 위원장</span>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box1.png" alt="김 형 수 인하대학교 사회인프라공학과 교수">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>김 형 수</span>
+                                                            <span>인하대학교<br>사회인프라공학과 교수</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="boxList v2">
+                                                    <span class="txt circle">민간위원 현황</span>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box2.png" alt="강 대 경 평창이장협의회 회장">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>강 대 경</span>
+                                                            <span>평창이장협의회<br>회장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box3.png" alt="구 혜 영 상지대학교 생명과학과 교수">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>구 혜 영</span>
+                                                            <span>상지대학교<br>생명과학과 교수</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box4.png" alt="김 고 운 서울연구원 안전환경연구실 부연구위원">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>김 고 운</span>
+                                                            <span>서울연구원 안전환경연구실<br>부연구위원</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box5.png" alt="김 애 영 충주 YMCA 사무총장">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>김 애 영</span>
+                                                            <span>충주 YMCA<br>사무총장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box6.png" alt="김 영 일 충남연구원 물환경연구센터 연구위원">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>김 영 일</span>
+                                                            <span>충남연구원<br>물환경연구센터 연구위원</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box7.png" alt="김 용 욱 법무법인 제이피 변호사">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>김 용 욱</span>
+                                                            <span>법무법인 제이피<br>변호사</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box8.png" alt="류 권 홍 원광대학교 법학전문대학원 교수">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>류 권 홍</span>
+                                                            <span>원광대학교<br>법학전문대학원 교수</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box9.png" alt="백 경 오 국립 한경대학교 토목안전 환경공학과 교수">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>백 경 오</span>
+                                                            <span>국립 한경대학교<br>토목안전 환경공학과 교수</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box10.png" alt="백 명 수 시민환경연구소 소장">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>백 명 수</span>
+                                                            <span>시민환경연구소<br>소장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box11.png" alt="오 태 동 eco단양(환경자원봉사단체) 부대표">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>오 태 동</span>
+                                                            <span>eco단양(환경자원봉사단체)<br>부대표</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box12.png" alt="이 기 영  경기연구원 생태환경연구실 선임연구위원">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>이 기 영</span>
+                                                            <span>경기연구원 생태환경연구실<br>선임연구위원</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box13.png" alt="정 별 님 정별님 법률사무소 변호사">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>정 별 님</span>
+                                                            <span>정별님 법률사무소<br>변호사</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box14.png" alt="정 옥 희 영주시 21아젠다 위원회 사무처장">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>정 옥 희</span>
+                                                            <span>영주시 21아젠다 위원회<br>사무처장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box15.png" alt="정 은 주 강원대 산림자원학과 교수">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>정 은 주</span>
+                                                            <span>강원대<br>산림자원학과 교수</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box16.png" alt="정 충 의 (주)극동이씨티대표이사">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>정 충 의</span>
+                                                            <span>(주)극동이씨티<br>대표이사</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box17.png" alt="채 수 권 을지대학교 보건환경안전학과 교수">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>채 수 권</span>
+                                                            <span>을지대학교<br>보건환경안전학과 교수</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box18.png" alt="최 지 용 서울대학교 그린바이오과학기술원 교수">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>최 지 용</span>
+                                                            <span>서울대학교<br>그린바이오과학기술원 교수</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box19.png" alt="최 혜 자 인천물과미래 대표">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>최 혜 자</span>
+                                                            <span>인천물과미래<br>대표</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box20.png" alt="최 동 진 現 제주대학교 법학대학원 교수">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>최 동 진</span>
+                                                            <span>국토환경연구원<br>대표</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box21.png" alt="하 성 용 충북대학교 도시공학과 교수">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>하 성 용</span>
+                                                            <span>충북대학교<br>도시공학과 교수</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box ml0">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/img-box22.png" alt="홍 성 배 홍성배 법률사무소 대표">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>홍 성 배</span>
+                                                            <span>홍성배 법률사무소<br>대표</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 정부 위원현황 보기 -->
+                                            <div class="list ">
+                                                <div class="boxList">
+                                                    <span class="txt circle">정부위원 위원장</span>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/goverment_mark.svg" alt="정부마크">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>환경부 장관</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- 20-08-27 -->
+                                                <div class="boxList v3">
+                                                    <span class="txt circle">시·도지사</span>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/seoul.svg" alt="서울">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>서울시장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/incheon.svg" alt="인천">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>인천시장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/gangwon.svg" alt="강원도">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>강원도지사</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/gyeonggi.svg" alt="경기도">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>경기도지사</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/chungbuk.svg" alt="충청북도">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>충북도지사</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/gyeongbuk.svg" alt="경상북도">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>경북도지사</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/chungcheongnam.svg" alt="충청남도">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>충남도지사</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="boxList">
+                                                    <span class="txt circle">중앙부처 소속공무원</span>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/goverment_mark.svg" alt="정부마크">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>한강<br>유역환경청장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/goverment_mark.svg" alt="정부마크">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>원주<br>지방환경청장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/goverment_mark.svg" alt="정부마크">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>한강<br>홍수통제소장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/goverment_mark.svg" alt="정부마크">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>한강<br>물환경연구소장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/goverment_mark.svg" alt="정부마크">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>서울지방<br>국토관리청장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/goverment_mark.svg" alt="정부마크">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>농림식품부<br>식량정책관</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/goverment_mark.svg" alt="정부마크">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>수도권<br>기상청장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea">
+                                                            <img src="assets/images/goverment_mark.svg" alt="정부마크">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>북부지방<br>산림청장</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="boxList">
+                                                    <span class="txt circle">공공기관</span>
+                                                    <!-- 변경된 부분 20-08-25 -->
+                                                    <div class="box">
+                                                        <div class="imgArea farming">
+                                                            <img src="assets/images/farming.svg" alt="한국농어촌공사">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>한국농어촌공사<br>경기본부장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea water">
+                                                            <img src="assets/images/water.svg" alt="한국수자원공사">
+                                                        </div>
+                                                        <div class="btmArea"> 
+                                                            <span>한국수자원공사<br>한강유역본부장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea environment">
+                                                            <img src="assets/images/environment.svg" alt="한국환경공단">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>한국환경공단<br>물환경본부장</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="box">
+                                                        <div class="imgArea nuclear">
+                                                            <img src="assets/images/nuclear.svg" alt="한국수력원자력">
+                                                        </div>
+                                                        <div class="btmArea">
+                                                            <span>한국수력원자력<br>그린에너지본부장</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- 변경된 부분 20-08-25 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="directions">
+                                    <div class="basicTxtBox">
+                                        <span class="subTitle">한강유역물관리위원회 찾아오시는 길</span>
+                                        <div class="imgArea hangang">한강유역물관리위원회 찾아오시는길</div>
+                                        <div class="trafficInfo">
+                                            <div class="address">
+                                                <img src="assets/images/icn_map_location.svg" alt="주소">
+                                                <span>주소</span>
+                                                <ul>
+                                                    <li class="circle">경기도 하남시 미사강변한강로 229</li>
+                                                </ul>
+                                            </div>
+                                            <div class="address">
+                                                <img src="assets/images/icn_map_bus.svg" alt="버스">
+                                                <span>버스</span>
+                                                <ul>
+                                                    <li class="circle">
+                                                        <span>지하철 5호선 상일동역 4번 출구 &gt; </span>
+                                                        <span>90m 앞 버스정류장 83번 버스 이용 &gt; </span>
+                                                        <span>한강유역환경청, 미사고등학교 하차</span>
+                                                    </li>
+                                                    <li class="circle">
+                                                        <span>지하철 5호선 상일동역 4번 출구 &gt; </span>
+                                                        <span>90m 앞 버스정류장 81번, 3318번 버스 이용 &gt; </span>
+                                                        <span>미사2동행정복지센터 하차, 900m 도보 이용</span>
+                                                    </li>
+                                                    <li class="circle">
+                                                        <span>남양주 시청, 구리시청, 천호사거리, 강동역, 길동사거리에서 1-4번(대원운수)버스 이용 한강유역환경청, 미사고등학교 하차</span>
+                                                    </li>
+                                                    <li class="circle">
+                                                        <span>지하철 5, 8호선 천호역 6번 출구 &gt; </span>
+                                                        <span>100m앞 버스정류장 1-4버스(대원운수)버스 이용 &gt; </span>
+                                                        <span>한강유역환경청, 미사고등학교 하차</span>
+                                                    </li>
+                                                    <li class="circle">
+                                                        <span>지하철 2,8호선 잠실역 7번출구 &gt; </span>
+                                                        <span>30m앞 버스정류장 9302번 버스 이용 미사파출소, 종합운동장 하차, 500m 도보이용</span>
+                                                    </li>
+                                                <ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <div class="comLayout">
+            <div class="txtArea">
+                <a href="" title="개인정보처리방침">개인정보처리방침</a>
+                <a href="" title="저작권보호정책">저작권보호정책</a>
+                <span class="address">(우) 30116 세종특별자치시 도움 3 로 19 엠브릿지 T2, 7층 / 대표전화 044 204 8921</span>
+                <span class="address"> Copyright©Water Commission Support Department. All Right Reserved.</span>
+            </div>
+            <div class="footerLink">
+                <a href="http://www.president.go.kr" target="_blank" class="bluehouse" title="청와대">청와대</a>
+                <a href="https://www.gov.kr/portal/main" target="_blank" class="goverment" title="대한민국정부">대한민국정부</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

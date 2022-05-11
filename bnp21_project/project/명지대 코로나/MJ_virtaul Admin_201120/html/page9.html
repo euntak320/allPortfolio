@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>MJ CORONA</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    
+</head>
+
+<body>
+    <div id="subPage">
+        <!-- header -->
+        <div class="header">
+            <div class="topArea">
+                <h1><a href="">logo</a></h1>
+                <div class="topBtm">
+                    <span>고객센터 담당자 2님</span>
+                    <button>로그아웃</button>
+                </div>
+            </div>
+            <div class="bottomArea">
+                <span>
+                    <a href="" >병원등록</a>
+                </span>
+                <span>
+                    <a href="">기업등록</a>
+                </span>
+                <span>
+                    <a href="" class="on">의료진관리</a>
+                </span>
+                <span>
+                    <a href="">병원관리</a>
+                </span>
+            </div>
+        </div>
+        <!-- header -->
+
+        <!-- content -->
+        <div class="contentArea">
+            <div class="comLayout">
+                <div class="filterArea">
+                    <div class="top">
+                        <span class="title">문의상태</span>
+                        <div class="radioArea">
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_1">
+                                <label for="rd_1">전체</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_2">
+                                <label for="rd_2">확인</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_3">
+                                <label for="rd_3">미확인</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="fl">
+                            <div class="select">
+                                <select name="" id="">
+                                    <option value="">등록일</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+
+                                </select>
+                            </div>
+                            <div class="date">
+                                <div class="input">
+                                    <input type="text" placeholder="YYYY-MM-DD" class="datepicker">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fr">
+                            <div class="select">
+                                <select name="" id="">
+                                    <option value="">전체</option>
+                                    <option value="">이름(한글)</option>
+                                    <option value="">전문분야</option>
+
+                                </select>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="검색어를 입력해주세요">
+                                <button>검색</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comTableArea">
+                    <div class="topTxt">
+                        <span class="fl">총 0,000건</span>
+                        <div class="fr">
+                            <span>목록 개수</span>
+                            <div class="select">
+                                <select name="" id="">
+                                    <option value="">10</option>
+                                    <option value="">9</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <caption>해당 테이블은 프로피사진, 이름(한글), 연락처, 전문의자격증, 전문분야, 면허 취득연도, 학력, 경력, 의사소개로 구분되어 있습니다.</caption>
+                            <colgroup>
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:5%">
+                                <col style="width:5%">
+                                <col style="width:10%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>프로필사진</th>
+                                    <th>이름(한글)</th>
+                                    <th>연락처</th>
+                                    <th>전문의자격증</th>
+                                    <th>전문분야</th>
+                                    <th>면허 취득연도</th>
+                                    <th>학력</th>
+                                    <th>경력</th>
+                                    <th>의사소개</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr><tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr><tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr><tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr><tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr><tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr><tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr><tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr><tr>
+                                    <td>
+                                        <div class="imgSize">
+                                            <img src="assets/images/icn_image.png" alt="">
+                                        </div>
+                                    </td>
+                                    <td>홍길동</td>
+                                    <td>010-2345-6789</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagingArea">
+                        <!-- 남은 페이지가 있을땐 on 클래스 추가 -->
+                        <a href="" class="arrow prev">전 10페이지</a>
+                        <a href="" class="arrow before">전 페이지</a>
+                        <a href="" class="txt">1</a>
+                        <a href="" class="txt">2</a>
+                        <a href="" class="txt">3</a>
+                        <a href="" class="txt">4</a>
+                        <a href="" class="txt">5</a>
+                        <a href="" class="arrow after on">다음 페이지</a>
+                        <a href="" class="arrow next on">다음 10페이지</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+
+        <!-- footer -->
+        <div class="footer">
+            <span>2020 &copy; MJ. All Rights Reserved.</span>
+        </div>
+        <!-- footer -->
+    </div>
+
+    <!-- layer -->
+    <div class="layerFrame">
+        <div class="layerArea">
+            <div class="topTitle">
+                <span>의료진 조회</span>
+            </div>
+            <div class="bottomArea v2">
+                <div id="regist-container">
+                    <div class="regist-box-wrap">
+                        <div class="regist-step-wrap active-step4"> <!-- step별로  active-step1,active-step2,active-step3,active-step4-->
+                            <ol>
+                                <li>
+                                    <dl>
+                                        <dt><div class="num">1</div></dt>
+                                        <dd>의사 <br class="p-hide">기본 정보</dd>
+                                    </dl>
+                                    <div class="bar-wrap">
+                                        <span class="bar" style="width:100%;"></span> <!-- 진행률에 따라 % 값 변경해주시면 됩니다 -->
+                                    </div>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt><div class="num">2</div></dt>
+                                        <dd>진료과목 <br class="p-hide">선택</dd>
+                                    </dl>
+                                    <div class="bar-wrap">
+                                        <span class="bar" style="width:100%;"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt><div class="num">3</div></dt>
+                                        <dd>병원 <br class="p-hide">정보</dd>
+                                    </dl>
+                                    <div class="bar-wrap">
+                                        <span class="bar" style="width:100%;"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt><div class="num">4</div></dt>
+                                        <dd>계좌 <br class="p-hide">정보</dd>
+                                    </dl>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="box-form">
+                            <dl class="form-sec imp-type">
+                                <dt class="form-tt">예금주</dt>
+                                <dd class="form-cont">
+                                    <div class="ip-area">
+                                        <input type="text" id="" name="" class="default-ip" placeholder="예금주를 입력하세요.">							
+                                    </div>						
+                                </dd>
+                            </dl>	
+                            <dl class="form-sec imp-type">
+                                <dt class="form-tt">은행명</dt>
+                                <dd class="form-cont">
+                                    <div class="ip-area">
+                                        <input type="text" id="" name="" class="default-ip" placeholder="은행명을 입력하세요.">							
+                                    </div>						
+                                </dd>
+                            </dl>		
+                            <dl class="form-sec imp-type">
+                                <dt class="form-tt">계좌번호</dt>
+                                <dd class="form-cont">
+                                    <div class="ip-area">
+                                        <input type="text" id="" name="" class="default-ip" placeholder="'-'없이 입력하세요.">							
+                                    </div>						
+                                </dd>
+                            </dl>
+                        </div><!-- box-form -->
+                    </div>
+                </div>
+                <div class="layerbtn">
+                    <button type="button" class="blue">다음</button>
+                    <button type="button" onclick="layerClose();">닫기</button>
+                </div>
+            </div>
+            
+            <button type="button" class="closeBtn" onclick="layerClose();">닫기</button>
+        </div>
+    </div>
+</body>
+
+</html>

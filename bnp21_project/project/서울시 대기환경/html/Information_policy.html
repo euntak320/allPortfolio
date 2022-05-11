@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>서울시특별시 대기환경정보</title>
+  <link rel="stylesheet" href="assets/css/slick.css" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="assets/js/slick.min.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="header_area">
+        <a href="javascript:void();" class="m_menu">햄버거메뉴</a>
+        <span class="logo_area">로고</span>
+        <a href="javascript:void();" class="spot_icon">위치표시</a>
+      </div>
+    </header>
+    <div class="left_menu">
+      <div class="slide_nav">
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img cloud">구름이미지</span>
+            <span class="txt">대기현황</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">미세먼지</span>
+            <span class="menu_txt">초미세먼지</span>
+            <span class="menu_txt">오존</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img act">행동요령 이미지</span>
+            <span class="txt">행동요령</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt sub_menu">예보</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+            <span class="menu_txt sub_menu">경보</span>
+            <span class="hidden_menu_area ">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img list">대기통계 이미지</span>
+            <span class="txt">대기통계</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">평균대기오염도</span>
+            <span class="menu_txt">기간별</span>
+            <span class="menu_txt">경보발령</span>
+            <span class="menu_txt">장기간추이</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img look">정보마당 이미지</span>
+            <span class="txt">정보마당</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">대기환경기준</span>
+            <span class="menu_txt sub_menu">대기오염물질</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 test">진단평가결과</span>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 moblie">문자서비스신청</span>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="sub_title_area">
+        <span class="title_sub">대기통계 &gt; 대기질개선정책</span>
+      </div>
+      <div class="content_frame">
+        <div class="policy_txt_list">
+          <div class="policy_box">
+            <span class="title one">비상저감조치</span>
+            <div class="txt_box">
+              <span class="sub_title">당일 17시 당일 17시 기준 수도권(서울·인천·경기도)에서 2개 시·도 이상 아래의 조건을 충족할 경우 시행됩니다.</span>
+              <p>
+                <span class="txt">① 당일 0~16시 PM-2.5 평균 농도가 50㎍/㎥ 초과, 다음날 24시간 평균 농도가 50㎍/㎥ 초과 예측</span>
+                <span class="txt">② 당일 0~16시 사이 경보권역중 한곳 이상 PM-2.5 주의보 또는 경보발령, 다음날 24시간 평균 농도가 50㎍/㎥ 초과 예측</span>
+                <span class="txt">③ 다음날 PM-2.5 24시간 평균 농도 75㎍/㎥ 초과 예측</span>
+              </p>
+            </div>
+          </div>
+          <div class="policy_box">
+            <span class="title two">시민 참여형 '차량 2부제'</span>
+            <div class="txt_box">
+              <p>
+                <span class="txt style">- 서울시 전 지역에서 2005년 12월 31일 이전 수도권에 등록된 총중량 2.5톤이상 경유차량 운행제한(저감장치 부착차량 제외)</span>
+                <span class="txt">※ 위반시 과태료 10만원 부과</span>
+              </p>
+            </div>
+          </div>
+          <div class="policy_box">
+            <span class="title three">경유 차량 운행 제한</span>
+            <div class="txt_box">
+              <p>
+                <span class="txt none_txt">홀수날에는 홀수 차량이, 짝수날에는 짝수 차량이 운행(주말, 공휴일제외)</span>
+              </p>
+            </div>
+          </div>
+          <div class="policy_box">
+            <span class="title four">발령 익일 06시 ~ 21시</span>
+            <div class="txt_box">
+              <p>
+                <span class="txt style">- 제외대상 : 외교용·보도용,장애인·노약자·영유아·어린이 동승차량 및 결혼·장례식,친환경차,긴급공무수행차량(소방,경찰,의료 업무관련 등) 및 기타 기관장이 공무수행을 위해 필요하다고 인정하는 차량 제외</span>
+                <span class="txt style">- 시민편의 문화, 체육, 의료시설 및 정부 행정 공공기관은 2부제 시행</span>
+              </p>
+            </div>
+          </div>
+          <div class="policy_box">
+            <span class="title five">사업장·공사장 ‘조업 단축’</span>
+            <div class="txt_box">
+              <p>
+                <span class="txt style">비상저감조치 시행일 06시 ~ 21시까지</span>
+                <span class="txt style">- 대기배출사업장 : 1~3종 사업장</span>
+                <span class="txt style">- 건설공사장 : 비산먼지 발생사업장</span>
+                <span class="txt style">※ 야외 건축공사 부지의 건축철거, 절단, 토석, 도장 등의 공사</span>
+              </p>
+            </div>
+          </div>
+          <div class="policy_box">
+            <span class="title six">익일 21시에 자동 해제</span>
+            <div class="txt_box">
+              <p>
+                <span class="txt style">비상저감조치가 발령된 날 익일 21시에 자동 해제됩니다.</span>
+              </p>
+            </div>
+          </div>
+          <div class="policy_box">
+            <span class="title seven">미세먼지 비상저감조치란 ?</span>
+            <div class="txt_box">
+              <p>
+                <span class="txt none_txt">서울 지역 내 고농도 미세먼지(PM-2.5)가 일정기간 지속될 경우, 시민건강을 위해 미세먼지를 단기간에 줄이고자 자동차,공장, 공사장의 대기오염 물질을 줄이는 조치를 말합니다.</span>
+              </p>
+            </div>
+          </div>
+          <div class="policy_box">
+            <span class="title eight">왜 필요한가요 ?</span>
+            <div class="txt_box">
+              <p>
+                <span class="txt none_txt">미세먼지의 발생원인은 국외 요인과 국내 요인이 있습니다. 비상저감조치는 미세먼지 농도가 높을 때 단기간에 강력한 조치로 미세먼지를 낮추기 위한 것으로, 국내 내부 발생요인을 최대한 줄여야 중국등으로부터 고농도 미세먼지가 유입되더라도 급격히 상승하는 미세먼지를 완화시킬 수 있습니다.</span>
+              </p>
+            </div>
+          </div>
+          <div class="policy_box">
+            <span class="title nine">언제 시행되나요?</span>
+            <div class="txt_box">
+              <p>
+                <span class="txt none_txt">2018년 11월 30일부터 수도권(서울·인천·경기도) 2개 시·도이상 초미세먼지 농도가 발령기준을 충족할 경우 다음날 6시부터 21시까지 비상저감조치가 시행됩니다. (※ 토·공휴일에도 비상저감조치시행, 주차장 전면폐쇄와 공해차량 운행제한은 미시행)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_area">
+        <div class="left_area">
+          <span>&copy; Seoul city</span>
+        </div>
+        <div class="right_area">
+          <span class="pc_btn">PC 화면보기</span>
+          <div class="com_select">
+            <select name="" id="">
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+            </select>
+          </div>
+          <a href="#top" class="black_btn">위로가기</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="position_area">
+    <div class="title_area">
+      <span class="x_btn">닫기버튼</span>
+      <span class="title">관심지역 설정하기</span>
+    </div>
+    <div class="choice_area">
+      <span class="align">가나다 순</span>
+      <div class="com_radio">
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강남구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강서구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">관악구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">광진구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">구로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">금천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">노원구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">도봉구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동대문구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동작구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">마포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">서초구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">양천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">영등포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">용산구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">은평구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">종로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중량구</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer_area">
+    <span class="x_btn">닫기버튼</span>
+    <div class="criteria_area">
+      <div class="align_area">
+        <span class="title">미세먼지</span>
+        <div class="color_box_area">
+          <div class="color_box">
+            <span class="txt blue">좋음</span>
+            <span class="detail_txt">0~30</span>
+          </div>
+          <div class="color_box">
+            <span class="txt green">보통</span>
+            <span class="detail_txt">31~80</span>
+          </div>
+          <div class="color_box">
+            <span class="txt orange">나쁨</span>
+            <span class="detail_txt">81~150</span>
+          </div>
+          <div class="color_box">
+            <span class="txt red">매우나쁨</span>
+            <span class="detail_txt">151이상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="criteria_area">
+      <div class="align_area">
+        <span class="title">초미세먼지</span>
+        <div class="color_box_area">
+          <div class="color_box">
+            <span class="txt blue">좋음</span>
+            <span class="detail_txt">0~15</span>
+          </div>
+          <div class="color_box">
+            <span class="txt green">보통</span>
+            <span class="detail_txt">36~35</span>
+          </div>
+          <div class="color_box">
+            <span class="txt orange">나쁨</span>
+            <span class="detail_txt">36~75</span>
+          </div>
+          <div class="color_box">
+            <span class="txt red">매우나쁨</span>
+            <span class="detail_txt">76이상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="criteria_area">
+      <div class="align_area">
+        <span class="title">오존</span>
+        <div class="color_box_area">
+          <div class="color_box">
+            <span class="txt blue">좋음</span>
+            <span class="detail_txt">0~0.030</span>
+          </div>
+          <div class="color_box">
+            <span class="txt green">보통</span>
+            <span class="detail_txt">0.031~0.091</span>
+          </div>
+          <div class="color_box">
+            <span class="txt orange">나쁨</span>
+            <span class="detail_txt">0.091~0.150</span>
+          </div>
+          <div class="color_box">
+            <span class="txt red">매우나쁨</span>
+            <span class="detail_txt">0.151이상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

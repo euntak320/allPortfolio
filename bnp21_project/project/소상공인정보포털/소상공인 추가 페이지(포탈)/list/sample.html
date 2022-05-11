@@ -1,0 +1,2168 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Meta, title, CSS, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>자영업지원센터 사업관리 시스템</title>
+    <!--[if lt IE 9]>
+			<script src="/js/html5shiv.min.js"></script>
+		<![endif]-->
+    <!-- scripts and styles -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/rMateGridH5Sample.css" />
+    <link rel="stylesheet" type="text/css" href="css/rMateH5.css" />
+    <!-- rMateChartH5 라이센스 -->
+    <script type="text/javascript" src="/js/rMateGridH5License.js"></script>
+    <!-- rMateGridH5 라이브러리 -->
+    <script type="text/javascript" src="/js/rMateGridH5.js"></script>
+
+    <!-- smartEditor -->
+    <script type="text/javascript" src="/smartEditor/js/HuskyEZCreator.js"></script>
+    <!-- smartEditor -->
+    <link rel="stylesheet" type="text/css" href="/smartEditor/css/smart_editor2.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+    <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/ico/favicon.ico">
+
+    <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="css/jquery/jquery-ui-1.8.16.main.css" />
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="/js/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-ui-1.8.16.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-ui.datepicker.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.number.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.maskedinput-1.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.dialog.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.numeric.js"></script>
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/js/common-util.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/sbdcCommon.js"></script>
+    <script type="text/javascript" src="/js/downloadProgress.js"></script>
+    <script type="text/javascript" src="/js/default.js"></script>
+    <script type="text/javascript" src="/js/printThis.js"></script>
+
+    <!-- 트리구조 추가 -->
+    <link rel="stylesheet" type="text/css" href="/css/jstree.min.css" />
+    <script type="text/javascript" src="/js/jstree.min.js"></script>
+
+    <!-- function scripts -->
+</head>
+
+<body>
+    <div class="container-content">
+        <div class="sidenav-wrap">
+            <ul class="nav sidenav" id="leftMenu">
+                <li class="active"><a href=""><i class="fa fa-file-text-o"></i>고객등록</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>상담등록</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고객이력관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>SMS전송이력</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>사업자번호등록</a></li>
+            </ul>
+        </div>
+        <div class="content-wrap">
+            <div class="content">
+                <div class="content">
+
+
+                    <div style="margin:30px 0">
+                        <span style="display: block; font-size:20px; color:#333;">공통 테이블</span></span>
+                        <h3>사업장목록</h3>
+                        <table class="table table-bordered write" id="cstmr">
+                            <colgroup>
+                                <col style="width:130px">
+                                <col style="width:calc(50% - 132px)">
+                                <col style="width:130px">
+                                <col style="width:calc(50% - 132px)">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>고객번호</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="csNo" class="invisible">고객번호</label>
+                                            <input type="text" class="form-control input-sm" id="csNo" name="csNo"
+                                                value="" readonly="readonly">
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default" id="btnCstmrSearch" href="#none"><i
+                                                        class="fa fa-search" aria-hidden="true"></i></a>
+                                            </span>
+                                            <!-- <a class="btn btn-primary" href="#none">변경내역</a> -->
+                                        </div>
+                                    </td>
+                                    <th><span class="red">*</span>성&nbsp;&nbsp;&nbsp;&nbsp;별</th>
+                                    <td>
+                                        <label for="sexdstn" class="invisible">성별</label>
+                                        <select class="form-control input-sm" id="sexdstn" name="sexdstn">
+                                            <option value="">선택</option>
+
+                                            <option value="1">남</option>
+
+                                            <option value="2">여</option>
+
+                                            <option value="5">재외국인남</option>
+
+                                            <option value="6">재외국인여</option>
+
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="red">*</span>고&nbsp;객&nbsp;명</th>
+                                    <td>
+                                        <label for="csNm" class="invisible">고객명</label>
+                                        <input type="text" class="form-control input-sm" id="csNm" name="csNm" value="">
+                                    </td>
+                                    <th><span class="red">*</span>생년월일</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="brthdy" class="invisible">생년월일</label>
+                                            <input type="text" class="form-control input-sm hasDatepicker" id="brthdy"
+                                                name="brthdy" value=""><img class="ui-datepicker-trigger"
+                                                src="/images/sub/btn_calendar.gif" alt="달력" title="달력"
+                                                style="margin-left:1px; margin-bottom:1px; vertical-align:middle; cursor: Pointer;">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>전화번호</th>
+                                    <td>
+                                        <label for="telNo1" class="invisible">지역번호</label>
+                                        <select class="form-control input-sm" id="telNo1" name="telNo1">
+
+                                            <option value="02">서울(02)</option>
+
+                                            <option value="051">부산(051)</option>
+
+                                            <option value="032">인천(032)</option>
+
+                                            <option value="053">대구(053)</option>
+
+                                            <option value="062">광주(062)</option>
+
+                                            <option value="042">대전(042)</option>
+
+                                            <option value="052">울산(052)</option>
+
+                                            <option value="044">세종(044)</option>
+
+                                            <option value="031">경기(031)</option>
+
+                                            <option value="033">강원(033)</option>
+
+                                            <option value="043">충북(043)</option>
+
+                                            <option value="041">충남(041)</option>
+
+                                            <option value="054">경북(054)</option>
+
+                                            <option value="055">경남(055)</option>
+
+                                            <option value="063">전북(063)</option>
+
+                                            <option value="061">전남(061)</option>
+
+                                            <option value="064">제주(064)</option>
+
+                                            <option value="0502">KT(0502)</option>
+
+                                            <option value="0503">온세(0503)</option>
+
+                                            <option value="0504">온세(0504)</option>
+
+                                            <option value="0505">Dacom(0505)</option>
+
+                                            <option value="070">인터넷(070)</option>
+
+                                            <option value="080">착신과금(080)</option>
+
+                                            <option value="010">이동전화(010)</option>
+
+                                            <option value="011">이동전화(011)</option>
+
+                                            <option value="016">이동전화(016)</option>
+
+                                            <option value="017">이동전화(017)</option>
+
+                                            <option value="019">이동전화(019)</option>
+
+                                        </select>
+                                        <span class="input-text">- </span>
+                                        <label for="telNo2" class="invisible">국번</label>
+                                        <input type="text" class="form-control input-xs integer" id="telNo2"
+                                            name="telNo2" value="" maxlength="4"
+                                            onkeyup="fn.autoNextFocus(this, 4, 'telNo3')">
+                                        <label for="phone3" class="invisible">전화번호</label>
+                                        <span class="input-text"> - </span>
+                                        <input type="text" class="form-control input-xs integer" id="telNo3"
+                                            name="telNo3" value="" maxlength="4">
+                                    </td>
+                                    <th><span class="red">*</span>휴대전화번호</th>
+                                    <td>
+                                        <label for="phone4" class="invisible">휴대 전화번호</label>
+                                        <select class="form-control input-sm" id="moblPhonNo1" name="moblPhonNo1">
+                                            <option value="010">010</option>
+                                            <option value="011">011</option>
+                                            <option value="016">016</option>
+                                            <option value="017">017</option>
+                                            <option value="018">018</option>
+                                            <option value="019">019</option>
+                                        </select>
+                                        <span class="input-text">- </span>
+                                        <label for="phone5" class="invisible">국번</label>
+                                        <input type="text" class="form-control input-xs integer" id="moblPhonNo2"
+                                            name="moblPhonNo2" value="" maxlength="4"
+                                            onkeyup="fn.autoNextFocus(this, 4, 'moblPhonNo3')">
+                                        <label for="phone6" class="invisible">전화번호</label>
+                                        <span class="input-text"> - </span>
+                                        <input type="text" class="form-control input-xs integer" id="moblPhonNo3"
+                                            name="moblPhonNo3" value="" maxlength="4">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2"><span class="red">*</span>주소</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="postNo" class="invisible">우편번호</label>
+                                            <input type="text" class="form-control input-sm" id="postNo" name="postNo"
+                                                value="" readonly="readonly">
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default" href="#" id="btnGetZipCode"
+                                                    onclick="fn.setAdress('1')"><i class="fa fa-search"
+                                                        aria-hidden="true"></i></a>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <th>이메일</th>
+                                    <td>
+                                        <label for="email" class="invisible">이메일</label>
+                                        <input type="text" class="form-control input-full" id="mail" name="mail"
+                                            value="" placeholder="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <label for="bassAdres" class="invisible">기본주소</label>
+                                        <input type="text" class="form-control input-lg" id="baseAdres" name="baseAdres"
+                                            value="" readonly="readonly">
+                                        <label for="detailAdres" class="invisible">상세주소</label>
+                                        <input type="text" class="form-control input-lg" id="detailAdres"
+                                            name="detailAdres" value="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0">
+                        <span style="display: block; font-size:20px; color:#333;">그리드 영역</span>
+                        <h3>사업장목록</h3>
+                        <div id="gridHolder"></div>
+                    </div>
+
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0">
+                        <span style="display: block; font-size:20px; color:#333;">테이블 type2</span></span>
+                        <h3>사업장목록</h3>
+                        <table class="table table-bordered write" id="entrps">
+                            <colgroup>
+                                <col style="width:130px">
+                                <col style="width:calc(50% - 132px)">
+                                <col style="width:130px">
+                                <col style="width:calc(50% - 132px)">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><span class="red">*</span>업체명</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="item6" class="invisible">업체명</label>
+                                            <input type="text" class="form-control input-md" id="bplcNm" name="bplcNm"
+                                                value="" readonly="readonly">
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default" id="btnEntrpsSearch" href="#none"><i
+                                                        class="fa fa-search" aria-hidden="true"></i></a>
+                                            </span>
+                                            <!--<a class="btn btn-primary" href="#none">변경내역</a> -->
+                                        </div>
+                                    </td>
+                                    <th><span class="red">*</span>기업형태</th>
+                                    <td>
+                                        <label for="bplcStleCd" class="invisible">기업형태</label>
+                                        <select class="form-control" id="bplcStleCd" name="bplcStleCd">
+                                            <option value="">선택</option>
+
+                                            <option value="10">개인(단독)</option>
+
+                                            <option value="20">개인(동업)</option>
+
+                                            <option value="30">법인</option>
+
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="red">*</span>사업자등록번호</th>
+                                    <td>
+                                        <label for="bsnmRegistNo1" class="invisible">사업자등록번호</label>
+                                        <input type="text" class="form-control integer" style="width:30px;"
+                                            id="bsnmRegistNo1" name="bsnmRegistNo1" value="" maxlength="3"
+                                            onkeyup="fn.autoNextFocus(this, 3, 'bsnmRegistNo2')">
+                                        <span class="input-text">- </span>
+                                        <label for="bsnmRegistNo2" class="invisible">사업자등록번호</label>
+                                        <input type="text" class="form-control integer" style="width:20px;"
+                                            id="bsnmRegistNo2" name="bsnmRegistNo2" value="" maxlength="2"
+                                            onkeyup="fn.autoNextFocus(this, 2, 'bsnmRegistNo3')">
+                                        <label for="bsnmRegistNo3" class="invisible">사업자등록번호</label>
+                                        <span class="input-text"> - </span>
+                                        <input type="text" class="form-control input-xs integer" id="bsnmRegistNo3"
+                                            name="bsnmRegistNo3" value="" maxlength="5">
+                                    </td>
+                                    <th>법인등록번호</th>
+                                    <td>
+                                        <label for="cprRegistNo1" class="invisible">법인등록번호</label>
+                                        <input type="text" class="form-control input-xs integer" id="cprRegistNo1"
+                                            name="cprRegistNo1" value="" maxlength="6"
+                                            onkeyup="fn.autoNextFocus(this, 6, 'cprRegistNo2')">
+                                        <label for="cprRegistNo2" class="invisible">법인등록번호</label>
+                                        <span class="input-text"> - </span>
+                                        <input type="text" class="form-control input-sm integer" id="cprRegistNo2"
+                                            name="cprRegistNo2" value="" maxlength="7">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th rowspan="2"><span class="red">*</span>사업장 주소</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="bplcZipCode" class="invisible">우편번호</label>
+                                            <input type="text" class="form-control input-sm" id="bplcZipCode"
+                                                name="bplcZipCode" value="" readonly="readonly">
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default" href="#none" id="btnBplcZipCode"
+                                                    onclick="fn.setAdress('2')"><i class="fa fa-search"
+                                                        aria-hidden="true"></i></a>
+                                            </span>
+                                            <label for="bplcBaseAdres" class="invisible">기본주소</label>
+                                            <input type="text" class="form-control input-lg" id="bplcBaseAdres"
+                                                name="bplcBaseAdres" value="" readonly="readonly">
+                                        </div>
+                                    </td>
+                                    <th><span class="red"></span>사업장 전화번호</th>
+                                    <td>
+                                        <label for="bplcTelNo" class="invisible">사업장 전화번호</label>
+                                        <select class="form-control input-sm" id="bplcTelNo1" name="bplcTelNo1">
+
+                                            <option value="02">서울(02)</option>
+
+                                            <option value="051">부산(051)</option>
+
+                                            <option value="032">인천(032)</option>
+
+                                            <option value="053">대구(053)</option>
+
+                                            <option value="062">광주(062)</option>
+
+                                            <option value="042">대전(042)</option>
+
+                                            <option value="052">울산(052)</option>
+
+                                            <option value="044">세종(044)</option>
+
+                                            <option value="031">경기(031)</option>
+
+                                            <option value="033">강원(033)</option>
+
+                                            <option value="043">충북(043)</option>
+
+                                            <option value="041">충남(041)</option>
+
+                                            <option value="054">경북(054)</option>
+
+                                            <option value="055">경남(055)</option>
+
+                                            <option value="063">전북(063)</option>
+
+                                            <option value="061">전남(061)</option>
+
+                                            <option value="064">제주(064)</option>
+
+                                            <option value="0502">KT(0502)</option>
+
+                                            <option value="0503">온세(0503)</option>
+
+                                            <option value="0504">온세(0504)</option>
+
+                                            <option value="0505">Dacom(0505)</option>
+
+                                            <option value="070">인터넷(070)</option>
+
+                                            <option value="080">착신과금(080)</option>
+
+                                            <option value="010">이동전화(010)</option>
+
+                                            <option value="011">이동전화(011)</option>
+
+                                            <option value="016">이동전화(016)</option>
+
+                                            <option value="017">이동전화(017)</option>
+
+                                            <option value="019">이동전화(019)</option>
+
+                                        </select>
+                                        <span class="input-text">- </span>
+                                        <label for="bplcTelNo2" class="invisible">사업장 전화번호</label>
+                                        <input type="text" class="form-control input-xs integer" id="bplcTelNo2"
+                                            name="bplcTelNo2" value="" maxlength="4"
+                                            onkeyup="fn.autoNextFocus(this, 4, 'bplcTelNo3')">
+                                        <span class="input-text"> - </span>
+                                        <label for="bplcTelNo3" class="invisible">사업장 전화번호</label>
+                                        <input type="text" class="form-control input-xs integer" id="bplcTelNo3"
+                                            name="bplcTelNo3" value="" maxlength="4">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="bplcDetailAdres" class="invisible">상세주소</label>
+                                        <input type="text" class="form-control input-lg" id="bplcDetailAdres"
+                                            name="bplcDetailAdres" value="">
+                                    </td>
+                                    <th>종업원수</th>
+                                    <td>
+                                        <label for="empCnt" class="invisible">종업원수</label>
+                                        <input type="text" class="form-control input-xs integer" id="empCnt"
+                                            name="empCnt" value="" maxlength="3">
+                                        <span class="input-text">명</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="red">*</span>업종</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="indutyCd" class="invisible">업종</label>
+                                            <input type="text" class="form-control input-sm" id="indutyCd"
+                                                name="indutyCd" value="" readonly="readonly">
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default" href="#none" id="btnIndutyCd"><i
+                                                        class="fa fa-search" aria-hidden="true"></i></a>
+                                            </span>
+                                            <label for="indutyNm" class="invisible">업종</label>
+                                            <input type="text" class="form-control input-lg" id="indutyNm"
+                                                name="indutyNm" value="" disabled="">
+                                        </div>
+                                    </td>
+                                    <th>아이템명</th>
+                                    <td>
+                                        <label for="itmNm" class="invisible">아이템명</label>
+                                        <input type="text" class="form-control input-full" id="itmNm" name="itmNm"
+                                            value="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="red">*</span>개업년월일</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="fondDe" class="invisible">개업년월일</label>
+                                            <input type="text" class="form-control input-sm hasDatepicker" id="fondDe"
+                                                name="fondDe" value=""><img class="ui-datepicker-trigger"
+                                                src="/images/sub/btn_calendar.gif" alt="달력" title="달력"
+                                                style="margin-left:1px; margin-bottom:1px; vertical-align:middle; cursor: Pointer;">
+                                        </div>
+                                    </td>
+                                    <th><span class="red">*</span>소유구분</th>
+                                    <td>
+                                        <label for="posesnSeCd" class="invisible">소유구분</label>
+                                        <select class="form-control input-sm" id="posesnSeCd" name="posesnSeCd">
+                                            <option value="">선택</option>
+
+                                            <option value="10">자가 </option>
+
+                                            <option value="20">임차 </option>
+
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="red">*</span>입지</th>
+                                    <td>
+                                        <label for="lctSeCd" class="invisible">입지</label>
+                                        <select class="form-control" id="lctSeCd" name="lctSeCd">
+                                            <option vlaue="">선택</option>
+                                            <option value="10">도심형 </option>
+
+                                            <option value="20">주거형 </option>
+
+                                            <option value="30">오피스형 </option>
+
+                                            <option value="40">유흥가 </option>
+
+                                            <option value="50">학교,학원 </option>
+
+                                            <option value="60">전문상가 </option>
+
+                                            <option value="90"> 기타 </option>
+
+                                        </select>
+                                    </td>
+                                    <th><span class="red">*</span>면적</th>
+                                    <td>
+                                        <label for="ar" class="invisible">면적</label>
+                                        <input type="text" class="form-control input-xs decimal-2-places" id="ar"
+                                            name="ar" value="" maxlength="6">
+                                        <span class="input-text">㎡</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0">
+                        <span style="display: block; font-size:20px; color:#333;">테이블 type2</span></span>
+                        <h3>사업장목록</h3>
+                        <table class="table table-bordered write">
+                            <colgroup>
+                                <col style="width:10%">
+                                <col style="width:20%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                                <col style="width:10%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>고객번호</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="csNo" class="invisible">고객번호</label>
+                                            <input type="text" class="form-control input-sm" id="csNo" name="csNo"
+                                                value="" readonly="readonly">
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default" href="#none" id="btnCstmrSearch"><i
+                                                        class="fa fa-search" aria-hidden="true"></i></a>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <th>고객명</th>
+                                    <td></td>
+                                    <th>성별</th>
+                                    <td></td>
+                                    <th>생년월일</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>주소</th>
+                                    <td colspan="5"> &nbsp; </td>
+                                    <th>휴대전화번호</th>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0">
+                        <span style="display: block; font-size:20px; color:#333;">테이블 type2</span></span>
+                        <h3>사업장목록</h3>
+                        <table class="table table-bordered write">
+                            <colgroup>
+                                <col style="width:10%">
+                                <col style="width:20%">
+                                <col style="width:10%">
+                                <col style="width:20%">
+                                <col style="width:10%">
+                                <col style="width:20%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>업체번호</th>
+                                    <td></td>
+                                    <th>업체명</th>
+                                    <td></td>
+                                    <th>사업자등록번호</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>설립일자</th>
+                                    <td></td>
+                                    <th>업종</th>
+                                    <td></td>
+                                    <th>종업원수</th>
+                                    <td><span class="input-text">명</span></td>
+                                </tr>
+                                <tr>
+                                    <th>사업장 주소</th>
+                                    <td colspan="3"> &nbsp; </td>
+                                    <th>사업장 전화번호</th>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0">
+                        <span style="display: block; font-size:20px; color:#333;">테이블 type2</span>
+                        <h3>사업장목록</h3>
+                        <table class="table table-bordered write">
+                            <colgroup>
+                                <col style="width:130px">
+                                <col style="width:calc(50% - 130px)">
+                                <col style="width:130px">
+                                <col style="width:calc(50% - 130px)">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th><span class="red">*</span>상담일자</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="cnslDe" class="invisible">상담일자</label>
+                                            <input type="text" class="form-control input-sm" id="cnslDe" name="cnslDe"
+                                                value="" readonly="readonly">
+                                        </div>
+                                    </td>
+                                    <th>상담자</th>
+                                    <td>
+                                        <label for="sname" class="invisible">상담자</label>
+                                        <input type="text" class="form-control input-sm" id="sname" value="개발테스트"
+                                            disabled="">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="red">*</span>업체구분</th>
+                                    <td>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="entrpsSeCd" id="entrpsSeCd1" value="1"> 예비
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="entrpsSeCd" id="entrpsSeCd2" value="2"> 6개월이내
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="entrpsSeCd" id="entrpsSeCd3" value="3"> 6개월초과
+                                        </label>
+                                    </td>
+                                    <th><span class="red">*</span>보증,융자신청</th>
+                                    <td>
+                                        <label for="grntySetSeCd" class="invisible">보증,융자신청</label>
+                                        <select class="form-control input-wd" id="grntySetSeCd" name="grntySetSeCd">
+                                            <option value="1">여</option>
+                                            <option value="2">부</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="red">*</span>신청내용</th>
+                                    <td colspan="3">
+                                        <label for="reqstCn" class="invisible">신청내용</label>
+                                        <textarea class="form-control input-full" rows="10" id="reqstCn"
+                                            name="reqstCn"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><span class="red">*</span>상담결과</th>
+                                    <td colspan="3">
+                                        <label for="cnslResultContent" class="invisible">상담결과</label>
+                                        <textarea class="form-control input-full" rows="10" id="cnslResultContent"
+                                            name="cnslResultContent"></textarea>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0">
+                        <span style="display: block; font-size:20px; color:#333;">테이블 달력</span>
+                        <h3>고객 이력 관리</h3>
+                        <table class="table table-bordered view">
+                            <colgroup>
+                                <col style="width:10%">
+                                <col style="width:20%">
+                                <col style="width:10%">
+                                <col style="width:20%">
+                                <col style="width:10%">
+                                <col style="width:20%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>고객명</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="cstmrNm" class="invisible">고객명</label>
+                                            <input type="text" class="form-control input-sm" id="cstmrNm" name="cstmrNm"
+                                                value="" readonly="readonly">
+                                            <span class="input-group-btn">
+                                                <a class="btn btn-default" id="btnCstmrSearch" href="#none"><i
+                                                        class="fa fa-search" aria-hidden="true"></i></a>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <th>진행상태</th>
+                                    <td>
+                                        <select class="form-control input-sm" id="histJobSe" name="histJobSe">
+                                            <option value="">전체</option>
+                                            <option value="0">진행중</option>
+                                            <option value="1">처리완료</option>
+                                        </select>
+                                    </td>
+                                    <th>기&nbsp;&nbsp;&nbsp;간</th>
+                                    <td>
+                                        <input type="text" class="form-control input-sm text-center" id="startDe"
+                                            name="startDe" value="" placeholder=""><img class="ui-datepicker-trigger"
+                                            src="/images/sub/btn_calendar.gif" alt="달력" title="달력">
+                                        <input type="text" class="form-control input-sm text-center" id="endDe"
+                                            name="endDe" value="" placeholder=""><img class="ui-datepicker-trigger"
+                                            src="/images/sub/btn_calendar.gif" alt="달력" title="달력">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <span class="fr">
+                                            <a href="#none" class="btn btn-point" id="btnSelect"><i
+                                                    class="fa fa-search"></i>검색</a>
+                                            <a href="#none" class="btn btn-default" id="btnCancel"><i
+                                                    class="fa fa-repeat"></i>초기화</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0;">
+                        <span style="display: block; font-size:20px; color:#333;">한줄 테이블</span>
+                        <h3>고객 이력 관리</h3>
+                        <table class="table table-bordered view">
+                            <colgroup>
+                                <col style="width:7%">
+                                <col style="width:14%">
+                                <col style="width:7%">
+                                <col style="width:14%">
+                                <col style="width:7%">
+                                <col style="width:14%">
+                                <col style="width:7%">
+                                <col style="width:14%">
+                                <col style="width:16%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>수신번호</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="rcvPhnId" class="invisible">수신번호</label>
+                                            <input maxlength="10" type="text" class="form-control input-full schInput"
+                                                id="rcvPhnId" name="rcvPhnId" placeholder="" value="" title="수신번호">
+                                        </div>
+                                    </td>
+                                    <th>메세지</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="sndMsg" class="invisible">메시지</label>
+                                            <input maxlength="50" type="text" class="form-control input-full schInput"
+                                                id="sndMsg" name="sndMsg" placeholder="" value="" title="메세지">
+                                        </div>
+                                    </td>
+                                    <th>발신자</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="rcvPhnId" class="invisible">발신자</label>
+                                            <input maxlength="50" type="text" class="form-control input-full schInput"
+                                                id="sendUserNm" name="sendUserNm" placeholder="" value="" title="발신자">
+                                        </div>
+                                    </td>
+                                    <th>결과</th>
+                                    <td>
+                                        <label for="rsltVal" class="invisible">결과</label>
+                                        <select class="form-control input-full" id="rsltVal" name="rsltVal">
+                                            <option value=""> 전체</option>
+                                            <option value="S">성공</option>
+                                            <option value="F">실패</option>
+                                            <option value="N">미발송</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <span class="fr">
+                                            <a href="#none" class="btn btn-point" id="btnSelect"><i
+                                                    class="fa fa-search"></i>검색</a>
+                                            <a href="#none" class="btn btn-default" id="btnCancel"><i
+                                                    class="fa fa-repeat"></i>초기화</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0;">
+                        <span style="display: block; font-size:20px; color:#333;">한줄 테이블</span>
+                        <h3>시설개선 관리</h3>
+                        <div>
+                            <table class="table table-bordered view">
+                                <colgroup>
+                                    <col style="width:10%">
+                                    <col style="width:23%">
+                                    <col style="width:10%">
+                                    <col style="width:23%">
+                                    <col style="width:10%">
+                                    <col style="width:24%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>사업구분</th>
+                                        <td>
+                                            <select id="bsnsSeCode" name="bsnsSeCode"
+                                                class="form-control input-hm schInput">
+                                                <option value="">사업구분 선택</option>
+
+                                                <option value="FIS01">시설개선 지원사업 </option>
+
+                                                <option value="FIS02">시설개선 골목상권 </option>
+
+                                                <option value="FIS03">코로나19 희망드림 </option>
+
+                                                <option value="FIS06">시설개선 관악상권 르네상스 </option>
+
+                                            </select> <br>
+                                        </td>
+                                        <th>사업분류</th>
+                                        <td>
+                                            <select id="bsnsClCode" name="bsnsClCode"
+                                                class="form-control input-hm schInput">
+                                                <option value="">사업분류 선택</option>
+                                            </select>
+                                        </td>
+                                        <th>접수번호</th>
+                                        <td><input type="text" maxlength="20" id="schCnslReqstSn" name="schCnslReqstSn"
+                                                value="" class="form-control input-hm schInput"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>신청인</th>
+                                        <td><input maxlength="10" type="text" id="rprsntvNm" name="rprsntvNm" value=""
+                                                class="form-control input-hm schInput"></td>
+                                        <th>업체명</th>
+                                        <td><input maxlength="10" type="text" id="cmpnm" name="cmpnm" value=""
+                                                class="form-control input-hm schInput"></td>
+                                        <th>지점</th>
+                                        <td>
+                                            <select id="schCenterCode" name="schCenterCode">
+                                                <option value="">지점 선택</option>
+                                                <option value="사업기획팀">사업기획팀</option>
+
+
+
+                                                <option value="경영지원팀">경영지원팀</option>
+
+
+
+                                                <option value="창업지원1팀">창업지원1팀</option>
+
+
+
+                                                <option value="창업지원2팀">창업지원2팀</option>
+
+
+
+                                                <option value="창업보증팀">창업보증팀</option>
+
+
+
+                                                <option value="창업지원팀">창업지원팀</option>
+
+
+
+                                                <option value="성장지원팀">성장지원팀</option>
+
+
+
+
+
+                                                <option value="명동지점">명동지점</option>
+
+
+
+                                                <option value="마포지점">마포지점</option>
+
+
+
+                                                <option value="종로지점">종로지점</option>
+
+
+
+                                                <option value="은평지점">은평지점</option>
+
+
+
+
+
+                                                <option value="성동지점">성동지점</option>
+
+
+
+                                                <option value="강북지점">강북지점</option>
+
+
+
+                                                <option value="중랑지점">중랑지점</option>
+
+
+
+                                                <option value="동대문지점">동대문지점</option>
+
+
+
+                                                <option value="도봉지점">도봉지점</option>
+
+
+
+
+
+                                                <option value="강남지점">강남지점</option>
+
+
+
+                                                <option value="송파지점">송파지점</option>
+
+
+
+                                                <option value="강동지점">강동지점</option>
+
+
+
+                                                <option value="이수지점">이수지점</option>
+
+
+
+
+
+                                                <option value="강서지점">강서지점</option>
+
+
+
+                                                <option value="구로지점">구로지점</option>
+
+
+
+                                                <option value="영등포지점">영등포지점</option>
+
+
+
+                                                <option value="금천지점">금천지점</option>
+
+
+
+                                                <option value="광진지점">광진지점</option>
+
+
+
+                                                <option value="양천지점">양천지점</option>
+
+
+
+                                                <option value="용산지점">용산지점</option>
+
+
+
+                                                <option value="서대문지점">서대문지점</option>
+
+
+
+                                                <option value="관악지점">관악지점</option>
+
+
+
+                                                <option value="동부재기지원센터">동부재기지원센터</option>
+
+
+
+                                                <option value="특화사업추진단">특화사업추진단</option>
+
+
+
+                                                <option value="(중부)창업지원팀">(중부)창업지원팀</option>
+
+
+
+                                                <option value="(동부)창업지원팀">(동부)창업지원팀</option>
+
+
+
+                                                <option value="(서부)창업지원팀">(서부)창업지원팀</option>
+
+
+
+                                                <option value="(남부)창업지원팀">(남부)창업지원팀</option>
+
+
+
+                                                <option value="중부재기지원센터">중부재기지원센터</option>
+
+
+
+                                                <option value="서부재기지원센터">서부재기지원센터</option>
+
+
+
+                                                <option value="남부재기지원센터">남부재기지원센터</option>
+
+
+
+                                                <option value="성북지점">성북지점</option>
+
+
+
+                                                <option value="서초지점">서초지점</option>
+
+
+
+                                                <option value="노원지점">노원지점</option>
+
+                                                <option value="관악상권르네상스사업추진단">관악상권르네상스사업추진단</option>
+
+
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>접수기간</th>
+                                        <td>
+                                            <input type="text" class="form-control input-sm text-center"
+                                                id="schReqstStartDe" name="schReqstStartDe" value="" placeholder=""><img
+                                                class="ui-datepicker-trigger" src="/images/sub/btn_calendar.gif"
+                                                alt="달력" title="달력"
+                                                style="margin-bottom:1px; vertical-align:middle; cursor: Pointer;">
+                                            ~
+                                            <input type="text" class="form-control input-sm text-center"
+                                                id="schReqstEndDe" name="schReqstEndDe" value="" placeholder=""><img
+                                                class="ui-datepicker-trigger" src="/images/sub/btn_calendar.gif"
+                                                alt="달력" title="달력"
+                                                style="margin-bottom:1px; vertical-align:middle; cursor: Pointer;">
+                                        </td>
+                                        <th>자치구</th>
+                                        <td>
+                                            <select id="schRegionCode" name="schRegionCode">
+                                                <option value="">자치구 선택</option>
+
+                                                <option value="강남구">강남구</option>
+
+                                                <option value="강동구">강동구</option>
+
+                                                <option value="강북구">강북구</option>
+
+                                                <option value="강서구">강서구</option>
+
+                                                <option value="관악구">관악구</option>
+
+                                                <option value="광진구">광진구</option>
+
+                                                <option value="구로구">구로구</option>
+
+                                                <option value="금천구">금천구</option>
+
+                                                <option value="노원구">노원구</option>
+
+                                                <option value="도봉구">도봉구</option>
+
+                                                <option value="동대문구">동대문구</option>
+
+                                                <option value="동작구">동작구</option>
+
+                                                <option value="마포구">마포구</option>
+
+                                                <option value="서대문구">서대문구</option>
+
+                                                <option value="서초구">서초구</option>
+
+                                                <option value="성동구">성동구</option>
+
+                                                <option value="성북구">성북구</option>
+
+                                                <option value="송파구">송파구</option>
+
+                                                <option value="양천구">양천구</option>
+
+                                                <option value="영등포구">영등포구</option>
+
+                                                <option value="용산구">용산구</option>
+
+                                                <option value="은평구">은평구</option>
+
+                                                <option value="종로구">종로구</option>
+
+                                                <option value="중구">중구</option>
+
+                                                <option value="중랑구">중랑구</option>
+
+                                            </select>
+                                        </td>
+                                        <th>진행상태</th>
+                                        <td>
+                                            <select id="schSttusCode" name="schSttusCode" class="form-control schInput">
+                                                <option value="">진행상태 선택</option>
+
+
+                                                <option value="01">시설개선신청</option>
+
+
+
+                                                <option value="02">심사</option>
+
+
+
+                                                <option value="03">사전확인</option>
+
+
+
+                                                <option value="04">승인</option>
+
+
+
+                                                <option value="05">비용 지급신청</option>
+
+
+
+                                                <option value="06">완료확인</option>
+
+
+
+                                                <option value="07">완료</option>
+
+
+
+                                                <option value="08">반려</option>
+
+
+                                            </select>
+                                            <span class="fr">
+                                                <a href="#none" class="btn btn-point" id="btnSelect"><i
+                                                        class="fa fa-search"></i>검색</a>
+                                                <a href="#none" class="btn btn-default" id="btnCancel"><i
+                                                        class="fa fa-repeat"></i>초기화</a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </form>
+                        </div>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0;">
+                        <span style="display: block; font-size:20px; color:#333;">한줄 테이블</span>
+                        <h3>시설개선 관리</h3>
+                        <table class="table table-bordered write">
+                            <colgroup>
+                                <col style="width:130px">
+                                <col style="width:130px">
+                                <col style="width:calc(50% - 260px)">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th colspan="2">분야구분</th>
+                                    <th>전문분야</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cnslPartContent">
+                                <tr>
+                                    <td id="cnslClsTop1" style="vertical-align: middle;" rowspan="4">컨설팅 분야</td>
+                                </tr>
+                                <tr>
+                                    <td>경영지도</td>
+                                    <td>
+                                        <input type="checkbox" name="mapClCodeBox" value="114">마케팅&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="117">고객관리&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="122">손익관리&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="115">매장운영&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="116">프랜차이즈&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox"
+                                            value="123">사업계획지도(협업)&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>전문지도</td>
+                                    <td>
+                                        <input type="checkbox" name="mapClCodeBox" value="114">마케팅&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="117">고객관리&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="122">손익관리&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="115">매장운영&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="116">프랜차이즈&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox"
+                                            value="123">사업계획지도(협업)&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>사업정리</td>
+                                    <td>
+                                        <input type="checkbox" name="mapClCodeBox" value="114">마케팅&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="117">고객관리&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="122">손익관리&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="115">매장운영&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="116">프랜차이즈&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox"
+                                            value="123">사업계획지도(협업)&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                <tr>
+                                    <td id="cnslClsTop5" style="vertical-align: middle;" rowspan="2">멘토 분야</td>
+                                </tr>
+                                <tr>
+                                    <td>업종(분야) 멘토링</td>
+                                    <td>
+                                        <input type="checkbox" name="mapClCodeBox" value="114">마케팅&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="117">고객관리&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="122">손익관리&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="115">매장운영&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox" value="116">프랜차이즈&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" name="mapClCodeBox"
+                                            value="123">사업계획지도(협업)&nbsp;&nbsp;&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="cnslClsTop6" style="vertical-align: middle;" rowspan="2">경영지원단</td>
+                                </tr>
+                                <tr>
+                                    <td>자문 / 코칭</td>
+                                    <td><input type="checkbox" name="mapClCodeBox" value="631">1:1
+                                        경영자문&nbsp;&nbsp;&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0;">
+                        <span style="display: block; font-size:20px; color:#333;">한줄 테이블</span>
+                        <h3>사진첨부
+                            <span class="fr">
+                                <a class="btn btn-primary" href="#none" id="btnFileRowAdd" name="btnFileRowAdd"
+                                    onclick="fn.addFileRow();">사진추가</a>
+                            </span>
+                        </h3>
+                        <table class="table table-bordered write" id="fileTable">
+                            <colgroup>
+                                <col style="width:50px">
+                                <col style="width:calc(50% - 140px)">
+                                <col style="width:90px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>첨부파일</th>
+                                    <th>삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="tableTr1">
+                                    <td style="text-align: center; vertical-align: middle;">1</td>
+                                    <td style="text-align: center;">
+                                        <input type="file" id="file1" name="photo" title="첨부파일"
+                                            onchange="javascript:checkAddFile(this, 'all', 'mb', 10);"
+                                            class="form-control input-full">
+                                    </td>
+                                    <td style="text-align: center;"><a href="#none" id="btnFileDel" name="btnFileDel"
+                                            onclick="fn.delFileRow();" class="btn btn-danger">삭제</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0;">
+                        <span style="display: block; font-size:20px; color:#333;">한줄 테이블</span>
+                        <h3>사진첨부
+                            <span class="fr">
+                                <a class="btn btn-primary" href="#none" id="btnFileRowAdd" name="btnFileRowAdd"
+                                    onclick="fn.addFileRow();">사진추가</a>
+                            </span>
+                        </h3>
+                        <table class="table table-bordered write">
+                            <colgroup>
+                                <col style="width:130px">
+                                <col style="width:calc(33% - 132px);">
+                                <col style="width:130px">
+                                <col style="width:calc(33% - 132px);">
+                                <col style="width:130px">
+                                <col style="width:calc(33% - 132px);">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>신청일자</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="reqstDe" class="invisible">신청일자</label>
+                                            <input type="text" class="form-control input-sm hasDatepicker" id="reqstDe"
+                                                name="reqstDe" value=""><img class="ui-datepicker-trigger"
+                                                src="/images/sub/btn_calendar.gif" alt="달력" title="달력"
+                                                style="margin-left:1px; margin-bottom:1px; vertical-align:middle; cursor: Pointer;">
+                                        </div>
+                                    </td>
+                                    <th>사업구분</th>
+                                    <td colspan="3">
+                                        <label for="bsnsSeCode" class="invisible">사업구분</label>
+                                        <select class="form-control input-md" id="selBsnsSe" name="bsnsSeCode">
+                                            <option value="">선택</option>
+
+                                            <!-- 20190911 : 은행원 인 경우 사업구분이 은행연합회 컨설팅 지원 사업만 나오게  -->
+
+
+
+                                            <option value="BANK_CNSL_SUP_CODE">은행연합회 컨설팅 지원</option>
+
+
+
+
+
+
+
+                                        </select>
+                                        <input type="hidden" id="selBsnsCl" name="selBsnsCl">
+                                        <input type="text" class="form-control input-hd" id="selBsnsClNm"
+                                            name="selBsnsClNm" readonly="readonly">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!-- 				<th>골목상권여부</th> -->
+                                    <!-- 				<td> -->
+                                    <!-- 					<input type="radio" name="sbusnYN" value="Y" />&nbsp;여&nbsp;&nbsp;<input type="radio" name="sbusnYN" value="N" />&nbsp;부 -->
+                                    <!-- 				</td> -->
+                                    <th>지원신청</th>
+                                    <td colspan="5" id="tdApplyReqst">
+                                        <!-- 				<th>지원신청</th> -->
+                                        <!-- 				<td colspan="3" id="tdApplyReqst">								 -->
+                                        <!-- 					<label class="checkbox-inline"> -->
+                                        <!-- 						<input type="checkbox" id="inlineCheckbox1" value="option1" checked> 컨설팅 -->
+                                        <!-- 					</label>  -->
+                                        <!-- 					<label class="checkbox-inline"> -->
+                                        <!-- 						<input type="checkbox" id="inlineCheckbox2" value="option1"> 철거(원상복구) -->
+                                        <!-- 					</label> &nbsp; &nbsp;  -->
+                                        <!-- 					<span class="red">※지원받고자하는항목에반드시체크해주시기바랍니다.</span> -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>경영애로사항</th>
+                                    <td colspan="5">
+                                        <label for="mngmtBtlnMatter" class="invisible">경영애로사항</label>
+                                        <textarea class="form-control input-full" rows="3" id="mngmtBtlnMatter"
+                                            name="mngmtBtlnMatter"
+                                            onkeyup="javascript:fn_TextAreaInputLimit('mngmtBtlnMatter','mngmtBtlnMatterNum', '300');"></textarea>
+                                        <label id="mngmtBtlnMatterNum">0 / 300bytes [한글기준 최소 30자(90bytes) 이상 입력]</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>지원요청사항</th>
+                                    <td colspan="5">
+                                        <label for="applyRequstMatter" class="invisible">지원요청사항</label>
+                                        <textarea class="form-control input-full" rows="3" id="applyRequstMatter"
+                                            name="applyRequstMatter"
+                                            onkeyup="javascript:fn_TextAreaInputLimit('applyRequstMatter','applyRequstMatterNum', '300');"></textarea>
+                                        <label id="applyRequstMatterNum">0 / 300bytes [한글기준 최소 30자(90bytes) 이상
+                                            입력]</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>추천인</th>
+                                    <td colspan="5">
+                                        <label for="recomendr" class="invisible">추천인</label>
+                                        <input type="hidden" class="form-control input-md" id="recomendr"
+                                            name="recomendr" value="">
+                                        <input type="text" class="form-control input-sm" id="chrgNm" name="chrgNm"
+                                            value="" readonly="readonly">
+                                        <input type="hidden" id="chrgId" name="chrgId" value="">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="#none" id="btnChrgMan"><i
+                                                    class="fa fa-search" aria-hidden="true"></i></a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <!-- 			<tr> -->
+                                <!-- 				<th>파일첨부안내</th> -->
+                                <!-- 				<td colspan="5">필수첨부문서: 사업자등록증 (파일첨부 또는 FAX 전송: 02-3278-8121, “사업신청용” 표기</td> -->
+                                <!-- 			</tr> -->
+                                <tr>
+                                    <th>사업자등록증</th>
+                                    <td colspan="5">
+                                        <label for="file1" class="invisible">사업자등록증</label>
+
+
+
+                                        <input type="file" id="file1" name="bsnsLicse" title="첨부파일"
+                                            onchange="javascript:checkAddFile(this, 'all', 'mb', 10);"
+                                            class="form-control input-full">
+
+
+                                        <!-- 					<input type="file" class="form-control input-lg" id="file1">								 -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!-- 				<th>파일첨부</th> -->
+                                    <th rowspan="2" style="vertical-align:top">파일첨부<br>
+                                        <input type="button" id="btnAddFile" class="btn btn-sm" value="추가"
+                                            title="첨부파일 추가">
+                                        <input type="button" id="btnDelFile" class="btn btn-sm" value="삭제"
+                                            title="첨부파일 삭제">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td id="tdFileTable" colspan="5">
+                                        <table id="fileTable1" style="width: 100%;">
+                                            <tbody>
+                                                <tr id="tableTr11">
+                                                    <td><span>1. </span><input type="file" id="file2" name="file"
+                                                            title="첨부파일"
+                                                            onchange="javascript:checkAddFile(this, 'all', 'mb', 10);"
+                                                            class="form-control input-full">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>예비진단 포함여부</th>
+                                    <td>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="diagAt" id="diagAt1" value="Y"
+                                                checked="checked">포함
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="diagAt" id="diagAt2" value="N"> 불포함
+                                        </label>
+                                    </td>
+                                    <th>정보동의</th>
+                                    <td>
+                                        <input type="radio" name="agreeYn" id="agreeYn1" value="Y"
+                                            checked="checked">동의함&nbsp;
+                                        <input type="radio" name="agreeYn" id="agreeYn2" value="N">동의안함
+                                    </td>
+                                    <th>중소기업 통합관리 정보제공동의</th>
+                                    <td>
+                                        <input type="radio" name="agreeYn_2" id="agreeYn3" value="Y"
+                                            checked="checked">동의함&nbsp;
+                                        <input type="radio" name="agreeYn_2" id="agreeYn4" value="N">동의안함
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <table class="table table-bordered write" id="entrps">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px);">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px);">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px);">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>사업단계</th>
+                                <td colspan="5">
+
+                                    <input type="radio" id="applcntBsnsStepCode1" name="applcntBsnsStepCode"
+                                        value="110"> 기존창업자
+
+                                    <input type="radio" id="applcntBsnsStepCode2" name="applcntBsnsStepCode"
+                                        value="120"> 예비창업자
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>업체명</th>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="item6" class="invisible">업체명</label>
+                                        <input type="text" class="form-control input-md" id="bplcNm" name="bplcNm"
+                                            value="" readonly="readonly">
+                                        <input type="hidden" id="cnslBplcNo" name="cnslBplcNo" value="">
+                                    </div>
+                                </td>
+                                <th>사업자등록번호</th>
+                                <td>
+                                    <label for="bsnmRegistNo1" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control input-xs" id="bsnmRegistNo1"
+                                        name="bsnmRegistNo1" value="">
+                                    <span class="input-text">- </span>
+                                    <label for="bsnmRegistNo2" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control input-xs" id="bsnmRegistNo2"
+                                        name="bsnmRegistNo2" value="">
+                                    <label for="bsnmRegistNo3" class="invisible">사업자등록번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs" id="bsnmRegistNo3"
+                                        name="bsnmRegistNo3" value="">
+                                </td>
+                                <th>사업장전화번호</th>
+                                <td>
+                                    <label for="bplcTelNo1" class="invisible">사업장전화번호</label>
+                                    <select class="form-control input-wd" id="bplcTelNo1" name="bplcTelNo">
+
+                                        <option value="02">서울(02)</option>
+
+                                        <option value="051">부산(051)</option>
+
+                                        <option value="032">인천(032)</option>
+
+                                        <option value="053">대구(053)</option>
+
+                                        <option value="062">광주(062)</option>
+
+                                        <option value="042">대전(042)</option>
+
+                                        <option value="052">울산(052)</option>
+
+                                        <option value="044">세종(044)</option>
+
+                                        <option value="031">경기(031)</option>
+
+                                        <option value="033">강원(033)</option>
+
+                                        <option value="043">충북(043)</option>
+
+                                        <option value="041">충남(041)</option>
+
+                                        <option value="054">경북(054)</option>
+
+                                        <option value="055">경남(055)</option>
+
+                                        <option value="063">전북(063)</option>
+
+                                        <option value="061">전남(061)</option>
+
+                                        <option value="064">제주(064)</option>
+
+                                        <option value="0502">KT(0502)</option>
+
+                                        <option value="0503">온세(0503)</option>
+
+                                        <option value="0504">온세(0504)</option>
+
+                                        <option value="0505">Dacom(0505)</option>
+
+                                        <option value="070">인터넷(070)</option>
+
+                                        <option value="080">착신과금(080)</option>
+
+                                        <option value="010">이동전화(010)</option>
+
+                                        <option value="011">이동전화(011)</option>
+
+                                        <option value="016">이동전화(016)</option>
+
+                                        <option value="017">이동전화(017)</option>
+
+                                        <option value="019">이동전화(019)</option>
+
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="bplcTelNo1" class="invisible">사업장전화번호</label>
+                                    <input type="text" class="form-control input-xs" id="bplcTelNo2" name="bplcTelNo2"
+                                        value="">
+                                    <span class="input-text"> - </span>
+                                    <label for="bphone3" class="invisible">사업장전화번호</label>
+                                    <input type="text" class="form-control input-xs" id="bplcTelNo3" name="bplcTelNo3"
+                                        value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사업장주소</th>
+                                <td colspan="5">
+                                    <div class="input-group">
+                                        <label for="bplcZipCode" class="invisible">우편번호</label>
+                                        <input type="text" class="form-control input-sm" id="bplcZipCode"
+                                            name="bplcZipCode" value="" readonly="readonly">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="#none" onclick="fn.setAdress('2')"><i
+                                                    class="fa fa-search" aria-hidden="true"></i></a>
+                                        </span>
+                                    </div>
+                                    <p class="clearfix"></p>
+                                    <label for="bplcBaseAdres" class="invisible">기본주소</label>
+                                    <input type="text" class="form-control input-lg" id="bplcBaseAdres"
+                                        name="bplcBaseAdres" value="" readonly="readonly">
+                                    <label for="address4" class="invisible">상세주소</label>
+                                    <input type="text" class="form-control input-lg" id="bplcDetailAdres"
+                                        name="bplcDetailAdres" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>소유구분</th>
+                                <td>
+                                    <label for="posesnSeCd" class="invisible">소유구분</label>
+                                    <select class="form-control" id="posesnSeCd" name="posesnSeCd">
+                                        <option value="">선택</option>
+
+                                        <option value="10">자가 </option>
+
+                                        <option value="20">임차 </option>
+
+                                    </select>
+                                </td>
+                                <th>경영형태</th>
+                                <td>
+                                    <label for="bizmanage" class="invisible">경영형태</label>
+                                    <select class="form-control" id="bplcStleCd" name="bplcStleCd">
+                                        <option value="">선택</option>
+
+                                        <option value="10">개인(단독)</option>
+
+                                        <option value="20">개인(동업)</option>
+
+                                        <option value="30">법인</option>
+
+                                    </select>
+                                </td>
+                                <!-- 20190325. 종업원수가  컨설팅 신청내용에도 있어 빼둠. -->
+                                <!-- 				<th>종업원수</th> -->
+                                <!-- 				<td> -->
+                                <!-- 					<label for="empCnt" class="invisible">종업원수</label> -->
+
+                                <!-- 					<span class="input-text">명</span> -->
+                                <!-- 				</td> -->
+                            </tr>
+                            <tr>
+                                <th>업종</th>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="indutyCd" class="invisible">업종</label>
+                                        <input type="hidden" id="indutyCd" name="indutyCd" value="">
+                                        <input type="text" class="form-control input-md" id="indutyNm" name="indutyNm"
+                                            value="" readonly="readonly">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="#none" id="btnIndutyCd"><i
+                                                    class="fa fa-search" aria-hidden="true"></i></a>
+                                        </span>
+                                    </div>
+                                </td>
+                                <th>취급품목</th>
+                                <td>
+                                    <label for="itmNm" class="invisible">취급품목</label>
+
+
+
+                                    <input type="text" class="form-control input-full" id="itmNm" name="itmNm" value="">
+
+
+                                </td>
+                                <th>설립(예정)일자</th>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="fondDe" class="invisible">설립(예정)일자</label>
+                                        <input type="text" class="form-control input-sm text-center" id="fondDe"
+                                            name="fondDe" value=""><img class="ui-datepicker-trigger"
+                                            src="/images/sub/btn_calendar.gif" alt="달력" title="달력"
+                                            style="margin-left:1px; margin-bottom:1px; vertical-align:middle; cursor: Pointer;">
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0;">
+                        <span style="display: block; font-size:20px; color:#333;">한줄 테이블</span>
+                        <h3>사진첨부</h3>
+                        <table class="table table-bordered write">
+                            <colgroup>
+                                <col style="width:130px">
+                                <col style="width:calc(50% - 130px)">
+                                <col style="width:130px">
+                                <col style="width:calc(50% - 130px)">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>사업장정보</th>
+                                    <td>
+                                        종업원수 <input type="text" class="form-control input-xs" id="reqEmpCnt"
+                                            name="reqEmpCnt">명 &nbsp;&nbsp;&nbsp;
+                                        매출액 <input type="text" class="form-control input-xs" id="salamt" name="salamt"
+                                            style="width: 100px;">만원
+                                    </td>
+                                    <th>소상공인여부</th>
+                                    <td>
+                                        <input type="radio" name="chkMarketYN" id="chkMarketY" value="Y">여 &nbsp;&nbsp;
+                                        <input type="radio" name="chkMarketYN" id="chkMarketN" value="N">부&nbsp;&nbsp;
+                                        <!-- 20200302 kkw : [업무 프로세스 개선] - 종업원수 매출액 입력시 소상공인여부 버튼 추가 -->
+                                        <span class="input-group-btn" id="certifySpan" name="certifySpan">
+                                            <a href="#none" id="certifyBtn" class="btn btn-default"
+                                                onclick="javascript:companyScaleCertify();"
+                                                readonly="readonly">기업규모확인</a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>컨설팅 희망기간</th>
+                                    <td>
+                                        <div class="input-group">
+                                            <label for="date6" class="invisible">희망시작일</label>
+                                            <input type="text" class="form-control input-sm hasDatepicker"
+                                                id="cnslHopeBeginDe" name="cnslHopeBeginDe" value=""><img
+                                                class="ui-datepicker-trigger" src="/images/sub/btn_calendar.gif"
+                                                alt="달력" title="달력"
+                                                style="margin-left:1px; margin-bottom:1px; vertical-align:middle; cursor: Pointer;">
+                                            <span>~</span>
+                                            <label for="date7" class="invisible">희망종료일</label>
+                                            <input type="text" class="form-control input-sm hasDatepicker"
+                                                id="cnslHopeEndDe" name="cnslHopeEndDe" value=""><img
+                                                class="ui-datepicker-trigger" src="/images/sub/btn_calendar.gif"
+                                                alt="달력" title="달력"
+                                                style="margin-left:1px; margin-bottom:1px; vertical-align:middle; cursor: Pointer;">
+                                        </div>
+                                    </td>
+                                    <th>희망시간대</th>
+                                    <td>
+
+                                        <input type="checkbox" readonly="" name="chkHopeTmzon" value="01">
+                                        오전&nbsp;&nbsp;&nbsp;
+
+                                        <input type="checkbox" readonly="" name="chkHopeTmzon" value="02">
+                                        오후&nbsp;&nbsp;&nbsp;
+
+                                        <input type="checkbox" readonly="" name="chkHopeTmzon" value="03">
+                                        주말&nbsp;&nbsp;&nbsp;
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>컨설팅주제</th>
+                                    <td colspan="3">
+                                        <label for="item13" class="invisible">컨설팅주제</label>
+                                        <input type="text" class="form-control input-full" id="cnslThema"
+                                            name="cnslThema" value="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="clearfix"></p>
+                    <div style="margin:30px 0;">
+                        <span style="display: block; font-size:20px; color:#333;">한줄 테이블</span>
+
+                        <div class="sms-list-wrap">
+                            <input type="hidden" id="sendType" name="sendType" value="01">
+                            <!--01 : 번호 직접입력 전송, 02 : 검색 리스트 전송  -->
+                            <h3>SMS 발송</h3>
+                            <form id="smsForm" name="smsForm">
+                                <input type="hidden" id="sndMsg" name="sndMsg">
+                                <input type="hidden" id="callback" name="callback">
+                            </form>
+
+                            <div class="search-wrap">
+                                <form id="searchForm" class="form-inline" role="form">
+                                    <div class="form-group mr20">
+                                        <label for="csNm">이름</label>
+                                        <input type="text" id="csNm" name="csNm" class="form-control schInput">
+                                    </div>
+                                    <div class="form-group mr20">
+                                        <label for="csId">ID</label>
+                                        <input type="text" id="csId" name="csId" class="form-control schInput">
+                                    </div>
+                                    <div class="form-group mr20">
+                                        <label for="telNo">휴대전화번호</label>
+                                        <input type="text" id="telNo" name="telNo" class="form-control schInput">
+                                    </div>
+                                    <div class="form-group mr20">
+                                        <label for="csGrd">회원분류</label>
+                                        <select id="csGrd" name="csGrd" class="form-control input-md schInput">
+                                            <option value="">회원분류 선택</option>
+
+
+                                            <option value="1">관리자</option>
+
+
+
+                                            <option value="2">사업운영자</option>
+
+
+
+                                            <option value="3">직원</option>
+
+
+
+                                            <option value="4">전문가(컨설턴트)</option>
+
+
+
+                                            <option value="5">상담전문가</option>
+
+
+
+                                            <option value="6">자영업반장</option>
+
+
+
+
+
+                                            <option value="7">은행원</option>
+
+
+                                        </select>
+                                    </div>
+                                    <a href="#none" id="btnSelect" class="btn btn-point"><i
+                                            class="fa fa-search"></i>검색</a>
+                                    <a href="#none" id="btnCancel" class="btn btn-default"><i
+                                            class="fa fa-repeat"></i>초기화</a>
+                                </form>
+                            </div><!-- /search-wrap -->
+
+                            <p class="clearfix"></p>
+
+                            <div class="scroll">
+                                <div id="sbCsInfoWebCnt" class="pull-right">
+                                    <p>총 0명</p>
+                                </div>
+                                <table class="table table-bordered table-hover">
+                                    <colgroup>
+                                        <col style="width:10%;">
+                                        <col style="width:15%;">
+                                        <col style="width:25%;">
+                                        <col style="width:30%;">
+                                        <col style="width:20%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" id="topSelector"></th>
+                                            <th>이름</th>
+                                            <th>ID</th>
+                                            <th>휴대전화번호</th>
+                                            <th>회원등급</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="memberListTbody">
+                                    </tbody>
+                                </table>
+                            </div><!-- /scroll -->
+
+                            <div class="control-button">
+                                <span class="fr">
+                                    <a href="#none" id="checkedDelBtn" class="btn btn-primary">선택삭제</a>
+                                    <a href="#none" id="allDelBtn" class="btn btn-primary">전체삭제</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="sms-wrap">
+                            <div class="sms-top"></div>
+                            <div class="sms-bdy">
+                                <div class="sms-screen">
+                                    <textarea id="smsText"
+                                        onkeyup="javascript:fn_TextAreaInputLimit('smsText','smsByte');"
+                                        class="sms-text" style="height:200px;"></textarea>
+                                </div>
+                                <div class="sms-info">
+                                    <label id="smsByte">0 bytes </label>
+                                </div>
+                                <div class="sms-btn-re"><a href="" class="btn btn-sm btn-default"><i
+                                            class="fa fa-repeat"></i> 다시쓰기</a></div>
+                                <div style="text-align: left; padding: 10px 0px 2px 13px; ">[휴대전화번호("-" 없이 입력)]</div>
+                                <div>
+                                    <input type="text" id="inputSend" name="inputSend" class="form-control schInput"
+                                        style="width: 180px; !important;">
+                                </div>
+                            </div>
+                            <div class="sms-btm">
+                                <a href="#" id="sendMsgBtn" class="btn btn-point btn-block sms-btn-send">보내기</a>
+                            </div>
+                        </div>
+
+                        <div class="control-button">
+                            <span class="fr">
+                                <a href="#none" id="checkedDelBtn" class="btn btn-primary">선택삭제</a>
+                                <a href="#none" id="allDelBtn" class="btn btn-primary">전체삭제</a>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <p class="clearfix"></p>
+                <h3>Q&amp;A 상세</h3>
+                <table class="table table-bordered table-hover">
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:80%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>제&nbsp;&nbsp;&nbsp;&nbsp;목</th>
+                            <td class="text-left">
+
+
+                                <input type="text" maxlength="100" class="form-control input-full" id="title"
+                                    name="title" value="(완료)점세개(김수만)202001780 비용지급요청서류 재제출">
+
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>내&nbsp;&nbsp;&nbsp;&nbsp;용</th>
+                            <td>
+                                <textarea id="ir1" name="ir1" rows="10" cols="100"
+                                    style="width:100%; height:350px; display: none;">&lt;p&gt;1. 접수번호 : 202001780&lt;/p&gt;&lt;p&gt;2.상호 : 점세개&lt;/p&gt;&lt;p&gt;3.대표자 : 김수만&lt;/p&gt;&lt;p&gt;4. 요청사항 : 기 제출한 비용지급요청서 중 임대차 계약서 교체.&lt;/p&gt;&lt;p&gt;5. 교체이유 : 2007년 최초 임대차 계약시 월 차임이 50만원이었으나 2015년에 인상된 것을 증빙 표시 함&lt;/p&gt;</textarea><iframe
+                                    frameborder="0" scrolling="no" style="width: 100%; height: 399px;"
+                                    src="/cm/CM_Editor.do"></iframe>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>사용여부</th>
+                            <td class="text-left"><input type="checkbox" id="checkYn" name="checkYn" checked=""> <label
+                                    class="areaText" for="checkYn">사용여부체크(사용시 체크, 미사용시 체크해제)</label></td>
+                        </tr>
+
+                        <tr>
+                            <th>첨부파일 <a href="#none" class="btn btn-default" onclick="fn.addFile();">추가</a></th>
+                            <td class="text-left">
+                                <table class="table table-bordered view" id="fileTable">
+
+                                    <tbody>
+                                        <tr id="fileTr1">
+                                            <td>
+                                                <a href="javascript:fn.atchFileDown('1')">
+                                                    비용지급요청서_김수만,점세개202001780 v2.pdf</a>
+
+                                                <a href="#none" class="btn btn-danger"
+                                                    onclick="fn.deleteFileChk('1', 'File');">삭제</a>
+
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="clearfix"></p>
+                <h3>채용정보 상세</h3>
+                <table class="table table-bordered table-hover">
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:50%">
+                        <col style="width:10%">
+                        <col style="width:30%">
+                    </colgroup>
+                    <tbody>
+                        <tr style="background-color:#eaeaea">
+                            <td colspan="4" style="font-size:20px;font-color:blue;b">
+                                요양원 물리 및 작업치료사
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>기업명</th>
+                            <td style="text-align:left">
+                                남양주큰사랑실버요양원
+                            </td>
+                            <th>정보제공처</th>
+                            <td style="text-align:left">
+                                워크넷
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="1">분류체계</th>
+                            <td colspan="3" style="text-align:left">
+                                &nbsp;&gt;&nbsp; &nbsp;&gt;&nbsp;
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>지역</th>
+                            <td style="text-align:left">
+                                경기 | 남양주시
+                            </td>
+                            <th>학력</th>
+                            <td style="text-align:left">
+
+
+
+
+                                대졸(2~3년) &nbsp;~&nbsp;
+
+
+
+
+
+
+                                대졸(4년)
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>경력</th>
+                            <td style="text-align:left">
+                                관계없음
+                            </td>
+                            <th>급여</th>
+                            <td style="text-align:left">
+                                (월급) 200 만원
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>접수마감일</th>
+                            <td style="text-align:left">
+                                2020-06-20
+                            </td>
+                            <th>등록일</th>
+                            <td style="text-align:left">
+                                2020-06-04
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="clearfix"></p>
+                <div class="search-wrap">
+
+                    <div class="form-group mr20">
+                        <label for="keyword1">게시판선택</label>
+                        <select id="boardCd" name="boardCd">
+                            <option value="">-- 관리게시판 선택 --</option>
+                            <option value="B065">유관기관 공지사항( B065 )</option>
+                            <option value="BBS-00039">소소레터( BBS-00039 )</option>
+                            <option value="B043">소상공인 홍보관( B043 )</option>
+                            <option value="B076">사업지원자료실( B076 )</option>
+                            <option value="BBS-00037">고객제안( BBS-00037 )</option>
+                            <option value="BBS-00038">칭찬한마디( BBS-00038 )</option>
+                            <option value="BBS-00026">도매시장 정보( BBS-00026 )</option>
+                            <option value="BBS-00023">서울시 물가정보( BBS-00023 )</option>
+                            <option value="BBS-00027">도매시장 점포찾기( BBS-00027 )</option>
+                            <option value="BBS-00028">유관기관 네트워크( BBS-00028 )</option>
+                            <option value="B064">지원사례( B064 )</option>
+                            <option value="B063">주간뉴스( B063 )</option>
+                            <option value="BBS-00019">사진관리( BBS-00019 )</option>
+                            <option value="BBS-00030">벤치마킹( BBS-00030 )</option>
+                            <option value="BBS-00031">전문가컬럼( BBS-00031 )</option>
+                            <option value="BBS-00029">테스트( BBS-00029 )</option>
+                            <option value="BBS-00032">성공실패사례( BBS-00032 )</option>
+                            <option value="BBS-00033">소상공인통계( BBS-00033 )</option>
+                            <option value="BBS-00034">창업자료( BBS-00034 )</option>
+                            <option value="BBS-00042">미디어정보( BBS-00042 )</option>
+                            <option value="BBS-00043">갤러리게시판( BBS-00043 )</option>
+                            <option value="BBS-00045">구직자정보( BBS-00045 )</option>
+                            <option value="B041">궁금합니다( B041 )</option>
+                            <option value="BBS-00004">자주하는질문( BBS-00004 )</option>
+                            <option value="B061">공지사항( B061 )</option>
+                            <option value="BBS-00005">나도한마디( BBS-00005 )</option>
+                            <option value="BBS-00044">업종별 통계( BBS-00044 )</option>
+                        </select>
+                        &nbsp;&nbsp;
+                        <label for="keyword2">상태</label>
+                        <select id="useYn" name="useYn">
+                            <option value="">전체</option>
+                            <option value="Y">정상</option>
+                            <option value="N">차단</option>
+                        </select>
+                        &nbsp;&nbsp;
+                        <label for="keyword3">기간검색</label>
+                        <input class="txt hasDatepicker" style="width:100px;height:18px" type="text" name="startDt"
+                            id="startDt" size="10" value="" readonly=""><img class="ui-datepicker-trigger"
+                            src="../images/sub/btn_calendar.gif" alt="달력" title="달력">
+                        ~
+                        <input class="txt hasDatepicker" style="width:100px;height:18px" type="text" name="endDt"
+                            id="endDt" size="10" value="" readonly=""><img class="ui-datepicker-trigger"
+                            src="../images/sub/btn_calendar.gif" alt="달력" title="달력">
+                        <input type="button" name="dtInit" id="dtInit" value="초기화" onclick="searchInit()">
+                        &nbsp;&nbsp;
+                        <select id="searchType" name="searchType">
+                            <option value="">--선택--</option>
+                            <option value="title">제목</option>
+                            <option value="memnm">작성자이름</option>
+                            <option value="memid">작성자ID</option>
+                        </select>
+                        <input class="txt" style="width:100px;height:18px" type="text" name="searchStr" id="searchStr"
+                            size="10" value="">
+                    </div>
+
+
+                    <a href="#none" class="btn btn-point" id="btnSelect"><i class="fa fa-search"></i>검색</a>
+                </div>
+
+
+
+                <!-- paging -->
+                <nav class="text-center" id="gridPageNavigationDiv">
+                    <ul class="pagination">
+                        <li><a href="javascript:;"><strong>1</strong></a></li>
+                        <li><a href="javascript:movePage('2')">2</a></li>
+                        <li><a href="javascript:movePage('3')">3</a></li>
+                        <li><a href="javascript:movePage('4')">4</a></li>
+                        <li><a href="javascript:movePage('5')">5</a></li>
+                        <li><a href="javascript:movePage('6')">6</a></li>
+                        <li><a href="javascript:movePage('7')">7</a></li>
+                        <li><a href="javascript:movePage('8')">8</a></li>
+                        <li><a href="javascript:movePage('9')">9</a></li>
+                        <li><a href="javascript:movePage('10')">10</a></li>
+                        <li class="ico">
+                            <a href="javascript:movePage('11')">
+                                <i class="fa fa-angle-right fa-lg"></i>
+                            </a>
+                        </li>
+                        <li class="ico">
+                            <a href="javascript:movePage('92')">
+                                <i class="fa fa-angle-double-right fa-lg"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <p class="clearfix"></p>
+                <div class="control-button">
+                    <a href="#none" class="btn btn-point" id="btnSave">저장</a>
+                </div>
+
+                <div class="control-button">
+                    <span class="fr">
+                        <a href="#none" class="btn btn-default" id="btnDelete">사업자번호 삭제</a>
+                        <a href="#none" id="btnExlDown" class="btn btn-green"><i class="fa fa-file-excel-o"
+                                aria-hidden="true"></i>엑셀다운로드</a>
+                        <a href="#none" class="btn btn-green" id="btnExlUp"><i class="fa fa-file-excel-o"
+                                aria-hidden="true"></i>엑셀업로드</a>
+                        <a href="#none" class="btn btn-default" id="btnHistory">수료증발급내역</a>
+                        <a href="#none" class="btn btn-primary" id="btnInsert">교육과정개설</a>
+                        <a href="#none" class="btn btn-point" id="btnUpdate">과정수정</a>
+                        <a href="#none" class="btn btn-danger" id="btnDelete">과정삭제</a>
+                        <a href="#none" id="btnExlDown" class="btn btn-primary">엑셀다운로드</a>
+                    </span>
+                </div>
+
+                <div class="control-button text-center">
+                    <a href="#none" class="btn btn-point" id="btnTmpInsert">임시저장</a>
+                    <a href="#none" class="btn btn-point" id="btnInsert">저장</a>
+                    <a href="#none" class="btn btn-primary">메모</a>
+                    <a href="#none" class="btn btn-default">목록</a>
+                </div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

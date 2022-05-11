@@ -1,0 +1,118 @@
+@charset "utf-8";
+/*테이블*/
+caption {position:absolute; left:-10000px; top:auto; overflow:hidden;width:1px;height:1px;font-size:0;line-height:0}
+table .br_none {border:none!important}
+table .brl_none {border-left:none!important}
+table .brr_none {border-right:none!important}
+table .brt_none {border-top:none!important}
+table .brb_none {border-bottom:none!important}
+table .bg_none {background:none!important}
+/*1*/
+.tbl1 thead th {padding:10px 0 2px 0; color:#555; border-top:2px solid #688acb; border-bottom:1px solid #dfdfdd;}
+.tbl1 thead td {padding:6px 0 2px 0; color:#999; border-bottom:1px solid #dfdfdd;}
+.tbl1 thead th.l {border-left:1px solid #dfdfdd;}
+.tbl1 thead th.r, .tbl1 thead td.r {border-right:1px solid #dfdfdd;}
+/*2*/
+.tbl2 thead th {line-height:30px; color:#555; border-top:2px solid #688acb; border-bottom:1px solid #dfdfdd;}
+.tbl2 thead td {line-height:24px; color:#688acb; border-bottom:1px solid #dfdfdd;}
+.tbl2 thead th.l {border-left:1px solid #dfdfdd;}
+.tbl2 thead th.r, .tbl2 thead td.r, .tbl2 tbody th.r, .tbl2 tbody td.r {border-right:1px solid #dfdfdd;}
+/*1,2공통*/
+.tbl1 thead th, .tbl1 thead td, .tbl1 tbody th, .tbl1 tbody td,
+.tbl2 thead th, .tbl2 thead td, .tbl2 tbody th, .tbl2 tbody td{border-left:1px solid #dfdfdd;}
+.tbl1 thead, .tbl2 thead {vertical-align:top; text-align:center;}
+.tbl1, .tbl2 { margin:0 0 10px 0; border-bottom:1px solid #dfdfdd;}
+.tbl1 tbody th, .tbl1 tbody td, .tbl2 tbody th, .tbl2 tbody td {padding:4px 0 3px 0; text-align:center; border-bottom:1px solid #dfdfdd;}
+.tbl1 tbody th, .tbl2 tbody th {border-left:none;}
+.point {background-color:#f2f7fa;}
+.bgpoint {background-color:#f7f7f7;}
+.other {color:#777; font-size:0.8em; font-weight:normal; font-family:Arial, Helvetica, sans-serif}
+.white {white-space:normal;}
+/*3*/
+.tbl3 {margin:2px 0 0 0; text-align:center; border-bottom:1px solid #dfdfdd; border-right:1px solid #dfdfdd; }
+.tbl3 thead th, .tbl3 thead td {color:#688acb; border-top:2px solid #688acb;}
+.tbl3 thead th, .tbl3 thead td, .tbl3 tbody th, .tbl3 tbody td {padding:4px; border-bottom:1px solid #dfdfdd; border-left:1px solid #dfdfdd;}
+.tbl3 td {vertical-align:top}
+.tbl3 tbody th {background-color:#f7f7f7;}
+/*4*/
+.tbl4 {margin:0 0 10px 0; text-align:center; border-top:1px solid #dfdfdd; border-right:1px solid #dfdfdd;}
+.tbl4 thead th, .tbl4 thead td {color:#688acb;}
+.tbl4 thead th, .tbl4 thead td, .tbl4 tbody th, .tbl4 tbody td {padding:4px; border-left:1px solid #dfdfdd; border-bottom:1px solid #dfdfdd;}
+.tbl4 tbody th {background-color:#f7f7f7;}
+.tbl4 td a:hover { display:block; background-color:#eaf2f4}
+
+.tbllink {margin:0 0 10px 0; text-align:center; border-top:1px solid #dfdfdd; border-right:1px solid #dfdfdd;}
+.tbllink th { background-color:#f7f7f7;}
+.tbllink th, .tbllink td { height:50px; padding:4px; border-left:1px solid #dfdfdd; border-bottom:1px solid #dfdfdd;}
+
+#monitor .tbl4 td {text-align:left;}
+#calender1.tbl4 tbody td {text-align:left; font-size:0.9em; font-family:"돋움", dotum}
+#calender1.tbl4 tbody th{background-color:#eaf2f4; color:#3CAB98}
+#calender1.tbl4, #calender2.tbl4 {margin:0 0 10px 0; text-align:center; border-top:2px solid #6699cc; border-right:1px solid #dfdfdd; border-bottom:2px solid #6699cc;}
+/*5*/
+.tbl5 {text-align:center; border-top:1px solid #dfdfdd}
+.tbl5 thead th { background:#f7f7f7; line-height:30px}
+.tbl5 td {vertical-align:top; text-align:left}
+.tbl5 thead th,
+.tbl5 thead td,
+.tbl5 tbody th,
+.tbl5 tbody td {padding:2px 2px 2px 10px; border-bottom:1px solid #dfdfdd; border-left:1px solid #dfdfdd;}
+/*6*/
+.tbl6 {border-top:1px solid #dfdfdd; margin-bottom:20px}
+.tbl6 thead th, .tbl6 tbody th, .tbl6 tbody td {padding:4px; border-bottom:1px solid #dfdfdd;}
+.tbl6 thead th { height:30px; border-bottom:2px solid #688acb; background-color:#f7f7f7}
+.tbl6 tbody td {text-align:left;}
+/*7*/
+.tbl7 {margin:2px 0 0 0; text-align:center; border-top:2px solid #688acb; border-right:1px solid #dfdfdd; border-collapse:inherit}
+.tbl7 th, .tbl7 td{padding:4px; border-bottom:1px solid #dfdfdd; border-left:1px solid #dfdfdd;}
+.tbl7 td {text-align:left; vertical-align:top}
+.tbl7 th {background-color:#f7f7f7;color:#688acb;}
+
+#day {margin:3px; text-align:center; border-top:1px solid #dfdfdd; border-right:1px solid #dfdfdd;}
+#day thead th {color:#fff; background-color:#688acb;}
+#day thead th, #day tbody td {border-left:1px solid #dfdfdd; border-bottom:1px solid #dfdfdd;}
+#day td a {display:block}
+#day td a:hover {font-weight:bold; background-color:#e3ecf1;}
+
+.paging {width:100%; margin-bottom:10px; text-align:center}
+.num a:hover, .num a:focus {color:#688acb; border:1px solid #688acb;}
+.num a{display:inline-block; min-width:20px; height:20px; margin:1px; padding:1px; font-size:1em; font-weight:bold; color:#666; border:1px solid #dfdfdd;}
+* html .num a {width:20px; height:18px;} /* ie6핵 */
+.paging a:visited {}
+.paging a:active {}
+.num a:hover, .num a:focus {color:#688acb; border:1px solid #688acb;}
+
+.pre {padding:0 3px; }
+.num {padding:0 5px}
+.num .on {color:#688acb; border:1px solid #688acb;}
+.nex {padding:0 3px}
+.backcolor1 { background:#99ccff url(../img/graphic/pattern01.gif)}
+.backcolor2 { background:#ccffcc url(../img/graphic/pattern02.gif)}
+.txt_none{ text-indent:-90000px}
+/*게시판*/
+.boardsch {clear:both; padding-top:12px; text-align:right}
+.boardsch .counter { position:absolute; left:20px; top:20px}
+.boardsch label {position:absolute; top:0; left:0; width:0; height:0; overflow:hidden;font-size:0; line-height:0;}
+.boardsch .line,.boardView td input.line, .boardView td textarea.line{ border:1px solid #d6d6d6; padding:1px}
+.boardList {border-top: 1px solid #dfdfdd; border-bottom: 1px solid #dfdfdd;}
+.boardList, .boardView {width:100%; border-collapse:collapse; border-spacing:0; margin-top:10px; margin-bottom:20px}/*셀공간을 없앰*/
+.boardList th, .boardView th {padding:7px 0; border-bottom: 1px solid #dfdfdd;white-space:nowrap; color:#688acb; background:#f7f7f7}/*줄바꿈 금지 col그룹없이 가로 컨트롤*/
+.boardList td{padding:6px 20px; border-bottom: 1px solid #dfdfdd;text-align:center;white-space:nowrap;  }
+.boardList td.subject{text-align:left; width:100%; white-space:normal;}/*줄바꿈 허용*/
+.boardList td.subject a {text-decoration:none}
+.boardList td.subject a:hover {text-decoration:underline}
+.boardView td.subject a{text-decoration:underline}
+.boardList td.subject img, .boardView td.subject img { padding:1px 4px}
+.boardView td{padding:7px 20px; border-bottom: 1px solid #dfdfdd;}
+.boardView {margin-top:20px; border-top: 1px solid #dfdfdd; border-bottom: 1px solid #dfdfdd;}
+.boardView thead td {background:url(../img/s_citizen/bg_vline.gif) no-repeat right bottom}
+.boardView td input {}
+.btnx2 {display:block; width:50px; height:24px; padding:5px 11px 6px 18px; color:#06c; font-size:12px; background:url(../img/btn/bg_btn1.gif) no-repeat top left; border:none; cursor:pointer}
+.btnx3 {display:block; width:50px; height:24px; padding:5px 11px 6px 18px; color:#06c; font-size:12px; background:url(../img/btn/bg_btn1.gif) no-repeat top left; border:none; cursor:pointer}
+.btnbox {overflow:hidden; text-align:right}
+.btnbox img { margin-left:7px}
+.btnbox input, .btnbox span { float:right; margin-left:7px}
+/*오염물질 기준*/
+.standard { width:480px; border-top:1px solid #dfdfdd; border-left:1px solid #dfdfdd; line-height:22px; font-size:11px; text-align:center}
+.standard th, .standard td{ border-right:1px solid #dfdfdd;border-bottom:1px solid #dfdfdd;}
+.standard th{ background:#e7ecf4}

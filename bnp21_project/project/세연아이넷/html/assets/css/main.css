@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+.visual_swiper .swiper-slide {
+	height: 600px;
+	padding-top: 215px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	text-align: center;
+}
+.visual_swiper .banner01 {
+	background-image: url("../images/main/visual_slide01.jpg");
+}
+.visual_swiper .banner02 {
+	background-image: url("../images/main/visual_slide01.jpg");
+}
+.visual_swiper .banner03 {
+	background-image: url("../images/main/visual_slide01.jpg");
+}
+.visual_swiper .swiper-slide .txt {
+	color: #fff;
+	font-size: 20px;
+}
+.visual_swiper .swiper-slide span {
+	display: block;
+	margin-bottom: 10px;
+	font-family: "nsbd";
+	font-size: 80px;
+}
+.visual_swiper .swiper-pagination {
+	bottom: 66px;
+	font-size: 0;
+}
+.visual_swiper .swiper-pagination > li {
+	display: inline-block;
+	margin: 0 15px;
+	vertical-align: middle;
+}
+.visual_swiper .swiper-pagination > li > a {
+	display: inline-block;
+	overflow: hidden;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: #fff;
+	vertical-align: middle;
+	text-indent: 100%;
+	white-space: nowrap;
+	opacity: 1;
+	box-sizing: content-box;
+}
+.visual_swiper .swiper-pagination > li > a.active {
+	border: 3px solid #fff;
+	background-color: #212cce;
+}
+.visual_swiper .btn_control {
+	overflow: hidden;
+	position: absolute;
+	left: 50vw;
+	bottom: 66px;
+	z-index: 10;
+	width: 17px;
+	height: 17px;
+	margin-left: 70px;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+.visual_swiper .btn_control[aria-checked="true"]  {
+	background: url("../images/main/btn_slide_start.png") no-repeat 0 0;
+}
+.visual_swiper .btn_control[aria-checked="false"]  {
+	background: url("../images/main/btn_slide_stop.png") no-repeat 0 0;
+}
+.business_list {
+	display: table;
+	width: 100%;
+}
+.business_list > li {
+	display: table-cell;
+	width: 25%;
+	padding: 100px 15px 0;
+	border-left: 1px solid #ccc;
+	background-position: 50% 0;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+.business_list > li.system {
+	background-image: url("../images/main/bg_business_list01.png");
+}
+.business_list > li.service {
+	background-image: url("../images/main/bg_business_list02.png");
+}
+.business_list > li.ai {
+	background-image: url("../images/main/bg_business_list03.png");
+}
+.business_list > li.solution {
+	border-right: 1px solid #ccc;
+	background-image: url("../images/main/bg_business_list04.png");
+}
+.business_list .tit {
+	margin-bottom: 30px;
+	color: #333;
+	font-family: 'nsbd';
+	font-size: 22px;
+	text-align: center;
+	line-height: 32px;
+}
+.business_list .tit + [class^="blt_txt"] {
+	padding-left: 55px;
+}
+.content_full-bg.technic {
+	overflow: hidden;
+	background-image: url("../images/main/bg_technic_visual.jpg");
+}
+.technic_list {
+	position: relative;
+}
+.technic_list:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: -100vw;
+	right: -100vw;
+	top: 118px;
+	height: 1px;
+	background-color: #999;
+}
+.technic_list:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.technic_list > li {
+	float: left;
+	position: relative;
+	width: 25%;
+	padding-top: 150px;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	color: #999;
+	text-align: center;
+	line-height: 26px;
+}
+.technic_list > li:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 116px;
+	width: 5px;
+	height: 5px;
+	border-radius: 500%;
+	background-color: #fff;
+}
+.technic_list > li.ai {
+	background-image: url("../images/main/bg_technic_list01.png");
+}
+.technic_list > li.chain {
+	background-image: url("../images/main/bg_technic_list02.png");
+}
+.technic_list > li.develop {
+	background-image: url("../images/main/bg_technic_list03.png");
+}
+.technic_list > li.build {
+	background-image: url("../images/main/bg_technic_list04.png");
+}
+.technic_list > li em {
+	display: block;
+	margin-bottom: 20px;
+	color: #fff;
+	font-family: 'nsbd';
+	font-size: 22px;
+	line-height: 32px;
+}
+.content_full.global {
+	position: relative;
+	background: url("../images/main/bg_repeat_global.png") repeat-y 50% 0;
+}
+.content_full.global:before, .content_full.global:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 260px;
+}
+.content_full.global:before {
+	left: 0;
+	background: url("../images/main/bg_global_left.png") no-repeat 0 40px;
+}
+.content_full.global:after {
+	right: 0;
+	background: url("../images/main/bg_global_right.png") no-repeat 0 50%;
+}
+.content_full.global .partners {
+	padding-right: 4%;
+}
+.content_full.global .customers {
+	padding-left: 4%;
+}
+.content_full.global .mask {
+	overflow: hidden;
+	position: relative;
+	z-index: 10;
+}
+.content_full.global .list {
+	margin: 0 -2% -2%;
+}
+.content_full.global .list:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.content_full.global .list > li {
+	float: left;
+	width: calc(100% / 3);
+	padding: 0 2% 2%;
+}
+.content_full.global .list > li:nth-child(3n) {
+	margin-right: -3px;
+}
+.content_full.global .list > li > img {
+	width: 100%;
+}
+.content_full.global .swiper-pagination {
+	position: static;
+	margin-top: 32px;
+	font-size: 0;
+}
+.content_full.global .swiper-pagination > li {
+	display: inline-block;
+	margin: 0 8px;
+	vertical-align: middle;
+}
+.content_full.global .swiper-pagination > li > a {
+	display: inline-block;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: #fff;
+}
+.content_full.global .swiper-pagination > li > a.active {
+	width: 10px;
+	height: 10px;
+}
+.contact_list:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.contact_list > li {
+	float: left;
+	width: 50%;
+}
+.contact_list > li:nth-child(odd) {
+	padding-right: 2%;
+}
+.contact_list > li:nth-child(even) {
+	padding-left: 2%;
+}
+.contact_list .place {
+	color: #333;
+	font-family: 'nsbd';
+	font-size: 22px;
+	line-height: 32px;
+}
+.contact_list .map {
+	position: relative;
+	margin-top: 20px;
+	padding-top: 56.25%;
+	border: 1px solid #ccc;
+}
+.contact_list .map iframe {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.contact_list .address {
+	margin-top: 20px;
+	color: #333;
+	line-height: 26px;
+}
+.contact_list .address span {
+	font-family: 'nsbd';
+}

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <!-- E : mobile -->
+        <title>회원가입_학습자(일반/14세미만)</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <script type="text/javascript" src="../js/jquery-2.2.4.js"></script>
+        <script type="text/javascript" src="../js/jquery.mCustomScrollbar.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/common.js"></script>
+
+        <!-- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="js/selectivizr.js">
+ -->
+        <!--[if lte IE 9]>
+</script>
+<![endif]-->
+    </head>
+
+    <body>
+        <!-- mypage -->
+        <div id="mypage">
+            <!-- signupWrap -->
+            <div class="signupWrap bgGray h100">
+                <div>
+                    <!-- signupTop -->
+                    <div class="signupTop">
+                        <a href="">누리세종학당</a>
+                        <h1><strong>세종학당 온라인 서비스</strong> 회원가입</h1>
+                        <p>본인확인 및 정보입력을 진행해 주세요.</p>
+                    </div>
+                    <!--// signupTop -->
+
+                    <!-- signupTop -->
+                    <div class="loginForm">
+                        <div class="inner">
+                            <!-- 계정정보 -->
+                            <p class="formTit">계정정보</p>
+                            <dl>
+                                <dt><span class="cPurple">*</span> 사용자 아이디</dt>
+                                <dd>
+                                    <div class="inputBtn">
+                                        <input type="text" title="아이디 입력" placeholder="이메일을 입력해 주세요.">
+                                        <button type="button" class="btn w80" onclick="fn_layer('layer01', 360)">인증</button>
+                                    </div>
+                                    <p class="cPurple inputP">인증이 완료되었습니다.</p>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><span class="cPurple">*</span> 비밀번호</dt>
+                                <dd>
+                                    <input type="password" title="비밀번호 입력" placeholder="8~20자의 영문,숫자 및 특수문자 조합">
+                                    <p class="cRed inputP">비밀번호는 영문자, 숫자, 특수문자(!@#$%^*&*()_+) 조합으로 8~20자로 입력하여주세요.</p>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><span class="cPurple">*</span> 비밀번호 확인</dt>
+                                <dd><input type="text" title="비밀번호 확인 입력" placeholder="8~20자의 영문,숫자 및 특수문자 조합" value="asdf1234!"></dd>
+                            </dl>
+
+                            <!-- 개인정보 -->
+                            <p class="formTit">개인정보</p>
+                            <dl>
+                                <dt><span class="cPurple">*</span> 닉네임</dt>
+                                <dd>
+                                    <div class="inputBtn">
+                                        <input type="text" title="닉네임 입력" placeholder="닉네임을 입력해 주세요.">
+                                        <button type="button" class="btn">생성</button>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt><span class="cPurple">*</span> 이름</dt>
+                                <dd>
+                                    <div class="input2">
+                                        <input type="text" title="성 입력" placeholder="성">
+                                        <input type="text" title="이름 입력" placeholder="이름">
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>성별</dt>
+                                <dd>
+                                    <div class="checkboxWrap">
+                                        <span class="checkbox curr">
+                                            <input type="radio" name="chk08" id="chk0801">
+                                            <label for="chk0801">여자</label>
+                                        </span>
+                                        <span class="checkbox">
+                                            <input type="radio" name="chk08" id="chk0802">
+                                            <label for="chk0802">남자</label>
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>국적</dt>
+                                <dd>
+                                    <div class="selectBox countrySelect">
+                                        <label for="select01">KOREA, REPUBLC OF</label>
+                                        <select id="counSelect">
+                                            <option value="korea" selected="selected">KOREA, REPUBLC OF</option>
+                                            <option value="">01</option>
+                                            <option value="">02</option>
+                                        </select>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>생년월일</dt>
+                                <dd>
+                                    <div class="input3">
+                                        <div class="selectBox">
+                                            <label for="select">년</label>
+                                            <select id="select">
+                                                <option value="">년</option>
+                                                <option value="">01</option>
+                                                <option value="">02</option>
+                                            </select>
+                                        </div>
+                                        <div class="selectBox">
+                                            <label for="select">월</label>
+                                            <select id="select">
+                                                <option value="">월</option>
+                                                <option value="">01</option>
+                                                <option value="">02</option>
+                                            </select>
+                                        </div>
+                                        <div class="selectBox">
+                                            <label for="select">일</label>
+                                            <select id="select">
+                                                <option value="">일</option>
+                                                <option value="">01</option>
+                                                <option value="">02</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <dl>
+                                <dt>E-mail 수신여부</dt>
+                                <dd>
+                                    <div class="checkboxWrap">
+                                        <span class="checkbox curr">
+                                            <input type="radio" name="chk09" id="chk0901">
+                                            <label for="chk0901">예</label>
+                                        </span>
+                                        <span class="checkbox">
+                                            <input type="radio" name="chk09" id="chk0902">
+                                            <label for="chk0902">아니오</label>
+                                        </span>
+                                    </div>
+                                </dd>
+                            </dl>
+
+                            <!-- 14세 미만 확인 -->
+                            <div class="ageLimit">
+                                <p class="formTit">14세 미만 확인</p>
+                                <div class="inputTxt">
+                                    <div class="checkboxWrap addInfoBtn">
+                                        <span class="checkbox curr">
+                                            <input type="radio" name="chk10" id="chk1001">
+                                            <label for="chk1001">14세 이상</label>
+                                        </span>
+                                        <span class="checkbox show">
+                                            <input type="radio" name="chk10" id="chk1002">
+                                            <label for="chk1002">14세 미만</label>
+                                        </span>
+                                    </div>
+                                    <p class="cRed inputP">내국인회원만 해당하는 항목입니다.</p>
+                                </div>
+                            </div>
+
+                            <!-- 14세 미만 확인 - 추가 입력 -->
+                            <!-- formAddInfo -->
+                            <div class="formAddInfo" style="display:none;">
+                                <p class="addInfoTit">이름과 생년월일을 정확히 입력하여 주세요. <span class="cRed">14세 미만 가입의 경우 법정대리인(부모)의 본인인증이 필요합니다.</span></p>
+                                <dl>
+                                    <dt>가입자 이름</dt>
+                                    <dd><input type="text" title="가입자 이름 입력" placeholder="가입자의 이름을 입력해 주세요."></dd>
+                                </dl>
+                                <dl>
+                                    <dt>가입자 성별</dt>
+                                    <dd>
+                                        <div class="checkboxWrap">
+                                            <span class="checkbox curr">
+                                                <input type="radio" name="chk11" id="chk1101">
+                                                <label for="chk1101">여자</label>
+                                            </span>
+                                            <span class="checkbox">
+                                                <input type="radio" name="chk11" id="chk1102">
+                                                <label for="chk1102">남자</label>
+                                            </span>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>가입자 생년월일</dt>
+                                    <dd>
+                                        <div class="input3">
+                                            <div class="selectBox">
+                                                <label for="select">년</label>
+                                                <select id="select">
+                                                    <option value="">년</option>
+                                                    <option value="">01</option>
+                                                    <option value="">02</option>
+                                                </select>
+                                            </div>
+                                            <div class="selectBox">
+                                                <label for="select">월</label>
+                                                <select id="select">
+                                                    <option value="">월</option>
+                                                    <option value="">01</option>
+                                                    <option value="">02</option>
+                                                </select>
+                                            </div>
+                                            <div class="selectBox">
+                                                <label for="select">일</label>
+                                                <select id="select">
+                                                    <option value="">일</option>
+                                                    <option value="">01</option>
+                                                    <option value="">02</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>법정대리인(부모) 인증</dt>
+                                    <dd>
+                                        <!-- type -->
+                                        <div class="type">
+                                            <div>
+                                                <img src="../images/mypage/ico_ipin.png" alt="">
+                                                <p class="name">아이핀(I-PIN) 인증</p>
+                                                <p>본인 아이핀 정보를 입력해 주세요.</p>
+                                                <button type="button" class="btn loginBtn">아이핀 인증</button>
+                                            </div>
+                                            <div>
+                                                <img src="../images/mypage/ico_phone.png" alt="">
+                                                <p class="name">휴대폰 인증</p>
+                                                <p>본인 휴대폰 정보를 입력해 주세요.</p>
+                                                <button type="button" class="btn loginBtn">휴대폰 인증</button>
+                                            </div>
+                                        </div>
+                                        <!--// type -->
+                                    </dd>
+                                </dl>
+                            </div>
+                            <!--// formAddInfo -->
+                        </div>
+                    </div>
+                    <!--// signupTop -->
+
+                    <!-- btnArea -->
+                    <div class="btnArea pB100">
+                        <button type="button" class="btn loginBtn">가입하기</button>
+                    </div>
+                    <!--// btnArea -->
+                </div>
+            </div>
+            <!--// signupWrap -->
+        </div>
+        <!--// mypage -->
+
+        <!-- 아이디 인증팝업 -->
+        <div class="layerPop layer01 loginPop">
+            <div class="inBox">
+                <strong class="tit">인증</strong>
+                <div class="cont">
+                    <p class="cBlack">아이디에 입력된 이메일로 인증번호를 보냅니다.</p>
+                    <p class="cGray">※ 인증 메일을 수신하지 못하신 경우, 아래 이메일로 문의 주세요.<br /> (system@sejonghakdang.org)</p>
+                    <div>
+                        <div class="inputBtn pop">
+                            <input type="text" title="이메일 입력" placeholder="이메일을 입력해 주세요." value="aspkoda@naver.com">
+                            <button type="button" class="btn blackBtn">인증번호 받기</button>
+                        </div>
+                        <div class="inputBtn pop">
+                            <input type="text" title="인증번호 입력" placeholder="인증번호를 입력해 주세요.">
+                            <button type="button" class="btn">인증하기</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:void(0)" onclick="fn_layer_close(this)" class="closeBtn">닫기</a>
+            </div>
+        </div>
+        <!--// 아이디 인증팝업 -->
+    </body>
+
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<title>블루월넛 | 설치가이드</title>
+		<link rel="stylesheet" href="assets/css/common/common.css" />
+		<script src="assets/js/jquery-2.2.4.js"></script>
+		<style type="text/css">
+			body {
+				display: block !important;
+				overflow: auto;
+				min-width: 1600px;
+				box-sizing: border-box
+			}
+
+			* {
+				box-sizing: border-box
+			}
+
+			caption {
+				display: none
+			}
+
+			#wrap {
+				overflow: hidden;
+				width: 100%;
+				min-width: 1024px;
+				margin-bottom: 50px
+			}
+
+			#header {
+				overflow: hidden;
+				padding: 50px;
+				width: 100%
+			}
+
+			#header .tit_area {
+				position: relative;
+				overflow: hidden
+			}
+
+			#header .tit_area h1 {
+				overflow: hidden;
+				line-height: 50px;
+				font-size: 40px
+			}
+
+			#header .tit_area strong {
+				display: block;
+				overflow: hidden;
+				width: 169px;
+				line-height: 23px;
+				text-align: center;
+				font-size: 15px;
+				color: #fff;
+				text-align: center;
+				background: #000
+			}
+
+			#header .tit_area strong:before {
+				display: block;
+				overflow: hidden;
+				position: absolute;
+				bottom: 23px;
+				left: 0;
+				content: "";
+				width: 100%;
+				border-top: 2px solid #000
+			}
+
+			#header .tit_area strong span {
+				overflow: hidden
+			}
+
+			#header .intro {
+				position: absolute;
+				top: 60px;
+				right: 50px;
+				overflow: hidden
+			}
+
+			#header .intro p {
+				overflow: hidden;
+				font-size: 10px;
+				line-height: 15px;
+				text-align: right
+			}
+
+			#contents {
+				position: relative;
+				overflow: hidden;
+				padding: 0 430px 0 50px
+			}
+
+			#contents iframe {
+				position: fixed;
+				right: 50px;
+				overflow-y: auto;
+				border: 1px solid #ccc;
+				width: 360px;
+				height: 640px;
+				background: #fff
+			}
+
+			#contents .table_style01 {
+				width: 100%;
+				max-width: 100%;
+				border-top: 3px solid #f00;
+				border-bottom: 1px solid #000
+			}
+
+			#contents .table_style01 table {
+				min-width: 100%;
+				width: auto;
+				table-layout: fixed
+			}
+
+			#contents .table_style01 table thead {
+				border-left: 1px solid #444
+			}
+
+			#contents .table_style01 table tr th {
+				padding: 10px;
+				border-right: 1px solid #444;
+				font-size: 13px;
+				text-align: left;
+				color: #fff;
+				background: #000
+			}
+
+			#contents .table_style01 table tr td {
+				padding: 10px;
+				border-top: 1px solid #eaeaea;
+				border-right: 1px solid #eaeaea;
+				font-size: 13px;
+				text-align: left;
+				color: #000
+			}
+
+			#contents .table_style01 table tr td:first-child {
+				border-left: 1px solid #eaeaea
+			}
+
+			#contents .table_style01 table tr td a {
+				text-decoration: underline;
+				color: #fa9999
+			}
+
+			#contents .table_style01 table tr td a:visited {
+				color: #00f
+			}
+
+			#contents .table_style01 table tr.today td {
+				border-color: #fccfcf;
+				background: #fcf2f2
+			}
+
+			#contents .table_style01 table tr.today td+td+td+td+td+td+td {
+				color: #ff0000
+			}
+
+			#contents .table_style01 table tr.depth td {
+				border-top: 1px solid #f00
+			}
+
+			/* 메뉴 구분 */
+			#contents .table_style01 table tr.point td {
+				border: 1px solid #f8b9b9;
+				background: #ffe7e7
+			}
+
+			/* 중요 내용 */
+			.noneSb td {
+				background: #f8fbc4
+			}
+
+			.modi td {
+				background: #ffd8d8
+			}
+
+			.bgGray td {
+				color: #ddd !important;
+				background: #fafafa
+			}
+
+			.bgGray td a {
+				color: #ddd !important
+			}
+		</style>
+		<script>
+			$(function () {
+				$(".btnIframe").click(function (e) {
+					e.preventDefault();
+					var i = $(this).attr("href");
+					$("iframe").attr("src", i);
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<!-- wrap -->
+		<div id="wrap">
+
+			<!-- header -->
+			<header id="header">
+				<div class="tit_area">
+					<h1>블루월넛 | 설치가이드</h1>
+					<strong>국문 <span>(Responsive)</span></strong>
+				</div>
+				<div class="intro">
+					<p>HTML5 / utf-8</p>
+					<p>Brows-recrer - Crome, Safari, Fire fox, IE 10</p>
+				</div>
+			</header>
+			<!--// header -->
+
+			<!-- section -->
+			<section id="contents">
+				<iframe src="" frameborder="0"></iframe>
+				<!-- 메뉴 구조도 -->
+				<div class="table_style01">
+					<table summary="리스트, 파일명, URL, 미리보기, 완료날짜, 수정날짜, 기타사항 항목으로 구성된 IA 표입니다.">
+						<caption>블루월넛 | 설치가이드 IA</caption>
+						<colgroup>
+							<col style="width:9%" />
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">No</th>
+								<th scope="col">파일명</th>
+								<th scope="col">URL</th>
+								<th scope="col">미리보기</th>
+								<th scope="col">완료날짜</th>
+								<th scope="col">수정날짜</th>
+								<th scope="col">기타사항</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>제휴 및 이용문의</td>
+								<td><a href="html/guide1.html" target="_blank" title="새창으로 열기">guide1.html</a></td>
+								<td><a href="html/guide1.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>거래내역 조회</td>
+								<td><a href="html/guide2.html" target="_blank" title="새창으로 열기">guide2.html</a></td>
+								<td><a href="html/guide2.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td>신용카드 ,계좌이체, 가상계좌, 휴대폰 소액결제 컨텐츠 포함</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>거래내역 영수증보기</td>
+								<td><a href="html/layer1.html" target="_blank" title="새창으로 열기">layer1.html</a></td>
+								<td><a href="html/layer1.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td>이메일 + 계좌번호, 휴대폰번호 + 금액, 구매자명 +금액 컨텐츠 포함</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>거래내역 영수증보기</td>
+								<td><a href="html/layer2.html" target="_blank" title="새창으로 열기">layer2.html</a></td>
+								<td><a href="html/layer2.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td>휴대폰번호 + 금액, 구매자명+ 금액 컨텐츠 포함</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>결제 완료</td>
+								<td><a href="html/layer3.html" target="_blank" title="새창으로 열기">layer3.html</a></td>
+								<td><a href="html/layer3.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>결제 취소</td>
+								<td><a href="html/layer4.html" target="_blank" title="새창으로 열기">layer4.html</a></td>
+								<td><a href="html/layer4.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>결제 취소 상세</td>
+								<td><a href="html/layer5.html" target="_blank" title="새창으로 열기">layer5.html</a></td>
+								<td><a href="html/layer5.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>결제 요청</td>
+								<td><a href="html/layer6.html" target="_blank" title="새창으로 열기">layer6.html</a></td>
+								<td><a href="html/layer6.html" class="btnIframe">미리보기</a></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--// 메뉴 구조도 -->
+			</section>
+			<!--// section -->
+
+		</div>
+		<!--// wrap -->
+
+	</body>
+
+</html>

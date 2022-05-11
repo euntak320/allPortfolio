@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <!-- E : mobile -->
+    <title>Online Level Test</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script type="text/javascript" src="../js/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="../js/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <!-- <script type="text/javascript" src="../js/common.js"></script> -->
+
+    <!-- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="js/selectivizr.js">
+ -->
+    <!--[if lte IE 9]>
+</script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- skipNav -->
+    <dl id="skipNav">
+        <dt>바로가기 메뉴</dt>
+        <dd><a href="#container">본문 바로가기</a></dd>
+        <dd><a href="#gnb">메뉴 바로가기</a></dd>
+        <dd><a href="#footer">페이지 하단 바로가기</a></dd>
+    </dl>
+    <!-- //skipNav -->
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- header -->
+        <div id="header">
+            <div class="inner">
+                <h1><a href="../html/index.html">세종학당</a></h1>
+                <!-- gnb -->
+                <div id="gnb">
+                    <!-- translation -->
+                    <div class="translation">
+                        <a href="">Translation</a>
+                        <div class="scroll">
+                            <ul>
+                                <li class="curr"><a href=""><img src="../images/common/ico-lang01.png" alt="Korea"><span>Korea</span></a></li>
+                                <li><a href=""><img src="../images/common/ico-lang02.png" alt="English"><span>English</span></a></li>
+                                <li><a href=""><img src="../images/common/ico-lang03.png" alt="Русский"><span>Русский</span></a></li>
+                                <li><a href=""><img src="../images/common/ico-lang04.png" alt="Tiếng Việt"><span>Tiếng Việt</span></a></li>
+                                <li><a href=""><img src="../images/common/ico-lang05.png" alt="Español"><span>Español</span></a></li>
+                                <li><a href=""><img src="../images/common/ico-lang06.png" alt="Français"><span>Français</span></a></li>
+                                <li><a href=""><img src="../images/common/ico-lang07.png" alt="简体中文"><span>简体中文</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--// translation -->
+                    <!-- util -->
+                    <div class="util">
+                        <!-- <p>Hello, <strong>홍길동</strong>!</p>-->
+                        <a href="" class="btnLogin">Login</a>
+                        <a href="" class="btnJoin">Join</a>
+                        <!--<a href="" class="btnLogout">Logout</a>-->
+                        <a href="" class="btnClose">메뉴닫기</a>
+                    </div>
+                    <!--// util -->
+                    <ul>
+                        <li><a href="../html/1111.html">K - Culture</a></li>
+                        <li><a href="">Learning</a></li>
+                        <li><a href="../html/3120.html">Teaching</a></li>
+                        <li class="curr"><a href="">Participation</a></li>
+                        <li><a href="">Korea Information</a></li>
+                    </ul>
+                    <!-- menu -->
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="">K - Culture</a>
+                                <ul>
+                                    <li><a href="">Korean Wave</a>
+                                        <ul>
+                                            <li><a href="../html/1111.html">K-pop</a></li>
+                                            <li><a href="">Web drama</a></li>
+                                            <li><a href="">Movie</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Food</a></li>
+                                    <li><a href="../html/1301.html">Tour</a></li>
+                                    <li><a href="">Traditional</a>
+                                        <ul>
+                                            <li><a href="">Teakwondo</a></li>
+                                            <li><a href="">Traditional Music</a></li>
+                                            <li><a href="">Korean Folktale</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Literature</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../html/3120.html">Learning</a>
+                                <ul>
+                                    <li><a href="../html/2110.html">Text Books</a></li>
+                                    <li><a href="">Practice</a></li>
+                                    <li><a href="">Lectures(intro)</a></li>
+                                    <li><a href="">Learning Materials</a>
+                                        <ul>
+                                            <li><a href="">Video Clips</a></li>
+                                            <li><a href="">Audio Clips</a></li>
+                                            <li><a href="">Images</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Mobile App</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">Teaching</a>
+                                <ul>
+                                    <li><a href="">Teaching Materials</a>
+                                        <ul>
+                                            <li><a href="">Instruction Book</a></li>
+                                            <li><a href="">References</a></li>
+                                            <li><a href="">Education Guidance</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Articles</a>
+                                        <ul>
+                                            <li><a href="">Research Reports</a></li>
+                                            <li><a href="">Academic Papers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Community</a>
+                                        <ul>
+                                            <li><a href="">Korean Education information</a></li>
+                                            <li><a href="">Recruitment</a></li>
+                                            <li><a href="">Ask & Answer</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Korean Teacher Training</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">Participation</a>
+                                <ul>
+                                    <li><a href="">Notice</a></li>
+                                    <li><a href="">Event</a></li>
+                                    <li><a href="">Online Level Test</a></li>
+                                    <li><a href="">Speaking Practice</a></li>
+                                    <li><a href="">Writing Practice</a></li>
+                                    <li><a href="">Teachers Contest</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">Korea Information</a>
+                                <ul>
+                                    <li><a href="">About</a></li>
+                                    <li><a href="">Korea General Information</a></li>
+                                    <li><a href="">Climates/Currency/Bank</a></li>
+                                    <li><a href="">Festivals and Holidays</a></li>
+                                    <li><a href="">Transportation</a></li>
+                                    <li><a href="">Trip to Korea</a></li>
+                                    <li><a href="">Study in Korea</a></li>
+                                    <li><a href="">Korea History</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--// menu -->
+                    <!-- snsArea -->
+                    <div class="snsArea">
+                        <a href=""><img src="../images/common/ico-sns01.png" alt="페이스북"></a>
+                        <a href=""><img src="../images/common/ico-sns02.png" alt="블로그"></a>
+                        <a href=""><img src="../images/common/ico-sns03.png" alt="유튜브"></a>
+                        <a href=""><img src="../images/common/ico-sns04.png" alt="인스타그램"></a>
+                    </div>
+                    <!--// snsArea -->
+                </div>
+                <!--// gnb -->
+                <a href="" class="btnMenu">메뉴보기</a>
+                <a href="" class="btnSOpen">검색영역 열기</a>
+                <div class="searchArea">
+                    <input type="text" title="Search for Materials" placeholder="Search for Materials">
+                    <a href="" class="btnSearch">Search</a>
+                </div>
+            </div>
+        </div>
+        <!--// header -->
+
+        <!-- container -->
+        <div id="mainContainer">
+            <!-- contContainer -->
+            <div class="contContainer">
+                <!-- leftMenu -->
+                <div class="leftMenu">
+                    <div class="linkIcon txtC">
+                        <a href="">
+                            <img src="../images/contents/ico_1depth04.png" alt="">
+                        </a>
+                        <p>Participation</p>
+                    </div>
+                    <!-- accordion -->
+                    <ul class="accordion">
+                        <li>
+                            <div class="link noIcon">
+                                Notice
+                                <div class="arrow-img"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="link noIcon">
+                                Event
+                                <div class="arrow-img"></div>
+                            </div>
+                        </li>
+                        <li class="active">
+                            <div class="link noIcon">
+                                <span>Online Level Test</span>
+                                <div class="arrow-img"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="link noIcon">
+                                Speaking Practice
+                                <div class="arrow-img"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="link noIcon">
+                                Writing Practice
+                                <div class="arrow-img"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="link noIcon">
+                                Teachers Contest
+                                <div class="arrow-img"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!--// accordion -->
+                </div>
+                <!--// leftMenu -->
+
+                <!-- right contents -->
+                <div class="rightContents">
+                    <!-- conTit -->
+                    <div class="conTit">
+                        <h1>Online Level Test</h1>
+                        <div class="breadCrumb">
+                            <ul>
+                                <li>
+                                    <a href="">home</a>
+                                </li>
+                                <li>
+                                    <a href="">Participation</a>
+                                </li>
+                                <li>
+                                    <a href="">Online Level Test</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--// conTit -->
+                    <div id="iosysApp">
+                        <div class="iosys-app">
+                            <div>
+                                <div class="contents-header-framebox">
+                                    <div class="learn-tit-framebox">
+                                        <div class="learn-msgbox">누리-세종학당 온라인 한국어 레벨 테스트에 오신 것을 환영합니다.</div>
+                                        <div style="border-top: 1px dashed rgb(204, 204, 204); background: transparent; padding-top: 10px; margin-top: 15px;">
+                                            <div class="board-view-option">
+                                                <ul style="margin: 0px;">
+                                                    <li>
+                                                        <span class="option-hit" style="padding: 5px 0px 0px 25px; height: 25px; line-height: 25px;">0</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contents-con-framebox">
+                                    <div class="guide-bg">
+                                        <ul class="disc">
+                                            <li>누리-세종학당 온라인 한국어 레벨 테스트는 세종학당이나 누리-세종학당 학습자들이 자신의 한국어
+                                                수준에 맞는 한국어 학습을 시작할 수 있도록 돕기 위한 시험입니다.</li>
+                                            <li>초급 테스트와 중급 테스트가 있고, 각 테스트는 듣기와 읽기로 구성되어 있습니다.</li>
+                                            <li>레벨 테스트를 본 후 <b>같은 등급의 레벨 테스트는 3개월 이후 응시</b>할 수 있습니다.
+                                                <br>
+                                                <b>다른 등급의 레벨 테스트는 바로 재응시</b>할 수 있습니다.
+                                            </li>
+                                        </ul>
+                                        <div class="clearfix" style="text-align: right; position: relative;">
+                                            <span>
+                                                <a href="http://leveltest.sejonghakdang.org/teamsdata/webdata/guidebook_ko.pdf"
+                                                    class="btn btn-default" target="_new">
+                                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAWCAIAAAC63aDhAAADzUlEQVR42p1UXWxUVRCec+8WHkyjhmCCIcSWKglgKAkmJhCSFhWjpgg8QCHYYB+grYkRbFzcai1gDMa2G2PYLhXIbgFDTErJ4oOhJG4JtiWW3VpfmsifWlqwbFlZWrq954xz5tyt3aXhwZPc9qb39Jtvvu+bEUo5IASARQ+Aohf4v0egQhD0GCw481N8s/cw/R0AUf/kNyqA0rIspRQIm//NQpsehUqo3oCLxZ+FcKFVJBrf+lk40lhjC/1JWZiHQoFEMVfINF1E8NxJJMrrWlt876TG03v8p7EnyA1RATqgSwsm0HExXtEQTl5o0qwMX2Ru+qNpBK4PjxZu/rQvvC+Zmizd/RX2tiAQQcYi/ihsAcp/Ojrw+80T5/u+2FW2rGjRq6uWWOCg8BgpCRd1t3DzdqJwg7ev7ZN7qfF1Nc3OzwHTGZVGrqxVX7m9ITmeHrqdWL544ZtrVuzf9YYEiwD4puLfmuofI3cLNtbF23xj9ydKqr5Uva3CdCaRNBFGfsKLRPsr9oeoR3BtNc5a5sW0+dfI6KINdbE2H/EqqW5SPUFDnHqUgBqNfBOA7V2/Vh4IjXU2Z4xW+itoNZHxyMVrQ38/v8n3y8n65D+pkmo/9mR8NNJLfUk9ue7DKelMTjzMz88vX78qUFuuuXNvGg4piR4CvDGcLNj4cSz0UfKBKqk+pLqDZLXSLukjBaUG4fgPl2KDQ9+evRj0bit4dv6a4iJTMOOke24M39VY4Trd43uNeOkIEhlyD7Wm01fVmWhs54FTY52NwihFCrjhs2bHqm7ifHE9nXvKhEWZIF6X+wevHTvb5a+teGHhvNXFRS5i9mzNxKJMyO6WLL24vv30K++np2A8LZ96Im/bay99U1suWPMZxHOxSrWPAe5AY0kKkY1sk4BIV7yyITR6oZknUYEZxsfoxT4i68RZhcxso2zvGuBMNBoIMEHNFj8HS3UHzCowWGZCRPGOg8kHE3+OJF5cvKBs7cqGyrd0iRwXZ+kxyFc4qwoti3P/9Xedv10dOvHjlc9r3l763DOvv7wMuU3ucXbtS6v8suew4Z7RPnPao/F3D4bunf8v92ZVsPx6Bmjart9KFG6qj4W92seqJqc3KNxMZGN1RPt31B851/wBSkfYHv1VSWHNkSBtcMy03Rm7v8V3tHXf9tTDyb3+7ye7Wzwaw8nFikSvlHlbefwU0GDYcwCmQCrNR+TRsJGAZrvaOke8+igTqBxaTTlYZjYt3oRaQz2J6C5edFfU9BrmvmB6xT+KZcS2MveybFSsGwtH1GbsIl0B/wWmjHTPNVQqBQAAAABJRU5ErkJggg==">
+                                                    안내자료 다운로드(PDF)
+                                                </a>
+                                            </span>
+                                            <span style="margin-left: 2em;">
+                                                <a href="javascript:;" class="btn btn-default">
+                                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAWCAIAAAC63aDhAAADuElEQVR42n1UQWhcVRS97/1Jp1WQlkIXIkI3LlNFmkk61nRqFZyZREFqdWEmI9Ik4yIN09JVVwWhYAlpyCQRbaZFFLUi1Jl0k6SVkElSaHBjV4ILwe5SrcaF+f9dz73vTzJC41/8/97799177rnnXsPMRI7I4mMoZE7gQxwZExC+ciiPYzIGa0dsyWBn/XnTRs4NcxSRDdiJBcM+YMLHbHmRSPLXyl+z5aElDpb4h1jiQKLa7tLo4trPlkO5bQNyoVyUeAAIFNga55y4a0LD78zzzy1MlWPPzrEGCzNDYz3p9jdOvNjGUUi4r9ec+rOBps+KOjJ2l4n+QU435tfqi/cXJs9oGpqjB989NFrMpwu5DqP0gTJhSIM32ZTozggqn2C13piprd6ZHJHM4ISVfPjNlC735zoL+a4WXpscC4VaEmagDcCDSeDWtXrjaq3xQ2WEjUVw4+uofI19kE315TuwBpLxL+Z///svR4GVPFHFhJiJMZ0v5He3SYyZ2ZVqbUl8ISS48tyDTuAqSI6dmiOdv3LzwR/rFgTpfTKBP8czee7d3ckA+K7Vlqr1lduVsmKmZmkofLk08X7ucH/2CHsdgSPPgaYZyT4WXSwUsnA0Uxdcyi+IipyqMMwMjvf1porZI77AZ8e+Wf9zA/8dCuZQO3GNKjrbNlE+uWdPEgGu11ZmassLUyOkPCpfjiNrTgyOFnq6+l9Pebovfja7/mgDYgNPsNpkIcyHuVTqTSaTWFVnG9e/XxZ9iZi3cuTNTOlKX0+6mO1gADH/7Q95rK8mkSdHzqv1u8jxTqXsbSQHL5djpcvFXLqQPawcJWKV6TWxi+XhlMRA38bXUX1R7AvFNGQzQx+/lztazKeaDewbTQB4ILx9qi9Dn9can84uz1fKgc4F74t+/e3hyQvTp44fevN4irRlnAsDFMbssm5T+DIBWhU9hB530hEGt24srH07d+/LjwYOHtgnIb3ug84BjYXAEaMZ0UBQshIq6aGKDps2R5vKXCDIWSyVCg5XP5Ex5X0lUqd/+e7Ss0/vo8c/yhZT4WJ1+J3Xxr6aH3m7e/rm0kBveu9TTx5864JrVIzoCxBQuK4PF6eHnzmw//GuIDDoytD413OvdrXfWvox/9ILc3d/eiXV/kSC04OjvDIhY0XaFVjTp00U7ADKN7YOLJbxiuziqQEBGBw6bkyJkIT6FuHsmGM8a63fR7raHrx6rlqVQ1X4zs5a7rS+t89RjeaciDv5f5xhAFurqqZtS6cYZYrD17+4MhXK4yZ+FAAAAABJRU5ErkJggg==">
+                                                    지원 브라우저</a>
+                                            </span>
+                                            <!-- 20-12-15  -->
+                                            <!-- display:none, block으로 표시 -->
+                                            <div class="pull-right" style="max-width: 320px; position: absolute; right: 0px; top: 40px; display: block;">
+                                                <div class="panel panel-browser clearfix">
+                                                    <div class="panel-body clearfix">
+                                                        <div class="row">
+                                                            <div class="col-xs-12">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <span class="media-object browser chrome"></span>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h4 class="media-heading">Google Chrome</h4>
+                                                                        <a href="https://www.google.com/intl/en/chrome/" target="_new">최신 버전 다운로드</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <span class="media-object browser opera"></span>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h4 class="media-heading">Opera</h4>
+                                                                        <a href="https://www.opera.com/ko/download"  target="_new">최신버전 다운로드</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <span class="media-object browser safari"></span>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h4 class="media-heading">Apple Safari</h4>
+                                                                        <a href="https://www.apple.com/safari/" target="_new">최신버전 다운로드</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <span class="media-object browser edge"></span>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h4 class="media-heading">Mircosoft Edge (Windows 10)</h4>
+                                                                        <a href="https://www.microsoft.com/en-us/windows/microsoft-edge" target="_new">최신 버전 다운로드</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-12">
+                                                                <div class="media">
+                                                                    <div class="media-left">
+                                                                        <span class="media-object browser ie"></span>
+                                                                    </div>
+                                                                    <div class="media-body">
+                                                                        <h4 class="media-heading">Internet Explorer (Windows 7 or 8)</h4>
+                                                                        <a href="https://www.microsoft.com/en-gb/download/internet-explorer.aspx" arget="_new">최신 버전 다운로드</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="guide-lvl clearfix">
+                                <div class="guide-lvl-title">※ 판정등급 - 세종한국어 참고등급</div>
+                                <div class="left">
+                                    <div class="lvl">
+                                        <span class="box">초급</span>
+                                    </div>
+                                    <table class="table table-list">
+                                        <thead>
+                                            <tr>
+                                                <th>판정등급</th>
+                                                <th>세종한국어 참고등급</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>1A</th>
+                                                <td>세종한국어1</td>
+                                            </tr>
+                                            <tr>
+                                                <th>1B</th>
+                                                <td>세종한국어2</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2A</th>
+                                                <td>세종한국어3</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2B</th>
+                                                <td>세종한국어4</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="right">
+                                    <div class="lvl">
+                                        <span class="box">중급</span>
+                                    </div>
+                                    <table class="table table-list">
+                                        <thead>
+                                            <tr>
+                                                <th>판정등급</th>
+                                                <th>세종한국어 참고등급</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>3A</th>
+                                                <td>세종한국어5</td>
+                                            </tr>
+                                            <tr>
+                                                <th>3B</th>
+                                                <td>세종한국어6</td>
+                                            </tr>
+                                            <tr>
+                                                <th>4A</th>
+                                                <td>세종한국어7</td>
+                                            </tr>
+                                            <tr>
+                                                <th>4B</th>
+                                                <td>세종한국어8</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <p class="more-btn">
+                                <a href="#">누리-세종학당 온라인 한국어 레벨 테스트 시작하기
+                                    <img
+                                        src="data:image/png;base64,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"></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--// right contents -->
+        </div>
+        <!--// contContainer -->
+    </div>
+    <!--// container -->
+
+    <!-- footer -->
+    <div id="footer">
+        <!-- footTop -->
+        <div class="footTop">
+            <ul>
+                <li><a href="">세종학당 <br />재단소개</a></li>
+                <li><a href="">누리-세종학당 <br />소개</a></li>
+                <li><a href="">관련기관 <br />누리집</a></li>
+            </ul>
+        </div>
+        <!--// footTop -->
+        <!-- footBot -->
+        <div class="footBot">
+            <!-- util -->
+            <div class="util">
+                <ul>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">저작권정책</a></li>
+                    <li><a href="">전자우편무단수집거부</a></li>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">원격지원 서비스</a></li>
+                </ul>
+                <div class="snsArea">
+                    <a href=""><img src="../images/common/ico-sns01.png" alt="페이스북"></a>
+                    <a href=""><img src="../images/common/ico-sns02.png" alt="블로그"></a>
+                    <a href=""><img src="../images/common/ico-sns03.png" alt="유튜브"></a>
+                    <a href=""><img src="../images/common/ico-sns04.png" alt="인스타그램"></a>
+                </div>
+            </div>
+            <!--// util -->
+            <div class="inner">
+                <p class="logo">세종학당</p>
+                <address>
+                    <span>세종학당재단 우)06716 서울시 서초구 반포대로 22 서초 평화빌딩 11,12층</span>
+                    <span>대표전화 02)3276-0700</span>
+                </address>
+                <div class="footMark">
+                    <a href=""><img src="../images/common/img-mark01.png" alt="DQC 데이터품질인증"></a>
+                    <a href=""><img src="../images/common/img-mark02.png" alt="공공누리 공공저작물 자유이용허락"></a>
+                    <a href=""><img src="../images/common/img-mark03.png" alt="굿콘텐츠서비스 인증"></a>
+                </div>
+            </div>
+        </div>
+        <!--// footBot -->
+    </div>
+    <!--// footer -->
+    </div>
+    <!--// wrap -->
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>관리자 | 스타 플랫폼 가맹점 고객확인제도</title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="gnbWrap">
+				<div class="fl"><h1 class="logo"><a href="#">스타플랫폼<span>비대면 가맹신청</span></a></h1></div>
+			</div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container" class="starGate">
+
+		<!-- content -->
+		<div class="content">
+			<h2 class="hTit">스타플랫폼 가맹점 고객확인제도</h2>
+			<!-- textarea -->
+			<div class="conditionsArea">
+				<div class="clientCheck">
+					<div class="tblTopWrap">
+						<div class="fl">
+							<p class="yellowRect">고객정보</p>
+						</div>
+					</div>
+					<!-- table -->
+					<div class="tbw">
+						<table>
+							<caption>고객정보 테이블</caption>
+							<colgroup>
+								<col style="width:15%">
+								<col style="width:atuo">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>이름</th>
+									<td>대표자명</td>
+								</tr>
+								<tr>
+									<th>실명번호</th>
+									<td>대표자 실명번호</td>
+								</tr>
+								<tr>
+									<th>국적</th>
+									<td>대표자 국적</td>
+								</tr>
+								<tr>
+									<th>자택주소</th>
+									<td>대표자 자택주소</td>
+								</tr>
+								<tr>
+									<th>휴대폰번호</th>
+									<td>대표자-연락처1</td>
+								</tr>
+								<tr>
+									<th>Email</th>
+									<td>사업장-Email</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tblTopWrap mt30">
+						<div class="fl">
+							<p class="yellowRect">직장정보</p>
+						</div>
+					</div>
+					<!-- table -->
+					<div class="tbw">
+						<table>
+							<caption>고객정보 테이블</caption>
+							<colgroup>
+								<col style="width:15%">
+								<col style="width:atuo">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>직장/사업장명</th>
+									<td>사업장-상호명</td>
+								</tr>
+								<tr>
+									<th>연락처</th>
+									<td>사업장-전화번호</td>
+								</tr>
+								<tr>
+									<th>직장/사업장 주소</th>
+									<td>사업장-주소</td>
+								</tr>
+								<tr>
+									<th>부서명</th>
+									<td>사업장-가맹점명(간판명)한글</td>
+								</tr>
+								<tr>
+									<th>소재국가</th>
+									<td>사업장-주소의"국적"</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tblTopWrap mt30">
+						<div class="fl">
+							<p class="yellowRect">추가정보</p>
+						</div>
+					</div>
+					<!-- table -->
+					<div class="tbw">
+						<table>
+							<caption>고객정보 테이블</caption>
+							<colgroup>
+								<col style="width:15%">
+								<col style="width:atuo">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>직업구분</th>
+									<td>개인사업자</td>
+								</tr>
+								<tr>
+									<th>거래목적</th>
+									<td>
+										<select name="" id="" class="none">
+											<option value="">급여 및 생활비</option>	
+											<option value="">저축 및 투자</option>		
+											<option value="">사업상 거래</option>	
+											<option value="">보험료 납부</option>	
+											<option value="">공과금 납부</option>
+											<option value="">카드대금</option>		
+											<option value="">대출원리금 상환</option>	
+											<option value="">상속증여서 거래</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>거래자금의 원천</th>
+									<td>
+										<select name="" id="" class="none">
+											<option value="">근로 및 연금소득</option>	
+											<option value="">퇴직소득</option>		
+											<option value="">사업소득</option>	
+											<option value="">부동산 임대소득</option>	
+											<option value="">부동산 등 양도소득</option>
+											<option value="">금융소득(이자 및 배당)</option>		
+											<option value="">상속/증여</option>	
+											<option value="">일시 재산양도로 인한 소득</option>
+											<option value="">-기타</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>추정 자산 규모</th>
+									<td>
+										<select name="" id="" class="none">
+											<option value="">10억 미만</option>	
+											<option value="">10억 이상</option>		
+											<option value="">100억이상 100억 미만</option>	
+											<option value="">1000억 이상</option>	
+											
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>실제소유자 여부</th>
+									<td>
+										<div class="formChkRdo">
+											<ul>
+												<li>
+													<label class="label">
+														<input type="radio" class="rdo" name="viewRdo">
+														<span class="ico"></span>
+														<span class="lTxt">예</span>
+													</label>
+												</li>
+												<li>
+													<label class="label">
+														<input type="radio" class="rdo" name="viewRdo">
+														<span class="ico"></span>
+														<span class="lTxt">아니오</span>
+													</label>
+												</li>
+											</ul>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- //table -->
+				</div>
+				<div class="fr mt30">
+					<a href="#" class="btn md de">정보수정</a>
+					<a href="#" class="btn md ye">등록</a>
+				</div>
+			</div>
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

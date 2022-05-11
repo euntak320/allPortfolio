@@ -1,0 +1,461 @@
+/**
+ * online, onlineSummary에서 사용
+ */
+$(function() {
+	
+	var chart_height = 300;
+
+	var colors = [
+		'rgb(255, 99, 132)',
+		'rgb(75, 192, 192)',
+		'rgb(255, 159, 64)',
+		'rgb(54, 162, 235)',
+		'rgb(255, 205, 86)',
+		'rgb(153, 102, 255)',
+		'rgb(201, 203, 207)',
+	]
+
+	function getColor(index, opacity) {
+		var alpha = opacity === undefined ? 0.5 : 1 - opacity;
+		return Color(colors[index % colors.length]).alpha(alpha).rgbString();
+	}
+
+	function generateLabels(keys) {
+		return keys;
+	}
+
+	function generateDataSets(bMap, normalColumnList, path) {
+		var values = bMap[path];
+		var data = [];
+		for (var i = 0; i < normalColumnList.length; i++) {
+			var normalColumn = normalColumnList[i];
+			data.push({
+				backgroundColor: getColor(i),
+				borderColor: getColor(i),
+				data: getValues(values, normalColumn),
+				label: normalColumn,
+				fill: false
+			})
+		}
+		return data;
+	}
+
+	function getValues(values, normalColumn) {
+		if(!values)
+			return null;
+		return values.map(function(value) {
+			return value[normalColumn];
+		})
+	}
+	
+	function findValue(values, key, findObj) {
+		var isFind = false;
+		values.forEach(function(value) {
+			if(value[key] === findObj)
+				isFind = true;
+		})
+		return isFind;
+	}
+
+	function makeData(originalObject, collectTime, timeStr, normalColumnList) {
+		var copyObj = jQuery.extend({}, originalObject);
+		copyObj[collectTime] = timeStr;
+		normalColumnList.forEach(function(normalColumn) {
+			copyObj[normalColumn] = null;
+		})
+		return copyObj;
+	}
+
+	function _getPathMap(keyColumnList, rows) {
+		return Path.getPaths(keyColumnList, rows);
+	}
+
+	function correctValues(aMap, bMap, collectTime, normalColumnList) {
+		var maxKey = Object.keys(aMap).length || 0;
+		Object.keys(bMap).forEach(function(key) {
+			var values = bMap[key];
+			if(values.length !== maxKey) {
+				Object.keys(aMap).forEach(function(timeStr) {
+					if(!findValue(values, collectTime, timeStr)) {
+						values.push(makeData(values[0], collectTime, timeStr, normalColumnList));
+						values.sort(function(a, b) {
+							var A = a[collectTime].toUpperCase();
+							var B = b[collectTime].toUpperCase();
+							if (A < B) {
+								return -1;
+							}
+							if (A > B) {
+								return 1;
+							}
+							return 0;
+						});
+					}
+				})
+			}
+		});
+		return bMap;
+	}
+	
+	function convertTickLabel(tickLabel , statTypeId) {
+		var formatedTickLabel = "";
+		
+		if(typeof moment == 'function' && tickLabel !== null ) {
+			var timeMoment = moment(tickLabel); //YYYY-MM-dd HH:mm:ss
+
+			//이 부분은 Online 통계조회를 염두에 둔 케이스다
+			if( typeof statTypeId !== 'undefined' && statTypeId !== null ) {
+				var currentStatType = $("#" + statTypeId).attr("data-current-stat-type");
+				if( Number(currentStatType) === 0 ) {//1분 통계
+					formatedTickLabel = timeMoment.format('HH:mm');
+				}
+				else if( Number(currentStatType) === 1 ) {
+					formatedTickLabel = timeMoment.format('HH:mm');
+				}
+				else if( Number(currentStatType) === 2 ) {
+					formatedTickLabel = timeMoment.format('DD-HH');
+				}
+				else if( Number(currentStatType) === 3 ) {
+					formatedTickLabel = timeMoment.format('MM-DD');
+				}
+			}
+			//이 부분은  Online Summary 통계조회를 염두에 둔 케이스다
+			else {
+				formatedTickLabel = timeMoment.format('HH:mm');
+			}
+		}
+		else {
+			formatedTickLabel = tickLabel;
+		}
+		
+		return formatedTickLabel; 
+	}
+	
+	window.LineChart = function(lineChartId , statTypeId) {
+		var cfg_line = {
+				type: 'line',
+				data: {
+					labels: [],
+					datasets: [],
+				},
+				options: {
+					maintainAspectRatio: false,
+					spanGaps: true,
+					legend: {
+						display: false,
+					},
+					elements: {
+						line: {
+							tension: 0.000001
+						}
+					},
+					scales: {
+						xAxes: [{
+							ticks: {
+								maxTicksLimit: 10,
+								maxRotation: 0,
+								padding: 5,
+								userCallback: function(tickLabel) {
+									return convertTickLabel(tickLabel , statTypeId); 
+								},
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								beginAtZero:true , 
+							}
+						}]
+					},
+					animation: {
+						duration : 0,
+						onComplete: function() {
+						}
+					},
+					onResize: function() {
+					}
+				},
+		};
+
+		return {
+			lineChart : null,
+			
+			init: function(keyColumnList , normalColumnList, rows, path) {
+				var collectTime = keyColumnList[0];
+				var aMap = Map.collectMap(collectTime, rows);
+				var bMap = correctValues(aMap, _getPathMap(keyColumnList, rows), collectTime, normalColumnList);
+				var labelList = generateLabels(Object.keys(aMap));
+				var dataList = generateDataSets(bMap, normalColumnList, path);
+				var flag = "";
+
+				$.each(dataList, function(index, dataObj){
+					if(typeof dataList[index]['data'] != 'undefined' && dataList[index]['data'] != undefined && dataList[index]['data'] != null) {
+						var len = dataList[index]['data'].length-1;
+						if(typeof dataList[index]['data'][0] == 'undefined' || dataList[index]['data'][0] == undefined || dataList[index]['data'][0] == null) {
+							flag = "first";
+						} else if(typeof dataList[index]['data'][len] == 'undefined' || dataList[index]['data'][len] == undefined || dataList[index]['data'][len] == null){
+							flag = "last";
+
+						} else {
+						}
+					}
+				});
+				if(flag == "first") {
+					labelList.splice(0,1);
+				} else if(flag == "last") {
+					labelList.splice(labelList.length-1,1);
+				}
+				
+				cfg_line.data.labels = labelList;
+				cfg_line.data.datasets = dataList;
+				
+				this.lineChart = new Chart(lineChartId, cfg_line, {
+					onAnimationComplete: function () {
+						console.log(this)
+					}
+				});
+				this.height(chart_height);
+				this.show();
+			},
+			
+			update: function(keyColumnList , normalColumnList, rows, path , selectedList, pageno) {
+				var collectTime = keyColumnList[0];
+				var aMap = Map.collectMap(collectTime, rows);
+				var bMap = correctValues(aMap, _getPathMap(keyColumnList, rows), collectTime, normalColumnList);
+				var labelList = generateLabels(Object.keys(aMap));
+				var dataList = generateDataSets(bMap, normalColumnList, path);
+				var flag = "";
+
+				$.each(dataList, function(index, dataObj){
+					if(typeof dataList[index]['data'] != 'undefined' && dataList[index]['data'] != undefined && dataList[index]['data'] != null) {
+						var len = dataList[index]['data'].length-1;
+						if(typeof dataList[index]['data'][0] == 'undefined' || dataList[index]['data'][0] == undefined || dataList[index]['data'][0] == null) {
+							flag = "first";
+						} else if(typeof dataList[index]['data'][len] == 'undefined' || dataList[index]['data'][len] == undefined || dataList[index]['data'][len] == null){
+							flag = "last";
+						} else {
+						}
+					}
+				});
+				if(flag == "first") {
+					labelList.splice(0,1);
+				} else if(flag == "last") {
+					labelList.splice(labelList.length-1,1);
+				}
+
+				cfg_line.data.labels = labelList;
+				cfg_line.data.datasets = dataList;
+				
+				if( typeof selectedList !== 'undefined' && selectedList != null ) {
+					cfg_line.data.datasets.forEach(function(dataset) {
+						if( $.inArray(dataset.label , selectedList) !== -1 ) {
+							dataset.hidden = false;
+						}
+						else {
+							dataset.hidden = true;
+						}
+					});
+				}
+				
+				this.lineChart.update(cfg_line);
+			},
+			
+			show: function() {
+				$("#" + lineChartId).show();
+			},
+			
+			hide: function() {
+				$("#" + lineChartId).hide();
+			},
+
+			height: function(h) {
+				$("#" + lineChartId).height(h);
+			},
+			
+			showAndHiddenData: function(isHidden) {
+				cfg_line.data.datasets.forEach(function(dataset) {
+					dataset.hidden = isHidden;
+				});
+				this.lineChart.update(cfg_line);
+			},
+			
+			showAndHiddenDataByLegend: function(selectedList) {
+				cfg_line.data.datasets.forEach(function(dataset) {
+					if( $.inArray(dataset.label , selectedList) !== -1 ) {
+						dataset.hidden = false;
+					}
+					else {
+						dataset.hidden = true;
+					}
+				});
+				this.lineChart.update(cfg_line);
+			},
+			
+			getPaths: function(keyColumnList, rows) {
+				return Object.keys(_getPathMap(keyColumnList, rows));
+			}
+		}
+	}
+
+	window.BarChart = function(barChartId , statTypeId) {
+
+		var cfg_bar = {
+				type: 'bar',
+				data: {
+					labels: [],
+					datasets: [],
+				},
+				options: {
+					maintainAspectRatio: false,
+					spanGaps: true,
+					legend: {
+						display: false,
+					},
+					elements: {
+						line: {
+							tension: 0.000001
+						}
+					},
+					scales: {
+						xAxes: [{
+							ticks: {
+								maxTicksLimit: 10,
+								maxRotation: 0,
+								padding: 5,
+								userCallback: function(tickLabel) {
+									return convertTickLabel(tickLabel , statTypeId); 
+								},
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								beginAtZero:true , 
+							} , 
+							gridLines: {
+
+							},
+						}]
+					},
+					animation: {
+						duration : 0,
+						onComplete: function() {
+						}
+					},
+					onResize: function() {
+					}
+				},
+		}
+
+		return {
+			barChart : null,
+			
+			init: function(keyColumnList , normalColumnList, rows, path) {
+				var collectTime = keyColumnList[0];
+				var aMap = Map.collectMap(collectTime, rows);
+				var bMap = correctValues(aMap, _getPathMap(keyColumnList, rows), collectTime, normalColumnList);
+				var labelList = generateLabels(Object.keys(aMap));
+				var dataList = generateDataSets(bMap, normalColumnList, path);
+				var flag = "";
+				$.each(dataList, function(index, dataObj){
+					if(typeof dataList[index]['data'] != 'undefined' && dataList[index]['data'] != undefined && dataList[index]['data'] != null) {
+						var len = dataList[index]['data'].length-1;
+						if(typeof dataList[index]['data'][0] == 'undefined' || dataList[index]['data'][0] == undefined || dataList[index]['data'][0] == null) {
+							flag = "first";
+						} else if(typeof dataList[index]['data'][len] == 'undefined' || dataList[index]['data'][len] == undefined || dataList[index]['data'][len] == null){
+							flag = "last";
+						} else {
+						}
+					}
+				});
+				if(flag == "first") {
+					labelList.splice(0,1);
+				} else if(flag == "last") {
+					labelList.splice(labelList.length-1,1);
+				}
+				
+				cfg_bar.data.labels = labelList;
+				cfg_bar.data.datasets = dataList;
+
+				this.barChart = new Chart(barChartId, cfg_bar);
+				this.height(chart_height);
+				this.hide();
+			},
+
+			update: function(keyColumnList , normalColumnList, rows, path , selectedList) {
+				var collectTime = keyColumnList[0];
+				var aMap = Map.collectMap(collectTime, rows);
+				var bMap = correctValues(aMap, _getPathMap(keyColumnList, rows), collectTime, normalColumnList);
+				var labelList = generateLabels(Object.keys(aMap));
+				var dataList = generateDataSets(bMap, normalColumnList, path);
+				var flag = "";
+				$.each(dataList, function(index, dataObj){
+					if(typeof dataList[index]['data'] != 'undefined' && dataList[index]['data'] != undefined && dataList[index]['data'] != null) {
+						var len = dataList[index]['data'].length-1;
+						if(typeof dataList[index]['data'][0] == 'undefined' || dataList[index]['data'][0] == undefined || dataList[index]['data'][0] == null) {
+							flag = "first";
+						} else if(typeof dataList[index]['data'][len] == 'undefined' || dataList[index]['data'][len] == undefined || dataList[index]['data'][len] == null){
+							flag = "last";
+						} else {
+						}
+					}
+				});
+				
+				if(flag == "first") {
+					labelList.splice(0,1);
+				} else if(flag == "last") {
+					labelList.splice(labelList.length-1,1);
+				}
+				
+				cfg_bar.data.labels = labelList;
+				cfg_bar.data.datasets = dataList;
+				
+				cfg_bar.data.datasets.forEach(function(dataset) {
+					if(selectedList.length == 0) {
+						dataset.hiden = false;
+					} else {
+						if( $.inArray(dataset.label , selectedList) !== -1 ) {
+							dataset.hidden = false;
+						}
+						else {
+							dataset.hidden = true;
+						}
+					}
+				});
+				this.barChart.update(cfg_bar);
+			},
+			
+			show: function() {
+				$("#" + barChartId).show();
+			},
+			
+			hide: function() {
+				$("#" + barChartId).hide();
+			},
+			
+			height: function(h) {
+				$("#" + barChartId).height(h);
+			},
+			
+			showAndHiddenData: function(isHidden) {
+				cfg_bar.data.datasets.forEach(function(dataset) {
+					dataset.hidden = isHidden;
+				});
+				this.barChart.update(cfg_bar);
+			},
+			
+			showAndHiddenDataByLegend: function(selectedList) {
+				cfg_bar.data.datasets.forEach(function(dataset) {
+					if( $.inArray(dataset.label , selectedList) !== -1 ) {
+						dataset.hidden = false;
+					}
+					else {
+						dataset.hidden = true;
+					}
+				});
+				this.barChart.update(cfg_bar);
+			},
+			
+			getPaths: function(keyColumnList, rows) {
+				return Object.keys(_getPathMap(keyColumnList, rows));
+			}
+		}
+	}
+});

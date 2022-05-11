@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Meta, title, CSS, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>자영업지원센터 사업관리 시스템</title>
+    <!--[if lt IE 9]>
+			<script src="/js/html5shiv.min.js"></script>
+		<![endif]-->
+    <!-- scripts and styles -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/rMateGridH5Sample.css" />
+    <link rel="stylesheet" type="text/css" href="css/rMateH5.css" />
+    <!-- rMateChartH5 라이센스 -->
+    <script type="text/javascript" src="js/rMateGridH5License.js"></script>
+    <!-- rMateGridH5 라이브러리 -->
+    <script type="text/javascript" src="js/rMateGridH5.js"></script>
+
+    <!-- smartEditor -->
+    <script type="text/javascript" src="smartEditor/js/HuskyEZCreator.js"></script>
+    <!-- smartEditor -->
+    <link rel="stylesheet" type="text/css" href="smartEditor/css/smart_editor2.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="ico/favicon.ico">
+
+    <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="css/jquery/jquery-ui-1.8.16.main.css" />
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui-1.8.16.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery-ui.datepicker.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.number.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.maskedinput-1.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.dialog.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.numeric.js"></script>
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="js/common-util.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/sbdcCommon.js"></script>
+    <script type="text/javascript" src="js/downloadProgress.js"></script>
+    <script type="text/javascript" src="js/default.js"></script>
+    <script type="text/javascript" src="js/printThis.js"></script>
+
+    <!-- 트리구조 추가 -->
+    <link rel="stylesheet" type="text/css" href="css/jstree.min.css" />
+    <script type="text/javascript" src="js/jstree.min.js"></script>
+
+    <!-- function scripts -->
+    <style>
+        .newArea {height:100vh; background:url(img/characterBg.jpg) no-repeat bottom; background-size:100%;}
+        .newArea .w50 {width:50%;}
+        .newArea .w48 {width:48%;}
+        .newArea .topArea {display: block;}
+        .newArea .topArea > * {display: inline-block; vertical-align: middle;}
+        .newArea .topArea .title {font-size:20px; color:#333; font-weight: bold; }
+        .newArea .topArea button {width:130px; height: 27px; margin-left:10px; background:none; border:1px solid #ccc; cursor: pointer;}
+        .newArea .tableArea {margin-top:10px; border-top:1px solid #333;}
+        .newArea .tableArea .dataBox {display: table; width:100%;}
+        .newArea .tableArea .dataBox > div {display: table-cell; height: 55px; vertical-align: middle;}
+        .newArea .tableArea .dataBox .cell {overflow: hidden; border-bottom:1px solid #ccc;}
+        .newArea .tableArea .dataBox .cell:first-child {width:15%; background:#e1e6f1; text-align: center;}
+        .newArea .tableArea .dataBox .cell:first-child span {color: #1b2e59; font-weight: bold;}
+        .newArea .tableArea .dataBox .cell:last-child {width:80%; padding:0 20px;}
+        .newArea .tableArea .dataBox .cell  div {display: inline-block; vertical-align: middle;}
+        .newArea .tableArea .dataBox .cell .fl {float: left;}
+        .newArea .tableArea .dataBox .cell .fl > * {display: inline-block; vertical-align: middle;}
+        .newArea .tableArea .dataBox .cell .fr {float: right;}
+        .newArea .comBtn {overflow: hidden; margin-top:20px; text-align: right;}
+        .newArea .comBtn button {display: inline-block; width:100px; line-height: 30px; border:0; background:#2a4991; color:#fff;}
+        .newArea .tabArea ul {overflow: hidden; border-bottom:2px solid #5279d3;}
+        .newArea .tabArea ul li{float:left; width:100px; height:37px; margin-right:2px; padding-left:10px; line-height: 37px; background:#eaeaea; cursor: pointer;}
+        .newArea .tabArea ul li.on {background:#5279d3; color:#fff;}
+        .newArea .tabArea .viewArea {overflow: hidden; margin-top:20px;}
+        .newArea .tabArea .viewArea > div {display: none;}
+        .newArea .tabArea .viewArea > div.on {display: block;}
+        .newArea .checkArea .radio {display: inline-block; margin-right:10px;}
+        .newArea .btmArea {overflow: hidden; margin-top:40px;}
+        .newArea .cell.top {background:#e1e6f1;}
+        .newArea .cell.normal {background:none;}
+        .newArea table {width:100%;}
+        .newArea table th {height:55px; background:#e1e6f1; text-align: center;  border-left:1px solid #ccc; border-bottom:1px solid #ccc;}
+        .newArea table td {height:53px; text-align: center; border-left:1px solid #ccc; border-bottom:1px solid #ccc;}
+        .newArea table th:first-child,
+        .newArea table td:first-child {border-left:0;}
+        .newArea input.upload_text {float:left; width:180px; height:33px; line-height:19px; padding:0 3px; border:1px solid #bbb; }
+        .newArea .upload-btn_wrap input.input_file {position:absolute; top:0; right:0; cursor:pointer; opacity:0; filter:alpha(opacity=0); -ms-filter:"alpha(opacity=0)"; -moz-opacity:0;}
+        .newArea .upload-btn_wrap {overflow:hidden; position:relative; float:left; width:70px;height:35px; padding-left:3px;}
+        .newArea .upload-btn_wrap button { width:70px; height:35px; font-weight:bold; background:#2a4991; border:1px solid #333; color:#fff;}
+
+    </style>
+
+    <script> 
+        $(function(){
+            $(".tabArea ul li").click(function(){
+                $(".tabArea ul li").removeClass("on");
+                $(".tabArea ul li").eq($(this).index()).addClass("on");
+                $(".viewArea > div").removeClass("on");
+                $(".viewArea > div").eq($(this).index()).addClass("on");
+            });
+
+            $('.upload_text').val('');
+                $('.input_file').change(function(){
+                var i = $(this).val();
+                $('.upload_text').val(i);
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="container-content">
+        <div class="sidenav-wrap">
+            <ul class="nav sidenav" id="leftMenu">
+                <li class="active"><a href=""><i class="fa fa-file-text-o"></i>고객등록</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>상담등록</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고객이력관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>SMS전송이력</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>사업자번호등록</a></li>
+            </ul>
+        </div>
+        <div class="content-wrap">
+                <div class="content">
+                    <div class="newArea">
+                        <div class="tabArea">
+                            <ul>
+                                <li class="on">본진단/처방</li>
+                                <li>지도</li>
+                                <li>결과보고서</li>
+                            </ul>
+                            <div class="viewArea">
+                                <!-- 본진단 처방 -->
+                                <div class="on">
+                                    <div class="topArea">
+                                        <span class="title">진단·처방 보고서 등록</span>
+                                    </div>
+                                    <div class="tableArea">
+                                        <div class="dataBox">
+                                            <div class="cell">
+                                                <span>보고서</span>
+                                            </div>
+                                            <div class="cell">
+                                                <div class="fl">
+                                                    <img src="img/icon-img.jpg" alt="">
+                                                    <a href="">김밥나라 지도보고서.pdf</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dataBox">
+                                            <div class="cell">
+                                                <span>경영비용지원</span>
+                                            </div>
+                                            <div class="cell">
+                                                <div class="checkArea">
+                                                    <div class="radio">
+                                                        <input type="radio" name="title" id="rad_1">
+                                                        <label for="rad_1">지원</label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <input type="radio" name="title" id="rad_2">
+                                                        <label for="rad_2">미지원</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btmArea">
+                                        <div class="w48 fl">
+                                            <div class="topArea">
+                                                <span class="title">진단·처방 보고서 등록</span>
+                                                <button type="button">수행일지 추가(+)</button>
+                                            </div>
+                                            <div class="tableArea">
+                                                <div class="dataBox">
+                                                    <div class="cell">
+                                                        <span>수행일자</span>
+                                                    </div>
+                                                    <div class="cell">
+                                                        <div class="fl">
+                                                            <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                        </div>
+                                                        <div class="fr">
+                                                            <span>등록자 : 전문가 A</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dataBox">
+                                                    <div class="cell">
+                                                        <span>수행일자</span>
+                                                    </div>
+                                                    <div class="cell">
+                                                        <div class="fl">
+                                                            <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                        </div>
+                                                        <div class="fr">
+                                                            <span>등록자 : 전문가 A</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dataBox">
+                                                    <div class="cell">
+                                                        <span>수행일자</span>
+                                                    </div>
+                                                    <div class="cell">
+                                                        <div class="fl">
+                                                            <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                        </div>
+                                                        <div class="fr">
+                                                            <span>등록자 : 전문가 A</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dataBox">
+                                                    <div class="cell">
+                                                        <span>수행일자</span>
+                                                    </div>
+                                                    <div class="cell">
+                                                        <div class="fl">
+                                                            <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                        </div>
+                                                        <div class="fr">
+                                                            <span>등록자 : 전문가 A</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w48 fr">
+                                            <div class="topArea">
+                                                <span class="title">동행일지</span>
+                                            </div>
+                                            <div class="tableArea">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:20%">
+                                                        <col style="width:80%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>전문가</th>
+                                                            <th>진단 및 처방 횟수</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>A</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>B</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>C</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 본진단 처방 -->
+
+                                <!-- 지도 -->
+                                <div>
+                                    <div class="w48 fl">
+                                        <div class="topArea">
+                                            <span class="title">지도 보고서 등록</span>
+                                            <button type="button">지도보고서 추가(+)</button>
+                                        </div>
+                                        <div class="tableArea">
+                                            <div class="dataBox">
+                                                <div class="cell">
+                                                    <span>수행일자</span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class="fl">
+                                                        <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                    </div>
+                                                    <div class="fr">
+                                                        <span>등록자 : 전문가 A</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dataBox">
+                                                <div class="cell">
+                                                    <span>수행일자</span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class="fl">
+                                                        <input type="text" class="upload_text" readonly="readonly">
+                                                        <!--button-->
+                                                        <div class="upload-btn_wrap">
+                                                        <button type="button" title="파일찾기">
+                                                        <span>파일찾기</span>  
+                                                        </button>
+                                                        <input type="file" class="input_file" title="파일찾기">
+                                                        </div>
+                                                    </div>
+                                                    <div class="fr">
+                                                        <span>등록자 : 전문가 A</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dataBox">
+                                                <div class="cell">
+                                                    <span>수행일자</span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class="fl">
+                                                        <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                    </div>
+                                                    <div class="fr">
+                                                        <span>등록자 : 전문가 A</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dataBox">
+                                                <div class="cell">
+                                                    <span>수행일자</span>
+                                                </div>
+                                                <div class="cell">
+                                                    <div class="fl">
+                                                        <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                    </div>
+                                                    <div class="fr">
+                                                        <span>등록자 : 전문가 A</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w48 fr">
+                                        <div class="topArea">
+                                            <span class="title">동행일지</span>
+                                        </div>
+                                        <div class="tableArea">
+                                            <table>
+                                                <colgroup>
+                                                    <col style="width:20%">
+                                                    <col style="width:80%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>전문가</th>
+                                                        <th>진단 및 처방 횟수</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>A</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>B</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>C</td>
+                                                        <td>1</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 지도 -->
+
+                                <!-- 결과보고서 -->
+                                <div >
+                                    <div class="topArea">
+                                        <span class="title">최종결과보고서 등록</span>
+                                    </div>
+                                    <div class="tableArea">
+                                        <div class="dataBox">
+                                            <div class="cell">
+                                                <span>보고서</span>
+                                            </div>
+                                            <div class="cell">
+                                                <div class="fl">
+                                                    <img src="img/icon-img.jpg" alt="">
+                                                    <a href="">김밥나라 지도보고서.pdf</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btmArea">
+                                        <div class="w48 fl">
+                                            <div class="topArea">
+                                                <span class="title">컨설팅 수행일지 등록</span>
+                                                <button type="button">수행일지 추가(+)</button>
+                                            </div>
+                                            <div class="tableArea">
+                                                <div class="dataBox">
+                                                    <div class="cell">
+                                                        <span>수행일자</span>
+                                                    </div>
+                                                    <div class="cell">
+                                                        <div class="fl">
+                                                            <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                        </div>
+                                                        <div class="fr">
+                                                            <span>등록자 : 전문가 A</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dataBox">
+                                                    <div class="cell">
+                                                        <span>수행일자</span>
+                                                    </div>
+                                                    <div class="cell">
+                                                        <div class="fl">
+                                                            <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                        </div>
+                                                        <div class="fr">
+                                                            <span>등록자 : 전문가 A</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dataBox">
+                                                    <div class="cell">
+                                                        <span>수행일자</span>
+                                                    </div>
+                                                    <div class="cell">
+                                                        <div class="fl">
+                                                            <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                        </div>
+                                                        <div class="fr">
+                                                            <span>등록자 : 전문가 A</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="dataBox">
+                                                    <div class="cell">
+                                                        <span>수행일자</span>
+                                                    </div>
+                                                    <div class="cell">
+                                                        <div class="fl">
+                                                            <input type="text" class="upload_text" readonly="readonly">
+                                                            <!--button-->
+                                                            <div class="upload-btn_wrap">
+                                                            <button type="button" title="파일찾기">
+                                                            <span>파일찾기</span>  
+                                                            </button>
+                                                            <input type="file" class="input_file" title="파일찾기">
+                                                            </div>
+                                                        </div>
+                                                        <div class="fr">
+                                                            <span>등록자 : 전문가 A</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="w48 fr">
+                                            <div class="topArea">
+                                                <span class="title">동행일지</span>
+                                            </div>
+                                            <div class="tableArea">
+                                                <table>
+                                                    <colgroup>
+                                                        <col style="width:20%">
+                                                        <col style="width:80%">
+                                                    </colgroup>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>전문가</th>
+                                                            <th>진단 및 처방 횟수</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>A</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>B</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>C</td>
+                                                            <td>1</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 결과보고서 -->
+                            </div>
+                            
+                        </div>
+                        <div class="comBtn">
+                            <button type="button">저장</button>
+                            <button type="button">수정</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

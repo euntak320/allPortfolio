@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/jquery-ui.min.js"></script>
+  <script src="assets/js/jquery.fullPage.js"></script>
+  <script src="assets/js/script.js"></script>
+  <title>상상알파국어</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+	<div class="top_menu">
+		<div class="title">
+			<a href="/main.do" class="logo">로고이미지</a>
+		</div>
+		<div class="login_menu">
+			<c:choose>
+				<c:when test="${cneUserSession eq null}">
+					<a href="/login.do" class="login">로그인</a>
+					<a href="/regulation.do" class="join">회원가입</a>
+				</c:when>
+				<c:otherwise>
+					<a href="/personal/check.do" class="login name">${cneUserSession.user_name}</a>
+					<a href="/logout.do" class="join out">로그아웃</a>
+				</c:otherwise>
+			</c:choose>
+		</div>
+	</div>
+
+	<nav class="pc_on">
+		<div class="menu" id="menu">
+      <ul class="menu_list">
+				<li>
+					<a href="/info.do">연구소 소개</a>
+					<!-- <ul class="menu_sub sub1">
+						<li><a href="/info.do">CEO</a></li>
+						<li><a href="/info.do#content2">상상국어평가연구소</a></li>
+						<li><a href="/info.do#content3">상상 vision</a></li>
+						<li><a href="/info.do#content4">상상국어평가연구소 출제시스템</a></li>
+						<li><a href="/info.do#content5">상상국어 모의고사 참여 인력</a></li>
+						<li><a href="/academy.do">모의고사 시행학원 찾기 <span class="find">찾기이미지</span></a></li>
+					</ul> -->
+				</li>
+				<li>
+					<a href="/subject.do">교재</a>
+				</li>
+				<li>
+					<a href="/strategy.do">프로그램</a>
+				</li>
+				<li>
+					<a href="/bbs/qna/list.do">게시판</a>
+				</li>
+				<li>
+          <a href="javascript:alert('준비중입니다.');" class="img">성적확인</a>
+        </li>
+				<!-- <li><a href="javascript:alert('준비중입니다.');">SHOP</a></li> -->
+			</ul>
+      <div class="menu_list_frame">
+  			<div class="menu_list_1">
+          <a href="/info.do">· 상상국어평가연구소</a>
+          <a href="/info.do">· 모의고사 시행학원 찾기</a>
+        </div>
+        <div class="menu_list_2">
+  				<a href="/subject.do">· 상상국어모의고사</a>
+  				<a href="/subject.do#book2">· 상상국어모의고사(현장강의용)</a>
+  				<a href="/subject.do#book3">· 상상국어N과제</a>
+  				<a href="/subject.do#book4">· 상상력</a>
+  				<a href="/subject.do#book7">· 기출문제집</a>
+  				<a href="/subject.do#book8">· 상상알파국어</a>
+        </div>
+        <div class=" menu_list_3">
+  	    	<a href="/strategy.do#textbook">· 교재별 특징</a>
+  	      <a href="/strategy.do#schedule">· 일정표</a>
+        </div>
+        <div class="menu_list_4">
+  				<a href="/bbs/qna/list.do">· Q&A</a>
+  				<a href="/bbs/data/list.do">· 자료실</a>
+  				<a href="/bbs/notice/list.do">· 공지사항</a>
+        </div>
+        <div class="menu_list_5">
+  				<span class="grade_img"><a href="#">성적확인</a></span>
+       </div>
+  			</ul>
+  		</div>
+    </div>
+	</nav>
+	<nav class="mobile_on">
+		<div class="menu" id="menu">
+			<div class="menu_list">
+				<div class="m_login_area">
+					<c:choose>
+						<c:when test="${cneUserSession eq null}">
+							<a href="/login.do" class="login">로그인</a>
+							<a href="/regulation.do" class="join">회원가입</a>
+						</c:when>
+						<c:otherwise>
+							<a href="/personal/check.do" class="login name">${cneUserSession.user_name}</a>
+							<a href="/logout.do" class="join out">로그아웃</a>
+						</c:otherwise>
+					</c:choose>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"><a href="javascript:;">연구소 소개</a></span>
+					<!-- <span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/info.do">CEO</a>
+						<br>
+						<a href="/info.do#content2">상상국어평가연구소</a>
+						<br>
+						<a href="/info.do#content3">상상 vision</a>
+						<br>
+						<a href="/info.do#content4">상상국어평가연구소 출제시스템</a>
+						<br>
+						<a href="/info.do#content5">상상국어 모의고사 참여 인력</a>
+						<br>
+						<a href="/academy.do">모의고사 시행학원 찾기 <span class="find">찾기이미지</span></a>
+					</div> -->
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">교재</a>
+					</span> <span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/subject.do">상상국어모의고사</a>
+						<br>
+						<a href="/subject.do#book2">상상국어모의고사(현장강의용)</a>
+						<br>
+						<a href="/subject.do#book3">상상국어N과제</a>
+						<br>
+						<a href="/subject.do#book4">상상력</a>
+						<br>
+						<!-- <a href="/subject.do#book5">상상매미</a>
+						<br>
+						<a href="/subject.do#book6">상상EBS</a>
+						<br> -->
+						<a href="/subject.do#book7">기출문제집</a>
+						<br>
+						<a href="/subject.do#book8">상상알파국어</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">프로그램</a></span>
+					<span class="slide_frame"></span>
+					<div class="menu_sub">
+						<!-- <a href="/strategy.do">line up</a> -->
+						<br>
+						<a href="/strategy.do#textbook">교재별 특징</a>
+						<br>
+						<a href="/strategy.do#schedule">일정표</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:;">게시판</a></span>
+					<span class="slide_frame"></span>
+					<div class="menu_sub">
+						<a href="/bbs/qna/list.do">Q&A</a>
+						<br>
+						<a href="/bbs/data/list.do">자료실</a>
+						<br>
+						<a href="/bbs/notice/list.do">공지사항</a>
+					</div>
+				</div>
+				<div class="m_menu_list">
+					<span class="title"> <a href="javascript:alert('준비중입니다.');">성적확인</a></span>
+					<span class="slide_frame"></span>
+				</div>
+				<!-- <div class="m_menu_list">
+					<span class="title"><a href="javascript:alert('준비중입니다.');">SHOP</a></span>
+					 <span class="slide_frame"></span>
+				</div> -->
+			</div>
+		</div>
+	</nav>
+	<a href="#" class="mobile_menu">모바일메뉴</a>
+</header>
+  <!-- header -->
+  <!-- content -->
+  <section>
+    <div class="content_area">
+      <div class="title_area">
+        <span class="title">가입완료</span>
+        <div class="last_area">
+          <div class="last_txt_area">
+            <span class="ment">박지희님의 회원가입을 감사드립니다.</span>
+            <span class="txt_sub">지금부터 회원님의 아이디 tausend(으)로 서비스 이용하실 수 있습니다.</span>
+            <a href="#" class="check_btn">홈으로 가기</a>
+          </div>
+        </div>
+
+      </div><!--  content_area-->
+  </section>
+  <!-- content -->
+  <!-- footer -->
+  <footer>
+    <div class="footer_content">
+      <div class="footer_logo_area fl">
+        <span class="footer_title">로고이미지</span>
+      </div>
+      <div class="deatil_area fr">
+        <p>
+          <span>(주)이매진C&E · 상상국어평가연구소</span>
+          <span>대표 : 강상희</span>
+          <span>서울시 서초구 강남대로 30길(양재동, 산수빌딩)5층</span>
+          <span>TEL : 02-578-3881</span>
+          <span>FAX : 02-574-9881</span>
+        </p>
+        <p>
+          <span>사업자등록번호 : 264-81-36246</span>
+          <span>통신판매신고번호 : 2014-서울서초-1073호</span>
+          <span>출판사신고번호 : 제2014-000114호</span>
+        </p>
+        <p>
+          <span>COPYRIGHT 2014 IMAGINECNE.CO.KR ALL RIGHTS RESERVED</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer -->
+</body>
+
+</html>

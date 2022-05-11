@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+/* ***** layout ***** */
+
+
+/* ** header ** */
+#header{position: fixed; left:0; top:0; z-index: 10; width:100%; height:70px; overflow: hidden;  background:#fff; -webkit-box-shadow: 0px 1px 0px 0px rgba(34,34,34,0.12); -moz-box-shadow: 0px 1px 0px 0px rgba(34,34,34,0.12); box-shadow: 0px 1px 0px 0px rgba(34,34,34,0.12); font-family: 'Spoqa Han Sans';}
+#header .inner{ min-width: 1024px; max-width: 1920px; width:100%; height: 100%; margin:0 auto;}
+#header .gnbWrap{display: table; table-layout: fixed; width:100%; height: 100%; padding:0 32px; vertical-align: middle;}
+#header .gnbWrap > div{display: table-cell; float: none; width:50%; height:100%; vertical-align: middle;}
+#header .gnbWrap > .moblie{display: none;}
+#header .logo{position: relative; font-size: 2rem; line-height: 29px;}
+#header .logo a{ padding-left:36px;}
+#header .logo a::before{display: inline-block; content: ''; position: absolute; left:0; top:0px; z-index: 1; width:28px; height: 28px; margin-right: 8px; vertical-align: middle; background: url("../img/top_logo.png") no-repeat;}
+#header .logo span{font-weight: 400; margin-left: 6px;}
+#header .fr .menu{font-size: 0; }
+#header .fr .menu li{display: inline-block; font-size: 1.4rem; vertical-align: top;}
+#header .fr .menu li + li::before{display: inline-block; content:''; width:1px; height:12px; margin:5px 16px 0; vertical-align: top; background: #ddd;}
+#header .fr .menu .btn.logout{color:#888; font-weight: normal; vertical-align: top;}
+
+/* 20-08-26 추가 */
+#header .fr .menu li.moblieBtn {display: none;}
+
+
+/* ** container ** */
+#container{position: relative; min-width: 1024px; max-width: 1920px; padding:102px 32px 100px 248px; margin:0 auto;}
+.leftMenu{position: fixed; left:32px; top:0; z-index: 1; height:100%; min-height:700px; padding:107px 0 50px; font-family: 'Spoqa Han Sans';}
+.leftMenu .inner{max-height: 100%; overflow: hidden; overflow-y: auto;}
+.leftMenu .ul{width:184px; padding:30px 0; background: #f7f7f7; }
+.leftMenu .ul li.none {display: none;}
+.leftMenu .li{padding:0 16px;}
+.leftMenu .li + .li{padding-top: 16px; margin-top: 16px; border-top:1px solid #f0f0f0; }
+.leftMenu .li li + li{margin-top: 8px;}
+.leftMenu .mm{display: block; font-size: 1.6rem; color:#666; line-height: 24px; font-weight: normal; cursor: pointer;}
+.leftMenu li.on .mm{color:#222; font-weight: 700;}
+/*.leftMenu li.on .sub{display: block;}*/
+.leftMenu .sub{display: none; margin-top:5px;}
+.leftMenu .sub li{position: relative; padding-left:10px;}
+.leftMenu .sub li + li{margin-top: 2px;}
+.leftMenu .sub li::before{display: inline-block; position: absolute; left:0px; top:0; z-index: 1; content: '-'; font-size: 1.4rem; color: #888;}
+.leftMenu .sub li a{display: block; color:#888; line-height: 19px;}
+/* 20-09-21 추가 */
+.m-close {display: none;}
+
+
+
+
+
+/* content */
+.content{position: relative; z-index: 2; min-height: 700px; background: #fff;}
+
+
+@media (min-width: 1921px) {
+    .leftMenu{left:50%; width:1920px; padding-left:32px; margin-left: -960px;}
+}
+
+@media all and (max-width: 1023px){
+    #container{position: relative; min-width: auto; max-width: 100%; padding:20px;}
+    #header {position: static; height:70px;}
+    #header .inner {position:relative; min-width: unset; max-width: 100%;}
+    #header .fr.login {display: none; position: absolute; bottom: 0; width: 100%; float: none; right: 10px;}
+    #header .fr .menu li.moblieBtn {display: inline-block;}
+    #header .fr .menu li.moblieBtn button { width:20px; height:14px; background:url(../img/icon-mBtn.png) no-repeat center; text-indent: -9999px;}
+    .leftMenu {position: fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%;  min-height: unset; padding:0; background:#fff; z-index: 10; transform: translateX(100%); ; transition:all 0.5s; -webkit-transition:all 0.5s; -moz-transition:all 0.5s; z-index: 100;}
+    /* 20-10-19 수정 */
+    #header .gnbWrap .fr {position: absolute; display:block; top:50%; right:15px; width:30px; height:30px; padding:0; transform: translateY(-50%);}
+    /* 20-10-19 수정 */
+    #header .gnbWrap .fr button {display: block; width:30px; height:26px; background:url(../img/m-btn.png) no-repeat center; text-indent: -9999px;}
+    .leftMenu .m-close {display:block; position: absolute; top:10px; left:15px; display: block; width:20px; height:20px; background:url(../img/m-close.png) no-repeat center; text-indent: -9999px; z-index: 100;}
+    .leftMenu.on {transform: translateX(0); transition:all 0.2s; -webkit-transition:all 0.5s; -moz-transition:all 0.5s}
+    .leftMenu .ul {position: relative; width:100%; padding:40px 0 10px;}
+    .leftMenu .ul li.none {display: block;}
+    .leftMenu .ul button {display: block; position: absolute; right:10px; top:10px; width:20px; height:20px; background:url(../img/l-close.png) no-repeat center; background-size:100%; text-indent: -9999px;;}
+}
+
+@media all and (max-width: 767px){
+    #header .gnbWrap {padding:0 10px;}
+    #header .logo {font-size:16px;}
+    #header .fr .menu li {font-size:14px;}
+    #header .fr .menu li + li::before {margin:5px 5px 0;}   
+}
+
+@media all and (max-width: 500px){
+    #header {height:50px;}
+    #header {padding:10px 0;}
+    #header .gnbWrap > div {display: block;}
+    #header .logo a {padding-left:34px;}
+    #header .gnbWrap .fl {float: left; width:80%;}
+   
+}

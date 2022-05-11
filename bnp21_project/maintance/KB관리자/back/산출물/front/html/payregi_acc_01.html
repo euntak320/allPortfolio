@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<title>계좌 등록 | 결제수단등록 | KB스타게이트</title>
+<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon" href="">
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub bg noBtn">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="tit"><a href="#" class="btnNavi prev"><span class="ico">이전</span></a><h1>계좌 등록</h1></div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div class="content">
+			<!-- 가이드 텍스트 -->
+			<div class="guideTopTxt">
+				BBQ Pay에 등록하실<br>
+				<span class="fwb">계좌정보를 입력해주세요</span>
+			</div>
+			<!-- //가이드 텍스트 -->
+
+			<!-- intFocsUl -->
+			<ul class="intFocsUl">
+				<li class="liTxt"><a href="#" class="txtBank">KB국민은행</a></li>
+				<li class="liForm"><input type="number" class="input" placeholder="계좌번호를 입력하세요"></li>
+			</ul>
+
+			<div class="cBox type3">
+				<div class="in type2">
+					<ul class="c_ul">
+						<li class="liForm"><input type="text" class="input" placeholder="이메일을 입력하세요"></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- guide list -->
+			<ul class="guideList btm">
+				<li>금융실명법에 따라 금융(거래)정보 제공내역 통지(분기당 1회)를 위한 이메일 정보가 필요합니다.</li>
+			</ul>
+			<!-- //guide list -->
+
+			<div class="cBox type3">
+				<div class="in type2 toggAct">
+					<div class="termsAllAgree toggTit">
+						<label class="label"><input type="checkbox" class="chk" name=""><span class="ico"></span><span class="lTxt">오픈뱅킹 서비스 이용 전체 동의</span></label>
+						<a href="#" class="toggBtn"><span class="ico"></span></a>
+					</div>
+					<div class="termsAgreeList type1 toggCnt">
+						<ul>
+							<li>
+								<div class="itemChk">
+									<label class="label"><input type="checkbox" class="chk" name=""><span class="ico"></span><span class="lTxt">필수 동의</span></label>
+								</div>
+								<ul>
+									<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(필수) 오픈뱅킹 서비스 이용약관 및 서비스 설명서</span></label><a href="#" class="btn arr"></a></li>
+									<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(필수) 오픈뱅킹공동업무 금융정보조회 약관</span></label><a href="#" class="btn arr"></a></li>
+									<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(필수) 오픈뱅킹공동업무 자동계좌이체 약관</span></label><a href="#" class="btn arr"></a></li>
+									<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(필수) 금융거래정보제공 동의서 (오픈뱅킹용)</span></label><a href="#" class="btn arr"></a></li>
+									<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(필수) 개인정보 수집이용제공 동의서 (오픈뱅킹용)</span></label><a href="#" class="btn arr"></a></li>
+								</ul>
+							</li>
+							<li>
+								<div class="itemChk">
+									<label class="label"><input type="checkbox" class="chk" name=""><span class="ico"></span><span class="lTxt">선택 동의</span></label>
+								</div>
+								<ul>
+									<li>
+										<div class="subTermTit">
+											<label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">(선택) 개인(신용)정보 수집·이용 동의서</span></label><a href="#" class="btn arr"></a>
+										</div>
+										<div class="subTermsList">
+											<ul class="list">
+												<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">문자</span></label></li>
+												<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">이메일</span></label></li>
+												<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">전화</span></label></li>
+												<li><label class="label"><input type="checkbox" class="chk2" name=""><span class="ico"></span><span class="lTxt">DM</span></label></li>
+											</ul>
+											<p class="note">(선택) 사항은 동의하지 않을 수 있습니다.</p>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- cnt button area -->
+			<div class="cntBtnWrap">
+				<ul>
+					<li><a href="#" class="btn lg de">확인</a></li>
+				</ul>
+			</div>
+			<!-- //cnt button area -->
+		</div>
+		<!-- //content -->
+
+
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

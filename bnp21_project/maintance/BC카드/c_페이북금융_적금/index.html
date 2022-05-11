@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>퍼블리싱 작업목록 | BC페이북</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<style type="text/css">
+	@charset "utf-8";
+
+	/* ----------------------------------------------
+		초기화
+	---------------------------------------------- */
+	html {overflow-y:scroll;width:100%;height:100%;min-width:320px;}
+	body, pre {/*font-family:Dotum,'돋움',AppleGothic,Lucida Grande,Verdana,Arial,Tahoma,sans-serif;*/font-size:12px;line-height:1.5;color:#222;/*font-weight:bold;*/}
+	body, div, p, ul, ol, li, dl, dt, dd, table, th, td, h1, h2, h3, h4, h5, h6, address, blockquote, pre {margin:0;padding:0;}
+	h1 {text-align:center;font-size:28px;line-height:1.2;margin:0 0 40px 0;color:#333;}
+	h1 span {color:#2e55b1;}
+	h2 {display:none;}
+	h3 {margin:25px 0 10px;padding:7px 0 7px 10px;background:#555;font-size:12px;line-height:16px;color:#fff;}
+	h3.guide {background:#2e55b1;}
+	h3.toggle {position:relative;cursor:pointer;}	
+	h3.toggle.open:after {-webkit-transform:rotate(-180deg);transform:rotate(-180deg);}
+	h4 {margin:25px 0 10px;padding:0 0 6px 10px;background:url(../img/bul_4x11_2489ce.gif) no-repeat 0 3px;font-size:14px;line-height:1;border-bottom:1px solid #ddd;}
+	h5 {margin:20px 0 0;padding:0 0 6px 10px;background:url(../img/dot_3x3_989898.gif) no-repeat 0 7px;font-size:12px;line-height:1;}
+	table {border-spacing:0;border-collapse:collapse;}
+	img {border:0;}
+	caption {overflow:hidden;visibility:hidden;font-size:0;line-height:0;height:0;}
+	pre {white-space:pre-wrap;}
+	ul {margin:0 0 0 15px;list-style:none;}
+	dt {font-weight:bold;}
+	button {padding:0;margin:0;border:0;cursor:pointer;}
+
+	/* ----------------------------------------------
+		레이아웃
+	---------------------------------------------- */
+	#wrap {width:98%; margin:0 auto;padding:20px 0 50px;}
+
+	ul#gnb {*zoom:1;margin:0;border-bottom:1px solid #2e55b1;margin-bottom:30px;}
+	#gnb:after {content:'';display:block;clear:both;}
+	#gnb li {float:left;list-style:none;margin-right:2px;}
+	#gnb li a {display:block;padding:10px 12px;border:1px solid #ccc;border-bottom:none;font-size:14px;font-weight:bold;color:#333;text-decoration:none;}
+	#gnb li.on a {background:#2e55b1;padding:11px 12px 10px;border:none;color:#fff;}
+
+	.btn-top {position:fixed;right:0;bottom:10%;background:#2e55b1;}
+	.btn-top a {display:block;width:60px;padding:5px 0;text-align:center;color:#fff;text-decoration:none;}
+
+	/* dialog */
+	.modal-overlay {position:fixed;left:0;top:0;width:100%;height:100%;min-width:100%;min-height:100%;background:#000;opacity:0.4;filter:alpha(opacity=30);z-index:995;}
+	* html .modal-overlay {position:absolute;left:0;}
+	.wrap-layer-on {width:100%;height:100%;}
+	.layer-type1 {position:absolute;left:10px;right:10px;top:0;max-width:620px;margin:0 auto;padding:22px;border:3px solid #333;background:#fff;z-index:997;}
+	.layer-type1 .layer-header {position:relative;height:30px;margin:0 0 10px;border-bottom:1px solid #d5d5d5;z-index:998;}
+	.layer-type1 .layer-header h1 {padding:0;font-size:14px;color:#000;font-weight:bold;text-align:left;}
+	.layer-type1 .layer-header .btn-close {position:absolute;right:0;top:0;width:21px;height:21px;margin:0;padding:0;overflow:hidden;vertical-align:top;z-index:999;}
+	.layer-type1 .layer-header .btn-close span {position:absolute;left:0;top:0;width:21px;height:21px;background:#fff url(../img/btn_close.gif) no-repeat 50% 50%;}
+	.layer-type1-w1 {width:500px !important;margin-left:-175px;}
+
+	/* ----------------------------------------------
+		가이드컨텐츠
+	---------------------------------------------- */
+	h3.toggle + .section {display:none;}
+	h3.toggle.open + .section {display:block;}
+	h3 .sub {position:absolute;right:0;top:0;font-weight:normal;line-height:30px;}
+	h3 .sub:before {content:'[ ';}
+	h3 .sub:after {content:' ]';}
+	h3.toggle .sub {right:25px;}
+
+	.c1 {color:#ec068d;}
+
+	/* 테이블 */
+	.tbl-guide {margin:0.5em 0;border-top: 2px solid #333;width:100%;}
+	.tbl-guide th {background-color:#dddddd;font-weight:bold;}
+	.tbl-guide th, .tbl-guide td {border: 1px solid #aaaaaa;padding:4px;vertical-align:middle;}
+	.tbl-guide thead th.header span {display:block;padding-right:20px;background:url(../img/bg.gif) no-repeat 100% 50%;cursor:pointer;}
+	.tbl-guide thead th.header.headerSortDown span {background:url(../img/asc.gif) no-repeat 100% 50%;}
+	.tbl-guide thead th.header.headerSortUp span {background:url(../img/desc.gif) no-repeat 100% 50%;}
+	.tbl-guide tbody tr.line td {border-bottom:1px solid #333;}
+	.tbl-guide tbody tr.delete td {text-decoration:line-through;}
+	.tbl-guide tbody tr td.end, .tbl-guide tbody tr td.modify {padding:4px 0;}
+	.tbl-guide tbody tr td.flag, .tbl-guide tbody tr td.modify, .tbl-guide tbody tr td.end {text-align:center;}
+	.tbl-guide tbody tr td .blank {display:block;color:#999;text-decoration:line-through;}
+	.tbl-guide.sorttable>tbody>tr:nth-child(2n) td {background:#f2f2f2;}
+	.tbl-guide.sorttable>tbody td:first-child {text-align:center;}
+	.modify_desc .tbl-guide {margin:0;}
+	@media only screen and (max-width:640px) {
+		.tbl-guide th, .tbl-guide td {padding:2px;font-size:11px;}
+		.tbl-guide tbody tr td.end, .tbl-guide tbody tr td.modify {padding:2px 0;}
+	}
+
+	/* 리스트 */
+	.list-guide {margin:0.5em 0;padding:0.5em;background:#f2f2f2;border-bottom:1px solid #375f91;}
+	.list-guide li {margin:0;padding:0 0 0 0.5em;list-style-type:none;}
+	.list-guide li em {font-weight:bold;letter-spacing:-1px;color:#F70000;}
+	h3 + .list-guide, h4 + .list-guide {margin:-10px 0 0.5em;}
+
+	.desc {margin:4px 0;}
+	.desc>li {position:relative;margin:3px 0;padding-left:8px;}
+	.desc>li:before {position:absolute;left:0;top:9px;width:4px;height:1px;background:#222;content:'';}
+
+	/* 탭 */
+	.tab-guide {margin:20px 0;padding:2px 0;overflow:hidden;width: 100%;border-top:1px solid #333;border-bottom:1px solid #333;}
+	.tab-guide > li {box-sizing:border-box;display:block;float:left;margin-bottom:2px;padding:0 1px;width:33.3%;}
+	.tab-guide > li a {position:relative;display:block;line-height:2;text-indent:0.5em;color:#333;background:#f2f2f2;text-decoration:none;}
+	.tab-guide > li a.on {background:#2e55b1;color: #fff;}
+	@media only screen and (min-width:480px) {
+		.tab-guide > li {width:25%;}
+	}
+
+	/* 소스코드 */
+	.msg-box {margin:15px 0;}
+	.msg-box .cite {text-align:right;}
+	.msg-box .example-img {display:block;margin:12px;}
+	.msg-box .setup-path {margin:12px 0;color:#fff;font-weight:bold;}
+	.msg-box .setup-path span {padding:7px 10px;background-color:#007100;}
+	.msg-box .syntax-container {margin:1em 0;padding:0;}
+	.msg-box .syntax-container.syntax-theme-base .toolbar a {font-size:12px;}
+
+	/* 이미지 */
+	.example-img {margin:10px 0;}
+	fieldset.guide {border:1px solid #ddd;margin:5px;padding:10px;font-size:12px;line-height:20px;letter-spacing:0;}
+	.content-guide>fieldset.guide {margin:30px 0;background:#fafafa;}
+	fieldset.guide fieldset {margin:5px 0 0;}
+	fieldset.guide legend {position:static !important;left:0 !important;top:0 !important;width:auto !important;height:auto !important;padding:0 4px !important;visibility:visible !important;font-size:12px !important;line-height:20px !important;text-indent:0 !important;background:#fafafa;}
+	fieldset.guide.modify {border:1px solid #000;}
+	fieldset.guide.modify legend {font-weight:bold;color:#000 !important;}
+	fieldset.guide.delete {border:1px dotted #000;color:#999;}
+	fieldset.guide.delete legend {color:#999 !important;font-weight:normal;}
+	fieldset.guide p.sub {margin-top:10px;}
+	fieldset.guide p strong {color:#ff0000;font-weight:normal;}
+	fieldset.guide .syntax-container {margin:15px 0 0;}
+	fieldset.guide p.sub + .syntax-container {margin:5px 0 0;}
+	.page-guide>fieldset.guide {border:2px solid #333;}
+	.page-guide>fieldset.guide>fieldset.guide {border-color:#666;}
+	.page-guide>fieldset.guide>fieldset.guide>fieldset.guide {border-color:#999;}
+	.tbl-guide th , .tbl-guide td {box-sizing:border-box;}
+	.tbl-guide th:nth-child(1) , .tbl-guide td:nth-child(1) {width:5%;text-align:center;}
+	.tbl-guide th:nth-child(2) , .tbl-guide td:nth-child(2) {width:10%;text-align:center;}
+	.tbl-guide th:nth-child(3) , .tbl-guide td:nth-child(3) {width:10%;text-align:center;}
+	.tbl-guide th:nth-child(4) , .tbl-guide td:nth-child(4) {width:10%;text-align:center;}
+	.tbl-guide th:nth-child(5) {text-align:center;}
+	.tbl-guide th:nth-child(6) , .tbl-guide td:nth-child(6) {width:10%;text-align:center;}
+	.tbl-guide th:nth-child(7) , .tbl-guide td:nth-child(7) {width:10%;text-align:center;}
+	a:focus {color: red;}
+</style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".tbl-guide tr").each(function( index ){
+			$(this).find("td").eq(0).text( index );
+		});
+	});
+</script>
+</head>
+<body>
+<div id="wrap">
+	<h1><span>BC페이북</span></h1>	
+	<h2>작업목록</h2>
+	<h3 class="toggle open" id="M">페이지</h3>
+	<div class="section">
+		<table class="tbl-guide sorttable">					
+			<thead>
+				<tr>
+					<th scope="col"><span>No</span></th>
+					<th scope="col"><span>1Depth</span></th>
+					<th scope="col"><span>2Depth</span></th>
+					<th scope="col"><span>3Depth</span></th>
+					<th scope="col"><span>명칭</span></th>
+					<th scope="col">완료일</th>					
+					<th scope="col">기타</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>통장개설</td>
+					<td></td>
+					<td><a href="./html/상품안내.html" target="_blank">상품안내</a></td>
+					<td></td>
+					<td></td>
+				</tr>	
+                <tr>
+                    <td></td>
+                    <td>적금</td>
+                    <td>통장개설</td>
+                    <td></td>
+                    <td><a href="./html/상품안내오버레이팝업.html" target="_blank">상품안내 오버레이팝업</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>약관동의</td>
+					<td></td>
+					<td><a href="./html/약관동의.html" target="_blank">약관동의</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+                 <tr>
+					<td></td>
+					<td>적금</td>
+					<td>약관동의</td>
+					<td>개인정보 수집 이용동의</td>
+					<td><a href="./html/약관상세PDF.html" target="_blank">약관상세PDF</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td>적금</td>
+					<td>약관동의</td>
+					<td>개인정보 제3자제공 동의</td>
+					<td><a href="./html/약관상세PDF2.html" target="_blank">약관상세PDF</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>기본정보입력</td>
+					<td></td>
+					<td><a href="./html/기본정보입력.html" target="_blank">기본정보입력</a></td>
+					<td></td>
+					<td></td>
+				</tr>		
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>기본정보입력</td>
+					<td>계좌개설안내 팝업</td>
+					<td><a href="./html/계좌개설안내팝업.html" target="_blank">계좌개설안내 팝업</a></td>
+					<td></td>
+					<td></td>
+				</tr>	
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>적금설정</td>
+					<td></td>
+					<td><a href="./html/적금설정.html" target="_blank">적금설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>					
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>적금설정</td>
+					<td>이체일자 선택 팝업</td>
+					<td><a href="./html/이체일자선택팝업.html" target="_blank">이체일자 선택 팝업</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>적금설정</td>
+					<td>출금계좌 선택 팝업</td>
+					<td><a href="./html/출금계좌선택팝업.html" target="_blank">출금계좌 선택 팝업</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>적금설정</td>
+					<td>금액오류시</td>
+					<td><a href="./html/금액오류시.html" target="_blank">금액오류시</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>적금설정</td>
+					<td>자유입금</td>
+					<td><a href="./html/자유입금.html" target="_blank">자유입금</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>비밀번호설정</td>
+					<td></td>
+					<td><a href="./html/비밀번호설정.html" target="_blank">비밀번호설정</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>비밀번호설정</td>
+					<td></td>
+					<td><a href="./html/비밀번호재확인.html" target="_blank">비밀번호 재확인</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>가입정보확인</td>
+					<td></td>
+					<td><a href="./html/가입정보확인.html" target="_blank">가입정보확인</a></td>
+					<td></td>
+					<td></td>
+				</tr>		
+                <tr>
+                    <td></td>
+                    <td>적금</td>
+                    <td>가입정보확인</td>
+                    <td></td>
+                    <td><a href="./html/가입정보확인오버레이팝업.html" target="_blank">가입정보확인 오버레이팝업</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>	
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>가입정보확인</td>
+					<td>비과세종합저축안내</td>
+					<td><a href="./html/비과세종합저축안내.html" target="_blank">비과세종합저축안내</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>가입정보확인</td>
+					<td>비과세종합저축안내</td>
+					<td><a href="./html/비과세종합저축안내한도조회결과확인.html" target="_blank">비과세종합저축안내 한도조회결과확인</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>계좌확인</td>
+					<td></td>
+					<td><a href="./html/계좌확인.html" target="_blank">계좌확인</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>적금</td>
+					<td>계좌확인</td>
+					<td></td>
+					<td><a href="./html/계좌조회상세.html" target="_blank">계좌조회 상세</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td>적금</td>
+					<td>계좌확인</td>
+					<td></td>
+					<td><a href="./html/계좌비밀번호.html" target="_blank">계좌 비밀번호</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+                <tr>
+					<td></td>
+					<td>적금</td>
+					<td>계좌확인</td>
+					<td></td>
+					<td><a href="./html/계좌선택.html" target="_blank">계좌 선택</a></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<span class="btn-top"><a href="#wrap">&uarr; TOP</a></span>
+</div>
+</body>
+</html>

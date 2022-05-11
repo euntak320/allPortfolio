@@ -1,0 +1,47 @@
+/**
+ * 
+ */
+$(function() {
+	function getKeyColumn(keyColumnList) {
+		return keyColumnList.slice(1, keyColumnList.length);
+	}
+	
+	function getPath(keyList, value) {
+		var path = '';
+		if(keyList.length === 1) {
+			path = keyList[0] + '=' + value[keyList[0]];
+		} else {
+			path = keyList.reduce(function(a, b) {
+				if(value[a])
+					return a + '=' + value[a] + ',' + b + '=' + value[b];
+				return a + ',' + b + '=' + value[b];
+			})
+		}
+		return path;
+	}
+	
+	function collectMapToPath(keyList, values) {
+		var pathMap = {};
+		values.forEach(function(value) {
+			Map.addValueToKey(pathMap, getPath(keyList, value), value);
+		})
+		return pathMap;
+	}
+
+	window.Path = {
+		getPaths: function(keyColumnList, rows) {
+			var keyList = getKeyColumn(keyColumnList);
+			return collectMapToPath(keyList, rows);
+		},
+		
+		getPath: function(keyColumnList, value) {
+			var keyList = getKeyColumn(keyColumnList);
+			return getPath(keyList, value);
+		},
+		
+		getPathValue: function(keyColumnList, path) {
+			var keyList = getKeyColumn(keyColumnList);
+			return getPaths(keyList)[path];
+		}
+	}
+})

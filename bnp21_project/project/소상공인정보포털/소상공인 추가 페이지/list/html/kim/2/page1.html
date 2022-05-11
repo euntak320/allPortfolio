@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Meta, title, CSS, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>자영업지원센터 사업관리 시스템</title>
+    <!--[if lt IE 9]>
+			<script src="/js/html5shiv.min.js"></script>
+		<![endif]-->
+    <!-- scripts and styles -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="../../../css/rMateGridH5Sample.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/rMateH5.css" />
+    <!-- rMateChartH5 라이센스 -->
+    <script type="text/javascript" src="../../../js/rMateGridH5License.js"></script>
+    <!-- rMateGridH5 라이브러리 -->
+    <script type="text/javascript" src="../../../js/rMateGridH5.js"></script>
+
+    <!-- smartEditor -->
+    <script type="text/javascript" src="../../../smartEditor/js/HuskyEZCreator.js"></script>
+    <!-- smartEditor -->
+    <link rel="stylesheet" type="text/css" href="../../../smartEditor/css/smart_editor2.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" />
+
+    <link rel="apple-touch-icon-precomposed" href="../../../ico/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/ico/favicon.ico">
+
+    <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="../../../css/jquery/jquery-ui-1.8.16.main.css" />
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="../../../js/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.16.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui.datepicker.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.number.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.maskedinput-1.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.dialog.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.numeric.js"></script>
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../../../js/common-util.js"></script>
+    <script type="text/javascript" src="../../../js/common.js"></script>
+    <script type="text/javascript" src="../../../js/sbdcCommon.js"></script>
+    <script type="text/javascript" src="../../../js/downloadProgress.js"></script>
+    <script type="text/javascript" src="../../../js/default.js"></script>
+    <script type="text/javascript" src="../../../js/printThis.js"></script>
+
+    <!-- 트리구조 추가 -->
+    <link rel="stylesheet" type="text/css" href="../../../css/jstree.min.css" />
+    <script type="text/javascript" src="../../../js/jstree.min.js"></script>
+
+    <!-- 신규 css 추가 -->
+    <link rel="stylesheet" href="../../../css/newpage.css">
+
+    <!-- function scripts -->
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="toplink">
+            <a class="navbar-brand" href="/cm/main.do"><img src="/img/logo_2016.png" alt="자영업지원센터"></a>
+            <ul>
+                <li><a href="/cc/SM_10402_SL.do">
+                        <sapn style="text-align: middle;"><img src="/img/icon/sms.JPG"
+                                style="width: 15px; padding-right: 5px; margin-top: 3px;" align="top">SMS 발송</sapn>
+                    </a></li>
+                <li><i class="fa fa-user"></i>개발테스트님 환영합니다.</li>
+                <li><a href="/cm/CMLogout.do"><i class="fa fa-power-off"></i>로그아웃</a></li>
+                <li><a href="/sso/SSO_10100.do" target="_blank"> <i class="fa fa-home"></i>소상공인 종합지원포털 홈페이지</a></li>
+            </ul>
+        </div>
+        <nav class="topnav-wrap">
+            <ul class="topnav" id="topMenu">
+                <li><a href="/cs/CS_10100_SL.do">고객&amp;상담</a></li>
+                <li><a href="/cn/CN_10300_SL.do">창업지원</a></li>
+                <li><a href="/pm/PM_20101_SL.do">사후관리</a></li>
+                <li><a href="/fs/FS_10000_SL.do">시설개선</a></li>
+                <li class="active"><a href="/cg/CG_70101_SL_NEW.do">경영지원</a></li>
+                <li><a href="/st/ST_10201_FORM.do">경영지원통계</a></li>
+                <li><a href="/cc/CC_10301_SL.do">전문가관리</a></li>
+                <li><a href="/ed/ED_10101_SL.do">교육관리</a></li>
+                <li><a href="/bt/BT_10100_SL.do">직원알림방</a></li>
+                <li><a href="/bs/BS_10100_SL.do">공지&amp;알림</a></li>
+                <li><a href="/bm/MasterList.do">게시판관리</a></li>
+                <li><a href="/sm/SM_10101_SL.do">시스템관리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-content">
+        <div class="sidenav-wrap">
+            <ul class="nav sidenav" id="leftMenu">
+                <li class="active"><a href=""><i class="fa fa-file-text-o"></i>컨설팅 관리(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>사업신청서 등록(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>온라인신청서접수(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>전문가 배정(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>멘토링 배정</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>과거 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>컨설팅 정보 조회</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>접수부서별 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>경영지원 해피콜</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험신청서 접수</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>크리에이터 교육관리</a></li>
+            </ul>
+        </div>
+        <div class="content-wrap">
+            <div class="content">
+                <div class="content">
+                    <h3>컨설팅 관리</h3>
+                    <ul class="process">
+                        <li id="" class="process3 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #fff;">사업신청</a></span></li>       
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">전문가배정(1차)</a></span></li>
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">컨설팅수행(1차)</a></span></li>
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">전문가배정(2차)</a></span></li>
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">컨설팅수행(2차)</a></span></li>
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">사후관리</a></span></li>
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">컨설팅완료</a></span></li>
+                    </ul>
+                    
+                    <h3>고객정보(대표자)</h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>고객번호</th>
+                                <td></td>
+                                <th>고객명</th>
+                                <td></td>
+                                <th>성별</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>생년월일</th>
+                                <td></td>
+                                <th>전화번호</th>
+                                <td></td>
+                                <th>휴대전화번호</th>
+                                <td><a href="#" id="" name="" class="btn-danger btn-sm" >SMS 발송</a></td>
+                            </tr>
+                            <tr>
+                                <th>주소</th>
+                                <td colspan="5">()&nbsp;&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>사업장정보</h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>사업단계</th>
+                                <td colspan="5">					
+                                    <input type="radio" id="applcntBsnsStepCode1" name="applcntBsnsStepCode" value="110" checked="" disabled="disabled"> 
+                                    <label for="applcntBsnsStepCode1">기존창업자</label>
+                                    <input type="radio" id="applcntBsnsStepCode2" name="applcntBsnsStepCode" value="120" checked="" disabled="disabled"> 
+                                    <label for="applcntBsnsStepCode1">예비창업자</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>업체명</th>
+                                <td></td>
+                                <th>사업자등록번호</th>
+                                <td> </td>
+                                <th>사업장전화번호</th>
+                                <td> </td>
+                            </tr>
+                            <tr>
+                                <th>사업장주소</th>
+                                <td colspan="5">( )&nbsp; </td>
+                            </tr>
+                            <tr>
+                                <th>소유구분</th>
+                                <td> </td>
+                                <th>경영형태</th>
+                                <td> </td>
+                                <th>종업원수</th>
+                                <td>0 명</td>
+                            </tr>
+                            
+                            <tr>
+                                <th>업종</th>
+                                <td></td>
+                                <th>취급품목</th>
+                                <td></td>
+                                <th>설립(예정)일자</th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-right">
+                        <a href="#none" id="cstmrHist" name="cstmrHist" class="btn btn-default">고객이력</a>
+                        <a href="#none" id="btnList" name="btnList" class="btn btn-default">목록</a>
+                    </p>
+                    <ul id="tabs" class="nav nav-tabs">
+                        <li class=""><a class="tab" id="prgrsListDoc" href="#"><span><i class="fa fa-tag"></i>진행내역</span></a></li>
+                        <li class="active"><a class="tab" id="floatTab1" href="#"><span><i class="fa fa-tag"></i>사업신청</span></a><a href="#" class="remove"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="content">
+                        
+                        <h3>사업신청내용</h3>
+                        <table class="table table-bordered write">
+                            <colgroup>
+                                <col style="width:130px">
+                                <col style="width:calc(33% - 132px);">
+                                <col style="width:130px">
+                                <col style="width:calc(33% - 132px);">
+                                <col style="width:130px">
+                                <col style="width:calc(33% - 132px);">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>신청일자</th>
+                                    <td>2020-09-09</td>
+                                    <th>사업구분</th>
+                                    <td colspan="3">								
+                                        <label for="bsnsSeCode" class="invisible">사업구분</label>
+                                        <select class="form-control input-md" id="selBsnsSe" name="bsnsSeCode" disabled="disabled" selected="selected">
+                                            <option value="">선택</option>
+                                            
+                                                <option value="ACCMP_PRJ_CODE" selected="selectd">소상공인 동행 프로젝트</option>
+                                            
+                                                <option value="BANK_CNSL_SUP_CODE">은행연합회 컨설팅 지원</option>
+                                            
+                                                <option value="BSNS_ARNG_CODE">사업정리 지원</option>
+                                            
+                                                <option value="FCLTY_IMP_SUP">시설개선 지원사업</option>
+                                            
+                                                <option value="LMT_SBUSN_SUP_CODE">골목상권 활성화 지원사업</option>
+                                            
+                                                <option value="MYBS_CPRTN_BSNS_CODE">자영업 협업사업</option>
+                                            
+                                                <option value="MYSH_EXC_MKT_CODE">우리가게 전담 마케터</option>
+                                            
+                                                <option value="ONO_PRC_LINIC_CODE">자영업클리닉 지원</option>
+                                            
+                                                <option value="SPT_EXPRN_CODE">현장체험</option>
+                                            
+                                                <option value="TRDAR_RNSC_CNSL_CODE">관악르네상스 컨설팅 지원</option>
+                                            
+                                        </select>
+                                    </td>	
+                    
+                                </tr>
+                                <tr>
+                                    <th>지원신청</th>
+                                    <td id="tdApplyReqst" colspan="5"><input type="checkbox" id="applyReqstCode0" disabled="disabled" checked="checked" name="applyReqstCode" value="101">컨설팅&nbsp;&nbsp;&nbsp;<span style="color: #e52142">※ 지원 받고자 하는 항목에 반드시 체크 해 주시기 바랍니다.</span></td>
+                    
+                                </tr>
+                                <tr>
+                                    <th>경영애로사항</th>
+                                    <td colspan="5">
+                                        <textarea class="form-control input-full" rows="3" id="mngmtBtlnMatter" name="mngmtBtlnMatter" readonly="readonly">매장이 여름에는 덥고, 겨울에는 추움, 저녁 고객에 맞는 메뉴 부족</textarea>
+                                        <label id="mngmtBtlnMatterNum">0 / 300bytes [한글기준 최소 30자(90bytes) 이상 입력]</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>지원요청사항</th>
+                                    <td colspan="5">
+                                    <textarea class="form-control input-full" rows="3" id="applyRequstMatter" name="applyRequstMatter" readonly="readonly"">마케팅, 매장연출(인테리어), 메뉴개발 지원</textarea>
+                                    <label id="applyRequstMatterNum">0 / 300bytes [한글기준 최소 30자(90bytes) 이상 입력]</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>추천인</th>
+                                    <td colspan="5">
+                                        <input type="text" id="recomendr" name="recomendr" class="form-control input-md">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>파일첨부안내</th>
+                                    <td colspan="5">필수첨부문서: 사업자등록증 (파일첨부 또는 FAX 전송: 02-3278-8121, “사업신청용” 표기</td>
+                                </tr>
+                                <tr>
+                                    <th>사업자등록증</th>
+                                    <td colspan="5">
+                                        <input type="file" id="file1" name="bsnsLicse" title="사업자등록증" class="form-control input-lg">   
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>파일첨부<br>
+                                        <input type="button" id="btnAddFile" class="btn btn-sm" value="추가" title="첨부파일 추가">
+                                        <input type="button" id="btnDelFile" class="btn btn-sm" value="삭제" title="첨부파일 삭제"></th>
+                                    
+                                    <td id="tdFileTable" colspan="5">
+                                        <table id="fileTable1">
+                                        
+                                        <tbody><tr id="tableTr11">
+                                            <td><span>1. </span> <input type="file" id="file2" name="file" title="첨부파일" class="form-control input-lg"></td>
+                                        </tr>
+                                        </tbody></table>
+                                    </td>
+                                </tr>
+                            
+                                <tr>
+                                    <th>처리구분</th>
+                                    <td>
+                                        <input type="radio" id="confmAt1" name="confmAt" value="Y" disabled="disabled"> 접수
+                                        <input type="radio" id="confmAt2" name="confmAt" value="N" checked="" disabled="disabled"> 반려
+                                    </td>
+                                    <th>정보동의</th>
+                                    <td>
+                                        <input type="radio" name="agreeYn" id="agreeYn1" value="Y" checked="checked" disabled="disabled">동의함&nbsp;
+                                        <input type="radio" name="agreeYn" id="agreeYn2" value="N" disabled="disabled">동의안함
+                                    </td>	
+                                    <th>중소기업 통합관리 정보제공동의</th>
+                                    <td>
+                                        <input type="radio" name="agreeYn_2" id="agreeYn3" value="Y" checked="checked" disabled="disabled">동의함&nbsp;
+                                        <input type="radio" name="agreeYn_2" id="agreeYn4" value="N" disabled="disabled">동의안함
+                                    </td>	
+                                </tr>
+                                <tr id="returnResn" style="display: none;">
+                                    <th>반려사유</th>
+                                    <td colspan="5">
+                                        <label for="returnResn" class="invisible">반려사유</label>
+                                        <textarea class="form-control input-full" rows="3" id="returnResn" name="returnResn" readonly="readonly">서류심사 결과 미선정자</textarea>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="control-button">	
+                        <span class="fr">
+                            <a href="#none" id=" " name=" " class="btn btn-pop">정보수정</a>
+                            <a href="#none" id=" " class="btn btn-primary">취소</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position: fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%; background:rgba(0,0,0,0.5)">
+        <div style="position: absolute; top:50%; left:50%; width:1024px; height:auto; transform: translate(-50%,-50%); background:#fff;">
+        <!-- contentArea -->
+            <div class="modal-body">
+                <p class="clearfix"></p>
+                <div>
+                    <table class="table table-bordered view">
+                        <colgroup>
+                            <col style="width:80%;">
+                            <col style="width:20%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>진단내용</th>
+                                <th>진관결과</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. 참여업체 모두 재보증제한업종에 해당되지 않습니다.</td>
+                                <td>
+                                    <input type="checkbox" id="chk_1">
+                                    <label for="chk_1">예</label>
+                                    <input type="checkbox" id="chk_2">
+                                    <label for="chk_2">아니오</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2. 참여업체 대표자 모두 국세, 지방세 체납사실이 없습니다. (법인의 경우 법인 포함)</td>
+                                <td>
+                                    <input type="checkbox" id="chk_1">
+                                    <label for="chk_1">예</label>
+                                    <input type="checkbox" id="chk_2">
+                                    <label for="chk_2">아니오</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3. 참여업체 모두 휴폐업 상황이 아닙니다.</td>
+                                <td>
+                                    <input type="checkbox" id="chk_1">
+                                    <label for="chk_1">예</label>
+                                    <input type="checkbox" id="chk_2">
+                                    <label for="chk_2">아니오</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4. 소상공인 시장진흥공단 현업활성화 지원사업을 지원받은 사실이 없습니다.</td>
+                                <td>
+                                    <input type="checkbox" id="chk_1">
+                                    <label for="chk_1">예</label>
+                                    <input type="checkbox" id="chk_2">
+                                    <label for="chk_2">아니오</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5. 참여업체 모두 사업장주소지 기준 서울지역 소상공인입니다.</td>
+                                <td>
+                                    <input type="checkbox" id="chk_1">
+                                    <label for="chk_1">예</label>
+                                    <input type="checkbox" id="chk_2">
+                                    <label for="chk_2">아니오</label>
+                                </td>
+                            </tr>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="btnClose">닫기</button>
+                </div>
+            </div>
+            <!-- contentArea -->
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-copy">© Seoul Credit Guarantee Foundation, All Rights Reserved.</div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+
+@font-face {
+    font-family: 'noto-kr';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/notokr-medium.eot');
+    src: url('../fonts/notokr-medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/notokr-medium.woff') format('woff'),
+         url('../fonts/notokr-medium.ttf') format('truetype');
+  }
+
+*{margin:0; padding:0; border:0; color:#666; font-family: 'noto-kr', sans-serif;}
+body{min-width: 1024px;}
+ul ,li{list-style: none; line-height: 1.8;}
+.area{margin-left:420px; margin-top:30px;}
+.txtArea + .txtArea{margin-top:20px;}
+.title{font-weight: bold; color:#333; font-size: 20px;}
+.txtArea .indent{padding-left:17px;}
+.txtArea ul{margin-top:15px;}
+.txtArea ul li{font-size:16px;}
+.red{color:#b00052; font-weight:bold;}
+.footer{position: fixed; bottom:0; width:100%; height:47px; background:#f7f7f7; text-align: center; line-height: 47px; font-weight: bold; font-size:14px;}
+.top{position: fixed; width:100%; height:10px; background: #ebebeb; z-index: 10;}

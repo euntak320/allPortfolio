@@ -1,0 +1,455 @@
+@charset "utf-8";
+/*타이틀소개 팝업*/
+#contents h2 span img{ padding-left:14px}
+#pop_info{ position:absolute; top:100px; left:193px; width:746px; background:#e4ebf5; padding:16px 16px 22px 16px; display:none; z-index:9997}
+#pop_info .cls{ position:absolute; bottom:10px; right:10px}
+/*TAB NAVI*/
+.tabNavi { position:relative; height:36px; line-height:36px; margin-top:10px; margin-bottom:10px; font-family:"Noto Sans Korean","맑은 고딕","Malgun Gothic","돋움", dotum;background:url(../img/layout/bg_tab_line.gif) repeat-x; z-index:10}
+.tabNavi li	{height:36px; list-style:none; float:left; margin-right:1px;}
+.tabNavi li a {height:36px; display:block; padding-left:30px; background:url(../img/layout/bg_tab.gif) no-repeat left top ; font-weight:400; font-size:14px; color:#666; text-decoration:none;}
+.tabNavi li span {height:36px; display:block; padding-right:30px; background:url(../img/layout/bg_tab.gif) no-repeat right top; cursor:pointer;}
+.tabNavi li a.on,
+.tabNavi li a.on span,
+.tabNavi li a:hover,
+.tabNavi li a:hover span{ background-image:url(../img/layout/bg_tab_on.gif); color:#000; font-size:16px;font-weight:400;}
+/*TAB NAVI 정보마당*/
+.tabNavi2 { position:relative; height:36px; line-height:36px; margin-top:10px; margin-bottom:10px; font-family:"Noto Sans Korean","맑은 고딕","Malgun Gothic","돋움", dotum;background:url(../img/layout/bg_tab_line.gif) repeat-x; z-index:10}
+.tabNavi2 li	{height:36px; list-style:none; float:left; margin-right:1px;}
+.tabNavi2 li a {height:36px; display:block; padding-left:10px; background:url(../img/layout/bg_tab.gif) no-repeat left top ; font-weight:400; font-size:13px; color:#666; text-decoration:none; letter-spacing:-1px}
+.tabNavi2 li span {height:36px; display:block; padding-right:10px; background:url(../img/layout/bg_tab.gif) no-repeat right top; cursor:pointer;}
+.tabNavi2 li a.on,
+.tabNavi2 li a.on span,
+.tabNavi2 li a:hover,
+.tabNavi2 li a:hover span{ background-image:url(../img/layout/bg_tab_on.gif); color:#000; font-size:13px;font-weight:400;}
+
+/*****************************지도출력 4가지타입******************************/
+.mapimg{position:relative; height:363px; clear:both; background:url(../img/map/map_forecast_00.png) no-repeat 180px 10px}
+.mapimg2{position:relative; height:363px; clear:both; background:url(../img/map/map_forecast_00.png) no-repeat 100px 10px}
+.mapimg3{position:relative; height:363px; clear:both; background:url(../img/map/map_road.png) no-repeat 100px 10px}
+.mapimg4{ overflow:hidden; position:relative; min-height:363px; clear:both; background:url(../img/map/map_forecast_00.png) no-repeat 343px 10px; display:block}
+.mapdata{position:absolute; bottom:0; right:0; z-index:111}
+.zone{position:absolute; top:30px; left:0; z-index:112}
+.all{position:absolute; top:11px; left:180px; z-index:110}
+.all2{position:absolute; top:11px; left:100px; z-index:110}
+.map {position:absolute; top:0; left:85px;}
+
+/*측정소별*/
+.Jongno { position:absolute; top:101px; left:279px; z-index:0}
+.Jung { position:absolute; top:175px; left:291px; z-index:0}
+.Yongsan { position:absolute; top:195px; left:273px; z-index:0}
+.Seongdong { position:absolute; top:170px; left:338px; z-index:0}
+.Gwangjin { position:absolute; top:172px; left:385px; z-index:0}
+.Dongdaemun { position:absolute; top:131px; left:350px; z-index:0}
+.Jungnang { position:absolute; top:111px; left:390px; z-index:0}
+.Seongbuk { position:absolute; top:93px; left:306px; z-index:0}
+.Gangbuk { position:absolute; top:32px; left:309px; z-index:0}
+.Dobong {position:absolute; top:12px; left:335px; z-index:0}
+.Nowon { position:absolute; top:18px; left:370px; z-index:0}
+.Eunpyung { position:absolute; top:67px; left:218px; z-index:0}
+.Seodaemun { position:absolute; top:130px; left:233px; z-index:0}
+.Mapo { position:absolute; top:147px; left:188px; z-index:0}
+.Yangcheon { position:absolute; top:202px; left:151px; z-index:0}
+.Gangseo { position:absolute; top:132px; left:95px; z-index:0}
+.Guro { position:absolute; top:242px; left:141px; z-index:0}
+.Geumcheon { position:absolute; top:277px; left:204px; z-index:0}
+.Yeongdeungpo { position:absolute; top:200px; left:211px; z-index:0}
+.Dongjak { position:absolute; top:237px; left:232px; z-index:0}
+.Gwanak { position:absolute; top:269px; left:228px; z-index:0}
+.Seocho { position:absolute; top:229px; left:308px; z-index:0}
+.Gangnam { position:absolute; top:214px; left:340px; z-index:0}
+.Songpa { position:absolute; top:208px; left:396px; z-index:0}
+.Gangdong { position:absolute; top:162px; left:438px; z-index:0}
+/*권역별*/
+.cn{position:absolute; top:98px; left:192px; z-index:0}
+.wn{position:absolute; top:65px; left:107px; z-index:0}
+.ws{position:absolute; top:132px; left:17px; z-index:0}
+.en{position:absolute; top:11px; left:227px; z-index:0}
+.es{position:absolute; top:161px; left:227px; z-index:0}
+/*예경보*/
+.whole{position:absolute; top:10px; left:260px; z-index:0}
+
+/*오존 예 경보 권역 추가*/
+.cn2{position:absolute; top:98px; left:434px; z-index:0}
+.wn2{position:absolute; top:65px; left:349px; z-index:0}
+.ws2{position:absolute; top:132px; left:259px; z-index:0}
+.en2{position:absolute; top:11px; left:469px; z-index:0}
+.es2{position:absolute; top:161px; left:469px; z-index:0}
+/*도로변*/
+.Yeongdeungpo_road{position:absolute; top:230px; left:145px; z-index:0}
+.Sinchon_road{position:absolute; top:193px; left:170px; z-index:0}
+.Cheonggye_road{position:absolute; top:178px; left:228px; z-index:0}
+.Sinsa_road{position:absolute; top:224px; left:257px; z-index:0}
+.Cheongnyangni_road{position:absolute; top:144px; left:267px; z-index:0}
+.Seoul_road{position:absolute; top:206px; left:207px; z-index:0}
+.Gil_road{position:absolute; top:209px; left:375px; z-index:0}
+.Jongno_road{position:absolute; top:168px; left:207px; z-index:0}
+.Taereung_road{position:absolute; top:106px; left:317px; z-index:0}
+.Airport_road{position:absolute; top:170px; left:85px; z-index:0}
+.Riverside_road{position:absolute; top:202px; left:282px; z-index:0}
+.Einternal_road{position:absolute; top:114px; left:239px; z-index:0}
+.Yangjae_road{position:absolute; top:270px; left:257px; z-index:0}
+.Dongjak_road{position:absolute; top:242px; left:199px; z-index:0}
+/* .Hongjimun_road{position:absolute; top:152px; left:239px; z-index:0} */
+.Hongjimun_road{position:absolute; top:112px; left:239px; z-index:0}
+
+/*2018. 11.26 시흥대로 추가*/
+.Siheung_road{position:absolute; top:261px; left:154px; z-index:0}
+
+/*2018.11.26 배경 고공 지도 추가 */
+.mapimg5{position:relative; height:363px; clear:both; background:url(../img/map/map_background.png) no-repeat 100px 10px}
+.bukhansan_back{ position:absolute; top:38px; left:239px; z-index:0}
+.namsan_back{ position:absolute; top:184px; left:232px; z-index:0}
+.Haengju_back{ position:absolute; top:118px; left:46px; z-index:0}
+.gungdong_back{ position:absolute; top:244px; left:83px; z-index:0}
+.gwanak_back{ position:absolute; top:310px; left:207px; z-index:0}
+.segok_back{ position:absolute; top:282px; left:340px; z-index:0}
+
+.data {float:right; margin-right:30px}
+.left {float:left;}
+.right {float:right;}
+.topline {border-top:2px solid #dfdfdd; padding-top:10px}
+.txt {padding:0 10px 10px 10px;}
+
+.day {text-indent:18px; background:url(../img/bullet/sq_13x13_grey.gif) no-repeat left center}
+.zone{ width:182px; height:92px; padding:0 4px 4px 0; background:url(../img/layout/bg_measure_box.gif) no-repeat; font-family:"Noto Sans Korean","맑은 고딕","Malgun Gothic","돋움", dotum; text-align:center}
+.zone dt{ color:#688acb; font-size:1.167em; line-height:2.333em; font-weight:400}
+.zone dd{ color:#999; font-size:1.167em; line-height:2.333em; font-weight:400}
+.zone dd.d{font-size:0.917em;line-height:2em;}
+.zone dd .b{font-weight:500; color:#000}
+
+.state{ width:310px; font-family:"Noto Sans Korean","맑은 고딕","Malgun Gothic","돋움", dotum; text-align:center; border:3px solid #688acb; box-shadow:#CCC 5px 5px; padding:0 5px; margin-bottom:20px}
+.state dt{ color:#688acb; font-size:1.167em; line-height:2.583em; font-weight:400}
+.state dd{ color:#999; font-size:1em; line-height:1.500em; font-weight:400; border-top:1px solid #ddd}
+.state dd img{ vertical-align:middle}
+.state dd.d{font-size:0.917em;line-height:2.333em;color:#555}
+.state dd .b{font-weight:500; color:#000; font-size:1.167em; line-height:2.500em}
+.state dd.explan{ text-align:left; padding:10px}
+.state table th, .state table td{ line-height:22px; border-bottom:1px solid #ddd; font-family:"Noto Sans Korean","맑은 고딕","Malgun Gothic","돋움", dotum; color:#666; font-weight:normal}
+.state table th{border-right:1px solid #ddd}
+.state table .bdr_none{ border:none}
+
+.notetit {padding:7px 0 3px 0; margin-top:10px; text-align:center; font-size:1em;}
+.notes_t{width:161px; height:22px; line-height:22px; padding-top:4px; background:url(../img/main/box_map_top.png) no-repeat; text-align:center}
+.notes_t{ color:#688acb; font-weight:400}
+.notes_t .s{font-size:11px}
+.notes_m{width:159px; background:url(../img/main/box_map_mid.png) repeat-y; padding:0 1px}
+.notes_m table thead th{ border-top:1px solid #eee; border-right:1px solid #eee }
+.notes_m table thead td{ border-top:1px solid #eee; }
+.notes_m table th, .notes_m table td{ border-bottom:1px solid #eee; line-height:21px; text-align:center}
+.notes_m table td{ border-left:1px solid #eee;}
+.notes_m table tr.bdr_none th, .notes_m table tr.bdr_none td{border-bottom:none}
+
+.num_01{ background:#25aefb; color:#333}
+.num_02{ background:#92f101; color:#333}
+.num_03{ background:#fde905; color:#333}
+.num_04{ background:#fc3037; color:#333}
+.num_05{ background:#f7f7f7; color:#333}
+.num_06{ background:#f0ee6c; color:#333}
+.num_07{ background:#ff9128; color:#333}
+.notes_b{width:161px; height:5px; background:url(../img/main/box_map_bot.png) no-repeat}
+
+/*참고박스*/
+.bxtype1,.bxtype7 {clear:both; margin-bottom:10px; border:1px solid #dfdfdd; padding:14px 18px;}
+.bxtype1 dl, .bxtype2 dl{padding:10px;}
+.bxtype2 {clear:both; margin-bottom:10px; border:1px solid #688acb; padding:14px 18px; }
+.bxtype3 {overflow:hidden; background:#f7f7f7;border:1px solid #dfdfdd; padding:10px}
+.bxtype3 dt, .bxtype3 dd {float:left; display:inline-block;padding:0; margin:0; line-height:40px;}/*날씨*/
+.bxtype3 dt {font-weight:bold; padding-left:30px}
+
+
+.bxtype7 dl, .bxtype7 .bot{padding:20px;}
+.bxtype1 dl dt, .bxtype2 dl dt, .bxtype4 dl dt { margin:0 10px 0 10px; font-weight:bold; line-height:30px; text-indent:30px; background:url(../img/bullet/ball_23x25_sky.gif) left 2px no-repeat}
+.bxtype7 dl dt { margin:0 10px 0 10px; font-weight:bold; line-height:24px; text-indent:16px; background:url(../img/bullet/cir_10x10_orange.gif) left center no-repeat}
+.bxtype1 dl dd, .bxtype2 dl dd, .bxtype4 dl dd{ margin:5px 10px 0 30px; text-indent:10px; background:url(../img/bullet/ar_3x5_grey.gif) left 5px no-repeat}
+.bxtype7 dl dd { margin:5px 10px 0 30px; text-indent:10px; background:url(../img/bullet/sq_3x3_blue.gif) left 5px no-repeat}
+
+
+.bxtype4 {clear:both; background:url(../img/box/bg_bx4T.gif) left top no-repeat}
+.bxtype4 dl{padding:7px 10px 14px 10px; background:url(../img/box/bg_bx4B.gif) left bottom no-repeat}
+.bxtype4 .bot{padding:20px 24px; background:url(../img/box/bg_bx4B.gif) left bottom no-repeat}
+
+.bxtype5 { width:178px; background:url(../img/box/bg_skyT.gif) no-repeat left top}
+.bxtype5 dl { width:198px; background:url(../img/box/bg_skyB.gif) no-repeat left bottom}
+
+.bxtype6 { clear:both; margin-bottom:10px; background:url(../img/box/bg_bx6T.gif) left top no-repeat}
+.bxtype6 dl, .bxtype6 ul, .bxtype6 .bot { overflow:hidden; display:block; background:url(../img/box/bg_bx6B.gif) left bottom no-repeat}
+.bxtype6 dl {padding:3px 10px;}
+.bxtype6 ul{padding:24px;}
+.bxtype6 .bot {padding:20px;}
+.bxtype6 li {padding:2px;}
+* html .bxtype6 dl {height:100%}
+.bxtype6 dt, .bxtype6 dd {float:left; display:block; padding:12px 0}
+
+
+/*검색*/
+.sch1, .sch2 {position:relative; overflow:hidden;}
+.sch1, .sch3 {height:58px}
+.sch1{border:1px solid #dfdfdd;}
+.sch2 {height:72px; border-top:2px solid #688acb; border-left:1px solid #dfdfdd; border-bottom:1px solid #dfdfdd; border-right:1px solid #dfdfdd;}
+.slt1, .slt2, .slt3, .time {position:absolute;}
+.sch2 .slt1, .sch2 .slt2{top:12px;}
+.sch1 .slt1, .sch2 .slt1 {left:30px;}
+.sch2 .slt2, .sch1 .slt2 {left:400px;}
+.sch1 .slt1, .sch1 .slt2, .sch1 .slt3, .sch3 .slt1, .sch3 .slt2, .sch3 .slt3, .sch3 .slt4 {top:16px;}
+.sch1 .slt3 {left:480px;}
+.sch3 {position:relative; overflow:hidden; width:100%; background:url(../img/box/bg_bx1B.gif) left bottom no-repeat}
+.sch3 .slt1 {left:30px;}
+.sch3 .slt2 {left:300px;}
+.time {	top:39px;left:30px;}
+.slt1 select, .slt2 select, .slt3 select {margin-left:3px;}
+.time input{margin:0 5px; padding:1px 3px; }
+.time input.line, .slt1 input.line, .slt2 input.line{border:1px solid #d6d6d6;}
+.time input.br_none {border:none}
+.schBtn1, .schBtn2, .schBtn3{position:absolute; right:20px;}
+.schBtn1 {top:5px;}
+.schBtn2 {top:12px;}
+.schBtn3 {top:10px;}
+/*기후대기통계 검색*/
+.sub03 .sch3 .slt1 {left:20px;}
+.sub03 .sch3 .slt2 {left:296px;}
+.sub03 .sch3 .slt3 {left:510px;}
+.sub03 .sch3 .slt4 {left:430px;}
+.sub03 .sch3 .slt1, .sub03 .sch3 .slt2, .sub03 .sch3 .slt3, .sub03 .sch3 .slt4 {position:absolute; text-indent:13px; background:url(../img/bullet/cir_10x10_green.gif) center left no-repeat}
+.sub03 .sch3 .schBtn1 {position:absolute; right:20px}
+
+
+.rdo_1{position:absolute; top:18px; left:10px; text-indent:14px;}
+.rdo_2{position:absolute; top:18px; left:130px; text-indent:14px;}
+.rdo_3{position:absolute; top:18px; left:258px; text-indent:14px;}
+.rdo_4{position:absolute; top:18px; left:327px; text-indent:14px;}
+.rdo_5{position:absolute; top:18px; left:438px; text-indent:14px;}
+.rdo_6{position:absolute; top:18px; left:545px; text-indent:14px;}
+.rdo_1 input, .rdo_2 input, .rdo_3 input, .rdo_4 input, .rdo_5 input, .rdo_6 input{width:13px; height:13px; margin:0; padding:0; vertical-align:middle;}
+
+.exldwn{position:relative; overflow:hidden; width:100%; height:24px;}
+.chart{position:absolute; float:left; top:7px; left:0; text-indent:16px; background:url(../img/bullet/cir_10x10_orange.gif) center left no-repeat}
+.btnexl{position:absolute; float:right; right:0;}
+.chartBox {border:1px solid #dfdfdd; padding:10px}
+
+.graph_h4 {text-indent:16px; background:url(../img/bullet/cir_10x10_orange.gif) center left no-repeat}
+/* 차트부분 탭*/
+#tabNav	{overflow:hidden; width:100%; height:30px; border-bottom:2px solid #688acb;}
+#tabNav li {float:left; height:30px; margin-right:2px;}
+#tabNav li span {display:inline-block; height:30px; padding-right:10px; background:url(../img/layout/tabnav.gif) no-repeat right top; cursor:pointer}
+#tabNav li a {display:inline-block; height:30px; padding-left:10px; font-weight:bold; color:#666; line-height:30px; text-decoration:none; background:url(../img/layout/tabnav.gif) no-repeat left top;}
+#tabNav li a:hover, #tabNav li a.on, #tabNav li a.on span, #tabNav li a:hover, #tabNav li a:hover span {color:#fff; background-image:url(../img/layout/tabnav_on.gif)}
+.tabContentsWrap {width:100%; margin-bottom:20px}
+.tabContents {height:100%; overflow:auto; border-bottom:1px solid #dfdfdd; border-right:1px solid #dfdfdd; border-left:1px solid #dfdfdd;}
+.sub03 .tabContents {border-right:none; border-left:none; border-bottom:none; padding:10px 0}
+
+/*대기오염시계*/
+#watch {width:364px; padding:24px 0 0 0; background:url(../img/s_situation/bg_watch.gif) no-repeat center top;}
+#watch .bot, #calendar .bot {padding:0 24px 24px 24px;background:url(../img/s_situation/bg_calendarB.gif) no-repeat center bottom}
+#calendar {width:364px; padding:24px 0 0 0; background:url(../img/s_situation/bg_calendarT.gif) no-repeat center top;}
+#calendar .icon img {padding:0 7px 6px; margin-top:6px}
+#watch .icon img {padding:0 3px 46px; margin-top:6px}
+
+/*#watch .day, #calendar .day {padding:6px; font-weight:bold; text-indent:18px; background:url(../img/bullet/sq_13x13_grey.gif) no-repeat 7px center}*/
+#watch .day2, #calendar .day2 {padding:6px; font-weight:bold; text-indent:10px;}
+#calendar .tbl5 td { height:36px}
+
+/*도심열화상 라이브캠*/
+#thermo, .help, .rt {overflow:hidden; width:718px; padding:0 20px 20px}
+.rt .fl {width:500px; height:375px; background:url(../img/s_situation/no_image3.gif) no-repeat}
+.rt .fr {width:198px; padding-left:20px}
+.rt .fr li {width:100%; margin-bottom:10px}
+.rt .fr dl {padding:10px;}
+.rt .bxtype5 dt {padding:0 0 5px 0; font-weight:bold; color:#06C}
+.rt .next, .rt .posit {position:relative}
+.rt .next .btnext {position:absolute; top:10px; right:30px;;}
+.rt .posit {height:115px; background:url(../img/s_situation/bg_camera.gif) no-repeat top center}
+.rt .posit dt { text-indent:-5000px}
+.rt .posit .btpositl, .rt .posit .btpositr {position:absolute; top:50px;}
+.rt .posit .btpositl a, .rt .posit .btpositr a {display:block; padding:40px 0 0 0}
+.rt .posit .btpositl {left:20px;}
+.rt .posit .btpositr {right:24px;}
+
+.past {overflow:hidden; width:758px; margin-bottom:20px}
+.past .fl, .past .fr {max-width:379px;}
+.past .box {padding-left:14px;}
+.past .box dt {margin-bottom:10px}
+.media {width:349px; height:262px; background:url(../img/s_situation/no_image4.gif) no-repeat}
+.past ul {max-width:349px;}
+.past ul li {clear:both}
+.past ul dl {float:left; padding:0 7px 5px 0; text-align:center}
+
+.help dl {float:left; padding:0 6px 5px 0; text-align:center}
+.help li {margin:5px 0 10px 0;}
+.help dt, .help dd {margin-bottom:5px}
+.helpmenu {padding:5px 0 0 14px}
+.helpmenu li {float:left; width:168px; height:42px; margin:0 5px 14px}
+/*예경보날씨*/
+.date {position:absolute; top:60px; right:30px;}
+h3 span.date{ font-size:12px; position:static}
+.btnysand {clear:both; width:100%; margin-bottom:10px}
+.btnguide { text-align:right}
+
+.cont, .cont2, .cont3, .contimg1, .contimg2, .contimg3 {padding:0 0 20px 0}
+.cont li {margin:5px 10px 0 30px; padding-left:10px; background:url(../img/bullet/sq_3x3_orange.gif) left 5px no-repeat}
+.cont dt {margin:0 10px 0 10px; font-weight:bold; line-height:24px; text-indent:16px; background:url(../img/bullet/cir_10x10_orange.gif) left center no-repeat}
+.cont dd {margin:5px 10px 0 30px; text-indent:10px; background:url(../img/bullet/sq_3x3_blue.gif) left 5px no-repeat}
+
+.cont2 li {margin:5px 10px 0 14px; padding-left:14px; background:url(../img/bullet/cir_10x10_orange.gif) 0px 4px no-repeat; font-weight:bold}
+.cont2 p {margin:5px 10px 0 20px; padding-left:10px; background:url(../img/bullet/sq_3x3_blue.gif) left 5px no-repeat; font-weight:normal}
+.cont2 dl {margin:5px 10px 0 20px;}
+.cont2 dt { padding:2px 0 2px 10px;background:url(../img/bullet/sq_3x3_blue.gif) left 7px no-repeat; font-weight:normal}
+.cont2 dd {padding:2px 0 2px 20px; font-weight:normal}
+.cont2 .nolist { background:none; margin-left:0px}
+.cont2 .nolist2 { background:none;}
+.contimg1 li {padding-left:14px; margin-left:20px; font-weight:bold; line-height:20px; background:url(../img/bullet/cir_10x10_orange.gif) 0px 5px no-repeat}
+.contimg1 dl{overflow:hidden; font-weight:normal;}
+.contimg1 dt, .contimg2 p {float:right; text-indent:0px}
+.contimg1 dd {float:left; width:500px}
+.contimg2 ul {float:left; width:520px}
+.contimg1 dd p {margin:5px 10px 0 0; padding-left:10px; background:url(../img/bullet/sq_3x3_blue.gif) 0px 8px no-repeat}
+.contimg2 { overflow:hidden}
+.contimg2 ul li {margin:5px 10px 0 24px; padding-left:16px; background:url(../img/bullet/sq_3x3_orange.gif) 6px 8px no-repeat}
+.udline a { text-decoration:underline}
+/*기후대기통계*/
+.climate_map { margin-left:30px; margin-bottom:10px; text-align:center}
+/*정보마당*/
+#monitor { overflow:hidden; width:100%; margin-left:30px; padding-top:20px}
+#monitor p { float:left; width:200px;}
+#monitor table{ float:left; width:480px; margin-left:20px}
+.board { clear:both; margin:20px;}
+/*용어사전*/
+.glsybox {clear:both; overflow:hidden; border:1px solid #dfdfdd; margin-top:15px; padding:15px}
+/*.glsybox dl {position:relative; overflow:hidden; width:100%; background:url(../img/box/bg_bx2B.gif) left bottom no-repeat;}*/
+.glsybox dl {position:relative; overflow:hidden; width:100%;}
+.glsybox dt {margin-bottom:10px; text-indent:10px}
+.glsybox dd {width:100%;clear:both; font-weight:bold; font-size:1.2em; margin-bottom:10px}
+.glsybox dd a {display:block; float:left; margin-left:10px; margin-top:10px; text-align:center; border:1px solid #dfdfdd; padding:3px; width:30px;}
+.glsybox dd a:hover {color:#ff6600; border:1px solid #ff6600;}
+
+.h4_num1, .h4_num2, .h4_num3, .h4_num4, .h4_num5, .h4_num6 { background-repeat:no-repeat; background-position:20px 0px; padding-left:44px; line-height:1.7em}
+.h4_num1 {background-image:url(../img/bullet/num1.gif)}
+.h4_num2 {background-image:url(../img/bullet/num2.gif)}
+.h4_num3 {background-image:url(../img/bullet/num3.gif)}
+.h4_num4 {background-image:url(../img/bullet/num4.gif)}
+.h4_num5 {background-image:url(../img/bullet/num5.gif)}
+.h4_num6 {background-image:url(../img/bullet/num6.gif)}
+.infoCont {margin-bottom:20px;}
+.infoCont li {background:url(../img/bullet/cir_10x10_green.gif) no-repeat 25px 4px; padding-left:40px;}
+.infoCont p{ color:#666; margin:3px 3px 3px 0px}
+.infoCont dd { float:left; padding-left:10px; padding-top:12px;}
+.infoCont dt { clear:both; margin-bottom:10px}
+
+* html .infoCont .imgFrm_x3 dt {clear:both; padding:0;}
+*+html .infoCont .imgFrm_x3 dt {clear:both; padding:0;}
+.infoCont li.nolist { background:none;}
+.infoCont li.nolist2 { background:none; padding:0;}
+.contimg3 .nolist3 li { background:none; text-indent:0}
+.FrmGrup {overflow:hidden; clear:both}
+.FrmGrup .imgFrm2_x3  {margin:5px 0px 0px 7px; background:url(../img/s_information/bg_frame3.gif) no-repeat;}
+.FrmGrup .imgFrm2_x2  {background:url(../img/s_information/bg_frame4.gif) no-repeat}
+.imgFrm_x1, .imgFrm_x3, .imgFrm2_x3 {width:200px; display:block}
+.imgFrm_x1, .imgFrm_x2, .imgFrm2_x2, .imgFrm_x3, .imgFrm2_x3 {padding:11px; text-align:center; vertical-align:top;}
+.imgFrm_x2 dd, .imgFrm2_x2 dd, .imgFrm_x3 dd, .imgFrm2_x3 dd { padding:0}
+.imgFrm_x2 dt, .imgFrm2_x2 dt, .imgFrm_x3 dt, .imgFrm2_x3 dt {clear:both; padding:5px 0; line-height:24px;}
+*+html .imgFrm_x2 dt, * html .imgFrm_x2 dt,
+*+html .imgFrm2_x2 dt, *+html .imgFrm2_x2 p, * html .imgFrm2_x2 dt, *+html .imgFrm2_x3 dt, * html .imgFrm2_x3 dt  {padding:0}
+* html .FrmGrup .mgl20 { margin-left:10px !important;}
+* html .infoCont .mgl40 { margin-left:20px !important;}
+* html .imgFrm_x2 dt {clear:both; padding:0; line-height:24px !important;}
+.imgFrm_x1 {background:url(../img/s_information/bg_frame3.gif) no-repeat;}
+.imgFrm_x2 {padding:10px 30px ;background:url(../img/s_information/bg_frame1.gif) no-repeat center top}
+.imgFrm_x3 {background:url(../img/s_information/bg_frame2.gif) no-repeat;}
+.contimg3 .imgFrm_x1, .contimg3 .imgFrm_x3{float:right;}
+.contimg3 { overflow:hidden; padding:0}
+.contimg3 ul {float:left; width:520px}
+.contimg3 ul li, .cont3 li {margin:5px 0 0 26px; padding-left:16px; background:url(../img/bullet/cir_10x10_green.gif) 0px 3px no-repeat}
+.contimg3 .tit1 {margin-top:2px; margin-bottom:2px}
+
+
+.img_adaptation_01 { display:block; width:633px; height:469px; margin:50px 60px; background:url(../img/info/img_adaptation_01.gif) no-repeat center  }
+.img_adaptation_01 dt, .img_adaptation_01 dd{ text-indent:-5000px}
+/*기상지수 버튼*/
+/*ie7*/
+*+html .kma1{ margin-left:0}
+*+html .kma2{ margin-left:0}
+*+html .kma3{ margin-left:0}
+*+html .kma4{ margin-left:0}
+*+html .kma5{ margin-left:0}
+*+html .kma6{ margin-left:0}
+/*ie6*/
+* html .kma1{ margin-left:0}
+* html .kma2{ margin-left:0}
+* html .kma3{ margin-left:0}
+* html .kma4{ margin-left:0}
+* html .kma5{ margin-left:0}
+* html .kma6{ margin-left:0}
+.kma1, .kma2, .kma3, .kma4, .kma5, .kma6 { display:block; width:26px; height:12px; padding:3px 0 1px 0; line-height:12px; text-align:center; font-size:11px; font-weight:bold; margin:0 auto; cursor:pointer}
+.kma1 {background:url(../img/graphic/ico_kma1.gif) no-repeat left top; color:#fff;}
+.kma2 {background:url(../img/graphic/ico_kma2.gif) no-repeat left top; color:#000;}
+.kma3 {background:url(../img/graphic/ico_kma3.gif) no-repeat left top; color:#000;}
+.kma4 {background:url(../img/graphic/ico_kma4.gif) no-repeat left top; color:#000;}
+.kma5 {background:url(../img/graphic/ico_kma5.gif) no-repeat left top; color:#fff;}
+.kma6 {background:url(../img/graphic/ico_kma6.gif) no-repeat left top; color:#fff;}
+/*사이트맵*/
+.colwrap  { clear:both; width:100%; line-height:22px}
+.colwrap a:hover  { text-decoration:underline}
+* html .colwrap div { float:left; width:230px; margin:11px 8px;}
+.colwrap div { float:left; width:234px; margin:11px; border:1px solid #dfdfdd; border-bottom:none}
+#contents .colwrap div h3 { margin:0px; background-color:#f7f7f7; height:50px; line-height:50px; background-position:20px 20px !important; padding-left:40px !important}
+
+.colwrap ul li { text-indent:16px; color:#688acb; font-weight:bold; font-size:14px; line-height:30px; border-bottom:1px solid #dfdfdd;}
+.colwrap ul li a { color:#688acb; font-weight:bold}
+.colwrap ul dl a {color:#666 }
+.colwrap ul li ul li{text-indent:24px; font-size:12px; border-bottom:none}
+.colwrap ul li ul li a{ color:#666;font-size:12px}
+.colwrap ul dl dt {text-indent:24px; color:#666 }
+.colwrap ul dl dd {text-indent:35px; font-weight:normal;font-size:12px }
+
+
+.colwrap ul dl dd a {font-weight:normal;}
+/*도심열화상*/
+.nothermo { clear:both; height:835px; text-align:center; background:url(../img/s_situation/no_thermo.gif) no-repeat center 20px}
+/*모델링*/
+.modeling { clear:both; overflow:hidden; padding-top:20px; }
+
+.num_color_0 {background:#f7f7f7 !important; color:#000 !important; font-weight:normal}/*181128수정*/
+.num_color_1 {background:#25aefb !important; color:#000 !important; font-weight:normal}
+.num_color_2 {background:#92f101 !important; color:#000 !important; font-weight:normal}
+.num_color_3 {background:#fde905 !important; color:#000 !important; font-weight:normal}
+.num_color_4 {background:#fc3037 !important; color:#000 !important; font-weight:normal}
+
+/*.guide1 {color:#fff; background-color:#0000FF}
+.guide2 {background-color:#00FF00}
+.guide3 {background-color:#FFFF00}
+.guide5 {color:#fff; background-color:#FF0000}
+.guide4 {background-color:#FF9900}
+.guide6 {color:#fff; background-color:#861313}*/
+
+.guide1 {color:#fff; background-color:#25aefb}
+.guide2 {background-color:#92f101}
+.guide3 {background-color:#fde905}
+.guide5 {color:#fff; background-color:#fc3037}
+/*테이블 상단 오른쪽버튼*/
+.exl_btn{ position:absolute; top:0; right:0}
+/*황사예경보*/
+.btn_ydust{ margin-bottom:15px; overflow:hidden}
+.btn_ydust li{ float:left; width:123px; border:1px solid #688acb; text-align:center; line-height:31px; margin-right:5px}
+.btn_ydust li.mgnone{margin-right:0}
+/**/
+.blt_arw{ background:url(../img/layout/ar_3x5_grey.gif) no-repeat 0 7px; padding-left:12px}
+.blt_sq{background:url(../img/layout/blt.gif) no-repeat 0 7px; padding-left:12px}
+ul.blt_sq li{background:url(../img/layout/blt.gif) no-repeat 0 7px ; padding-left:12px}
+ul.blt_sq{ background:none}
+
+/*2018.2.7 추가*/
+#social{ position:absolute; width:70px; top:10px; left:740px;}
+#social li{ float:left; padding-left:10px}
+/*2018.04.12 추가*/
+.visang{ margin-left:10px}
+.visang dt{font-family:"Noto Sans Korean","맑은 고딕","Malgun Gothic","돋움", dotum; font-size:1.2em; font-weight:400; color:#555; background:url(../img/layout/blt_q.gif) no-repeat 0 4px; padding-left:20px; line-height:22px}
+.visang dd{ margin-bottom:10px; background:url(../img/layout/blt_a.gif) no-repeat 0 4px; padding-left:20px; line-height:22px;}
+.visang dd .blt_sq{ background-position:0 10px}
+.visang h4{ margin-top:10px; margin-bottom:4px!important}
+/*2018.12.3 추가*/
+.tabContents{ position:relative}
+.tabContents> h4{ padding:10px 0 0 10px; background:none!important;}
+.tabContents > span.fr{ position:absolute; top:10px; right:10px}
+.bisang{width:99%; margin:10px 0; overflow:hidden; border-top:1px solid #ccc; border-left:1px solid #ccc; border-right:1px solid #ccc;}
+.bisang dt{ float:left; display:block; width:20%; height:75px;border-bottom:1px solid #ccc;border-right:1px solid #ccc;padding:5px 0 0 0;}
+.bisang dt img{ padding-top:4px}
+.bisang dd{ float:left; display:block; width:77%; height:75px;border-bottom:1px solid #ccc;padding:5px 10px 0 10px;}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Form_search_detail</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+	<div id="LNB">
+		<h1><a href="#"  tabindex="1"><img src="../images/logo.png" alt="상상스토리" /></a></h1>
+		<ul><!-- 1depth -->
+			<li><a href="01_title.html">Title</a></li>
+			<li><a href="02_tab.html">Tab</a></li>
+			<li><a href="03_button.html">Button</a></li>
+			<li><a href="04_table_coltype.html">Table</a></li>
+			<li class="on"><a href="05_form_date.html">Form</a>
+				<ul><!-- 2depth -->
+					<li><a href="05_form_search.html">Search</a></li>
+					<li class="on"><a href="05_form_search_detail.html">Search_detail</a></li>
+					<li><a href="05_form_date.html">Date</a></li>
+					<li><a href="05_form_input.html">Input</a></li>
+				</ul>
+			</li>
+			<li><a href="06_popup.html">Popup</a></li>
+			<li><a href="07_BBS_list.html">BBS</a></li>
+			<li><a href="08_etc.html">etc.</a></li>
+		</ul>
+	</div>
+
+	<div id="SUB">
+		<div class="header">
+			<button type="button" class="toggle"><img src="../images/toggle_close.png" alt="메뉴 닫기"/></button>
+			<!-- Type 1 -->
+			<div class="top_nav">
+				<a href="#" class="home">Home</a>
+				<!-- 1depth -->
+				<span>&gt;</span>
+				<button class="nav_btn1" type="button">Form</button>
+				<ul class="nav_menu nav_depth1">
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li class="on"><a href="#">Form</a></li>
+					<li><a href="#">Popup</a></li>
+					<li><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+				<!-- //1depth -->
+				<!-- 2depth -->
+				<span>&gt;</span>
+				<button class="nav_btn2 last" type="button">Search_detail</button> <!-- 마지막 경로 버튼에 "last" 클래스 추가 -->
+				<ul class="nav_menu nav_depth2">
+					<li><a href="#">Search</a></li>
+					<li class="on"><a href="#">Search_detail</a></li>
+					<li><a href="#">Date</a></li>
+					<li><a href="#">Input</a></li>
+				</ul>
+				<!-- //2depth -->
+			</div>
+			<!-- //Type 1 -->
+			<!-- Type 2 -->
+			<div id="GNB">
+				<ul>
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li class="on"><a href="#">Form</a></li>
+					<li><a href="#">Popup</a></li>
+					<li><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+			</div>
+			<!-- //Type 2 -->
+			<div class="log_info">
+				<span class="user_info">Admin</span>
+				<button type="button" class="btn red" tabindex="1">로그아웃</button>
+			</div>
+		</div>
+
+		<div class="contents_area">
+
+			<h3>상세 검색폼</h3>
+
+			<h4>상세검색 조회영역</h4>
+
+			<form id="search_detail">
+				<div class="table_wrap">
+					<table class="search_type">
+						<caption>구분, 내용으로 구성된 테이블</caption>
+						<colgroup>
+							<col style="width: 9%;" />
+							<col style="width: 41%;" />
+							<col style="width: 9%;" />
+							<col style="width: 41%;" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="seach_01">필수 조회조건 <span>*</span></label></th>
+								<td><input type="text" id="seach_01" title="검색" class="basic" style="width:200px;" /></td>
+								<th scope="row"><label for="seach_02">조회조건</label></th>
+								<td>
+									<select id="seach_02">
+										<option value="SNS">SNS</option>
+										<option value="페이스북">페이스북</option>
+										<option value="트위터">트위터</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="seach_03">조회조건</label></th>
+								<td>
+									<input type="text" id="seach_03" title="검색" class="basic" style="width:200px;" />
+									<button type="button" class="btn sky search">찾기</button>
+								</td>
+								<th scope="row"><label for="seach_04">조회조건</label></th>
+								<td>
+									<select id="seach_04">
+										<option value="SNS">SNS</option>
+										<option value="페이스북">페이스북</option>
+										<option value="트위터">트위터</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="seach_05">조회조건</label></th>
+								<td>
+									<input type="text" id="seach_05" title="검색" class="basic" style="width:200px;" />
+									<button type="button" class="btn sky search">찾기</button>
+								</td>
+								<th scope="row"><label for="seach_06">조회조건</label></th>
+								<td>
+									<select id="seach_06">
+										<option value="SNS">SNS</option>
+										<option value="페이스북">페이스북</option>
+										<option value="트위터">트위터</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> <!-- //section -->
+
+				<div class="tb_bottom_area">
+					<div class="btn_left">
+						<button type="button" class="btn gray">초기화</button>
+					</div>
+					<div class="btn_right">
+						<button type="button" class="btn blue">▼ 상세검색</button>
+						<button type="button" class="btn blue">▲ 상세검색</button>
+						<button type="button" class="btn green">조회</button>
+					</div>
+				</div>
+			</form>
+
+		</div> <!-- //contents_area -->
+	</div> <!-- //#SUB -->
+
+</div>
+
+</body>
+</html>

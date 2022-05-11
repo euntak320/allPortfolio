@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <!-- E : mobile -->
+        <title>Food 목록_전체보기</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <script type="text/javascript" src="../js/jquery-2.2.4.js"></script>
+        <script type="text/javascript" src="../js/jquery.mCustomScrollbar.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/common.js"></script>
+
+        <!-- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="js/selectivizr.js">
+ -->
+        <!--[if lte IE 9]>
+</script>
+<![endif]-->
+    </head>
+
+    <body>
+        <!-- skipNav -->
+        <dl id="skipNav">
+            <dt>바로가기 메뉴</dt>
+            <dd><a href="#container">본문 바로가기</a></dd>
+            <dd><a href="#gnb">메뉴 바로가기</a></dd>
+            <dd><a href="#footer">페이지 하단 바로가기</a></dd>
+        </dl>
+        <!-- //skipNav -->
+        <!-- wrap -->
+        <div id="wrap">
+            <!-- header -->
+            <div id="header">
+                <div class="inner">
+                    <h1><a href="../html/index.html">세종학당</a></h1>
+                    <!-- gnb -->
+                    <div id="gnb">
+                        <!-- translation -->
+                        <div class="translation">
+                            <a href="">Translation</a>
+                            <div class="scroll">
+                                <ul>
+                                    <li class="curr"><a href=""><img src="../images/common/ico-lang01.png" alt="Korea"><span>Korea</span></a></li>
+                                    <li><a href=""><img src="../images/common/ico-lang02.png" alt="English"><span>English</span></a></li>
+                                    <li><a href=""><img src="../images/common/ico-lang03.png" alt="Русский"><span>Русский</span></a></li>
+                                    <li><a href=""><img src="../images/common/ico-lang04.png" alt="Tiếng Việt"><span>Tiếng Việt</span></a></li>
+                                    <li><a href=""><img src="../images/common/ico-lang05.png" alt="Español"><span>Español</span></a></li>
+                                    <li><a href=""><img src="../images/common/ico-lang06.png" alt="Français"><span>Français</span></a></li>
+                                    <li><a href=""><img src="../images/common/ico-lang07.png" alt="简体中文"><span>简体中文</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--// translation -->
+                        <!-- util -->
+                        <div class="util">
+                            <!-- <p>Hello, <strong>홍길동</strong>!</p>-->
+                            <a href="" class="btnLogin">Login</a>
+                            <a href="" class="btnJoin">Join</a>
+                            <!--<a href="" class="btnLogout">Logout</a>-->
+                            <a href="" class="btnClose">메뉴닫기</a>
+                        </div>
+                        <!--// util -->
+                        <ul>
+                            <li class="curr"><a href="../html/1111.html">K - Culture</a></li>
+                            <li><a href="">Learning</a></li>
+                            <li><a href="../html/3120.html">Teaching</a></li>
+                            <li><a href="">Participation</a></li>
+                            <li><a href="">Korea Information</a></li>
+                        </ul>
+                        <!-- menu -->
+                        <div class="menu">
+                            <ul>
+                                <li>
+                                    <a href="">K - Culture</a>
+                                    <ul>
+                                        <li><a href="">Korean Wave</a>
+                                            <ul>
+                                                <li><a href="../html/1111.html">K-pop</a></li>
+                                                <li><a href="">Web drama</a></li>
+                                                <li><a href="">Movie</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Food</a></li>
+                                        <li><a href="../html/1301.html">Tour</a></li>
+                                        <li><a href="">Traditional</a>
+                                            <ul>
+                                                <li><a href="">Teakwondo</a></li>
+                                                <li><a href="">Traditional Music</a></li>
+                                                <li><a href="">Korean Folktale</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Literature</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">Learning</a>
+                                    <ul>
+                                        <li><a href="">Text Books</a></li>
+                                        <li><a href="">Practice</a></li>
+                                        <li><a href="">Lectures(intro)</a></li>
+                                        <li><a href="">Learning Materials</a>
+                                            <ul>
+                                                <li><a href="">Video Clips</a></li>
+                                                <li><a href="">Audio Clips</a></li>
+                                                <li><a href="">Images</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Mobile App</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">Teaching</a>
+                                    <ul>
+                                        <li><a href="">Teaching Materials</a>
+                                            <ul>
+                                                <li><a href="">Instruction Book</a></li>
+                                                <li><a href="">References</a></li>
+                                                <li><a href="">Education Guidance</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Articles</a>
+                                            <ul>
+                                                <li><a href="">Research Reports</a></li>
+                                                <li><a href="">Academic Papers</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Community</a>
+                                            <ul>
+                                                <li><a href="">Korean Education information</a></li>
+                                                <li><a href="">Recruitment</a></li>
+                                                <li><a href="">Ask & Answer</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Korean Teacher Training</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">Participation</a>
+                                    <ul>
+                                        <li><a href="">Notice</a></li>
+                                        <li><a href="">Event</a></li>
+                                        <li><a href="">Online Level Test</a></li>
+                                        <li><a href="">Speaking Practice</a></li>
+                                        <li><a href="">Writing Practice</a></li>
+                                        <li><a href="">Teachers Contest</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="">Korea Information</a>
+                                    <ul>
+                                        <li><a href="">About</a></li>
+                                        <li><a href="">Korea General Information</a></li>
+                                        <li><a href="">Climates/Currency/Bank</a></li>
+                                        <li><a href="">Festivals and Holidays</a></li>
+                                        <li><a href="">Transportation</a></li>
+                                        <li><a href="">Trip to Korea</a></li>
+                                        <li><a href="">Study in Korea</a></li>
+                                        <li><a href="">Korea History</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--// menu -->
+                        <!-- snsArea -->
+                        <div class="snsArea">
+                            <a href=""><img src="../images/common/ico-sns01.png" alt="페이스북"></a>
+                            <a href=""><img src="../images/common/ico-sns02.png" alt="블로그"></a>
+                            <a href=""><img src="../images/common/ico-sns03.png" alt="유튜브"></a>
+                            <a href=""><img src="../images/common/ico-sns04.png" alt="인스타그램"></a>
+                        </div>
+                        <!--// snsArea -->
+                    </div>
+                    <!--// gnb -->
+                    <a href="" class="btnMenu">메뉴보기</a>
+                    <a href="" class="btnSOpen">검색영역 열기</a>
+                    <div class="searchArea">
+                        <input type="text" title="Search for Materials" placeholder="Search for Materials">
+                        <a href="" class="btnSearch">Search</a>
+                    </div>
+                </div>
+            </div>
+            <!--// header -->
+
+            <!-- container -->
+            <div id="mainContainer">
+                <!-- contContainer -->
+                <div class="contContainer">
+                    <!-- leftMenu -->
+                    <div class="leftMenu">
+                        <div class="linkIcon txtC">
+                            <a href="">
+                                <img src="../images/contents/ico_1depth01.png" alt="">
+                            </a>
+                            <p>K-Culture</p>
+                        </div>
+                        <!-- accordion -->
+                        <ul class="accordion">
+                            <li>
+                                <div class="link">
+                                    Korean Wave
+                                    <div class="arrow-img"></div>
+                                </div>
+                                <ul class="subLink">
+                                    <li>
+                                        <a href="../html/1111.html">K-pop</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Web drama</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Movie</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="active">
+                                <div class="link noIcon">
+                                    <a href="">
+                                        Food
+                                        <div class="arrow-img"></div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="link noIcon">
+                                    <a href="../html/1301.html">
+                                        Tour
+                                        <div class="arrow-img"></div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="link">
+                                    Traditional
+                                    <div class="arrow-img"></div>
+                                </div>
+                                <ul class="subLink">
+                                    <li>
+                                        <a href="">Teakwondo</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Traditional Music</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Korean Folktale</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div class="link noIcon">
+                                    <a href="">
+                                        Literature
+                                        <div class="arrow-img"></div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        <!--// accordion -->
+                    </div>
+                    <!--// leftMenu -->
+
+                    <!-- right contents -->
+                    <div class="rightContents">
+                        <!-- conTit -->
+                        <div class="conTit">
+                            <h1>Food</h1>
+                            <div class="breadCrumb">
+                                <ul>
+                                    <li>
+                                        <a href="">home</a>
+                                    </li>
+                                    <li>
+                                        <a href="">K-Culture</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Food</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--// conTit -->
+
+                        <!-- cateList -->
+                        <div class="cateList cateBox">
+                            <div>
+                                <div class="swiper-container cateSwiper">
+                                    <div class="swiper-wrapper">
+                                        <a href="../html/1301.html" class="swiper-slide cateIcon01 cateAll active">
+                                            <span class="iconTxt">전체</span>
+                                            <span class="iconTit">전체보기</span>
+                                        </a>
+                                        <a href="../html/1303.html" class="swiper-slide cateIcon02">
+                                            <span class="icon iconImg" style="background-image: url(../images/cate-icon05.png);"></span>
+                                            <span class="iconTit">세종학당재단</span>
+                                        </a>
+                                        <a href="" class="swiper-slide cateIcon03 ready">
+                                            <span class="icon iconImg" style="background-image: url(../images/cate-icon03.png);"></span>
+                                            <span class="iconTit">준비중</span>
+                                        </a>
+                                        <a href="" class="swiper-slide cateIcon04 ready">
+                                            <span class="icon iconImg" style="background-image: url(../images/cate-icon03.png);"></span>
+                                            <span class="iconTit">준비중</span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                        <!--// cateList -->
+
+                        <!-- listTit -->
+                        <div class="listTit">
+                            <h2><span class="videoIcon">Video</span></h2>
+                            <a href="../html/1112.html" class="moreBtn">더보기</a>
+                        </div>
+                        <!--// listTit -->
+
+                        <!-- conList -->
+                        <div class="conList mB20">
+                            <div class="swiper-container listSwiper">
+                                <div class="swiper-wrapper">
+                                    <a href="../html/1114.html" class="swiper-slide">
+                                        <div class="ratio-box">
+                                            <div class="ratio-content bg" style="background-image: url(../images/list-img21.png);">
+                                                <div class="inBox">
+                                                    <p class="tit"><span>(함께 즐겨요! 한국문화!) 4-2. Korean Traditional House</span></p>
+                                                    <ul class="count">
+                                                        <li><span class="view">6588</span></li>
+                                                        <li><span class="comm">90</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="" class="swiper-slide">
+                                        <div class="ratio-box">
+                                            <div class="ratio-content bg" style="background-image: url(../images/list-img22.png);">
+                                                <div class="inBox">
+                                                    <p class="tit"><span>(함께 즐겨요! 한국문화!) 4-1. Korean Traditional House</span></p>
+                                                    <ul class="count">
+                                                        <li><span class="view">65</span></li>
+                                                        <li><span class="comm">0</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="" class="swiper-slide">
+                                        <div class="ratio-box">
+                                            <div class="ratio-content bg" style="background-image: url(../images/list-img23.png);">
+                                                <div class="inBox">
+                                                    <p class="tit"><span>(함께 즐겨요! 한국문화!) 3-3. Korean Food</span></p>
+                                                    <ul class="count">
+                                                        <li><span class="view">65</span></li>
+                                                        <li><span class="comm">0</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="" class="swiper-slide">
+                                        <div class="ratio-box">
+                                            <div class="ratio-content bg" style="background-image: url(../images/list-img24.png);">
+                                                <div class="inBox">
+                                                    <p class="tit"><span>(함께 즐겨요! 한국문화!) 3-4. Korean Food</span></p>
+                                                    <ul class="count">
+                                                        <li><span class="view">65</span></li>
+                                                        <li><span class="comm">0</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="" class="swiper-slide">
+                                        <div class="ratio-box">
+                                            <div class="ratio-content bg" style="background-image: url(../images/list-img25.png);">
+                                                <div class="inBox">
+                                                    <p class="tit"><span>(함께 즐겨요! 한국문화!) 3-5. Korean Food</span></p>
+                                                    <ul class="count">
+                                                        <li><span class="view">65</span></li>
+                                                        <li><span class="comm">0</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="" class="swiper-slide">
+                                        <div class="ratio-box">
+                                            <div class="ratio-content bg" style="background-image: url(../images/list-img26.png);">
+                                                <div class="inBox">
+                                                    <p class="tit"><span>(함께 즐겨요! 한국문화!) 3-6. Korean Food</span></p>
+                                                    <ul class="count">
+                                                        <li><span class="view">65</span></li>
+                                                        <li><span class="comm">0</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="" class="swiper-slide">
+                                        <div class="ratio-box">
+                                            <div class="ratio-content bg" style="background-image: url(../images/list-img27.png);">
+                                                <div class="inBox">
+                                                    <p class="tit"><span>(함께 즐겨요! 한국문화!) 3-7. Korean Food</span></p>
+                                                    <ul class="count">
+                                                        <li><span class="view">65</span></li>
+                                                        <li><span class="comm">0</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="" class="swiper-slide">
+                                        <div class="ratio-box">
+                                            <div class="ratio-content bg" style="background-image: url(../images/list-img28.png);">
+                                                <div class="inBox">
+                                                    <p class="tit"><span>(함께 즐겨요! 한국문화!) 3-8. Korean Food</span></p>
+                                                    <ul class="count">
+                                                        <li><span class="view">65</span></li>
+                                                        <li><span class="comm">0</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Add Arrows -->
+                            <div class="swiper-button-next list-swiper-button-next"></div>
+                            <div class="swiper-button-prev list-swiper-button-prev"></div>
+                        </div>
+                        <!--// conList -->
+
+                        <!-- listTit -->
+                        <div class="listTit">
+                            <h2><span class="webtoonIcon">Webtoons</span></h2>
+                            <a href="" class="moreBtn">더보기</a>
+                        </div>
+                        <!--// listTit -->
+
+                        <!-- conList -->
+                        <div class="conList mB20 flex4">
+                            <a href="" class="listItem">
+                                <div class="ratio-box">
+                                    <div class="ratio-content bg" style="background-image: url(../images/list-img29.png);">
+                                        <div class="inBox">
+                                            <p class="tit"><span>60화 차례상(CHARYESANG)</span></p>
+                                            <ul class="count">
+                                                <li><span class="view">6588</span></li>
+                                                <li><span class="comm">90</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="listItem">
+                                <div class="ratio-box">
+                                    <div class="ratio-content bg" style="background-image: url(../images/list-img30.png);">
+                                        <div class="inBox">
+                                            <p class="tit"><span>59화 식혜(SIKHYE)</span></p>
+                                            <ul class="count">
+                                                <li><span class="view">6588</span></li>
+                                                <li><span class="comm">90</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="listItem">
+                                <div class="ratio-box">
+                                    <div class="ratio-content bg" style="background-image: url(../images/list-img31.png);">
+                                        <div class="inBox">
+                                            <p class="tit"><span>58화 냉면(NAENGMYEON)</span></p>
+                                            <ul class="count">
+                                                <li><span class="view">6588</span></li>
+                                                <li><span class="comm">90</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="" class="listItem">
+                                <div class="ratio-box">
+                                    <div class="ratio-content bg" style="background-image: url(../images/list-img32.png);">
+                                        <div class="inBox">
+                                            <p class="tit"><span>57화 보쌈(BOSSAM)</span></p>
+                                            <ul class="count">
+                                                <li><span class="view">6588</span></li>
+                                                <li><span class="comm">90</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!--// conList -->
+
+                        <!-- listTit -->
+                        <div class="listTit">
+                            <h2><span class="textIcon">Text</span></h2>
+                            <a href="" class="moreBtn">더보기</a>
+                        </div>
+                        <!--// listTit -->
+
+                        <!-- conList -->
+                        <div class="conList">
+                            <a href="" class="iconItem">
+                                <img src="../images/contents/icon_text02.png" alt="">
+                                <p>지역별 한국 전통 음식</p>
+                            </a>
+                            <a href="" class="iconItem">
+                                <img src="../images/contents/icon_text02.png" alt="">
+                                <p>외국인에게 인기있는<br /> 한국음식 TOP10</p>
+                            </a>
+                            <a href="" class="iconItem">
+                                <img src="../images/contents/icon_text02.png" alt="">
+                                <p>한국 음식 정보 PDF</p>
+                            </a>
+                        </div>
+                        <!--// conList -->
+                    </div>
+                    <!--// right contents -->
+                </div>
+                <!--// contContainer -->
+            </div>
+            <!--// container -->
+
+            <!-- footer -->
+            <div id="footer">
+                <!-- footTop -->
+                <div class="footTop">
+                    <ul>
+                        <li><a href="">세종학당 <br />재단소개</a></li>
+                        <li><a href="">누리-세종학당 <br />소개</a></li>
+                        <li><a href="">관련기관 <br />누리집</a></li>
+                    </ul>
+                </div>
+                <!--// footTop -->
+                <!-- footBot -->
+                <div class="footBot">
+                    <!-- util -->
+                    <div class="util">
+                        <ul>
+                            <li><a href="">이용약관</a></li>
+                            <li><a href="">저작권정책</a></li>
+                            <li><a href="">전자우편무단수집거부</a></li>
+                            <li><a href="">개인정보처리방침</a></li>
+                            <li><a href="">원격지원 서비스</a></li>
+                        </ul>
+                        <div class="snsArea">
+                            <a href=""><img src="../images/common/ico-sns01.png" alt="페이스북"></a>
+                            <a href=""><img src="../images/common/ico-sns02.png" alt="블로그"></a>
+                            <a href=""><img src="../images/common/ico-sns03.png" alt="유튜브"></a>
+                            <a href=""><img src="../images/common/ico-sns04.png" alt="인스타그램"></a>
+                        </div>
+                    </div>
+                    <!--// util -->
+                    <div class="inner">
+                        <p class="logo">세종학당</p>
+                        <address>
+                            <span>세종학당재단 우)06716 서울시 서초구 반포대로 22 서초 평화빌딩 11,12층</span>
+                            <span>대표전화 02)3276-0700</span>
+                        </address>
+                        <div class="footMark">
+                            <a href=""><img src="../images/common/img-mark01.png" alt="DQC 데이터품질인증"></a>
+                            <a href=""><img src="../images/common/img-mark02.png" alt="공공누리 공공저작물 자유이용허락"></a>
+                            <a href=""><img src="../images/common/img-mark03.png" alt="굿콘텐츠서비스 인증"></a>
+                        </div>
+                    </div>
+                </div>
+                <!--// footBot -->
+            </div>
+            <!--// footer -->
+        </div>
+        <!--// wrap -->
+    </body>
+
+</html>

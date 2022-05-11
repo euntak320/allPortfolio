@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/* visual */
+#wrap.support #container {
+	background-image: url("../images/support/bg_visual.jpg");
+}
+
+/* 문의사항 */
+.question .guide_letter .required {
+	display: block;
+	margin-bottom: 15px;
+	color: #333;
+	font-family: 'nsmd';
+
+}
+.question .guide_letter .required .mark {
+	color: #cc2721;
+	font-family: inherit;
+}

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(function () {
+
+             // 시간대 스와이퍼
+             var timerSwiper = new Swiper('.timeList', {
+                slidesPerView: "auto",
+                loop: false,
+                spaceBetween: 5,
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <button class="back">뒤로가기</button>
+            <span class="title">의사목록</span>
+        </div>
+        <div id="content" class="reset">
+            <div class="listArea ">
+                <div class="dateArea">
+                    <button type="button" class="left">왼쪽</button>
+                    <span class="txt">2020년 8월 20일 (목)</span>
+                    <button type="button" class="right">오른쪽</button>
+                </div>
+                <div class="resultArea">
+                    <div class="doctorBox">
+                        <div class="topArea">
+                            <div class="imgArea">
+                                <img src="/assets/images/img_doctor.png" alt="">
+                            </div>
+                            <div class="infoDr">
+                                <dl>
+                                    <dt> 김철민 의사</dt>
+                                    <dd>
+                                        <span>가정의학과 전문의</span>
+                                        <span class="star">4.5(10+)</span>
+                                    </dd>
+                                </dl>
+                                <div class="linkBtn">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_video.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_chat.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_call.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="like">좋아요</button>
+                        </div>
+                        <div class="btmArea">
+                            <div class="diseaseList">
+                                <span>만성질환, 호흡기질환, 피부질환, 알러지성질환, 비만성질환, 비만성질환, 비만성질환</span>
+                            </div>
+                            <div class="timeList">
+                                <div class="swiper-wrapper">
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctorBox">
+                        <div class="topArea">
+                            <div class="imgArea">
+                                <img src="/assets/images/img_doctor-1.png" alt="">
+                            </div>
+                            <div class="infoDr">
+                                <dl>
+                                    <dt> 김철민 의사</dt>
+                                    <dd>
+                                        <span>가정의학과 전문의</span>
+                                        <span class="star">4.5(10+)</span>
+                                    </dd>
+                                </dl>
+                                <div class="linkBtn">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_video.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_chat.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_call.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="like">좋아요</button>
+                        </div>
+                        <div class="btmArea">
+                            <div class="diseaseList">
+                                <span>만성질환, 호흡기질환, 피부질환, 알러지성질환, 비만성질환, 비만성질환, 비만성질환</span>
+                            </div>
+                            <div class="timeList">
+                                <div class="swiper-wrapper">
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctorBox">
+                        <div class="topArea">
+                            <div class="imgArea">
+                                <img src="/assets/images/img_doctor-2.png" alt="">
+                            </div>
+                            <div class="infoDr">
+                                <dl>
+                                    <dt> 김철민 의사</dt>
+                                    <dd>
+                                        <span>가정의학과 전문의</span>
+                                        <span class="star">4.5(10+)</span>
+                                    </dd>
+                                </dl>
+                                <div class="linkBtn">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_video.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_chat.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_call.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="like">좋아요</button>
+                        </div>
+                        <div class="btmArea">
+                            <div class="diseaseList">
+                                <span>만성질환, 호흡기질환, 피부질환, 알러지성질환, 비만성질환, 비만성질환, 비만성질환</span>
+                            </div>
+                            <div class="timeList">
+                                <div class="swiper-wrapper">
+                                    <span class="swiper-slide w100">예약 가능 날짜 :2020년 8월 21일 (금)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctorBox">
+                        <div class="topArea">
+                            <div class="imgArea">
+                                <img src="/assets/images/img_doctor.png" alt="">
+                            </div>
+                            <div class="infoDr">
+                                <dl>
+                                    <dt> 김철민 의사</dt>
+                                    <dd>
+                                        <span>가정의학과 전문의</span>
+                                        <span class="star">4.5(10+)</span>
+                                    </dd>
+                                </dl>
+                                <div class="linkBtn">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_video.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_chat.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_call.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="like">좋아요</button>
+                        </div>
+                        <div class="btmArea">
+                            <div class="diseaseList">
+                                <span>만성질환, 호흡기질환, 피부질환, 알러지성질환, 비만성질환, 비만성질환, 비만성질환</span>
+                            </div>
+                            <div class="timeList">
+                                <div class="swiper-wrapper">
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctorBox">
+                        <div class="topArea">
+                            <div class="imgArea">
+                                <img src="/assets/images/img_doctor.png" alt="">
+                            </div>
+                            <div class="infoDr">
+                                <dl>
+                                    <dt> 김철민 의사</dt>
+                                    <dd>
+                                        <span>가정의학과 전문의</span>
+                                        <span class="star">4.5(10+)</span>
+                                    </dd>
+                                </dl>
+                                <div class="linkBtn">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_video.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_chat.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_call.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="like">좋아요</button>
+                        </div>
+                        <div class="btmArea">
+                            <div class="diseaseList">
+                                <span>만성질환, 호흡기질환, 피부질환, 알러지성질환, 비만성질환, 비만성질환, 비만성질환</span>
+                            </div>
+                            <div class="timeList">
+                                <div class="swiper-wrapper">
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctorBox">
+                        <div class="topArea">
+                            <div class="imgArea">
+                                <img src="/assets/images/img_doctor.png" alt="">
+                            </div>
+                            <div class="infoDr">
+                                <dl>
+                                    <dt> 김철민 의사</dt>
+                                    <dd>
+                                        <span>가정의학과 전문의</span>
+                                        <span class="star">4.5(10+)</span>
+                                    </dd>
+                                </dl>
+                                <div class="linkBtn">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_video.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_chat.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_call.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="like">좋아요</button>
+                        </div>
+                        <div class="btmArea">
+                            <div class="diseaseList">
+                                <span>만성질환, 호흡기질환, 피부질환, 알러지성질환, 비만성질환, 비만성질환, 비만성질환</span>
+                            </div>
+                            <div class="timeList">
+                                <div class="swiper-wrapper">
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctorBox">
+                        <div class="topArea">
+                            <div class="imgArea">
+                                <img src="/assets/images/img_doctor.png" alt="">
+                            </div>
+                            <div class="infoDr">
+                                <dl>
+                                    <dt> 김철민 의사</dt>
+                                    <dd>
+                                        <span>가정의학과 전문의</span>
+                                        <span class="star">4.5(10+)</span>
+                                    </dd>
+                                </dl>
+                                <div class="linkBtn">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_video.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_chat.png" alt="">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img src="/assets/images/icn_call.png" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="like">좋아요</button>
+                        </div>
+                        <div class="btmArea">
+                            <div class="diseaseList">
+                                <span>만성질환, 호흡기질환, 피부질환, 알러지성질환, 비만성질환, 비만성질환, 비만성질환</span>
+                            </div>
+                            <div class="timeList">
+                                <div class="swiper-wrapper">
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                    <span class="swiper-slide">10:30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

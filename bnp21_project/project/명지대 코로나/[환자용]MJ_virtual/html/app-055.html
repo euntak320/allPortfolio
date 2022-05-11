@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(function(){
+            $(".infoBox button").click(function(){
+                $(".infoBox button").removeClass("on");
+                $(".infoBox button").eq($(this).index()).addClass("on");
+            });
+
+            $(".thumbNailArea button").click(function(){
+                $(this).parents("li").hide();
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="subPage">
+        <div id="header">
+            <button class="back">뒤로가기</button>
+            <span class="title">문진표 작성</span>
+        </div>
+        <div id="content" class="join">
+            <div class="infoInput">
+                <div class="infoBox">
+                    <span>본인이신가요 ?</span>
+                    <div class="btn">
+                        <button type="button" class="fl on">없음</button>
+                        <button type="button" class="fr">있음</button>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>초진이신가요 ?</span>
+                    <div class="btn">
+                        <button type="button" class="fl on">없음</button>
+                        <button type="button" class="fr">있음</button>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>증상을 입력해주세요.</span>
+                    <div class="writeArea">
+                        <textarea name="" id="" cols="30" rows="4" placeholder="증상을 입력해주세요"></textarea>
+                        <span class="count">0/200</span>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>사진첨부 (선택사항)</span>
+                    <div class="cameraArea">
+                        <div class="thumbNailArea">
+                            <ul>
+                                <li>
+                                    <span class="imgSize">
+                                        <img src="" alt="">
+                                        <button type="button">닫기</button>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="imgSize">
+                                        <img src="" alt="">
+                                        <button type="button">닫기</button>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="imgSize">
+                                        <img src="" alt="">
+                                        <button type="button">닫기</button>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="imgSize">
+                                        <img src="" alt="">
+                                        <button type="button">닫기</button>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="imgSize">
+                                        <img src="" alt="">
+                                        <button type="button">닫기</button>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="imgSize">
+                                        <img src="" alt="">
+                                        <button type="button">닫기</button>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="imgSize">
+                                        <img src="" alt="">
+                                        <button type="button">닫기</button>
+                                    </span>
+                                </li>
+                                <!-- 이미지가 없을시 -->
+                                <li>
+                                    <span class="no">
+                                        <button type="button">닫기</button>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <input type="file" class="carmera" name="" id="">
+                        </div>
+                        <span>(0/8) 각 첨부파일은 최대 10MB까지 가능합니다​.</span>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>증상이 얼마나 지속되었나요 ?</span>
+                    <div class="btn">
+                        <button type="button" class="fl on">음주 안함</button>
+                        <button type="button" class="fr">주 1회</button>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="fl">주 2~5회</button>
+                        <button type="button" class="fr">매일</button>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>일상생활에 얼마나 영향을 미치나요 ?</span>
+                    <div class="btn">
+                        <button type="button" class="fl on">영향없음</button>
+                        <button type="button" class="fr">보통</button>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="fl">심각하게</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comBtn two v2">
+        <a href="" class="before">이전</a>
+        <a href="" class="reserve">다음</a>
+    </div>
+
+    <div class="layerFrame">
+        <div class="layerArea">
+            <div class="selectUpload">
+                <div class="box">
+                    <input type="file" class="gallery">
+                    <span>사진 갤러리</span>
+                </div>
+                <div class="box">
+                    <button type="button">
+                        <img src="../assets/images/btn_camera.png" alt="">
+                        <span>사진 촬영</span>
+                    </button>
+                </div>
+            </div>
+            <div class="layerBtn v2">
+                <button type="button">취소</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

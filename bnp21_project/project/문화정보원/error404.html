@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	<script src="./assets/js/jquery-1.11.0.min.js"></script>
+	<script src="./assets/js/script.js"></script>	
+</head>
+
+<body>
+
+	<div id="wrap" class="error">
+		
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("./include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+
+		<!-- 본문 -->		
+		<div class="error-container">
+			<div class="info error-404">
+				<p class="type">
+					404 Error
+					<span class="detail">HTTP 404 Error</span>
+				</p>
+				<p class="txt">
+					요청하신 페이지가 존재하지 않거나 찾을 수 없습니다.<br>
+					서비스 이용에 불편을 드려 죄송합니다.
+				</p>
+			</div>
+			<div class="com-btn">
+				<a href="#">이전페이지</a>
+			</div>
+		</div>
+		<!-- //본문 -->			
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("./include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

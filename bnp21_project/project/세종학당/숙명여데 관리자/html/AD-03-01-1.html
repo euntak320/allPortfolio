@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<title>숙명여대 캠퍼스타운 관리자</title>
+
+	<!-- css -->
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- js -->
+	<script src="assets/js/jquery-1.11.0.min.js"></script>
+	<script src="assets/js/jquery-ui.min.js"></script>
+	<script src="assets/js/script.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div class="comLayout">
+				<div class="infoArea">
+					<a href="" class="info">OOO님</a>
+					<a href="" class="login">로그인</a>
+				</div>
+				<div class="meunList">
+					<h1 class="logo">
+						<a href="">로고</a>
+					</h1>
+					<ul>
+						<li>
+							<a href="">기초정보</a>
+							<div class="subMenu">
+								<ul>
+									<li><a href="">팝업관리</a></li>
+									<li><a href="">장소등록</a></li>
+									<li><a href="">기자재 등록</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">프로그램</a>
+							<div class="subMenu two">
+								<ul>
+									<li><a href="">프로그램 등록</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">참여팀 관리</a>
+							<div class="subMenu three">
+								<ul>
+									<li><a href="">참여팀 관리</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">커뮤니티</a>
+							<div class="subMenu four">
+								<ul>
+									<li><a href="">캠퍼스타운 뉴스</a></li>
+									<li><a href="">지원사업 정보</a></li>
+									<li><a href="">아카이브</a></li>
+									<li><a href="">설문조사</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">캠퍼스타운 이용</a>
+							<div class="subMenu five">
+								<ul>
+									<li><a href="">프로그램 신청관리</a></li>
+									<li><a href="">장소 신청관리</a></li>
+									<li><a href="">기자재 신청관리</a></li>
+									<li><a href="">수료증 발급관리</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="comLayout">
+				<div class="topArea">
+					<span class="title">참여팀 관리</span>
+					<div class="navArea">
+						<span>홈</span>
+						<span>참여팀 관리</span>
+						<span>참여팀 관리 등록</span>
+					</div>
+				</div>
+				
+				<div class="acceptTable">
+					<table>
+						<colgroup>
+							<col style="width:13%">
+							<col style="width:37%">
+							<col style="width:13%">
+							<col style="width:37%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>제목</th>
+								<td colspan="3">
+									<div class="checkArea">
+										<div class="radio">
+											<input type="radio" id="rd1">
+											<label for="rd1">확인</label>
+										</div>
+										<div class="radio">
+											<input type="radio" id="rd2">
+											<label for="rd2">미확인</label>
+										</div>
+									</div>
+								</td>
+								
+							</tr>
+							<tr>
+								<th>참여팀명</th>
+								<td colspan="3">삼산텍</td>
+							</tr>
+							<tr>
+								<th>팀 아이템</th>
+								<td colspan="3">반려동물 용품 중계 플랫폼</td>
+							</tr>
+							<tr>
+								<th>팀 비밀번호</th>
+								<td colspan="3">****</td>
+							</tr>
+							<tr>
+								<th>창업여부</th>
+								<td>YES</td>
+								<th>사업자등록번호</th>
+								<td>201-81-89905</td>
+							</tr>
+							<tr>
+								<th>팀 구성원</th>
+								<td colspan="3">
+									<table class="v2">
+										<colgroup>
+											<col style="width:7%">
+											<col style="width:5%">
+											<col style="width:10%">
+											<col style="width:5%">
+											<col style="width:15%">
+											<col style="width:7%">
+											<col style="width:5%">
+											<col style="width:5%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th></th>
+												<th>이름</th>
+												<th>메일주소</th>
+												<th>생년월일</th>
+												<th>연락처</th>
+												<th>소속</th>
+												<th>성별</th>
+												<th>학생</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="checkArea">
+														<div class="check">
+															<input type="checkbox" id="chk1">
+															<label for="chk1">대표</label>
+														</div>
+													</div>
+												</td>
+												<td>OOO</td>
+												<td>123123123@gmail.com</td>
+												<td>YYYY/MM.DD</td>
+												<td>010-1234-5678</td>
+												<td>숙명여대</td>
+												<td>여</td>
+												<td>YES</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="checkArea">
+														<div class="check">
+															<input type="checkbox" id="chk1">
+															<label for="chk1">대표</label>
+														</div>
+													</div>
+												</td>
+												<td>OOO</td>
+												<td>123123123@gmail.com</td>
+												<td>YYYY/MM.DD</td>
+												<td>010-1234-5678</td>
+												<td>숙명여대</td>
+												<td>여</td>
+												<td>YES</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="checkArea">
+														<div class="check">
+															<input type="checkbox" id="chk1">
+															<label for="chk1">대표</label>
+														</div>
+													</div>
+												</td>
+												<td>OOO</td>
+												<td>123123123@gmail.com</td>
+												<td>YYYY/MM.DD</td>
+												<td>010-1234-5678</td>
+												<td>숙명여대</td>
+												<td>여</td>
+												<td>YES</td>
+											</tr>
+										</tbody>									
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<th>첨부서류</th>
+								<td colspan="3">
+									<ul class="attchedFile">
+										<li><a href="" target="_blank">OOOO됨 신청서류.zip</a></li>
+										<li><a href="" target="_blank">OOOO됨 신청서류.zip</a></li>
+										<li><a href="" target="_blank">OOOO됨 신청서류.zip</a></li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="comBtn">
+					<button type="button" class="save">저장</button>
+					<button type="button" class="normal">삭제</button>
+					<button type="button" class="close">목록</button>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<span>Copyright 2017 Sookmyung Women's University. All right Reserved</span>
+		</div>
+	</div>
+</body>
+
+</html>

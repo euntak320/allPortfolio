@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Meta, title, CSS, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>자영업지원센터 사업관리 시스템</title>
+    <!--[if lt IE 9]>
+			<script src="/js/html5shiv.min.js"></script>
+		<![endif]-->
+    <!-- scripts and styles -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="../../../css/rMateGridH5Sample.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/rMateH5.css" />
+    <!-- rMateChartH5 라이센스 -->
+    <script type="text/javascript" src="../../../js/rMateGridH5License.js"></script>
+    <!-- rMateGridH5 라이브러리 -->
+    <script type="text/javascript" src="../../../js/rMateGridH5.js"></script>
+
+    <!-- smartEditor -->
+    <script type="text/javascript" src="../../../smartEditor/js/HuskyEZCreator.js"></script>
+    <!-- smartEditor -->
+    <link rel="stylesheet" type="text/css" href="../../../smartEditor/css/smart_editor2.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" />
+
+    <link rel="apple-touch-icon-precomposed" href="../../../ico/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/ico/favicon.ico">
+
+    <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="../../../css/jquery/jquery-ui-1.8.16.main.css" />
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="../../../js/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.16.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui.datepicker.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.number.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.maskedinput-1.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.dialog.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.numeric.js"></script>
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../../../js/common-util.js"></script>
+    <script type="text/javascript" src="../../../js/common.js"></script>
+    <script type="text/javascript" src="../../../js/sbdcCommon.js"></script>
+    <script type="text/javascript" src="../../../js/downloadProgress.js"></script>
+    <script type="text/javascript" src="../../../js/default.js"></script>
+    <script type="text/javascript" src="../../../js/printThis.js"></script>
+
+    <!-- 트리구조 추가 -->
+    <link rel="stylesheet" type="text/css" href="../../../css/jstree.min.css" />
+    <script type="text/javascript" src="../../../js/jstree.min.js"></script>
+
+    <!-- 신규 css 추가 -->
+    <link rel="stylesheet" href="../../../css/newpage.css">
+
+    <!-- function scripts -->
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="toplink">
+            <a class="navbar-brand" href="/cm/main.do"><img src="/img/logo_2016.png" alt="자영업지원센터"></a>
+            <ul>
+                <li><a href="/cc/SM_10402_SL.do">
+                        <sapn style="text-align: middle;"><img src="/img/icon/sms.JPG"
+                                style="width: 15px; padding-right: 5px; margin-top: 3px;" align="top">SMS 발송</sapn>
+                    </a></li>
+                <li><i class="fa fa-user"></i>개발테스트님 환영합니다.</li>
+                <li><a href="/cm/CMLogout.do"><i class="fa fa-power-off"></i>로그아웃</a></li>
+                <li><a href="/sso/SSO_10100.do" target="_blank"> <i class="fa fa-home"></i>소상공인 종합지원포털 홈페이지</a></li>
+            </ul>
+        </div>
+        <nav class="topnav-wrap">
+            <ul class="topnav" id="topMenu">
+                <li><a href="/cs/CS_10100_SL.do">고객&amp;상담</a></li>
+                <li><a href="/cn/CN_10300_SL.do">창업지원</a></li>
+                <li><a href="/pm/PM_20101_SL.do">사후관리</a></li>
+                <li><a href="/fs/FS_10000_SL.do">시설개선</a></li>
+                <li class="active"><a href="/cg/CG_70101_SL_NEW.do">경영지원</a></li>
+                <li><a href="/st/ST_10201_FORM.do">경영지원통계</a></li>
+                <li><a href="/cc/CC_10301_SL.do">전문가관리</a></li>
+                <li><a href="/ed/ED_10101_SL.do">교육관리</a></li>
+                <li><a href="/bt/BT_10100_SL.do">직원알림방</a></li>
+                <li><a href="/bs/BS_10100_SL.do">공지&amp;알림</a></li>
+                <li><a href="/bm/MasterList.do">게시판관리</a></li>
+                <li><a href="/sm/SM_10101_SL.do">시스템관리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-content">
+        <div class="sidenav-wrap">
+            <ul class="nav sidenav" id="leftMenu">
+                <li class="active"><a href=""><i class="fa fa-file-text-o"></i>컨설팅 관리(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>사업신청서 등록(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>온라인신청서접수(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>전문가 배정(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>멘토링 배정</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>과거 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>컨설팅 정보 조회</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>접수부서별 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>경영지원 해피콜</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험신청서 접수</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>크리에이터 교육관리</a></li>
+            </ul>
+        </div>
+        <div class="content-wrap">
+            <div class="content">
+                <div class="content">
+                    <h3>컨설팅 관리</h3>
+                    <ul class="process">
+                        <ul class="process">
+                            <li id="" class="process3 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #fff;">사업신청</a></span></li>       
+                            <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">전문가배정(1차)</a></span></li>
+                            <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">컨설팅수행(1차)</a></span></li>
+                            <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">전문가배정(2차)</a></span></li>
+                            <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">컨설팅수행(2차)</a></span></li>
+                            <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">사후관리</a></span></li>
+                            <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">컨설팅완료</a></span></li>
+                        </ul>
+                    </ul>
+                    <h3>고객정보(대표자)</h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>고객번호</th>
+                                <td></td>
+                                <th>고객명</th>
+                                <td></td>
+                                <th>성별</th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>생년월일</th>
+                                <td></td>
+                                <th>전화번호</th>
+                                <td></td>
+                                <th>휴대전화번호</th>
+                                <td><a href="#" id="" name="" class="btn-danger btn-sm" >SMS 발송</a></td>
+                            </tr>
+                            <tr>
+                                <th>주소</th>
+                                <td colspan="5">()&nbsp;&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>사업장정보</h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>사업단계</th>
+                                <td colspan="5">					
+                                    <input type="radio" id="applcntBsnsStepCode1" name="applcntBsnsStepCode" value="110" checked="" disabled="disabled"> 
+                                    <label for="applcntBsnsStepCode1">기존창업자</label>
+                                    <input type="radio" id="applcntBsnsStepCode2" name="applcntBsnsStepCode" value="120" checked="" disabled="disabled"> 
+                                    <label for="applcntBsnsStepCode1">예비창업자</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>업체명</th>
+                                <td></td>
+                                <th>사업자등록번호</th>
+                                <td> </td>
+                                <th>사업장전화번호</th>
+                                <td> </td>
+                            </tr>
+                            <tr>
+                                <th>사업장주소</th>
+                                <td colspan="5">( )&nbsp; </td>
+                            </tr>
+                            <tr>
+                                <th>소유구분</th>
+                                <td> </td>
+                                <th>경영형태</th>
+                                <td> </td>
+                                <th>종업원수</th>
+                                <td>0 명</td>
+                            </tr>
+                            
+                            <tr>
+                                <th>업종</th>
+                                <td></td>
+                                <th>취급품목</th>
+                                <td></td>
+                                <th>설립(예정)일자</th>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="clearfix"></p>
+                    <p class="clearfix"></p>
+                    <p class="clearfix"></p>
+                    <p class="clearfix"></p>
+                    <ul id="tabs" class="nav nav-tabs">
+                        <li class=""><a class="tab" id="prgrsListDoc" href="#"><span><i class="fa fa-tag"></i>진행내역</span></a></li>
+                        <li class="active"><a class="tab" id="floatTab1" href="#"><span><i class="fa fa-tag"></i>컨설팅수행</span></a><a href="#" class="remove"><i class="fa fa-close"></i></a></li>
+                    </ul>
+                    <div class="tab-content" id="content">
+                        <h3>기본정보</h3>
+                        <table class="table table-bordered view">
+                            <colgroup>
+                                <col style="width:10%">
+                                <col style="width:23%">
+                                <col style="width:10%">
+                                <col style="width:23%">
+                                <col style="width:10%">
+                                <col style="width:23%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>접수번호</th>
+                                    <td></td>
+                                    <th>업체명</th>
+                                    <td></td>
+                                    <th>대표자</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th><span style="color:#ff0000">*</span> 수행기간</th>
+                                    <td>
+                                        <input type="text" class="form-control input-sm text-center" id="schResultStartDt" name="schResultStartDt" value="" placeholder="">
+                                        ~
+                                        <input type="text" class="form-control input-sm text-center" id="schResultEndDt" name="schResultEndDt" value="" placeholder="">
+                                    </td>
+                                    <th><span style="color:#ff0000">*</span> 수행일수</th>
+                                    <td>
+                                        <input type="text" class="form-control input-sm text-center"> 원
+                                    </td>
+                                    <th>전문가</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>컨설팅주제</th>
+                                    <td colspan="3"></td>
+                                    <th>등록일자</th>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="clearfix"></p>
+                        <h3>점포현황 및 의견 (특이사항)</h3>
+                        <table class="table table-bordered write">
+                            <colgroup>
+                                <col style="width:130px">
+                    
+                                <col style="width:calc((100% - 260px) / 2)">
+                                <col style="width:130px">
+                                <col style="width:calc((100% - 260px) / 2)">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>특이사항</th>
+                                    <td>
+                                        <label for="comment5" class="invisible">경영애로사항</label>
+                                        <textarea class="form-control input-full" rows="7" id="sttusNdOpinion" name="sttusNdOpinion"></textarea>
+                                        <label id="sttusNdOpinionNum">0 / 2000bytes</label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="clearfix"></p>
+                        <h3>사진첨부 
+                            <span class="fr">
+                                <a class="btn btn-primary" href="#none" id="btnFileRowAdd" name="btnFileRowAdd">사진추가</a>
+                            </span>           
+                        </h3>
+                        <table class="table table-bordered write" id="fileTable">
+                            <colgroup>
+                                <col style="width:50px">							
+                                <col style="width:calc(50% - 140px)">
+                                <col style="width:90px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>첨부파일</th>
+                                    <th>삭제</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="tableTr1">
+                                    <td style="text-align: center; vertical-align: middle;">1</td>
+                                    <td style="text-align: center;"><input type="file" id="file1" name="photo" title="첨부파일" class="form-control input-full"></td>
+                                    <td style="text-align: center;"><a href="#none" id="btnFileDel" name="btnFileDel" class="btn btn-danger">삭제</a></td>       
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="control-button">	
+                            <span class="fr">
+                                <a href="#none" id=" " name=" " class="btn btn-pop">저장</a>
+                                <a href="#none" id=" " name=" " class="btn btn-pop">수정</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-copy">© Seoul Credit Guarantee Foundation, All Rights Reserved.</div>
+    </footer>
+
+
+</body>
+
+</html>

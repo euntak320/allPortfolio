@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>MJ CORONA</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        $(function () {
+            $(".infoArea .buttonArea button").click(function () {
+                $(".buttonArea button").removeClass("on");
+                $(".buttonArea button").eq($(this).index()).addClass("on");
+            });
+            $(".infoArea.v2 .buttonArea button").click(function () {
+                $(".infoArea.v2 .buttonArea button").removeClass("on");
+                $(".infoArea.v2 .buttonArea button").eq($(this).index()).addClass("on");
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- header -->
+    <!-- 20-09-03 -->
+    <div class="header">
+        <a href="" class="home"></a>
+        <h1>logo</h1>
+        <a href="" class="logout">로그아웃</a>
+    </div>
+    <!-- 20-09-03 -->
+    <!-- header -->
+
+    <div id="subPage">
+        <!-- content -->
+        <div class="contentArea">
+            <!-- 20-09-03 -->
+            <div class="infoArea">
+                <!-- 20-09-07 수정 -->
+                <span class="title">문의사항</span>
+                <!-- 20-09-07 수정 -->
+                <div class="infoInput">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="문의사항을 입력해주세요"></textarea>
+                </div>
+            </div>
+            <!-- 20-09-03 -->
+            <div class="infoArea">
+                <span class="title">기본정보</span>
+                <div class="infoInput">
+                    <div class="txtBox">
+                        <span class="title">이름<span>(필수)</span></span>
+                        <div class="input">
+                            <input type="text" placeholder="이름을 입력해주세요">
+                        </div>
+                    </div>
+                    <div class="txtBox">
+                        <span class="title">성별<span>(필수)</span></span>
+                        <div class="buttonArea">
+                            <button type="button" class="on">남</button>
+                            <button type="button">여</button>
+                        </div>
+                    </div>
+                    <div class="txtBox">
+                        <span class="title">생년월일 8자리<span>(필수)</span></span>
+                        <div class="input">
+                            <input type="text" placeholder="생년월일 입력해주세요">
+                        </div>
+                    </div>
+                    <div class="txtBox">
+                        <span class="title">내 전화번호<span>(필수)</span></span>
+                        <div class="input">
+                            <input type="text" class="tel" placeholder="연락처를 입력해주세요">
+                        </div>
+                    </div>
+                    <div class="txtBox">
+                        <span class="title">연락처<span>최대 2개</span></span>
+                        <div class="input number">
+                            <input type="text" class="tel" placeholder="연락처를 입력해주세요">
+                            <button type="button">관계</button>
+                        </div>
+                        <div class="input number">
+                            <input type="text" class="tel" placeholder="연락처를 입력해주세요">
+                            <button type="button">관계</button>
+                        </div>
+                    </div>
+                    <div class="txtBox">
+                        <span class="title">주소<span>(필수)</span></span>
+                        <div class="input">
+                            <input type="text" class="tel" placeholder="주소를 입력해주세요">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="infoArea v2">
+                <span class="title">예진 항목</span>
+                <div class="infoInput">
+                    <div class="txtBox">
+                        <span class="title">1. 최근 7일 이내 발열(37.5도)</span>
+                        <!-- 20-09-03 -->
+                        <div class="buttonArea">
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_1">
+                                <label for="rd_1">네</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_2">
+                                <label for="rd_2">아니오</label>
+                            </div>
+                        </div>
+                        <!-- 20-09-03 -->
+                    </div>
+                    <div class="txtBox">
+                        <span class="title">2. 최근 7일 이내 호흡기 증상<br>(네: 기침, 호흡곤란, 후각&미각 소실)</span>
+                        <!-- 20-09-03 -->
+                        <div class="buttonArea">
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_1">
+                                <label for="rd_1">네</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_2">
+                                <label for="rd_2">아니오</label>
+                            </div>
+                        </div>
+                        <!-- 20-09-03 -->
+                    </div>
+                    <div class="txtBox">
+                        <span class="title">3. 최근 14일 이내 호흡기 증상<br>(대상: 폐렴 진단, 확진자 또는 자가격리 대상자 접촉)</span>
+                        <!-- 20-09-03 -->
+                        <div class="buttonArea">
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_1">
+                                <label for="rd_1">네</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_2">
+                                <label for="rd_2">아니오</label>
+                            </div>
+                        </div>
+                        <!-- 20-09-03 -->
+                    </div>
+                    <div class="txtBox">
+                        <span class="title">4. 2주 이내 확진자 다수 발생 지역에 다녀오신적이<br>있습니까?(8/19 업데이트)</span>
+                        <div class="boxTxt blue">
+                            <ul>
+                                <li>&middot; 서울특별시, 경기도, 인천광역시 등 수도권 사회 적 거리두기 2단계</li>
+                                <li>&middot; 코로나19 검사 권고
+                                    <ul>
+                                        <li>1) 광화문 집회 참석자 (8/15)</li>
+                                        <li>2) 서울사랑교회 네배 참석자 (8/7 ~ 8/13)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 20-09-03 -->
+                        <div class="buttonArea">
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_1">
+                                <label for="rd_1">네</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_2">
+                                <label for="rd_2">아니오</label>
+                            </div>
+                        </div>
+                        <!-- 20-09-03 -->
+                    </div>
+                    <div class="txtBox">
+                        <span class="title">5. 2주 이내 확진자 다수 발생 지역에 다녀오신적이 있습니까?(8/19 업데이트)</span>
+                        <div class="boxTxt lightBlue">
+                            <ul>
+                                <li>&middot; 고양시 집단 감염
+                                    <ul>
+                                        <li>1) 일산 동구 : 반석교회</li>
+                                        <li>2) 남대문 시장 (케네디 상가, 중앙상가)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 20-09-03 -->
+                        <div class="buttonArea">
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_1">
+                                <label for="rd_1">네</label>
+                            </div>
+                            <div class="radio">
+                                <input type="radio" name="state" id="rd_2">
+                                <label for="rd_2">아니오</label>
+                            </div>
+                        </div>
+                        <!-- 20-09-03 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+
+        <!-- 20-09-03 -->
+        <div class="comBtm">
+            <button type="button" class="gray">저장</button>
+        </div>
+        <!-- 20-09-03 -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=yes" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!--[if lt IE 9]><script src=js/html5.js"></script><![endif]-->
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.placeholder.js"></script>
+	<script src="../js/tableHeadFixer.js"></script>
+    <title>경기도 대기배출원 관리시스템</title>
+</head>
+<body style="background-color:rgba(0,0,0,.5)">
+<!-- 팝업 -->
+<div id="popup" class="output">
+    <div class="top_pop">
+        <h1>사업장 오염물질 배출량 </h1>
+        <a href="">닫기</a>
+    </div>
+    <div class="cont_pop">
+        <span style="display: block; float: right; font-size:12px; margin-bottom: 5px;">오염물질단위:ton/yr</span>
+        <table class="bbsList" style="width:570px;">
+            <colgroup>
+                <col style="width:1%;">
+                <col style="width:5%">
+                <col style="width:1%;">
+                <col style="width:5%">
+                <col style="width:1%;">
+                <col style="width:5%">
+                <col style="width:1%;">
+                <col style="width:5%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col">먼지</th>
+                    <th scope="col">등급</th>
+                    <th scope="col">황산화물</th>
+                    <th scope="col">등급</th>
+                    <th scope="col">질소산화물</th>
+                    <th scope="col">등급</th>
+                    <th scope="col">휘발성 유기화 합물</th>
+                    <th scope="col">등급</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2.3</td>
+                    <td>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>2.3</td>
+                    <td>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>2.3</td>
+                    <td>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td>2.3</td>
+                    <td>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="layerTxt">
+            <span class="bold">배출량 자료 등급 선택</span>
+            <span>자료등급 M:실측기반 배출량, A:활동자료*배출계수, B:매출규모별 원단위 적용, C: 업종별 원단위 적용, D: 전체 평균 원단위적용</span>
+        </div>
+       <div class="btnArea">
+            <a href="#none" class="gray">취소</a>
+            <a href="#none" class="blue">등록</a>
+       </div>
+    </div>
+    
+</div>
+<!-- //팝업 -->
+
+</body>
+</html>

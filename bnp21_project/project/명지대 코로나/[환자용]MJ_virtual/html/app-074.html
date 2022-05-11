@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(function(){
+            $(".starlist li").click(function(){
+                $(this).toggleClass("on");
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="layerFrame">
+        <div class="evaluationArea">
+            <div class="header">
+                <button type="button">닫기</button>
+            </div>
+            <div class="content">
+                <div class="starlist">
+                    <span>평점</span>
+                    <ul>
+                        <li>별</li>
+                        <li>별</li>
+                        <li>별</li>
+                        <li>별</li>
+                        <li>별</li>
+                    </ul>
+                </div>
+                <div class="wirteArea">
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <span class="">0/200</span>
+                </div>
+                <span class="etc">※ 글 내용에 개인정보가 포함되지 않도록 유의해주세요.​</span>
+                <div class="btnArea">
+                    <!-- 글자 입력완료시 on 클래스 추가 -->
+                    <button type="button" >리뷰 등록하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="49" height="53" viewBox="0 0 49 53">
+    <defs>
+        <style>
+            .cls-1,.cls-2,.cls-4{fill:none}.cls-2{stroke:#333;stroke-width:1.8px}.cls-2,.cls-4{stroke-miterlimit:10}.cls-3,.cls-5{fill:#333}.cls-4{stroke:#58559a;stroke-linecap:round;stroke-width:1.5px}.cls-5{font-size:15px;font-family:Comfortaa-Bold,Comfortaa;font-weight:700}
+        </style>
+    </defs>
+    <g id="icon_schedule" transform="translate(-188 -264)">
+        <path id="사각형_1082" d="M0 0h49v53H0z" class="cls-1" data-name="사각형 1082" transform="translate(188 264)"/>
+        <path id="패스_516_2_" d="M38.03 35.89H5.28a4.456 4.456 0 0 1-4.53-4.38V5.13A4.456 4.456 0 0 1 5.28.75h32.74a4.456 4.456 0 0 1 4.53 4.38V31.5a4.439 4.439 0 0 1-4.5 4.39z" class="cls-2" transform="translate(191.25 274.251)"/>
+        <g id="그룹_2811" data-name="그룹 2811" transform="translate(191.25 275.251)">
+            <circle id="타원_527" cx="1.5" cy="1.5" r="1.5" class="cls-3" data-name="타원 527" transform="translate(10.75 3.749)"/>
+            <circle id="타원_528" cx="1.5" cy="1.5" r="1.5" class="cls-3" data-name="타원 528" transform="translate(19.75 3.749)"/>
+            <circle id="타원_529" cx="1.5" cy="1.5" r="1.5" class="cls-3" data-name="타원 529" transform="translate(28.75 3.749)"/>
+        </g>
+        <g id="그룹_2812" data-name="그룹 2812" transform="translate(10 2)">
+            <g id="그룹_2809" data-name="그룹 2809" transform="translate(2.102 .541)">
+                <path id="선_50" d="M0 0h7.928" class="cls-4" data-name="선 50" transform="translate(207.47 289.03)"/>
+                <path id="선_51" d="M0 0h7.928" class="cls-4" data-name="선 51" transform="translate(207.47 293.316)"/>
+                <path id="선_52" d="M0 0h7.928" class="cls-4" data-name="선 52" transform="translate(207.47 297.602)"/>
+            </g>
+            <text id="_23" class="cls-5" data-name="23" transform="translate(197 300)">
+                <tspan x="-8.903" y="0">23</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

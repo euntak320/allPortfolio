@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<title>간편결제 | KB스타게이트</title>
+<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon" href="">
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 개발 : 팝업 -->
+<script type="text/javascript" src="../common/js/jquery-confirm.min.js"></script>
+
+<!-- 해당페이지만 사용 : 슬라이드  -->
+<link type="text/css" rel="stylesheet" href="../common/css/slick.css">
+<script type="text/javascript" src="../common/js/slick.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+
+
+<style>
+button{color:#fff; padding:10px; margin: 10px; background: #333;}
+</style>
+</head>
+<body>
+<p>
+	<button id="btn1">버튼 하나</button>
+	<button id="btn2">버튼 둘</button>
+	<button id="btn3">타이틀 / 버튼 하나</button>
+</p>
+<p>
+	<button id="btn4">버튼에 클래스 적용</button>
+</p>
+<p>
+	<button id="btn5">타입(one-btn) 적용</button>
+	<button id="btn6">타입(two-btn) 적용</button>
+</p>
+<p>
+	<button id="btn7">내용 가져오기</button>
+</p>
+
+<!-- 개발사용 : 팝업 -->
+<div id="html-content" style="display: none">
+	<table border="1" cellspacing="0" cellpadding="5">
+		<tr>
+			<th>이름</th>
+			<th>나이</th>
+		</tr>
+		<tr>
+			<td>안정용</td>
+			<td>1</td>
+		</tr>
+	</table>
+</div>
+</body>
+<script>
+jconfirm.defaults = {
+	draggable: false,
+	//theme: 'stargate', //스타게이트 테마
+	animationSpeed: 0,
+	useBootstrap: false,
+	title: ''
+};
+
+$('#btn1').click(function() {
+
+	$.alert({
+		content: '생일과 핸드폰번호는 결제 비밀번호로 사용할 수 없습니다.',
+		buttons: {
+			ok: {
+				text: '확인'
+			}
+		}
+	});
+});
+
+$('#btn2').click(function() {
+	$.alert({
+		content: '결제 비밀번호를 다시 설정하시겠습니까?',
+		buttons: {
+			no: {
+				btnClass: 'btn-no',
+				text: '아니오'
+			},
+			yes: {
+				btnClass: 'btn-yes',
+				text: '예'
+			}
+		}
+	});
+});
+
+$('#btn3').click(function() {
+	$.alert({
+		title: '결제 비밀번호 입력오류',
+		content: '결제 비밀번호가 일치하지 않습니다.<br/>(5회 실패시, 결제 비밀번호가 초기화 됩니다.)',
+		buttons: {
+			ok: {
+				text: '예'
+			}
+		}
+	});
+});
+
+$('#btn4').click(function() {
+	$.alert({
+		content: '버튼에 class를 적용 했습니다.',
+		buttons: {
+			no: {
+				btnClass: 'btn-no',
+				text: '아니오'
+			},
+			yes: {
+				btnClass: 'btn-yes',
+				text: '예'
+			}
+		}
+	});
+});
+
+$('#btn5').click(function() {
+	$.alert({
+		type: 'one-btn',
+		content: 'type: "one-btn"',
+		buttons: {
+			yes: {
+				btnClass: 'btn-yes',
+				text: '확인'
+			}
+		}
+	});
+});
+
+$('#btn6').click(function() {
+	$.alert({
+		type: 'two-btn',
+		content: 'type: "two-btn"',
+		buttons: {
+			no: {
+				btnClass: 'btn-no',
+				text: '아니오'
+			},
+			yes: {
+				btnClass: 'btn-yes',
+				text: '예'
+			}
+		}
+	});
+});
+
+$('#btn7').click(function() {
+	$.alert({
+		type: 'two-btn',
+		title: '내용 가져오기',
+		content: $('#html-content').html(),
+		buttons: {
+			yes: {
+				btnClass: 'btn-ok',
+				text: '확인'
+			}
+		}
+	});
+});
+</script>
+</html>

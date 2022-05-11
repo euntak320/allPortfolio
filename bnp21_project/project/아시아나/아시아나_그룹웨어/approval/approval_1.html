@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>asiana</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/swiper.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script>
+        $(document).ready(function(){
+    
+    function setCurrentSlide(ele,index){
+        $(".menu_area .swiper-slide").removeClass("selected");
+        ele.addClass("selected");
+        //swiper1.initialSlide=index;
+      }
+      
+      var swiper1 = new Swiper('.menu_area', {
+            slidesPerView: 4,
+            paginationClickable: true,
+            spaceBetween: 10,
+            freeMode: true,
+            loop: false,
+            onTab:function(swiper){
+              var n = swiper1.clickedIndex;
+              alert(1);
+            }
+        });
+      swiper1.slides.each(function(index,val){
+        var ele=$(this);
+        ele.on("click",function(){
+          setCurrentSlide(ele,index);
+          swiper2.slideTo(index, 500, false);
+          //mySwiper.initialSlide=index;
+        });
+      });
+      
+      
+    var swiper2 = new Swiper ('.list_area', {
+        direction: 'horizontal',
+        loop: false,
+        autoHeight: true,
+        onSlideChangeEnd: function(swiper){
+          var n=swiper.activeIndex;
+          setCurrentSlide($(".menu_area .swiper-slide").eq(n),n);
+          swiper1.slideTo(n, 500, false);
+        }
+      });
+});
+    
+    </script>
+</head>
+
+<body>
+     <!-- left_menu -->
+     <div id="side_menu" class="side_nav">
+        <div class="side_area">
+            <div class="top_area">
+                <a href="#none" class="btn_close">닫기버튼</a>
+                <div class="txt_list">
+                    <span class="bold ellipsis">AI테스트117님</span>
+                    <span class="blue ellipsis">아시아나IDT</span>
+                    <span class="bold small ellipsis">교육용부서2</span>
+                </div>
+                <div class="img_area">
+                    <span class="Mimg_User" style="background: url(../assets/images/common/userPictureImage.png);background-size:cover ;"> </span>
+                </div>
+            </div>
+            <div class="middle_area">
+                <span class="icon">
+                    <span class="counting emailCnt">7</span>
+                    <a href="../mail/mail_1.html" class="mail">메일</a>
+                </span>
+                <span class="icon">
+                    <span class="counting approvalCnt">0</span>
+                    <a href="../approval/approval_1.html" class="approval">결재</a>
+                </span>
+                <span class="icon">
+                    <span class="counting boardCnt">0</span>
+                    <a href="../board/board_1.html" class="board">게시판</a>
+                </span>
+                <span class="icon">
+                    <a href="../personal_tel/tel_1.html"class="staff">임직원검색</a>
+                </span>
+                <span class="icon">
+                    <span class="counting familyCnt">0</span>
+                    <a href="../event/board_1.html" class="event">경조사</a>
+                </span>
+                <span class="icon">
+                    <a href="../schedule/schedule_1.html" class="daily">일정</a>
+                </span>
+            </div>
+            <div class="etc_list_area">
+                <div class="etc_list customer" >
+                    <span class="etc_txt">고객센터</span>
+                </div>
+                <div class="etc_list faq" onclick="location.href='../faq/faq_1.html'">
+                    <span class="etc_txt">FAQ</span>
+                </div>
+                <div class="etc_list download">
+                    <span class="etc_txt">앱다운로드</span>
+                </div>
+            </div>
+        </div>
+        <div class="back_black"></div>
+    </div>
+    <!-- left_menu -->
+    <!-- header -->
+    <header>
+        <div class="header_area">
+            <a href="#none" class="m_btn">모바일메뉴</a>
+            <span class="main_title">결재</span>
+            <a href="#none" class="search_btn">돋보기</a>
+        </div>
+        <div class="top_layer">
+            <div class="search_area">
+                <div class="frame">
+                    <a href="javascript:void(0);" class="close_btn">닫기버튼</a>
+                    <!-- <div class="select_box">
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                        </select>
+                    </div> -->
+                  
+                    <div class="input_box w80">
+                        <input type="text" name="" value="" placeholder="검색어를 입력해주세요">
+                    </div>
+                    <a href="javascript:void(0);" class="search_btn">찾기버튼</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- header -->
+
+    <!-- content -->
+    <section>
+        <div class="container">
+            <div class="swiper-container menu_area">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide selected">
+                        <span class="menu_title">결재함</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="menu_title">진행함</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="menu_title">완료함</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="menu_title">수신함</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="menu_title">결재함</span>
+                    </div>
+                    <div class="swiper-slide">
+                        <span class="menu_title">진행함</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-container list_area ">
+            <div class="swiper-wrapper">
+                <!-- first_area_list -->
+                <div class="swiper-slide">
+                    <div class="result_list_area">
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                        </div>
+
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <!-- file -->
+                        <!-- after read -->
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                        </div>
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <!-- file -->
+                        <!-- after read -->
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+                       
+                    </div>
+                </div>
+                <!-- first_area_list -->
+
+                <!-- second_area_list -->
+                <div class="swiper-slide">
+                    <div class="result_list_area">
+
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                        </div>
+
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <!-- file -->
+                        <!-- after read -->
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                        </div>
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <!-- file -->
+                        <!-- after read -->
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <!-- thrid_area_list -->
+                <div class="swiper-slide">
+                    <div class="result_list_area">
+
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                        </div>
+
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <!-- file -->
+                        <!-- after read -->
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                        </div>
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <!-- file -->
+                        <!-- after read -->
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+                    </div>
+                </div>
+                <!-- thrid_area_list -->
+
+                <!-- forth_area_list -->
+                <div class="swiper-slide">
+                    <div class="result_list_area">
+
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                        </div>
+
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <!-- file -->
+                        <!-- after read -->
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                        </div>
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+                        <!-- file -->
+                        <!-- after read -->
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                            
+                        </div>
+
+                        <div class="list_txt_box dim">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type">승인</span>
+                            <span class="date ellipsis">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+
+                        <!-- file -->
+                        <div  class="list_txt_box" onclick="location.href='../approval/approval_2.html'">
+                            <span class="txt_title ellipsis file">타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.타이틀입니다.
+                            </span>
+                            <span class="type  ">승인 후 참조</span>
+                            <span class="date">
+                                <span>홍길동</span>
+                                <span>2019-09-23</span>
+                                <span>17:06:40</span>
+                            </span>
+                           
+                        </div>
+                </div>
+                <!-- forth_area_list -->
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- content -->
+    <footer class="footer_frame">
+        <div class="footer_icon_area">
+            <a href="#none" class="back">뒤로가기</a>
+            <a href="../approval/approval_1.html" class="refresh">새로고침</a>
+            <a href="../main/dashboard.html" class="home">메인</a>
+            <a href="../personal_tel/tel_1.html" class="staff">임직원검색</a>
+            <a href="../setting/setting.html" class="setting">설정</a>
+        </div>
+    </footer>
+
+</html>

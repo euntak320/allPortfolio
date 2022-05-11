@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID 19 온라인신청서</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+</head>
+
+<body>
+    <div id="page">
+        <a href="" class="home">홈으로</a>
+        <div class="checkList">
+            <div class="titleTxt">
+                <span class="blue">출국 전 영문 서류(COVID-19 PCR)</span>
+                <span> 발급 신청서</span>
+            </div>
+            <div class="whiteBox">
+                <span class="title bold">신청서류를 체크해주세요.</span>
+                <div class="checkArea mt20">
+                    <div class="check">
+                        <input type="checkbox" id="chk_1" checked>
+                        <label for="chk_1">건강상태확인서</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="chk_2">
+                        <label for="chk_2">영문진단서</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="chk_3">
+                        <label for="chk_3">중국용시험성적서</label>
+                    </div>
+                </div>
+            </div>
+            <div class="whiteBox">
+                <div class="txtInput">
+                    <span class="title">성명</span>
+                    <input type="text" placeholder="여권과 동일하게 영문으로 입력해 주세요." readonly>
+                </div>
+                <div class="txtInput">
+                    <span class="title mt20">연락처</span>
+                    <input type="text" placeholder="연락처 입력" readonly>
+                </div>
+                <div class="txtInput">
+                    <span class="title mt20">주민등록번호</span>
+                    <input type="text" placeholder="주민등록번호 입력" readonly>
+                </div>
+                <div class="txtInput">
+                    <span class="title mt20">입국국가(도착지)</span>
+                    <input type="text" placeholder="입국국가 입력" readonly>
+                </div>
+            </div>
+            <div class="titleTxt v2">
+                <span class="bold">신청자 정보</span>
+                <span>※ 여권정보를 확인하여 정확하게 작성해주세요.</span>
+            </div>
+            <div class="whiteBox">
+                <span class="title bold">Name <span class="blue">(이름)</span></span>
+                <div class="txtInput">
+                    <span class="title">한글</span>
+                    <input type="text" placeholder="여권과 동일하게 입력해 주세요." readonly>
+                </div>
+                <div class="txtInput">
+                    <span class="title mt20">영문</span>
+                    <span class="smallTxt">Given name</span>
+                    <input type="text" placeholder="여권과 동일하게 영문으로 입력해 주세요.">
+                </div>
+                <div class="txtInput">
+                    <span class="smallTxt mt20 bold">Family name</span>
+                    <input type="text" placeholder="여권과 동일하게 영문으로 입력해 주세요." readonly>
+                </div>
+                <span class="title mt20 bold">Nationality<span class="blue">(국적)</span></span>
+                <div class="txtInput">
+                    <input type="text" placeholder="여권과 동일하게 영문으로 입력해 주세요." readonly>
+                </div>
+                <span class="title mt20 bold">Date of Birth<span class="blue">(생년월일)</span></span>
+                <div class="txtInput">
+                    <input type="text" placeholder="여권과 동일하게 영문으로 입력해 주세요." readonly>
+                </div>
+                <span class="title mt20 bold">Gender <span class="blue">(성별)</span></span>
+                <div class="radioArea">
+                    <div class="radio">
+                        <input type="radio" name="gender" id="rd_1" checked>
+                        <label for="rd_1">Male</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="gender" id="rd_2">
+                        <label for="rd_2">Female</label>
+                    </div>
+                </div>
+                <span class="title mt20 bold">Passport number <span class="blue">(여권번호)</span></span>
+                <div class="txtInput">
+                    <input type="text" placeholder="여권과 동일하게 영문으로 입력해 주세요." readonly>
+                </div>
+                <span class="title mt20 bold">Home Address <span class="blue">(집주소)</span></span>
+                <div class="txtInput">
+                    <input type="text" placeholder="영문으로 입력해 주세요." readonly>
+                </div>
+                <span class="title mt20 bold">Vietnam <span class="inline">* 베트남 입국자 경우 작성</span></span>
+                <div class="txtInput">
+                    <span class="title mt20 bold">Intended Address in Vietnam <span class="blue">(베트남 현지 주소)</span></span>
+                    <input type="text" placeholder="영문으로 입력해 주세요." readonly>
+                </div>
+                <div class="txtInput">
+                    <span class="title mt20 bold">Date of Entry<span class="blue">(베트남 입국 날짜)</span></span>
+                    <input type="text" placeholder="베트남 입국날짜를 입력해 주세요." readonly>
+                </div>
+            </div>
+            <div class="titleTxt v2">
+                <span class="bold">수령방법</span>
+            </div>
+            <div class="whiteBox">
+                <div class="checkArea v2">
+                    <div class="check ">
+                        <input type="checkbox" id="chk_2_1" checked>
+                        <label for="chk_2_1">방문수령</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="chk_2_2">
+                        <label for="chk_2_2">직접수령</label>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="chk_2_3">
+                        <label for="chk_2_3">대리 방문(위임장 소지)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="titleTxt">
+                <span class="small">상기와 같이 건강상태확인서 발급을 신청합니다.</span>
+            </div>
+            <div class="whiteBox">
+                <div class="txtInput">
+                    <span class="title">신청일</span>
+                    <div class="date">
+                        <input type="text" placeholder="년" readonly>
+                        <input type="text" placeholder="월" readonly>
+                        <input type="text" placeholder="일" readonly>
+                    </div>
+                </div>
+                <div class="txtInput">
+                    <span class="title mt20">신청자</span>
+                    <input type="text" placeholder="신청자를 입력해 주세요." readonly>
+                </div>
+            </div>
+        </div>
+        <div class="btn v2">
+            <button type="button" class="gray">수정</button>
+            <button type="button" class="blue">뒤로가기</button>
+        </div>
+    </div>
+</body>
+
+</html>

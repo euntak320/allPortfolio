@@ -1,0 +1,1309 @@
+@charset "utf-8";
+/* 공통 */
+.bgGray {
+  background-color: #f8f8f8;
+}
+.tGray {
+  color: #767676;
+}
+.tPurple {
+  color: #5c49e0;
+}
+.vh100 {
+  height: 100vh !important;
+}
+@media (max-width: 767px) {
+  .vh100 {
+    height: 100% !important;
+  }
+}
+.signupWrap input,
+.loginPop input {
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  line-height: 39px;
+  background: #f8f8f8;
+  border: 1px solid #ececec;
+  font-size: 14px;
+}
+.signupWrap input::-webkit-input-placeholder,
+.loginPop input::-webkit-input-placeholder {
+  color: #cccc;
+  font-weight: 300;
+}
+.signupWrap input:-ms-input-placeholder,
+.loginPop input::-webkit-input-placeholder {
+  color: #cccc;
+  font-weight: 300;
+}
+.signupWrap button,
+.loginPop button {
+  background: #5c49e0;
+  border-color: #5c49e0;
+  height: 40px;
+  line-height: 39px;
+}
+/* 로그인페이지 */
+.loginWrap {
+  position: relative;
+  padding-left: 610px;
+  height: 100vh;
+}
+.loginWrap > div.visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 610px;
+  height: 100%;
+  background: url("../images/contents/img_area.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.loginWrap > div.visual .loginLogoImg {
+  position: absolute;
+  top: 17px;
+  left: 30px;
+  display: inline-block;
+  text-indent: -9999px;
+  width: 180px;
+  height: 60px;
+  overflow: hidden;
+  background: url(../images/mypage/Left_Logo.png);
+}
+.loginWrap > div.visual > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.loginWrap > div.visual > div > p {
+  padding-top: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.loginWrap > div.visual > div > p + p {
+  padding-top: 12px;
+  font-size: 30px;
+  letter-spacing: -0.9px;
+  line-height: 42px;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 1);
+}
+.loginWrap > div.visual > div > p + p strong {
+  font-weight: 500;
+}
+/*입력폼*/
+.loginWrap > div.visual + div {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.loginWrap .writeArea .mLogoArea {
+  display: none;
+}
+.loginWrap .writeArea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 430px;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.loginWrap .writeArea > p {
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+.loginWrap .writeArea > p + p {
+  font-size: 32px;
+  font-weight: 100;
+  color: #333333;
+  letter-spacing: -0.96px;
+}
+.loginWrap .writeArea > p span {
+  color: #5c49e0;
+}
+.loginWrap .writeArea .inputList {
+  margin-top: 30px;
+  padding: 0 20px;
+}
+.loginWrap .writeArea .inputList p {
+  border-bottom: 1px solid #dfdfdf;
+  height: 36px;
+  padding-left: 35px;
+  text-align: left;
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: auto 21px;
+}
+.loginWrap .writeArea .inputList p.id {
+  background-image: url(../images/mypage/ico_login_off.png);
+}
+.loginWrap .writeArea .inputList p.id.on {
+  border-color: #5c49e0;
+  background-image: url(../images/mypage/ico_login_on.png);
+}
+.loginWrap .writeArea .inputList p.pw {
+  background-image: url(../images/mypage/ico_password_off.png);
+}
+.loginWrap .writeArea .inputList p.pw.on {
+  border-color: #5c49e0;
+  background-image: url(../images/mypage/ico_password_on.png);
+}
+.loginWrap .writeArea .inputList p input {
+  font-size: 16px;
+  border: none;
+  width: 100%;
+  height: 24px;
+  line-height: 24px;
+}
+.loginWrap .writeArea .inputList p input:focus {
+  border: none;
+  background: none;
+  outline: none;
+}
+.loginWrap .writeArea .inputList p input::-webkit-input-placeholder {
+  color: #767676;
+  font-size: 16px;
+}
+.loginWrap .writeArea .inputList p input:-ms-input-placeholder {
+  color: #767676;
+  font-size: 16px;
+}
+.loginWrap .writeArea .inputList p + p {
+  margin-top: 30px;
+}
+.loginWrap .writeArea .checkboxWrap {
+  margin: 16px 0 34px;
+  padding: 0 20px;
+}
+.checkbox.mypage input[type="checkbox"]:checked + label {
+  background: url(../images/mypage/btn_check_on.png) no-repeat left center;
+}
+.checkbox.mypage input[type="checkbox"] + label {
+  background: url(../images/mypage/btn_check_off.png) no-repeat left center;
+}
+.loginBtn {
+  width: 140px;
+  height: 44px;
+  background: #5c49e0;
+  border-color: #5c49e0;
+  border-radius: 25px;
+  font-size: 16px;
+  letter-spacing: -0.48px;
+}
+.loginWrap .loginBtn {
+  width: 234px;
+  height: 50px;
+}
+.loginWrap .writeArea .btnArea ul {
+  margin-top: 30px;
+}
+.loginWrap .writeArea .btnArea ul li,
+.loginWrap .writeArea .btnArea ul li a {
+  display: inline-block;
+}
+.loginWrap .writeArea .btnArea ul li a {
+  position: relative;
+  padding: 0 16px;
+  color: #333333;
+  font-size: 14px;
+}
+.loginWrap .writeArea .btnArea ul li + li a:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  width: 1px;
+  height: 12px;
+  margin-top: -5px;
+  background: #dfdfdf;
+}
+@media (max-width: 1160px) {
+  .loginWrap {
+    padding-left: 0;
+  }
+  .loginWrap > div.visual {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .loginWrap .writeArea .mLogoArea {
+    display: block;
+  }
+  .loginWrap .writeArea {
+    width: 100%;
+  }
+  .loginWrap .writeArea > p {
+    font-size: 14px;
+  }
+  .loginWrap .writeArea > p + p {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .loginWrap .writeArea .inputList {
+    margin-top: 15px;
+  }
+  .loginWrap .writeArea .inputList p {
+    padding-left: 30px;
+  }
+  .loginWrap .writeArea .inputList p input {
+    font-size: 14px;
+  }
+  .loginWrap .writeArea .inputList p input::-webkit-input-placeholder,
+  .loginWrap .writeArea .inputList p input:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .loginBtn {
+    width: 120px;
+  }
+  .btnArea {
+    padding-bottom: 40px;
+  }
+}
+
+/* 유형선택 */
+.signupWrap {
+  padding-top: 100px;
+  height: 100%;
+}
+.signupWrap > div {
+  text-align: center;
+  height: 100%;
+}
+.signupTop {
+  margin-bottom: 60px;
+}
+.signupTop > a {
+  display: inline-block;
+  width: 154px;
+  height: 50px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background: url(../images/login-logo.png) no-repeat center / auto 50px;
+}
+.signupTop > h1 {
+  padding-top: 20px;
+  font-size: 40px;
+  letter-spacing: -1.2px;
+  line-height: 59px;
+  font-weight: 300;
+}
+.signupTop > h1 strong {
+  color: #5c49e0;
+}
+.signupTop > p {
+  padding-top: 10px;
+  color: #767676;
+  font-size: 16px;
+}
+.type > div {
+  padding-top: 20px;
+  display: inline-block;
+  width: 310px;
+  height: 335px;
+  background: #fff;
+  text-align: center;
+  border: 1px solid #dfdfdf;
+
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+}
+.type > div:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.16);
+}
+.type > div + div {
+  margin-left: 20px;
+}
+.type > div > p.name {
+  font-size: 22px;
+  letter-spacing: -0.66px;
+  line-height: 33px;
+  font-weight: 600;
+  padding: 16px 0;
+}
+.type > div > p + p {
+  padding-bottom: 26px;
+  font-size: 14px;
+  color: #767676;
+  line-height: 20px;
+  letter-spacing: -0.42px;
+}
+.type > div button,
+.agree + div button {
+  width: 140px;
+  height: 44px;
+}
+@media (max-width: 767px) {
+  .signupWrap {
+    padding-top: 40px;
+  }
+  .signupTop {
+    margin-bottom: 30px;
+  }
+  .signupTop > h1 {
+    padding-top: 40px;
+    font-size: 22px;
+    line-height: 33px;
+  }
+  .signupTop > p {
+    padding-top: 6px;
+    font-size: 12px;
+  }
+  .type {
+    padding: 0 20px 40px;
+  }
+  .type > div {
+    padding: 20px 0 30px;
+    width: 100%;
+    height: auto;
+  }
+  .type > div + div {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  .type > div > p.name {
+    font-size: 18px;
+    line-height: 27px;
+    padding: 10px 0;
+  }
+  .type > div > p + p {
+    padding-bottom: 20px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .type > div button {
+    width: 120px;
+    height: 38px;
+    line-height: 35px;
+    font-size: 14px;
+  }
+}
+
+/* 이용약관 및 개인정보수집 */
+.agree {
+  margin-bottom: 30px;
+}
+.agreeAccordion {
+  margin: 0 auto;
+  width: 640px;
+}
+.allAgree,
+.agreeAccordion > ul > li > a {
+  width: 640px;
+  height: 66px;
+  padding-left: 20px;
+  line-height: 66px;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  text-align: left;
+}
+.allAgree {
+  margin-bottom: 10px;
+}
+.allAgree .checkbox.mypage input[type="checkbox"] + label {
+  font-size: 18px;
+  letter-spacing: -0.54px;
+  font-weight: 500;
+}
+.agreeAccordion > ul > li + li {
+  margin-top: 10px;
+}
+.agreeAccordion > ul > li > span {
+  position: relative;
+  display: block;
+  height: 66px;
+  line-height: 66px;
+  margin-bottom: -1px;
+  padding: 0 0 0 20px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+}
+.agreeAccordion > ul > li > span > a {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 0;
+  right: 0;
+  background: #fff url(../images/mypage/ico_signup_open.png) no-repeat center/ auto 13px;
+}
+.agreeAccordion > ul > li span.on > a {
+  background: #fff url(../images/mypage/ico_signup_close.png) no-repeat center/ auto 13px;
+}
+.agreeAccordion .checkbox.mypage {
+  width: 100%;
+}
+.agreeAccordion .checkbox.mypage input[type="checkbox"] + label {
+  padding-left: 36px;
+  font-size: 18px;
+}
+.agreeAccordion .checkbox.mypage input[type="checkbox"] + label span {
+  font-size: 14px;
+}
+.agreeAccordion > ul > li > span + div {
+  display: none;
+  padding: 20px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #dfdfdf;
+  height: 150px;
+  overflow-y: auto;
+}
+@media (max-width: 767px) {
+  .agreeAccordion {
+    padding: 0 20px;
+    width: 100%;
+  }
+  .allAgree,
+  .agreeAccordion > ul > li > a {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+  }
+  .agreeAccordion .checkbox.mypage input[type="checkbox"] + label {
+    padding-left: 28px;
+    font-size: 14px;
+  }
+  .agreeAccordion > ul > li > span {
+    padding: 0 0 0 16px;
+    height: 60px;
+    line-height: 60px;
+  }
+  .agreeAccordion > ul > li > span > a {
+    width: 44px;
+    height: 58px;
+    background: #fff url(../images/mypage/ico_signup_open.png) no-repeat center/ auto 6px;
+  }
+  .agreeAccordion > ul > li span.on > a {
+    background: #fff url(../images/mypage/ico_signup_close.png) no-repeat center/ auto 6px;
+  }
+  .agreeAccordion .checkbox.mypage input[type="checkbox"] + label span {
+    font-size: 12px;
+  }
+}
+
+/* form */
+.loginForm {
+  margin: 0 auto 30px;
+  width: 640px;
+}
+.loginForm > div {
+  padding: 30px 40px;
+  border: 1px solid #dfdfdf;
+  background: #fff;
+  text-align: left;
+}
+.loginForm p.formTit {
+  position: relative;
+  padding-left: 9px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ececec;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: #333333;
+  letter-spacing: -0.72px;
+}
+.loginForm dl + p.formTit,
+.loginForm dl + div p.formTit {
+  margin-top: 40px;
+}
+.loginForm p.formTit:before {
+  position: absolute;
+  content: "";
+  top: 4px;
+  left: 0;
+  width: 3px;
+  height: 18px;
+  background: #5c49e0;
+}
+.loginForm dl dt {
+  padding-bottom: 6px;
+  line-height: 22px;
+  letter-spacing: -0.42px;
+  font-size: 14px;
+}
+.loginForm dl + dl dt {
+  padding-top: 20px;
+}
+/*
+.loginForm input {
+  padding: 10px;
+  width: 100%;
+  height: 40px;
+  line-height: 39px;
+  background: #f8f8f8;
+  border: 1px solid #ececec;
+}
+.loginForm input::-webkit-input-placeholder {
+  color: #cccc;
+  font-weight: 300;
+}
+.loginForm input:-ms-input-placeholder {
+  color: #cccc;
+  font-weight: 300;
+}
+.loginForm button {
+  background: #5c49e0;
+  border-color: #5c49e0;
+  height: 40px;
+  line-height: 39px;
+}*/
+/* input + btn */
+.loginForm .inputBtn {
+  position: relative;
+  padding-right: 90px;
+}
+.loginForm .inputBtn button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+}
+.inputP {
+  padding-top: 6px;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: -0.36px;
+  word-break: keep-all;
+}
+/* input + input */
+.input2 {
+  display: flex;
+}
+.input2 input:first-child {
+  max-width: 37.5%;
+}
+.input2 input + input {
+  margin-left: 10px;
+}
+/* 로그인 라디오버튼 */
+.loginForm .checkboxWrap {
+  margin-top: 10px;
+}
+.loginForm .checkbox + .checkbox {
+  margin-left: 70px;
+}
+.loginForm .checkbox input[type="radio"]:checked + label,
+.loginForm .checkbox.curr input[type="radio"] + label {
+  background: url(../images/mypage/btn_radio_on.png) no-repeat left center;
+}
+.loginForm .checkbox input[type="radio"] + label {
+  background: url(../images/mypage/btn_radio_off.png) no-repeat left center;
+}
+.loginForm .selectBox {
+  border-color: #ececec;
+  background: #f8f8f8;
+}
+.loginForm .selectBox label {
+  background: url(../images/mypage/ico_triggerdown.png) no-repeat right 11px center / auto 5px;
+  color: #cccccc;
+}
+/* 컨텐츠3개 */
+.input3 {
+  display: flex;
+}
+.input3 > * {
+  max-width: 33%;
+}
+.input3 > * + * {
+  margin-left: 10px;
+}
+/* input + p */
+.inputTxt {
+  overflow: hidden;
+}
+.inputTxt > *:first-child {
+  float: left;
+  margin-top: 0;
+}
+.inputTxt > *:last-child {
+  float: right;
+}
+@media (max-width: 767px) {
+  .loginForm {
+    padding: 0 20px;
+    width: 100%;
+  }
+  .loginForm > div {
+    margin: 0 auto 30px;
+    padding: 24px 16px;
+  }
+  .loginForm p.formTit {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .loginForm p.formTit:before {
+    top: 6px;
+    height: 16px;
+  }
+  .loginForm input,
+  .loginForm input::-webkit-input-placeholder,
+  .loginForm input:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .loginForm .inputBtn {
+    padding-right: 70px;
+  }
+  .loginForm .inputBtn button {
+    width: 60px;
+  }
+  .inputP {
+    line-height: 20px;
+  }
+  .inputTxt > *:last-child {
+    float: left;
+  }
+}
+
+/* 로그인페이지 팝업창 */
+.loginPop.layerPop .inBox strong.tit {
+  background: #5c49e0;
+}
+.loginPop.layerPop .inBox p + p {
+  font-size: 12px;
+  line-height: 18px;
+  padding: 2px 0 20px;
+}
+.loginPop .inputBtn {
+  position: relative;
+  padding-right: 108px;
+}
+.loginPop .inputBtn + .inputBtn {
+  margin-top: 10px;
+}
+.loginPop .inputBtn button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 98px;
+}
+.loginPop .inputBtn button.blackBtn {
+  background: #333;
+}
+@media (max-width: 767px) {
+  .loginPop.layerPop .inBox .cont {
+    padding: 20px 16px;
+  }
+  .loginPop.layerPop .inBox p {
+    word-break: keep-all;
+  }
+  .loginPop.layerPop .inBox p + p {
+    text-indent: -15px;
+    padding-left: 15px;
+  }
+  .loginPop .inputBtn input,
+  .loginPop .inputBtn button {
+    font-size: 12px;
+  }
+  .loginPop .inputBtn {
+    padding-right: 94px;
+  }
+  .loginPop .inputBtn button {
+    width: 90px;
+  }
+  .loginPop .inputBtn input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+  .loginPop .inputBtn input:-ms-input-placeholder {
+    font-size: 12px;
+  }
+}
+/*14세 미만 추가입력*/
+.ageLimit {
+  display: none;
+}
+.formAddInfo .addInfoTit {
+  padding-top: 30px;
+  padding-bottom: 11px;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dfdfdf;
+}
+.formAddInfo .type > div {
+  width: calc(49% - 7px);
+  height: 275px;
+  border-color: #ececec;
+}
+.formAddInfo .type > div:hover {
+  box-shadow: none;
+}
+@media (max-width: 767px) {
+  .formAddInfo .type {
+    padding: 0;
+  }
+  .formAddInfo .type > div {
+    width: 100%;
+    height: 250px;
+  }
+  .formNotice {
+    margin-top: -30px;
+  }
+}
+
+/* 가입완료 */
+.signupCom {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(../images/mypage/img_backall.png) no-repeat bottom center / auto 239px;
+}
+.signupCom > div {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.signupCom > div > p {
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 45px;
+  letter-spacing: -0.9px;
+  margin-bottom: 50px;
+  padding-top: 110px;
+  background: url(../images/mypage/ico_registerend.png) no-repeat top center / auto 80px;
+}
+.signupCom > div > p span {
+  font-weight: 500;
+}
+.signupCom > div > button {
+  width: 214px;
+}
+@media (max-width: 767px) {
+  .signupCom {
+    height: 100vh !important;
+    background: url(../images/mypage/img_backall.png) no-repeat bottom center / auto 119px;
+  }
+  .signupCom > div > p {
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: -1.1px;
+    margin-bottom: 40px;
+    padding-top: 62px;
+    background: url(../images/mypage/ico_registerend.png) no-repeat top center / auto 46px;
+  }
+}
+/* 아이디/비번찾기 */
+.findTab {
+  width: 640px;
+  margin: 0 auto;
+  padding: 0;
+}
+.findTab > ul {
+  display: table;
+  width: 100%;
+  margin-bottom: -2px;
+}
+.findTab > ul li {
+  display: table-cell;
+  width: 50%;
+}
+.findTab > ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 48px;
+  line-height: 47px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #dfdfdf;
+}
+.findTab > ul li.curr a {
+  background: #5c49e0;
+  border-color: #5c49e0;
+  color: #fff;
+}
+.tabContArea > div {
+  padding: 0;
+  border: none;
+  background-color: #f8f8f8;
+}
+.tabContArea > div .tabTit {
+  font-size: 12px;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 10px;
+  margin-top: -10px;
+  margin-bottom: 20px;
+  line-height: 18px;
+}
+.findQna {
+  border: 1px solid #ececec;
+  padding: 21px 22px;
+}
+.loginForm .findQna dl dt,
+.loginForm .findQna dl dd {
+  padding: 0;
+}
+.loginForm .findQna dl dd {
+  color: #767676;
+  font-size: 12px;
+}
+.loginForm .findQna dl dt {
+  display: inline-block;
+  width: 130px;
+  vertical-align: top;
+}
+.loginForm .findQna dl dt span {
+  padding-left: 25px;
+  background: url("../images/contents/ico_phone.png") no-repeat left center / auto 13px;
+}
+.loginForm .findQna dl + dl dt span {
+  background: url("../images/contents/ico_mail.png") no-repeat left center / auto 13px;
+}
+.loginForm .findQna dl dd {
+  display: inline-block;
+}
+.findTab .tabContArea .loginBtn {
+  width: auto;
+  padding: 0 40px;
+}
+@media (max-width: 767px) {
+  .findTab {
+    width: 100%;
+  }
+  .findTab > ul {
+    padding: 0 20px;
+  }
+  .loginForm .findQna dl dt {
+    width: auto;
+    padding-right: 10px;
+  }
+  .loginForm .findQna dl + dl dd {
+    padding-left: 25px;
+  }
+}
+/* 아이디비번찾기-결과 */
+.foundId {
+  padding: 50px 0 60px !important;
+}
+.foundId p,
+.foundPw p {
+  font-size: 30px;
+  line-height: 45px;
+  letter-spacing: -0.9px;
+}
+.foundId p + p {
+  margin-top: 24px;
+}
+.foundPw {
+  padding: 70px 0 90px;
+}
+.foundPw p + p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 24px;
+}
+@media (max-width: 767px) {
+  .foundId p,
+  .foundPw p {
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: -0.66px;
+  }
+  .foundId p + p {
+    margin-top: 21px;
+  }
+  .foundPw {
+    padding: 40px 0 66px;
+  }
+  .foundPw p + p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+/* mypage */
+.myInfoTop {
+  margin-bottom: 20px;
+  padding: 20px 30px;
+  background: #333333;
+  color: #fff;
+  overflow: hidden;
+}
+.myInfoTop .profileImg {
+  float: left;
+  display: table;
+}
+.myInfoTop .profileImg p {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  background-position: center;
+  background-size: contain;
+}
+.myInfoTop .profileImg p a {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  padding: 0 30px 0 0;
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/contents/btn_edit.png);
+  background-size: auto 30px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+.profileImg > ul {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: 30px;
+}
+.profileImg > ul li {
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: -0.6px;
+}
+.profileImg > ul li + li {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.myInfoTop div + div {
+  float: right;
+}
+.myInfoTop div + div p {
+  margin-top: 10px;
+  padding: 0 20px;
+  width: 248px;
+  line-height: 50px;
+  height: 50px;
+  background: #454545;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.myInfoTop div + div p span {
+  float: left;
+}
+.myInfoTop div + div p span + span {
+  color: #b5b5b5;
+  float: right;
+}
+.myInfoTop div + div p span + span strong {
+  font-size: 20px;
+  color: #ff9a3a;
+  font-weight: 500;
+}
+@media (max-width: 767px) {
+  .myInfoTop {
+    padding: 16px;
+  }
+  .myInfoTop .profileImg p {
+    width: 80px;
+    height: 80px;
+  }
+  .myInfoTop .profileImg p a {
+    width: 24px;
+    height: 24px;
+    background-size: auto 24px;
+    right: -10px;
+  }
+  .profileImg > ul li {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .myInfoTop div + div p {
+    width: 100%;
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+  }
+  .myInfoTop div + div p span + span strong {
+    font-size: 16px;
+  }
+}
+/* 한국어진단평가 table 버튼 */
+.mypageTBtn {
+  width: 180px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  margin: 0 -20px;
+}
+.mypageTBtn.redLBtn {
+  width: 80px;
+  background: #fff;
+  color: #e90f46;
+}
+@media (max-width: 767px) {
+  .mypage table.table tr th,
+  .mypage table.table tr td {
+    padding: 10px 5px;
+  }
+  .mypage table.table tr th {
+    line-height: 16px;
+  }
+  .mypageTBtn {
+    margin: 0;
+  }
+  .mypageTBtn.redLBtn {
+    width: 70px;
+  }
+}
+/* 기록 탭 */
+.tabArea.mypage > ul li.curr a {
+  color: #ff4877;
+  background: #fff;
+  border-color: #dfdfdf;
+}
+.tabArea.mypage > ul li.curr a:before {
+  background-image: url(../images/contents/tabbtn_img_on_w.png);
+}
+.tabArea.mypage > ul li.curr a:after {
+  background-image: url(../images/contents/tabbtn_img_on_l_w.png);
+}
+.tabArea.mypage > ul li:last-child a:before,
+.tabArea.mypage > ul li:last-child.curr a:before {
+  background-image: none;
+}
+.tabArea.mypage .tabContArea > div {
+  background-color: #fff;
+}
+.tabArea.mypage .tabContArea .dataNone {
+  padding-top: 0;
+}
+.tabArea.mypage .listTable td.subject {
+  width: 350px;
+}
+.tabArea.mypage .listTable a.subject {
+  max-width: 500px;
+}
+.tabArea.mypage .listTable span.subject {
+  display: inline-block;
+  height: 100%;
+  max-width: 500px;
+  text-align: left;
+  color: #333;
+  margin-bottom: -4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 19px;
+}
+.tabArea.mypage.v2 > ul.noIconTab li {
+  width: calc(50% - 6px);
+}
+@media (max-width: 767px) {
+  .tabArea.mypage .tabContArea > div {
+    padding-top: 0;
+  }
+  .tabArea.mypage .listTable span.subject {
+    text-align: center;
+    line-height: 17px;
+    vertical-align: middle;
+    margin: 0;
+    width: 100%;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    white-space: inherit;
+  }
+}
+/* 나의 이모티콘 슬라이더 */
+.emoSwiperBox p {
+  font-size: 18px;
+  padding-top: 20px;
+  margin-bottom: -10px;
+}
+.emoSwiperBox .contents {
+  position: relative;
+}
+.emoSwiperBox .cateBox {
+  background-color: #f1f1f1;
+}
+.emoSwiperBox .cateList .swiper-slide {
+  display: block;
+  width: 20% !important;
+  height: 100px;
+  text-align: center;
+}
+.emoSwiperBox .cateList .swiper-slide span {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100px;
+  border-radius: 100%;
+  border: 1px solid #dfdfdf;
+}
+.emoSwiperBox .cateList .swiper-slide img {
+  max-width: 100px;
+  height: auto;
+}
+.emoSwiperBox .controlPart {
+  position: absolute;
+  top: -15px;
+  right: 0;
+}
+.emoSwiperBox .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #cccccc;
+  opacity: 1;
+}
+.emoSwiperBox .swiper-pagination-bullet + .swiper-pagination-bullet {
+  margin-left: 8px;
+}
+.emoSwiperBox .swiper-pagination-bullet-active {
+  background: linear-gradient(44deg, #ff6b33 0%, #ee3385 100%) 0% 0% no-repeat;
+}
+.emoSwiperBox .controlBtn span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  text-indent: -9999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: auto 10px;
+  background-position: center;
+}
+.emoSwiperBox .controlBtn span + span {
+  margin-left: 6px;
+}
+.emoSwiperBox .controlBtn span.emoSwiper-pause {
+  background-image: url("../images/mypage/btn_pause.png");
+}
+.emoSwiperBox .controlBtn span.emoSwiper-play {
+  background-image: url("../images/mypage/btn_play.png");
+}
+.emoSwiperBox .swiper-pagination {
+  right: 33px;
+  min-width: 40px;
+}
+.mypageEmoList {
+  padding-top: 30px;
+  border-top: 1px solid #dfdfdf;
+}
+.mypageEmoList li {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  width: calc(14.5% - 5px);
+  text-align: center;
+}
+.mypageEmoList li span.newSticker {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -24px;
+  width: 48px;
+  height: 22px;
+  line-height: 20px;
+  background: #e90f46;
+  color: #fff;
+  border-radius: 11px;
+  border-color: #e90f46;
+}
+.mypageEmoList li span {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto 100px;
+  border-radius: 100%;
+  border: 1px solid #dfdfdf;
+}
+@media (max-width: 767px) {
+  .emoSwiperBox p {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+  .emoSwiperBox .controlPart {
+    top: -23px;
+  }
+  .emoSwiperBox .cateList .swiper-slide span {
+    width: 80px;
+    height: 80px;
+    background-size: auto 80px;
+  }
+  .emoSwiperBox .cateList .swiper-slide {
+    width: 30% !important;
+    height: 80px;
+  }
+  .mypageEmoList li {
+    width: calc(33% - 1px);
+  }
+  .mypageEmoList li span {
+    width: 80px;
+    height: 80px;
+    background-size: auto 80px;
+  }
+  .mypageEmoList li span.newSticker {
+    margin-left: -22px;
+    width: 44px;
+    height: 18px;
+    line-height: 17px;
+    font-size: 12px;
+  }
+}
+/* 풀캘린더 적립내역팝업 */
+/*
+.fc-day.show {
+  position: relative;
+  z-index: 999;
+}
+.mileageList {
+  display: none;
+}
+.mileage {
+  position: absolute;
+  top: -50px;
+  left: 80px;
+  width: 184px;
+  height: 178px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  z-index: 999;
+}
+.mileage:before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  margin-top: -25px;
+  left: -34px;
+  background-image: url(../images/mypage/popup_arrow.png);
+  background-repeat: no-repeat;
+  width: 50px;
+  background-size: auto 100%;
+  height: 50px;
+}
+.mileage p {
+  background: #e90f46;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.mileage ul {
+  padding: 16px;
+}
+.mileage ul li {
+  overflow: hidden;
+}
+.mileage ul li span:first-child {
+  float: left;
+}
+.mileage ul li span:last-child {
+  float: right;
+}
+*/

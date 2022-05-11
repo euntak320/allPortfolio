@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<title>캠퍼스타운 이용 &lt; 숙명여대 캠퍼스타운 관리자</title>
+
+	<!-- css -->
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+
+	<!-- js -->
+	<script src="assets/js/jquery-1.11.0.min.js"></script>
+	<script src="assets/js/jquery-ui.min.js"></script>
+	<script src="assets/js/script.js"></script>
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div class="comLayout">
+				<div class="infoArea">
+					<a href="" class="info">OOO님</a>
+					<a href="" class="login">로그인</a>
+				</div>
+				<div class="meunList">
+					<h1 class="logo">
+						<a href="">로고</a>
+					</h1>
+					<ul>
+						<li>
+							<a href="">기초정보</a>
+							<div class="subMenu">
+								<ul>
+									<li><a href="">팝업관리</a></li>
+									<li><a href="">장소등록</a></li>
+									<li><a href="">기자재 등록</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">프로그램</a>
+							<div class="subMenu two">
+								<ul>
+									<li><a href="">프로그램 등록</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">참여팀 관리</a>
+							<div class="subMenu three">
+								<ul>
+									<li><a href="">참여팀 관리</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">커뮤니티</a>
+							<div class="subMenu four">
+								<ul>
+									<li><a href="">캠퍼스타운 뉴스</a></li>
+									<li><a href="">지원사업 정보</a></li>
+									<li><a href="">아카이브</a></li>
+									<li><a href="">설문조사</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="">캠퍼스타운 이용</a>
+							<div class="subMenu five">
+								<ul>
+									<li><a href="">프로그램 신청관리</a></li>
+									<li><a href="">장소 신청관리</a></li>
+									<li><a href="">기자재 신청관리</a></li>
+									<li><a href="">수료증 발급관리</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="comLayout">
+				<div class="topArea">
+					<span class="title">캠퍼스타운 뉴스 등록</span>
+					<div class="navArea">
+						<span>홈</span>
+						<span>커뮤니티</span>
+						<span>캠퍼스타운 뉴스 등록</span>
+					</div>
+				</div>
+				<!-- acceptTable -->
+				<div class="inputTable">
+					<table>
+						<colgroup>
+							<col style="width:10%">
+							<col style="width:37%">
+							<col style="width:10%">
+							<col style="width:37%">
+						</colgroup>
+						<tbody>
+							<tr>
+
+								<th scope="row" class="point">등록일</th>
+								<td colspan="3">
+									<div class="dateArea v2">
+										<div class="input">
+											<input type="text" class="datepicker" placeholder="YYYY-MM-DD">
+										</div>
+										<span>-</span>
+										<div class="input">
+											<input type="text" class="datepicker" placeholder="YYYY-MM-DD">
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row" class="point">검색어 입력</th>
+								<td colspan="3">
+									<div class="searchArea">
+										<div class="select">
+											<select name="" id="">
+												<option value="">전체</option>
+												<option value="">창업정보</option>
+												<option value="">법률정보</option>
+												<option value="">교육자료</option>
+												<option value="">기타</option>
+											</select>
+										</div>
+										<div class="input">
+											<input type="text" placeholder="검색어 입력">
+										</div>
+										<button type="button">검색</button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--// acceptTable -->
+				<!-- resultArea -->
+				<div class="resultArea tableArea">
+					<div class="topArea">
+						<span>총 00건</span>
+						<div class="btnArea">
+							<button type="button">등록 +</button>
+						</div>
+					</div>
+					<div class="galleryArea v2">
+						<div class="boxArea">
+							<div class="leftArea">
+								<div class="imgSize">
+									<img src="assets/images/tempClass.png" alt="">
+								</div>
+							</div>
+							<div class="rightArea">
+								<div class="txtinfoArea">
+									<span class="title">[행사] 11월 창업지원단 프로그램 안내</span>
+									<div class="infoTxt">
+										<span>작성자 : <strong>캠퍼스타운사업단</strong></span>
+										<span>날짜 : <strong>20-11-05 20:20</strong></span>
+										<span>조회 : <strong>12345</strong></span>
+									</div>
+								</div>
+								<div class="para">
+									<p>안녕하세요. 캠퍼스타운사업단입니다.
+										어제 청년창업지원센터에는 전문상담프로그램이 진행되었습니다.
+										첫번째로 진행된 프로그램은 지식재산권이며, “더호 특허법인”의 조우진 변리사님을 모셔서 지식재산권에 대한 교육 및 개별 상담으로 진행
+										되었습니다.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="boxArea">
+							<div class="leftArea">
+								<div class="imgSize">
+									<img src="assets/images/tempClass.png" alt="">
+								</div>
+							</div>
+							<div class="rightArea">
+								<div class="txtinfoArea">
+									<span class="title">[행사] 11월 창업지원단 프로그램 안내</span>
+									<div class="infoTxt">
+										<span>작성자 : <strong>캠퍼스타운사업단</strong></span>
+										<span>날짜 : <strong>20-11-05 20:20</strong></span>
+										<span>조회 : <strong>12345</strong></span>
+									</div>
+								</div>
+								<div class="para">
+									<p>안녕하세요. 캠퍼스타운사업단입니다.
+										어제 청년창업지원센터에는 전문상담프로그램이 진행되었습니다.
+										첫번째로 진행된 프로그램은 지식재산권이며, “더호 특허법인”의 조우진 변리사님을 모셔서 지식재산권에 대한 교육 및 개별 상담으로 진행
+										되었습니다.
+									</p>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<!--// resultArea -->
+			<!-- pagingArea -->
+			<div class="pagingArea">
+				<a href="" class="first">처음으로</a>
+				<a href="" class="prev">전으로</a>
+				<a href="" class="txt on">1</a>
+				<a href="" class="txt">2</a>
+				<a href="" class="txt">3</a>
+				<a href="" class="txt">4</a>
+				<a href="" class="txt">5</a>
+				<a href="" class="txt">6</a>
+				<a href="" class="txt">7</a>
+				<a href="" class="txt">8</a>
+				<a href="" class="txt">9</a>
+				<a href="" class="txt">10</a>
+				<a href="" class="next">다음으로</a>
+				<a href="" class="last">마지막으로</a>
+			</div>
+			<!--// pagingArea -->
+		</div>
+	</div>
+	<div id="footer">
+		<span>Copyright 2017 Sookmyung Women's University. All right Reserved</span>
+	</div>
+	</div>
+</body>
+
+</html>

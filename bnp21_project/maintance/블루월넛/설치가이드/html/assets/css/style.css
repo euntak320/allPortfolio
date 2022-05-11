@@ -1,0 +1,248 @@
+
+/* com-layout */
+#guideArea {position: relative; width:1120px;  padding:150px 10px 100px; margin:0 auto;}
+.guideWrap{position: relative;}
+
+/* com */
+.guideWrap select, .guideWrap input {border-radius: 10px;}
+.guideWrap input {padding: 10px 0 10px 20px;}
+.guideWrap input::-webkit-input-placeholder {color:#efefef;}
+
+/* comBtn */
+.comBtn {margin-top:50px; text-align: center;}
+.comBtn button {display: inline-block; padding:10px 57px; border-radius: 20px;}
+.comBtn .blue {background: #0d4c98; color:#fff;}
+
+/* datepicker */
+.ui-datepicker .ui-datepicker-title select {height:25px; margin:0 1%;}
+
+/* mainTxt */
+.guideWrap .mainTxtArea {position: relative; text-align: center;}
+.guideWrap .mainTxtArea .mainTitle {display: block; width:100%; margin-bottom:50px; font-size:46px; color:#333;}
+.guideWrap .mainTxtArea .mainTitle::before {content: ""; position: absolute; top:-52px; left:50%; width:40px; height:5px; background: url(../images/mainTopImg.jpg) no-repeat center; transform: translateX(-50%);}
+.guideWrap .mainTxtArea .subTitle {display: block; font-size:18px; color:#333;}
+
+
+/* comTable */
+.guideWrap .comTable {width:100%; margin-top:75px;}
+.guideWrap .comTable .tableTxt {display: block; font-size: 16px; color:#333;}
+.guideWrap .comTable .tableArea {margin-top:20px; border-top:2px solid #333;}
+.guideWrap .comTable table th {text-align: left; color:#333;}
+.guideWrap .comTable table th.txtArea {vertical-align: top;}
+.guideWrap .comTable table th, .comTable table td {padding:15px 0; border-bottom: 1px solid #dedede;}
+.guideWrap .comTable table td.txtArea {vertical-align: top;}
+.guideWrap .comTable table tr:last-child th, .guideWrap .comTable table tr:last-child td{border-bottom:0;}
+.guideWrap .comTable.v2 {border-top:2px solid #333;}
+.guideWrap .comTable.v2 table th, .guideWrap .comTable.v2 table td {border-bottom:1px solid #dedede; border-right:1px solid #dedede; background:#f5f5f5; font-size:14px; text-align: center;}
+.guideWrap .comTable.v2 table td {background: #fff;}
+.guideWrap .comTable.v2 table tr:last-child th, .guideWrap .comTable.v2 table tr:last-child td {border-bottom:1px solid #dedede;}
+.guideWrap .comTable.v2 table tr th:last-child, .guideWrap .comTable.v2 table tr td:last-child {border-right: 0;}
+.guideWrap .comTable.v2 .right {padding-right:20px; text-align: right;}
+.guideWrap .comTable.v2 button {padding:2px 10px; margin-top:10px; line-height: 30px; border-radius: 20px; background: #0d4c98; font-size:14px; color:#fff;}
+.guideWrap .comTable.v2 button:first-child {margin-top:0;}
+.guideWrap .comTable.v2 table td {position: relative;}
+.guideWrap .comTable.v2 table .omission {position: absolute; left:50%; top:50%; transform: translate(-50%, -50%); overflow: hidden; display: inline-block; width:65%; white-space: nowrap; text-overflow: ellipsis;}
+
+/* input */
+.guideWrap .input, .guideWrap .select{width:100%; height:35px;}
+.guideWrap .input input[type="text"] {padding: 10px 0 10px 20px; border-radius: 10px;}
+.guideWrap .select select {border-radius: 10px;}
+.guideWrap .input input[type="text"].w88 {width:88%;}
+.guideWrap .input .inline {display: inline-block!important;}
+.guideWrap .input .txtRight {padding-right:20px!important; text-align: right;}
+
+/* txtArea */
+.guideWrap .txtArea {height:200px;}
+.guideWrap .txtArea textarea {width:100%; height: 100%; padding:10px 20px; border-radius: 10px; resize: none;}
+
+/* pravicy */
+.guideWrap .pravicyArea {padding-top:30px; border-top:2px solid #333;}
+.guideWrap .pravicyArea .pravicyList {overflow: auto; height:300px; margin-top:20px; padding:15px; border:1px solid #ddd; border-radius: 10px;}
+.guideWrap .pravicyArea .pravicyList .title {font-size:18px; font-weight: bold; text-align: center; color:#333;}
+.guideWrap .pravicyArea .pravicyList .txtBox {margin-top:10px;}
+.guideWrap .pravicyArea .pravicyList .txtBox + .txtBox {margin-top:30px;}
+.guideWrap .pravicyArea .pravicyList .txtBox span {display: block; margin-top:10px; font-size:14px;}
+.guideWrap .pravicyArea .pravicyList .txtBox .mainTitle {color:#333; font-size:16px; font-weight: bold;}
+.guideWrap .pravicyArea .pravicyList .txtBox ul {margin-top:10px; padding-left:20px;}
+.guideWrap .pravicyArea .pravicyList .txtBox ul li {font-size:14px; line-height: 26px;}
+.guideWrap .pravicyArea .pravicyList .txtBox table {margin-top:15px; font-size:14px;}
+.guideWrap .pravicyArea .pravicyList .txtBox table th {background: #ddd;}
+.guideWrap .pravicyArea .pravicyList .txtBox table th, .pravicyArea .pravicyList .txtBox table td {padding:10px 0; border-bottom:1px solid #ddd; text-align: center; border-left:1px solid #ddd;}
+.guideWrap .pravicyArea .pravicyList .txtBox table th:first-child, .pravicyArea .pravicyList .txtBox table td:first-child{border-left:0;}
+
+/* method */
+.guideWrap .method {margin-top:50px;}
+.guideWrap .method .tabTxt {padding-bottom:50px; border-bottom:2px solid #333;}
+.guideWrap .method .tabTxt button {position: relative; margin:0 30px; padding-top:50px; cursor: pointer;}
+.guideWrap .method .tabTxt button.on, .method .tabTxt button:hover {color:#0d4c98; font-weight: bold;} 
+.guideWrap .method .tabTxt button.on:after, .method .tabTxt button:hover:after {content: ""; position: absolute; width:100%; height: 2px; left:0; bottom:0; background: #0d4c98;}
+.guideWrap .method .tabTxt .card {background: url(../images/card.png) no-repeat top;}
+.guideWrap .method .tabTxt .account {background: url(../images/account.png) no-repeat top;}
+.guideWrap .method .tabTxt .vrAccount {background: url(../images/vrAccount.png) no-repeat top;}
+.guideWrap .method .tabTxt .phone {background: url(../images/phone.png) no-repeat top;}
+.guideWrap .method .tabTxt .card.on, .method .card:hover {background: url(../images/card-on.png) no-repeat top;}
+.guideWrap .method .tabTxt .account.on, .method .tabTxt .account:hover {background: url(../images/account-on.png) no-repeat top;}
+.guideWrap .method .tabTxt .vrAccount.on, .method .tabTxt .vrAccount:hover {background: url(../images/vrAccount-on.png) no-repeat top;}
+.guideWrap .method .tabTxt .phone.on, .method .tabTxt .phone:hover {background: url(../images/phone-on.png) no-repeat top;}
+.guideWrap .method .view {margin-top:50px;}
+.guideWrap .method .view .mt10 {margin-top:10px;}
+.guideWrap.method .view .mainTxtArea {text-align: left;}
+.guideWrap .method .view .mainTxtArea .mainTitle {margin-bottom:30px; font-size:36px;}
+.guideWrap .method .view .mainTxtArea .mainTitle::before {display: none;}
+.guideWrap .method .contArea {padding:55px; margin-top:30px; border:1px solid #ddd;}
+.guideWrap .method .contArea input {border-radius: 10px;}
+.guideWrap .method .contArea .txtBox {position: relative;}
+.guideWrap .method .contArea .txtBox:after {display: block; content: ""; clear: both;}
+.guideWrap .method .contArea .txtBox + .txtBox {margin-top:20px;}
+.guideWrap .method .contArea .txtBox .fl {width:10%; padding:7px 0; color:#333; font-weight:bold;} 
+.guideWrap .method .contArea .txtBox .fr {width:90%;}
+.guideWrap .method .txtBox span {display: block;}
+.guideWrap .method .txtBox .inline
+.guideWrap .method .txtBox .green {color:#65ab00;}
+.guideWrap .method .txtBox .txt {position: absolute; right:70px; top:50%; transform: translateY(-50%);}
+.guideWrap .method .txtBox .fr .numberArea {display: flex; justify-content: space-between; align-items: center; width:55%}
+.guideWrap .method .txtBox .fr .numberArea input {width:23%;}
+.guideWrap .method .txtBox .fr .date {display: flex; align-items: center; justify-content: space-between; width:50%;}
+.guideWrap .method .txtBox .fr .date > * {margin:0 5px;}
+.guideWrap .method .txtBox .fr .date > .ui-datepicker-trigger{cursor: pointer;}
+.guideWrap .method .txtBox .fr .date > input:first-child{margin:0; margin-right:0;}
+.guideWrap .method .txtBox .etcArea {display: flex; align-items: center; justify-content: space-between; width:60%;}
+.guideWrap .method .txtBox .etcArea > * {margin:0 5px;}
+.guideWrap .method .txtBox .etcArea > .radio{width:30%;}
+.guideWrap .method .txtBox .etcArea > .radio:first-child {margin:0; margin-right:5px;}
+
+/* etcTxtArea */
+.guideWrap .etcTxtArea {position: relative; margin-top:50px;}
+.guideWrap .etcTxtArea .title {font-size:22px; font-weight: bold; color:#333; }
+.guideWrap .etcTxtArea ul {margin-top:20px;}
+.guideWrap .etcTxtArea ul li {line-height: 26px; padding-left:7px; text-indent: -7px;}
+
+/* layer */
+.layerFrame {position: fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; background: rgba(0,0,0,0.5);}
+.layerFrame input, .layerFrame select{border-radius: 10px;}
+.layerFrame input:read-only{background: #ececec;}
+.layerFrame .comBtn {margin-top:30px;}
+.layerFrame .layerArea {position: absolute; top:50%; left: 50%; width: 700px; padding:40px; border:2px solid #0d4c98; background: #fff; transform: translate(-50%, -50%);}
+.layerFrame .layerArea .topArea .title {display: block; padding-bottom:30px; border-bottom:1px solid #333; font-size:30px; color:#333; text-align: center;}
+.layerFrame .layerArea .topArea .title.none {padding-bottom:0; border-bottom:0;}
+.layerFrame .layerArea .btmArea {padding:25px 0;}
+.layerFrame .layerArea .btmArea span {display: inline-block;}
+.layerFrame .layerArea .btmArea .tabTxt {display: flex; align-items: center; justify-content: center; margin-top:50px; background:#eee;}
+.layerFrame .layerArea .btmArea .tabTxt.v2 button{width:50%;}
+.layerFrame .layerArea .btmArea .tabTxt button {position: relative; width:33.3%; height:60px; line-height: 60px; color: #333; cursor: pointer;}
+.layerFrame .layerArea .btmArea .tabTxt button.on {background: #0d4c98; color: #fff;}
+.layerFrame .layerArea .btmArea .tabTxt button::after {content: ""; position: absolute; top:50%; right: 0; width:1px; height:30px; background: #aaa; transform: translateY(-50%);}
+.layerFrame .layerArea .btmArea .tabTxt button:last-child::after{display: none;}
+.layerFrame .layerArea .btmArea .tabTxt button.on::after {display: none;}
+.layerFrame .etcTxtArea .title {font-size:16px; font-weight: bold; color:#333;}
+.layerFrame .etcTxtArea ul {margin-top:10px;}
+.layerFrame .etcTxtArea ul li {padding-left: 10px; font-size:14px; line-height: 26px; text-indent: -10px;}
+.layerFrame .inputArea {position: relative; overflow: hidden;}
+.layerFrame .inputArea .inputBox {overflow: hidden; padding-top:30px;}
+.layerFrame .inputArea .inputBox .fl {width:20%; padding:10px 0; font-weight: bold;; color:#333;}
+.layerFrame .inputArea .inputBox .fr {width:80%;}
+.layerFrame .inputArea .inputBox .fr .numberArea {display: flex;}
+.layerFrame .inputArea .inputBox .fr .numberArea > * {margin:0 5px;}
+.layerFrame .inputArea .inputBox:first-child .fr .numberArea > input:first-child, .layerFrame .inputArea .inputBox .fr .numberArea > input:last-child {margin:0;}
+.layerFrame .inputArea .inputBox:first-child .fr .numberArea > input:first-child {margin-right:5px;}
+.layerFrame .inputArea .inputBox .fr .numberArea > input:last-child {margin-left:5px;}
+.layerFrame .layerBtn {position: absolute; top:40px; right:40px;}
+.layerFrame .layerBtn button {width:25px; height:25px; background: url(../images/layerBtn.png) no-repeat center; text-indent: -10000px; cursor: pointer;}
+.layerFrame .layerTable .tableTit {display: block; margin-top:25px; font-size:22px; font-weight: bold; color:#333;}
+.layerFrame .layerTable .table {margin-top:20px; border-top:2px solid #333;}
+.layerFrame .layerTable .table th {padding:15px 0 15px ; background:#f5f5f5; }
+.layerFrame .layerTable .table th, .layerFrame .layerTable .table td {padding-left:20px; border-bottom:1px solid #dedede; text-align: left;}
+.layerFrame .layerTable .table.v2 th {background: #fff;}
+
+.mSilde {display:none;}
+
+@media all and (max-width:1119px) {
+    #guideArea {overflow: hidden; width:100%; padding:60px 10px 100px;}
+    
+} 
+
+@media all and (max-width:500px) {
+
+    .mSilde {display: block; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%);}
+
+    .comBtn {margin-top:25px;}
+
+
+    .guideWrap input {padding:5px 0 5px 10px;} 
+    .guideWrap .input, .guideWrap .select{height: auto; padding-bottom: 10px;}
+    .guideWrap input::-webkit-input-placeholder {font-size:12px; color:#999; line-height: normal;}
+    .guideWrap .mainTxtArea .mainTitle {margin-bottom:15px; font-size:36px;}
+    .guideWrap .mainTxtArea .mainTitle::before {top:-30px;}
+    .guideWrap .mainTxtArea .subTitle {font-size:14px;}
+
+    .guideWrap .txtArea {height:auto;}
+    .guideWrap .txtArea textarea {margin-bottom:10px;}
+
+    .guideWrap .comTable {margin-top:20px;}
+    .guideWrap .comTable table th, .comTable table td {display: block; border-bottom:0;}
+    .guideWrap .comTable table th:first-child, .guideWrap .comTable table td:first-child {padding:15px 0 10px;}
+    .guideWrap .comTable table th:last-child, .comTable table td:last-child {padding:0; border-bottom:1px solid #ddd;}
+    .guideWrap .comTable .tableArea {margin-top:10px;}
+    .guideWrap .comTable .tableTxt {font-size:14px;}
+    .guideWrap .comTable.v2{overflow: auto; position: relative;}
+    .guideWrap .comTable.v2 table { width:1000px;}
+    .guideWrap .comTable.v2 table th, .guideWrap .comTable.v2 table td {display: table-cell; font-size:12px;}
+
+    .guideWrap .pravicyArea .pravicyList {margin-top:10px; padding:10px;}
+    .guideWrap .pravicyArea .pravicyList .title {font-size:16px;}
+    .guideWrap .pravicyArea .pravicyList .txtBox .mainTitle {font-size:14px;}
+    .guideWrap .pravicyArea .pravicyList .txtBox ul {margin-top:5px; padding-left:10px;}
+    .guideWrap .pravicyArea .pravicyList .txtBox ul li, 
+    .guideWrap .pravicyArea .pravicyList .txtBox table, 
+    .guideWrap .pravicyArea .pravicyList .txtBox span {font-size:12px;}
+
+    .guideWrap .mainTxtArea .subTitle {text-align: left;}
+    .guideWrap .method .tabTxt {padding-bottom:25px;}
+    .guideWrap .method .tabTxt button{margin:0 7%; letter-spacing: 0;}
+    .guideWrap .method .tabTxt .card,
+    .guideWrap .method .tabTxt .vrAccount, 
+    .guideWrap .method .tabTxt .account {background-size: 100%!important;}
+    .guideWrap .method .tabTxt .phone {background-size: 50%;}
+    .guideWrap .method .view .mainTxtArea .mainTitle {margin-bottom:20px; font-size:26px;}
+    .guideWrap .method .contArea{padding:0; border:0;}
+    .guideWrap .method .contArea .txtBox .fl, .guideWrap .method .contArea .txtBox .fr{float: none; display: block; width:100%;}
+    .guideWrap .method .contArea .txtBox .radio {margin-top:10px;}
+    .guideWrap .method .txtBox .txt {position: static; display: block; width:100%; margin-top:10px; transform:  none; font-size:12px;}
+    .guideWrap .method .txtBox span{font-size:12px; text-align: justify;}
+    .guideWrap .method .txtBox .fr .numberArea, 
+    .guideWrap .method .txtBox .fr .date, 
+    .guideWrap .method .txtBox .etcArea {width:100%;}
+    .guideWrap .method .txtBox .etcArea > * {margin:0;}
+    .guideWrap .method .txtBox .etcArea {display: block;}
+    .guideWrap .method .txtBox .etcArea > .radio {width:100%;}
+    .guideWrap .method .txtBox .etcArea > .radio:first-child {width:100%;} 
+    .guideWrap .method .txtBox .etcArea > .radio input + label {display: block;}
+    .guideWrap .method .txtBox .etcArea > .radio:last-child input + label {display: inline-block;}
+    .guideWrap .method .txtBox .etcArea > .input {margin-top:10px;}
+    .guideWrap .etcTxtArea {margin-top:30px;}
+    .guideWrap .etcTxtArea .title {font-size:20px;}
+
+
+    .layerFrame input::-webkit-input-placeholder {font-size:12px; color:#999; line-height: normal;}
+    .layerFrame .layerArea {overflow: auto; width:100%; min-height:500px; height:500px; padding:35px 15px;}
+    .layerFrame .layerArea .topArea .title {padding-bottom:20px; font-size:20px;}
+    .layerFrame .layerArea .btmArea .tabTxt {margin-top:20px;}
+    .layerFrame .layerArea .btmArea .tabTxt button {height: 50px; padding:0 6%; line-height: initial; font-size:14px;}
+    .layerFrame .layerArea .btmArea .tabTxt button:first-child {letter-spacing: 1px;}
+    .layerFrame .layerArea .btmArea {padding:15px 0;}
+    .layerFrame .inputArea .inputBox {padding:0;}
+    .layerFrame .inputArea .inputBox + .inputBox {margin-top:20px;}
+    .layerFrame .inputArea .inputBox .fl {float: none; width:100%;}
+    .layerFrame .inputArea .inputBox .fr {float: none; width:100%;}
+    .layerFrame .inputArea .inputBox .fr .numberArea > * {padding-left:5px;}
+    .layerFrame .inputArea .inputBox .fr .numberArea > input:last-child {margin-left:0; text-align: left;}
+    .layerFrame .inputArea .inputBox input::-webkit-input-placeholder {font-size:14px;}
+    .layerFrame .layerTable .tableTit {font-size:18px;}
+    .layerFrame .layerBtn {top:35px; right:15px;}
+    .layerFrame .layerBtn button {width:20px; height:20px;}
+    .layerFrame .layerTable .table th {padding:12px 0 10px 5px;}
+    .layerFrame .layerTable .table th, .layerFrame .layerTable .table td{padding:10px 0; word-break: break-all;}
+    .layerFrame .etcTxtArea .title {font-size:16px;}
+    .layerFrame .table.v2 input,
+    .layerFrame .table.v2 select {padding-left:10px; font-size:12px;}
+} 

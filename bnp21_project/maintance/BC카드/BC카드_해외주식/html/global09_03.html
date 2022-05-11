@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>BC 페이북</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/slick.js"></script>	
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<!-- #wrap -->
+	<div id="wrap" class="stock">
+
+		<!-- 헤더 -->
+		<header>
+			<a href="#" class="back-btn">뒤로가기</a>
+			<h1>부적합 거래내용 확인서</h1>
+			<a href="#" class="close-btn">닫기</a>
+		</header>
+		<!-- //헤더 -->	
+		
+		<!-- 컨텐츠 -->
+		<section class="container">
+			<div class="stock-info-content">
+				<div class="faq-info-area">
+					<span class="top-title"><b>부적합(부적정)금융투자상품 거래내용 확인서</b><br><br>
+                    고객의 투자성향 보다 투자위험이 높은 상품에 가입 또는<br>
+                    거래시 부적합(부적정) 금융투자상품 거래내용 확인서를<br>확인해주셔야 합니다.</span>
+				</div>
+			</div>
+            <div class="stock-company-content">
+				<div class="info-area">
+					<span class="title">계좌정보</span>
+				</div>
+				<ul class="list-area">
+					<li>
+						<span class="tit">계좌번호</span>
+						<span class="text">1234-123-123456 홍길동</span>
+					</li>
+					<li>
+						<span class="tit">투자성향</span>
+						<span class="text">안정형</span>
+					</li>
+				</ul>
+			</div>
+            <div class="stock-company-content">
+				<div class="info-area">
+					<span class="title">금융투자상품정보</span>
+				</div>
+				<ul class="list-area">
+					<li>
+						<span class="tit">상품명</span>
+						<span class="text">해외주식</span>
+					</li>
+					<li>
+						<span class="tit">투자위험도</span>
+						<span class="text">초고위험(1등급)</span>
+					</li>
+				</ul>
+                <ul class="list-area">
+					<li>
+						<span class="agree"><input type="checkbox">위 상품의 고객확인사항을 모두 확인하였습니다.</span>
+					</li>
+				</ul>
+			</div>
+            <div class="stock-table-content">
+                <div class="top-txt-area">
+					<span class="title">고객확인사항</span><br>
+                    <span class="text">투자자성향별 적합한 금융투자상품</span>
+				</div>
+                <table border="0" cellpading="0" cellspacing="0" class="ttble">
+                    <colgroup>
+                        <col style="width:25%;">
+                        <col style="width:25%;">
+                        <col style="width:25%;">
+                        <col style="width:25%;">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th class="ttth" colspan="2">투자자성향</th>
+                            <th class="ttth" colspan="2">금융투자상품</th>
+                        </tr>
+                        <tr>
+                            <th class="ttth">일반상품</th>
+                            <th class="ttth">파생상품</th>
+                             <th class="ttth">펀드</th>
+                            <th class="ttth">펀드화</th>
+                        </tr>
+                        <tr>
+                            <td class="tttd" rowspan="2">공격투자형</td>
+                            <td class="tttd" rowspan="3">원금비보장형</td>
+                            <td class="tttd">매우높은위험</td>
+                            <td class="tttd" rowspan="2">초고위험</td>
+                        </tr>
+                        <tr>
+							<!-- 2019-08-20 bld 클래스 추가 -->
+							<td class="tttd bdl">높은위험</td>
+							<!-- 2019-08-20 bld 클래스 추가 -->
+                        </tr>
+                        <tr>
+                            <td class="tttd">적극투자형</td>
+                            <td class="tttd">다소높은위험</td>
+                            <td class="tttd">고위험</td>
+                        </tr>
+                        <tr>
+                            <td class="tttd">위험중립형</td>
+                            <td class="tttd">원금부분 보장형</td>
+                            <td class="tttd">보통위험</td>
+                            <td class="tttd">중위험</td>
+                        </tr>
+                        <tr>
+                            <td class="tttd">안정추구형</td>
+                            <td class="tttd">원금보장형</td>
+                            <td class="tttd">낮은위험</td>
+                            <td class="tttd">저위험</td>
+                        </tr>
+                        <tr>
+                            <td class="tttd">안정형</td>
+                            <td class="tttd"></td>
+                            <td class="tttd">매우낮은위험</td>
+                            <td class="tttd">초저위험</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="top-txt-area">
+                    <span class="text">
+                        ∙ 본인은 신한금융투자가 객관적인 절차에 따라 본인에게 적합한 위험 수준의 금융투자상품 (또는 투자일임계약. 신탁계약)을 권유(추천) 했음에도 불구하고, 투자자정보 파악 절차에 따른 본인의 투자자 유형보다 위험도가 높은 금융투자상품(또는 투자일임계약, 신탁계약)을  매수하고자 합니다.<br><br>
+                        ∙ 본인은 신한금융투자로부터 본인이 지정한 금융투자상품(또는 투자일임계약.신탁계약)의 투자위험 정도 등에 대해 충분한 설명을 들었고,  금융투자상품(또는 투자일임계약. 신탁계약)의 투자위험 정도가 본인의 투자목적, 재산상황 및 투자경험 등에 비해 높아 본인에게 부적합하므로 신한금융투자가 이에 대한 투자권유를 할 수 없다는 점을 잘 알고 있으며, 그럼에도 본인의 판단과책임으로 본인이 지정하는 금융투자상품을 거래(또는 투자일임계약. 신탁계약을 체결)하고자 합니다.<br><br>
+                        ∙ 본인은 본 금융투자상품의 거래(또는 투자일임계약. 신탁계약을 체결)와 관련하여 신한금융 투자로부터 어떠한 투자권유도 받지 않았으며, 상기 거래가 본인의 소신으로 결정된 것으로서 이와 관련하여 발생할 수 있는 모든 위험은 본인이 감수할 것임을 확인합니다.<br><br>
+                        ∙ 또한 본 거래와 관련하여 신한금융투자가 본인을 대신하여 수행하는 어떠한 업무처리도 신한금융투자가 본인에게 본 거래가 적격하다는 것을 확인하거나 승인하는 것으로 간주될 수 없음을 잘 알고 있습니다.<br><br>
+                    </span>
+				</div>
+                <ul class="list-area">
+					<li>
+						<span class="agree"><input type="checkbox">위 내용을 읽고, 정보제공에 동의합니다.</span>
+					</li>
+				</ul>
+            </div>
+            
+		</section>
+		<!-- //컨텐츠 -->
+
+		<!-- 하단 버튼 -->
+		<div class="com-btn-content">
+			<a href="#">확인</a>
+		</div>
+		<!-- //하단 버튼 -->
+
+	</div>
+	<!-- //#wrap -->
+	
+</body>
+</html>

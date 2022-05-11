@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<title>대기정보 시군별 - 경기도 대기환경</title>
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/jquery-ui.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+<body>
+	<!-- 스킵 네비게이션 -->
+	<nav id="accessibility">
+		<strong class="hd-element">컨텐츠 바로가기</strong>
+		<ul>
+			<li><a href="#container"><span>본문 바로가기</span></a></li>
+			<li><a href="#navigation"><span>주메뉴 바로가기</span></a></li>
+		</ul>
+	</nav>
+	<!-- //스킵 네비게이션 -->
+	
+	<div class="wrapper">
+		
+	<header>
+		<div class="top_area">
+			<h1>
+				<a href="/cast/castInfo.do">
+					<img src=" ../assets/images/logo.jpg" alt="새로운 경기 공정한 세상"><span>경기도 대기환경진단 평가시스템</span>
+				</a>
+			</h1>
+		</div>
+		<div class="bottom_area" id="navigation">
+			<div class="gnb">
+				<ul class="menu_area">
+					<li>
+						<a href="javascript:void(0);">모델결과</a>
+						<div class="depth2">
+							<ul>
+								<li><a href="/cast/castInfo.do">모델결과</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);">대기현황</a>
+						<div class="depth2">
+							<ul>
+								<li><a href="/msr/msrSigun.do">시군별 대기정보</a></li>
+								<li><a href="/msr/msrSido.do">시도별 대기정보</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);">기상</a>
+						<div class="depth2">
+							<ul>
+								<li><a href="/weather/weatherInfo.do">기상</a></li>
+								
+							</ul>
+						</div>
+					</li>
+					<li>
+						<a href="javascript:void(0);">지난자료조회</a>
+						<div class="depth2">
+							<ul>
+								<li><a href="/model/modelInfo.do">경기도 지난자료조회</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+	
+			</div>
+		</div>
+	</header>
+	<div class="sub_visual bg1">
+		<div class="inner">
+			<p class="txt">사계절 깨끗한 공기와 건강한 라이프 스타일 <br><strong>경기도 대기환경진단 평가시스템</strong>이 함께 합니다</p>
+		</div>
+	</div>
+	<!-- container -->
+		<section class="container" id="container">
+			<!-- 왼쪽 메뉴 -->
+			<div class="left_menu">
+				<h2>대기현황</h2>
+				<ul class="left_list">
+					<li><a href="/msr/msrSigun.do">시군별 대기정보</a></li>
+					<li><a href="/msr/msrSido.do" class="on">시도별 대기정보</a></li>
+				</ul>
+			</div>
+	
+			<!-- content_area -->
+			<div class="content_wrap">
+				<div class="location">
+					<a href="/"><img src=" ../assets/images/nav_home.png" alt="home"></a>
+					<span>대기현황</span>
+					<strong>시도별 대기정보</strong>
+				</div>
+	
+				<div class="cont_area">
+					<div class="cont_top">
+						<h3 class="comh3">시도별 대기정보</h3>
+						<!-- 검색영역 -->
+						<div class="input_data">
+						<form name="writeForm" id="writeForm" method="post">
+						<input type="hidden" id="item" name="item" value="pm25"/>					
+							<fieldset>
+								<legend>검색</legend>
+								<div class="input_cell">
+									<span class="hidden"><label for="src2">날짜</label></span>
+									<div class="com_input">
+										<input type="text" name="searchDateTo" id="searchDateTo" value="2020-01-23" class="cal" >
+									</div>
+									<div class="select">
+										<select name="curHour" id="curHour" title="시간 선택">
+											<option value="01" >01시</option>
+											<option value="02" >02시</option>
+											<option value="03" >03시</option>
+											<option value="04" >04시</option>
+											<option value="05" >05시</option>
+											<option value="06" >06시</option>
+											<option value="07" >07시</option>
+											<option value="08" >08시</option>
+											<option value="09" >09시</option>
+											<option value="10" selected>10시</option>
+											<option value="11" >11시</option>
+											<option value="12" >12시</option>
+											<option value="13" >13시</option>
+											<option value="14" >14시</option>
+											<option value="15" >15시</option>
+											<option value="16" >16시</option>
+											<option value="17" >17시</option>
+											<option value="18" >18시</option>
+											<option value="19" >19시</option>
+											<option value="20" >20시</option>
+											<option value="21" >21시</option>
+											<option value="22" >22시</option>
+											<option value="23" >23시</option>
+											<option value="24" >24시</option>
+											</select>																	
+									</div>
+									<button type="button" class="btn" onclick="f_search();">조회</button>
+								</div>
+								<div class="right_input">
+									<div class="btn_day">
+										<button type="button" class="prev" onclick="f_changeDt('day', -1)">1D</button>
+										<button type="button" class="today" onclick="f_now()">현재</button>
+										<button type="button" class="next" onclick="f_changeDt('day', 1)">1D</button>
+									</div>
+								</div>
+							</fieldset>
+						</form>	
+						</div>
+						<!-- //검색영역 -->
+					</div>
+	
+					<div class="cont_row type1">
+						<div class="col_left">
+							<div class="tab_area col3 float-none">
+								<a href="#" onclick="f_go('pm25');" class="on">PM<sub>2.5</sub></a>
+								<a href="#" onclick="f_go('pm10');" >PM<sub>10</sub></a>
+								<a href="#" onclick="f_go('o3');" >O<sub>3</sub></a>						
+							</div>
+							<!-- 20-02-14 posRelative 클래스 추가 -->
+							<div class="posRelative">
+							<div class="map_area" id="air_map">
+								<div class="submap" style="position: relative">
+								  <!-- 대기상태에 따른 이미지 파일명 
+															좋음 : _good
+															보통 : _normal
+															나쁨 : _bad
+															매우나쁨 : _worst
+															점검중 : _checking     
+								  -->
+								  <img src=" ../assets/images/submap_gyeonggi_bad.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-gg" title="경기">
+											43</div>
+									   <img src=" ../assets/images/submap_seoul_bad.png" alt="시도별 지도">
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-sw" title="서울">
+											45</div>
+									   <img src=" ../assets/images/submap_incheon_bad.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-ic" title="인천">
+											38</div> 
+									   <img src=" ../assets/images/submap_chungbuk_normal.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-cb" title="충북">
+											32</div>
+									   <img src=" ../assets/images/submap_chungnam_bad.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-cn" title="충남">
+											36</div>
+									   <img src=" ../assets/images/submap_daejeon_normal.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-dj" title="대전">
+											27</div>
+									   <img src=" ../assets/images/submap_sejong_normal.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-sj" title="세종">
+											31</div>
+									   <img src=" ../assets/images/submap_gangwon_normal.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-gw" title="강원">
+											26</div>
+									   <img src=" ../assets/images/submap_kyeongbuk_normal.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-kb" title="경북">
+											20</div>
+									   <img src=" ../assets/images/submap_daegu_normal.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-dk" title="대구">
+											32</div>
+									   <img src=" ../assets/images/submap_jeonbuk_normal.png" alt="시도별 지도" >	
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-jb" title="전북">
+											24</div>
+									   <img src=" ../assets/images/submap_gwangju_normal.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-kj" title="광주">
+											19</div>
+									   <img src=" ../assets/images/submap_jeonnam_normal.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-jn" title="전남">
+											16</div>
+									   <img src=" ../assets/images/submap_kyeongnam_normal.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-gn" title="경남">
+											17</div>
+									   <img src=" ../assets/images/submap_ulsan_good.png" alt="시도별 지도">
+										<img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-us" title="울산">
+											11</div>
+									<img src=" ../assets/images/submap_busan_good.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-ps" title="부산">
+											11</div>
+									   <img src=" ../assets/images/submap_jeju_good.png" alt="시도별 지도" >
+										  <img src=" ../assets/images/blank.png" usemap="#map-whole1" style="position:absolute; top: 0; left: 0; width: 100%; height: 627px; z-index: 100;">
+									   <div class="air_info tr-jj" title="제주">
+											13</div>
+									   </div>
+								<map name="map-whole1" id="map-whole1">
+									<area alt="인천" class="tr-ic" coords="79,113,56,113,48,125,67,157,73,169,89,159,98,168,103,156,103,144,92,139,82,142" shape="poly">
+									<area alt="서울" class="tr-sw" coords="105,144,114,143,117,137,124,136,126,130,132,130,141,154,131,162,118,160,106,154" shape="poly">
+									<area alt="경기" class="tr-gg" coords="80,108,82,139,94,136,103,142,127,127,143,152,131,164,115,162,106,159,99,175,72,181,114,226,143,216,153,222,191,189,205,148,177,129,174,113,184,104,132,61" shape="poly">
+									<area alt="강원" class="tr-gw" coords="130,56,187,103,177,114,179,126,206,146,197,185,202,194,222,184,290,205,335,202,350,192,347,174,277,74,255,11,237,7,219,33,173,36" shape="poly">
+									<area alt="충남" class="tr-cn" coords="110,226,79,209,42,243,70,290,96,332,113,319,128,312,134,326,154,317,165,333,182,328,177,312,151,308,130,260,139,241,149,249,161,239,142,217" shape="poly">
+									<area alt="대전" class="tr-dj" coords="152,250,139,247,134,258,143,284,150,288,150,297,156,303,172,308,176,290,179,282,161,276" shape="poly">
+									<area alt="세종" class="tr-sj" coords="160,264,150,257,152,251,144,248,135,248,134,261,137,273,154,284,162,279" shape="poly"/>
+									<area alt="충북" class="tr-cb" coords="205,331,187,326,175,305,180,281,164,273,154,246,163,239,155,224,195,190,206,193,222,189,282,206,264,224,263,235,254,234,247,229,213,251,206,265,206,295,218,304,217,324" shape="poly">
+									<area alt="광주" class="tr-kj" coords="99,422,87,435,98,444,118,445,127,435,115,422" shape="poly">
+									<area alt="경북" class="tr-kb" coords="350,368,320,377,281,385,276,372,292,365,301,340,288,327,264,337,256,355,255,375,243,375,234,354,215,348,211,330,220,323,224,305,209,293,210,267,245,235,266,236,286,209,333,206,352,195,363,246,359,332,377,324,365,374" shape="poly">
+									<area alt="대구" class="tr-dk" coords="261,375,261,352,269,340,288,330,298,342,289,361,272,374" shape="poly">
+									<area alt="전북" class="tr-jb" coords="126,318,86,341,70,379,66,400,78,409,117,398,132,404,147,412,170,404,184,415,189,400,182,384,194,357,210,344,210,334,185,329,168,335,153,323,136,328" shape="poly">
+									<area alt="전남" class="tr-jn" coords="68,405,58,425,29,444,15,491,25,542,71,513,78,540,120,536,161,514,204,502,204,458,182,424,179,416,169,408,146,415,117,402,78,413" shape="poly">
+									<area alt="경남" class="tr-gn" coords="212,346,198,356,185,382,191,398,186,419,206,456,210,486,224,490,254,467,284,490,291,455,303,443,301,434,340,405,322,379,281,389,274,375,242,377,230,358" shape="poly">
+									<area alt="울산" class="tr-us" coords="365,375,356,370,350,376,342,369,327,369,319,389,344,407,351,413" shape="poly">
+									<area alt="부산" class="tr-ps" coords="344,406,303,435,304,451,322,449,343,435,353,414" shape="poly">
+									<area alt="제주" class="tr-jj" coords="66,587,27,595,11,608,18,620,58,620,76,598" shape="poly">
+								</map>
+								<script>
+	</script>
+								<p class="unit02">농도범위 (
+									㎍/㎥
+								)</p>
+								<div class="air_grade02">
+									<span class="icon_air v1">좋음(0~15)</span>
+										<span class="icon_air v2">보통(16~35)</span>
+										<span class="icon_air v3">나쁨(36~75)</span>
+										<span class="icon_air v4">매우나쁨(76~)</span>
+									<span class="icon_air v5">점검중</span>
+								</div>
+							</div>
+						</div>
+						</div>	
+						<div class="col_right pos-rTb">
+							<div class="table_area center">
+								<p class="top_txt">2020년 01월23일  10시</p>
+								<table>
+									<caption>시도별 대기정보</caption>
+									<colgroup>
+										<col style="width:20%;">
+										<col style="width:27%;">
+										<col style="width:26%;">
+										<col style="width:27%;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">지역</th>
+											<th scope="col">초미세먼지<br>PM<sub>2.5</sub>(㎍/㎥)</th>
+											<th scope="col">미세먼지<br>PM<sub>10</sub>(㎍/㎥)</th>
+											<th scope="col">오존<br>O<sub>3</sub>(ppm)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+												<th scope="row">경기</th>
+												<td><span class="v3">43</span></td>
+												<td><span class="v2">68</span></td>
+												<td><span class="v1">0.006</span></td>
+											</tr>
+										<tr>
+												<th scope="row">서울</th>
+												<td><span class="v3">45</span></td>
+												<td><span class="v2">67</span></td>
+												<td><span class="v1">0.006</span></td>
+											</tr>
+										<tr>
+												<th scope="row">인천</th>
+												<td><span class="v3">38</span></td>
+												<td><span class="v2">68</span></td>
+												<td><span class="v1">0.017</span></td>
+											</tr>
+										<tr>
+												<th scope="row">충북</th>
+												<td><span class="v2">32</span></td>
+												<td><span class="v2">45</span></td>
+												<td><span class="v1">0.007</span></td>
+											</tr>
+										<tr>
+												<th scope="row">충남</th>
+												<td><span class="v3">36</span></td>
+												<td><span class="v2">54</span></td>
+												<td><span class="v1">0.013</span></td>
+											</tr>
+										<tr>
+												<th scope="row">대전</th>
+												<td><span class="v2">27</span></td>
+												<td><span class="v2">38</span></td>
+												<td><span class="v1">0.005</span></td>
+											</tr>
+										<tr>
+												<th scope="row">세종</th>
+												<td><span class="v2">31</span></td>
+												<td><span class="v2">46</span></td>
+												<td><span class="v1">0.008</span></td>
+											</tr>
+										<tr>
+												<th scope="row">강원</th>
+												<td><span class="v2">26</span></td>
+												<td><span class="v2">38</span></td>
+												<td><span class="v1">0.011</span></td>
+											</tr>
+										<tr>
+												<th scope="row">경북</th>
+												<td><span class="v2">20</span></td>
+												<td><span class="v2">31</span></td>
+												<td><span class="v1">0.012</span></td>
+											</tr>
+										<tr>
+												<th scope="row">대구</th>
+												<td><span class="v2">32</span></td>
+												<td><span class="v2">36</span></td>
+												<td><span class="v1">0.003</span></td>
+											</tr>
+										<tr>
+												<th scope="row">전북</th>
+												<td><span class="v2">24</span></td>
+												<td><span class="v1">30</span></td>
+												<td><span class="v1">0.012</span></td>
+											</tr>
+										<tr>
+												<th scope="row">광주</th>
+												<td><span class="v2">19</span></td>
+												<td><span class="v1">23</span></td>
+												<td><span class="v1">0.008</span></td>
+											</tr>
+										<tr>
+												<th scope="row">전남</th>
+												<td><span class="v2">16</span></td>
+												<td><span class="v1">19</span></td>
+												<td><span class="v1">0.011</span></td>
+											</tr>
+										<tr>
+												<th scope="row">경남</th>
+												<td><span class="v2">17</span></td>
+												<td><span class="v1">22</span></td>
+												<td><span class="v1">0.007</span></td>
+											</tr>
+										<tr>
+												<th scope="row">울산</th>
+												<td><span class="v1">11</span></td>
+												<td><span class="v1">16</span></td>
+												<td><span class="v1">0.014</span></td>
+											</tr>
+										<tr>
+												<th scope="row">부산</th>
+												<td><span class="v1">11</span></td>
+												<td><span class="v1">16</span></td>
+												<td><span class="v1">0.015</span></td>
+											</tr>
+										<tr>
+												<th scope="row">제주</th>
+												<td><span class="v1">13</span></td>
+												<td><span class="v1">23</span></td>
+												<td><span class="v1">0.017</span></td>
+											</tr>
+										</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<span>* 해당 자료는 환경공단(에어코리아)에서 제공되는 실시간 관측 자료이며, 증명자료로 사용할 수 없습니다.</span>
+			</div>
+			<!-- //content_area -->
+		</section>
+		<!-- //container -->
+
+	<footer>
+		<span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+		<span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+	</footer>
+</body>
+
+</html>

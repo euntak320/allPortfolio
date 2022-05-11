@@ -1,0 +1,33 @@
+﻿@charset "utf-8";
+/* >>>>>>>>>> 공통 <<<<<<<<<< */
+
+/* 체크박스 & 라디오버튼 */
+
+/* 버튼 */
+.btn {display:inline-block; border: 1px solid #B7FFFF; border-radius:30px; text-align:center; line-height:56px; font-size:20px; font-weight:400; letter-spacing:-0.4px; color:#B7FFFF; background:none; cursor:pointer}
+
+/* 버튼 정렬 */
+.btnCenter {margin-top:30px; text-align:center}
+.btnRight {text-align:right}
+.btnTop {margin-top:20px; text-align:right}
+.btnTop .btn {min-width:100px}
+.btnCenter .btn + .btn, 
+.btnTop .btn + .btn {margin-left:6px}
+
+/* TEXT */
+.txtC {text-align:center !important}
+.txtL {text-align:left !important}
+.txtR {text-align:right !important}
+
+/* 타이틀 */
+
+/* 박스 스타일 */
+
+/* 너비값 */
+
+/* 마진값 */
+
+/* 페이징 */
+
+
+/* >>>>>>>>>> 페이지 <<<<<<<<<< */

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<title>대기정보 시군별 - 경기도 대기환경</title>
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/jquery-ui.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+<body>
+<nav id="accessibility">
+	<strong class="hd-element">컨텐츠 바로가기</strong>
+	<ul>
+		<li><a href="#container"><span>본문 바로가기</span></a></li>
+		<li><a href="#navigation"><span>주메뉴 바로가기</span></a></li>
+	</ul>
+</nav>
+<!-- //스킵 네비게이션 -->
+
+<div class="wrapper">
+	
+<header>
+	<div class="top_area">
+		<h1>
+			<a href="/cast/castInfo.do">
+				<img src="../assets/images/logo.jpg" alt="새로운 경기 공정한 세상"><span>경기도 대기환경진단 평가시스템</span>
+			</a>
+		</h1>
+	</div>
+	<div class="bottom_area" id="navigation">
+		<div class="gnb">
+			<ul class="menu_area">
+				<li>
+					<a href="javascript:void(0);">모델결과</a>
+					<div class="depth2">
+						<ul>
+							<li><a href="/cast/castInfo.do">모델결과</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);">대기현황</a>
+					<div class="depth2">
+						<ul>
+							<li><a href="/msr/msrSigun.do">시군별 대기정보</a></li>
+							<li><a href="/msr/msrSido.do">시도별 대기정보</a></li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);">기상</a>
+					<div class="depth2">
+						<ul>
+							<li><a href="/weather/weatherInfo.do">기상</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="javascript:void(0);">지난자료조회</a>
+					<div class="depth2">
+						<ul>
+							<li><a href="/model/modelInfo.do">경기도 지난자료조회</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</header>
+<div class="sub_visual bg1">
+	<div class="inner">
+		<p class="txt">사계절 깨끗한 공기와 건강한 라이프 스타일 <br><strong>경기도 대기환경진단 평가시스템</strong>이 함께 합니다</p>
+	</div>
+</div>
+<!-- container -->
+	<section class="container" id="container">
+		<!-- 왼쪽 메뉴 -->
+		<div class="left_menu">
+			<h2>대기현황</h2>
+			<ul class="left_list">
+				<li><a href="/msr/msrSigun.do" class="on">시군별 대기정보</a></li>
+				<li><a href="/msr/msrSido.do">시도별 대기정보</a></li>
+			</ul>
+		</div>
+
+		<!-- content_area -->
+		<div class="content_wrap">
+			<div class="location">
+				<a href="/"><img src=" ../assets/images/nav_home.png" alt="home"></a>
+				<span>대기현황</span>
+				<strong>시군별 대기정보</strong>
+			</div>
+
+			<div class="cont_area">
+				<div class="cont_top">
+					<h3 class="comh3">시군별 대기정보</h3>
+					<!-- 검색영역 -->
+					<div class="input_data">
+					<form name="writeForm" id="writeForm" method="post">
+					<input type="hidden" id="item" name="item" value="pm25"/>
+						<fieldset>
+							<legend>검색</legend>
+							<div class="input_cell">
+								<span class="hidden"><label for="src2">날짜</label></span>
+								<div class="com_input">
+	                                <input type="text" name="searchDateTo" id="searchDateTo" value="2020-01-23" class="cal" >                            		
+								</div>
+								<div class="select">
+	                                <select name="curHour" id="curHour" title="시간 선택">
+	                                	<option value="01" >01시</option>
+	                                    <option value="02" >02시</option>
+	                                    <option value="03" >03시</option>
+	                                    <option value="04" >04시</option>
+	                                    <option value="05" >05시</option>
+	                                    <option value="06" >06시</option>
+	                                    <option value="07" >07시</option>
+	                                    <option value="08" >08시</option>
+	                                    <option value="09" >09시</option>
+	                                    <option value="10" selected>10시</option>
+	                                    <option value="11" >11시</option>
+	                                    <option value="12" >12시</option>
+	                                    <option value="13" >13시</option>
+	                                    <option value="14" >14시</option>
+	                                    <option value="15" >15시</option>
+	                                    <option value="16" >16시</option>
+	                                    <option value="17" >17시</option>
+	                                    <option value="18" >18시</option>
+	                                    <option value="19" >19시</option>
+	                                    <option value="20" >20시</option>
+	                                    <option value="21" >21시</option>
+	                                    <option value="22" >22시</option>
+	                                    <option value="23" >23시</option>
+	                                    <option value="24" >24시</option>
+	                                    </select>									
+								</div>
+								<button type="button" class="btn" onclick="f_search();">조회</button>
+							</div>
+							<div class="right_input">
+								<div class="btn_day">
+									<button type="button" class="prev" onclick="f_changeDt('day', -1)">1D</button>
+									<button type="button" class="today" onclick="f_now()">현재</button>
+									<button type="button" class="next" onclick="f_changeDt('day', 1)">1D</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>	
+					</div>
+					<!-- //검색영역 -->
+				</div>
+
+				<div class="cont_row type1">
+					<div class="col_left">
+						<div class="tab_area col3">
+							<a href="#" onclick="f_go('pm25');" class="on">PM<sub>2.5</sub></a>
+							<a href="#" onclick="f_go('pm10');" >PM<sub>10</sub></a>
+							<a href="#" onclick="f_go('o3');" >O<sub>3</sub></a>
+						</div>
+						<!-- 20-02-14 posRelatvie 클래스  추가 -->
+						<div class="posRelative">
+						<div class="map_area type2" id="air_map">
+							<div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           	<div class="east">
+                             <img src=" ../assets/images/east_gapyeong_checking.png" alt="가평">
+                             	</div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             <img src=" ../assets/images/north_goyang_bad.png" alt="고양">
+					             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_gwacheon_normal.png" alt="과천">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_gwangmyeong_bad.png" alt="광명">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             <img src=" ../assets/images/east_gwangju_bad.png" alt="광주">
+                             	</div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             <img src=" ../assets/images/east_guri_bad.png" alt="구리">
+                             	</div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_gunpo_bad.png" alt="군포">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             <img src=" ../assets/images/north_kimpo_bad.png" alt="김포">
+				             	</div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             <img src=" ../assets/images/east_namyangju_bad.png" alt="남양주">
+                             	</div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             <img src=" ../assets/images/north_dongducheon_checking.png" alt="동두천">
+					             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_bucheon_bad.png" alt="부천">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             <img src=" ../assets/images/east_seongnam_normal.png" alt="성남">
+                             	</div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_suwon_bad.png" alt="수원">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_siheung_bad.png" alt="시흥">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_ansan_bad.png" alt="안산">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 <img src=" ../assets/images/south_anseong_bad.png" alt="안성">
+                           	 	</div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_anyang_bad.png" alt="안양">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             <img src=" ../assets/images/north_yangju_bad.png" alt="양주">
+				             	</div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             <img src=" ../assets/images/east_yangpyeong_normal.png" alt="양평">
+                             	</div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 <img src=" ../assets/images/south_yeoju_bad.png" alt="여주">
+                           	 	</div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             <img src=" ../assets/images/north_yeoncheon_normal.png" alt="연천">
+				             	</div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_osan_normal.png" alt="오산">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 <img src=" ../assets/images/south_yongin_bad.png" alt="용인">
+                           	 	</div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_uiwang_bad.png" alt="의왕">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             <img src=" ../assets/images/north_uijeongbu_bad.png" alt="의정부">
+				             	</div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 <img src=" ../assets/images/south_icheon_bad.png" alt="이천">
+                           	 	</div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             <img src=" ../assets/images/north_paju_bad.png" alt="파주">
+				             	</div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 <img src=" ../assets/images/south_pyeongtaek_bad.png" alt="평택">
+                           	 	</div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             <img src=" ../assets/images/north_pocheon_bad.png" alt="포천">
+				             	</div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             <img src=" ../assets/images/east_hanam_normal.png" alt="하남">
+                             	</div>
+                           <div class="central">
+                           	 </div>
+                           <div class="south">
+                           	 </div>
+                            <p class="unit">농도범위 (㎍/㎥)</p>
+                        <div class="north">
+                              <!-- 대기상태에 따른 이미지 파일명 
+				                                    좋음 : _good
+				                                    보통 : _normal
+				                                    나쁨 : _bad
+				                                    매우나쁨 : _worst
+				                                    점검중 : _checking     
+				             -->
+				             </div>
+                           <div class="east">
+                             </div>
+                           <div class="central">
+                           	 <img src=" ../assets/images/central_hwaseong_bad.png" alt="화성">
+                           	 	</div>
+                           <div class="south">
+                           	 </div>
+							<p class="unit">농도범위 (㎍/㎥)</p>
+							<!-- 20-02-14 구조변경 -->
+							<div class="air_grade">
+								<span class="icon_air v1">좋음(0~15)</span>
+									<span class="icon_air v2">보통(16~35)</span>
+									<span class="icon_air v3">나쁨(36~75)</span>
+									<span class="icon_air v4">매우나쁨(76~)</span>
+								<span class="icon_air v5">점검중</span>
+							</div>
+							<!-- 20-02-14 구조변경 -->
+						</div>
+						
+						</div>
+						
+						
+					</div>
+					<div class="col_right">
+						<div class="table_area center">
+							<p class="top_txt">2020년 01월23일  10시</p>
+							<table>
+								<caption>시군별 대기정보</caption>
+								<colgroup>
+									<col style="width:20%;">
+									<col style="width:27%;">
+									<col style="width:26%;">
+									<col style="width:27%;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">지역</th>
+										<th scope="col">초미세먼지<br>PM<sub>2.5</sub>(㎍/㎥)</th>
+										<th scope="col">미세먼지<br>PM<sub>10</sub>(㎍/㎥)</th>
+										<th scope="col">오존<br>O<sub>3</sub>(ppm)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+											<th scope="row">가평군</th>
+											<td><span class="v5">점검중</span></td>
+											<td><span class="v5">점검중</span></td>
+											<td><span class="v5">점검중</span></td>
+										</tr>
+									<tr>
+											<th scope="row">고양시</th>
+											<td><span class="v3">46</span></td>
+											<td><span class="v3">88</span></td>
+											<td><span class="v1">0.008</span></td>
+										</tr>
+									<tr>
+											<th scope="row">과천시</th>
+											<td><span class="v2">35</span></td>
+											<td><span class="v2">55</span></td>
+											<td><span class="v1">0.003</span></td>
+										</tr>
+									<tr>
+											<th scope="row">광명시</th>
+											<td><span class="v3">46</span></td>
+											<td><span class="v3">82</span></td>
+											<td><span class="v1">0.004</span></td>
+										</tr>
+									<tr>
+											<th scope="row">광주시</th>
+											<td><span class="v3">38</span></td>
+											<td><span class="v2">54</span></td>
+											<td><span class="v1">0.002</span></td>
+										</tr>
+									<tr>
+											<th scope="row">구리시</th>
+											<td><span class="v3">53</span></td>
+											<td><span class="v3">92</span></td>
+											<td><span class="v1">0.005</span></td>
+										</tr>
+									<tr>
+											<th scope="row">군포시</th>
+											<td><span class="v3">46</span></td>
+											<td><span class="v2">75</span></td>
+											<td><span class="v1">0.005</span></td>
+										</tr>
+									<tr>
+											<th scope="row">김포시</th>
+											<td><span class="v3">44</span></td>
+											<td><span class="v2">74</span></td>
+											<td><span class="v1">0.016</span></td>
+										</tr>
+									<tr>
+											<th scope="row">남양주시</th>
+											<td><span class="v3">38</span></td>
+											<td><span class="v2">50</span></td>
+											<td><span class="v1">0.006</span></td>
+										</tr>
+									<tr>
+											<th scope="row">동두천시</th>
+											<td><span class="v5">점검중</span></td>
+											<td><span class="v5">점검중</span></td>
+											<td><span class="v5">점검중</span></td>
+										</tr>
+									<tr>
+											<th scope="row">부천시</th>
+											<td><span class="v3">45</span></td>
+											<td><span class="v2">76</span></td>
+											<td><span class="v1">0.009</span></td>
+										</tr>
+									<tr>
+											<th scope="row">성남시</th>
+											<td><span class="v2">30</span></td>
+											<td><span class="v2">46</span></td>
+											<td><span class="v1">0.005</span></td>
+										</tr>
+									<tr>
+											<th scope="row">수원시</th>
+											<td><span class="v3">38</span></td>
+											<td><span class="v2">56</span></td>
+											<td><span class="v1">0.002</span></td>
+										</tr>
+									<tr>
+											<th scope="row">시흥시</th>
+											<td><span class="v3">42</span></td>
+											<td><span class="v2">76</span></td>
+											<td><span class="v1">0.008</span></td>
+										</tr>
+									<tr>
+											<th scope="row">안산시</th>
+											<td><span class="v3">44</span></td>
+											<td><span class="v2">74</span></td>
+											<td><span class="v1">0.007</span></td>
+										</tr>
+									<tr>
+											<th scope="row">안성시</th>
+											<td><span class="v3">38</span></td>
+											<td><span class="v2">44</span></td>
+											<td><span class="v1">0.005</span></td>
+										</tr>
+									<tr>
+											<th scope="row">안양시</th>
+											<td><span class="v3">52</span></td>
+											<td><span class="v2">72</span></td>
+											<td><span class="v1">0.003</span></td>
+										</tr>
+									<tr>
+											<th scope="row">양주시</th>
+											<td><span class="v3">66</span></td>
+											<td><span class="v3">96</span></td>
+											<td><span class="v1">0.007</span></td>
+										</tr>
+									<tr>
+											<th scope="row">양평군</th>
+											<td><span class="v2">17</span></td>
+											<td><span class="v1">30</span></td>
+											<td><span class="v1">0.007</span></td>
+										</tr>
+									<tr>
+											<th scope="row">여주시</th>
+											<td><span class="v3">50</span></td>
+											<td><span class="v2">62</span></td>
+											<td><span class="v1">0.003</span></td>
+										</tr>
+									<tr>
+											<th scope="row">연천군</th>
+											<td><span class="v2">33</span></td>
+											<td><span class="v2">47</span></td>
+											<td><span class="v1">0.009</span></td>
+										</tr>
+									<tr>
+											<th scope="row">오산시</th>
+											<td><span class="v2">31</span></td>
+											<td><span class="v2">52</span></td>
+											<td><span class="v1">0.003</span></td>
+										</tr>
+									<tr>
+											<th scope="row">용인시</th>
+											<td><span class="v3">41</span></td>
+											<td><span class="v2">56</span></td>
+											<td><span class="v1">0.005</span></td>
+										</tr>
+									<tr>
+											<th scope="row">의왕시</th>
+											<td><span class="v3">40</span></td>
+											<td><span class="v2">56</span></td>
+											<td><span class="v1">0.003</span></td>
+										</tr>
+									<tr>
+											<th scope="row">의정부시</th>
+											<td><span class="v3">72</span></td>
+											<td><span class="v3">99</span></td>
+											<td><span class="v1">0.005</span></td>
+										</tr>
+									<tr>
+											<th scope="row">이천시</th>
+											<td><span class="v3">47</span></td>
+											<td><span class="v2">61</span></td>
+											<td><span class="v1">0.004</span></td>
+										</tr>
+									<tr>
+											<th scope="row">파주시</th>
+											<td><span class="v3">41</span></td>
+											<td><span class="v2">71</span></td>
+											<td><span class="v1">0.012</span></td>
+										</tr>
+									<tr>
+											<th scope="row">평택시</th>
+											<td><span class="v3">39</span></td>
+											<td><span class="v2">78</span></td>
+											<td><span class="v1">0.005</span></td>
+										</tr>
+									<tr>
+											<th scope="row">포천시</th>
+											<td><span class="v3">54</span></td>
+											<td><span class="v3">99</span></td>
+											<td><span class="v1">0.010</span></td>
+										</tr>
+									<tr>
+											<th scope="row">하남시</th>
+											<td><span class="v2">35</span></td>
+											<td><span class="v2">73</span></td>
+											<td><span class="v1">0.003</span></td>
+										</tr>
+									<tr>
+											<th scope="row">화성시</th>
+											<td><span class="v3">45</span></td>
+											<td><span class="v2">75</span></td>
+											<td><span class="v1">0.006</span></td>
+										</tr>
+									</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- txtStyle 클래스 추가 20-02-14 -->
+				<span class="txtStyle">* 해당 자료는 환경공단(에어코리아)에서 제공되는 실시간 관측 자료이며, 증명자료로 사용할 수 없습니다.</span>
+				<!-- txtStyle 클래스 추가 20-02-14 -->
+			</div>
+		</div>
+		<!-- //content_area -->
+	</section>
+
+	<footer>
+		<span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+		<span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+	</footer>
+</body>
+
+</html>

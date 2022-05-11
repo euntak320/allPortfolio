@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>MJ corona 원격 문진 서비스 IA</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: 'Roboto', sans-serif;
+			;
+		}
+
+		#wrap {
+			padding: 10px;
+		}
+
+		#header {
+			position: relative;
+		}
+
+		#header .titleArea {
+			overflow: hidden;
+			padding-bottom: 20px;
+			border-bottom: 3px solid #ddd;
+		}
+
+		#header .titleArea>* {
+			display: inline-block;
+			width: 49%;
+			vertical-align: middle;
+		}
+
+		#header .titleArea .fr {
+			line-height: 26px;
+		}
+		
+		section {
+			display: none;
+		}
+
+		section.on {
+			display: block;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		table th {
+			background: #f7c192;
+		}
+
+		table td,
+		table th {
+			padding: 7px 2px;
+			border: 1px solid #ddd;
+			font-size: 14px;
+			font-weight: 500;
+			text-align: center;
+		}
+
+		table .depth {
+			border-top: 1px solid #333;
+		}
+
+		section {
+			padding:10px;
+		}
+
+		section .title {
+			display: block;
+			margin: 10px 0;
+			font-size:20px;
+		}
+
+		.tab {
+			margin-top:20px;
+		}
+
+		.tab button {
+			display: inline-block;
+			width:150px;
+			line-height: 30px;
+			font-size:20px;
+		}
+	</style>
+
+	<script>
+		$(function(){
+			// $("table tr").each(function( index ){
+			// 	$(this).find("td").eq(0).text( index );
+            // });
+			$(".tab button").click(function(){
+				$(".tab button").removeClass("on");
+				$(".tab button").eq($(this).index()).addClass("on");
+				$("section").removeClass("on");
+				$("section").eq($(this).index()).addClass("on");
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+
+		<!-- header -->
+		<header id="header">
+			<div class="titleArea">
+				<div class="fl">
+					<h1>MJ corona 원격 문진 서비스 IA </h1>
+				</div>
+				<div class="fr">
+					<strong>국문 </strong>
+					<p>HTML5 / utf-8</p>
+					<p>Browser - Firefox, IE11, Crome, Safari, Opera</p>
+				</div>
+			</div>
+
+		</header>
+		<!--// header -->
+		<!-- tab -->
+		<div class="tab">
+			<button class="on">PC</button>
+			<button>Mobile</button>
+		</div>
+
+		<!-- section -->
+		<section id="contents" class="on">
+			<!-- 메뉴 구조도 -->
+			<div class="table_style01">
+				<span class="title">PC</span>
+				<table>
+					<colgroup>
+						<col span="7" style="width:atuo" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">page</th>
+							<th scope="col">URL</th>
+							<th scope="col">IE</th>
+							<th scope="col">Chrom</th>
+							<th scope="col">완료일자</th>
+							<th scope="col">최종수정일자</th>
+							<th scope="col">CSS수정여부</th>
+							<th scope="col">기타사항</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>로그인</td>
+							<td>
+								<a href="pc/login.html">로그인</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>고객문의</td>
+							<td>
+								<a href="pc/page_100.html">고객문의</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>고객문의조회</td>
+							<td>
+								<a href="pc/page_101.html">고객문의 레이어</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>예진표관리</td>
+							<td>
+								<a href="pc/page_200.html">예진표관리</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>예진표 기본정보</td>
+							<td>
+								<a href="pc/page_201.html">예진표 기본정보</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>예진표 미리보기</td>
+							<td>
+								<a href="pc/page_202.html">예진표 미리보기</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>관리자 관리</td>
+							<td>
+								<a href="pc/page_300.html">관리자관리</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section id="contents">
+			<!-- 메뉴 구조도 -->
+			<div class="table_style01">
+				<span class="title">Mobile</span>
+				<table>
+					<colgroup>
+						<col span="7" style="width:atuo" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">page</th>
+							<th scope="col">URL</th>
+							<th scope="col">IE</th>
+							<th scope="col">Chrom</th>
+							<th scope="col">완료일자</th>
+							<th scope="col">최종수정일자</th>
+							<th scope="col">CSS수정여부</th>
+							<th scope="col">기타사항</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="depth">
+							<td>1</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</div>
+	<!--// wrap -->
+
+</body>
+
+</html>

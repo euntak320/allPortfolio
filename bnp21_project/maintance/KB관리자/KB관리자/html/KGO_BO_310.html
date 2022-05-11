@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>팝업 | 관리자 </title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 개발 : 팝업 -->
+<script type="text/javascript" src="../common/js/jquery-confirm.min.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+<style type="text/css">
+.topArea .title + .in {margin-top:20px}
+.topArea .title + .in > strong {display:inline-block; vertical-align:sub}
+.topArea .title + .in > div {display:inline-block; margin-left:15px;}
+</style>
+<body>
+	<a href="javascript:void(0)" onclick="fn_layer('layer1')" class="layerBtn">레이어 팝업</a>
+	<div class="layer smallPop layer1">
+		<div class="layerFrame">
+			<div class="topArea">
+				<span class="title">비밀번호 확인</span>
+				<div class="in">
+					<strong class="th">비밀번호</strong>
+					<div class="td"><input type="password" class="input" /></div>
+				</div>
+			</div>
+			<div class="btnBottom">
+				<a href="" class="btn">닫기</a>
+				<a href="" class="btn yellow">확인</a>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

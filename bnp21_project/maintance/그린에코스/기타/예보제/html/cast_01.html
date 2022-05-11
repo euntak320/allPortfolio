@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko" class="ko">
+
+<head>
+	<title>예보제</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/jquery-ui.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+	<!-- 200212  수정 -->
+	<script>
+		$(function () {
+			$(".table_area td .tooptip_txt").mouseenter(function () {
+				$(this).find(".tooltip_area").addClass("on");
+			});
+			$(".table_area td .tooptip_txt").mouseleave(function () {
+				$(this).find(".tooltip_area").removeClass("on");
+			});
+			$(".tooltip_area").click(function () {
+				$(this).removeClass("on");
+			});
+		});
+	</script>
+	<!-- 200212  수정 -->
+</head>
+
+<body>
+	<!-- 스킵 네비게이션 -->
+	<nav id="accessibility">
+		<strong class="hd-element">컨텐츠 바로가기</strong>
+		<ul>
+			<li><a href="#container"><span>본문 바로가기</span></a></li>
+			<li><a href="#navigation"><span>주메뉴 바로가기</span></a></li>
+		</ul>
+	</nav>
+	<!-- //스킵 네비게이션 -->
+
+	<div class="wrapper">
+		<!-- 헤더부분 -->
+		<header>
+			<div class="top_area">
+				<h1>
+					<a href="#none">
+						<img src="../assets/images/logo.jpg" alt="새로운 경기 공정한 세상"> 
+						<span>경기도 대기환경진단 평가시스템</span>
+					</a>
+				</h1>
+			</div>
+			<div class="bottom_area" id="navigation">
+				<div class="gnb">
+					<ul class="menu_area">
+						<li><a href="#n">예보제</a>
+							<div class="depth2">
+								<ul>
+									<li><a href="#n">예보제</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#n">대기현황</a>
+							<div class="depth2">
+								<ul>
+									<li><a href="#n">시군별 대기정보</a></li>
+									<li><a href="#n">시도별 대기정보</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#n">기상</a>
+							<div class="depth2">
+								<ul>
+									<li><a href="#n">기상</a></li>
+									<li><a href="#n">일기도</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="#n">모델링결과</a>
+							<div class="depth2">
+								<ul>
+									<li><a href="#n">경기도 모델링결과</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<div class="btnMenu">
+						<a href="#n">메뉴보기</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- 헤더부분 -->
+
+		<!-- 비주얼 -->
+		<div class="sub_visual bg1">
+			<div class="inner">
+				<p class="txt">사계절 깨끗한 공기와 건강한 라이프 스타일 <br><strong>경기도 대기환경진단 평가시스템</strong>이 함께 합니다</p>
+			</div>
+		</div>
+
+		<!-- container -->
+		<section class="container" id="container">
+			<!-- 왼쪽 메뉴 -->
+			<div class="left_menu">
+				<h2>예보제</h2>
+				<ul class="left_list">
+					<li><a href="#none" class="on">예보제</a></li>
+				</ul>
+			</div>
+
+			<!-- content_area -->
+			<div class="content_wrap">
+				<div class="location">
+					<a href="/"><img src="../assets/images/nav_home.png" alt="home"></a>
+					<span>예보제</span>
+					<strong>예보제</strong>
+				</div>
+
+				<div class="cont_area">
+					<div class="cont_top">
+						<h3 class="comh3">예보제</h3>
+						<!-- 검색영역 -->
+						<div class="input_data">
+							<fieldset>
+								<legend>검색</legend>
+								<div class="input_cell">
+									<span class="hidden"><label for="src2">날짜</label></span>
+									<div class="com_input">
+										<input type="text" class="cal" id="src2">
+									</div>
+									<button type="button" class="btn">조회</button>
+								</div>
+							</fieldset>
+						</div>
+						<!-- //검색영역 -->
+					</div>
+
+					<div class="cont_row">
+						<div class="table_area center">
+							<h4 class="comh4">권역별 오염등급</h4>
+							<table>
+								<caption>권역별 오염등급</caption>
+								<colgroup>
+									<col style="width:82px">
+									<col style="width:auto">
+									<col style="width:auto">
+									<col style="width:auto">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">구분</th>
+										<th scope="col">초미세먼지 (PM<sub>2.5</sub>)</th>
+										<th scope="col">미세먼지 (PM<sub>10</sub>)</th>
+										<th scope="col">오존 (O<sub>3</sub>)</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="bgGray">남부권</th>
+										<td><img src="../assets/images/icon_air_good.png" alt="좋음" class="icon"></td>
+										<td><img src="../assets/images/icon_air_normal.png" alt="보통" class="icon"></td>
+										<td><img src="../assets/images/nodata.jpg" alt="데이터없음" class="icon"></td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">중부권</th>
+										<td><img src="../assets/images/icon_air_good.png" alt="좋음" class="icon"></td>
+										<td><img src="../assets/images/icon_air_normal.png" alt="보통" class="icon"></td>
+										<td><img src="../assets/images/noimage.png" alt="나쁨" class="icon"></td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">북부권</th>
+										<td><img src="../assets/images/icon_air_good.png" alt="좋음" class="icon"></td>
+										<td><img src="../assets/images/icon_air_normal.png" alt="보통" class="icon"></td>
+										<td><img src="../assets/images/icon_air_bad.png" alt="나쁨" class="icon"></td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">중부권</th>
+										<td><img src="../assets/images/icon_air_good.png" alt="좋음" class="icon"></td>
+										<td><img src="../assets/images/icon_air_normal.png" alt="보통" class="icon"></td>
+										<td><img src="../assets/images/icon_air_bad.png" alt="나쁨" class="icon"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="cont_row">
+						<h4 class="comh4 ">권역별 생활정보 표시</h4>
+						<div class="table_area center tb_scroll tooltip">
+							<table>
+								<caption>권역별 생활정보 표시</caption>
+								<colgroup>
+									<col style="width:80px">
+									<col style="width:146px">
+									<col style="width:146px">
+									<col style="width:146px">
+									<col style="width:146px">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">구분</th>
+										<th scope="col">실외활동</th>
+										<th scope="col">실내환기</th>
+										<th scope="col">교통이용정보</th>
+										<th scope="col">비상저감조치</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="bgGray">남부권</th>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_outdoor_1.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">운동기능</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_outdoor_2.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가벼운 운동 및 산책</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_outdoor_3.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">마스크 착용 후 실외활동, 장기간 혹은 무리한 실외할동 금지, 도로변 공사장 등 피함, 외출자제</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_outdoor_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">실내활동, 실외활동 제한</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">중부권</th>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_1.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">환기</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_2.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">환기</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_3.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">청소, 요리 등 실내활동 후에 짧은 환기 필요</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가급적 환기 않마</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">북부권</th>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가급적 환기 않마</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가급적 환기 않마</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가급적 환기 않마</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가급적 환기 않마</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">중부권</th>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가급적 환기 않마</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가급적 환기 않마</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td>
+											<!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가급적 환기 않마</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+										<td><!-- 추가사항 -->
+											<div class="tooptip_txt">
+												<img src="../assets/images/icon_winopen_4.jpg" alt="운동가능" class="icon">
+												<div class="tooltip_area">
+													<span class="tooltip_txt">가급적 환기 않마</span>
+												</div>
+											</div>
+											<!-- 추가사항 -->
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- box 부분 -->
+					<div class="cont_row">
+						<h4 class="comh4">경기도 대기질 분석 결과</h4>
+						<textarea>※ 대기질 모델링 결과로서 확정값이 아니며 모델 불확실성에 따라 실측값과 다를 수 있음
+
+[PM2.5, PM10] 전 권역 보통 수준으로 분석됨  
+
+[행동요령] 일상적인 실외활동 가능, 충분한 환기 권장</textarea>
+					</div>
+					<!-- box 부분 -->
+					<div class="cont_row">
+						<h4 class="comh4">경기도 대기질 분석 결과</h4>
+						<ul class="txt_list">
+							<li><strong>[과학원 오늘의 예보]</strong> 미세먼지 보통, 초미세먼지 보통</li>
+							<li><strong>[미세먼지]</strong> 전 권역이 좋음~보통으로 예상됨</li>
+							<li><strong>Pm2.5 :</strong> 동부, 남부 좋음</li>
+							<li><strong>Pm10 :</strong> 북부, 남부, 서부 좋음</li>
+							<li><strong>원인 :</strong> 대기확산이 원활하여 대기상태가 대부분 원할하여 보통 수준일것으로 예상</li>
+							<li><strong>[오존]</strong> 전 권역의 농도가 전일보다 다소 높을것으로 예상</li>
+							<li><strong>원인 :</strong> 오염물질의 광하학반응에 의한 오존생성과 이동으로 서부지역과 남부지역에서 농도가 높을 것으로 예상</li>
+						</ul>
+					</div>
+
+					<div class="cont_row">
+						<h4 class="comh4">경기도 모델결과 애니메이션</h4>
+						<div class="table_area center tb_scroll">
+							<table>
+								<caption>오염물질별 애니메이션</caption>
+								<colgroup>
+									<col style="width:240px;">
+									<col style="width:240px;">
+									<col style="width:240px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">PM<sub>2.5</sub></th>
+										<th scope="col">PM<sub>10</sub></th>
+										<th scope="col">O<sub>3</sub></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="table_area center tb_scroll">
+							<table>
+								<caption>시간대별 애니메이션</caption>
+								<colgroup>
+									<col style="width:80px;">
+									<col style="width:213px;">
+									<col style="width:213px;">
+									<col style="width:213px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col"></th>
+										<th scope="col">오늘 09시</th>
+										<th scope="col">오늘 17시</th>
+										<th scope="col">오늘 21시</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="bgGray">PM<sub>2.5</sub></th>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">PM<sub>10</sub></th>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">O<sub>3</sub></th>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+										<td><img src="../assets/images/temp/temp_graph3.jpg" alt="샘플"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="cont_row">
+						<h4 class="comh4">권역별 등급구분 및 행동요령</h4>
+						<div class="table_area center tb_scroll">
+							<table class="know_how">
+								<caption>권역별 등급구분 및 행동요령</caption>
+								<colgroup>
+									<col style="width:80px;">
+									<col style="width:145px;">
+									<col style="width:140px;">
+									<col style="width:230px;">
+									<col style="width:140px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">구분</th>
+										<th scope="col" class="lv1">좋음</th>
+										<th scope="col" class="lv2">보통</th>
+										<th scope="col" class="lv3">나쁨</th>
+										<th scope="col" class="lv4">매우나쁨</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="bgGray">실외활동</th>
+										<td>
+											<img src="../assets/images/icon_outdoor_1.jpg" alt="" class="icon"><br></br>
+											<p class="txt">운동 가능</p>
+										</td>
+										<td>
+											<img src="../assets/images/icon_outdoor_2.jpg" alt="" class="icon"><br></br>
+											<p class="txt">가벼운 운동 및 산책</p>
+										</td>
+										<td>
+											<img src="../assets/images/icon_outdoor_3.jpg" alt="" class="icon"><br>
+											<p class="txt">마스크 착용 후 실외활동,<br> 장기간 혹은 무리한 실외활동 금지, <br>도로변 공사장 등 피함, 외출자제
+											</p>
+										</td>
+										<td>
+											<img src="../assets/images/icon_outdoor_4.jpg" alt="" class="icon"><br>
+											<p class="txt">실내활동, <br>실외활동 제한</p>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">실내환기</th>
+										<td>
+											<img src="../assets/images/icon_winopen_1.jpg" alt="" class="icon"><br></br>
+											<p class="txt">환기</p>
+										</td>
+										<td>
+											<img src="../assets/images/icon_winopen_2.jpg" alt="" class="icon"><br></br>
+											<p class="txt">환기</p>
+										</td>
+										<td>
+											<img src="../assets/images/icon_winopen_3.jpg" alt="" class="icon"><br>
+											<p class="txt">청소, 요리 등 실내활동 후에<br> 짧은 환기 필요</p>
+										</td>
+										<td>
+											<img src="../assets/images/icon_winopen_4.jpg" alt="" class="icon"><br>
+											<p class="txt">가급적 환기 안함</p>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">교통이용<br>정보</th>
+										<td>
+											<img src="../assets/images/icon_publictrans_1.jpg" alt=""
+												class="icon"><br></br>
+											<p class="txt">일상적인 교통이용</p>
+										</td>
+										<td>
+											<img src="../assets/images/icon_publictrans_2.jpg" alt=""
+												class="icon"><br></br>
+											<p class="txt">일상적인 교통이용</p>
+										</td>
+										<td>
+											<img src="../assets/images/icon_publictrans_3.jpg" alt="" class="icon"><br>
+											<p class="txt">마스크쓰고 대중교통 이용,<br>외부노출 짧게,가급적 대중교통 이용</p>
+										</td>
+										<td>
+											<img src="../assets/images/icon_publictrans_4.jpg" alt="" class="icon"><br>
+											<p class="txt">가급적 외부이동 피함,<br>가급적 대중교통 이용</p>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- 추가사항 -->
+					<div class="cont_row">
+						<h4 class="comh4">권역별 등급구분 및 행동요령</h4>
+						<div class="table_area left">
+							<table class="know_how">
+								<caption>권역별 등급구분 및 행동요령</caption>
+								<colgroup>
+									<col style="width:80px;">
+									<col style="width:auto;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" style="border-right:1px solid #ccc;">구분</th>
+										<th scope="col">시군</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row" class="bgGray">남부권</th>
+										<td class="left_txt">안성시, 여주시, 용인시, 이천시</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">실외활동</th>
+										<td class="left_txt">과천시, 광명시, 군포시, 부천시, 수원시, 시흥시, 안산시, 안양시, 오산시, 의왕시, 화성시</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">북부권</th>
+										<td class="left_txt">고양시, 김포시, 동두천시, 양주시, 연천구, 의정부시, 파주시, 포천시</td>
+									</tr>
+									<tr>
+										<th scope="row" class="bgGray">중부권</th>
+										<td class="left_txt">가평군, 광주시, 구리시, 남양주시, 성남시, 양평군, 하남시</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- 추가사항 -->
+				</div>
+			</div>
+			<!-- //content_area -->
+		</section>
+		<!-- //container -->
+
+		<footer>
+			<span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+			<span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+		</footer>
+	</div>
+</body>
+
+</html>

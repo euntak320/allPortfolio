@@ -1,0 +1,2553 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MJ Virtual care center</title>
+	<script type="text/javascript" async="" src="../js/jquery-3.3.1.min.js"></script>	
+	<script type="text/javascript" async="" src="../js/jquery-ui.js"></script>	
+	<link rel="stylesheet" href="../css/jquery-ui.css">	
+	<link rel="stylesheet" href="../css/jquery.scrollbar.css">	
+	<link rel="stylesheet" href="../css/reset.css">	
+	<link rel="stylesheet" href="../css/layout.css">
+
+
+	<script type="text/javascript" async="" src="../js/jquery.scrollbar.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){                
+			$('.scroll-box').scrollbar();
+		});
+	</script>
+</head>
+<body>
+  
+<div id="wrap" class="scroll-box scrollbar-dynamic">
+	<div id="header">
+		<div class="head">
+			<h1 class="logo"><a href="page008.html"><img src="../images/common/logo.svg" alt=""></a></h1>
+			<button type="button" class="btn-menu">
+				메뉴/닫기
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<div class="gnb">
+				<ul>
+					<li class="menu-actvie"><a href="page008.html">진료현황</a></li>
+					<li><a href="page025.html">스케줄</a></li>
+					<li><a href="#">계좌정보</a></li>
+					<li><a href="page026.html">마이페이지</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="top-my">
+			<div class="user-name"><a href="#">김철민 의사</a></div>
+			<button type="button" class="btn-logout"><i class="ico-logout"></i>로그아웃</button>
+		</div>
+	</div>
+	<div id="container">
+		<div class="content">
+			<div class="head-title">
+				<h2>진료현황</h2>
+				<div class="location">
+					<a href="#"><img src="../images/common/ico_home.svg" alt="홈"></a>
+					<a href="#" class="location-txt">진료현황</a>
+				</div>
+			</div>
+			<div class="section">
+				<div class="search-form">
+					<dl class="search-sec">
+						<dt>문의상태</dt>
+						<dd>
+							<div class="radio-wrap">
+								<div class="radio-area">
+									<input type="radio" id="inquiry-state1" name="inquiry-state"><label for="inquiry-state1">전체</label>
+								</div>
+								<div class="radio-area">
+									<input type="radio" id="inquiry-state2" name="inquiry-state"><label for="inquiry-state2">진료 전</label>
+								</div>
+								<div class="radio-area">
+									<input type="radio" id="inquiry-state3" name="inquiry-state"><label for="inquiry-state3">완료</label>
+								</div>
+								<div class="radio-area">
+									<input type="radio" id="inquiry-state4" name="inquiry-state"><label for="inquiry-state4">취소</label>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl class="search-sec">
+						<dt>예약일</dt>
+						<dd class="p-flex">
+							<div class="form-date-wrap">
+								<div class="date-area"><input type="text" class="default-ip datepicker"></div>
+								<span>~</span>
+								<div class="date-area"><input type="text" class="default-ip datepicker"></div>
+							</div>
+							<div class="search-keyword">
+								<select name="" id="" class="default-slc">
+									<option value="">내용</option>
+									<option value="">환자명</option>
+									<option value="">의사</option>
+								</select>
+								<input type="text" class="default-ip">
+								<button type="button" class="btn-ip">검색</button>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="diagnosis-wrap">
+					<div class="section-tt">전체 <span class="t-blue">206건</span></div>
+					<div class="diagnosis-list">
+						<div class="scroll-box scrollbar-dynamic">
+							<!-- diagnosis-item 반복 -->
+							<div class="diagnosis-item">
+								<div class="item-head">
+									<div class="item-left">
+										<div class="state state-before"><span>진료전</span></div> <!-- state-before:진료전 / state-cancel:예약취소 / state-complete:진료완료 -->
+										<div class="when">
+											<div class="date">2020.08.19(수)</div>
+											<div class="time">오전<strong>11:00</strong></div>
+										</div>
+										<div class="name">
+											<span><strong>김기환</strong>님</span>
+										</div>
+										<div class="sytem">
+											<dl>
+												<dt>진료방식 :</dt>
+												<dd>
+													<span class="system-type"><i class="ico-chat"></i>채팅</span>
+													<span class="system-type"><i class="ico-video"></i>화상</span>
+													<span class="system-type"><i class="ico-tel"></i>전화</span>
+												</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="item-right">
+										<button type="button" class="btn-diagnosis"><i class="ico-in"></i>진료시작</button>
+										<button type="button" class="btn-detail">자세히보기</button>
+									</div>
+								</div>
+								<div class="item-cont"> <!-- .btn-detail 클릭 시 오픈/클로즈 -->
+									<div class="cont-head">
+										<div class="head-left"><button type="button" class="btn-prev">이전</button>진료현황</div>
+										<button type="button" class="btn-menu">
+											메뉴/닫기
+											<span></span>
+											<span></span>
+											<span></span>
+										</button>
+									</div>
+									<div class="cont-tab">
+										<ul>
+											<li><button type="button" class="btn-tab active-tab" data-tab="cont1-1">환자 정보</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-2">기초 자료</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-3">과거 진료기록</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-4">문진 정보</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-5">진료비</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-6">처방전</button></li>
+										</ul>
+									</div>
+									<div class="cont-wrap scroll-box scrollbar-dynamic">
+										<!-- 환자 정보 -->
+										<div class="cont-area active-area" id="cont1-1">
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>이름</th>
+														<td>김기환</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>성별</th>
+														<td>남</td>
+													</tr>
+													<tr>
+														<th>생년월일</th>
+														<td>1968-07-14</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>휴대전화 번호</th>
+														<td>010-2233-5577</td>
+													</tr>
+													<tr>
+														<th>기업회원 여부</th>
+														<td colspan="3" class="m-hide">기업회원</td>
+														<td class="p-hide">기업회원</td>
+													</tr>
+												</table>
+											</div>
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>예약시간</th>
+														<td>2020-08-26 (수) 16:15</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>진료 유형</th>
+														<td>
+															<div class="system-wrap">
+																<span class="system-type"><i class="ico-chat"></i>채팅</span>
+																<span class="system-type"><i class="ico-video"></i>화상</span>
+																<span class="system-type"><i class="ico-tel"></i>전화</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>진료 상태</th>
+														<td><span class="state state-before">진료 전</span></td><!-- state-before:진료전 / state-cancel:예약취소 / state-complete:진료완료 -->
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>예약취소 사유</th>
+														<td>
+															<div class="in-slc-btn">
+																<select name="" id="">
+																	<option value="">예약취소 사유</option>
+																</select>
+																<button type="button" class="btn-in-default">예약 취소하기</button>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>기업회원 여부</th>
+														<td colspan="3" class="m-hide">기업회원</td>
+														<td class="p-hide">기업회원</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //환자 정보 -->
+										<!-- 기초 자료 -->
+										<div class="cont-area" id="cont1-2">
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>키(cm)</th>
+														<td>177</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>체중(kg)</th>
+														<td>85</td>
+													</tr>
+													<tr>
+														<th>흡연 여부</th>
+														<td>흡연 안함</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>음주 여부</th>
+														<td>음주 안함</td>
+													</tr>
+													<tr>
+														<th>과거 병력</th>
+														<td>-</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>가족력</th>
+														<td>-</td>
+													</tr>
+													<tr>
+														<th>입원 및 수술 경험</th>
+														<td>-</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>복용 중인 약물</th>
+														<td>-</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //기초 자료 -->
+										<!-- 과거 진료기록 -->
+										<div class="cont-area" id="cont1-3">
+											<dl class="h-table-wrap">
+												<dt class="h-table-head">
+													<ul>
+														<li class="wd236">진료상태</li>
+														<li class="wd236">진료날짜</li>
+														<li class="other">진료방식</li>
+														<li class="wd236">진료과목</li>
+														<li class="wd236">담당의</li>
+													</ul>												
+												</dt>
+												<dd class="h-table-body">
+													<div class="h-table-list">
+														<!-- 반복 -->
+														<div class="body-item">
+															<ul>
+																<li class="wd236"><span class="state state-before">진료 전</span></li>
+																<li class="wd236">2020-08-26</li>
+																<li class="other">
+																	<div class="system-wrap">
+																		<span class="system-type"><i class="ico-chat"></i>채팅</span>
+																		<span class="system-type"><i class="ico-video"></i>화상</span>
+																		<span class="system-type"><i class="ico-tel"></i>전화</span>
+																	</div>
+																</li>
+																<li class="wd236">가정의학과</li>
+																<li class="wd236">
+																	<div class="doctor-box">
+																		김철민 의사
+																		<button type="button" class="btn-more">더보기</button>
+																	</div>
+																</li>
+															</ul>
+															<div class="more-content">
+																<!-- 진료기록 -->
+																<div class="more-box medical-record">
+																	<div class="more-head">
+																		진료기록
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<dl class="record-sec">
+																			<dt>Subjective 증상에 대한 추가 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Objective 객관적 진료 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Assessment 진단​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Plan 치료 계획 및 처방 의약품​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																	</div>
+																</div>
+																<!-- //진료기록 -->
+																<!-- 채팅진료 -->
+																<div class="more-box chat-medical">
+																	<div class="more-head">
+																		채팅 진료
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="chat-wrap">
+																			<div class="chat-box chat-box-left">
+																				<p class="message-date">2020.08.24 오후1:40</p>
+																				<div class="message-text">
+																					<p class="name">김기환 환자</p>
+																					<p class="message">
+																						문진표<br/>
+																						· 신장/체중: 177cm / 85kg​<br/>
+																						· 흡연 여부 : 흡연 안함​<br/>
+																						· 음주 여부 : 음주 안함<br/>
+																						​· 과거 병력 : --- <br/>
+																						· 가족력 : --- <br/>
+																						· 입원 및 수술경험 : --- <br/>
+																						· 복용 중인 약물 : ---
+																					</p>
+																				</div>
+																			</div>
+																			<div class="chat-box chat-box-right">
+																				<p class="message-date">2020.08.24 오후1:43</p>
+																				<div class="message-text">
+																					안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //채팅진료 -->
+																<!-- 캡쳐이미지 -->
+																<div class="more-box capture-box">
+																	<div class="more-head">
+																		캡처 이미지
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="capture-wrap">
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //캡쳐이미지 -->
+															</div>
+														</div>
+														<!-- //반복 -->
+														<!-- 반복 -->
+														<div class="body-item">
+															<ul>
+																<li class="wd236"><span class="state state-cancel">예약취소</span></li>
+																<li class="wd236">2020-08-25</li>
+																<li class="other">
+																	<div class="system-wrap">
+																		<span class="system-type"><i class="ico-video"></i>화상</span>
+																		<span class="system-type"><i class="ico-tel"></i>전화</span>
+																	</div>
+																</li>
+																<li class="wd236">가정의학과</li>
+																<li class="wd236">
+																	<div class="doctor-box">
+																		김철민 의사
+																		<button type="button" class="btn-more">더보기</button>
+																	</div>
+																</li>
+															</ul>
+															<div class="more-content">
+																<!-- 진료기록 -->
+																<div class="more-box medical-record">
+																	<div class="more-head">
+																		진료기록
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<dl class="record-sec">
+																			<dt>Subjective 증상에 대한 추가 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Objective 객관적 진료 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Assessment 진단​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Plan 치료 계획 및 처방 의약품​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																	</div>
+																</div>
+																<!-- //진료기록 -->
+																<!-- 채팅진료 -->
+																<div class="more-box chat-medical">
+																	<div class="more-head">
+																		채팅 진료
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="chat-wrap">
+																			<div class="chat-box chat-box-left">
+																				<p class="message-date">2020.08.24 오후1:40</p>
+																				<div class="message-text">
+																					<p class="name">김기환 환자</p>
+																					<p class="message">
+																						문진표<br/>
+																						· 신장/체중: 177cm / 85kg​<br/>
+																						· 흡연 여부 : 흡연 안함​<br/>
+																						· 음주 여부 : 음주 안함<br/>
+																						​· 과거 병력 : --- <br/>
+																						· 가족력 : --- <br/>
+																						· 입원 및 수술경험 : --- <br/>
+																						· 복용 중인 약물 : ---
+																					</p>
+																				</div>
+																			</div>
+																			<div class="chat-box chat-box-right">
+																				<p class="message-date">2020.08.24 오후1:43</p>
+																				<div class="message-text">
+																					안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //채팅진료 -->
+																<!-- 캡쳐이미지 -->
+																<div class="more-box capture-box">
+																	<div class="more-head">
+																		캡처 이미지
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="capture-wrap">
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //캡쳐이미지 -->
+															</div>
+														</div>
+														<!-- //반복 -->
+														<!-- 반복 -->
+														<div class="body-item">
+															<ul>
+																<li class="wd236"><span class="state state-complete">진료완료</span></li>
+																<li class="wd236">2020-08-25</li>
+																<li class="other">
+																	<div class="system-wrap"><span class="system-type"><i class="ico-tel"></i>전화</span></div>
+																</li>
+																<li class="wd236">가정의학과</li>
+																<li class="wd236">
+																	<div class="doctor-box">
+																		김철민 의사
+																		<button type="button" class="btn-more">더보기</button>
+																	</div>
+																</li>
+															</ul>
+															<div class="more-content">
+																<!-- 진료기록 -->
+																<div class="more-box medical-record">
+																	<div class="more-head">
+																		진료기록
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<dl class="record-sec">
+																			<dt>Subjective 증상에 대한 추가 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Objective 객관적 진료 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Assessment 진단​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Plan 치료 계획 및 처방 의약품​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																	</div>
+																</div>
+																<!-- //진료기록 -->
+																<!-- 채팅진료 -->
+																<div class="more-box chat-medical">
+																	<div class="more-head">
+																		채팅 진료
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="chat-wrap">
+																			<div class="chat-box chat-box-left">
+																				<p class="message-date">2020.08.24 오후1:40</p>
+																				<div class="message-text">
+																					<p class="name">김기환 환자</p>
+																					<p class="message">
+																						문진표<br/>
+																						· 신장/체중: 177cm / 85kg​<br/>
+																						· 흡연 여부 : 흡연 안함​<br/>
+																						· 음주 여부 : 음주 안함<br/>
+																						​· 과거 병력 : --- <br/>
+																						· 가족력 : --- <br/>
+																						· 입원 및 수술경험 : --- <br/>
+																						· 복용 중인 약물 : ---
+																					</p>
+																				</div>
+																			</div>
+																			<div class="chat-box chat-box-right">
+																				<p class="message-date">2020.08.24 오후1:43</p>
+																				<div class="message-text">
+																					안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //채팅진료 -->
+																<!-- 캡쳐이미지 -->
+																<div class="more-box capture-box">
+																	<div class="more-head">
+																		캡처 이미지
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="capture-wrap">
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //캡쳐이미지 -->
+															</div>
+														</div>
+														<!-- //반복 -->
+													</div>
+													<div class="pagination">
+														<button type="button" class="btn-page btn-prev">이전</button>
+														<div class="page-num-list">
+															<button type="button" class="page-num active-num">1</button>
+															<button type="button" class="page-num">2</button>
+															<button type="button" class="page-num">3</button>
+															<button type="button" class="page-num">4</button>
+															<button type="button" class="page-num">5</button>
+														</div>
+														<button type="button" class="btn-page btn-next">다음</button>
+													</div>
+												</dd>
+											</dl>										
+										</div>
+										<!-- //과거 진료기록 -->
+										<!-- 문진 정보 -->
+										<div class="cont-area" id="cont1-4">
+											<div class="v-table">
+												<table>
+													<colgroup>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>증상 지속 여부</th>
+														<td>24시간 이내</td>
+													</tr>
+													<tr>
+														<th>증상 내용</th>
+														<td>자다가 일어났는데 목이 뻐근하고 어깨 날개뼈 안쪽이 콕콕 찌르는 듯 아픕니다. <br/>잠깐 그러려니 싶었는데 하루종일 지속되어...</td>
+													</tr>
+													<tr>
+														<th>첨부파일 <br/>(최대 8개)</th>
+														<td>
+															<div class="file-list">
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //문진 정보 -->
+										<!-- 진료비 -->
+										<div class="cont-area" id="cont1-5">
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>급여 총액</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>청구액 <br class="p-hide"/>(공단 부담금)</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>환자 <br class="p-hide"/>본인 부담금</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>비급여</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>감액</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>최종 청구액</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>청구 현황</th>
+														<td colspan="3" class="m-hide"><button type="button" class="btn-in-default">진료비 청구하기</button></td>
+														<td class="p-hide"><button type="button" class="btn-in-default">진료비 청구하기</button></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //진료비 -->
+										<!-- 처방전 -->
+										<div class="cont-area" id="cont1-6">
+											<div class="prescription-wrap">
+												<div class="prescription-box">
+													<div class="box-head">
+														<span>처방전</span>
+														<button type="button" class="btn-big-view">크게보기</button>
+													</div>
+													<div class="box-cont"></div>
+												</div>
+												<div class="pharmacy-wrap">
+													<div class="list-head">
+														<span>약국리스트</span>
+														<button type="button" class="btn-send-prescription"><i class="ico-send"></i>처방전 전송</button>
+													</div>
+													<div class="pharmacy-list">
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy1" name="pharmacy">
+															<label for="pharmacy1">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy2" name="pharmacy">
+															<label for="pharmacy2">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy3" name="pharmacy">
+															<label for="pharmacy3">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy4" name="pharmacy">
+															<label for="pharmacy4">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy5" name="pharmacy">
+															<label for="pharmacy5">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy6" name="pharmacy">
+															<label for="pharmacy6">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy7" name="pharmacy">
+															<label for="pharmacy7">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+													</div>											
+												</div>
+											</div>
+
+										</div>
+										<!-- //처방전 -->
+									</div>
+								</div>
+							</div>
+							<!-- //diagnosis-item 반복 -->
+							<!-- diagnosis-item 반복 -->
+							<div class="diagnosis-item">
+								<div class="item-head">
+									<div class="item-left">
+										<div class="state state-complete"><span>진료완료</span></div> <!-- state-before:진료전 / state-cancel:예약취소 / state-complete:진료완료 -->
+										<div class="when">
+											<div class="date">2020.08.19(수)</div>
+											<div class="time">오전<strong>11:00</strong></div>
+										</div>
+										<div class="name">
+											<span><strong>김기환</strong>님</span>
+										</div>
+										<div class="sytem">
+											<dl>
+												<dt>진료방식 :</dt>
+												<dd>
+													<span class="system-type"><i class="ico-chat"></i>채팅</span>
+													<span class="system-type"><i class="ico-video"></i>화상</span>
+													<span class="system-type"><i class="ico-tel"></i>전화</span>
+												</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="item-right">
+										<button type="button" class="btn-diagnosis"><i class="ico-in"></i>진료시작</button>
+										<button type="button" class="btn-detail">자세히보기</button>
+									</div>
+								</div>
+								<div class="item-cont"> <!-- .btn-detail 클릭 시 오픈/클로즈 -->
+									<div class="cont-head">
+										<div class="head-left"><button type="button" class="btn-prev">이전</button>진료현황</div>
+										<button type="button" class="btn-menu">
+											메뉴/닫기
+											<span></span>
+											<span></span>
+											<span></span>
+										</button>
+									</div>
+									<div class="cont-tab">
+										<ul>
+											<li><button type="button" class="btn-tab active-tab" data-tab="cont1-1">환자 정보</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-2">기초 자료</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-3">과거 진료기록</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-4">문진 정보</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-5">진료비</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-6">처방전</button></li>
+										</ul>
+									</div>
+									<div class="cont-wrap scroll-box scrollbar-dynamic">
+										<!-- 환자 정보 -->
+										<div class="cont-area active-area" id="cont1-1">
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>이름</th>
+														<td>김기환</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>성별</th>
+														<td>남</td>
+													</tr>
+													<tr>
+														<th>생년월일</th>
+														<td>1968-07-14</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>휴대전화 번호</th>
+														<td>010-2233-5577</td>
+													</tr>
+													<tr>
+														<th>기업회원 여부</th>
+														<td colspan="3" class="m-hide">기업회원</td>
+														<td class="p-hide">기업회원</td>
+													</tr>
+												</table>
+											</div>
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>예약시간</th>
+														<td>2020-08-26 (수) 16:15</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>진료 유형</th>
+														<td>
+															<div class="system-wrap">
+																<span class="system-type"><i class="ico-chat"></i>채팅</span>
+																<span class="system-type"><i class="ico-video"></i>화상</span>
+																<span class="system-type"><i class="ico-tel"></i>전화</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>진료 상태</th>
+														<td><span class="state state-before">진료 전</span></td><!-- state-before:진료전 / state-cancel:예약취소 / state-complete:진료완료 -->
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>예약취소 사유</th>
+														<td>
+															<div class="in-slc-btn">
+																<select name="" id="">
+																	<option value="">예약취소 사유</option>
+																</select>
+																<button type="button" class="btn-in-default">예약 취소하기</button>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>기업회원 여부</th>
+														<td colspan="3" class="m-hide">기업회원</td>
+														<td class="p-hide">기업회원</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //환자 정보 -->
+										<!-- 기초 자료 -->
+										<div class="cont-area" id="cont1-2">
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>키(cm)</th>
+														<td>177</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>체중(kg)</th>
+														<td>85</td>
+													</tr>
+													<tr>
+														<th>흡연 여부</th>
+														<td>흡연 안함</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>음주 여부</th>
+														<td>음주 안함</td>
+													</tr>
+													<tr>
+														<th>과거 병력</th>
+														<td>-</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>가족력</th>
+														<td>-</td>
+													</tr>
+													<tr>
+														<th>입원 및 수술 경험</th>
+														<td>-</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>복용 중인 약물</th>
+														<td>-</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //기초 자료 -->
+										<!-- 과거 진료기록 -->
+										<div class="cont-area" id="cont1-3">
+											<dl class="h-table-wrap">
+												<dt class="h-table-head">
+													<ul>
+														<li class="wd236">진료상태</li>
+														<li class="wd236">진료날짜</li>
+														<li class="other">진료방식</li>
+														<li class="wd236">진료과목</li>
+														<li class="wd236">담당의</li>
+													</ul>												
+												</dt>
+												<dd class="h-table-body">
+													<div class="h-table-list">
+														<!-- 반복 -->
+														<div class="body-item">
+															<ul>
+																<li class="wd236"><span class="state state-before">진료 전</span></li>
+																<li class="wd236">2020-08-26</li>
+																<li class="other">
+																	<div class="system-wrap">
+																		<span class="system-type"><i class="ico-chat"></i>채팅</span>
+																		<span class="system-type"><i class="ico-video"></i>화상</span>
+																		<span class="system-type"><i class="ico-tel"></i>전화</span>
+																	</div>
+																</li>
+																<li class="wd236">가정의학과</li>
+																<li class="wd236">
+																	<div class="doctor-box">
+																		김철민 의사
+																		<button type="button" class="btn-more">더보기</button>
+																	</div>
+																</li>
+															</ul>
+															<div class="more-content">
+																<!-- 진료기록 -->
+																<div class="more-box medical-record">
+																	<div class="more-head">
+																		진료기록
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<dl class="record-sec">
+																			<dt>Subjective 증상에 대한 추가 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Objective 객관적 진료 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Assessment 진단​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Plan 치료 계획 및 처방 의약품​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																	</div>
+																</div>
+																<!-- //진료기록 -->
+																<!-- 채팅진료 -->
+																<div class="more-box chat-medical">
+																	<div class="more-head">
+																		채팅 진료
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="chat-wrap">
+																			<div class="chat-box chat-box-left">
+																				<p class="message-date">2020.08.24 오후1:40</p>
+																				<div class="message-text">
+																					<p class="name">김기환 환자</p>
+																					<p class="message">
+																						문진표<br/>
+																						· 신장/체중: 177cm / 85kg​<br/>
+																						· 흡연 여부 : 흡연 안함​<br/>
+																						· 음주 여부 : 음주 안함<br/>
+																						​· 과거 병력 : --- <br/>
+																						· 가족력 : --- <br/>
+																						· 입원 및 수술경험 : --- <br/>
+																						· 복용 중인 약물 : ---
+																					</p>
+																				</div>
+																			</div>
+																			<div class="chat-box chat-box-right">
+																				<p class="message-date">2020.08.24 오후1:43</p>
+																				<div class="message-text">
+																					안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //채팅진료 -->
+																<!-- 캡쳐이미지 -->
+																<div class="more-box capture-box">
+																	<div class="more-head">
+																		캡처 이미지
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="capture-wrap">
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //캡쳐이미지 -->
+															</div>
+														</div>
+														<!-- //반복 -->
+														<!-- 반복 -->
+														<div class="body-item">
+															<ul>
+																<li class="wd236"><span class="state state-cancel">예약취소</span></li>
+																<li class="wd236">2020-08-25</li>
+																<li class="other">
+																	<div class="system-wrap">
+																		<span class="system-type"><i class="ico-video"></i>화상</span>
+																		<span class="system-type"><i class="ico-tel"></i>전화</span>
+																	</div>
+																</li>
+																<li class="wd236">가정의학과</li>
+																<li class="wd236">
+																	<div class="doctor-box">
+																		김철민 의사
+																		<button type="button" class="btn-more">더보기</button>
+																	</div>
+																</li>
+															</ul>
+															<div class="more-content">
+																<!-- 진료기록 -->
+																<div class="more-box medical-record">
+																	<div class="more-head">
+																		진료기록
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<dl class="record-sec">
+																			<dt>Subjective 증상에 대한 추가 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Objective 객관적 진료 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Assessment 진단​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Plan 치료 계획 및 처방 의약품​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																	</div>
+																</div>
+																<!-- //진료기록 -->
+																<!-- 채팅진료 -->
+																<div class="more-box chat-medical">
+																	<div class="more-head">
+																		채팅 진료
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="chat-wrap">
+																			<div class="chat-box chat-box-left">
+																				<p class="message-date">2020.08.24 오후1:40</p>
+																				<div class="message-text">
+																					<p class="name">김기환 환자</p>
+																					<p class="message">
+																						문진표<br/>
+																						· 신장/체중: 177cm / 85kg​<br/>
+																						· 흡연 여부 : 흡연 안함​<br/>
+																						· 음주 여부 : 음주 안함<br/>
+																						​· 과거 병력 : --- <br/>
+																						· 가족력 : --- <br/>
+																						· 입원 및 수술경험 : --- <br/>
+																						· 복용 중인 약물 : ---
+																					</p>
+																				</div>
+																			</div>
+																			<div class="chat-box chat-box-right">
+																				<p class="message-date">2020.08.24 오후1:43</p>
+																				<div class="message-text">
+																					안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //채팅진료 -->
+																<!-- 캡쳐이미지 -->
+																<div class="more-box capture-box">
+																	<div class="more-head">
+																		캡처 이미지
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="capture-wrap">
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //캡쳐이미지 -->
+															</div>
+														</div>
+														<!-- //반복 -->
+														<!-- 반복 -->
+														<div class="body-item">
+															<ul>
+																<li class="wd236"><span class="state state-complete">진료완료</span></li>
+																<li class="wd236">2020-08-25</li>
+																<li class="other">
+																	<div class="system-wrap"><span class="system-type"><i class="ico-tel"></i>전화</span></div>
+																</li>
+																<li class="wd236">가정의학과</li>
+																<li class="wd236">
+																	<div class="doctor-box">
+																		김철민 의사
+																		<button type="button" class="btn-more">더보기</button>
+																	</div>
+																</li>
+															</ul>
+															<div class="more-content">
+																<!-- 진료기록 -->
+																<div class="more-box medical-record">
+																	<div class="more-head">
+																		진료기록
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<dl class="record-sec">
+																			<dt>Subjective 증상에 대한 추가 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Objective 객관적 진료 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Assessment 진단​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Plan 치료 계획 및 처방 의약품​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																	</div>
+																</div>
+																<!-- //진료기록 -->
+																<!-- 채팅진료 -->
+																<div class="more-box chat-medical">
+																	<div class="more-head">
+																		채팅 진료
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="chat-wrap">
+																			<div class="chat-box chat-box-left">
+																				<p class="message-date">2020.08.24 오후1:40</p>
+																				<div class="message-text">
+																					<p class="name">김기환 환자</p>
+																					<p class="message">
+																						문진표<br/>
+																						· 신장/체중: 177cm / 85kg​<br/>
+																						· 흡연 여부 : 흡연 안함​<br/>
+																						· 음주 여부 : 음주 안함<br/>
+																						​· 과거 병력 : --- <br/>
+																						· 가족력 : --- <br/>
+																						· 입원 및 수술경험 : --- <br/>
+																						· 복용 중인 약물 : ---
+																					</p>
+																				</div>
+																			</div>
+																			<div class="chat-box chat-box-right">
+																				<p class="message-date">2020.08.24 오후1:43</p>
+																				<div class="message-text">
+																					안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //채팅진료 -->
+																<!-- 캡쳐이미지 -->
+																<div class="more-box capture-box">
+																	<div class="more-head">
+																		캡처 이미지
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="capture-wrap">
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //캡쳐이미지 -->
+															</div>
+														</div>
+														<!-- //반복 -->
+													</div>
+													<div class="pagination">
+														<button type="button" class="btn-page btn-prev">이전</button>
+														<div class="page-num-list">
+															<button type="button" class="page-num active-num">1</button>
+															<button type="button" class="page-num">2</button>
+															<button type="button" class="page-num">3</button>
+															<button type="button" class="page-num">4</button>
+															<button type="button" class="page-num">5</button>
+														</div>
+														<button type="button" class="btn-page btn-next">다음</button>
+													</div>
+												</dd>
+											</dl>										
+										</div>
+										<!-- //과거 진료기록 -->
+										<!-- 문진 정보 -->
+										<div class="cont-area" id="cont1-4">
+											<div class="v-table">
+												<table>
+													<colgroup>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>증상 지속 여부</th>
+														<td>24시간 이내</td>
+													</tr>
+													<tr>
+														<th>증상 내용</th>
+														<td>자다가 일어났는데 목이 뻐근하고 어깨 날개뼈 안쪽이 콕콕 찌르는 듯 아픕니다. <br/>잠깐 그러려니 싶었는데 하루종일 지속되어...</td>
+													</tr>
+													<tr>
+														<th>첨부파일 <br/>(최대 8개)</th>
+														<td>
+															<div class="file-list">
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //문진 정보 -->
+										<!-- 진료비 -->
+										<div class="cont-area" id="cont1-5">
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>급여 총액</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>청구액 <br class="p-hide"/>(공단 부담금)</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>환자 <br class="p-hide"/>본인 부담금</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>비급여</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>감액</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>최종 청구액</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>청구 현황</th>
+														<td colspan="3" class="m-hide"><button type="button" class="btn-in-default">진료비 청구하기</button></td>
+														<td class="p-hide"><button type="button" class="btn-in-default">진료비 청구하기</button></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //진료비 -->
+										<!-- 처방전 -->
+										<div class="cont-area" id="cont1-6">
+											<div class="prescription-wrap">
+												<div class="prescription-box">
+													<div class="box-head">
+														<span>처방전</span>
+														<button type="button" class="btn-big-view">크게보기</button>
+													</div>
+													<div class="box-cont"></div>
+												</div>
+												<div class="pharmacy-wrap">
+													<div class="list-head">
+														<span>약국리스트</span>
+														<button type="button" class="btn-send-prescription"><i class="ico-send"></i>처방전 전송</button>
+													</div>
+													<div class="pharmacy-list">
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy1" name="pharmacy">
+															<label for="pharmacy1">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy2" name="pharmacy">
+															<label for="pharmacy2">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy3" name="pharmacy">
+															<label for="pharmacy3">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy4" name="pharmacy">
+															<label for="pharmacy4">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy5" name="pharmacy">
+															<label for="pharmacy5">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy6" name="pharmacy">
+															<label for="pharmacy6">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy7" name="pharmacy">
+															<label for="pharmacy7">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+													</div>											
+												</div>
+											</div>
+
+										</div>
+										<!-- //처방전 -->
+									</div>
+								</div>
+							</div>
+							<!-- //diagnosis-item 반복 -->
+
+							<!-- diagnosis-item 반복 -->
+							<div class="diagnosis-item">
+								<div class="item-head">
+									<div class="item-left">
+										<div class="state state-cancel"><span>예약취소</span></div> <!-- state-before:진료전 / state-cancel:예약취소 / state-complete:진료완료 -->
+										<div class="when">
+											<div class="date">2020.08.19(수)</div>
+											<div class="time">오전<strong>11:00</strong></div>
+										</div>
+										<div class="name">
+											<span><strong>김기환</strong>님</span>
+										</div>
+										<div class="sytem">
+											<dl>
+												<dt>진료방식 :</dt>
+												<dd>
+													<span class="system-type"><i class="ico-chat"></i>채팅</span>
+													<span class="system-type"><i class="ico-video"></i>화상</span>
+													<span class="system-type"><i class="ico-tel"></i>전화</span>
+												</dd>
+											</dl>
+										</div>
+									</div>
+									<div class="item-right">
+										<button type="button" class="btn-diagnosis"><i class="ico-in"></i>진료시작</button>
+										<button type="button" class="btn-detail">자세히보기</button>
+									</div>
+								</div>
+								<div class="item-cont"> <!-- .btn-detail 클릭 시 오픈/클로즈 -->
+									<div class="cont-head">
+										<div class="head-left"><button type="button" class="btn-prev">이전</button>진료현황</div>
+										<button type="button" class="btn-menu">
+											메뉴/닫기
+											<span></span>
+											<span></span>
+											<span></span>
+										</button>
+									</div>
+									<div class="cont-tab">
+										<ul>
+											<li><button type="button" class="btn-tab active-tab" data-tab="cont1-1">환자 정보</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-2">기초 자료</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-3">과거 진료기록</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-4">문진 정보</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-5">진료비</button></li>
+											<li><button type="button" class="btn-tab" data-tab="cont1-6">처방전</button></li>
+										</ul>
+									</div>
+									<div class="cont-wrap scroll-box scrollbar-dynamic">
+										<!-- 환자 정보 -->
+										<div class="cont-area active-area" id="cont1-1">
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>이름</th>
+														<td>김기환</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>성별</th>
+														<td>남</td>
+													</tr>
+													<tr>
+														<th>생년월일</th>
+														<td>1968-07-14</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>휴대전화 번호</th>
+														<td>010-2233-5577</td>
+													</tr>
+													<tr>
+														<th>기업회원 여부</th>
+														<td colspan="3" class="m-hide">기업회원</td>
+														<td class="p-hide">기업회원</td>
+													</tr>
+												</table>
+											</div>
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>예약시간</th>
+														<td>2020-08-26 (수) 16:15</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>진료 유형</th>
+														<td>
+															<div class="system-wrap">
+																<span class="system-type"><i class="ico-chat"></i>채팅</span>
+																<span class="system-type"><i class="ico-video"></i>화상</span>
+																<span class="system-type"><i class="ico-tel"></i>전화</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>진료 상태</th>
+														<td><span class="state state-before">진료 전</span></td><!-- state-before:진료전 / state-cancel:예약취소 / state-complete:진료완료 -->
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>예약취소 사유</th>
+														<td>
+															<div class="in-slc-btn">
+																<select name="" id="">
+																	<option value="">예약취소 사유</option>
+																</select>
+																<button type="button" class="btn-in-default">예약 취소하기</button>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>기업회원 여부</th>
+														<td colspan="3" class="m-hide">기업회원</td>
+														<td class="p-hide">기업회원</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //환자 정보 -->
+										<!-- 기초 자료 -->
+										<div class="cont-area" id="cont1-2">
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>키(cm)</th>
+														<td>177</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>체중(kg)</th>
+														<td>85</td>
+													</tr>
+													<tr>
+														<th>흡연 여부</th>
+														<td>흡연 안함</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>음주 여부</th>
+														<td>음주 안함</td>
+													</tr>
+													<tr>
+														<th>과거 병력</th>
+														<td>-</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>가족력</th>
+														<td>-</td>
+													</tr>
+													<tr>
+														<th>입원 및 수술 경험</th>
+														<td>-</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>복용 중인 약물</th>
+														<td>-</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //기초 자료 -->
+										<!-- 과거 진료기록 -->
+										<div class="cont-area" id="cont1-3">
+											<dl class="h-table-wrap">
+												<dt class="h-table-head">
+													<ul>
+														<li class="wd236">진료상태</li>
+														<li class="wd236">진료날짜</li>
+														<li class="other">진료방식</li>
+														<li class="wd236">진료과목</li>
+														<li class="wd236">담당의</li>
+													</ul>												
+												</dt>
+												<dd class="h-table-body">
+													<div class="h-table-list">
+														<!-- 반복 -->
+														<div class="body-item">
+															<ul>
+																<li class="wd236"><span class="state state-before">진료 전</span></li>
+																<li class="wd236">2020-08-26</li>
+																<li class="other">
+																	<div class="system-wrap">
+																		<span class="system-type"><i class="ico-chat"></i>채팅</span>
+																		<span class="system-type"><i class="ico-video"></i>화상</span>
+																		<span class="system-type"><i class="ico-tel"></i>전화</span>
+																	</div>
+																</li>
+																<li class="wd236">가정의학과</li>
+																<li class="wd236">
+																	<div class="doctor-box">
+																		김철민 의사
+																		<button type="button" class="btn-more">더보기</button>
+																	</div>
+																</li>
+															</ul>
+															<div class="more-content">
+																<!-- 진료기록 -->
+																<div class="more-box medical-record">
+																	<div class="more-head">
+																		진료기록
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<dl class="record-sec">
+																			<dt>Subjective 증상에 대한 추가 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Objective 객관적 진료 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Assessment 진단​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Plan 치료 계획 및 처방 의약품​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																	</div>
+																</div>
+																<!-- //진료기록 -->
+																<!-- 채팅진료 -->
+																<div class="more-box chat-medical">
+																	<div class="more-head">
+																		채팅 진료
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="chat-wrap">
+																			<div class="chat-box chat-box-left">
+																				<p class="message-date">2020.08.24 오후1:40</p>
+																				<div class="message-text">
+																					<p class="name">김기환 환자</p>
+																					<p class="message">
+																						문진표<br/>
+																						· 신장/체중: 177cm / 85kg​<br/>
+																						· 흡연 여부 : 흡연 안함​<br/>
+																						· 음주 여부 : 음주 안함<br/>
+																						​· 과거 병력 : --- <br/>
+																						· 가족력 : --- <br/>
+																						· 입원 및 수술경험 : --- <br/>
+																						· 복용 중인 약물 : ---
+																					</p>
+																				</div>
+																			</div>
+																			<div class="chat-box chat-box-right">
+																				<p class="message-date">2020.08.24 오후1:43</p>
+																				<div class="message-text">
+																					안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //채팅진료 -->
+																<!-- 캡쳐이미지 -->
+																<div class="more-box capture-box">
+																	<div class="more-head">
+																		캡처 이미지
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="capture-wrap">
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //캡쳐이미지 -->
+															</div>
+														</div>
+														<!-- //반복 -->
+														<!-- 반복 -->
+														<div class="body-item">
+															<ul>
+																<li class="wd236"><span class="state state-cancel">예약취소</span></li>
+																<li class="wd236">2020-08-25</li>
+																<li class="other">
+																	<div class="system-wrap">
+																		<span class="system-type"><i class="ico-video"></i>화상</span>
+																		<span class="system-type"><i class="ico-tel"></i>전화</span>
+																	</div>
+																</li>
+																<li class="wd236">가정의학과</li>
+																<li class="wd236">
+																	<div class="doctor-box">
+																		김철민 의사
+																		<button type="button" class="btn-more">더보기</button>
+																	</div>
+																</li>
+															</ul>
+															<div class="more-content">
+																<!-- 진료기록 -->
+																<div class="more-box medical-record">
+																	<div class="more-head">
+																		진료기록
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<dl class="record-sec">
+																			<dt>Subjective 증상에 대한 추가 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Objective 객관적 진료 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Assessment 진단​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Plan 치료 계획 및 처방 의약품​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																	</div>
+																</div>
+																<!-- //진료기록 -->
+																<!-- 채팅진료 -->
+																<div class="more-box chat-medical">
+																	<div class="more-head">
+																		채팅 진료
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="chat-wrap">
+																			<div class="chat-box chat-box-left">
+																				<p class="message-date">2020.08.24 오후1:40</p>
+																				<div class="message-text">
+																					<p class="name">김기환 환자</p>
+																					<p class="message">
+																						문진표<br/>
+																						· 신장/체중: 177cm / 85kg​<br/>
+																						· 흡연 여부 : 흡연 안함​<br/>
+																						· 음주 여부 : 음주 안함<br/>
+																						​· 과거 병력 : --- <br/>
+																						· 가족력 : --- <br/>
+																						· 입원 및 수술경험 : --- <br/>
+																						· 복용 중인 약물 : ---
+																					</p>
+																				</div>
+																			</div>
+																			<div class="chat-box chat-box-right">
+																				<p class="message-date">2020.08.24 오후1:43</p>
+																				<div class="message-text">
+																					안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //채팅진료 -->
+																<!-- 캡쳐이미지 -->
+																<div class="more-box capture-box">
+																	<div class="more-head">
+																		캡처 이미지
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="capture-wrap">
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //캡쳐이미지 -->
+															</div>
+														</div>
+														<!-- //반복 -->
+														<!-- 반복 -->
+														<div class="body-item">
+															<ul>
+																<li class="wd236"><span class="state state-complete">진료완료</span></li>
+																<li class="wd236">2020-08-25</li>
+																<li class="other">
+																	<div class="system-wrap"><span class="system-type"><i class="ico-tel"></i>전화</span></div>
+																</li>
+																<li class="wd236">가정의학과</li>
+																<li class="wd236">
+																	<div class="doctor-box">
+																		김철민 의사
+																		<button type="button" class="btn-more">더보기</button>
+																	</div>
+																</li>
+															</ul>
+															<div class="more-content">
+																<!-- 진료기록 -->
+																<div class="more-box medical-record">
+																	<div class="more-head">
+																		진료기록
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<dl class="record-sec">
+																			<dt>Subjective 증상에 대한 추가 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Objective 객관적 진료 의견​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Assessment 진단​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																		<dl class="record-sec">
+																			<dt>Plan 치료 계획 및 처방 의약품​</dt>
+																			<dd>
+																				<p>- 의견 1</p>
+																				<p>- 의견 2</p>
+																				<p>- 의견 3</p>
+																			</dd>
+																		</dl>
+																	</div>
+																</div>
+																<!-- //진료기록 -->
+																<!-- 채팅진료 -->
+																<div class="more-box chat-medical">
+																	<div class="more-head">
+																		채팅 진료
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="chat-wrap">
+																			<div class="chat-box chat-box-left">
+																				<p class="message-date">2020.08.24 오후1:40</p>
+																				<div class="message-text">
+																					<p class="name">김기환 환자</p>
+																					<p class="message">
+																						문진표<br/>
+																						· 신장/체중: 177cm / 85kg​<br/>
+																						· 흡연 여부 : 흡연 안함​<br/>
+																						· 음주 여부 : 음주 안함<br/>
+																						​· 과거 병력 : --- <br/>
+																						· 가족력 : --- <br/>
+																						· 입원 및 수술경험 : --- <br/>
+																						· 복용 중인 약물 : ---
+																					</p>
+																				</div>
+																			</div>
+																			<div class="chat-box chat-box-right">
+																				<p class="message-date">2020.08.24 오후1:43</p>
+																				<div class="message-text">
+																					안녕하세요. 김철민 의사입니다. <br/>팔과 손가락이 신경이 저리는 증상은 없으신가요?​
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //채팅진료 -->
+																<!-- 캡쳐이미지 -->
+																<div class="more-box capture-box">
+																	<div class="more-head">
+																		캡처 이미지
+																		<button type="button" class="btn-more-close">닫기</button>
+																	</div>
+																	<div class="more-con-area">
+																		<div class="capture-wrap">
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																			<div class="capture-img"><!-- 이미지 영역 --></div>
+																		</div>
+																	</div>
+																</div>
+																<!-- //캡쳐이미지 -->
+															</div>
+														</div>
+														<!-- //반복 -->
+													</div>
+													<div class="pagination">
+														<button type="button" class="btn-page btn-prev">이전</button>
+														<div class="page-num-list">
+															<button type="button" class="page-num active-num">1</button>
+															<button type="button" class="page-num">2</button>
+															<button type="button" class="page-num">3</button>
+															<button type="button" class="page-num">4</button>
+															<button type="button" class="page-num">5</button>
+														</div>
+														<button type="button" class="btn-page btn-next">다음</button>
+													</div>
+												</dd>
+											</dl>										
+										</div>
+										<!-- //과거 진료기록 -->
+										<!-- 문진 정보 -->
+										<div class="cont-area" id="cont1-4">
+											<div class="v-table">
+												<table>
+													<colgroup>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>증상 지속 여부</th>
+														<td>24시간 이내</td>
+													</tr>
+													<tr>
+														<th>증상 내용</th>
+														<td>자다가 일어났는데 목이 뻐근하고 어깨 날개뼈 안쪽이 콕콕 찌르는 듯 아픕니다. <br/>잠깐 그러려니 싶었는데 하루종일 지속되어...</td>
+													</tr>
+													<tr>
+														<th>첨부파일 <br/>(최대 8개)</th>
+														<td>
+															<div class="file-list">
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+																<button type="button" class="file-img"></button>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //문진 정보 -->
+										<!-- 진료비 -->
+										<div class="cont-area" id="cont1-5">
+											<div class="v-table">
+												<table>
+													<colgroup>														
+														<col class="m-hide" style="width:160px;"/>
+														<col class="m-hide" style="width:calc(50% - 160px);"/>
+														<col class="m-hide" style="width:160px;"/>
+														<col class="p-hide" style="width:40%;"/>
+														<col />
+													</colgroup>
+													<tr>
+														<th>급여 총액</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>청구액 <br class="p-hide"/>(공단 부담금)</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>환자 <br class="p-hide"/>본인 부담금</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>비급여</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>감액</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr class="p-hide">
+													<tr class="p-hide">
+														<th>최종 청구액</th>
+														<td>
+															<div class="input-in-txt">
+																<input type="text" class="in-ip">
+																<span class="txt">원</span>
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<th>청구 현황</th>
+														<td colspan="3" class="m-hide"><button type="button" class="btn-in-default">진료비 청구하기</button></td>
+														<td class="p-hide"><button type="button" class="btn-in-default">진료비 청구하기</button></td>
+													</tr>
+												</table>
+											</div>
+										</div>
+										<!-- //진료비 -->
+										<!-- 처방전 -->
+										<div class="cont-area" id="cont1-6">
+											<div class="prescription-wrap">
+												<div class="prescription-box">
+													<div class="box-head">
+														<span>처방전</span>
+														<button type="button" class="btn-big-view">크게보기</button>
+													</div>
+													<div class="box-cont"></div>
+												</div>
+												<div class="pharmacy-wrap">
+													<div class="list-head">
+														<span>약국리스트</span>
+														<button type="button" class="btn-send-prescription"><i class="ico-send"></i>처방전 전송</button>
+													</div>
+													<div class="pharmacy-list">
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy1" name="pharmacy">
+															<label for="pharmacy1">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy2" name="pharmacy">
+															<label for="pharmacy2">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy3" name="pharmacy">
+															<label for="pharmacy3">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy4" name="pharmacy">
+															<label for="pharmacy4">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy5" name="pharmacy">
+															<label for="pharmacy5">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy6" name="pharmacy">
+															<label for="pharmacy6">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+														<div class="pharmacy-item">
+															<input type="radio" id="pharmacy7" name="pharmacy">
+															<label for="pharmacy7">
+																<dl>
+																	<dt class="pharmacy-name">현대영약국</dt>
+																	<dd class="pharmacy-address">
+																		서울특별시 서초구 강남대로 375, 4층 (서초동 서초현대타워)​
+																	</dd>
+																	<dd class="pharmacy-tel">
+																		<span>TEL : 02-000-0000</span>
+																		<span>FAX : 02-000-0000</span>
+																	</dd>
+																</dl>
+															</label>
+														</div>
+													</div>											
+												</div>
+											</div>
+
+										</div>
+										<!-- //처방전 -->
+									</div>
+								</div>
+							</div>
+							<!-- //diagnosis-item 반복 -->
+						</div>
+					</div>
+					<div class="pagination"> <!-- 모바일에선 5개까지만 -->
+						<button type="button" class="btn-page btn-first">처음으로</button>
+						<button type="button" class="btn-page btn-prev">이전</button>
+						<div class="page-num-list">
+							<button type="button" class="page-num active-num">1</button>
+							<button type="button" class="page-num">2</button>
+							<button type="button" class="page-num">3</button>
+							<button type="button" class="page-num">4</button>
+							<button type="button" class="page-num">5</button>
+							<!--<button type="button" class="page-num">6</button>
+							<button type="button" class="page-num">8</button>
+							<button type="button" class="page-num">8</button>
+							<button type="button" class="page-num">9</button>
+							<button type="button" class="page-num">10</button>-->
+						</div>
+						<button type="button" class="btn-page btn-next">다음</button>
+						<button type="button" class="btn-page btn-last">마지막으로</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- 첨부파일 보기 -->
+<div id="file-big" class="popup">
+	<div class="popup-wrap">
+		<div class="popup-box">
+			<div class="pop-head">첨부파일 <button type="button" class="btn-pop-close">닫기</button></div>
+			<div class="pop-content">
+				<!--<img src="../images/big-img.png" alt="">-->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //첨부파일 보기 -->
+
+<!-- 처방전 보기 -->
+<div id="prescription-view" class="popup">
+	<div class="popup-wrap">
+		<div class="popup-box">
+			<div class="pop-head">처방전 <button type="button" class="btn-pop-close">닫기</button></div>
+			<div class="pop-content">
+				<!--<img src="../images/big-img.png" alt="">-->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //처방전 보기 -->
+
+	<script>
+	$(document).ready(function(){
+		$( ".datepicker" ).datepicker({
+			showOn: "button",
+			buttonImage: "../images/common/ico_calendar.svg",
+			buttonImageOnly: true,
+			buttonText: "Select date"
+		});
+
+		$('.btn-detail').on('click',function(){
+			$(this).parents('.diagnosis-item').toggleClass('open-detail');
+			$('body').toggleClass('h100fix')
+		});
+
+		$('.body-item .btn-more').on('click',function(){
+			$(this).parents('.body-item').toggleClass('open-box');
+		});
+		$('.prescription-box .btn-big-view').on('click',function(){
+			$('#prescription-view').fadeIn();
+		});
+
+		$('.file-list .file-img').on('click',function(){
+			$('#file-big').fadeIn();
+		});
+
+		$('.popup .btn-pop-close').on('click',function(){
+			$(this).parents('.popup').fadeOut();
+		});
+
+
+		$('#header .btn-menu').on('click',function(){
+			$('body').toggleClass('open-menu');
+		});
+
+
+		$('.diagnosis-wrap .diagnosis-list .diagnosis-item .btn-menu').on('click',function(){
+			$('body').toggleClass('open-menu');
+		});
+		//cont-tab 탭 컨트롤
+		$('.cont-tab .btn-tab').click(function(){
+			var tab_id = $(this).attr('data-tab');
+			$('.cont-tab .btn-tab').removeClass('active-tab');
+			$('.cont-area').removeClass('active-area');
+			$(this).addClass('active-tab');
+			$("#"+tab_id).addClass('active-area');
+		});
+		
+	});
+	</script>
+</body>
+</html>

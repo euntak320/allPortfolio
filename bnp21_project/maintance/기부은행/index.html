@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+	<link type="text/css" rel="stylesheet" href="/assets/css/care.css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<meta name="robots" content="noindex, nofollow" />
+	<meta name="autocomplete" content="off" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<title>사회공헌활동 기부은행에 오신걸 환영합니다.</title>
+
+	<!-- 기존 소스 -->
+	<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="/assets/js/sns.js"></script>
+	<script type="text/javascript" src="/assets/js/mobile.js"></script>
+	<script type="text/javascript" src="/assets/js/member.js"></script>
+	
+	<!-- 추가된 소스 -->
+	<script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="assets/js/swiper.js"></script>
+	<script type="text/javascript" src="assets/js/newmain.js"></script>
+
+	
+	<link rel="stylesheet" href="assets/css/swiper.min.css">
+	<link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="assets/css/reset.css">
+	<!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+	<link type="text/css" rel="stylesheet" href="assets/css/newmain.css">
+	
+
+
+
+
+	<script>
+		$(function () {
+
+			// 배너 스와이프
+			var bannerSwiper = new Swiper('.bannerArea', {
+				slidesPerView: "1",
+				loop: true,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+
+			// 메인슬라이드
+			var MainSwiper = new Swiper('.mainVisual', {
+				slidesPerView: "1",
+				loop: true,
+				effect : "fade",
+				autoplay : { 
+					delay : 0, 
+				},
+				speed : 2000,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+				},
+			});
+			$(".mainVisual .stop").on('click', function () {
+				if ($(this).hasClass("stop")) {
+					MainSwiper.autoplay.stop();
+					$(this).removeClass("stop");
+					$(this).addClass("start");
+					return false;
+				} else {
+					MainSwiper.autoplay.start();
+					$(this).removeClass("start");
+					$(this).addClass("stop");
+					return false;
+				}
+			});
+
+			// 관련기관
+			var govBannerSwiper = new Swiper('.govList', {
+				slidesPerView: "7",
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				}
+			});
+
+			$(".relativeGov .stop").on('click', function () {
+				if ($(this).hasClass("stop")) {
+					govBannerSwiper.autoplay.stop();
+					$(this).removeClass("stop");
+					$(this).addClass("start");
+					return false;
+				} else {
+					govBannerSwiper.autoplay.start();
+					$(this).removeClass("start");
+					$(this).addClass("stop");
+					return false;
+				}
+			});
+
+			//공지사항 tab
+			$(".noticeArea .tabArea .listTab").click(function(){
+				$(".noticeArea .tabArea .listTab").removeClass("on");
+				$(".noticeArea .tabArea .listTab").eq($(this).index()).addClass("on");
+				$(".noticeArea .tabArea a").removeClass("on");
+				$(".noticeArea .tabArea a").eq($(this).index()).addClass("on");
+				$(".noticeArea .view").removeClass("on");
+				$(".noticeArea .view").eq($(this).index()).addClass("on");
+			});
+
+			
+
+			// 카운팅
+			$('.count').each(function () {
+				$(this).prop('Counter',0).animate({
+					Counter: $(this).text()
+				}, {
+					duration: 1000,
+					easing: 'swing',
+					step: function (now) {
+						$(this).text(numberParse(Math.ceil(now)));
+					}
+				});
+			});
+			function numberParse(x) {
+				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			}
+			
+			/* 20-11-11 추가 */
+			$("#topBanner .swiper-slide").click(function(){
+				$(".layerFrame").show();
+				$("html, body").css({
+					"overflow":"hidden"
+				});
+			});
+			
+			$(".layerFrame button").click(function(){
+				$(".layerFrame").hide();
+				$("html, body").css({
+					"overflow":"visible"
+				});
+			});
+			/* 20-11-11 추가 */
+		});
+		
+		
+	</script>
+</head>
+
+<body>
+	<!-- skip -->
+	
+	<!-- skip -->
+
+	<div id="topBanner">
+		<div class="bannerArea">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<img src="/assets/images/newmain/img_banner.png" alt="코로나현황 실시간방송">
+				</div>
+				<div class="swiper-slide">
+					<img src="/assets/images/newmain/img_banner.png" alt="코로나현황 실시간방송">
+				</div>
+				<div class="swiper-slide">
+					<img src="/assets/images/newmain/img_banner.png" alt="코로나현황 실시간방송">
+				</div>
+				<div class="swiper-slide">
+					<img src="/assets/images/newmain/img_banner.png" alt="코로나현황 실시간방송">
+				</div>
+			</div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+			<button type="button">
+				<span>오늘하루 이창을 열지 않음</span>
+			</button>
+		</div>
+		
+	</div>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header">
+			<div class="comWidth">
+				<h1><a href="/" title="사회공헌활동 기부은행">사회공헌활동 기부은행</a></h1>
+				<div class="meunList">
+					<ul>
+						<li><a href="/intro/index.do" title="소개">소개</a>
+							<div class="subMenu">
+								<ul>
+									<li><a href="/intro/index.do" title="사회공헌활동 기부은행">사회공헌활동 기부은행</a></li>
+									<li><a href="/intro/basicoffice_list.do" title="지역별기부은행안내">지역별기부은행안내</a></li>
+									<li><a href="/intro/care_active.do" title="돌봄활동">돌봄활동</a></li>
+									<li><a href="/intro/care_point.do" title="돌봄포인트">돌봄포인트</a></li>
+									<li><a href="/intro/care_volunteer.do" title="참여/이용방법">참여/이용방법</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="/education/list.do" title="교육">교육</a>
+							<div class="subMenu">
+								<ul>
+									<li><a href="/education/list.do" title="돌봄교육 신청/조회">돌봄교육 신청/조회</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="/participation/faq.do" title="참여">참여</a>
+							<div class="subMenu">
+								<ul>
+									<li><a href="/participation/faq.do" title="FAQ">FAQ</a></li>
+									<li><a href="/participation/qna.do" title="1:1 문의">1:1 문의</a></li>
+									<li><a href="/participation/data/list.do" title="자료실">자료실</a></li>
+									<li><a href="/participation/epilogue/list.do" title="활동후기">활동후기</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="/board/notice/list.do" title="알림">알림</a>
+							<div class="subMenu" >
+								<ul>
+									<li><a href="/board/notice/list.do" title="공지사항">공지사항</a></li>
+									<li><a href="/board/area_notice/list.do" title="지역별 공지사항">지역별 공지사항</a></li>
+									<li><a href="/board/press/list.do" title="언론보도">언론보도</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="/stats/volunteer.do" title="통계">통계</a>
+							<div class="subMenu" >
+								<ul>
+									<li><a href="/stats/volunteer.do" title="돌봄봉사자">돌봄봉사자</a></li>
+									<li><a href="/stats/recipient.do" title="돌봄대상자">돌봄대상자</a></li>
+									<li><a href="/stats/point.do" title="돌봄포인트">돌봄포인트</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="/mypage/index.do" title="나의 활동">나의 활동</a>
+							<div class="subMenu last">
+								<ul>
+									<li><a href="/mypage/index.do" title="돌봄봉사자">나의활동</a></li>
+									<li><a href="/mypage/myInfo.do" title="내정보 보기">내정보 보기</a></li>
+									<li><a href="/mypage/inquiry/list.do" title="1:1 문의내역">1:1 문의내역</a></li>
+									<li><a href="/mypage/active/list.do" title="돌봄봉사 활동내역">돌봄봉사 활동내역</a></li>
+									<li><a href="/mypage/complete/list.do" title="돌봄교육 이수내역">돌봄교육 이수내역</a></li>
+									<li><a href="/mypage/myPoint.do" title="돌봄 포인트 조회/기부내역">돌봄 포인트 조회/ 기부내역</a></li>
+									<li><a href="/mypage/donation/index.do" title="돌봄 포인트 기부">돌봄 포인트 기부</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<div class="loginArea">
+						<!-- <a href="/login/login.do" class="login" title="로그인">로그인</a> -->
+						<a href="" class="login on" title="홍길동님">홍길동님</a>
+						<a href="/member/index.do" class="login" title="회원가입">회원가입</a>
+						<div class="infoArea">
+							<div class="top">
+								<a href="" title="내 정보 보기">내 정보 보기</a>
+							</div>
+							<div class="btm">
+								<ul>
+									<li>
+										<span class="fl">총 누적(기부) 포인트 </span>
+										<span class="fr">190(100) <span>pt</span></span>
+									</li>
+									<li>
+										<span class="fl">돌봄 활동</span>
+										<span class="fr">15 <span>건</span></span>
+									</li>
+									<li>
+										<span class="fl">가용 포인트</span>
+										<span class="fr">100 <span>pt</span></span>
+									</li>
+								</ul>
+							</div>
+							<button type="button" title="내 정보보기 닫기">닫기버튼</button>
+						</div>
+					</div>
+				</div>
+				<div class="topBtn">
+					<button type="button" class="sitemap" title="사이트맵">사이트맵</button>
+					<button type="button" class="moblieBtn" title="모바일버튼" style="display: none;">내</button>
+					<button type="button" class="moblieBtn" title="모바일버튼" style="display: none;">모바일버튼</button>
+					<button type="button" class="moblieBtn" title="모바일버튼" style="display: none;">모바일버튼</button>
+				</div>
+			</div>
+			
+
+			<div id="sitemap">
+				<div class="sitemapFrame">
+					<div class="comWidth">
+						<div class="menubox">
+							<span class="title" title="소개">소개</span>
+							<ul>
+								<li><a href="/intro/index.do" title="사회공헌활동 기부은행">사회공헌활동 기부은행</a></li>
+								<li><a href="/intro/basicoffice_list.do" title="지역별기부은행안내">지역별기부은행안내</a></li>
+								<li><a href="/intro/care_active.do" title="돌봄활동">돌봄활동</a></li>
+								<li><a href="/intro/care_point.do" title="돌봄포인트">돌봄포인트</a></li>
+								<li><a href="/intro/care_volunteer.do" title="참여/이용방법">참여/이용방법</a></li>
+							</ul>
+						</div>
+						<div class="menubox">
+							<span class="title" title="교육안내">교육안내</span>
+							<ul>
+								<li><a href="/education/list.do" title="돌봄교육 신청/조회">돌봄교육 신청/조회</a></li>
+							</ul>
+						</div>
+						<div class="menubox">
+							<span class="title" title="참여">참여</span>
+							<ul>
+								<li><a href="/participation/faq.do" title="FAQ">FAQ</a></li>
+								<li><a href="/participation/qna.do" title="1:1 문의">1:1 문의</a></li>
+								<li><a href="/participation/data/list.do" title="자료실">자료실</a></li>
+								<li><a href="/participation/epilogue/list.do" title="활동후기">활동후기</a></li>
+							</ul>
+						</div>
+						<div class="menubox">
+							<span class="title" title="알림">알림</span>
+							<ul>
+								<li><a href="/board/notice/list.do" title="공지사항">공지사항</a></li>
+								<li><a href="/board/area_notice/list.do" title="지역별 공지사항">지역별 공지사항</a></li>
+								<li><a href="/board/press/list.do" title="언론보도">언론보도</a></li>
+							</ul>
+						</div>
+						<div class="menubox">
+							<span class="title" title="통계">통계</span>
+							<ul>
+								<li><a href="/stats/volunteer.do" title="돌봄봉사자">돌봄봉사자</a></li>
+								<li><a href="/stats/recipient.do" title="돌봄대상자">돌봄대상자</a></li>
+								<li><a href="/stats/point.do" title="돌봄포인트">돌봄포인트</a></li>
+							</ul>
+						</div>
+						<div class="menubox">
+							<span class="title" title="나의활동">나의활동</span>
+							<ul>
+								<li><a href="/mypage/index.do" title="돌봄봉사자">나의활동</a></li>
+								<li><a href="/mypage/myInfo.do" title="내정보 보기">내정보 보기</a></li>
+								<li><a href="/mypage/inquiry/list.do" title="1:1 문의내역">1:1 문의내역</a></li>
+								<li><a href="/mypage/active/list.do" title="돌봄봉사 활동내역">돌봄봉사 활동내역</a></li>
+								<li><a href="/mypage/complete/list.do" title="돌봄교육 이수내역">돌봄교육 이수내역</a></li>
+								<li><a href="/mypage/myPoint.do" title="돌봄 포인트 조회/기부내역">돌봄 포인트 조회/ 기부내역</a></li>
+								<li><a href="/mypage/donation/index.do" title="돌봄 포인트 기부">돌봄 포인트 기부</a></li>
+							</ul>
+						</div>
+						<div class="menubox">
+							<span class="title" title="회원">회원</span>
+							<ul>
+								<li><a href="/member/index.do">회원안내</a></li>
+								<li><a href="/member/volunteer_age.do">돌봄봉사자 가입</a></li>
+								<li><a href="/member/tgt_certify.do">돌봄대상자 신청</a></li>
+								<li><a href="/login/login.do">로그인</a></li>
+								<li><a href="/login/find_id.do">아이디 찾기</a></li>
+								<li><a href="/login/find_pw.do">비밀번호 찾기</a></li>
+								<li><a href="/member/leave.do">회원탈퇴</a></li>
+							</ul>
+						</div>
+						<div class="menubox">
+							<span class="title" title="부가서비스">부가서비스</span>
+							<ul>
+								<li><a href="/util/sitemap.do">사이트맵</a></li>
+								<li><a href="/util/terms.do">이용약관</a></li>
+								<li><a href="/util/privacy.do">개인정보처리방침</a></li>
+								<li><a href="/util/policy.do">책임한계와 법적고지</a></li>	
+								<li><a href="/util/email.do">이메일 무단수집거부</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- header -->
+	
+		<!-- 지역선택  20-11-11 -->
+		<div class="resginArea">
+			<div class="comWidth">
+				<div class="selectArea">
+					<select name="" id="" title="지역선택">
+						<option value="">지역선택</option>
+						<option value="">1</option>
+						<option value="">2</option>
+						<option value="">3</option>
+						<option value="">4</option>
+					</select>
+					<button type="button" title="지역검색">지역검색 버튼</button>
+				</div>
+				<div class="btnListArea">
+					<a href="" title="돌봄봉사자가입" class="orangBg">돌봄봉사자가입</a>
+					<a href="" title="돌봄대상자 신청" class="orangBg">돌봄대상자 신청</a>
+					<a href="" title="돌봄 봉사활동 확인서 조회" class="orangBg">돌봄 봉사활동 확인서 조회</a>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 지역선택  20-11-11 -->
+		
+		
+		<!-- content -->
+
+		<div id="conFrame">
+			<!-- mainVisual -->
+			<div class="mainVisual">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide one">
+						<div class="comWidth">
+							<span class="title">어르신 돌봄은행일란?</span>
+							<p>만 65세 이상의 어르신에게 돌봄활동을 제공하면 이를 돌봄포인트로 적립·관리하고,​이후에 본인·가족·제3자가 돌봄활동으로 돌려받을 수 있는 제도입니다.​</p>
+							<button type="button" title="사회공헌활동기부은행" class="orangBg">사회공헌활동기부은행<img src="/assets/images/newmain/icn_btn_arrow.png"></button>
+						</div>
+					</div>
+					<div class="swiper-slide two">
+						<div class="comWidth">
+							<span class="title">어르신 돌봄은행이란?</span>
+							<p>만 65세 이상의 어르신에게 돌봄활동을 제공하면 이를 돌봄포인트로 적립·관리하고,​이후에 본인·가족·제3자가 돌봄활동으로 돌려받을 수 있는 제도입니다.​</p>
+							<button type="button" title="사회공헌활동기부은행" class="orangBg">사회공헌활동기부은행<img src="/assets/images/newmain/icn_btn_arrow.png"></button>
+						</div>
+					</div>
+					<div class="swiper-slide three">
+						<div class="comWidth">
+							<span class="title">어르신 돌봄은행삼란?</span>
+							<p>만 65세 이상의 어르신에게 돌봄활동을 제공하면 이를 돌봄포인트로 적립·관리하고,​이후에 본인·가족·제3자가 돌봄활동으로 돌려받을 수 있는 제도입니다.​</p>
+							<button type="button" title="사회공헌활동기부은행" class="orangBg">사회공헌활동기부은행<img src="/assets/images/newmain/icn_btn_arrow.png"></button>
+						</div>
+					</div>
+					<div class="swiper-slide four">
+						<div class="comWidth">
+							<span class="title">어르신 돌봄은행사란?</span>
+							<p>만 65세 이상의 어르신에게 돌봄활동을 제공하면 이를 돌봄포인트로 적립·관리하고,​이후에 본인·가족·제3자가 돌봄활동으로 돌려받을 수 있는 제도입니다.​</p>
+							<button type="button" title="사회공헌활동기부은행" class="orangBg">사회공헌활동기부은행<img src="/assets/images/newmain/icn_btn_arrow.png"></button>
+						</div>
+					</div>
+					<div class="swiper-slide five">
+						<div class="comWidth">
+							<span class="title">어르신 돌봄은행오란?</span>
+							<p>만 65세 이상의 어르신에게 돌봄활동을 제공하면 이를 돌봄포인트로 적립·관리하고,​이후에 본인·가족·제3자가 돌봄활동으로 돌려받을 수 있는 제도입니다.​</p>
+							<button type="button" title="사회공헌활동기부은행" class="orangBg">사회공헌활동기부은행<img src="/assets/images/newmain/icn_btn_arrow.png"></button>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+				<div class="swiperBtn stop">
+					<button type="button">멈춤</button>
+				</div>
+				<div class="alertArea">
+					<img src="/assets/images/newmain/icn_call.png" alt="전화">
+					<span class="tel">1688-3579</span>
+					<span class="txt">함께사는 세상, 이제는 돌봄입니다.</span>
+				</div>
+			</div>
+			<!-- mainVisual -->
+
+			<div class="mainArea">
+				<!-- 첫번째 섹션 -->
+				<div class="comWidth">
+					<!-- 돌봄활동 참여현황 -->
+					<div class="countingArea fl">
+						<span class="subTitle" title="돌봄활동 참여현황">돌봄활동 참여현황</span>
+						<ul class="boxArea">
+							<li>
+								<a href="" title="돌봄봉사자 현황">
+									<dl>
+										<dt>돌봄봉사자현황</dt>
+										<dd><span class="count">32207</span> <span>명</span></dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="" title="누적 돌봄포인트">
+									<dl>
+										<dt>누적 돌봄포인트</dt>
+										<dd><span class="count">815967</span> <span>P</span></dd>
+									</dl>
+								</a>
+							</li>
+							<li>
+								<a href="" title="전국 기부은행 현황">
+									<dl>
+										<dt>전국 기부은행 현황</dt>
+										<dd ><span class="count">50</span> <span>곳</span></dd>
+									</dl>
+								</a>
+							</li>
+						</ul>
+						<div class="questionArea">
+							<img src="/assets/images/newmain/icn_question.png">
+							<span title="돌돔활동, 어떻게 참여할수 있나요 ?">돌돔활동, 어떻게 참여할수 있나요 ?</span>
+							<a href="" title="참여/이용방법">참여/이용방법</a>
+						</div>
+					</div>
+					<!-- 공지사항, 얼론보도, 자료실 -->
+					<div class="noticeArea fr">
+						<div class="tabArea">
+							<div class="listTab on">
+								<button type="button" title="공지사항">공지사항</button>
+								<a href="" title="공지사항 더보기" class="plus on">더보기 <span>+</span></a>
+							</div>
+							<div class="listTab">
+								<button type="button" title="언론보도">언론보도</button>
+								<a href="" title="언론보도 더보기" class="plus">더보기 <span>+</span></a>
+							</div>
+							<div class="listTab">
+								<button type="button" title="자료실">자료실</button>
+								<a href="" title="자료실 더보기" class="plus">더보기 <span>+</span></a>
+							</div>
+						</div>
+						<!-- 공지사항 -->
+						<div class="view on">
+							<ul class="listArea">
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">1사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- 공지사항 -->
+
+						<!-- 언론보도 -->
+						<div class="view">
+							<ul class="listArea">
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">2사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- 언론보도 -->
+
+						<!-- 자료실 -->
+						<div class="view">
+							<ul class="listArea">
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">3사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+								<li>
+									<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+										<span class="date" title="2020.09.15">2020.09.15</span>
+										<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- 자료실 -->
+					</div>
+					<!-- 공지사항, 얼론보도, 자료실 -->
+
+				</div>
+				<!-- 첫번째 섹션 -->
+
+				<!-- 두번째 섹션 -->
+				<div class="two bgGray">
+					<div class="comWidth">
+						<div class="welfare fl">
+							<span class="title" title="복지 타임즈">복지 타임즈</span>
+							<div class="welfareTxt">
+								<a href="" class="box">
+									<dl class="orangBg">
+										<dt>06</dt>
+										<dd>2020.04</dd>
+									</dl>
+									<span>[서식] 사회공헌활동 기부은행 돌봄포인트 기부신청서</span>
+								</a>
+								<ul class="listArea">
+									<li>
+										<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+											<span class="date" title="2020.09.15">2020.09.15</span>
+											<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+										</a>
+									</li>
+									<li>
+										<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+											<span class="date" title="2020.09.15">2020.09.15</span>
+											<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+										</a>
+									</li>
+									<li>
+										<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+											<span class="date" title="2020.09.15">2020.09.15</span>
+											<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+										</a>
+									</li>
+									<li>
+										<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+											<span class="date" title="2020.09.15">2020.09.15</span>
+											<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+										</a>
+									</li>
+									<li>
+										<a href="" title="2020.09.15 사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내">
+											<span class="date" title="2020.09.15">2020.09.15</span>
+											<span class="txt" title="사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​">사회공헌활동 기부은행 정보시스템 서비스 일시 중지 안내​</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="videoArea fr">
+							<span class="title" title="유튜브 영상">유튜브 영상</span>
+							<div class="video">
+								<a href="https://www.youtube.com/watch?v=qqpqDacqHpQ" target="_blank">
+									<img src="/assets/images/newmain/img_thumbnail.png" style="width:100%;">
+									<img src="/assets/images/newmain/btn_play.png" class="play">
+								</a>
+								<!-- <iframe src="" frameborder="0"></iframe> -->
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 두번째 섹션 -->
+
+				<!-- 세번째 섹션 -->
+				<div class="fastMenu">
+					<div class="comWidth">
+						<span class="title" title="빠른 메뉴">빠른 메뉴</span>
+						<div class="btnArea">
+							<a href="" title="돌봄봉사자 가입">
+								<span class="imgArea">
+									<img src="/assets/images/newmain/icn_quick01.png">
+								</span>
+								<span class="txt" title="돌봄봉사자 가입">돌봄봉사자 가입</span>
+							</a>
+							<a href="" title="돌봄봉사자 신청">
+								<span class="imgArea">
+									<img src="/assets/images/newmain/icn_quick02.png">
+								</span>
+								<span class="txt title="돌봄봉사자 신청">돌봄봉사자 신청</span>
+							</a>
+							<a href="" title="돌봄봉사자 교육일정">
+								<span class="imgArea">
+									<img src="/assets/images/newmain/icn_quick03.png">
+								</span>
+								<span class="txt" title="돌봄봉사자 교육일정">돌봄봉사자 교육일정</span>
+							</a>
+							<a href="" title="돌봄봉사자 확인서 조회">
+								<span class="imgArea">
+									<img src="/assets/images/newmain/icn_quick04.png">
+								</span>
+								<span class="txt" title="돌봄봉사자 확인서 조회">돌봄봉사자 확인서 조회</span>
+							</a>
+							<a href="" title="돌봄활동 후기">
+								<span class="imgArea">
+									<img src="/assets/images/newmain/icn_quick05.png">
+								</span>
+								<span class="txt" title="돌봄활동 후기">돌봄활동 후기</span>
+							</a>
+							<a href="" title="돌봄활동 통계">
+								<span class="imgArea">
+									<img src="/assets/images/newmain/icn_quick06.png">
+								</span>
+								<span class="txt" title="돌봄활동 통계">돌봄활동 통계</span>
+							</a>
+							<a href="" title="지역별 기부은행">
+								<span class="imgArea">
+									<img src="/assets/images/newmain/icn_quick07.png">
+								</span>
+								<span class="txt" title="지역별 기부은행">지역별 기부은행</span>
+							</a>
+							<a href="" title="지역별 공지사항">
+								<span class="imgArea">
+									<img src="/assets/images/newmain/icn_quick08.png">
+								</span>
+								<span class="txt" title="지역별 공지사항">지역별 공지사항</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- 세번째 섹션 -->
+
+				<!-- 네번째 섹션 -->
+
+				<div class="relativeGov comWidth">
+					<span class="title">관련기관</span>
+					<div class="govList">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<a href="http://www.mohw.go.kr/react/index.jsp" target="_blank">
+									<img src="/assets/images/newmain/img_organiz01.png" alt="보건복지부">
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a href="https://www.bokji.net/" target="_blank">
+									<img src="/assets/images/newmain/img_organiz02.png" alt="한국사회복지협의회">
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a href="https://www.vms.or.kr/main.do" target="_blank">
+									<img src="/assets/images/newmain/img_organiz03.png" alt="사회복지">
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a href="http://gov30.go.kr/" target="_blank">
+									<img src="/assets/images/newmain/img_organiz04.png" alt="정부3.0" class="last">
+								</a>
+							</div>
+						</div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+						<div class="swiperBtn stop">
+							<button type="button">멈춤</button>
+						</div>
+					</div>
+				</div>
+				<!-- 네번째 섹션 -->
+
+			</div>
+		</div>
+		<!-- content -->
+
+		<!-- footer -->
+		<div id="footer">
+			<div class="top">
+				<div class="comWidth">
+					<a href="" title="자주 묻는 질문">자주 묻는 질문</a>
+					<a href="" title="1:1 문의">1:1 문의</a>
+					<a href="" title="정보시스템">정보시스템</a>
+				</div>
+			</div>
+			<div class="comWidth">
+				<div class="btm">
+					<div class="linkTxt">
+						<a href="" title="이용약관">이용약관</a>
+						<a href="" title="개인정보방침" class="orange">개인정보방침</a>
+						<a href="" title="책임한계와 법적고지">책임한계와 법적고지</a>
+						<a href="" title="이메일 무단수집거부">이메일 무단수집거부</a>
+						<a href="" title="사이트맵">사이트맵</a>
+					</div>
+					<div class="footerTxt">
+						<ul>
+							<li>주소 : (우)04195 서울특별시 마포구 만리재로 14 (공덕동 456번지) 한국사회복지회관 4층</li>
+							<li>
+								<span>대표전화 : 1688-3579</span>
+								<span>FAX: 02-713-7297</span>
+							</li>
+							<li>COPYRIGHT &copy; BY CARE.VMS.OR.KR ALL RIGHTS RESERVED.</li>
+						</ul>
+					</div>
+					<div class="snsArea">
+						<a href="" title="유튜브">
+							<img src="/assets/images/newmain/img_youtube.png" alt="유튜브">
+						</a>
+						<a href="" title="인스타그램">
+							<img src="/assets/images/newmain/img_insta.png" alt="인스타그램">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer -->
+	</div>
+	
+	<div class="layerFrame">
+		<div class="layerArea" style="width:480px; height:560px;">
+			<div class="contentArea">
+				<div class="imgArea">
+					<img src="/assets/images/newmain/temp.jpg">
+				</div>
+			</div>
+			<div class="btnArea orangBg">
+				<div class="check">
+					<input type="checkbox" id="hours">
+					<label for="hours"><span>24</span>시간동안 보지않기 </label>
+				</div>
+				<button type="button">닫기</button>
+			</div>		
+		</div>
+	</div>
+</body>
+
+</html>

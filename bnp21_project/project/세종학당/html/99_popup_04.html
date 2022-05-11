@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>메인이미지등록</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+	<div id="popup">
+
+		<h1>메인이미지등록</h1>
+
+		<form id="form_box">
+
+			<div class="pop_wrap">
+
+				<div class="yellow_box">
+					<p class="alert_icon">
+						아래 <span class="red">샘플 다운로드</span>를 통해 샘플 엑셀 파일을 다운로드
+					</p>
+				</div>
+
+				<div class="txt_box">
+					<p>
+						※ 아래 샘플 다운로드를 통해 샘플 엑셀 파일을 다운로드 받아 해당 샘플의 형식에 맞게 자료를 업로드
+					</p>
+				</div>
+
+				<div class="table_wrap">
+					<table class="row_type">
+						<caption>이미지 업로드, 비고, 사용여부로 구성된 테이블</caption>
+						<colgroup>
+							<col style="width: 25%;" />
+							<col style="width: 75%;" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="temp01">이미지 업로드</label></th>
+								<td><input type="file" id="temp01" title="이미지 업로드" class="basic" style="width:330px;" /></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="temp02">비고</label></th>
+								<td><input type="text" id="temp02" title="비고" class="basic" style="width:330px;" /></td>
+							</tr>
+							<tr>
+								<th scope="row">사용여부</th>
+								<td>
+									<input type="radio" id="temp03" name="use" /><label for="temp03">사용</label>
+									<input type="radio" id="temp04" name="use" /><label for="temp04">미사용</label>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> <!-- //table_wrap -->
+
+				<div class="txt_box">
+					<p>
+						※ 아래 샘플 다운로드를 통해 샘플 엑셀 파일을 다운로드 받아 해당 샘플의 형식에 맞게
+					</p>
+				</div>
+
+			</div>
+
+			<div class="pop_btn_area">
+				<div class="btn_right">
+					<button type="button" class="btn blue">저장</button>
+					<button type="button" class="btn gray">닫기</button>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+
+</body>
+</html>

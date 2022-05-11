@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+/* ***** layout ***** */
+#wrap{min-height: 100%;}
+
+/* ** header ** */
+#header{position: fixed; left:0; top:0; z-index: 10; width:100%; height:50px; padding:0 16px 0 20px; border-bottom: 1px solid transparent; background: transparent; overflow: hidden;}
+#header .inner{display: table; table-layout: fixed; position: relative; width:100%; height:50px;}
+#header .inner > div{float: none; display: table-cell; line-height: 24px; vertical-align: middle;}
+#header .fl{width:34px; text-align: left;}
+#header .fr{width:34px; text-align: right;}
+#header .tit .btnNavi.prev{margin-right: 16px; margin-left: -4px; vertical-align: top;}
+#header .tit h1{display: inline-block; font-size: 1.8rem; font-weight: 600; width:auto; vertical-align: top; white-space: nowrap;}
+
+#wrap.fixed #header{background: #fff; box-shadow: 0px 1px 0px 0px rgba(34,34,34,.12);}
+#wrap.fixed #header .fr{position: absolute; right:0; top:50%; z-index: 1; margin-top: -12px;}
+
+#wrap.main #header .fr{width:40%;}
+
+
+/* ** container ** */
+#container{padding-top:50px; min-height: 100%;}
+#wrap.sub{padding-bottom: 70px;}
+#wrap.sub.noBtn{padding-bottom: 0px;}
+#wrap.sub.bg{background: #f7f7f7;}
+#wrap.sub .content{padding:24px 20px;}
+
+/* all menu */
+.allMenuWrap{position: fixed; right:-100%; top:0; z-index: 1000; width:100%; height: 100%; background: #f7f7f7;}
+.allMenuWrap .allHd{position: absolute; top:0; left:0; z-index: 2; line-height: 25px; width:100%; background: #f7f7f7;}
+.allMenuWrap .allHd .tit{font-size: 1.8rem; line-height: 50px; padding:0 20px;}
+.allMenuWrap .allHd .btnNavi.close{position: absolute; right:13px; top:13px; z-index: 1; opacity: 1;}
+.allMenuWrap .allCnt{height:100%; padding:74px 20px 20px; overflow: hidden; overflow-y: scroll; -webkit-overflow-scrolling: touch;}
+.allMenuWrap .menu .li + .li{margin-top:24px;}
+.allMenuWrap .menu dt{font-size: 1.3rem; color:#888; line-height: 19px;}
+.allMenuWrap .menu dd{margin-top: 8px; border-radius: 4px; background: #fff; box-shadow: 0px 1px 2px 0px rgba(34,34,34,0.08);}
+.allMenuWrap .menu .ul li + li{border-top:1px solid #E7E7E7;}
+.allMenuWrap .menu .ul li a{display: block; position: relative; font-size: 1.6rem; line-height: 24px; font-weight:700; padding:20px 48px 20px 20px;}
+.allMenuWrap .menu .ul li a:after{display: inline-block; content: ''; position: absolute; right:20px; top:50%; z-index: 1; width:8px; height: 16px; margin-top: -8px; background: url("../img/ico_com.png") no-repeat; background-size: 300px auto; background-position: 0 -28px;}
+.allMenuWrap .menu .ul .txt{font-size: 1.4rem; line-height: 20px; color:#888; margin-top: 4px;}
+.allMenuWrap .menu .ul .txt span + span{margin-left: 4px;}
+.allMenuWrap.on .allHd{background: #fff; box-shadow: 0px 1px 0px 0px rgba(34,34,34,.12);}
+.allDim{display: none; position: fixed; left:0; top:0; z-index: 100; width:100%; height:100%; background: rgba(102,102,102,.6);}
+
+/* content */
+.content{min-height: 400px}

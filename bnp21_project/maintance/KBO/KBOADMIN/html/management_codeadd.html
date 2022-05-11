@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>코드관리 &lt; 관리 &lt; KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/common.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li><a href="">대시보드</a></li>
+				<li><a href="">등록</a></li>
+				<li><a href="">조회</a></li>
+				<li><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">유형별 상세</a></li>
+						<li><a href="">심판별</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li class="curr"><a href="">관리</a>
+					<ul>
+						<li><a href="">경기관리</a></li>
+						<li class="curr"><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>코드관리</h2>
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>대분류</h3>
+			</div>
+			<!--// titArea -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>코드, 코드명, 코드설명 항목으로 구성된 코드관리 대분류 등록 테이블입니다.</caption>
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">코드</th>
+							<td><input type="text" title="코드 입력"></td>
+							<th scope="row">코드명</th>
+							<td><input type="text" title="코드명 입력"></td>
+							<th scope="row">정렬</th>
+							<td><input type="text" title="정렬 입력"></td>
+							<th scope="row">사용여부</th>
+							<td>
+								<!-- checkBox -->
+								<div class="checkBox">
+									<span><input type="radio" name="chk01" id="chk0101" checked><label for="chk0101">사용</label></span>
+									<span><input type="radio" name="chk01" id="chk0102"><label for="chk0102">미사용</label></span>
+								</div>
+								<!--// checkBox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">코드설명</th>
+							<td colspan="7"><input type="text" title="코드설명 입력" class="w100p"></td><!-- 2020-04-08 -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+
+			<!-- titArea -->
+			<div class="titArea">
+				<h3>상세분류</h3>
+				<div class="btnArea">
+					<button class="btn btnRed" onclick="fn_addMClass()">+ 중분류 추가</button>
+				</div>
+			</div>
+			<!--// titArea -->
+			<!-- rowTable -->
+			<div class="rowTable addContWrap">
+				<div class="addContArea">
+					<table class="mClassTable">
+						<caption>중분류코드, 코드명, 정렬, 사용여부 항목으로 구성된 코드관리 상세분류 등록 테이블입니다.</caption>
+						<colgroup>
+							<col style="width:96px">
+							<col style="width:auto">
+							<col style="width:96px">
+							<col style="width:auto">
+							<col style="width:96px">
+							<col style="width:auto">
+							<col style="width:96px">
+							<col style="width:410px">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">중분류코드</th>
+								<td><input type="text" title="코드 입력"></td>
+								<th scope="row">코드명</th>
+								<td><input type="text" title="코드명 입력"></td>
+								<th scope="row">정렬</th>
+								<td><input type="text" title="정렬 입력"></td>
+								<th scope="row">사용여부</th>
+								<td>
+									<!-- checkBox -->
+									<div class="checkBox">
+										<span><input type="radio" name="chk01" id="chk0101" checked><label for="chk0101">사용</label></span>
+										<span><input type="radio" name="chk01" id="chk0102"><label for="chk0102">미사용</label></span>
+									</div>
+									<!--// checkBox -->
+									<div class="btnArea">
+										<button class="btn btnYellowL" onclick="fn_del(this)"><span class="icoTrash">삭제</span></button>
+										<button class="btn btnYellow" onclick="fn_addSClass(this)">+ 소분류추가</button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">코드설명</th>
+								<td colspan="7"><input type="text" title="코드설명 입력" class="w100p"></td><!-- 2020-04-08 -->
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!--// rowTable -->
+
+			<!-- btnBottom -->
+			<div class="btnBottom">
+				<button class="btn btnGray">취소</button>
+				<button class="btn btnBlue">저장</button>
+			</div>
+			<!--// btnBottom -->
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<p>Copyright&copy; KBO, All Rights Reserved.</p>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+</body>
+</html>

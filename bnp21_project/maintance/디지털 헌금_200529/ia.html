@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>디지털 헌금 바구니 IA</title>
+	<link rel="stylesheet" href="css/common.css" />
+	<script src="js/jquery-2.2.4.js"></script>
+	<style type="text/css">
+	body {display:block !important; overflow:auto; min-width:1600px; box-sizing:border-box}
+	* {box-sizing:border-box}
+	caption {display:none}
+	#wrap {overflow:hidden; width:100%; min-width:1024px; margin-bottom:50px}
+	#header {overflow:hidden; padding:50px; width:100%}
+	#header .tit_area {position:relative; overflow:hidden}
+	#header .tit_area h1 {overflow:hidden; line-height:50px; font-size:40px}
+	#header .tit_area strong {display:block; overflow:hidden; width:169px; line-height:23px; text-align:center; font-size:15px; color:#fff; text-align:center; background:#000}
+	#header .tit_area strong:before {display:block; overflow:hidden; position:absolute; bottom:23px; left:0; content:""; width:100%; border-top:2px solid #000}
+	#header .tit_area strong span {overflow:hidden}
+	#header .intro {position:absolute; top:60px; right:50px; overflow:hidden}
+	#header .intro p {overflow:hidden; font-size:10px; line-height:15px; text-align:right}
+
+	#contents {position:relative; overflow:hidden; padding:0 430px 0 50px}
+	#contents iframe {position:fixed; right:50px; overflow-y:auto; border:1px solid #ccc; width:360px; height:640px; background:#fff}
+	#contents .table_style01 {width:100%; max-width:100%; border-top:3px solid #f00; border-bottom:1px solid #000}
+	#contents .table_style01 table {min-width:100%; width:auto; table-layout:fixed}
+	#contents .table_style01 table thead {border-left:1px solid #444}
+	#contents .table_style01 table tr th {padding:10px; border-right:1px solid #444; font-size:13px; text-align:left; color:#fff; background:#000}
+	#contents .table_style01 table tr td {padding:10px; border-top:1px solid #eaeaea; border-right:1px solid #eaeaea; font-size:13px; text-align:left; color:#000}
+	#contents .table_style01 table tr td:first-child {border-left:1px solid #eaeaea}
+	#contents .table_style01 table tr td a {text-decoration:underline; color:#fa9999}
+	#contents .table_style01 table tr td a:visited {color:#00f}
+	#contents .table_style01 table tr.today td {border-color:#fccfcf; background:#fcf2f2}
+	#contents .table_style01 table tr.today td + td + td + td + td + td + td {color:#ff0000}
+	#contents .table_style01 table tr.depth td {border-top:1px solid #f00}/* 메뉴 구분 */
+	#contents .table_style01 table tr.point td {border:1px solid #f8b9b9; background:#ffe7e7} /* 중요 내용 */
+	.noneSb td {background:#f8fbc4}
+	.modi td {background:#ffd8d8}
+	.bgGray td {color:#ddd !important; background:#fafafa}
+	.bgGray td a {color:#ddd !important}
+	</style>
+	<script>
+	$(function() {
+		$(".btnIframe").click(function(e) {
+			e.preventDefault(); 
+			var i = $(this).attr("href"); 
+			$("iframe").attr("src",i); 
+		}); 
+	})
+	</script>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		
+		<!-- header -->
+		<header id="header">
+			<div class="tit_area">
+				<h1>디지털 헌금 바구니 IA  :) </h1>
+				<strong>국문 <span>(Mobile)</span></strong>
+			</div>
+			<div class="intro">
+				<p>HTML5 / utf-8</p>
+				<p>Browser - Crome, Safari</p>
+			</div>
+		</header>
+		<!--// header -->
+
+		<!-- section -->
+		<section id="contents">
+			<iframe src="" frameborder="0"></iframe>
+			<!-- 메뉴 구조도 -->
+			<div class="table_style01">
+				<table summary="1depth, 2depth, 3depth, 4depth, 5depth, URL, 미리보기, 완료날짜, 수정날짜, 진행상태, 기타사항 항목으로 구성된 IA 표입니다.">
+					<caption>디지털 헌금 바구니 IA</caption>
+					<colgroup>
+						<col style="width:8%"/>
+						<col style="width:8%"/>
+						<col style="width:8%"/>
+						<col style="width:8%"/>
+						<col style="width:8%"/>
+						<col style="width:10%"/>
+						<col style="width:8%"/>
+						<col style="width:8%"/>
+						<col style="width:8%"/>
+						<col style="width:8%"/>
+						<col style="width:auto"/>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">3depth</th>
+							<th scope="col">4depth</th>
+							<th scope="col">5depth</th>
+							<th scope="col">URL</th>
+							<th scope="col">미리보기</th>
+							<th scope="col">완료날짜</th>
+							<th scope="col">수정날짜</th>
+							<th scope="col">진행상태</th>
+							<th scope="col">기타사항</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>로그인</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_211.html" target="_blank" title="새창으로 열기">SOFP_211.html</a></td>
+							<td><a href="html/SOFP_211.html" class="btnIframe">미리보기</a></td>
+							<td>2020-04-28</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>교회 선택</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_212.html" target="_blank" title="새창으로 열기">SOFP_212.html</a></td>
+							<td><a href="html/SOFP_212.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-08</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>회원가입</td>
+							<td>교회 선택</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_112.html" target="_blank" title="새창으로 열기">SOFP_112.html</a></td>
+							<td><a href="html/SOFP_112.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>가입 확인 메시지</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_113.html" target="_blank" title="새창으로 열기">SOFP_113.html</a></td>
+							<td><a href="html/SOFP_113.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>휴대폰 본인인증</td>
+							<td>상세</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_121.html" target="_blank" title="새창으로 열기">SOFP_121.html</a></td>
+							<td><a href="html/SOFP_121.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>약관보기</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_122.html" target="_blank" title="새창으로 열기">SOFP_122.html</a></td>
+							<td><a href="html/SOFP_122.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>서비스 이용약관</td>
+							<td>상세</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_131.html" target="_blank" title="새창으로 열기">SOFP_131.html</a></td>
+							<td><a href="html/SOFP_131.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>약관보기</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_133.html" target="_blank" title="새창으로 열기">SOFP_133.html</a></td>
+							<td><a href="html/SOFP_133.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>가입정보 입력</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_132.html" target="_blank" title="새창으로 열기">SOFP_132.html</a></td>
+							<td><a href="html/SOFP_132.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>간편비밀번호 등록</td>
+							<td>설정</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_161.html" target="_blank" title="새창으로 열기">SOFP_161.html</a></td>
+							<td><a href="html/SOFP_161.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>재 확인</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_162.html" target="_blank" title="새창으로 열기">SOFP_162.html</a></td>
+							<td><a href="html/SOFP_162.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>알림메시지</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_163.html" target="_blank" title="새창으로 열기">SOFP_163.html</a></td>
+							<td><a href="html/SOFP_163.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>가입완료 메시지</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_171.html" target="_blank" title="새창으로 열기">SOFP_171.html</a></td>
+							<td><a href="html/SOFP_171.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-06</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>로그인 비밀번호</td>
+							<td>찾기</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_221.html" target="_blank" title="새창으로 열기">SOFP_221.html</a></td>
+							<td><a href="html/SOFP_221.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>재설정</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_222.html" target="_blank" title="새창으로 열기">SOFP_222.html</a></td>
+							<td><a href="html/SOFP_222.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>알림메시지</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_223.html" target="_blank" title="새창으로 열기">SOFP_223.html</a></td>
+							<td><a href="html/SOFP_223.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>교회 아이디 찾기</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_231.html" target="_blank" title="새창으로 열기">SOFP_231.html</a></td>
+							<td><a href="html/SOFP_231.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>아이디 리스트</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_232.html" target="_blank" title="새창으로 열기">SOFP_232.html</a></td>
+							<td><a href="html/SOFP_232.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>동의서 받기</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_241.html" target="_blank" title="새창으로 열기">SOFP_241.html</a></td>
+							<td><a href="html/SOFP_241.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-08</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>메인</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_311.html" target="_blank" title="새창으로 열기">SOFP_311.html</a></td>
+							<td><a href="html/SOFP_311.html" class="btnIframe">미리보기</a></td>
+							<td>2020-04-28</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>헌금하기</td>
+							<td>일반 헌금</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_312.html" target="_blank" title="새창으로 열기">SOFP_312.html</a></td>
+							<td><a href="html/SOFP_312.html" class="btnIframe">미리보기</a></td>
+							<td>2020-04-29</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>감사헌금</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_313.html" target="_blank" title="새창으로 열기">SOFP_313.html</a></td>
+							<td><a href="html/SOFP_313.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-08</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>기도제목 입력</td>
+							<td></td>
+							<td><a href="html/SOFP_321.html" target="_blank" title="새창으로 열기">SOFP_321.html</a></td>
+							<td><a href="html/SOFP_321.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-08</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>대리 헌금자 불러오기</td>
+							<td></td>
+							<td><a href="html/SOFP_322.html" target="_blank" title="새창으로 열기">SOFP_322.html</a></td>
+							<td><a href="html/SOFP_322.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>헌금하기</td>
+							<td><a href="html/SOFP_331.html" target="_blank" title="새창으로 열기">SOFP_331.html</a></td>
+							<td><a href="html/SOFP_331.html" class="btnIframe">미리보기</a></td>
+							<td>2020-04-29</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>계좌 선택 바꾸기</td>
+							<td><a href="html/SOFP_332.html" target="_blank" title="새창으로 열기">SOFP_332.html</a></td>
+							<td><a href="html/SOFP_332.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>간편비밀번호 결제</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_341.html" target="_blank" title="새창으로 열기">SOFP_341.html</a></td>
+							<td><a href="html/SOFP_341.html" class="btnIframe">미리보기</a></td>
+							<td>2020-04-29</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>에러메시지</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_351.html" target="_blank" title="새창으로 열기">SOFP_351.html</a></td>
+							<td><a href="html/SOFP_351.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>헌금 납부 완료</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_361.html" target="_blank" title="새창으로 열기">SOFP_361.html</a></td>
+							<td><a href="html/SOFP_361.html" class="btnIframe">미리보기</a></td>
+							<td>2020-04-29</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>조회</td>
+							<td>내역조회</td>
+							<td>목록</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_411.html" target="_blank" title="새창으로 열기">SOFP_411.html</a></td>
+							<td><a href="html/SOFP_411.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>팝업</td>
+							<td>기도문</td>
+							<td></td>
+							<td><a href="html/SOFP_411_1.html" target="_blank" title="새창으로 열기">SOFP_411_1.html</a></td>
+							<td><a href="html/SOFP_411_1.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>헌금 분류 선택</td>
+							<td></td>
+							<td><a href="html/SOFP_412.html" target="_blank" title="새창으로 열기">SOFP_412.html</a></td>
+							<td><a href="html/SOFP_412.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>설정</td>
+							<td>회원정보</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_511.html" target="_blank" title="새창으로 열기">SOFP_511.html</a></td>
+							<td><a href="html/SOFP_511.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>휴대폰 번호 변경</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_512.html" target="_blank" title="새창으로 열기">SOFP_512.html</a></td>
+							<td><a href="html/SOFP_512.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>이메일 주소 변경</td>
+							<td>상세</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_521.html" target="_blank" title="새창으로 열기">SOFP_521.html</a></td>
+							<td><a href="html/SOFP_521.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>알림메시지</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_522.html" target="_blank" title="새창으로 열기">SOFP_522.html</a></td>
+							<td><a href="html/SOFP_522.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>계좌 관리</td>
+							<td>목록</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_561.html" target="_blank" title="새창으로 열기">SOFP_561.html</a></td>
+							<td><a href="html/SOFP_561.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>삭제</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_581.html" target="_blank" title="새창으로 열기">SOFP_581.html</a></td>
+							<td><a href="html/SOFP_581.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>자주쓰는 계좌 등록</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_582.html" target="_blank" title="새창으로 열기">SOFP_582.html</a></td>
+							<td><a href="html/SOFP_582.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>계좌 등록</td>
+							<td>등록</td>
+							<td></td>
+							<td><a href="html/SOFP_562.html" target="_blank" title="새창으로 열기">SOFP_562.html</a></td>
+							<td><a href="html/SOFP_562.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-07</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>은행 선택</td>
+							<td></td>
+							<td><a href="html/SOFP_811.html" target="_blank" title="새창으로 열기">SOFP_811.html</a></td>
+							<td><a href="html/SOFP_811.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-08</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>오픈뱅킹 서비스 이용약관 동의</td>
+							<td>상세</td>
+							<td><a href="html/SOFP_565.html" target="_blank" title="새창으로 열기">SOFP_565.html</a></td>
+							<td><a href="html/SOFP_565.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-07</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>약관보기</td>
+							<td><a href="html/SOFP_821.html" target="_blank" title="새창으로 열기">SOFP_821.html</a></td>
+							<td><a href="html/SOFP_821.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-08</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr class="bgGray">
+							<td></td>
+							<td></td>
+							<td>신분증 촬영</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_563.html" target="_blank" title="새창으로 열기">SOFP_563.html</a></td>
+							<td><a href="html/SOFP_563.html" class="btnIframe">미리보기</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>화면없음</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>1원 인증</td>
+							<td>입력 화면</td>
+							<td></td>
+							<td><a href="html/SOFP_564.html" target="_blank" title="새창으로 열기">SOFP_564.html</a></td>
+							<td><a href="html/SOFP_564.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-07</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>1원인증 확인</td>
+							<td></td>
+							<td><a href="html/SOFP_591.html" target="_blank" title="새창으로 열기">SOFP_591.html</a></td>
+							<td><a href="html/SOFP_591.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-08</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>ARS 인증</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_566.html" target="_blank" title="새창으로 열기">SOFP_566.html</a></td>
+							<td><a href="html/SOFP_566.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-07</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>계좌 등록 완료</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_571.html" target="_blank" title="새창으로 열기">SOFP_571.html</a></td>
+							<td><a href="html/SOFP_571.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-08</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>간편비밀번호 변경</td>
+							<td>비밀번호 변경</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_551.html" target="_blank" title="새창으로 열기">SOFP_551.html</a></td>
+							<td><a href="html/SOFP_551.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>비밀번호 재확인</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_552.html" target="_blank" title="새창으로 열기">SOFP_552.html</a></td>
+							<td><a href="html/SOFP_552.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>알림 메시지</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_553.html" target="_blank" title="새창으로 열기">SOFP_553.html</a></td>
+							<td><a href="html/SOFP_553.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>로그인 비밀번호 변경</td>
+							<td>기존 번호 확인</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_541.html" target="_blank" title="새창으로 열기">SOFP_541.html</a></td>
+							<td><a href="html/SOFP_541.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>신규 번호 입력</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_542.html" target="_blank" title="새창으로 열기">SOFP_542.html</a></td>
+							<td><a href="html/SOFP_542.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>알림메시지</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_543.html" target="_blank" title="새창으로 열기">SOFP_543.html</a></td>
+							<td><a href="html/SOFP_543.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-11</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>추가 헌금자 관리</td>
+							<td>목록</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_531.html" target="_blank" title="새창으로 열기">SOFP_531.html</a></td>
+							<td><a href="html/SOFP_531.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>삭제</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_532.html" target="_blank" title="새창으로 열기">SOFP_532.html</a></td>
+							<td><a href="html/SOFP_532.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td>등록</td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_533.html" target="_blank" title="새창으로 열기">SOFP_533.html</a></td>
+							<td><a href="html/SOFP_533.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr class="bgGray">
+							<td></td>
+							<td>교회 등록 해지(교회 탈회)</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_911.html" target="_blank" title="새창으로 열기">SOFP_911.html</a></td>
+							<td><a href="html/SOFP_911.html" class="btnIframe">미리보기</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>화면없음</td>
+						</tr>
+						<tr class="bgGray">
+							<td></td>
+							<td>로그아웃</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_912.html" target="_blank" title="새창으로 열기">SOFP_912.html</a></td>
+							<td><a href="html/SOFP_912.html" class="btnIframe">미리보기</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>화면없음</td>
+						</tr>
+						<tr>
+							<td>알림 페이지</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_711.html" target="_blank" title="새창으로 열기">SOFP_711.html</a></td>
+							<td><a href="html/SOFP_711.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-12</td>
+							<td>2020-05-28</td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>로딩</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="html/SOFP_712.html" target="_blank" title="새창으로 열기">SOFP_712.html</a></td>
+							<td><a href="html/SOFP_712.html" class="btnIframe">미리보기</a></td>
+							<td>2020-05-28</td>
+							<td></td>
+							<td>완료</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// 메뉴 구조도 -->
+		</section>
+		<!--// section -->
+
+	</div>
+	<!--// wrap -->
+
+</body>
+</html>

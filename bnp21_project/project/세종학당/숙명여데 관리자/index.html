@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>숙명여대 캠퍼스 타운 관리자</title>
+	<style type="text/css">
+	*{box-sizing:border-box}
+	#wrap{overflow:hidden;width:100%;min-width:1024px}
+	#header{overflow:hidden;padding:50px;width:100%}
+	#header .tit_area{position:relative;overflow:hidden}
+	#header .tit_area h1{overflow:hidden;margin-bottom:20px;font-size:40px}
+	#header .tit_area strong{display:inline-block;overflow:hidden;width:169px;line-height:23px;text-align:center;font-size:15px;color:#fff;text-align:center;background:#000}
+	#header .tit_area strong:before{display:block;overflow:hidden;position:absolute;top:60px;left:0;content:"";width:100%;border-top:2px solid #000}
+	#header .tit_area strong span{overflow:hidden}
+	#header .intro{position:absolute;top:60px;right:50px;overflow:hidden}
+	#header .intro p{overflow:hidden;font-size:10px;line-height:15px;text-align:right}
+
+	#contents{overflow:hidden;padding:0 50px}
+	#contents .table_style01{overflow:hidden;width:100%;border-top:3px solid #f00;border-bottom:1px solid #000}
+	#contents .table_style01 table{overflow:hidden;width:100%; text-align: center;}
+	#contents .table_style01 table thead{border-left:1px solid #444}
+	#contents .table_style01 table tr th{padding:10px 0 10px 10px;border-right:1px solid #444;font-size:13px;text-align:left;color:#fff;background:#000}
+	#contents .table_style01 table tr td{padding:10px 0 10px 10px;border-top:1px solid #eaeaea;border-right:1px solid #eaeaea;font-size:13px;text-align:center;color:#000}
+	#contents .table_style01 table tr td:first-child{border-left:1px solid #eaeaea}
+	#contents .table_style01 table tr td + td + td + td + td + td + td + td{color:#a60a0a}
+	#contents .table_style01 table tr td + td + td + td + td + td + td + td + td{color:#000}
+	#contents .table_style01 table tr.depth td{border-top:1px solid #f00}/* 메뉴 구분 */
+	#contents .table_style01 table tr.point td{border:1px solid #f8b9b9;background:#ffe7e7} /* 중요 내용 */
+	</style>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		
+		<!-- header -->
+		<header id="header">
+			<div class="tit_area">
+				<h1>숙명여대 캠퍼스 타운 관리자</h1>
+			</div>
+			<div class="intro">
+				<p>HTML5 / utf-8</p>
+			</div>
+		</header>
+		<!--// header -->
+
+		<!-- section -->
+		<section id="contents">
+
+			<!-- <div class="info">
+				<div class="box">
+					
+				</div>
+			</div> -->
+
+			<!-- 메뉴 구조도 -->
+			<div class="table_style01">
+				<table summary="1depth, 2depth, 3depth, 4depth, 폴더명, URL, 완료날짜, 수정날짜, 진행상태, 기타사항 항목으로 구성된 IA 표입니다.">
+					<colgroup>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:10%"/>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">1depth</th>
+							<th scope="col">2depth</th>
+							<th scope="col">페이지명</th>
+							<th scope="col">레이어구분</th>
+							<th scope="col">완료</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>0</td>
+							<td>로그인</td>
+							<td></td>
+							<td>
+								<a href="html/login.html" target="_blank">로그인</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>기초정보</td>
+							<td>팝업관리</td>
+							<td>
+								<a href="html/AD-01-01.html" target="_blank">AD-01-01</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td></td>
+							<td>팝업관리</td>
+							<td>
+								<a href="html/AD-01-02.html" target="_blank">AD-01-02</a>
+							</td>
+							<td>O</td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td></td>
+							<td>장소등록</td>
+							<td>
+								<a href="html/AD-01-03.html" target="_blank">AD-01-03</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td></td>
+							<td>장소등록</td>
+							<td>
+								<a href="html/AD-01-03-1.html" target="_blank">AD-01-03-1</a>
+							</td>
+							<td>O</td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td></td>
+							<td>기자재등록</td>
+							<td>
+								<a href="html/AD-01-04.html" target="_blank">AD-01-04</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td></td>
+							<td>기자재등록</td>
+							<td>
+								<a href="html/AD-01-04-1.html" target="_blank">AD-01-04-1</a>
+							</td>
+							<td>O</td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>프로그램등록</td>
+							<td>프로그램등록</td>
+							<td>
+								<a href="html/AD-02-01.html" target="_blank">AD-02-01</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td></td>
+							<td>프로그램등록</td>
+							<td>
+								<a href="html/AD-02-01-1.html" target="_blank">AD-02-01-1</a>
+							</td>
+							<td>O</td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>참여팀 관리</td>
+							<td>참여팀 관리</td>
+							<td>
+								<a href="html/AD-03-01.html" target="_blank">AD-03-01</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td></td>
+							<td>참여팀 관리 상세</td>
+							<td>
+								<a href="html/AD-03-01-1.html" target="_blank">AD-03-01-1</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>10</td>
+							<td>커뮤니티</td>
+							<td>캠퍼스 타운 뉴스</td>
+							<td>
+								<a href="html/AD-04-01.html" target="_blank">AD-04-01</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>11</td>
+							<td></td>
+							<td>캠퍼스 타운 뉴스등록</td>
+							<td>
+								<a href="html/AD-04-01-1.html" target="_blank">AD-04-01-1</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>12</td>
+							<td></td>
+							<td>지원사업 정보</td>
+							<td>
+								<a href="html/AD-04-02.html" target="_blank">AD-04-02</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>13</td>
+							<td></td>
+							<td>지원사업 정보등록</td>
+							<td>
+								<a href="html/AD-04-02-1.html" target="_blank">AD-04-02-1</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>14</td>
+							<td></td>
+							<td>아카이브</td>
+							<td>
+								<a href="html/AD-04-03.html" target="_blank">AD-04-03</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>14</td>
+							<td></td>
+							<td>아카이브등록</td>
+							<td>
+								<a href="html/AD-04-03-1.html" target="_blank">AD-04-03-1</a>
+							</td>
+							<td>O</td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>15</td>
+							<td></td>
+							<td>설문조사</td>
+							<td>
+								<a href="html/AD-04-04.html" target="_blank">AD-04-04</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>16</td>
+							<td>캠퍼스타운 이용</td>
+							<td>프로그램 신청관리</td>
+							<td>
+								<a href="html/AD-05-01.html" target="_blank">AD-05-01</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>17</td>
+							<td></td>
+							<td>프로그램 신청관리등록</td>
+							<td>
+								<a href="html/AD-05-01-1.html" target="_blank">AD-05-01-1</a>
+							</td>
+							<td>O</td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>18</td>
+							<td></td>
+							<td>장소 신청관리</td>
+							<td>
+								<a href="html/AD-05-02.html" target="_blank">AD-05-02</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>19</td>
+							<td></td>
+							<td>장소 신청관리등록</td>
+							<td>
+								<a href="html/AD-05-02-1.html" target="_blank">AD-05-02-1</a>
+							</td>
+							<td>O</td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>20</td>
+							<td></td>
+							<td>기자재 신청관리</td>
+							<td>
+								<a href="html/AD-05-03.html" target="_blank">AD-05-03</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>21</td>
+							<td></td>
+							<td>기자재 신청관리등록</td>
+							<td>
+								<a href="html/AD-05-03-1.html" target="_blank">AD-05-03-1</a>
+							</td>
+							<td>O</td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>22</td>
+							<td></td>
+							<td>수료증 발급관리</td>
+							<td>
+								<a href="html/AD-05-04.html" target="_blank">AD-05-04</a>
+							</td>
+							<td></td>
+							<td>20-11-26</td>
+						</tr>
+						<tr>
+							<td>22</td>
+							<td></td>
+							<td>수료증 발급관리등록</td>
+							<td>
+								<a href="html/AD-05-04-1.html" target="_blank">AD-05-04-1</a>
+							</td>
+							<td>O</td>
+							<td>20-11-26</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// 메뉴 구조도 -->
+
+		</section>
+		<!--// section -->
+
+	</div>
+	<!--// wrap -->
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>MJ CORONA</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <style>
+        #login {position: fixed; top:0; left:0; width:100%; height:100%;}
+    </style>
+
+    <script> 
+        $(function(){
+            $("#login").css("height",window.innerHeight);
+        });
+    </script>
+    
+</head>
+
+<body>
+    <div id="login">
+        <div class="loginArea">
+            <h1 class="logoArea"><a href="">logo</a></h1>
+            <div class="titleArea">
+                <img src="assets/images/logo-b.png" alt="">
+            </div>
+            <div class="btmSelect">
+                <div class="select">
+                    <select name="" id="">
+                        <!-- 20-09-03 -->
+                        <option value="">기업선택</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="기업 회원코드를 입력해주세요">
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="이름를 입력해주세요">
+                </div>
+                <div class="input">
+                    <input type="text" placeholder="생년월일 8자리를 입력해주세요.">
+                </div>
+                <!-- 입력 완료시 on 클래스 추가 -->
+                <!-- 20-09-03 -->
+                <button type="button">로그인</button>
+                <!-- <button type="button" class="on">로그인</button> -->
+                <!-- 20-10-20 -->
+                <a href="policy.html" class="linkTxt">개인정보처리방침</a>
+                <!-- 20-10-20 -->
+                <span class="copyright">2020 &copy; MJ. All Rights Reserved.</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

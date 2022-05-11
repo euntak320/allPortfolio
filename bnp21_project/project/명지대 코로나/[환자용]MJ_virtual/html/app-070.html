@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(function(){
+            $(".pharBox button").click(function(){
+                $(".pharBox").hide();
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="subPage">
+        <div id="header">
+            <span class="title">약국 등록</span>
+        </div>
+        <div id="content" class="reset"> 
+            <div class="resultArea">
+                <div class="comSearch">
+                    <div class="input">
+                        <input type="text" placeholder="읍/면/동 또는 약국명으로 검색">
+                    </div>
+                    <button type="button">검색</button>
+                </div>
+                <div class="pharmacyArea">
+                    <div class="infoTxt">
+                        <span>처방전을 발급받는 약국</span>
+                    </div>
+                    <div class="pharmList">
+                        <div class="pharBox">
+                            <span class="title">현대영양국</span>
+                            <div class="pharInfo">
+                                <span>서울특별시 서초구 강남대로 375, 4층</span>
+                                <span>(서초동, 서초현대타워)</span>
+                                <div class="number">
+                                    <span>Tel. 02-000-0000</span>
+                                    <span>Fax. 02-000-0000</span>
+                                </div>
+                            </div>
+                            <button type="button" class="closebtn">닫기버튼</button>
+                        </div>
+                        <div class="cautionTxt">
+                            <div class="">
+                                <img src="../assets/images/ico_medicine.png" alt="">
+                                <span>약국은 언제든 변경하실 수 있어요.</span>
+                                <span>변경하실 약국을 검색해서 선택하시면 됩니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <ul>
+                <li><a href="" class="home ">홈</a></li>
+                <li><a href="" class="spot on">약국등록</a></li>
+                <li><a href="" class="care">진료</a></li>
+                <li><a href="" class="list">진료내역</a></li>
+                <li><a href="" class="mypage">마이페이지</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>스타플랫폼 관리시스템 &gt; 교회서비스 &gt; 성도관리 &gt; 성도상세</title>
+	<!-- 공통 웹자원 : 맨 위에 위치 -->
+	<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+	<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+	<!-- 해당페이지에서만 사용 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery.datetimepicker.css">
+	<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+	<!-- 공통 웹자원 : 맨 마지막 위치 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+	<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+	<!-- 20-06-08 bigWidth 클래스 추가 -->
+	<div class="layer bigWidth" style="display: block;">
+		<div class="layerFrame">
+			<div class="content">
+				<h2 class="hTit">결제상세</h2>
+				<!-- table -->
+				<div class="tbw scroll-x v2"> 
+					<table class="v2">
+						<caption></caption>
+						<colgroup>
+							<col style="width:10%;">
+							<col style="width:40%;">
+							<col style="width:10%;">
+							<col style="width:40%;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">결제식별번호</th>
+								<td class="txtL">A20040000013</td>
+								<th scope="row">회원</th>
+								<td class="txtL">A20020000018 / 홍*동 / 010-12**-23** / 1980.12.28</td>
+							</tr>
+							<tr>
+								<th scope="row">기업</th>
+								<td class="txtL">[0001] BBQ</td>
+								<th scope="row">가맹점</th>
+								<td class="txtL">[0001-1234] 여의나로 BBQ점</td>
+							</tr>
+							<tr>
+								<th scope="row">결제상태</th>
+								<td class="txtL">결제완료</td>
+								<th scope="row">주문번호</th>
+								<td class="txtL">M20000000737403</td>
+							</tr>
+							<tr>
+								<th scope="row">결제일시</th>
+								<td class="txtL">2020.05.01 12:10:01</td>
+								<th scope="row">취소일시</th>
+								<td class="txtL"></td>
+							</tr>
+							<tr>
+								<th scope="row">결제금액</th>
+								<td class="txtL">56,000</td>
+								<th scope="row">승인번호</th>
+								<td class="txtL">A2005120000000000835</td>
+							</tr>
+							<tr>
+								<th scope="row">결제수단</th>
+								<td class="txtL">AK2005487 / 국민은행 / 123**12111</td>
+								<th scope="row">입금모계좌번호</th>
+								<td class="txtL"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //table -->
+				<!-- table top -->
+				<div class="tblTopWrap">
+					<div class="fl">
+						<h3 class="sTit v2">▶ 거래상세</h3>
+					</div>
+				</div>
+				<!-- //table top -->
+				<div class="tbl">
+					<table>
+						<caption></caption>
+						<colgroup>
+							<col style="width:10%;">
+							<col style="width:40%;">
+							<col style="width:10%;">
+							<col style="width:40%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">번호</th>
+								<th scope="col">거래내용(상품명)</th>
+								<th scope="col">단가</th>
+								<th scope="col">수량</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>크리스피넛</td>
+								<td>36,000</td>
+								<td>1</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>배달료</td>
+								<td>36,000</td>
+								<td>1</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--// table -->
+
+				<!-- table top -->
+				<div class="tblTopWrap">
+					<div class="fl">
+						<h3 class="sTit v2">▶ 헌금상세</h3>
+					</div>
+				</div>
+				<!-- //table top -->
+				<div class="tbw scroll-x v2">
+					<table class="v2">
+						<caption></caption>
+						<colgroup>
+							<col style="width:10%;">
+							<col style="width:40%;">
+							<col style="width:10%;">
+							<col style="width:40%;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>헌금종류</th>
+								<td>감사헌금 > 부활절</td>
+								<th>기타요청사항</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th >기도제목</th>
+								<td colspan="3">하나님, 부활절을 맞이하여.... 감사합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--// table -->
+
+				<!-- table top -->
+				<div class="tblTopWrap">
+					<div class="fl">
+						<h3 class="sTit v2">▶ 정산현황</h3>
+					</div>
+				</div>
+				<!-- //table top -->
+				<div class="tbw scroll-x v2">
+					<table>
+						<caption></caption>
+						<colgroup>
+							<col style="width:10%;">
+							<col style="width:40%;">
+							<col style="width:10%;">
+							<col style="width:40%;">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>정산결과</th>
+								<td>정산전</td>
+								<th>이연수익</th>
+								<td>250</td>
+							</tr>
+							<tr>
+								<th>수수료 공급가</th>
+								<td>280</td>
+								<th>수수료 부가세</th>
+								<td>28</td>
+							</tr>
+							<tr>
+								<th>가맹점지급금액</th>
+								<td>53,000</td>
+								<th>정산결과응답일시</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th>정산일</th>
+								<td>2020.05.04</td>
+								<th>취소정산일</th>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--// table -->
+
+
+				<!-- //table -->
+				<!-- pagingWrap -->
+				<div class="pagingWrap">
+					<a href="#" class="p_btn first ico">처음으로</a><a href="#" class="p_btn prev ico">이전</a>
+					<div class="number"><!-- page selected일때 a태그에 class "on"을 넣어주세요. -->
+						<a href="#" class="num on">1</a><a href="#" class="num">2</a><a href="#" class="num">3</a><a href="#" class="num">4</a><a href="#" class="num">5</a><a href="#" class="num">6</a><a href="#" class="num">7</a><a href="#" class="num">8</a><a href="#" class="num">9</a><a href="#" class="num">10</a>
+					</div>
+					<a href="#" class="p_btn next ico">다음</a><a href="#" class="p_btn end ico">맨끝</a>
+				</div>
+				<!-- //pagingWrap -->
+				<div style="margin-top:30px; text-align:center;">
+					<a href="#" class="btn sm de">닫기</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- wrap -->
+	<div id="wrap" class="sub">
+		
+
+		
+		
+	<!-- //container -->
+	</div>
+	<!-- //wrap -->
+
+</body>
+
+</html>

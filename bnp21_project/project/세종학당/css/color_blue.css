@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/*******************
+
+Main Color : #337ec4;
+
+********************/
+
+
+/* 레이아웃 */
+
+body { background-color: #eaeff2; }
+#LNB { background-color: #20252b; }
+#LNB h1 a { background-color: #337ec4; }
+
+#LNB > ul > li.on { background-color: #00396f; }
+
+#LNB > ul > li > ul > li { background: #2d343b; }
+#LNB > ul > li > ul > li.on > a { background-color: #3e4955; }
+
+#LNB > ul > li > ul > li > ul > li { background: #2d343b; }
+#LNB > ul > li > ul > li > ul > li.on > a { background-color: #5d6b7a; }
+
+#SUB .header .top_nav button.last { color: #337ec4; }
+#SUB .header .top_nav ul.nav_menu li.on { background-color: #337ec4 !important; }
+
+#SUB .header #GNB ul li.on { background-color: #337ec4; }
+#SUB .header #GNB ul li:hover a { color: #337ec4; }
+
+
+/* 컨텐츠 영역 */
+
+#SUB .contents_area h3 { border-bottom: 1px solid #c7d2d8; }
+#SUB .contents_area div.section { border-bottom: 2px solid #d0d8dd; }
+#SUB .contents_area div.section h5 { color: #337ec4; }
+
+#SUB .contents_area div.table_wrap { border-bottom: 2px solid #d0d8dd; }
+
+#SUB .contents_area div.table_wrap .bbs_title { background-color: #337ec4; clear: both; }
+
+#SUB .contents_area div.table_wrap .bbs_list thead tr th { border-left: 1px solid #aacdec; background-color: #cee3f6; color: #337ec4; }
+#SUB .contents_area div.table_wrap .bbs_tb tbody tr th { border-bottom: 1px solid #aacdec; background-color: #cee3f6; color: #337ec4; }
+
+div.table_wrap .row_type tbody tr th { border-top: 1px solid #75a8d8; background-color: #337ec4; }
+div.table_wrap .col_type thead tr th { border-left: 1px solid #75a8d8; background-color: #337ec4; }
+div.table_wrap .col_type thead tr th[colspan] { border-bottom: 1px solid #75a8d8;}
+
+div.table_wrap .row_type tbody tr th span.star,
+div.table_wrap .col_type thead tr th span.star { color: #ff8c8c; }
+
+#SUB .contents_area div.table_wrap .search_type tbody tr th { border-top: 1px solid #9ebfdc; background-color: #7aa3c8; }
+#SUB .contents_area div.table_wrap .search_type tbody tr th span { color: #fff839; }
+
+#SUB .bbs_control .paging a { color: #337ec4; }
+#SUB .bbs_control .paging a.on { border:1px solid #337ec4; background-color: #337ec4 !important; }
+#SUB .bbs_control .paging a:hover { background-color: #e0edf9; }
+
+#SUB .contents_area .survey_wrap dl{ border-bottom: 2px solid #d0d8dd; }
+
+#popup h1 { background-color: #337ec4; }

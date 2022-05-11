@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 2020-05-20 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="format-detection" content="telephone=no, address=no, email=no">
+<!--// 2020-05-20 - meta tag 전부 수정 -->
+<title>경기관리 &lt; 관리 &lt; KOREA BASEBALL KBO 비디오판독 센터 관리자</title>
+<link rel="stylesheet" href="../css/style.css" />
+<!--[if lte IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-ui.js"></script>
+<script src="../js/common.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- header -->
+	<div id="header">
+		<div class="inner">
+			<h1><a href="">KOREA BASEBALL KBO 비디오판독 센터 관리자</a></h1>
+			<div class="util">
+				<button class="btnLog">로그아웃</button>
+			</div>
+			<button class="btnMenu">메뉴 열기</button><!-- 2020-05-20 -->
+		</div>
+		<div id="gnb">
+			<button class="btnMenuClose">메뉴 닫기</button><!-- 2020-05-20 -->
+			<ul>
+				<li><a href="">대시보드</a></li>
+				<li><a href="">등록</a></li>
+				<li><a href="">조회</a></li>
+				<li><a href="">통계</a>
+					<ul>
+						<li><a href="">유형별 전체</a></li>
+						<li><a href="">유형별 상세</a></li>
+						<li><a href="">심판별</a></li>
+						<li><a href="">심판조별</a></li>
+						<li><a href="">팀별</a></li>
+						<li><a href="">시간별 분석표</a></li>
+						<li><a href="">오독</a></li>
+						<li><a href="">판독거부</a></li>
+					</ul>
+				</li>
+				<li class="curr"><a href="">관리</a>
+					<ul>
+						<li class="curr"><a href="">경기관리</a></li>
+						<li><a href="">코드관리</a></li>
+						<li><a href="">사용자관리</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--// header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<h2>경기관리</h2>
+			<!-- 2020-03-20 -->
+			<!-- rowTable -->
+			<div class="rowTable">
+				<table>
+					<caption>경기일자, 경기구분, 홈팀, 원정팀, 장소, 방송사, 기타 항목으로 구성된 경기관리 등록 테이블입니다.</caption><!-- 2020-03-27 - 기타 추가 -->
+					<colgroup>
+						<col style="width:96px">
+						<col style="width:auto">
+						<col style="width:96px">
+						<col style="width:auto">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">경기일자</th>
+							<td><span class="date"><input type="text" title="경기일자선택"></span></td>
+							<th scope="row">경기구분</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="경기구분 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">홈팀</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>팀 선택</span>
+									<select title="홈팀 선택">
+										<option value="">팀 선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+							<th scope="row">원정팀</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>팀 선택</span>
+									<select title="원정팀 선택">
+										<option value="">팀 선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">장소</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="장소 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+							<th scope="row">방송사</th>
+							<td>
+								<!-- selectbox -->
+								<div class="selectbox">
+									<span>선택</span>
+									<select title="방송사 선택">
+										<option value="">선택</option>
+									</select>
+								</div>
+								<!--// selectbox -->
+							</td>
+						</tr>
+						<!-- 2020-03-27 -->
+						<tr>
+							<th scope="row">기타</th>
+							<td colspan="3">
+								<div class="checkBox">
+									<span><input type="checkbox" name="chk01" id="chk0101" checked><label for="chk0101">더블헤더</label></span>
+								</div>
+							</td>
+						</tr>
+						<!-- 2020-03-27 - 추가 -->
+					</tbody>
+				</table>
+			</div>
+			<!--// rowTable -->
+			<!--// 2020-03-20 - 경기구분 추가 -->
+
+			<!-- btnBottom -->
+			<div class="btnBottom">
+				<button class="btn btnGray">취소</button>
+				<button class="btn btnBlue">저장</button>
+			</div>
+			<!--// btnBottom -->
+		</div>
+	</div>
+	<!--// container -->
+
+	<!-- footer -->
+	<div id="footer">
+		<p>Copyright&copy; KBO, All Rights Reserved.</p>
+	</div>
+	<!--// footer -->
+</div>
+<!--// wrap -->
+</body>
+</html>

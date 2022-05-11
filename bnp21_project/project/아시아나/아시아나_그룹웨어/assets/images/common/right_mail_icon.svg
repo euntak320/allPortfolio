@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="icon_next" width="23.42" height="23.42" viewBox="0 0 23.42 23.42">
+    <defs>
+        <style>
+            .cls-1{fill:#7f94af}.cls-2,.cls-3{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:2.8px}.cls-2{stroke-linejoin:round}
+        </style>
+    </defs>
+    <circle id="타원_2" cx="11.71" cy="11.71" r="11.71" class="cls-1" data-name="타원 2"/>
+    <g id="그룹_3" data-name="그룹 3">
+        <path id="패스_2" d="M12.37 16.65l4.37-4.94-4.37-4.94" class="cls-2" data-name="패스 2"/>
+        <path id="선_2" d="M10.07 0H0" class="cls-3" data-name="선 2" transform="translate(6.67 11.71)"/>
+    </g>
+</svg>

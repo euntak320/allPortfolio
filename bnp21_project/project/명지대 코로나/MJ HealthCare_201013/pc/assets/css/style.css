@@ -1,0 +1,290 @@
+/* login */
+#loginArea {position: absolute; top:0; left:0; width:100%; height: 100%; background:#f6f6f6;}
+#loginArea .login {position: absolute; width:640px; top:50%; left:50%; padding:32px; transform: translate(-50%, -50%); background: #0090da url(../images/introBg.png) no-repeat -25px 335px; background-size:50%;}
+#loginArea .login.bgwhite {background:#fff;}
+#loginArea .login .loginFrame {overflow: hidden;}
+#loginArea .loginFrame .logoTxt {width:100%;}
+#loginArea .loginFrame .logoTxt h1 {width:129px; height:36px;}
+#loginArea .loginFrame .logoTxt h1 a {display:block; width:100%; height: 100%; text-indent: -9999px; background:url(../images/logo.png) no-repeat left center; background-size:100%;}
+#loginArea .loginFrame .logoTxt .mainTitle {width:260px; height:106px; margin:64px auto 0;}
+#loginArea .loginFrame .logoTxt .mainTitle img {width:100%;}
+#loginArea .loginFrame .inputArea {float: right; width:50%; margin-top:98px;}
+#loginArea .loginFrame .inputArea input {border-radius: 20px; background:#fff; }
+#loginArea .loginFrame .inputArea .input {height:40px;}
+#loginArea .loginFrame .inputArea .input + .input {margin-top:10px;}
+#loginArea .loginFrame .inputArea .checkArea {margin-top:14px; padding-left:15px;}
+#loginArea .loginFrame .inputArea .checkArea label {margin-left:6px; color:#fff;}
+#loginArea .loginFrame .inputArea button {width:100%; margin-top:30px; border-radius: 20px;  background:#0c2e68; text-align:center; color:#fff; line-height: 40px;}
+#loginArea .smallTxt {display: block; margin-top:30px; line-height: 13px; text-align: center; font-size:10px; color:rgba(255,255,255,0.5);}
+#loginArea .linkTxt {display: block; margin-top:20px; text-align: center;  font-size:10px;}
+#loginArea .copyright {display: block; marg1in-top:5px;  text-align: center; color:#0C2E68; opacity: 0.3; font-size:10px;}
+
+/* comm */
+#subPage {overflow: hidden; position: relative; min-width: 1200px;}
+.contentArea {position: relative; padding-bottom:24px;}
+.contentArea::after {content: ""; position: absolute; top:0; left:0; width:100%; height: 136px;  background: #f6f6f6; z-index: -1;}
+.contentArea.v2::after {height:100px;}
+.contentArea.v3::after {display: none;}
+.comLayout {width:1200px; margin:0 auto;}
+.fl {float: left;}
+.fr {float: right;}
+.comBtm {margin-top:20px; text-align: right;}
+.comBtm button {display: inline-block; width: 68px; max-width: 68px; line-height: 38px; border-radius: 20px; background:#0c2e68; color:#fff; font-size: 14px; letter-spacing: -0.42px;}
+
+/* 20-10-13 추가 */
+.red {color:#ff0000!important;}
+
+ /* 20-09-04  */
+ .titleArea {overflow: hidden; margin-bottom: 20px;}
+ .titleArea .fl {color:#111; font-weight:bold;}
+ .titleArea .comBtm {margin-top:0;}
+ .titleArea .comBtm button {width:100px; max-width: 100px;}
+ .titleArea .comBtm.v2 button {width:60px; height: 24px; background:#0090da; line-height: 24px; font-size:12px;}
+ .titleArea .comBtm.v2 button:last-child {background:#0c2e68;}
+.ui-datepicker-trigger {position: absolute; top:50%; right:10px; width:20px; height:20px; transform: translateY(-50%);}
+/* 20-09-07 */
+.ui-datepicker-trigger img {width:100%;}
+/* 20-09-07 */
+  /* 20-09-04  */
+
+
+/* 20-09-04 수정 */
+/* radio */
+.check > * {display: inline-block; vertical-align: middle;}
+.radio input[type="radio"]{opacity: 0;}
+.radio input[type="radio"] + label{position: relative; display:inline-block; font-size:14px;}
+.radio input[type="radio"] + label::before{content: ""; position: absolute; top:3px; left:-25px; width:18px; height:18px; background:url(../images/radio_off.png) no-repeat 0 0; background-size: cover;}
+.radio input[type="radio"]:checked + label::before { background:url(../images/radio_on.png) no-repeat 0 0; background-size: cover;}
+
+/* header */
+.header {width:100%;}
+.header .topArea {position: relative; height: 56px;}
+/* 20-10-04 추가 */
+.header .topArea h1 {position: absolute; top:50%; left:24px; width:176px; height:31px; transform: translateY(-50%);}
+/* 20-10-04 추가 */
+.header .topArea h1 a {display: block; width:100%; height: 100%; background:url(../images/subLogo.png) no-repeat center; text-indent: -9999px; background-size:100%;}
+.header .topArea .topBtm {position: absolute; top:50%; right:24px; transform: translateY(-50%);}
+.header .topArea .topBtm > * {display: inline-block;}
+.header .topArea .topBtm span {letter-spacing: -0.48px; line-height: 24px; color:#111;}
+.header .topArea .topBtm button {width:88px; margin-left:12px; border-radius: 12px; background:#0c2e68; font-size:14px; color:#fff; line-height: 38px; letter-spacing: -0.42px;}
+.header .bottomArea {background:#0090da;}
+.header .bottomArea span {position: relative; display: inline-block;  padding:14px 20px 15px; }
+.header .bottomArea span::after {content: ""; position: absolute; top:50%; right:0; width:1px; height:17px; background:#fff; transform: translateY(-50%);}
+.header .bottomArea span:last-child::after {display: none;}
+.header .bottomArea span a {position: relative; color:#fff}
+.header .bottomArea span a:hover, .header .bottomArea span a.on {font-weight: bold;}
+.header .bottomArea span a:hover::before, .header .bottomArea span a.on::before {content: ""; position: absolute; bottom:-13px; left:0; width:100%; height:2px; background:#fff;}
+
+/* footer */
+.footer {width:100%; height:30px; background:#02caff; text-align: center; color:rgba(255,255,255,0.5); font-size:10px; line-height: 30px;}
+
+/* filterArea */
+.filterArea {position: relative; overflow: hidden;}
+.filterArea .top { padding:32px 0 24px;}
+.filterArea .top > * {display: inline-block; vertical-align: middle;}
+.filterArea .top .title {margin-right:30px; color:#111; letter-spacing: -0.48px;}
+.filterArea .top .radioArea {margin-left:10px;}
+.filterArea .top .radioArea > * {display: inline-block; margin-right:20px;}
+.filterArea .bottom {overflow: hidden; padding-bottom:24px;}
+.filterArea .bottom > * {width:48%;}
+.filterArea .bottom .fl > * {display: inline-block;}
+.filterArea .bottom .fl .select {width:22%; height:40px; margin-right:2%;}
+.filterArea .bottom .fl .date {width:60%; align-items: center; justify-content: space-between;}
+.filterArea .bottom .fl .date > * {display: inline-block;}
+.filterArea .bottom .fl .date span {padding: 0 5px;}
+.filterArea .bottom .fl .date .input {position: relative; width:46%; height:40px;}
+/* 20-09-07 */
+.filterArea .bottom .fl .date .input input{width:100%;}
+/* 20-09-07 */
+.filterArea .bottom .fr > * {display: inline-block; }
+.filterArea .bottom .fr .select {width:22%; height:40px;}
+.filterArea .bottom .fr .input {position: relative; width:77%;}
+.filterArea .bottom .fr .input input {height:40px; padding-right:75px}
+.filterArea .bottom .fr .input button {position: absolute; right:0; width:72px; height:40px; background:#ccc; color:#fff;}
+.filterArea .bottom .fr .input button:hover {background:#0c2e68}
+.filterArea.v2 .top.fl {padding:36px 0;}
+.filterArea.v2 .top.fl .title {font-size:16px; letter-spacing: -0.48px; line-height: 24px;}
+.filterArea.v2 .top.fl label {font-size:16px;}
+.filterArea.v2 .top.fr {width:50%; text-align: right;}
+.filterArea.v2 .top.fr .input {position: relative; height: 40px;}
+.filterArea.v2 .top.fr .input input {width: 325px; padding-right:75px}
+.filterArea.v2 .top.fr .input button {position: absolute; right:0; width: 72px; line-height: 40px; color:#fff; background:#ccc;}
+
+/* table */
+.comTableArea {position: relative; margin-top:24px;}
+.comTableArea .title {color:#333; letter-spacing: -0.48px; line-height: 24px;}
+.comTableArea .topTxt {overflow: hidden;}
+.comTableArea .topTxt .fl {font-size:13px; color:#999; line-height:19px;}
+.comTableArea .topTxt .fr > * {display: inline-block;}
+.comTableArea .topTxt .fr span {font-size:12px; letter-spacing: -0.36px; line-height: 18px;}
+.comTableArea .topTxt .fr .select select {border:0; border-bottom:1px solid #111; color:#111; padding:0;}
+.comTableArea .table {margin-top:12px;}
+.comTableArea .table table tr:nth-child(2n) {background:#fbfbfb;}
+.comTableArea .table table th, .comTableArea .table table td {padding:10px 0;  text-align: center;}
+.comTableArea .table table th {background:#ebf6fc; color:#385685; font-size:14px; letter-spacing: -0.42px; line-height:20px;}
+.comTableArea .table table td {color:#333;}
+.comTableArea .table table td span {display: block;}
+.comTableArea .table table td .state {display:inline-block; min-width: 40px; padding:3px 9px; line-height:20px; color:#fff; text-align: center; font-size:12px; letter-spacing: -0.36px;}
+.comTableArea .table table td .state.orange {background:#ff952a}
+.comTableArea .table table td .state.gray {background:#666;}
+.comTableArea .table table td .state.blue {background:#0090da;}
+.comTableArea .table table .blue {display: block; padding-left:20px; text-align: left; color:#0090da;}
+.comTableArea .table.v2 th {color:#0c2e68}
+.comTableArea .table.v2 th span {color:#0090da; font-size:13px;}
+.comTableArea .table.v2 .btn {text-align: center;}
+.comTableArea .table.v2 .btn > * {width: 40px; height: 24px; color:#fff; background:#ccc; border-radius: 20px; font-size:12px; letter-spacing: -0.36px;}
+.comTableArea .table.v2 .btn .on {background:#0090da}
+.comTableArea .table.v2 input {width:60%; height:28px; margin:0 auto; padding:0 10px; text-align: center;}
+.comTableArea .table .checkArea input[type="radio"] {width:auto;}
+.comTableArea .table .checkArea > * {display: inline-block; vertical-align: middle; margin:0 10px;}
+.comTableArea .table .checkArea .radio > * {display: inline-block; vertical-align: middle;}
+
+
+/* paging */
+.pagingArea {position: relative; margin-top:30px;  text-align:center;}
+.pagingArea a {display: inline-block; width:24px; height:24px; vertical-align: middle;}
+.pagingArea > .arrow {text-indent: -9999px; opacity: 0.5;}
+.pagingArea > .arrow.on {opacity: 1;}
+.pagingArea > .prev {background:url(../images/ico_first.png) no-repeat center; background-size:50%;}
+.pagingArea > .before {background:url(../images/ico_before.png) no-repeat center; background-size:30%;}
+.pagingArea > .after {background:url(../images/ico_next.png) no-repeat center; background-size:30%;}
+.pagingArea > .next {background:url(../images/ico_end.png) no-repeat center; background-size:50%;}
+.pagingArea > .txt.on, .pagingArea > .txt:hover {background:#0090da; color:#fff;}
+
+/* layer */
+.layerFrame {position: fixed; top:0; left:0; bottom:0; right:0; background:rgba(0,0,0,0.5); z-index: 10;}
+.layerFrame .layerArea {position: absolute; top:50%; left:50%; width:640px; border-radius: 4px; transform: translate(-50%, -50%); background:#fff;}
+.layerFrame .layerArea .topTitle {display: block; padding:14px 0; border-bottom:1px solid #ccc; background:#0090da; font-size:20px; color:#fff; text-align: center ;font-weight:bold;}
+.layerFrame .layerArea .txtArea {overflow:auto; min-height: 150px; padding:10px 20px;}
+.layerFrame .layerArea .txtArea textarea {width:100%;}
+.layerFrame .layerArea .closeBtn {display: block; position: absolute; top:15px; right:30px; width:30px; height:30px; background:url(../images/ico_close.png) no-repeat; background-size: 100%; text-indent: -9999px;}
+.layerFrame .bottomArea {overflow: auto; padding:20px; max-height:645px;}
+.layerFrame .tabArea .tabTxt {display: flex; align-items: center; justify-content: center;}
+.layerFrame .tabArea .tabTxt > * {width:50%; background:#f6f6f6; color:#999;}
+.layerFrame .tabArea .tabTxt button {height:40px;}
+.layerFrame .tabArea .tabTxt button.on {background:#0c2e68; color:#fff;}
+.layerFrame .tabArea .viewArea {margin-top:24px;}
+.layerFrame .tabArea .viewArea .view {display: none;}
+.layerFrame .tabArea .viewArea .view.on {display: block;}
+.layerFrame .tabArea .viewArea .view > div + div {margin-top:25px;}
+.layerFrame .tabArea .viewArea .title {letter-spacing: -0.48px; line-height-step: 24px; color:#111;}
+.layerFrame .box {position: relative; overflow: hidden; width:100%; border:1px solid #ccc;}
+.layerFrame .box{margin-top:10px;}
+.layerFrame .box > * {display:block;}
+.layerFrame .box .txtFrame {position: absolute; width: 147px; height:100%; background:#ebf6fc; }
+.layerFrame .box .txtFrame span {position: absolute; top:50%; left:50%; width:100%; font-size:14px; text-align: center; color:#385685; letter-spacing: -0.42px; transform: translate(-50%, -50%);}
+.layerFrame .box .txtFrame span > .blue {color:#0090da; font-size:10px; letter-spacing: -0.3px;}
+.layerFrame .box .txt {float: right; width:75%; padding:10px 0 10px 20px ; font-size: 14px;;}
+.layerFrame .haflArea {overflow: hidden;}
+.layerFrame .haflArea .box {width:49%;}
+.layerFrame .haflArea .box:first-child {float: left;}
+.layerFrame .haflArea .box:last-child {float: right;}
+.layerFrame .haflArea .box .txt {width:50%; padding:10px 0; text-align: center;}
+.layerFrame .haflArea .checkArea .radio {display: inline-block;}
+.layerFrame .etcArea {overflow: hidden; margin-top:12px; }
+.layerFrame .etcArea > div {width:50%;}
+.layerFrame .etcArea .fl {padding :10px 0;}
+.layerFrame .etcArea .fl span {font-size:14px; letter-spacing: -0.42px; line-height: 20px; color:#111;}
+.layerFrame .etcArea .fl span .red {color:#ff0000}
+.layerFrame .comBtm {text-align: right;}
+.layerFrame .comBtm > * {display: inline-block; width:68px; line-height: 38px; border-radius: 20px; background:#ccc; color:#fff;}
+.layerFrame .comBtm .blue {background:#0c2e68;}
+.layerFrame .surveyArea {margin-top:25px;}
+.layerFrame .surveyArea > span {color:#333; letter-spacing: -0.48px; line-height: 24px; font-weight: bold;}
+.layerFrame .surveyArea .surveyBox {overflow: hidden; margin-top:12px; line-height: 20px;}
+.layerFrame .surveyArea .surveyBox .title {color:#111; font-weight: bold; font-size:14px; letter-spacing: -0.42px;}
+.layerFrame .surveyArea .surveyBox button {width: 48px; height:24px; background:#0090da; font-size:12px; color:#fff;}
+.layerFrame .surveyArea.v2 .surveyBox .title {display: block;}
+.layerFrame .surveyArea.v2 .surveyBox button {border-radius: 0; background:#ccc;}
+.layerFrame .surveyArea.v2 .surveyBox button.on {background:#0090da;}
+.layerFrame .comBtm {margin-top: 10px;}
+.layerFrame .surveyArea.v2 .surveyBox .comBtm > * {line-height: normal;}
+.layerFrame .explainArea {width:100%; padding:16px; margin:10px 0; background:#f6f6f6;}
+.layerFrame .explainArea span {display: block; color:#0090da; font-weight: bold; font-size:13px;}
+.layerFrame .explainArea span + span {margin-top:10px;}
+.layerFrame .explainArea li {padding-left:10px; color:#0090da; font-size:10px;}
+.layerFrame .radio input[type="radio"] + label {padding-left:20px;}
+.layerFrame  .radio input[type="radio"] + label::before {left:0;}
+
+/* 20-10-20 추가 */
+.layerFrame .layerArea.img {width:85%; padding-bottom:25px; width:350px;}
+.layerFrame .layerArea.img button {top:auto; bottom:2px; right:12px; background: none; text-indent: 0; color:#0090da}
+.layerFrame .layerArea .imgArea {width:95%; height:300px; margin:10px auto;}
+.layerFrame .layerArea .imgArea .imgSize {width:100%; }
+.layerFrame .layerArea .imgArea img {opacity: 0!important;}
+
+/* 댓글영역 */
+.askArea {display: block; margin-top:10px; padding:23px; background:#f6f6f6}
+.askArea .title span {font-size:12px; letter-spacing: -0.36px; line-height:18px;}
+.askArea .title .small {font-size:10px; color:#999;}
+.askArea .talkBox {display: inline-block; padding:7px 16px; }
+.askArea .leftArea .talkBox {border-radius:0 20px 20px 20px; background:#fff;}
+.askArea .rightArea {text-align: right;}
+.askArea .rightArea .title > * {display: inline-block; vertical-align: middle;}
+.askArea .rightArea .title .control {font-size:12px; letter-spacing: -0.36px;}
+.askArea .rightArea .title button {position: relative; padding:0 4px; font-size:14px;}
+.askArea .rightArea .title button:first-child:after {content:""; position: absolute; right:0; top:50%; width:1px; height:9px; background:#ccc; transform: translateY(-50%);}
+.askArea .rightArea .title button:last-child {padding:0; padding-left:4px;}
+.askArea .rightArea .talkBox {background:#02caff; border-radius: 20px 0 20px 20px;}
+.askArea .rightArea .talkBox span {color:#fff;}
+.askArea .rightArea .talkBox .modBtn {display: none;}
+.askArea .rightArea .writing {display: none;}
+.askArea .rightArea.on .talkBox {width:100%; background:rgba(255,175,94,0.2);}
+.askArea .rightArea.on .talkBox span {color:#111;}
+.askArea .rightArea.on .talkBox .modBtn {display: inline-block; width:auto; margin-top:6px; text-align: right;}
+.askArea .rightArea.on .talkBox .modBtn button {width:auto; min-width: 58px; line-height: 32px; color:#fff; border-radius: 20px; background:#ffaf5e}
+.askArea .rightArea.on .txt {display: none;}
+.askArea .rightArea.on .writing {display: block;}
+.askArea .rightArea.on .writing input[type="text"] {width:100%; height:100%; padding:0 5px; }
+.inputTxt {position: relative; width:100%; margin-top:16px;}
+.askArea .rightArea.on .writing textarea {width:100%;}
+
+/* 20-10-20 */
+.askArea .picArea {cursor: pointer;}
+.askArea .picArea img { display: inline-block; width:40px; height:40px; margin:10px 0; }
+.inputTxt textarea {width:90%; height:40px; padding:0 45px 0 45px; padding :10px 25px 0 45px; border-radius: 20px 0 0 20px; background:#f6f6f6 }
+.inputTxt button {position: absolute; right: 0; top:0; min-width: 72px; height:40px; border-radius: 20px; background:#0c2e68; color:#fff;}
+.inputTxt .camera {position: absolute; left: 0; top:0; width:45px; background:url(../images/ico_camera.png) no-repeat center; border:0; background-size: 30px; text-indent: -9999px;}
+
+
+/* 예진표 */
+.normalArea {overflow: hidden; width:100%; margin-top:32px; min-height: 72px;}
+.normalArea + .normalArea {margin-top:40px;}
+.normalArea > span {display: block; margin-bottom:10px; color:#111; letter-spacing: -0.48px; line-height: 24px;}
+.normalArea .box {overflow: hidden; position: relative; min-height: 40px; border:1px solid #ddd; border-bottom:0;}
+.normalArea .box:last-child {border-bottom: 1px solid #ddd;;}
+.normalArea .box.w70 {width:68%; border-bottom:1px solid #ddd;}
+.normalArea .box.w70 .conTxt {width:83%}
+.normalArea .box.w30 {width:30%;}
+.normalArea .box.w30 .conTxt {width: 59%; padding: 8px 0 8px 20px;}
+.normalArea .box.w30 .conTxt .radio {margin-right:30px;}
+.normalArea .box .titleTxt {position: absolute; left:0; width:147px; height: 100%; background: #ebf6fc;}
+.normalArea .box .titleTxt span {position: absolute; top: 50%; left: 50%; width: 100%; font-size: 14px; text-align: center; color: #385685; letter-spacing: -0.42px; transform: translate(-50%, -50%);}
+.normalArea .box .titleTxt span strong {font-size:10px; color:#02caff}
+.normalArea .box .conTxt {float: right; width: 88%; padding: 5px 10px; font-size: 14px;}
+.normalArea .box .conTxt input[type="text"] {height:28px; border:1px solid #e6e6e6;}
+.normalArea .box .conTxt textarea {width:100%; height: 150px; padding:5px;}
+.normalArea .questionArea + .questionArea {margin-top:13px;}
+.normalArea .questionArea .topArea {overflow: hidden;}
+.normalArea .questionArea .topArea .title {min-width:52px; line-height: 28px; background:#0c2e68; color:#fff; text-align: center;}
+.normalArea .questionArea .topArea .fr button {display: inline-block; width:40px; height:25px; border-radius:20px; font-size:12px; letter-spacing: -0.36px; color:#fff; }
+.normalArea .questionArea .topArea .fr button:first-child {background:#0090da;}
+.normalArea .questionArea .topArea .fr button:last-child {background:#ccc;}
+
+/* 20-10-05 추가 */
+#intro {position: relative; width:100%; height:100vh; background:#f6f6f6;}
+#intro .introArea {position: absolute; left:50%; top:50%; width:640px; height:860px; padding:24px; transform: translate(-50%,-50%); background:#0090da url(../images/introBg.png) no-repeat 0 160%; background-size: 115%;}
+#intro .loginArea{position: absolute; }
+#intro .loginArea h1 {width:91px; text-indent: -9999px;}
+#intro .loginArea h1 a {display: block; background: url(../images/w-logo.png) no-repeat; background-size: 100%;}
+#intro .loginArea .titleArea {margin-top:60px;}
+#intro .loginArea .titleArea img {width:286px;}
+#intro .loginArea .btnArea {display: flex; margin-top:43px; margin-left:45px; align-items: center;}
+#intro .loginArea .btnArea a {width: 20%; padding:3px; margin-right:20px; border-radius:45px; background: #fff; color:#0090da;text-align: center; letter-spacing: -0.48px; line-height:19px;}
+#intro .loginArea .btnArea a:last-child {margin-right:0;}
+#intro .loginArea .btnArea a:last-child span {margin:11px 0;}
+#intro .loginArea .btnArea a img {width:100%;}
+#intro .loginArea .btnArea a span {display: block; margin-top:5px;}
+#intro .loginArea .btnArea button {display: inline-block; width:24px; height:24px; border-radius: 50%; background: #0090da url(../images/w-right.png) no-repeat center; background-size: 6px;}
+#intro .introTitle {margin-top:154px; text-align: center;}
+#intro .introTitle img {display: inline-block; width:60%;}

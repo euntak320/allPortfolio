@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/script.js"></script>	
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("../include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("../include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">내부 지식베이스 기반 항목 기본 정보와 부가정보를 상세 조회합니다.</p>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">표제어 기본 정보</h4>
+						<div class="table-top-btn">
+							<a href="#none" class="list-btn">목록</a>
+						</div>
+					</div>
+				</div>
+				<div class="com-table-search">
+					<table>
+						<caption>검색 표</caption>						
+						<tbody>
+							<tr>
+								<th>표제어</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="이순신" aria-invalid="false">
+									</div>
+								</td>
+								<th>외부지식베이스</th>
+								<td>
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">한국민족문화대백과사전</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="com-btn">
+					<a href="#none">초기화</a>
+					<a href="#none" class="send">검색</a>
+				</div>
+				<div class="com-table-enroll">
+					<table>
+						<caption>입력 표</caption>
+						<tbody>
+							<tr>
+								<th>문화영역</th>
+								<td colspan="3">
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">문화유산</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>표제어</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="이순신" aria-invalid="false">
+									</div>
+								</td>
+								<th>정의</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="조선중기의명장" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>본관</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="덕수" aria-invalid="false">
+									</div>
+								</td>
+								<th>분류</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="역사" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>분야</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="조선시대사" aria-invalid="false">
+									</div>
+								</td>
+								<th>유형</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="인물" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>시대</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="조선" aria-invalid="false">
+									</div>
+								</td>
+								<th>사전항목 URL</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="http://encykorea.aks.ac.kr/Contents/text/E..." aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>성별</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="남" aria-invalid="false">
+									</div>
+								</td>
+								<th>출생일</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="1545년(인종1)" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>사망일</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="1598년(선조31)" aria-invalid="false">
+									</div>
+								</td>
+								<th>관련사건</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="임진왜란, 옥포대첩, 한산대첩, 명량해전" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>저작</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="난중일기" aria-invalid="false">
+									</div>
+								</td>
+								<th>경력</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="동구비보권관, 건원보권관, 사복시주부" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">SKOS 기본정보</h4>
+						<div class="table-top-btn">
+							<a href="#none" class="ico02">시소러스 가져오기</a>
+							<a href="#none" class="ico01">SKOS 가이드</a>
+						</div>
+					</div>
+				</div>
+				<div class="com-table-enroll">
+					<table>
+						<caption>입력 표</caption>
+						<tbody>
+							<tr>
+								<th>개념(skos:Concept)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="조선시대의 장군" aria-invalid="false">
+									</div>
+								</td>
+								<th>대체가능한 라벨(skos:altLabel)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>상위어(skos:broader)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="장군" aria-invalid="false">
+									</div>
+								</td>
+								<th>하의어(skos:narrower)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>전체적인 설명(skos:definition)</th>
+								<td colspan="3">
+									<div class="row-form">
+										<input type="text" value="본관은 덕수(德水). 자는 여해(汝諧). 고려 때 중랑장을 지낸 이돈수(李敦守)로부터 내려오는 문반(文班)의 가문으로," aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>사용 예(skos:example)</th>
+								<td colspan="3">
+									<div class="row-form">
+										<input type="text" value="이순신의 가문은 4대 때에 조선 왕조로 넘어오면서 두각을 나타낸다." aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>리소스에 대한 우선 라벨(skos:preLabel)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+								<th>보여지지 않는 라벨(skos:hiddenLabel)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>두 개념 사이의 관계(skos:related)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+								<th>부분적인 정보(skos:scopNote)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>의미의 변화(skos:history)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+								<th>관리업무를 돕기 위한 정보(skos:editoerialNote)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>유지목적의 의미 변화(skos:chanheNote)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+								<th>SKOS 개념의 집합(skos:ConceptScheme)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>대표 개념에 대한 연결(skos:hasTopConcept)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+								<th>집합적인 개념(skos:Collection)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>클래스 그룹의 인스턴스(skos:member)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+								<th>정렬된 집합(skos:OrderedCollection)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>정렬된 집합의 인스턴스(skos:memberList)</th>
+								<td colspan="3">
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">기타 기본 정보 추가</h4>
+						<div class="table-top-btn">
+							<input type="text" value="dtc:license">
+							<a href="#none" class="new-btn">추가</a>
+						</div>
+					</div>
+				</div>
+				<div class="com-table-enroll">
+					<table>
+						<caption>입력 표</caption>
+						<tbody>
+							<tr>
+								<th>dtc:license</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+								<th>(Dynamic column)</th>
+								<td>
+									<div class="row-form">
+										<input type="text" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="com-btn">
+					<a href="#none">수정</a>
+					<a href="#none" class="send">임시 저장</a>
+					<a href="#none" class="send">등록</a>
+				</div>
+				<!-- 표제어 검색 팝업 -->
+				<div class="layer-pop" role="dialog" id="base-search-opener" aria-labelledby="base-search-popup" aria-modal="true" aria-hidden="true" tabindex="1" style="display:block;">
+					<div class="content">
+						<div class="top-area">
+							<span class="title">지식베이스 기반 표제어 검색</span>
+							<a href="#none" class="btn-close close-layer">팝업 닫기</a>
+						</div>
+						<div class="view-area">
+							<p class="cont-header-large">표제어 검색 결과</p>
+							<div class="base-search gray-box">
+								<ul class="list">
+									<li>
+										<input type="radio" id="result01" name="base-result" checked>
+										<label for="result01">이순신</label>
+										<div class="detail">
+											<p>
+												1545(인종 1)∼1598(선조 31). 조선 중기의 명장. [개설] 본관은 덕수(德水). 자는 여해(汝諧).고려 때 중랑장을 지낸 이돈수(李敦守)로부터 내려오는 문반(文班)의 가문으로...<a href="#none" class="more">[더보기]</a>
+											</p>
+										</div>
+									</li>
+									<li>
+										<input type="radio" id="result02" name="base-result">
+										<label for="result02">이순신</label>
+										<div class="detail">
+											<p>
+												<strong>이순신</strong>은 한국사의 위대한 인물의 한 표상이다. 그런 추앙은 ‘성웅’이라는 칭호에 집약되어 있다. ‘성스럽다’는 표현은 그 자체로 범접할 수 없는 경지를 나타내며...<a href="#none" class="more">[더보기]</a>
+											</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="com-btn">
+								<a href="#none" class="close-layer">닫기</a>
+								<a href="#none" class="send">선택</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 표제어 검색 팝업 -->
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("../include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

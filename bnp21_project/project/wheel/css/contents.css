@@ -1,0 +1,301 @@
+@charset "utf-8";
+/* 공통 */
+#container > * {-moz-transition:all 0.5s; -o-transition:all 0.5s; -webkit-transition:all 0.5s; transition:all 0.5s}
+@media (min-width:769px) {
+	#container {height:auto !important}
+	#container > * {position:fixed; top:50%; left:50%; width:100%; height:100%; z-index:0; opacity:0; filter:alpha(opacity=0); -ms-filter:alpha(opacity=0); transform:translate(-50%, -50%) scale(1.5); -ms-transform:translate(-50%, -50%) scale(1.5); -webkit-transform:translate(-50%, -50%) scale(1.5); -moz-transform:translate(-50%, -50%) scale(1.5); -o-transform:translate(-50%, -50%) scale(1.5)}
+	#container > *.on {opacity:1; z-index:1; transform:translate(-50%, -50%) scale(1); -ms-transform:translate(-50%, -50%) scale(1); -webkit-transform:translate(-50%, -50%) scale(1); -moz-transform:translate(-50%, -50%) scale(1); -o-transform:translate(-50%, -50%) scale(1); -moz-transition:all 0.5s; -o-transition:all 0.5s; -webkit-transition:all 0.5s; transition:all 0.5s} 
+}
+@media (max-width:768px) {
+	#container {position:fixed; top:0; left:0; width:100%}
+}
+
+/* 메인 */
+#container .cont01 {background:url("../images/bg01.jpg") no-repeat center; background-size:cover !important; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#container .cont01 .content .inner {min-height:600px}
+#container .cont01 .content .inner h2 {top:9.4%; height:12.6%; background:url("../images/tit01.png") no-repeat center}
+#container .cont01 .content .inner strong {display:block; position:absolute; top:33.5%; left:0; width:100%; height:28.1%; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#container .cont01 .content .inner strong img {height:100%}
+#container .cont01 .content .inner a {display:inline-block; position:absolute; top:58.2%; left:50%; height:10.6%; transform:translate(-50%,0); -webkit-transform:translate(-50%,0); -moz-transform:translate(-50%,0); transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#container .cont01 .content .inner a img {height:100%}
+#container .cont01 .content .inner p {position:absolute; bottom:5%; left:50%; height:21.2%; transform:translate(-50%,0); -webkit-transform:translate(-50%,0); -moz-transform:translate(-50%,0); transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#container .cont01 .content .inner p img {height:100%}
+#container .cont01 .content .inner p a {display:block; position:absolute; top:21.4%; left:11.2%; width:83.5%; height:55.5%; text-indent:-9999px; transform:translate(0); -webkit-transform:translate(0); -moz-transform:translate(0)}
+@media (max-width:1160px) {
+	#container .cont01 .content .inner {min-height:400px}
+	#container .cont01 .content .inner h2 {top:9.3%; height:14.8%; background:url("../images/tit01-m.png") no-repeat center}
+	#container .cont01 .content .inner strong {top:24%; height:23.8%}
+	#container .cont01 .content .inner a {top:47%; height:9%}
+	#container .cont01 .content .inner p {bottom:0; height:20.2%}
+}
+@media (max-width:767px) {
+	#container .cont01 {background:url("../images/bg01-m.jpg") no-repeat center}
+}
+
+/* 사전예약 */
+#container .cont02 {background:url("../images/bg02.jpg") no-repeat center; background-size:cover !important}
+#container .cont02 .content .inner h2 {top:7.7%; height:14.4%; background:url("../images/tit02.png") no-repeat center top}
+#container .cont02 .content .inner .contBox01 {position:absolute; top:22.3%; left:50%; padding:65px 618px 82px 35px; margin-left:-564px; width:1128px; height:425px; text-align:left; background:url("../images/bg0201.png") no-repeat 0 0; background-size:100% auto !important; transition:all 0.1s; -webkit-transition:all 0.1s; -moz-transition:all 0.1s}
+#container .cont02 .content .inner .contBox01 * {transition:all 0.1s; -webkit-transition:all 0.1s; -moz-transition:all 0.1s}
+#container .cont02 .content .inner .contBox01:before {display:block; content:""; position:absolute; top:138px; left:50%; z-index:1; margin-left:-960px; width:1920px; height:645px; background:url("../images/bg0202.png") no-repeat center; background-size:cover !important}
+#container .cont02 .content .inner .contBox01 .checkbox {margin-bottom:15px; text-align:center}
+#container .cont02 .content .inner .contBox01 .checkbox span {display:inline-block; position:relative}
+#container .cont02 .content .inner .contBox01 .checkbox span + span {margin-left:40px}
+#container .cont02 .content .inner .contBox01 .checkbox span input {position:absolute; top:0; left:0; opacity:0}
+#container .cont02 .content .inner .contBox01 .checkbox span input[type=radio] + label {display:block; padding-left:37px; background:url("../images/radio.png") no-repeat left center}
+#container .cont02 .content .inner .contBox01 .checkbox span input[type=radio]:checked + label {background:url("../images/radio-on.png") no-repeat left center}
+#container .cont02 .content .inner .contBox01 .inputArea {position:relative; z-index:2; margin-bottom:18px; padding-right:110px; width:100%; height:80px; background:url("../images/img0202.png") no-repeat 0 0; background-size:100% 100%}
+#container .cont02 .content .inner .contBox01 .inputArea a {display:block; position:absolute; top:0; right:0; width:110px; height:100%; text-indent:-9999px}
+#container .cont02 .content .inner .contBox01 .inputArea input {padding:0 32px; border:none; width:100%; height:80px; font-size:22px; font-family:"noto", sans-serif; color:#cecdcd; background:none}
+#container .cont02 .content .inner .contBox01 .blTxt01 {position:relative; z-index:2; margin-bottom:14px; padding-left:18px}
+#container .cont02 .content .inner .contBox01 .blTxt01 input {position:absolute; top:0; left:0; opacity:0}
+#container .cont02 .content .inner .contBox01 .blTxt01 input[type=checkbox] + label {display:inline-block; padding-left:40px; line-height:29px; font-size:20px; color:#5f666a; letter-spacing:-0.07em; background:url("../images/checkbox.png") no-repeat left top}
+#container .cont02 .content .inner .contBox01 .blTxt01 input[type=checkbox]:checked + label {background:url("../images/checkbox-on.png") no-repeat left top}
+#container .cont02 .content .inner .contBox01 .blTxt01 a {display:inline-block; margin-left:20px; width:112px; text-align:center; line-height:29px; font-family:"noto", sans-serif; font-size:16px; font-weight:500; color:#f1f1f1; background:#464545}
+#container .cont02 .content .inner .contBox01 .blTxt02 {position:relative; z-index:2; padding-left:30px; line-height:29px; font-size:16px; color:#5f666a; text-indent:-0.07em}
+#container .cont02 .content .inner .contBox01 .blTxt02:before {display:block; content:""; position:absolute; top:9px; left:16px; width:5px; height:5px; background:#5f666a; transform:rotate(45deg); -webkit-transform:rotate(45deg); -moz-transform:rotate(45deg)}
+#container .cont02 .content .inner .contBox01 > img {display:none}
+#container .cont02 .content .inner .contBox01 br {display:none}
+#container .cont02 .content .inner .btnArea {position:absolute; z-index:2; bottom:0; left:0; width:100%; height:74px}
+#container .cont02 .content .inner .btnArea a {display:block; position:absolute; top:0; height:100%}
+#container .cont02 .content .inner .btnArea a img {height:100%}
+#container .cont02 .content .inner .btnArea a.btnGoogle {left:11%}
+#container .cont02 .content .inner .btnArea a.btnApp {right:11%}
+@media (max-width:1160px) {
+	#container .cont02 .content .inner h2 {top:6%; height:12%}
+	#container .cont02 .content .inner .contBox01 {top:auto; bottom:2.6%; padding:50px 52px 0; margin-left:-360px; width:720px; height:auto; text-align:center; background:url("../images/bg0201-m.png") no-repeat 0 0; background-size:100% 100% !important}
+	#container .cont02 .content .inner .contBox01:before {position:fixed; top:0; left:0; margin:0;width:100%; height:100%; z-index:-1; background-position:center bottom; background-size:100% auto !important}
+	#container .cont02 .content .inner .contBox01 strong {margin-bottom:10px; height:25px}
+	#container .cont02 .content .inner .contBox01 .inputArea {display:inline-block; margin-bottom:10px; padding-right:86px; width:378px; height:60px}
+	#container .cont02 .content .inner .contBox01 .inputArea a {width:86px}
+	#container .cont02 .content .inner .contBox01 .inputArea input {padding:0 28px; height:60px; font-size:16px}
+	#container .cont02 .content .inner .contBox01 .blTxt01 {display:inline-block; margin-bottom:10px; padding-left:0; line-height:24px; font-size:18px}
+	#container .cont02 .content .inner .contBox01 .blTxt01 a {display:inline-block; margin-left:15px; width:112px; text-align:center; line-height:29px; font-family:"noto", sans-serif; font-size:16px; font-weight:500; color:#f1f1f1; background:#464545}
+	#container .cont02 .content .inner .contBox01 .blTxt02 {display:inline-block; margin-bottom:20px; padding-left:15px; line-height:25px; font-size:14px}
+	#container .cont02 .content .inner .contBox01 .blTxt02:before {top:9px; left:0px}
+	#container .cont02 .content .inner .contBox01 > img {display:inline-block; max-width:100%; height:200px}
+	#container .cont02 .content .inner .contBox01 br {display:block}
+	#container .cont02 .content .inner .btnArea {position:relative; overflow:hidden; padding:20px 0; height:auto}
+	#container .cont02 .content .inner .btnArea p {float:left; width:50%}
+	#container .cont02 .content .inner .btnArea a {position:static; display:inline-block}
+	#container .cont02 .content .inner .btnArea a img {max-width:100%; max-height:60px}
+	#container .cont02 .content .inner .btnArea a.btnGoogle {padding-right:5px}
+	#container .cont02 .content .inner .btnArea a.btnApp {padding-left:5px}
+}
+@media (max-height:860px) {
+	#container .cont02 .content .inner h2 {top:6%; height:12%}
+}
+@media (max-width:768px) {
+	#container .cont02 {background:url("../images/bg02-m.jpg") no-repeat center top}
+	#container .cont02 .content .inner h2 {top:6.6%; height:10.9%}
+	#container .cont02 .content .inner .contBox01 {padding:25px 0 0; margin-left:0; max-width:96%; width:100%; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); -moz-transform:translate(-50%, 0)}
+	#container .cont02 .content .inner .contBox01:before {top:-35px; left:-5%; z-index:-2; margin:0; width:110%; height:100%; background:url("../images/bg0202-m.png") no-repeat center top; background-size:90% 130px !important}
+	#container .cont02 .content .inner .contBox01:after {display:block; content:""; position:absolute; top:0; left:0; z-index:-1; width:100%; height:100%; background:url("../images/bg0201-m.png") no-repeat center; background-size:100% 100%}
+	#container .cont02 .content .inner .contBox01 .checkbox {margin-bottom:9px}
+	#container .cont02 .content .inner .contBox01 .checkbox span + span {margin-left:20px}
+	#container .cont02 .content .inner .contBox01 .checkbox span input[type=radio] + label {padding-left:20px; height:17px; background-size:11px !important}
+	#container .cont02 .content .inner .contBox01 .checkbox span input[type=radio] + label img {height:100%}
+	#container .cont02 .content .inner .contBox01 .inputArea {padding-right:66px; width:293px; height:45px}
+	#container .cont02 .content .inner .contBox01 .inputArea a {width:66px}
+	#container .cont02 .content .inner .contBox01 .inputArea input {padding:0 25px; height:45px; font-size:13px}
+	#container .cont02 .content .inner .contBox01 .blTxt01 {margin-bottom:3px}
+	#container .cont02 .content .inner .contBox01 .blTxt01 input[type=checkbox] + label {padding-left:22px; line-height:20px; font-size:14px; background-size:15px !important}
+	#container .cont02 .content .inner .contBox01 .blTxt01 a {margin-left:10px; width:80px; line-height:20px; font-size:12px}
+	#container .cont02 .content .inner .contBox01 .blTxt02 {margin-bottom:10px; padding-left:10px; line-height:20px; font-size:12px}
+	#container .cont02 .content .inner .contBox01 .blTxt02:before {top:7px; width:3px; height:3px}
+	#container .cont02 .content .inner .contBox01 > img {max-width:83.6%; height:auto}
+	#container .cont02 .content .inner .btnArea {padding:20px 8px 18px}
+	#container .cont02 .content .inner .btnArea a {position:static}
+	#container .cont02 .content .inner .btnArea a img {max-height:44px}
+	#container .cont02 .content .inner .btnArea a.btnGoogle {padding-right:3px}
+	#container .cont02 .content .inner .btnArea a.btnApp {padding-left:3px}
+}
+
+/* 게임소개 */
+#container .cont03 {background:url("../images/bg03.jpg") no-repeat center; background-size:cover !important}
+#container .cont03 .content .inner h2 {top:7.7%; height:14.4%; background:url("../images/tit03.png") no-repeat center top}
+#container .cont03 .content .inner .swiperWrap {position:absolute; top:24.3%; left:50%; padding:60px 96px 0 80px; width:1032px; height:648px; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); -moz-transform:translate(-50%, 0); background:url("../images/bg0301.png") no-repeat 12px 0; background-size:auto 590px; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#container .cont03 .content .inner .swiperWrap .swiper {overflow:hidden}
+#container .cont03 .content .inner .swiperWrap .swiper .swiper-slide img {max-width:100%; width:auto; height:480px}
+@media (max-width:1160px) {
+	#container .cont03 .content .inner .swiperWrap {top:24.3%; padding:40px 66px 0 54px; width:708px; height:449px; background-position:9px 0; background-size:auto 403px}
+	#container .cont03 .content .inner .swiperWrap .swiper .swiper-slide img {height:336px}
+}
+@media (max-height:860px) {
+	#container .cont03 .content .inner .swiperWrap {top:24.3%; padding:40px 66px 0 54px; width:708px; height:449px; background-position:9px 0; background-size:auto 403px}
+	#container .cont03 .content .inner .swiperWrap .swiper .swiper-slide img {height:336px}
+}
+@media (max-width:767px) {
+	#container .cont03 {background:url("../images/bg03-m.jpg") no-repeat center}
+	#container .cont03 .content .inner h2 {top:6.6%; height:10.9%}
+	#container .cont03 .content .inner .swiperWrap {top:21.5%; padding:20px 33px 0 27px; width:354px; height:224px; background-position:5px 0; background-size:auto 202px}
+	#container .cont03 .content .inner .swiperWrap .swiper .swiper-slide img {height:169px}
+}
+
+/* 캐릭터 소개 */
+#container .cont04 {background:url("../images/bg04.jpg") no-repeat center bottom; background-size:cover !important}
+#container .cont04 .content .inner h2 {top:7.7%; height:14.4%; z-index:10; background:url("../images/tit04.png") no-repeat center top}
+#container .cont04 .content .inner .charWrap {position:absolute; top:32.4%; left:0; width:50%; height:100%}
+#container .cont04 .content .inner .charWrap .titArea {position:relative; margin-bottom:60px;  height:148px}
+#container .cont04 .content .inner .charWrap .titArea ul {position:absolute; top:0; left:50%; margin-left:-350px; width:700px}
+#container .cont04 .content .inner .charWrap .titArea ul li {display:none; opacity:0; filter:alpha(opacity=0); -ms-filter:alpha(opacity=0); transition:all 0.5s; -webkit-transition:all 0.5s; -moz-transition:all 0.5s}
+#container .cont04 .content .inner .charWrap .titArea ul li.on {display:block; opacity:1; margin-right:0}
+#container .cont04 .content .inner .charWrap .swiper {position:relative; overflow:hidden; width:560px; height:366px; background:url("../images/bg0403.png") no-repeat center top; background-size:auto 302px}
+#container .cont04 .content .inner .charWrap .swiper ul {padding-top:40px; text-align:center}
+#container .cont04 .content .inner .charWrap .swiper ul li {display:inline-block; margin:-2 3px}
+#container .cont04 .content .inner .charWrap .swiper ul li a {display:block; position:relative; width:95px; height:109px}
+#container .cont04 .content .inner .charWrap .swiper ul li a:before {display:block; content:""; position:absolute; top:0; left:0; z-index:2; width:100%; height:100%; background:url("../images/bg0402.png") no-repeat 0; background-size:100% 100%; opacity:0; filter:alpha(opacity=0); -ms-filter:alpha(opacity=0); transition:all 0.1s; -webkit-transition:all 0.1s; -moz-transition:all 0.1s}
+#container .cont04 .content .inner .charWrap .swiper ul li a span {display:block; position:absolute; top:0; left:0; z-index:1; width:100%; height:100%; opacity:0; filter:alpha(opacity=0); -ms-filter:alpha(opacity=0); background-size:100% auto !important; transition:all 0.1s; -webkit-transition:all 0.1s; -moz-transition:all 0.1s}
+#container .cont04 .content .inner .charWrap .swiper ul li a img {width:100%; height:100%}
+#container .cont04 .content .inner .charWrap .swiper ul li.on a:before,
+#container .cont04 .content .inner .charWrap .swiper ul li a:hover:before,
+#container .cont04 .content .inner .charWrap .swiper ul li.on a span,
+#container .cont04 .content .inner .charWrap .swiper ul li a:hover span {opacity:1}
+#container .cont04 .content .inner .charWrap .swiper .swiper-button {position:absolute; bottom:0; left:0; padding:0 188px; width:100%; height:50px; background:url("../images/bg0404.png") no-repeat center; background-size:18px auto}
+#container .cont04 .content .inner .charWrap .swiper .swiper-button > div {position:relative; top:0; z-index:50; margin:0; width:40px; height:50px}
+#container .cont04 .content .inner .charWrap .swiper .swiper-button > .swiper-button-prev {float:left; background:url("../images/btn0401-on.png") no-repeat center; background-size:100% 100%}
+#container .cont04 .content .inner .charWrap .swiper .swiper-button > .swiper-button-next {float:right; background:url("../images/btn0402-on.png") no-repeat center; background-size:100% 100%}
+#container .cont04 .content .inner .charWrap .swiper .swiper-button > .swiper-button-prev.swiper-button-disabled {background:url("../images/btn0401.png") no-repeat center; background-size:100% 100%}
+#container .cont04 .content .inner .charWrap .swiper .swiper-button > .swiper-button-next.swiper-button-disabled {background:url("../images/btn0402.png") no-repeat center; background-size:100% 100%}
+#container .cont04 .content .inner .charArea {position:absolute; top:0; right:0; margin:-20% -50% 0 0; opacity:0; filter:alpha(opacity=0); -ms-filter:alpha(opacity=0); width:50%; height:100%; transition:all 0.15s; -webkit-transition:all 0.15s; -moz-transition:all 0.15s; transition-delay:0.7s; -webkit-transition-delay:0.7s; -moz-transition-delay:0.7s}
+#container .cont04 .content .inner .charArea ul li img {position:absolute; bottom:5%; left:0; max-height:70%; margin:0 0 20% 50%; opacity:0; filter:alpha(opacity=0); -ms-filter:alpha(opacity=0); transition:all 0.15s; -webkit-transition:all 0.15s; -moz-transition:all 0.15s}
+#container .cont04 .content .inner .charArea ul li img + img {display:none}
+#container .cont04 .content .inner .charArea ul li.on img {opacity:1; margin:0}
+#container .cont04.on:before {right:0}
+#container .cont04.on .content .inner .charArea {margin:0; opacity:1}
+@media (max-width:1160px) {
+	#container .cont04 .content .inner h2 {top:6.6%}
+	#container .cont04 .content .inner .charWrap {top:0; left:0; width:100%}
+	#container .cont04 .content .inner .charWrap .titArea {position:relative; top:23%; margin-bottom:0; height:8.7%; z-index:50}
+	#container .cont04 .content .inner .charWrap .titArea ul {position:static; margin-left:0}
+	#container .cont04 .content .inner .charWrap .titArea ul li {position:absolute; top:0; left:0; width:100%; height:100%; display:none}
+	#container .cont04 .content .inner .charWrap .titArea ul li img {height:100%}
+	#container .cont04 .content .inner .charWrap .titArea ul li.on {display:block}
+	#container .cont04 .content .inner .charWrap .swiper {position:absolute; bottom:20%; left:5%; width:350px; padding:0 0 45px 0; height:auto; background:none}
+	#container .cont04 .content .inner .charWrap .swiper ul {padding-top:0}
+	#container .cont04 .content .inner .charWrap .swiper ul li {margin:-2 3px}
+	#container .cont04 .content .inner .charWrap .swiper ul li a {width:60px; height:70px}
+	#container .cont04 .content .inner .charWrap .swiper .swiper-button {position:relative; left:50%; padding:0; margin-left:-51px; width:102px; height:32px; background-size:12px auto}
+	#container .cont04 .content .inner .charWrap .swiper .swiper-button > div {position:relative; top:0; width:24px; height:30px; background-size:auto 100% !important}
+	#container .cont04 .content .inner .charArea {width:50%}
+	#container .cont04 .content .inner .charArea ul li img {bottom:10%; left:50%; max-height:60%; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); -moz-transform:translate(-50%, 0)}
+}
+@media (max-width:768px) {
+	#container .cont04 {background:url("../images/bg04-m.jpg") no-repeat center}
+	#container .cont04:before {display:none}
+	#container .cont04 .content .inner h2 {top:6.6%; height:10.9%}
+	#container .cont04 .content .inner .charWrap .titArea {top:20.1%}
+	#container .cont04 .content .inner .charWrap {top:0; left:0; width:100%}
+	#container .cont04 .content .inner .charWrap .swiper {position:absolute; bottom:2%; left:50%; margin-left:-175px; width:350px; padding:0}
+	#container .cont04 .content .inner .charArea {width:100%}
+	#container .cont04 .content .inner .charArea ul li img {display:none; bottom:14.7%; left:50%; max-height:100%; max-height:64%; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); -moz-transform:translate(-50%, 0)}
+	#container .cont04 .content .inner .charArea ul li img + img {display:block}
+}
+
+/* 미디어 */
+#container .cont06 {background:url("../images/bg06.jpg") no-repeat center bottom; background-size:cover !important}
+#container .cont06 .content .inner h2 {top:7.7%; height:14.4%; background:url("../images/tit06.png") no-repeat center}
+#container .cont06 .content .videoList {position:absolute; top:22.2%; left:50%; width:1035px; height:518px; background:url("../images/img0601.png") no-repeat 0 0; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); -moz-transform:translate(-50%, 0); transition:all 0.15s; -webkit-transition:all 0.15s; -moz-transition:all 0.15s}
+#container .cont06 .content .videoList a {display:block; position:absolute; text-indent:-9999px; transition:all 0.15s; -webkit-transition:all 0.15s; -moz-transition:all 0.15s}
+#container .cont06 .content .videoList a.btn01 {top:4.2%; left:2.5%; width:48.3%; height:56.9%}
+#container .cont06 .content .videoList a.btn02 {bottom:5.8%; left:2.5%; width:48.4%; height:32%}
+#container .cont06 .content .videoList a.btn03 {top:4.2%; right:25.8%; width:23%; height:44.6%}
+#container .cont06 .content .videoList a.btn04 {bottom:5.8%; right:25.8%; width:23%; height:44.4%}
+#container .cont06 .content .videoList a.btn05 {top:4.2%; right:2.4%; width:22.9%; height:90%}
+@media (min-width:1161px) {
+	#container .cont06 .content .videoList {height:518px !important}
+}
+@media (max-width:1160px) {
+	#container .cont06 .content .videoList {max-width:98%; width:707px; background:url("../images/img0601-m.png") no-repeat 0 0; background-size:100% 100%}
+	#container .cont06 .content .videoList a.btn01 {top:3.4%; left:3.3%; width:62.8%; height:40.2%}
+	#container .cont06 .content .videoList a.btn02 {top:44.2%; left:3.3%; width:62.7%; height:22.7%}
+	#container .cont06 .content .videoList a.btn03 {top:3.4%; right:3.8%; width:29.8%; height:31.4%}
+	#container .cont06 .content .videoList a.btn04 {top:35.4%; right:3.8%; width:29.8%; height:31.4%}
+	#container .cont06 .content .videoList a.btn05 {top:auto; bottom:4.4%; right:3.8%; width:92.8%; height:27.9%}
+}
+@media (max-width:768px) {
+	#container .cont06 {background:url("../images/bg06-m.jpg") no-repeat center bottom}
+	#container .cont06 .content .inner h2 {top:6.6%; height:10.9%}
+	#container .cont06 .content .videoList {top:20.9%}
+}
+
+/* 이벤트 */
+#container .cont05 {background:url("../images/bg05.jpg") no-repeat center; background-size:cover !important}
+#container .cont05 .content {max-width:100%}
+#container .cont05 .content .inner h2 {top:7.7%; height:14.4%; z-index:10; background:url("../images/tit05.png") no-repeat center top}
+#container .cont05 .content .inner .eventArea:before {display:block; content:""; position:absolute; top:0; right:0; z-index:1; width:100%; height:100%; background:url("../images/bg0501.png") no-repeat center; background-size:cover !important; transition:all 0.15s; -webkit-transition:all 0.15s; -moz-transition:all 0.15s}
+#container .cont05 .content .inner .eventArea > div > div {display:block; content:""; position:absolute; top:26.9%; left:50%; z-index:2; width:100%; height:47.9%; background-size:100% !important; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); -moz-transform:translate(-50%, 0)}
+#container .cont05 .content .inner .eventArea > div > .img {z-index:0; text-indent:-9999px}
+#container .cont05 .content .inner .eventArea .event01 .img {background:url("../images/img0502.png") no-repeat 0 0}
+#container .cont05 .content .inner .eventArea .event01 .btnSns {position:absolute; top:26.8%; left:31.8%; width:24.4%; height:12.4%}
+#container .cont05 .content .inner .eventArea .event01 .btnSns a {display:block; float:left; width:33.3333%; height:100%; text-indent:-9999px}
+#container .cont05 .content .inner .eventArea .event02 .img {background:url("../images/img0501.png") no-repeat 0 0}
+#container .cont05 .content .inner .eventArea .event02 {display:none}
+#container .cont05 .content .inner .eventArea .event02 a {display:block; position:absolute; top:55.5%; left:10.6%; width:33.7%; height:15%; text-indent:-9999px}
+#container .cont05 .content .inner .eventArea .btnArea {overflow:hidden; position:absolute; top:64.6%; left:50%; z-index:10; padding-left:7.4%; height:10.5%; background-size:100% !important; text-align:left; transform:translate(-50%, 0); -webkit-transform:translate(-50%, 0); -moz-transform:translate(-50%, 0)}
+#container .cont05 .content .inner .eventArea .btnArea a {position:relative; display:inline-block; height:100%}
+#container .cont05 .content .inner .eventArea .btnArea a img {height:90.2%}
+#container .cont05 .content .inner .eventArea .btnArea a.on:before {display:block; content:""; position:absolute; top:0; left:0; width:100%; height:100%}
+#container .cont05 .content .inner .eventArea .btnArea .btn01 {top:9.8%}
+#container .cont05 .content .inner .eventArea .btnArea .btn01.on:before {background:url("../images/btn0502-on.png") no-repeat 0 0; background-size:100%}
+#container .cont05 .content .inner .eventArea .btnArea .btn02 {margin-left:-2%}
+#container .cont05 .content .inner .eventArea .btnArea .btn02.on:before {background:url("../images/btn0503-on.png") no-repeat 0 0; background-size:100%}
+@media (max-width:1160px) {
+	#container .cont05 .content .inner .eventArea > div > div {height:59.5%}
+	#container .cont05 .content .inner .eventArea .event01 .img {background:url("../images/img0502-m.png") no-repeat 0 0}
+	#container .cont05 .content .inner .eventArea .event01 .btnSns {top:25%; left:28.9%; width:32%; height:8.3%}
+	#container .cont05 .content .inner .eventArea .event02 .img {background:url("../images/img0501-m.png") no-repeat 0 0}
+	#container .cont05 .content .inner .eventArea .event02 a {top:43.6%; left:18.8%; width:46.8%; height:10.6%}
+	#container .cont05 .content .inner .eventArea .btnArea {top:23.5%; padding-left:9.1%; height:8.6%}
+	#container .cont05 .content .inner .eventArea .btnArea a img {height:90%}
+	#container .cont05 .content .inner .eventArea .btnArea .btn01 {top:0}
+	#container .cont05 .content .inner .eventArea .btnArea .btn02 {top:8%; margin-left:0}
+}
+@media (max-width:767px) {
+	#container .cont05 {background:url("../images/bg05-m.jpg") no-repeat center}
+	#container .cont05 .content .inner h2 {top:6.6%; height:12.2%}
+	#container .cont05 .content .inner .eventArea > div > div {top:20%}
+	#container .cont05 .content .inner .eventArea .btnArea {top:19.5%}
+	#container .cont05 .content .inner .eventArea:before {background:url("../images/bg0501-m.png") no-repeat center}
+}
+
+
+/* 팝업 */
+.layer {display:none; position:fixed; top:0; left:0; overflow:hidden; padding:2.5% 2%; text-align:center; width:100%; height:100%; z-index:10000; background:rgba(0,0,0,0.77)}
+.layer > .inner {display:inline-block; position:absolute; top:50%; left:50%; overflow:hidden; padding-top:70px; max-width:96%; height:95%; text-align:left; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%)}
+.layer > .inner .popCont {overflow-y:auto; margin:0; position:absolute; top:70px; left:0; width:100%; max-height:calc(100% - 70px)}
+.layer > .inner > a.closeLayer {display:block; position:absolute; top:0; left:50%; margin-left:-27px; width:53px; height:58px; text-indent:-9999px; transition:all 0.1s; -webkit-transition:all 0.1s; -moz-transition:all 0.1s}
+.layer > .inner > a.closeLayer:before,
+.layer > .inner > a.closeLayer:after {display:block; content:""; position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; filter:alpha(opacity=0); -ms-filter:alpha(opacity=0); background-size:100% !important; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+.layer > .inner > a.closeLayer:before {margin-top:-20px; margin-left:-20px; background:url("../images/common/btn-close-w.png") no-repeat center; transition-delay:0.3s; -webkit-transition-delay:0.3s; -moz-transition-delay:0.3s}
+.layer > .inner > a.closeLayer:after {margin-top:-20px; margin-left:20px; background:url("../images/common/btn-close02-w.png") no-repeat center; transition-delay:0.4s; -webkit-transition-delay:0.4s; -moz-transition-delay:0.4s}
+.layer > .inner > a.closeLayer.on:before,
+.layer > .inner > a.closeLayer.on:after {margin:0; opacity:1}
+.layer > .inner > a.closeLayer.on:hover {-webkit-transform:rotate(0); animation:arrow 1s linear infinite; -ms-animation:arrow 1s linear infinite; -moz-animation:arrow 1s linear infinite; -webkit-animation:arrow 1s linear infinite}
+.layer.videoPop > .inner {padding:46px 70px 0}
+.layer.videoPop > .inner > a.closeLayer {left:auto; right:5px}
+.layer.resePop > .inner {height:645px}
+@media (max-width:767px) {
+	.layer > .inner {padding-top:60px}
+	.layer > .inner > a.closeLayer {margin-left:-12px; width:24px; height:26px}
+	.layer.videoPop > .inner {padding:60px 0 0 0}
+	.layer.videoPop > .inner > a.closeLayer {right:auto; left:50%}
+	.layer.resePop > .inner {max-width:100%; padding-top:30px; height:270px}
+	.layer.resePop > .inner .popCont {top:30px}
+}
+.videoPop iframe {width:100%}
+.terms p {display:none}
+.terms img { width:100%}
+.terms img + img {display:none}
+.reseArea {position:relative; margin:0 auto}
+.reseArea a {display:block; position:absolute; top:59%; left:25%; width:32.3%; height:17.1%; text-indent:-9999px}
+.reseArea img {width:100%}
+.reseArea img + img {display:none}
+@media (max-width:767px) {
+	.terms img {display:none}
+	.terms img + img {display:block}
+	.reseArea {width:360px}
+	.reseArea a {left:17.1%; width:36.4%; height:17.1%}
+	.reseArea img {display:none}
+	.reseArea img + img {display:block}
+}

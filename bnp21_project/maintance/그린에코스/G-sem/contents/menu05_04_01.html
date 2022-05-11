@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=yes" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!--[if lt IE 9]><script src=js/html5.js"></script><![endif]-->
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.placeholder.js"></script>
+	<script src="../js/tableHeadFixer.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/datepicker-ko.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".date_sel").datepicker();
+        });
+    </script>
+    <title>경기도 대기배출원 관리시스템</title>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div class="header_top">
+            <div class="wrap">
+                <h1><img src="../images/top_logo.png" alt="새로운 경기 공정한 세상" />경기도 대기배출원 관리시스템</h1>
+                <ul class="gnb">
+                    <li class="info"><a href="">***님 로그인</a></li>
+                    <li class="logout"><a href="">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lnb">
+            <ul>
+                <li><a href="">사업장 정보</a></li>
+                <li><a href="">배출량 정보</a></li>
+                <li><a href="">굴뚝측정정보</a></li>
+                <li><a href="">통계</a></li>
+                <li><a href="" class="on">사업장 신규등록</a></li>
+                <li><a href="">게시판</a></li>
+                <li><a href="">관리자</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //header -->
+    <div class="wrap clearfix">
+        <div class="path">
+            <span class="home">홈</span>
+            <span>사업장 신규등록</span>
+            <strong>사업장 정보 등록</strong>
+        </div>
+        <!-- 현재 입력중인 페이지 on 클래스, on 클래스 이전 li는 모두 done 클래스 -->
+        <div class="step_biz">
+            <ol>
+                <li class="done">01. 사업장</li>
+                <li class="done">02. 배출구</li>
+                <li class="done">03. 방지시설</li>
+                <li class="on">04. 배출시설</li>
+                <li>05. 굴뚝측정<span>(선택)</span></li>
+                <li>06. 연료사용량 <span>(선택)</span></li>
+            </ol>
+        </div>
+        <div class="titArea">
+            <h2>배출시설 정보등록 (1~3종)</h2>
+        </div>
+        <div class="searchBiz"></div>
+        <h4 class="floatL">배출시설 선택<span class="extxt">* 배출시설 추가 시 연결된 배출구와 방지시설을 먼저 선택</span></h4>
+        <div class="txtRight clearfix">
+            <select style="width:130px">
+                <option>배출구 번호</option>
+            </select>
+            <input type="text" class="outlet" value="배출구 명" />
+            <select style="width:130px">
+                <option>방지시설 번호</option>
+            </select>
+            <input type="text" class="outlet" value="방지시설 명" />
+            <a href="" class="btn gray">시설 추가</a><a href="" class="btn blue">적용</a>
+        </div>
+        <div class="tbl_extend02">
+            <table class="bbsList inputType">
+                <caption>방지시설을 선택할 수 있는 표입니다.</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">정보 삭제</th>
+                        <th scope="col">선택</th>
+                        <th scope="col">배출구 일련번호</th>
+                        <th scope="col">배출구명</th>
+                        <th scope="col">방지시설 번호</th>
+                        <th scope="col">방지시설 명</th>
+                        <th scope="col">배출시설일련번호</th>
+                        <th scope="col">배출시설번호</th>
+                        <th scope="col">배출시설 명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="" class="btn btnDel">삭제</a></td>
+                        <td><input type="checkbox" checked="check" /></td>
+                        <td>1</td>
+                        <td>굴뚝1</td>
+                        <td>1</td>
+                        <td>세정집진시설</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>탈지시설</td>
+                    </tr>
+                    <tr>
+                        <td><a href="" class="btn btnDel">삭제</a></td>
+                        <td><input type="checkbox" /></td>
+                        <td>1</td>
+                        <td>굴뚝1</td>
+                        <td>1</td>
+                        <td>세정집진시설</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>탈지시설</td>
+                    </tr>
+                    <tr>
+                        <td><a href="" class="btn btnDel">삭제</a></td>
+                        <td><input type="checkbox" /></td>
+                        <td>1</td>
+                        <td>굴뚝1</td>
+                        <td>1</td>
+                        <td>세정집진시설</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td><input type="text"  title="배출구 명칭" style="width:150px" /></td>
+                    </tr>
+                    <tr>
+                        <td><a href="" class="btn btnDel">삭제</a></td>
+                        <td><input type="checkbox" /></td>
+                        <td>1</td>
+                        <td>굴뚝1</td>
+                        <td>1</td>
+                        <td>세정집진시설</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>탈지시설</td>
+                    </tr>
+                    <tr>
+                        <td><a href="" class="btn btnDel">삭제</a></td>
+                        <td><input type="checkbox" /></td>
+                        <td>1</td>
+                        <td>굴뚝1</td>
+                        <td>1</td>
+                        <td>세정집진시설</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>탈지시설</td>
+                    </tr>
+                    <tr>
+                        <td><a href="" class="btn btnDel">삭제</a></td>
+                        <td><input type="checkbox" /></td>
+                        <td>1</td>
+                        <td>굴뚝1</td>
+                        <td>1</td>
+                        <td>세정집진시설</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>탈지시설</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h4>배출시설 정보</h4>
+        <div class="margin_t10">
+            <table class="bbsModi secView">
+                <caption>배출시설 정보를 수정할 수 있는 표입니다.</caption>
+                <colgroup>
+                    <col style="width:15%" />
+                    <col style="width:35%" />
+                    <col style="width:15%" />
+                    <col />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">배출구 일련번호</th>
+                        <td>1</td>
+                        <th scope="row">배출구 명</th>
+                        <td>굴뚝</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">방지시설 번호</th>
+                        <td>1</td>
+                        <th scope="row">방지시설 명</th>
+                        <td>세정집진시설</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">배출시설 번호</th>
+                        <td>1</td>
+                        <th scope="row">배출시설 명</th>
+                        <td>탈지시설</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">사내고유번호</th>
+                        <td><input type="text" style="width:377px;" /></td>
+                        <th scope="row">사내고유번호 명</th>
+                        <td><input type="text" style="width:377px;" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">배출시설 구분</th>
+                        <td colspan="3">
+                            <select style="width:314px">
+                                <option selected="select">연소시설</option>
+                                <option>소각시설</option>
+                                <option>공정</option>
+                                <option>저장시설</option>
+                            </select>
+                            <select style="width:314px">
+                                <option>중분류</option>
+                                <option>[01] 섬유제품 제조시설</option>
+                                <option>[02] 가죽&middot;모피가공시설 및 모피제품&middot;신발 제조시설</option>
+                                <option>[03] 펄프&middot;종이 및 종이제품 제조시설과 인쇄 및 각종 기록 매체 제조(복제)시설</option>
+                                <option>[04] 코크스 제조시설 및 관련제품 저장시설</option>
+                                <option>[05] 석유 정제품 제조시설 및 관련제품 저장시설</option>
+                                <option>[06] 기초유기화합물 제조시설 및 가스 제조시설</option>
+                                <option>[07] 기초무기화합물 제조시설</option>
+                                <option>[08] 무기안료&middot;염료&middot;유연제 제조시설 기타 착색제 제조시설</option>
+                                <option>[09] 화학비료 및 질소화합물 제조시설</option>
+                                <option>[10] 의료용 물질 및 의약품 제조시설</option>
+                                <option>[11] 기타 화학제품 제조시설 및 탄화시설</option>
+                                <option>[12] 화학섬유 제조시설</option>
+                                <option>[13] 고무 및 고무제품 제조시설</option>
+                                <option>[14] 합성고무&middot;플라스틱물질 및 플라스틱제품 제조시설</option>
+                                <option>[15] 비금속광물제품 제조시설</option>
+                                <option>[16] 1차 금속 제조시설</option>
+                                <option>[17] 금속가공제품&middot;기계&middot;기기&middot;장비&middot;운송장비&middot;가구제조시설</option>
+                                <option>[18] 전자부품&middot;컴퓨터&middot;영상&middot;음향&middot;통신장비 및 전기장비 제조시설</option>
+                                <option>[19] 발전시설(수력,원자력 발전시설 제외)</option>
+                                <option>[20] 폐수&middot;폐기물&middot;폐가스소각시설(소각보일러 포함)</option>
+                                <option>[21] 폐수&middot;폐기물처리시설</option>
+                                <option>[22] 보일러</option>
+                                <option>[23] 고형연료&middot;기타 연료 제품 제조&middot;사용시설 및 관련시설</option>
+                                <option>[24] 화장로시설</option>
+                                <option>[25] 도장시설</option>
+                                <option>[26] 입자성물질 및 가스상물질 발생시설</option>
+                                <option>[27] 기타시설</option>
+                                <option>[28] 단백질 및 배합사료 제조시설</option>
+                                <option>[29] 담배제품 제조&middot;가공시설</option>
+                                <option>[30] 당류제조시설</option>
+                                <option>[31] 도정 및 제분시설</option>
+                                <option>[32] 설탕제조시설</option>
+                                <option>[33] 수산물처리&middot;가공시설</option>
+                                <option>[34] 유지제조시설</option>
+                                <option>[35] 육지동물고기 가공&middot;저장시설</option>
+                                <option>[36] 음료품제조&middot;가공시설</option>
+                                <option>[37] 제재 및 목재가공시설</option>
+                                <option>[38] 조미료 및 식품첨가물</option>
+                                <option>[39] 커피 및 차제조시설</option>
+                                <option>[40] 폐유정제시설</option>
+                                <option>[41] 기타</option>
+                            </select>
+                            <select style="width:314px">
+                                <option>소분류</option>
+                                <option>[001] 가스 또는 경질유만 사용하는 보일러</option>
+                                <option>[002] 가스화시설</option>
+                                <option>[003] 가열로</option>
+                                <option>[004] 가열시설</option>
+                                <option>[005] 가황시설</option>
+                                <option>[006] 개질시설</option>
+                                <option>[007] 건류시설</option>
+                                <option>[008] 건조로</option>
+                                <option>[009] 건조시설</option>
+                                <option>[010] 건조&middot;가열시설</option>
+                                <option>[011] 경화&middot;압착시설</option>
+                                <option>[012] 계량시설</option>
+                                <option>[013] 고체입자상물질 계량시설</option>
+                                <option>[014] 고체입자상물질 및 유&middot;무기산저장시설</option>
+                                <option>[015] 고체입자상물질 저장시설</option>
+                                <option>[016] 고체입자상물질 포장시설</option>
+                                <option>[017] 고형연료제품 제조시설 및 바이오 고형연료제품 제조시설</option>
+                                <option>[018] 과인산암모늄 제조시설</option>
+                                <option>[019] 구리 및 그화합물 제조 및 배출시설</option>
+                                <option>[020] 권련시설</option>
+                                <option>[021] 권축시설</option>
+                                <option>[022] 권취시설</option>
+                                <option>[023] 권취&middot;포장시설</option>
+                                <option>[024] 균질로</option>
+                                <option>[025] 금속 또는 가구의 표면처리용 건조시설</option>
+                                <option>[026] 금속의 표면처리용 건조시설</option>
+                                <option>[027] 기모(식모, 전모)시설</option>
+                                <option>[028] 기타</option>
+                                <option>[029] 기타로</option>
+                                <option>[030] 납 및 그화합물 제조 및 배출시설</option>
+                                <option>[031] 납땜시설</option>
+                                <option>[032] 냉각시설</option>
+                                <option>[033] 농축시설</option>
+                                <option>[034] 니켈 및 그화합물 제조 및 배출시설</option>
+                                <option>[035] 다림질(텐트)시설</option>
+                                <option>[036] 담금질시설</option>
+                                <option>[037] 도가니로</option>
+                                <option>[038] 도금시설</option>
+                                <option>[039] 도장시설</option>
+                                <option>[040] 도정시설</option>
+                                <option>[041] 도포시설</option>
+                                <option>[042] 린번엔진 발전시설</option>
+                                <option>[043] 모소시설</option>
+                                <option>[044] 목재가공 연마시설</option>
+                                <option>[045] 바이오 고형연료제품 사용시설</option>
+                                <option>[046] 바이오가스 사용시설</option>
+                                <option>[047] 바이오가스 제조시설</option>
+                                <option>[048] 바이오매스 연료제품 및 목재펠릿 사용시설</option>
+                                <option>[049] 바이오매스 연료제품 및 목재펠릿 제조시설</option>
+                                <option>[050] 반사로</option>
+                                <option>[051] 반응시설</option>
+                                <option>[052] 발전용 내연기관</option>
+                                <option>[053] 발전용 매립&middot;바이오가스사용시설</option>
+                                <option>[054] 발전용 석탄가스화연료 사용시설</option>
+                                <option>[055] 발효시설</option>
+                                <option>[056] 방사시설</option>
+                                <option>[057] 방사&middot;집면시설</option>
+                                <option>[058] 배소로</option>
+                                <option>[059] 분리시설</option>
+                                <option>[060] 분리정제시설</option>
+                                <option>[061] 분쇄시설</option>
+                                <option>[062] 불소화합물 제조 및 배출시설</option>
+                                <option>[063] 브롬 및 그화합물 제조 및 배출시설</option>
+                                <option>[064] 비소 및 그화합물 제조 및 배출시설</option>
+                                <option>[065] 산업용 보일러</option>
+                                <option>[066] 산처리시설</option>
+                                <option>[067] 산화&middot;환원시설</option>
+                                <option>[068] 산&middot;알카리처리시설</option>
+                                <option>[069] 석면 및 암면제품 제조시설</option>
+                                <option>[070] 석유코크스 제조시설 및 저장시설</option>
+                                <option>[071] 석탄코크스 제조시설</option>
+                                <option>[072] 석회로시설</option>
+                                <option>[073] 석회적시설</option>
+                                <option>[074] 선별(혼타)시설</option>
+                                <option>[075] 선별시설</option>
+                                <option>[076] 성형시설</option>
+                                <option>[077] 소결로 및 관련시설</option>
+                                <option>[078] 소련시설</option>
+                                <option>[079] 소성시설</option>
+                                <option>[080] 수은 및 그화합물 제조 및 배출시설</option>
+                                <option>[081] 숙성시설</option>
+                                <option>[082] 순환식 조화시설</option>
+                                <option>[083] 숯 및 목초액을 제조하는 전통식 숯가마</option>
+                                <option>[084] 습점시설</option>
+                                <option>[085] 시안화수소 및 시안화물 제조 및 배출시설</option>
+                                <option>[086] 식각시설</option>
+                                <option>[087] 아스콘(아스팔트포함)제조시설</option>
+                                <option>[088] 아연 및 그화합물 제조 및 배출시설</option>
+                                <option>[089] 암모니아 제조 및 배출시설</option>
+                                <option>[090] 압착시설</option>
+                                <option>[091] 압축&middot;성형시설</option>
+                                <option>[092] 업무용 보일러</option>
+                                <option>[093] 연마시설</option>
+                                <option>[094] 연소시설</option>
+                                <option>[095] 열병합 발전시설</option>
+                                <option>[096] 열처리로</option>
+                                <option>[097] 열풍로</option>
+                                <option>[098] 염산제조시설 및 폐염산정제시설</option>
+                                <option>[099] 염색시설</option>
+                                <option>[100] 염소 및 그화합물 제조 및 배출시설</option>
+                                <option>[101] 염화비닐 제조 및 배출시설</option>
+                                <option>[102] 욕장업의 숯가마&middot;찜질방 및 그 부대시설</option>
+                                <option>[103] 용광로</option>
+                                <option>[104] 용선로</option>
+                                <option>[105] 용융시설</option>
+                                <option>[106] 용융&middot;용광로 및 관련시설</option>
+                                <option>[107] 용융&middot;용해시설</option>
+                                <option>[108] 원피저장시설</option>
+                                <option>[109] 유기화합물 저장시설</option>
+                                <option>[110] 유리제품 산처리시설</option>
+                                <option>[111] 유&middot;무기산 저장시설</option>
+                                <option>[112] 윤전시설</option>
+                                <option>[113] 음식물류 폐기물 처리시설</option>
+                                <option>[114] 응축시설</option>
+                                <option>[115] 이황화탄소 제조 및 배출시설</option>
+                                <option>[116] 인광석의 용융&middot;용해시설 및 소성시설</option>
+                                <option>[117] 인산제조시설</option>
+                                <option>[118] 인쇄&middot;건조시설</option>
+                                <option>[119] 일반 고형연료제품 사용시설</option>
+                                <option>[120] 일반보일러</option>
+                                <option>[121] 입자상물질 계량시설</option>
+                                <option>[122] 자숙시설</option>
+                                <option>[123] 저장시설</option>
+                                <option>[124] 전기아크로(유도로)</option>
+                                <option>[125] 전로</option>
+                                <option>[126] 전해로</option>
+                                <option>[127] 전해&middot;전리시설</option>
+                                <option>[128] 절단시설</option>
+                                <option>[129] 접착시설</option>
+                                <option>[130] 접착제 혼합시설</option>
+                                <option>[131] 정련로</option>
+                                <option>[132] 정련시설</option>
+                                <option>[133] 정제시설</option>
+                                <option>[134] 정제&middot;충전&middot;충진시설</option>
+                                <option>[135] 제분시설</option>
+                                <option>[136] 제선로</option>
+                                <option>[137] 제재시설</option>
+                                <option>[138] 제진시설</option>
+                                <option>[139] 주물사 재생시설</option>
+                                <option>[140] 주형장입 및 해체시설</option>
+                                <option>[141] 증류시설</option>
+                                <option>[142] 증자시설</option>
+                                <option>[143] 증착시설</option>
+                                <option>[144] 증해시설</option>
+                                <option>[145] 질소화합물 및 질산 제조시설</option>
+                                <option>[146] 촉매재생시설</option>
+                                <option>[147] 추출시설</option>
+                                <option>[148] 침향시설</option>
+                                <option>[149] 카드뮴 및 그화합물 제조 및 배출시설</option>
+                                <option>[150] 카본블랙 제조시설의 폐가스 재이용 시설</option>
+                                <option>[151] 코어(core)제조시설 및 건조시설</option>
+                                <option>[152] 코팅시설</option>
+                                <option>[153] 크롬 및 그화합물 제조 및 배출시설</option>
+                                <option>[154] 탄화수소 제조 및 배출시설</option>
+                                <option>[155] 탄화시설</option>
+                                <option>[156] 탈사시설</option>
+                                <option>[157] 탈지시설</option>
+                                <option>[158] 탈청시설</option>
+                                <option>[159] 탈판시설</option>
+                                <option>[160] 탈황시설</option>
+                                <option>[161] 파쇄시설</option>
+                                <option>[162] 파쇄&middot;분쇄시설</option>
+                                <option>[163] 폐가스 소각보일러</option>
+                                <option>[164] 폐가스 소각시설</option>
+                                <option>[165] 폐수&middot;폐기물 건조시설 및 정제시설</option>
+                                <option>[166] 폐수&middot;폐기물 소각시설</option>
+                                <option>[167] 폐수&middot;폐기물 증발시설 및 농축시설</option>
+                                <option>[168] 포름알데히드 제조 및 배출시설</option>
+                                <option>[169] 포장시설</option>
+                                <option>[170] 표면경화시설</option>
+                                <option>[171] 표백시설</option>
+                                <option>[172] 형석의 용융&middot;용해시설 및 소성시설</option>
+                                <option>[173] 혼합시설</option>
+                                <option>[174] 화력발전시설</option>
+                                <option>[175] 화성처리시설</option>
+                                <option>[176] 화장시설</option>
+                                <option>[177] 화학물질 저장탱크 세척시설</option>
+                                <option>[178] 환형로</option>
+                                <option>[179] 황 회수시설</option>
+                                <option>[180] 황산제조시설</option>
+                                <option>[181] 황화수소 제조 및 배출시설</option>
+                                <option>[182] 회수시설</option>
+                                <option>[183] 훈증시설</option>
+                                <option>[184] 흡수시설</option>
+                                <option>[185] 반도체 및 기타전자부품 제조시설</option>
+                                <option>[186] 고무제품의 연소시설</option>
+                                <option>[187] 그라비아 인쇄시설</option>
+                                <option>188] 금속 표면처리시설</option>
+                                <option>[189] 금속의 용융&middot;용해 또는 열처리시설</option>
+                                <option>[190] 기초무기화합물의 연소시설</option>
+                                <option>[191] 기타 비금속광물제품 제조시설</option>
+                                <option>[192] 도자기&middot;요업제품 제조시설</option>
+                                <option>[193] 멸균시설</option>
+                                <option>[194] 무기안료&middot;염료&middot;유연제 연소시설</option>
+                                <option>[195] 분무시설</option>
+                                <option>[196] 분체시설</option>
+                                <option>[197] 사출시설</option>
+                                <option>[198] 석유제품의 연소시설</option>
+                                <option>[199] 석탄가스화 연료 제조시설</option>
+                                <option>[200] 석탄가스화 연료 제조시설의 각종 부산물 연소시설</option>
+                                <option>[201] 성형탄 제조시설</option>
+                                <option>[202] 소결광 후처리시설</option>
+                                <option>[203] 소둔로</option>
+                                <option>[204] 소려로</option>
+                                <option>[205] 시멘트&middot;석회&middot;플라스터 및 그 제품 제조시설</option>
+                                <option>[206] 압연시설</option>
+                                <option>[207] 압출시설</option>
+                                <option>[208] 여과시설</option>
+                                <option>[209] 염화수소 회수시설</option>
+                                <option>[210] 용선출탕시설</option>
+                                <option>[211] 용융&middot;용해로</option>
+                                <option>[212] 원료 장입</option>
+                                <option>[213] 원료처리시설</option>
+                                <option>[214] 유리 및 유리제품 제조시설</option>
+                                <option>[215] 의약품의 연소시설</option>
+                                <option>[216] 인출시설</option>
+                                <option>[217] 재생용 원료가공시설</option>
+                                <option>[218] 주물사 사용 및 처리시설</option>
+                                <option>[219] 중질유 분해시설의 일산화탄소 소각시설</option>
+                                <option>[220] 착색제 연소시설</option>
+                                <option>[221] 침지도장시설</option>
+                                <option>[222] 카본블랙 제조시설</option>
+                                <option>[223] 코크스로</option>
+                                <option>[224] 표면처리시설</option>
+                                <option>[225] 플라스틱제품의 연소시설</option>
+                                <option>[226] 화학섬유의 연소시설</option>
+                                <option>[227] 화학제품의 연소시설</option>
+                                <option>[228] 황 회수장치의 부산물 연소시설</option>
+                                <option>[229] 기초유기화합물 제조시설의 연소시설</option>
+                                <option>[230] 부식시설</option>
+                                <option>[231] 불산처리시설</option>
+                                <option>[232] 석면 및 암면제품 제조 가공시설</option>
+                                <option>[233] 석탄가스화시설</option>
+                                <option>[234] 슬래그 시멘트 열풍 건조시설</option>
+                                <option>[235] 연속식 탱크로</option>
+                                <option>[236] 염산 회수시설</option>
+                                <option>[237] 예열시설</option>
+                                <option>[238] 용선 예비처리시설</option>
+                                <option>[239] 전기로</option>
+                                <option>[240] 중질유 분해시설의 일산화탄소 소각보일러</option>
+                                <option>[241] 표면가공 및 처리시설</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">신설일자</th>
+                        <td><input class="date_sel" type="text" style="width:377px" /></td>
+                        <th scope="row">폐쇄일자</th>
+                        <td><input class="date_sel" type="text" style="width:377px" /></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">가동개시일</th>
+                        <td><input class="date_sel" type="text" style="width:377px" /></td>
+                        <th scope="row">설치연도</th>
+                        <td>
+                            <select style="width:389px">
+                                <option>선택</option>
+                                <option>1970</option>
+                                <option>1971</option>
+                                <option>1972</option>
+                                <option>1973</option>
+                                <option>1974</option>
+                                <option>1975</option>
+                                <option>1976</option>
+                                <option>1977</option>
+                                <option>1978</option>
+                                <option>1979</option>
+                                <option>1980</option>
+                                <option>1981</option>
+                                <option>1982</option>
+                                <option>1983</option>
+                                <option>1984</option>
+                                <option>1985</option>
+                                <option>1986</option>
+                                <option>1987</option>
+                                <option>1988</option>
+                                <option>1989</option>
+                                <option>1990</option>
+                                <option>1991</option>
+                                <option>1992</option>
+                                <option>1993</option>
+                                <option>1994</option>
+                                <option>1995</option>
+                                <option>1996</option>
+                                <option>1997</option>
+                                <option>1998</option>
+                                <option>1999</option>
+                                <option>2000</option>
+                                <option>2001</option>
+                                <option>2002</option>
+                                <option>2003</option>
+                                <option>2004</option>
+                                <option>2005</option>
+                                <option>2006</option>
+                                <option>2007</option>
+                                <option>2008</option>
+                                <option>2009</option>
+                                <option>2010</option>
+                                <option>2011</option>
+                                <option>2012</option>
+                                <option>2013</option>
+                                <option>2014</option>
+                                <option>2015</option>
+                                <option>2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                                <option>2020</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                                <option>2025</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h4>배출시설 구분에 따른 정보 입력</h4>
+        <div class="margin_t10">
+            <table class="bbsModi secView">
+                <caption>배출시설 정보를 수정할 수 있는 표입니다.</caption>
+                <colgroup>
+                    <col style="width:15%" />
+                    <col style="width:35%" />
+                    <col style="width:15%" />
+                    <col />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th scope="row">설치비</th>
+                        <td><input type="text" title="설치비" style="width:320px" /> 백만원</td>
+                        <th scope="row">설계용량</th>
+                        <td>
+                            <input type="text" title="설계용량" style="width:168px" /> 
+                            <select style="width:180px">
+                                <option>설계용량 단위</option>
+                                <option>Kcal/hr</option>
+                                <option>톤/hr</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="double">이론적 최대<br />배출가스 발생량</th>
+                        <td><input type="text" title="설치비" style="width:320px" /> S㎥/hr</td>
+                        <th scope="row">평균운전용량</th>
+                        <td>
+                            <input type="text" title="평균운전용량" style="width:168px" /> 
+                            <select style="width:180px">
+                                <option>운전용량 단위</option>
+                                <option>Kcal/hr</option>
+                                <option>톤/hr</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">보일러 효율</th>
+                        <td><input type="text" style="width:355px;" /> %</td>
+                        <th scope="row">보일러 용도</th>
+                        <td>
+                            <select style="width:383px">
+                                <option>보일러 용도</option>
+                                <option>보일러-발전</option>
+                                <option>보일러-산업</option>
+                                <option>보일러-온수</option>
+                                <option>산업공정</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">버너 제작사</th>
+                        <td><input type="text" style="width:377px;" /></td>
+                        <th scope="row">버너 종류</th>
+                        <td><input type="text" style="width:377px;" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="txtRight">
+            <a href="" class="btn gray">배출시설 등록</a><a href="" class="btn gray">취소</a><a href="" class="btn gray">이전단계로</a><a href="" class="btn blue">다음</a>
+        </div>
+    </div>
+    <!-- //wrap -->
+</div>
+<hr />
+<!-- //container -->
+<div id="footer">
+    <div class="wrap">
+        <div class="addr">
+            <address>[ 경기도청 ] 16444 수원시 팔달구 효원로 1 (매산로3가)</address>
+            <span class="tell">031-120</span>
+            <span class="copy">Copyrightⓒ 2015 GRI. All rights reserved.</span>
+        </div>
+    </div>
+</div>
+<!-- //footer -->
+
+</body>
+</html>

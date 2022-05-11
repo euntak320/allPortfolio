@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>소상공인 정보포털</title>
+	<style type="text/css">
+	*{box-sizing:border-box}
+	#wrap{overflow:hidden;width:100%;min-width:1024px}
+	#header{overflow:hidden;padding:50px;width:100%}
+	#header .tit_area{position:relative;overflow:hidden}
+	#header .tit_area h1{overflow:hidden;margin-bottom:20px;font-size:40px}
+	#header .tit_area strong{display:inline-block;overflow:hidden;width:169px;line-height:23px;text-align:center;font-size:15px;color:#fff;text-align:center;background:#000}
+	#header .tit_area strong:before{display:block;overflow:hidden;position:absolute;top:60px;left:0;content:"";width:100%;border-top:2px solid #000}
+	#header .tit_area strong span{overflow:hidden}
+	#header .intro{position:absolute;top:60px;right:50px;overflow:hidden}
+	#header .intro p{overflow:hidden;font-size:10px;line-height:15px;text-align:right}
+
+	#contents{overflow:hidden;padding:0 50px}
+	#contents .table_style01{overflow:hidden;width:100%;border-top:3px solid #f00;border-bottom:1px solid #000}
+	#contents .table_style01 table{overflow:hidden;width:100%}
+	#contents .table_style01 table thead{border-left:1px solid #444}
+	#contents .table_style01 table tr th{padding:10px 0 10px 10px;border-right:1px solid #444;font-size:13px;text-align:left;color:#fff;background:#000}
+	#contents .table_style01 table tr td{padding:10px 0 10px 10px;border-top:1px solid #eaeaea;border-right:1px solid #eaeaea;font-size:13px;text-align:left;color:#000}
+	#contents .table_style01 table tr td:first-child{border-left:1px solid #eaeaea}
+	#contents .table_style01 table tr td + td + td + td + td + td + td + td{color:#a60a0a}
+	#contents .table_style01 table tr td + td + td + td + td + td + td + td + td{color:#000}
+	#contents .table_style01 table tr.depth td{border-top:1px solid #f00}/* 메뉴 구분 */
+	#contents .table_style01 table tr.point td{border:1px solid #f8b9b9;background:#ffe7e7} /* 중요 내용 */
+	</style>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		
+		<!-- header -->
+		<header id="header">
+			<div class="tit_area">
+				<h1>소상공인 정보포털</h1>
+			</div>
+			<div class="intro">
+				<p>HTML5 / utf-8</p>
+			</div>
+		</header>
+		<!--// header -->
+
+		<!-- section -->
+		<section id="contents">
+
+			<!-- <div class="info">
+				<div class="box">
+					
+				</div>
+			</div> -->
+
+			<!-- 메뉴 구조도 -->
+			<div class="table_style01">
+				<table summary="1depth, 2depth, 3depth, 4depth, 폴더명, URL, 완료날짜, 수정날짜, 진행상태, 기타사항 항목으로 구성된 IA 표입니다.">
+					<colgroup>
+						<col style="width:10%"/>
+						<col style="width:10%"/>
+						<col style="width:10%"/>
+						<col style="width:10%"/>
+						<col style="width:10%"/>
+						<col style="width:10%"/>
+						<col style="width:10%"/>
+						<col style="width:10%"/>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">1depth</th>
+							<th scope="col">폴더명</th>
+							<th scope="col">URL</th>
+							<th scope="col">완료날짜</th>
+							<th scope="col">수정날짜</th>
+							<th scope="col">진행상태</th>
+							<th scope="col">기타사항</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>황인석부장님</td>
+							<td></td>
+							<td>hwang1</td>
+							<td><a href="list/html/hwang1/page_1.html" target="_blank" title="새창으로 열기">page_1</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>김영복차장님</td>
+							<td>동행</td>
+							<td>kim</td>
+							<td><a href="list/html/kim/1/page1.html" target="_blank" title="새창으로 열기">리스트</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/1/page2.html" target="_blank" title="새창으로 열기">사업신청</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/1/page3.html" target="_blank" title="새창으로 열기">사업신청_정보수정</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/1/page4.html" target="_blank" title="새창으로 열기">1차 전문가배정</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/1/page5.html" target="_blank" title="새창으로 열기">1차 전문가배정목록</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/1/page6.html" target="_blank" title="새창으로 열기">1차 컨설팅수행 </a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/1/page7.html" target="_blank" title="새창으로 열기">2차 전문가배정</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/1/page8.html" target="_blank" title="새창으로 열기">2차 전문가배정목록 </a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/1/page9.html" target="_blank" title="새창으로 열기">컨설팅 수행 2차</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>탭부분 추가</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/1/page10.html" target="_blank" title="새창으로 열기">사후관리</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>협업화</td>
+							<td>kim</td>
+							<td><a href="list/html/kim/2/page1.html" target="_blank" title="새창으로 열기">진단</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/2/page2.html" target="_blank" title="새창으로 열기">신청</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/2/page3.html" target="_blank" title="새창으로 열기">승인</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/2/page4.html" target="_blank" title="새창으로 열기">지원금신청</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/2/page5.html" target="_blank" title="새창으로 열기">완료확인</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/2/page6.html" target="_blank" title="새창으로 열기">사후관리</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/kim/2/page7.html" target="_blank" title="새창으로 열기">사업완료</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>황재명부장님</td>
+							<td></td>
+							<td>hwang2</td>
+							<td><a href="list/html/hwang2/page1.html" target="_blank" title="새창으로 열기">발송템플릿관리</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/hwang2/page2.html" target="_blank" title="새창으로 열기">문자발송</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/hwang2/page3.html" target="_blank" title="새창으로 열기">템플릿조회</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/hwang2/page4.html" target="_blank" title="새창으로 열기">문자발송</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td><a href="list/html/hwang2/page5.html" target="_blank" title="새창으로 열기">대량문자발송</a></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// 메뉴 구조도 -->
+
+		</section>
+		<!--// section -->
+
+	</div>
+	<!--// wrap -->
+
+</body>
+</html>

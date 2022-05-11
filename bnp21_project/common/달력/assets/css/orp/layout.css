@@ -1,0 +1,90 @@
+@charset "utf-8";
+#wrap {overflow-x:auto; min-width:1024px}
+
+/* HEADER */
+#header {position:relative; z-index:200; padding-top:30px; border-bottom:1px solid #ccc}
+#header .inner {margin:0 auto; padding:15px 40px 0; max-width:100%; width:1770px}
+#header .inner:after {display:block; content:""; clear:both}
+#header .inner h1 {float:left}
+#header .inner h1 a {display:block; width:158px; height:27px; text-indent:-9999px; background:url("../../images/orp/common/logo.png") no-repeat center}
+#header .util {position:absolute; top:0; left:0; width:100%; height:30px; text-align:right; background:#eee}
+#header .util .inner {margin:0 auto; padding:0 40px; max-width:100%; width:1770px}
+#header .util .inner a {display:inline-block; line-height:30px; font-size:14px; color:#666}
+#header .util .inner a + a:before {display:inline-block; content:""; margin:0 13px; border-left:1px solid #ccc; height:13px}
+#header .util .inner a span {display:inline-block; padding-left:18px; background:url("../../images/orp/common/ico-help.png") no-repeat left center}
+
+/* GNB */
+#gnb {float:right}
+#gnb > ul:after {display:block; content:""; clear:both}
+#gnb > ul > li {position:relative; float:left; margin-left:90px}
+#gnb > ul > li > a {display:block; margin-bottom:-1px; padding-bottom:15px; line-height:32px; font-size:18px; font-weight:500; color:#010101; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#gnb > ul > li a:hover {color:#1661ae; font-weight:500}
+#gnb > ul > li > ul {display:none; position:absolute; top:47px; right:50%; margin-right:-70px; border:1px solid #ccc; border-top:none; width:140px; height:auto !important; background:#fff}
+#gnb > ul > li > ul > li + li {border-top:1px solid #ccc}
+#gnb > ul > li > ul > li > a {display:block; position:relative; padding:0 20px; line-height:44px; font-size:15px; color:#010101; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#gnb > ul > li > ul > li > a:hover {background:#f8f8f8}
+#gnb > ul > li > ul > li.more.on> a {color:#1661ae; font-weight:700; background:#f8f8f8}
+#gnb > ul > li > ul > li.more > a:before {display:block; content:""; position:absolute; top:17px; right:15px; width:10px; height:10px; background:url("../../images/orp/common/icon-plus.png") no-repeat center; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#gnb > ul > li > ul > li.more.on > a:before {background:url("../../images/orp/common/icon-minus.png") no-repeat center}
+#gnb > ul > li > ul > li ul {display:none; padding:0 20px}
+#gnb > ul > li > ul > li ul li:last-child {margin-bottom:10px}
+#gnb > ul > li > ul > li ul li a {display:block; position:relative; padding-left:10px; line-height:25px; font-size:13px; color:#888; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#gnb > ul > li > ul > li ul li a:before {display:block; content:""; position:absolute; top:12px; left:0; width:2px; height:2px; background:#888}
+@media all and (max-width:1400px){
+	#gnb > ul > li {margin-left:60px}
+}
+@media all and (max-width:1160px){
+	#gnb > ul > li {margin-left:40px}
+}
+
+/* CONTAINER */
+#container .topBar {background:#1661ae}
+#container .topBar .inner {margin:0 auto; padding:0 40px; max-width:100%; width:1770px}
+#container .topBar .inner:after {display:block; content:""; clear:both}
+#container .topBar .inner strong {float:left; margin-right:50px; line-height:50px; font-size:18px; color:#fff; font-weight:500}
+#container .topBar .inner .menuSelect {float:left; position:relative; z-index:100}
+#container .topBar .inner .menuSelect > a {display:block; padding:0 40px 0 20px; border-left:1px solid #4b8ac9; border-right:1px solid #4b8ac9; min-width:202px; line-height:50px; color:#fff; background:url("../../images/orp/bl-sel-arrow.png") no-repeat right 20px center}
+#container .topBar .inner .menuSelect > a.on {background:url("../../images/orp/bl-sel-arrow-on.png") no-repeat right 20px center}
+#container .topBar .inner .menuSelect ul {display:none; position:absolute; top:50px; left:0; border:1px solid #ccc; border-top:none; width:100%; background:#fff}
+#container .topBar .inner .menuSelect ul > li + li {border-top:1px solid #ccc}
+#container .topBar .inner .menuSelect ul > li > a {display:block; position:relative; padding:0 20px; line-height:44px; font-size:14px; color:#010101; transition:all 0.2s; -webkit-transition:all 0.2s; -moz-transition:all 0.2s}
+#container .topBar .inner .menuSelect ul > li > a:hover {color:#1661ae; font-weight:500; background:#f8f8f8}
+#container .topBar .inner .btnBox {float:right; overflow:hidden; padding:10px 0}
+#container .topBar .inner .btnBox * {float:left}
+#container .topBar .inner .btnBox * + * {margin-left:5px}
+#container .content {margin:0 auto; position:relative; padding:50px 40px 100px; max-width:100%; width:1770px}
+#container .content .path {position:absolute; top:50px; right:40px; overflow:hidden}
+#container .content .path > * {float:left; line-height:28px; font-size:13px; color:#666; font-weight:400}
+#container .content .path > * + * {position:relative; margin-left:10px; padding-left:15px}
+#container .content .path > * + *:before {display:block; content:""; position:absolute; top:0; left:0; width:5px; height:100%; background:url("../../images/orp/common/bl-arrow.png") no-repeat center}
+#container .content .path > a:first-child {width:12px; text-indent:-9999px; background:url("../../images/orp/common/ico-home.png") no-repeat center}
+
+/* FOOTER */
+#footer {text-align:center; background:#707070}
+#footer p {line-height:30px; font-size:12px; color:#ccc}
+
+/* LNB */
+#container .content {position:relative}
+#container .content .lnb {visibility:visible; position:absolute; left:40px; top:25px; width:240px; height:735px; z-index:1; overflow-y:auto; -webkit-transition:all 0.2s; transition:all 0.2s; opacity:1; transform:translateX(0)}
+#container .content .lnb.off {visibility:hidden; transform:translateX(-100%); -webkit-transition:all 0.2s; transition:all 0.2s; opacity:0}
+#container .content .contentWrap {padding-left:275px; transition:all 0.2s}
+#container .content .contentWrap h3 {margin-top:30px}
+#container .content .lnb .btnCenter.v2 {text-align:center}
+#container .content .lnb .btnCenter.v2 button { min-width:150px} 
+#container .content .lnb .btnCenter.v2 button + button {margin-top:10px; margin-left:0}
+#container .content .lnb .btnCenter.v2 p.label.white {margin-top:20px; border-radius:20px; width:150px; color:#010101; font-weight:600; background-color:#e9f0f8; border-color:#e9f0f8; line-height:40px; font-size:16px; text-align:center}
+#container .content .lnb .btnCenter.v2 p.label.white span {color:#ff8400}
+
+#container .content .lnb > ul {margin-top:10px}
+#container .content .lnb > ul > li {position:relative; padding:0 20px; /* border-bottom:1px solid #ddd */}
+#container .content .lnb > ul > li > a {display:block; padding:0 20px 0 28px; line-height:42px; font-size:16px; color:#333; font-weight:500}
+#container .content .lnb > ul > li ul {display:none; /* border-top:1px solid #ddd */}
+#container .content .lnb > ul > li ul li {padding:0 10px}
+#container .content .lnb > ul > li ul li a {display:block; padding-left:10px; line-height:32px; font-size:14px; font-weight:400; color:#666; -webkit-transition:all 0.2s; transition:all 0.2s; text-overflow:ellipsis; white-space:nowrap; overflow:hidden}
+#container .content .lnb > ul > li ul li a:before {display:inline-block; content:""; margin-right:5px}
+#container .content .lnb > ul > li.dapth02:before,
+#container .content .lnb > ul > li.dapth02:after {display:block; content:""; position:absolute; top:18px; left:28px; width:12px; height:9px; background:url("../../images/orp/bl-arrow-down.png")no-repeat center; -webkit-transition:all 0.2s; transition:all 0.2s}
+#container .content .contentWrap.off {padding-left:40px; -webkit-transition:all 0.2s; transition:all 0.2s;}
+#container .content .contentWrap {position:relative}
+#container .content .contentWrap .btnToggle {display:block; position:absolute; left:238px; top:330px; width:25px; height:60px; text-indent:-9999px; background:#003264 url("../../images/orp/bl-wte-arrow.png") no-repeat center; -webkit-transition:all 0.2s; transition:all 0.2s}
+#container .content .contentWrap .btnToggle.on {left:0; background:#003264 url("../../images/orp/bl-wte-arrow-off.png") no-repeat center}

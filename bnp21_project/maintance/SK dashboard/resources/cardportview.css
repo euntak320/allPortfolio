@@ -1,0 +1,99 @@
+.card-header {
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+.card-title {
+	margin-bottom: 0px;
+}
+.list-group-item-cardportview {
+	position: relative;
+	display: block;
+	padding: .75rem 1.25rem;
+	margin-bottom: -1px;
+	border: 1px solid rgba(0, 0, 0, .125);
+	font-size: 13px; 
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.status-critical {
+	background-color: #d80404;
+}
+.status-major {
+	background-color: #ffc107;
+}
+.status-minor {
+	background-color: #ffff00;
+}
+.status-normal {
+	background-color: #28a745;
+}
+.col-width10 {
+	width: 10%;
+	text-align: center;
+}
+.col-width5 {
+	width: 5%;
+	text-align: center;
+}
+.table_col_name{
+	align: center;
+	text-align:center;
+}
+.bak {
+	font-weight:bold;
+}
+#row-worker {
+	margin-left : 3px;
+	margin-right : 3px;
+}
+.worker-div{
+	margin-bottom : 7px
+}
+#table-set {
+	margin-left : 3px;
+	margin-right : 3px;
+}
+#resource_table_btn {
+	margin-left : 3px;
+	margin-right : 3px;
+	margin-top : 3px;
+	margin-bottom : 3px;
+}
+.table th, .table td{
+	padding : .3rem;
+}
+#node_tables_btn{
+	margin-left : 12px;
+	margin-right : 3px;
+	margin-top : 12px;
+	margin-bottom : 3px;	
+} 
+#pod_table_btn{
+	margin-left : 0px;
+	margin-right : 3px;
+	margin-top : 12px;
+	margin-bottom : 3px;
+}
+#worker_table_btn{
+	margin-left : 0px;
+	margin-right : 3px;
+	margin-top : 12px;
+	margin-bottom : 3px;
+}
+#service_table_btn{
+	margin-left : 0px;
+	margin-right : 3px;
+	margin-top : 12px;
+	margin-bottom : 3px;
+}
+.refresh-title{
+	margin-left : 10px;
+	margin-right : 5px;
+}
+.refresh-box{
+	margin-right : 95px;
+}
+#node{
+	margin-left : 5px;
+	margin-right : 5px;
+}

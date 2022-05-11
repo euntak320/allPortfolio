@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Form_Input</title>
+	<link rel="stylesheet" type="text/css" href="../css/common.css" />
+	<link rel="stylesheet" type="text/css" href="../css/color_blue.css" />
+	<link rel="stylesheet" type="text/css" href="../css/header_type.css" />
+	<script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+	<div id="LNB">
+		<h1><a href="#" tabindex="1"><img src="../images/logo.png" alt="상상스토리" /></a></h1>
+		<ul><!-- 1depth -->
+			<li><a href="01_title.html">Title</a></li>
+			<li><a href="02_tab.html">Tab</a></li>
+			<li><a href="03_button.html">Button</a></li>
+			<li><a href="04_table_coltype.html">Table</a></li>
+			<li class="on"><a href="05_form_date.html">Form</a>
+				<ul><!-- 2depth -->
+					<li><a href="05_form_search.html">Search</a></li>
+					<li><a href="05_form_search_detail.html">Search_detail</a></li>
+					<li><a href="05_form_date.html">Date</a></li>
+					<li class="on"><a href="05_form_input.html">Input</a></li>
+				</ul>
+			</li>
+			<li><a href="06_popup.html">Popup</a></li>
+			<li><a href="07_BBS_list.html">BBS</a></li>
+			<li><a href="08_etc.html">etc.</a></li>
+		</ul>
+	</div>
+
+	<div id="SUB">
+		<div class="header">
+			<button type="button" class="toggle"><img src="../images/toggle_close.png" alt="메뉴 닫기"/></button>
+			<!-- Type 1 -->
+			<div class="top_nav">
+				<a href="#" class="home">Home</a>
+				<!-- 1depth -->
+				<span>&gt;</span>
+				<button class="nav_btn1" type="button">Form</button>
+				<ul class="nav_menu nav_depth1">
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li class="on"><a href="#">Form</a></li>
+					<li><a href="#">Popup</a></li>
+					<li><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+				<!-- //1depth -->
+				<!-- 2depth -->
+				<span>&gt;</span>
+				<button class="nav_btn2 last" type="button">Input</button> <!-- 마지막 경로 버튼에 "last" 클래스 추가 -->
+				<ul class="nav_menu nav_depth2">
+					<li><a href="#">Search</a></li>
+					<li><a href="#">Search_detail</a></li>
+					<li><a href="#">Date</a></li>
+					<li class="on"><a href="#">Input</a></li>
+				</ul>
+				<!-- //2depth -->
+			</div>
+			<!-- //Type 1 -->
+			<!-- Type 2 -->
+			<div id="GNB">
+				<ul>
+					<li><a href="#">Title</a></li>
+					<li><a href="#">Tab</a></li>
+					<li><a href="#">Button</a></li>
+					<li><a href="#">Table</a></li>
+					<li class="on"><a href="#">Form</a></li>
+					<li><a href="#">Popup</a></li>
+					<li><a href="#">BBS</a></li>
+					<li><a href="#">etc.</a></li>
+				</ul>
+			</div>
+			<!-- //Type 2 -->
+			<div class="log_info">
+				<span class="user_info">Admin</span>
+				<button type="button" class="btn red" tabindex="1">로그아웃</button>
+			</div>
+		</div>
+
+		<div class="contents_area">
+
+			<h3>입력폼/서식</h3>
+
+			<form id="form_box">
+
+				<div class="tb_top_area">
+					<h4>입력폼</h4>
+					<div class="btn_right">
+						<a href="#" class="btn brown">버튼</a>
+					</div>
+				</div>
+
+				<div class="table_wrap">
+					<table class="row_type">
+						<caption>구분, 내용으로 구성된 테이블</caption>
+						<colgroup>
+							<col style="width: 9%;" />
+							<col style="width: 41%;" />
+							<col style="width: 9%;" />
+							<col style="width: 41%;" />
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row"><label for="temp01">항목 1 <span class="star">*</span></label></th>
+								<td><input type="text" id="temp01" title="항목 1" class="basic" style="width:300px;" /></td>
+								<th scope="row"><label for="temp02">항목 2</label></th>
+								<td>
+									<select id="temp02">
+										<option value="선택">선택</option>
+										<option value="옵션 1">옵션 1</option>
+										<option value="옵션 2">옵션 2</option>
+										<option value="옵션 3">옵션 3</option>
+									</select>
+									<select id="temp03">
+										<option value="선택">전체</option>
+										<option value="옵션 1">옵션 1</option>
+										<option value="옵션 2">옵션 2</option>
+										<option value="옵션 3">옵션 3</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">항목 3</th>
+								<td>
+									<input type="checkbox" id="temp04" name="check_type01" /><label for="temp04">체크1</label>
+									<input type="checkbox" id="temp05" name="check_type01" /><label for="temp05">체크2</label>
+									<input type="checkbox" id="temp06" name="check_type01" /><label for="temp06">체크3</label>
+									<input type="checkbox" id="temp07" name="check_type01" /><label for="temp07">체크4</label>
+								</td>
+								<th scope="row">항목 4</th>
+								<td>
+									<input type="radio" id="temp08" name="radio_type01" /><label for="temp08">선택1</label>
+									<input type="radio" id="temp09" name="radio_type01" /><label for="temp09">선택2</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">체크박스</th>
+								<td>
+									<input type="checkbox" id="temp10" name="check_type02" checked /><label for="temp10">선택</label>
+									<input type="checkbox" id="temp11" name="check_type02" /><label for="temp11">선택안됨</label>
+									<input type="checkbox" id="temp12" name="check_type02" checked disabled /><label for="temp12">선택-비활성</label>
+									<input type="checkbox" id="temp13" name="check_type02" disabled /><label for="temp13">선택안됨-비활성</label>
+								</td>
+								<th scope="row">라디오버튼</th>
+								<td>
+									<input type="radio" id="temp14" name="radio_type02" checked /><label for="temp14">선택</label>
+									<input type="radio" id="temp15" name="radio_type02" /><label for="temp15">선택안됨</label>
+									<input type="radio" id="temp16" name="radio_type03" checked disabled /><label for="temp16">선택-비활성</label>
+									<input type="radio" id="temp17" name="radio_type03" disabled /><label for="temp17">선택안됨-비활성</label>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">다중 선택</th>
+								<td colspan="3">
+									<ul class="multi_select">
+										<li><input type="checkbox" id="check01" name="check_type" /><label for="check01">체크1</label></li>
+										<li><input type="checkbox" id="check02" name="check_type" /><label for="check02">체크2</label></li>
+										<li><input type="checkbox" id="check03" name="check_type" /><label for="check03">체크3</label></li>
+										<li><input type="checkbox" id="check04" name="check_type" /><label for="check04">체크4</label></li>
+										<li><input type="checkbox" id="check05" name="check_type" /><label for="check05">체크5</label></li>
+										<li><input type="checkbox" id="check06" name="check_type" /><label for="check06">체크6</label></li>
+										<li><input type="checkbox" id="check07" name="check_type" /><label for="check07">체크7</label></li>
+										<li><input type="checkbox" id="check08" name="check_type" /><label for="check08">체크8</label></li>
+										<li><input type="checkbox" id="check09" name="check_type" /><label for="check09">체크9</label></li>
+										<li><input type="checkbox" id="check10" name="check_type" /><label for="check10">체크10</label></li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="temp18">내용</label></th>
+								<td colspan="3"><textarea name="textarea01" id="temp18" title="내용 입력" rows="5" style="width: 99%;"></textarea></td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="temp19">10개 이상의 선택지</label></th>
+								<td colspan="3">
+									<input type="text" id="temp19" title="검색" class="basic" style="width:300px;" />
+									<button type="button" class="btn sky search">찾기</button>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="temp20">파일 첨부</label></th>
+								<td colspan="3">
+									<input type="file" id="temp20" title="파일첨부" class="basic" style="width:300px;" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="day01">날짜(기간)</label></th>
+								<td colspan="3">
+									<input type="text" id="day01" title="시작 날짜" class="basic" style="width:120px;" />
+									<button type="button" class="btn sky calendar"><img src="../images/btn_ico_calendar.png" alt="달력보기" /></button>
+									~
+									<input type="text" id="day02" title="종료 날짜" class="basic" style="width:120px;" />
+									<button type="button" class="btn sky calendar"><img src="../images/btn_ico_calendar.png" alt="달력보기" /></button>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="money_01">통화단위</label></th>
+								<td>
+									<input type="text" id="money_01" title="원" class="basic" style="width:120px;" /> 원
+									<input type="text" id="money_02" title="달러" class="basic" style="width:120px;" /> 달러
+								</td>
+								<th scope="row"><label for="money_03">통화단위</label></th>
+								<td>
+									\ <input type="text" id="money_03" title="원" class="basic" style="width:120px;" />
+									$ <input type="text" id="money_04" title="달러" class="basic" style="width:120px;" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="row"><label for="e-mail_id">이메일</label></th>
+								<td>
+									<input type="text" id="e-mail_id" title="이메일 아이디" class="basic" style="width:120px;" /> @
+									<input type="text" id="e-mail_add" title="이메일 주소" class="basic" style="width:120px;" />
+									<select id="temp21">
+										<option value="선택">선택</option>
+										<option value="naver.com">naver.com</option>
+										<option value="gmail.com">gmail.com</option>
+										<option value="daum.net">daum.net</option>
+									</select>
+								</td>
+								<th scope="row"><label for="temp22">전화번호</label></th>
+								<td>
+									<input type="text" id="temp22" title="전화번호" class="basic" style="width:120px;" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> <!-- //table_wrap -->
+
+				<div class="tb_bottom_area">
+					<div class="btn_left">
+						<a href="#" class="btn green">목록</a>
+					</div>
+					<div class="btn_right">
+						<button type="button" class="btn gray">삭제</button>
+						<button type="button" class="btn red">수정</button>
+						<button type="button" class="btn blue">추가</button>
+					</div>
+				</div>
+
+			</form>
+
+		</div> <!-- //contents_area -->
+	</div> <!-- //#SUB -->
+
+</div>
+
+</body>
+</html>

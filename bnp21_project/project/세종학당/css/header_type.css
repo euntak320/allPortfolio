@@ -1,0 +1,4 @@
+@charset "utf-8";
+
+#SUB .header .top_nav { display: block; }
+#SUB .header #GNB { display: none; }

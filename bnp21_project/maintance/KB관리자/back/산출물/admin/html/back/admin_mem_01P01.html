@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>가맹점검색 | 관리자 | KB스타게이트</title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 개발 : 팝업 -->
+<script type="text/javascript" src="../common/js/jquery-confirm.min.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+<button type="button" id="layerOpen" style="color:#fff; padding:10px; border-radius: 5px; background:#000; ">레이어 팝업</button>
+<!-- 개발사용 : 팝업 -->
+<div id="html-content" class="layerHtml">
+	<!-- table -->
+	<div class="tbw">
+		<table>
+			<caption>회원정보</caption>
+			<colgroup>
+				<col style="width:30%;">
+				<col style="width:auto;">
+			</colgroup>
+			<tbody>
+				<tr>
+					<th scope="row">이름</th>
+					<td>김국민</td>
+				</tr>
+				<tr>
+					<th scope="row">생년월일</th>
+					<td>1995.02.15</td>
+				</tr>
+				<tr>
+					<th scope="row">휴대폰번호</th>
+					<td>010-5678-7812</td>
+				</tr>
+				<tr>
+					<th scope="row">이메일</th>
+					<td>kbss121@kbstar.com</td>
+				</tr>
+				<tr>
+					<th scope="row">가입일</th>
+					<td>2019.05.05</td>
+				</tr>
+				<tr>
+					<th scope="row">가입기업</th>
+					<td>BBQ</td>
+				</tr>
+				<tr>
+					<th scope="row">가입채널</th>
+					<td>홈페이지</td>
+				</tr>
+				<tr>
+					<th scope="row">상태</th>
+					<td>탈퇴</td>
+				</tr>
+				<tr>
+					<th scope="row">탈퇴일</th>
+					<td>2019.11.04</td>
+				</tr>
+				<tr>
+					<th scope="row">탈퇴채널</th>
+					<td>앱</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- //table -->
+
+</div>
+<!-- //개발사용 : 팝업 -->
+
+<script type="text/javascript">
+$(function(){
+	jconfirm.defaults = {
+		draggable: false,
+		animationSpeed: 0,
+		useBootstrap: false,
+	};
+
+	$('#layerOpen').on("click", function() {
+		$.alert({
+			title: '회원정보',
+			titleClass:'isTit',
+			buttons: {
+				yes: {
+					btnClass: 'btn-yes',
+					text: '확인'
+				}
+			},
+			content: $('#html-content').html(),
+			boxWidth: '400px',
+		});
+	});
+});
+</script>
+</body>
+</html>

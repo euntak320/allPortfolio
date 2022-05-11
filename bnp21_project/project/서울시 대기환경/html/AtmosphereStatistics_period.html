@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>서울시특별시 대기환경정보</title>
+  <link rel="stylesheet" href="assets/css/slick.css" />
+  <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="assets/js/slick.min.js"></script>
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="header_area">
+        <a href="javascript:void();" class="m_menu">햄버거메뉴</a>
+        <span class="logo_area">로고</span>
+        <a href="javascript:void();" class="spot_icon">위치표시</a>
+      </div>
+    </header>
+    <div class="left_menu">
+      <div class="slide_nav">
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img cloud">구름이미지</span>
+            <span class="txt">대기현황</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">미세먼지</span>
+            <span class="menu_txt">초미세먼지</span>
+            <span class="menu_txt">오존</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img act">행동요령 이미지</span>
+            <span class="txt">행동요령</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt sub_menu">예보</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+            <span class="menu_txt sub_menu">경보</span>
+            <span class="hidden_menu_area ">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img list">대기통계 이미지</span>
+            <span class="txt">대기통계</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">평균대기오염도</span>
+            <span class="menu_txt">기간별</span>
+            <span class="menu_txt">경보발령</span>
+            <span class="menu_txt">장기간추이</span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <div class="left_area">
+            <span class="img look">정보마당 이미지</span>
+            <span class="txt">정보마당</span>
+          </div>
+          <div class="right_area">
+            <span class="menu_txt">대기환경기준</span>
+            <span class="menu_txt sub_menu">대기오염물질</span>
+            <span class="hidden_menu_area">
+              <span class="hidden_txt">미세먼지</span>
+              <span class="hidden_txt">초미세먼지</span>
+              <span class="hidden_txt">오존</span>
+            </span>
+          </div>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 test">진단평가결과</span>
+        </div>
+        <div class="menu_list">
+          <span class="left_area w100 moblie">문자서비스신청</span>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="sub_title_area">
+        <span class="title_sub">대기통계 &gt; 기간별</span>
+      </div>
+      <div class="big_title orange">종로구</div>
+      <div class="tab_area orange">
+        <span class="tab_txt on">기간별</span>
+        <span class="tab_txt">계절별</span>
+        <span class="tab_txt">일별</span>
+      </div>
+      <!-- 기간별 -->
+      <div class="tab_show_area on">
+        <div class="content_frame">
+          <div class="warning_txt_area">
+            <span class="txt">※ 전년까지만 조회가 가능하며, 매년 3월초에 업데이트 됩니다.</span>
+          </div>
+          <div class="select_area two_list">
+            <span class="title">측정기간</span>
+            <div class="right_area">
+              <div class="select_list">
+                <div class="com_select">
+                  <select class="" name="">
+                    <option value="">2019</option>
+                    <option value="">2018</option>
+                    <option value="">2017</option>
+                    <option value="">2016</option>
+                  </select>
+                  <span>년</span>
+                </div>
+                <div class="com_select">
+                  <select class="" name="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                  </select>
+                  <span>월 부터</span>
+                </div>
+              </div>
+              <div class="select_list">
+                <div class="com_select">
+                  <select class="" name="">
+                    <option value="">2019</option>
+                    <option value="">2018</option>
+                    <option value="">2017</option>
+                    <option value="">2016</option>
+                  </select>
+                  <span>년</span>
+                </div>
+                <div class="com_select">
+                  <select class="" name="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                  </select>
+                  <span>월 부터</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="blue_box">검색</span>
+          <div class="common_table">
+            <span class="title">'2016'년 '1월'부터 '2017년 '1월'까지 '종로구' 평균대기오염도</span>
+            <table>
+              <colgroup>
+                <col style="width:25%;">
+                <col style="width:25%;">
+                <col style="width:25%;">
+                <col style="width:25%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>미세먼지<br>PM10㎍/㎥</th>
+                  <th>초미세먼지<br>PM2.5㎍/㎥</th>
+                  <th>오존<br>03ppm</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>서울시 평균</td>
+                  <td class="t_blue">9</td>
+                  <td class="t_orange">81</td>
+                  <td class="t_green">0.095</td>
+                </tr>
+                <tr>
+                  <td>중구 평균</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="blue_box look">기준보기</span>
+        </div>
+      </div>
+      <!-- 계절별 -->
+      <div class="tab_show_area">
+        <div class="content_frame">
+          <div class="warning_txt_area">
+            <span class="txt">※ 전년까지만 조회가 가능하며, 매년 3월초에 업데이트 됩니다.</span>
+          </div>
+          <div class="select_area">
+            <span class="title">측정기간</span>
+            <div class="com_select">
+              <select class="" name="">
+                <option value="">2019</option>
+                <option value="">2018</option>
+                <option value="">2017</option>
+                <option value=""></option>
+              </select>
+              <span>년</span>
+            </div>
+          </div>
+          <span class="blue_box">검색</span>
+          <div class="common_table">
+            <span class="title">'2017'년'중구'평균대기오염도</span>
+            <span class="sub_title">미세먼지</span>
+            <table>
+              <colgroup>
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>봄<br>(3,4,5월)</td>
+                  <th>여름<br>(6,7,8월)</th>
+                  <th>가을<br>(9,10,11월)</th>
+                  <th>겨울<br>(12,1,2월)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>서울시<br>평균</td>
+                  <td class="t_red">60</td>
+                  <td class="t_green">32</td>
+                  <td class="t_green">34</td>
+                  <td class="t_green">49</td>
+                </tr>
+                <tr>
+                  <td>종로구<br>계절평균</td>
+                  <td class="t_orange">54</td>
+                  <td class="t_blue">29</td>
+                  <td class="t_green">32</td>
+                  <td class="t_green">49</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="blue_box look">기준보기</span>
+          <div class="graph_area_frame">
+            <div class="graph_area">
+              <span style="display: block; line-height: 175px; text-align:center; color:#fff; font-weight:bold;">그래프 영역입니다.</span>
+            </div>
+          </div>
+          <div class="common_table">
+            <span class="sub_title">초미세먼지</span>
+            <table>
+              <colgroup>
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>봄<br>(3,4,5월)</td>
+                  <th>여름<br>(6,7,8월)</th>
+                  <th>가을<br>(9,10,11월)</th>
+                  <th>겨울<br>(12,1,2월)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>서울시<br>평균</td>
+                  <td class="t_red">60</td>
+                  <td class="t_green">32</td>
+                  <td class="t_green">34</td>
+                  <td class="t_green">49</td>
+                </tr>
+                <tr>
+                  <td>종로구<br>계절평균</td>
+                  <td class="t_orange">54</td>
+                  <td class="t_blue">29</td>
+                  <td class="t_green">32</td>
+                  <td class="t_green">49</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="blue_box look">기준보기</span>
+          <div class="graph_area_frame">
+            <div class="graph_area">
+              <span style="display: block; line-height: 175px; text-align:center; color:#fff; font-weight:bold;">그래프 영역입니다.</span>
+            </div>
+          </div>
+          <div class="common_table">
+            <span class="sub_title">오존</span>
+            <table>
+              <colgroup>
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+                <col style="width:20%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>봄<br>(3,4,5월)</td>
+                  <th>여름<br>(6,7,8월)</th>
+                  <th>가을<br>(9,10,11월)</th>
+                  <th>겨울<br>(12,1,2월)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>서울시<br>평균</td>
+                  <td class="t_red">60</td>
+                  <td class="t_green">32</td>
+                  <td class="t_green">34</td>
+                  <td class="t_green">49</td>
+                </tr>
+                <tr>
+                  <td>종로구<br>계절평균</td>
+                  <td class="t_orange">54</td>
+                  <td class="t_blue">29</td>
+                  <td class="t_green">32</td>
+                  <td class="t_green">49</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="blue_box look">기준보기</span>
+          <div class="graph_area_frame">
+            <div class="graph_area">
+              <span style="display: block; line-height: 175px; text-align:center; color:#fff; font-weight:bold;">그래프 영역입니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--일별 -->
+      <div class="tab_show_area">
+        <div class="content_frame">
+          <div class="warning_txt_area">
+            <span class="txt">※ 전년까지만 조회가 가능하며, 매년 3월초에 업데이트 됩니다.</span>
+          </div>
+          <div class="select_area">
+            <span class="title">측정기간</span>
+            <div class="com_select w50">
+              <select class="" name="">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+              </select>
+              <span>월</span>
+            </div>
+            <div class="com_select w50">
+              <select class="" name="">
+                <option value="">2019</option>
+                <option value="">2018</option>
+                <option value="">2017</option>
+                <option value="">2016</option>
+              </select>
+              <span>년</span>
+            </div>
+          </div>
+          <span class="blue_box">검색</span>
+          <div class="common_table">
+            <span class="title">'2017'년 '종로구' 계절별 대기오염도</span>
+            <table>
+              <colgroup>
+                <col style="width:25%;">
+                <col style="width:25%;">
+                <col style="width:25%;">
+                <col style="width:25%;">
+              </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>미세먼지<br>PM10㎍/㎥</td>
+                  <th>초미세먼지<br>PM2.5㎍/㎥</th>
+                  <th>오존<br>03ppm</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>서울시 평균</td>
+                  <td class="t_blue">9</td>
+                  <td class="t_orange">81</td>
+                  <td class="t_green">0.095</td>
+                </tr>
+                <tr>
+                  <td>중구 평균</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td class="t_blue">22</td>
+                  <td class="t_blue">20</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="t_blue">22</td>
+                  <td class="t_blue">20</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="t_blue">22</td>
+                  <td class="t_orange">20</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="t_red">5</td>
+                  <td class="t_orange">20</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="t_red">5</td>
+                  <td class="t_blue">20</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_green">0.095</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td class="t_red">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_green">0.095</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td class="t_green">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td class="t_green">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_orange">0.095</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td class="t_orange">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_orange">0.095</td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td class="t_orange">5</td>
+                  <td class="t_red">25</td>
+                  <td class="t_orange">0.095</td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_red">25</td>
+                  <td class="t_orange">0.095</td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td class="t_red">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_orange">0.095</td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td class="t_red">5</td>
+                  <td class="t_green">25</td>
+                  <td class="t_orange">0.095</td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td class="t_green">5</td>
+                  <td class="t_red">25</td>
+                  <td class="t_blue">0.095</td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td class="t_red">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_blue">0.095</td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td class="t_green">5</td>
+                  <td class="t_orange">25</td>
+                  <td class="t_blue">0.095</td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_orange">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td class="t_green">5</td>
+                  <td class="t_red">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td class="t_green">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td class="t_green">5</td>
+                  <td class="t_orange">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>21</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_red">25</td>
+                  <td class="t_orange">0.095</td>
+                </tr>
+                <tr>
+                  <td>22</td>
+                  <td class="t_orange">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_orange">0.095</td>
+                </tr>
+                <tr>
+                  <td>23</td>
+                  <td class="t_orange">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>24</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>25</td>
+                  <td class="t_orange">5</td>
+                  <td class="t_blue">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>26</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_red">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>27</td>
+                  <td class="t_green">5</td>
+                  <td class="t_red">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>28</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_orange">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>29</td>
+                  <td class="t_red">5</td>
+                  <td class="t_orange">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+                <tr>
+                  <td>30</td>
+                  <td class="t_red">5</td>
+                  <td class="t_orange">25</td>
+                  <td class="t_blue">0.095</td>
+                </tr>
+                <tr>
+                  <td>31</td>
+                  <td class="t_blue">5</td>
+                  <td class="t_orange">25</td>
+                  <td class="t_red">0.095</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <span class="blue_box look">기준보기</span>
+          <div class="graph_area_frame">
+            <span class="graph_title">미세먼지</span>
+            <div class="graph_area">
+              <span style="display: block; line-height: 175px; text-align:center; color:#fff; font-weight:bold;">그래프 영역입니다.</span>
+            </div>
+          </div>
+          <div class="graph_area_frame">
+            <span class="graph_title">초미세먼지</span>
+            <div class="graph_area">
+              <span style="display: block; line-height: 175px; text-align:center; color:#fff; font-weight:bold;">그래프 영역입니다.</span>
+            </div>
+          </div>
+          <div class="graph_area_frame">
+            <span class="graph_title">오존</span>
+            <div class="graph_area">
+              <span style="display: block; line-height: 175px; text-align:center; color:#fff; font-weight:bold;">그래프 영역입니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_area">
+        <div class="left_area">
+          <span>&copy; Seoul city</span>
+        </div>
+        <div class="right_area">
+          <span class="pc_btn">PC 화면보기</span>
+          <div class="com_select">
+            <select name="" id="">
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+              <option value="">LANGUAGE</option>
+            </select>
+          </div>
+          <a href="#top" class="black_btn">위로가기</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <div class="position_area">
+    <div class="title_area">
+      <span class="x_btn">닫기버튼</span>
+      <span class="title">관심지역 설정하기</span>
+    </div>
+    <div class="choice_area">
+      <span class="align">가나다 순</span>
+      <div class="com_radio">
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강남구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강서구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">강동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">관악구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">광진구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">구로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">금천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">노원구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">도봉구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동대문구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">동작구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">마포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">서초구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성동구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">성북구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">양천구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">영등포구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">용산구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">은평구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">종로구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중구</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="" value="" id="gangnam">
+          <label for="gangnam">중량구</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="layer_area">
+    <span class="x_btn">닫기버튼</span>
+    <div class="criteria_area">
+      <div class="align_area">
+        <span class="title">미세먼지</span>
+        <div class="color_box_area">
+          <div class="color_box">
+            <span class="txt blue">좋음</span>
+            <span class="detail_txt">0~30</span>
+          </div>
+          <div class="color_box">
+            <span class="txt green">보통</span>
+            <span class="detail_txt">31~80</span>
+          </div>
+          <div class="color_box">
+            <span class="txt orange">나쁨</span>
+            <span class="detail_txt">81~150</span>
+          </div>
+          <div class="color_box">
+            <span class="txt red">매우나쁨</span>
+            <span class="detail_txt">151이상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="criteria_area">
+      <div class="align_area">
+        <span class="title">초미세먼지</span>
+        <div class="color_box_area">
+          <div class="color_box">
+            <span class="txt blue">좋음</span>
+            <span class="detail_txt">0~15</span>
+          </div>
+          <div class="color_box">
+            <span class="txt green">보통</span>
+            <span class="detail_txt">36~35</span>
+          </div>
+          <div class="color_box">
+            <span class="txt orange">나쁨</span>
+            <span class="detail_txt">36~75</span>
+          </div>
+          <div class="color_box">
+            <span class="txt red">매우나쁨</span>
+            <span class="detail_txt">76이상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="criteria_area">
+      <div class="align_area">
+        <span class="title">오존</span>
+        <div class="color_box_area">
+          <div class="color_box">
+            <span class="txt blue">좋음</span>
+            <span class="detail_txt">0~0.030</span>
+          </div>
+          <div class="color_box">
+            <span class="txt green">보통</span>
+            <span class="detail_txt">0.031~0.091</span>
+          </div>
+          <div class="color_box">
+            <span class="txt orange">나쁨</span>
+            <span class="detail_txt">0.091~0.150</span>
+          </div>
+          <div class="color_box">
+            <span class="txt red">매우나쁨</span>
+            <span class="detail_txt">0.151이상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

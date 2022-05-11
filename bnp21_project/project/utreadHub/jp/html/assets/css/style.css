@@ -1,0 +1,119 @@
+/* common */
+.comLayout {position: relative; width:1100px; padding:0 10px; margin:0 auto; min-width:1100px;}
+.subWrap {position: relative; width:100%;}
+.subWrap.h100 {height: 100vh;}
+.subWrap.h100 .footer {position: absolute; bottom:0;}
+.contWrap {position: relative; padding:30px 0 80px;}
+.mt0{margin-top:0!important;}
+.mt5{margin-top:5px!important;}
+.mt10 {margin-top:10px!important;}
+.mt25 {margin-top:25px!important;}
+.mt40 {margin-top:40px!important;}
+ul li {line-height: 24px;;}
+
+
+/* header */
+
+.header {width:100%; height:85px; border-bottom:3px solid #0080c6; box-shadow: 0 0 10px #a4a4a4;}
+.header .topArea {height:100%;}
+.header .top {padding-top:12px; text-align: right; font-size:12px;}
+.header .top > * {display: inline-block; vertical-align: middle; margin-right:13px;}
+.header .top .nationalList > a {overflow: hidden; display: inline-block; width:19px; height:15px; margin-right:5px; text-indent: 100%; white-space: nowrap; }
+.header .top .nationalList > a:last-child {margin-right:0;}
+.header .top .nationalList .ko {background: url(../images/ico_national1.jpg) no-repeat; background-size: cover;}
+.header .top .nationalList .ch {background: url(../images/ico_national2.jpg) no-repeat; background-size: cover;}
+.header .top .nationalList .jp {background: url(../images/ico_national3.jpg) no-repeat; background-size: cover;}
+.header .btm {position: relative; width:100%; }
+.header .btm > * {display: inline-block; vertical-align: middle;}
+.header .btm h1 {position: relative; width:165px; height:39px;}
+.header .btm h1 a {display: block; width:100%; background:url(../images/logo.png) no-repeat center; background-size: 100%; text-indent: -9999px;}
+.header .btm .menuList {width:798px; padding-top:10px; margin-left:114px;}
+.header .btm .menuList a {float: left; display: block; width:calc(100% / 4); text-align: center; font-size:18px; color:#333;}
+
+.footer {width:100%; padding:30px 0; border-top:1px solid #ccc; background:#f3f4f7 }
+.footer .comLayout > * {display: inline-block; vertical-align: middle;}
+.footer .imgArea {width:98px; height:23px; margin-right:55px; background:url(../images/footerlogo.jpg) no-repeat top; background-size: cover; vertical-align: top;}
+.footer span {display: block; font-size:12px; line-height: 18px;}
+
+.contWrap .naviArea {text-align: right; font-size:12px;} 
+.contWrap .naviArea > * {margin:0 2px;}
+.contWrap .mainCont  {position: relative;}
+.contWrap .mainCont .leftMenu {position: absolute; left:0; top:0; width:240px;}
+.contWrap .mainCont .leftMenu .title {display: block; font-size: 30px; color:#0080c6; font-weight: 500; line-height: 30px;}
+.contWrap .mainCont .leftMenu >  ul {margin-top:20px; border-top:2px solid #0080c6;}
+.contWrap .mainCont .leftMenu >  ul > li { border-bottom:1px solid #cecece; background: #ececec;}
+.contWrap .mainCont .leftMenu >  ul > li > a {display: block; padding-left:20px; line-height: 40px; font-size: 16px; color:#333; letter-spacing: -2px;}
+.contWrap .mainCont .leftMenu >  ul > li > a.ico {background:url(../images/ico_plus.png) no-repeat 95% center;}
+.contWrap .mainCont .leftMenu >  ul > li.on, .contWrap .mainCont .leftMenu ul li:hover {background:#3b4c74;}
+.contWrap .mainCont .leftMenu >  ul > li.on > a, .contWrap .mainCont .leftMenu ul li:hover > a {color:#fff;}
+.contWrap .mainCont .leftMenu >  ul > li.on > a.ico {background: url(../images/ico_miner.png) no-repeat 95% center;}
+.contWrap .mainCont .leftMenu >  ul > li > ul {display: none; width:100%; padding:15px 0; background:#fff;}
+.contWrap .mainCont .leftMenu >  ul > li.on > ul {display: block;}
+.contWrap .mainCont .leftMenu >  ul > li > ul > li {padding:8px 0 8px 40px;}
+.contWrap .mainCont .leftMenu >  ul > li > ul > li:hover {background: none;}
+.contWrap .mainCont .leftMenu >  ul > li > ul > li:hover > a, .contWrap .mainCont .leftMenu >  ul > li > ul > li.on > a {color:#0080c6;}
+.contWrap .txtWrap {padding-left:293px;}
+.contWrap .txtWrap .title {display: block; font-size:24px; color:#333;}
+.contWrap .txtWrap .textArea {margin-top:20px; padding-top:40px; border-top: 1px solid #cecece;;}
+.contWrap .txtWrap .textArea + .textArea {margin-top:0; border:0;}
+.contWrap .txtWrap .textArea p {line-height: 24px;}
+.contWrap .txtWrap .textArea p + p {margin-top:35px;}
+.comTable {border-top:2px solid #5279d3;}
+.contWrap .txtBox.v2 .comTable th
+.contWrap .txtBox.v2 .comTable.center th{text-align: center;}
+.contWrap .txtBox.v2 .comTable.left th{text-align: left;}
+.contWrap .comTable ul {margin-top:0!important;}
+.contWrap .comTable th, .comTable td {padding:15px 10px;  border-bottom:1px solid #ccc;}
+.contWrap .comTable th {background:#e1e6f1; color:#1b2e59; text-align: left;}
+.contWrap .comTable .bdr {border-right:1px solid #ccc;}
+.contWrap .txtBox + .txtBox {margin-top:45px;}
+.contWrap .txtBox .title {display: block; font-size:18px; color:#333; font-weight: bold;}
+.contWrap .txtBox p {margin-top:25px; letter-spacing: normal;}.contWrap .txtBox p.
+.contWrap .txtBox ul {margin-top:25px;}
+.contWrap .txtBox ul.mt10 {margin-top:10px;}
+.contWrap .txtBox ul li {padding-left:5px; text-indent: -5px; line-height: 24px; text-align: justify;}
+.contWrap .txtBox.v2 {margin-top:20px;}
+.contWrap .txtBox.v2 .comTable {margin-top:10px;}
+.contWrap .txtBox.v2 .comTable th {text-align: center;}
+.contWrap .txtWrap .textArea.v2 {padding-top:15px;}
+.contWrap .txtWrap .textArea.v2 .txtBox {margin-top:25px;}
+.contWrap .txtWrap .bgGray {padding:20px; background:#f3f4f7; border:1px solid #e1e2e6;}
+.contWrap .txtWrap .bgGray strong {font-size:18px; color:#333;}
+.contWrap .txtWrap .bgGray span {display: block;}
+.contWrap .txtWrap .bgGray .blue {color:#0f85c8;}
+.contWrap .txtWrap .imgArea {margin-top:25px; }
+.contWrap .txtWrap .imgArea.mt10 {margin-top:10px;}
+.contWrap .blueTxt {margin-top: 20px;}
+.contWrap .blueTxt .blueTitle {color:#0080c6;}
+.contWrap .blueTxt p {margin-top:5px;}
+.contWrap .blueTxt ul {margin-top:0}
+.contWrap .blueTxt ul li {line-height: 24px; letter-spacing: normal;}
+
+/* main */
+.main .contWrap {padding:0;}
+.main .mainVisual {position: relative; width:100%; height:512px; background:url(../images/bg.jpg) no-repeat; background-size: cover;}
+.main .mainVisual .linkArea {position: absolute; bottom:0; left:50%; display: flex; align-items: center; justify-content: space-around; width:1100px; padding:0 10px; min-width:1100px; transform: translateX(-50%); background:rgba(0,0,0,0.8)}
+.main .mainVisual .linkArea .linkBox {position: relative; padding:31px 0 29px;}
+.main .mainVisual .linkArea .linkBox::after {content: ""; position: absolute; top:50%; right:-35px; width:1px; height:54px; background:#5a79d8; transform: translateY(-50%);}
+.main .mainVisual .linkArea .linkBox:last-child:after {display: none;}
+.main .mainVisual .linkArea .linkBox > * {display: inline-block; vertical-align: middle;}
+.main .mainVisual .linkArea a {padding-left:20px; font-size:16px; color:#fff;}
+.main .contBox {padding:65px 0 95px;}
+.main .contBox .title {display: block; font-size:30px; color:#333; text-align: center;}
+.main .contBox .boxArea {overflow: hidden; margin-top:30px;}
+.main .contBox .boxArea > * {float: left; width:234px; min-height: 310px; margin-right:54px; vertical-align: top;}
+.main .contBox .boxArea > div:last-child {margin-right:0;}
+.main .contBox .boxArea .txt {margin-top:18px;}
+.main .contBox .boxArea .txt span {display: block; font-size:22px; color:#333;}
+.main .contBox .boxArea .txt p {margin-top:25px; text-align: justify;}
+.main .txtBox + .txtBox {margin-top:0;}
+
+/* sitemap */
+.sitemapArea {position: relative;}
+.sitemapArea::after {display: block; content: ""; clear: both;}
+.sitemapArea .linkBox {float: left; width:31.5%; height:242px; margin-top:20px; margin-right:20px;}
+.sitemapArea .linkBox:nth-child(3n) {margin-right:0;}
+.sitemapArea .linkBox .title {display: block; height:50px; line-height: 50px; text-align: center; color:#fff; font-size:16px; background:#3b4c74; font-weight: normal;}
+.sitemapArea .linkBox .listLink { height:190px; padding:20px; border:1px solid #ccc; border-top:0;}
+.sitemapArea .linkBox .listLink a {display: block; width:100%;}
+.sitemapArea .linkBox .listLink a:hover {color:#0080c6; text-decoration: underline;}

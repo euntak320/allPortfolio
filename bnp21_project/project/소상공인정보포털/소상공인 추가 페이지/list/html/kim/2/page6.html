@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Meta, title, CSS, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>자영업지원센터 사업관리 시스템</title>
+    <!--[if lt IE 9]>
+			<script src="/js/html5shiv.min.js"></script>
+		<![endif]-->
+    <!-- scripts and styles -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="../../../css/rMateGridH5Sample.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/rMateH5.css" />
+    <!-- rMateChartH5 라이센스 -->
+    <script type="text/javascript" src="../../../js/rMateGridH5License.js"></script>
+    <!-- rMateGridH5 라이브러리 -->
+    <script type="text/javascript" src="../../../js/rMateGridH5.js"></script>
+
+    <!-- smartEditor -->
+    <script type="text/javascript" src="../../../smartEditor/js/HuskyEZCreator.js"></script>
+    <!-- smartEditor -->
+    <link rel="stylesheet" type="text/css" href="../../../smartEditor/css/smart_editor2.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" />
+
+    <link rel="apple-touch-icon-precomposed" href="../../../ico/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/ico/favicon.ico">
+
+    <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="../../../css/jquery/jquery-ui-1.8.16.main.css" />
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="../../../js/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.16.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui.datepicker.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.number.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.maskedinput-1.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.dialog.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.numeric.js"></script>
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../../../js/common-util.js"></script>
+    <script type="text/javascript" src="../../../js/common.js"></script>
+    <script type="text/javascript" src="../../../js/sbdcCommon.js"></script>
+    <script type="text/javascript" src="../../../js/downloadProgress.js"></script>
+    <script type="text/javascript" src="../../../js/default.js"></script>
+    <script type="text/javascript" src="../../../js/printThis.js"></script>
+
+    <!-- 트리구조 추가 -->
+    <link rel="stylesheet" type="text/css" href="../../../css/jstree.min.css" />
+    <script type="text/javascript" src="../../../js/jstree.min.js"></script>
+
+    <!-- 신규 css 추가 -->
+    <link rel="stylesheet" href="../../../css/newpage.css">
+
+    <!-- function scripts -->
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="toplink">
+            <a class="navbar-brand" href="/cm/main.do"><img src="/img/logo_2016.png" alt="자영업지원센터"></a>
+            <ul>
+                <li><a href="/cc/SM_10402_SL.do">
+                        <sapn style="text-align: middle;"><img src="/img/icon/sms.JPG"
+                                style="width: 15px; padding-right: 5px; margin-top: 3px;" align="top">SMS 발송</sapn>
+                    </a></li>
+                <li><i class="fa fa-user"></i>개발테스트님 환영합니다.</li>
+                <li><a href="/cm/CMLogout.do"><i class="fa fa-power-off"></i>로그아웃</a></li>
+                <li><a href="/sso/SSO_10100.do" target="_blank"> <i class="fa fa-home"></i>소상공인 종합지원포털 홈페이지</a></li>
+            </ul>
+        </div>
+        <nav class="topnav-wrap">
+            <ul class="topnav" id="topMenu">
+                <li><a href="/cs/CS_10100_SL.do">고객&amp;상담</a></li>
+                <li><a href="/cn/CN_10300_SL.do">창업지원</a></li>
+                <li><a href="/pm/PM_20101_SL.do">사후관리</a></li>
+                <li><a href="/fs/FS_10000_SL.do">시설개선</a></li>
+                <li class="active"><a href="/cg/CG_70101_SL_NEW.do">경영지원</a></li>
+                <li><a href="/st/ST_10201_FORM.do">경영지원통계</a></li>
+                <li><a href="/cc/CC_10301_SL.do">전문가관리</a></li>
+                <li><a href="/ed/ED_10101_SL.do">교육관리</a></li>
+                <li><a href="/bt/BT_10100_SL.do">직원알림방</a></li>
+                <li><a href="/bs/BS_10100_SL.do">공지&amp;알림</a></li>
+                <li><a href="/bm/MasterList.do">게시판관리</a></li>
+                <li><a href="/sm/SM_10101_SL.do">시스템관리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-content">
+        <div class="sidenav-wrap">
+            <ul class="nav sidenav" id="leftMenu">
+                <li class="active"><a href=""><i class="fa fa-file-text-o"></i>컨설팅 관리(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>사업신청서 등록(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>온라인신청서접수(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>전문가 배정(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>멘토링 배정</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>과거 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>컨설팅 정보 조회</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>접수부서별 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>경영지원 해피콜</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험신청서 접수</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>크리에이터 교육관리</a></li>
+            </ul>
+        </div>
+        <div class="content-wrap">
+            <div class="content">
+                <div class="content">
+                    <div id="title" class="titleArea">
+                        <span class="title">현업화 지원사업 사후관리 보고서</span>
+                    </div>
+                    <p class="clearfix"></p>
+                    <h3>업체개요</h3>
+                    <table class="table table-bordered write" id="reportArea">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>업체명</th>
+                                <td colspan="3">
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>협업사업명</th>
+                                <td colspan="3">
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사업기간</th>
+                                <td colspan="3">
+                                    <input type="text" class="form-control input-sm hasDatepicker" id="bsnsBeginDe" name="bsnsBeginDe" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>협업사업장</th>
+                                <td colspan="3">
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사업장주소</th>
+                                <td>
+                                    <input type="text" class="w100">
+                                </td>
+                                <th>지원내용</th>
+                                <td>
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p class="clearfix"></p>
+                    <h3>업체개요
+                        <span class="infoTxt">5.29 (점검자 : 김막수 대리)</span>
+                    </h3>
+                    <p class="clearfix"></p>
+                    <h3>업체개요</h3>
+                    <table class="table table-bordered write" id="reportArea">
+                        <colgroup>
+                            <col style="width:150px">
+                            <col style="width:200px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="2">점검항목</th>
+                                <th >점검결과</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th colspan="2" style="text-align: left;">참여업체 휴, 폐업 여부</th>
+                                <td>
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2" style="text-align: left;">추진추계의 영업상황</th>
+                                <th style="text-align: left;">매출상황</th>
+                                <td>
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th style="text-align: left;">종업원 변동사항</th>
+                                <td>
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2" style="text-align: left;">공동시설, 공통브랜드 등 현업자산 이름,관리 현황</th>
+                                <td>
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2" style="text-align: left;">참여업체 변동여부</th>
+                                <td>
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2" style="text-align: left;">조직화 진행여부</th>
+                                <td>
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="2" style="text-align: left;">기타 특이사항/건의사항 등</th>
+                                <td>
+                                    <input type="text" class="w100">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-point" id="btnConfirm" onclick="window.print();">프린트</button>
+                        <button type="button" class="btn btn-default" id="btnClose">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="position: fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:none;" >
+        <div style="position: absolute; top:50%; left:50%; width:1024px; height:auto; transform: translate(-50%,-50%); background:#fff;">
+        <!-- contentArea -->
+            <div class="modal-body">
+                <div id="title" class="titleArea">
+                    <span class="title">현업화 지원사업 사후관리 보고서</span>
+                    <span class="subTitle">2020년 10월 10일</span>
+                </div>
+                <p class="clearfix"></p>
+                <h3>업체개요</h3>
+                <table class="table table-bordered write">
+                    <colgroup>
+                        <col style="width:130px">
+                        <col style="width:calc(33% - 132px)">
+                        <col style="width:130px">
+                        <col style="width:calc(33% - 132px)">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>업체명</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>협업사업명</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>사업기간</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>협업사업장</th>
+                            <td colspan="3"></td>
+                        </tr>
+                        <tr>
+                            <th>지원금</th>
+                            <td></td>
+                            <th>지원내용</th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p class="clearfix"></p>
+                <h3>업체개요
+                    <span class="infoTxt">5.29 (점검자 : 김막수 대리)</span>
+                </h3>
+                <p class="clearfix"></p>
+                <h3>업체개요</h3>
+                <table class="table table-bordered write">
+                    <colgroup>
+                        <col style="width:150px">
+                        <col style="width:200px">
+                        <col style="width:calc(33% - 132px)">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th colspan="2">점검항목</th>
+                            <th >점검결과</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2" style="text-align: left;">참여업체 휴, 폐업 여부</th>
+                            <td>해당없음</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2" style="text-align: left;">추진추계의 영업상황</th>
+                            <th style="text-align: left;">매출상황</th>
+                            <td>지원 필요</td>
+                        </tr>
+                        <tr>
+                            <th style="text-align: left;">종업원 변동사항</th>
+                            <td>변동사항 없음</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="text-align: left;">공동시설, 공통브랜드 등 현업자산 이름,관리 현황</th>
+                            <td>공통브랜드 이용 관리 이상무</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="text-align: left;">참여업체 변동여부</th>
+                            <td>변동사항 없음</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="text-align: left;">조직화 진행여부</th>
+                            <td>진행 이상무</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="text-align: left;">기타 특이사항/건의사항 등</th>
+                            <td>기타사항 없음</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-point" id="btnConfirm" onclick="window.print();">프린트</button>
+                    <button type="button" class="btn btn-default" id="btnClose">닫기</button>
+                </div>
+            </div>
+            <!-- contentArea -->
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-copy">© Seoul Credit Guarantee Foundation, All Rights Reserved.</div>
+        </footer>
+
+</body>
+
+</html>

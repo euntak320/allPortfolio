@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<title>대기정보 시군별 - 경기도 대기환경</title>
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/jquery-ui.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+	<!-- 헤더부분 -->
+	<header>
+		<div class="top_area">
+			<h1>
+				<a href="#none">경기도대기환경 진단평가 시스템</a>
+			</h1>
+			<div class="login_area">
+				<a href="#none" class="admin">관리자</a>
+				<a href="#none" class="my_info">내 정보</a>
+				<a href="#none" class="login">로그아웃</a>
+				<!-- <a href="#none" class="login">로그인</a> -->
+			</div>
+		</div>
+		<div class="bottom_area">
+			<div class="menu_area">
+				<span class="menu_txt ">일일진단평가</span>
+				<span class="menu_txt on">대기정보</span>
+				<span class="menu_txt ">기상현황</span>
+				<span class="menu_txt ">모델링결과</span>
+				<span class="menu_txt ">사이트맵</span>
+				<a href="#" class="menu_btn">햄버거 메뉴</a>
+			</div>
+		</div>
+	</header>
+	<!-- 헤더부분 -->
+	<section>
+		<div class="content_frame">
+			<div class="left_menu">
+				<span class="menu_title">대기정보</span>
+				<div class="left_area">
+					<a href="#none" class="on">대기질현황</a>
+					<a href="#none">시군별</a>
+					<a href="#none">시도별</a>
+				</div>
+			</div>
+			<div class="content_area">
+				<div class="title_area">
+					<span class="title">대기질현황</span>
+					<div class="nav_area">
+						<span class="home">처음</span>
+						<span class="left">대기정보</span>
+						<span class="left">대기질현황</span>
+					</div>
+				</div>
+				<div class="tab_area">
+					<a href="#none" class="on">초미세먼지(PM<sub>2.5</sub>)</a>
+					<a href="#none">미세먼지(PM<sub>10</sub>)</a>
+					<a href="#none">오존(O<sub>3</sub>)</a>
+					<a href="#none">아황산가스(SO<sub>2</sub>)</a>
+					<a href="#none">이산화질소(NO<sub>2</sub>)</a>
+					<a href="#none">일산화탄소(CO)</a>
+				</div>
+				<div class="input_data">
+					<fieldset>
+						<legend>검색</legend>
+						<div class="input_cell">
+							<span class="hidden"><label for="src2">날짜</label></span>
+							<div class="com_input mg0">
+								<input type="text" class="cal" id="src2">
+							</div>
+							<div class="select">
+								<select title="시간 선택">
+									<option>1시</option>
+									<option>2시</option>
+								</select>
+							</div>
+							<button type="button" class="btn">조회</button>
+						</div>
+						<div class="right_input">
+							<div class="btn_day">
+								<button type="button" class="prev">1H</button>
+								<button type="button" class="today">현재</button>
+								<button type="button" class="next">1H</button>
+							</div>
+							<div class="btn_day">
+								<button type="button" class="prev">12H</button>
+								<button type="button" class="prev">6H</button>
+								<button type="button" class="next">6H</button>
+								<button type="button" class="next">12H</button>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<!-- 20-02-14 수정사항-->
+				<div class="air_quality">
+					<!-- 왼쪽 영역 -->
+					<div class="sec_left">
+						<!-- 지도 -->
+						<div class="map_area" id="air_map">
+							<div class="map_area type2" id="air_map">
+								<div class="north">
+									<!-- 대기상태에 따른 이미지 파일명 
+                                        좋음 : _good
+                                        보통 : _normal
+                                        나쁨 : _bad
+                                        매우나쁨 : _worst
+                                        점검중 : _checking     -->
+									<img src="../assets/images/B_north_dongducheon_good.png" alt="동두천">
+									<img src="../assets/images/B_north_goyang_good.png" alt="고양">
+									<img src="../assets/images/B_north_kimpo_good.png" alt="김포">
+									<img src="../assets/images/B_north_paju_good.png" alt="파주">
+									<img src="../assets/images/B_north_pocheon_good.png" alt="포천">
+									<img src="../assets/images/B_north_uijeongbu_good.png" alt="의정부">
+									<img src="../assets/images/B_north_yangju_good.png" alt="양주">
+									<img src="../assets/images/B_north_yeoncheon_good.png" alt="연천">
+								</div>
+
+								<div class="east">
+									<img src="../assets/images/B_east_gapyeong_normal.png" alt="가평">
+									<img src="../assets/images/B_east_guri_normal.png" alt="구리">
+									<img src="../assets/images/B_east_gwangju_normal.png" alt="광주">
+									<img src="../assets/images/B_east_hanam_normal.png" alt="하남">
+									<img src="../assets/images/B_east_namyangju_normal.png" alt="남양주">
+									<img src="../assets/images/B_east_seongnam_normal.png" alt="성남">
+									<img src="../assets/images/B_east_yangpyeong_normal.png" alt="양평">
+								</div>
+
+								<div class="central">
+									<img src="../assets/images/B_central_ansan_bad.png" alt="안산">
+									<img src="../assets/images/B_central_anyang_bad.png" alt="안양">
+									<img src="../assets/images/B_central_bucheon_bad.png" alt="부천">
+									<img src="../assets/images/B_central_gunpo_bad.png" alt="군포">
+									<img src="../assets/images/B_central_gwacheon_bad.png" alt="과천">
+									<img src="../assets/images/B_central_gwangmyeong_bad.png" alt="광명">
+									<img src="../assets/images/B_central_hwaseong_bad.png" alt="화성">
+									<img src="../assets/images/B_central_siheung_bad.png" alt="시흥">
+									<img src="../assets/images/B_central_suwon_bad.png" alt="수원">
+									<img src="../assets/images/B_central_uiwang_bad.png" alt="의왕">
+									<img src="../assets/images/B_central_osan_bad.png" alt="오산">
+								</div>
+
+								<div class="south">
+									<img src="../assets/images/B_south_anseong_worst.png" alt="안성">
+									<img src="../assets/images/B_south_icheon_worst.png" alt="이천">
+									<img src="../assets/images/B_south_pyeongtaek_worst.png" alt="평택">
+									<img src="../assets/images/B_south_yeoju_worst.png" alt="여주">
+									<img src="../assets/images/B_south_yongin_worst.png" alt="용인">
+								</div>
+							</div>
+							<p style="position: absolute;top: 0; left: 0; z-index: 100;"><img
+									src="../assets/images/blank.png" usemap="#mapAreaPart1"></p>
+							<map id="mapAreaPart1" name="mapAreaPart1">
+
+								<area href="#" shape="poly"
+									coords="346,108,313,147,308,162,296,166,292,182,280,196,279,223,260,229,236,227,220,219,224,187,241,171,220,139,228,126,226,111,246,100,242,65,251,54,285,61,298,84,319,80,343,83"
+									href="#" alt="포천" class="" style="outline:none;" />
+								<area shape="poly" coords="242,176,215,139,201,136,182,157,185,169,223,190" href="#"
+									alt="동두천" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="220,6,225,30,239,32,249,54,245,75,249,99,227,108,226,134,199,138,182,157,170,150,181,129,163,135,147,132,146,142,134,136,123,143,110,132,122,115,142,115,139,85,167,72,173,49"
+									href="#" alt="연천" class="" style="outline:none;" />
+								<area shape="poly" coords="219,217,200,222,189,221,180,235,206,257,239,235" href="#"
+									alt="의정부" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="182,157,186,173,218,184,228,207,221,219,206,222,188,224,183,236,198,255,175,258,164,266,156,254,162,233,158,230,152,200,164,193,160,176,170,158"
+									href="#" alt="양주" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="169,155,186,127,180,125,157,134,150,130,141,129,142,139,135,129,121,140,115,162,97,129,85,142,70,142,68,151,92,184,66,197,73,245,103,249,109,240,146,241,153,233,161,233,153,201,163,195,163,170"
+									href="#" alt="파주" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="191,280,200,257,176,257,162,263,156,254,162,232,154,231,149,237,116,238,104,243,69,255,76,264,122,290,122,302,131,291,144,306,163,296,165,283,180,272"
+									href="#" alt="고양" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="127,299,118,285,67,261,74,244,67,225,69,216,61,211,41,221,21,226,12,252,21,290,46,297,67,287,90,293"
+									href="#" alt="김포" class="" style="outline:none;" />
+
+
+								<area shape="poly"
+									coords="341,111,314,146,309,161,296,165,295,176,283,189,282,214,297,225,303,246,319,261,332,262,341,270,356,302,381,296,373,282,378,250,362,247,367,231,368,197,397,172,398,154,370,130"
+									href="#" alt="가평" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="397,279,384,287,354,301,350,280,340,272,338,266,331,262,320,267,298,312,325,340,322,353,344,359,362,356,390,366,431,366,438,383,456,382,466,363,456,341,478,318,449,299,402,281"
+									href="#" alt="양평" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="341,384,320,354,324,345,318,322,295,311,295,325,276,331,273,343,250,345,258,363,250,371,242,393,257,400,264,387,284,399,287,429,302,428,315,403"
+									href="#" alt="광주" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="236,395,249,379,248,372,259,364,244,344,228,343,214,355,199,351,195,366,198,388,220,400"
+									href="#" alt="성남" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="270,345,276,331,286,330,270,305,251,303,250,322,240,329,249,343" href="#"
+									alt="하남" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="281,216,266,231,236,228,235,241,219,252,228,261,245,265,258,291,254,301,267,302,286,327,300,313,316,258,303,239,300,223"
+									href="#" alt="남양주" class="" style="outline:none;" target="_self" />
+								<area shape="poly" coords="234,313,254,301,258,290,245,262,230,261,224,289,238,295"
+									href="#" alt="구리" class="" style="outline:none;" />
+
+
+								<area shape="poly" coords="199,353,186,344,171,351,177,373,195,372" href="#" alt="과천"
+									class="" style="outline:none;" />
+								<area shape="poly" coords="178,374,172,354,154,355,140,375,142,385,159,397" href="#"
+									alt="안양" class="" style="outline:none;" />
+								<area shape="poly" coords="154,355,150,339,135,345,134,333,125,345,134,377,140,379"
+									href="#" alt="광명" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="123,344,133,332,131,321,119,319,114,310,103,311,98,326,94,335,105,347"
+									href="#" alt="부천" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="132,379,121,343,104,346,73,390,84,406,110,390,123,393,135,392,142,383"
+									href="#" alt="시흥" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="177,372,173,384,165,388,142,414,156,411,168,399,195,391,195,371" href="#"
+									alt="의왕" class="" style="outline:none;" />
+								<area shape="poly" coords="140,412,155,400,147,391,141,384,134,389,122,389,119,405"
+									href="#" alt="군포" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="194,393,173,401,169,399,153,414,168,430,169,440,207,438,217,431,210,419,226,414,229,399,218,401"
+									href="#" alt="수원" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="145,421,135,410,117,406,124,391,108,389,84,405,108,422,133,424" href="#"
+									alt="안산" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="156,413,134,430,121,428,108,427,88,431,80,435,42,426,13,424,2,437,3,448,15,451,25,442,44,465,67,458,82,463,75,481,102,533,117,537,134,524,145,508,176,509,185,499,184,482,192,472,221,481,238,463,235,448,214,447,206,440,169,436"
+									href="#" alt="화성" class="" style="outline:none;" />
+								<area shape="poly" coords="222,481,193,473,184,485,185,499,225,502" href="#" alt="오산"
+									class="" style="outline:none;" />
+
+
+								<area shape="poly"
+									coords="458,382,436,385,430,365,378,367,362,355,346,359,338,357,324,360,331,378,341,387,374,407,372,456,394,465,410,485,426,490,440,457"
+									href="#" alt="여주" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="372,408,341,386,309,411,299,429,302,452,328,475,368,494,361,526,380,529,390,514,407,502,409,483,391,463,372,461"
+									href="#" alt="이천" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="261,385,289,397,281,409,285,429,299,430,303,444,328,477,331,498,303,488,291,491,275,480,270,487,260,495,226,499,221,483,241,463,235,449,211,449,206,439,214,433,210,420,228,415,231,398,252,396"
+									href="#" alt="용인" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="329,477,327,498,298,487,290,489,275,476,269,488,259,489,224,500,232,516,225,525,242,540,235,553,253,561,267,575,287,585,300,573,320,571,327,543,339,542,360,521,369,492,335,474"
+									href="#" alt="안성" class="" style="outline:none;" />
+								<area shape="poly"
+									coords="230,524,235,515,225,500,200,503,186,501,171,508,141,508,132,528,119,534,135,544,125,548,143,562,162,583,196,573,223,571,235,558,240,539"
+									href="#" alt="평택" class="" style="outline:none;" />
+
+
+							</map>
+
+							<script>
+								$(window).ready(function () {
+									$.each($('#mapAreaPart1 area'), function () {
+										var that = $(this);
+										var thisName = that.attr('alt');
+										that.on('click', function () {
+											if (thisName == '가평') {
+												alert(thisName);
+												// 가평 테이블 보이기
+											} else if (thisName == '양평') {
+												alert(thisName);
+												// 양평 테이블 보이기
+											}
+											// .....
+										});
+									});
+								});
+							</script>
+
+							<p class="unit">농도범위 (㎍/㎥)</p>
+							<!--//<div class="area_info a1">
+								<a href="#n" class="area">연천</a>
+								<div class="info">
+									<p class="name">연천시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a2">
+								<a href="#n" class="area">포천</a>
+								<div class="info">
+									<p class="name">포천시</p>
+									<p class="level"><span class="v2">농도:40</span></p>
+								</div>
+							</div>
+							<div class="area_info a3">
+								<a href="#n" class="area">동두천</a>
+								<div class="info">
+									<p class="name">동두천시</p>
+									<p class="level"><span class="v3">농도:100</span></p>
+								</div>
+							</div>
+							<div class="area_info a4">
+								<a href="#n" class="area">파주</a>
+								<div class="info">
+									<p class="name">파주시</p>
+									<p class="level"><span class="v4">농도:200</span></p>
+								</div>
+							</div>
+							<div class="area_info a5">
+								<a href="#n" class="area">양주</a>
+								<div class="info">
+									<p class="name">양주시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a6">
+								<a href="#n" class="area">의정부</a>
+								<div class="info">
+									<p class="name">의정부시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a7">
+								<a href="#n" class="area">김포</a>
+								<div class="info">
+									<p class="name">김포시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a8">
+								<a href="#n" class="area">고양</a>
+								<div class="info">
+									<p class="name">고양시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+
+							<div class="area_info a9">
+								<a href="#n" class="area">가평</a>
+								<div class="info">
+									<p class="name">가평시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a10">
+								<a href="#n" class="area">남양주</a>
+								<div class="info">
+									<p class="name">남양주시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a11">
+								<a href="#n" class="area">구리</a>
+								<div class="info">
+									<p class="name">구리시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a12">
+								<a href="#n" class="area">하남</a>
+								<div class="info">
+									<p class="name">하남시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a13">
+								<a href="#n" class="area">성남</a>
+								<div class="info">
+									<p class="name">성남시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a14">
+								<a href="#n" class="area">광주</a>
+								<div class="info">
+									<p class="name">광주시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a15">
+								<a href="#n" class="area">양평</a>
+								<div class="info">
+									<p class="name">양평시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+
+							<div class="area_info a16">
+								<a href="#n" class="area">부천</a>
+								<div class="info">
+									<p class="name">부천시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a17">
+								<a href="#n" class="area">시흥</a>
+								<div class="info">
+									<p class="name">시흥시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a18">
+								<a href="#n" class="area">광명</a>
+								<div class="info">
+									<p class="name">광명시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a19">
+								<a href="#n" class="area">안양</a>
+								<div class="info">
+									<p class="name">안양시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a20">
+								<a href="#n" class="area">과천</a>
+								<div class="info">
+									<p class="name">과천시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a21">
+								<a href="#n" class="area">군포</a>
+								<div class="info">
+									<p class="name">군포시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a22">
+								<a href="#n" class="area">안산</a>
+								<div class="info">
+									<p class="name">안산시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a23">
+								<a href="#n" class="area">의왕</a>
+								<div class="info">
+									<p class="name">의왕시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a24">
+								<a href="#n" class="area">수원</a>
+								<div class="info">
+									<p class="name">수원시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a25">
+								<a href="#n" class="area">화성</a>
+								<div class="info">
+									<p class="name">양평시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a26">
+								<a href="#n" class="area">용인</a>
+								<div class="info">
+									<p class="name">용인시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a27">
+								<a href="#n" class="area">이천</a>
+								<div class="info">
+									<p class="name">이천시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a28">
+								<a href="#n" class="area">여주</a>
+								<div class="info">
+									<p class="name">여주시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a29">
+								<a href="#n" class="area">오산</a>
+								<div class="info">
+									<p class="name">오산시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a30">
+								<a href="#n" class="area">평택</a>
+								<div class="info">
+									<p class="name">평택시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>
+							<div class="area_info a31">
+								<a href="#n" class="area">안성</a>
+								<div class="info">
+									<p class="name">안성시</p>
+									<p class="level"><span class="v1">농도:20</span></p>
+								</div>
+							</div>-->
+						</div>
+						<!-- //지도 -->
+						<div class="air_grade">
+							<span class="icon_air v1">좋음(00~30)</span>
+							<span class="icon_air v2">보통(31~80)</span>
+							<span class="icon_air v3">나쁨(81~150)</span>
+							<span class="icon_air v4">매우나쁨(151~)</span>
+							<span class="icon_air v5">점검중</span>
+						</div>
+					</div>
+					<!-- //왼쪽 영역 -->
+
+					<!-- 오른쪽 영역 -->
+					<div class="sec_right">
+						<div class="table_area">
+							<p class="tit_h4">2019년 6월 30일 13시</p>
+							<table>
+								<caption>선택한 시군별 농도 농도정보</caption>
+								<colgroup>
+									<col style="width: 30%;">
+									<col style="width: 70%;">
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scrop="row" class="bgNavy">시군</th>
+										<td>수원시</td>
+									</tr>
+									<tr>
+										<th scrop="row" class="bgNavy">현재농도</th>
+										<td>20 ㎍/㎥</td>
+									</tr>
+									<tr>
+										<th scrop="row" class="bgNavy">일평균농도</th>
+										<td>25㎍/㎥</td>
+									</tr>
+									<tr>
+										<th scrop="row" class="bgNavy">최대</th>
+										<td>34 ㎍/㎥ (09시 측정)</td>
+									</tr>
+									<tr>
+										<th scrop="row" class="bgNavy">최소</th>
+										<td>13 ㎍/㎥ (13시 측정)</td>
+									</tr>
+									<tr>
+										<th scrop="row" class="bgNavy">등급</th>
+										<td><span class="icon_air v2">보통</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="graph_area">
+							<img src="../assets/images/temp/temp_graph4.jpg" alt="대기질현황 그래프 샘플">
+						</div>
+					</div>
+					<!-- //오른쪽 영역 -->
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+		<span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+	</footer>
+</body>
+
+</html>

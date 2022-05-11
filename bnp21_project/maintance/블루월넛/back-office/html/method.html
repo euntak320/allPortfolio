@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>Bluewalnut | 전자계약서 가입신청</title>
+    </title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="contentArea">
+            <div class="header">
+                <div class="logo">
+                    <img src="assets/images/logo.jpg" alt="블루월넛">
+                    <span>결제방법</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="tableArea">
+                    <div class="tableTxt">
+                    <span class="fl">※ 확정 된 결제방법, 수수료율, 정산주기를 확인해 주세요.</span>
+                    <span class="fr">(VAT 별도)</span>
+                    </div>
+                    <table>
+                        <caption>구분, 이용요금, 정산주기(비고)에 대한 테이블입니다.</caption>
+                        <colgroup>
+                            <col style="width:12%">
+                            <col style="width:12%">
+                            <col style="width:10%">
+                            <col style="width:7%">
+                            <col style="width:15%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="2">구분</th>
+                                <th>이용요금</th>
+                                <th colspan="2">정산주기(비고)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">초기 등록비</td>
+                                <td>면제</td>
+                                <td rowspan="2" colspan="2" class="txtLeft">
+                                    <span>기본 정산 주기는 월 정산 입니다.</span>
+                                    <span>정산 주기 변경 요청 시 정산한도, 수수료율, 담보조건이 변경 될 수 있습니다.</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">연 관리비</td>
+                                <td>면제</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">
+                                    <div class="check">
+                                        <input type="checkbox" id="chk1" name="" value="">
+                                        <label for="chk1">신용카드</label>
+                                    </div>
+                                </td>
+                                <td rowspan="4">
+                                    <span>신용카드</span>
+                                    <span>(승인/매입/정산)</span>
+                                </td>
+                                <td rowspan="4" class="input">
+                                    <span>판매대금의<input type="text" placeholder="2.5">%</span>
+                                </td>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk2" name="" value="">
+                                        <label for="chk2">일 정산</label>
+                                    </div>
+                                </td>
+                                <td class="input">
+                                    <span>거래(승인) + <input type="text">일 (영업일 기준)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk3" name="" value="">
+                                        <label for="chk3">주 정산</label>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk4" name="" value="">
+                                        <label for="chk4">월 정산</label>
+                                    </div>
+                                </td>
+                                <td class="txtLeft">월 1회</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"  class="txtLeft">
+                                    <span>*신용카드 매입방법 수동, 반자동의 경우 매입요청 건에 대해서만 정산 (미 매입의 경우 미 정산)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">
+                                    <div class="check">
+                                        <input type="checkbox" id="chk5" name="" value="">
+                                        <label for="chk5">계좌이체</label>
+                                    </div>
+                                </td>
+                                <td rowspan="3">
+                                    <span>실시간 계좌이체</span>
+                                </td>
+                                <td rowspan="3" class="input">
+                                    <span>판매대금의 <input type="text">%</span>
+                                    <span>(최저수수료  <input type="text" name="" class="borderNone"> 원)</span>
+                                </td>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk6" name="" value="">
+                                        <label for="chk6">일 정산</label>
+                                    </div>
+                                </td>
+                                <td class="input">
+                                    <span>거래(승인) + <input type="text">일 (영업일 기준)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk7" name="" value="">
+                                        <label for="chk7">주 정산</label>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk8" name="" value="">
+                                        <label for="chk8">월 정산</label>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                                <td rowspan="4">
+                                    <div class="check">
+                                        <input type="checkbox" id="chk9" name="" value="">
+                                        <label for="chk9">가상계좌</label>
+                                        <span>(무통장입금)</span>
+                                    </div>
+                                </td>
+                                <td rowspan="4">
+                                    <span>입금기한</span>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk10" name="" value="">
+                                        <label for="chk10">채번당일</label>
+                                    </div>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk11" name="" value="">
+                                        <label for="chk11">채번일 + 30일</label>
+                                    </div>
+                                    <span>* 기본 30일 자동 설정</span>
+                                    <span>(변경 가능)</span>
+                                </td>
+                                <td rowspan="4" class="input">
+                                    <span>건 당<input type="text" placeholder="300">원</span>
+                                </td>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk12" name="" value="">
+                                        <label for="chk12">일 정산</label>
+                                    </div>
+                                </td>
+                                <td class="input">
+                                    <span>거래(승인) + <input type="text">일 (영업일 기준)
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk13" name="" value="">
+                                        <label for="chk13">주 정산</label>
+                                    </div>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk14" name="" value="">
+                                        <label for="chk14">월 정산</label>
+                                    </div>
+                                </td>
+                                <td class="txtLeft">월 1회</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"  class="txtLeft">
+                                    <span>*가상계좌 환불 서비스 (환불 서비스 사용 원할 시 체크해주세요)</span>
+                                    <div class="twoCheck">
+                                        <div class="check">
+                                            <input type="checkbox" id="chk15" name="" value="">
+                                            <label for="chk15">사용함 / 건 당
+                                                <input type="text" class="borderNone">원
+                                            </label>
+                                        </div>
+                                        <div class="check">
+                                            <input type="checkbox" id="chk16" name="" value="">
+                                            <label for="chk16">사용 안 함</label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk17" name="" value="">
+                                        <label for="chk17">휴대폰</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk18" name="" value="">
+                                        <label for="chk18">컨텐츠</label>
+                                    </div>
+                                    <div class="check">
+                                        <input type="checkbox" id="chk19" name="" value="">
+                                        <label for="chk19">실물</label>
+                                    </div>
+                                </td>
+                                <td class="input">
+                                    <span>컨텐츠<input type="text">%</span>
+                                    <span>실물<input type="text">%</span>
+                                </td>
+                                <td colspan="2"class="txtLeft">
+                                    <span>*정산주기 별 수수료 상이 (영업담당자 별도 문의 후 확정 됩니다.)</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer">
+            <div class="contentArea">
+                <div class="topArea">
+                    <ul class="fl">
+                        <li><a href="">개인정보처리방침</a></li>
+                        <li><a href="">서비스이용약관</a></li>
+                        <li><a href="">통신과금서비스이용약관</a></li>
+                    </ul>
+                    <div class="select fr">
+                        <div class="familyBtn">
+                            <span>그룹사</span>
+                            <!-- 링크 페이지 -->
+                            <div class="familySite">
+                                <span class="title">이런 업종에서 활용해보세요</span>
+                                <div class="listArea">
+                                    <div class="linkList">
+                                        <span class="subTitle">현대자동차 그룹</span>
+                                        <ul>
+                                            <li><a href="" target="_blank">현대자동차 그룹</a></li>
+                                            <li><a href="" target="_blank">현대차 정몽구 그룹</a></li>
+                                            <li><a href="" target="_blank">현대차 미소금융재단</a></li>
+                                            <li><a href="" target="_blank">현대기아차 동반성장</a></li>
+                                            <li><a href="" target="_blank">현대자동차 산업연구소</a></li>
+                                            <li><a href="" target="_blank">해피무브 글로벌 청년봉사단</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="linkList">
+                                        <span class="subTitle">완성차</span>
+                                        <ul>
+                                            <li><a href="" target="_blank">현대자동차</a></li>
+                                            <li><a href="" target="_blank">기아차동차</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="linkList">
+                                        <span class="subTitle">철강</span>
+                                        <ul>
+                                            <li><a href="" target="_blank">현대자동차</a></li>
+                                            <li><a href="" target="_blank">기아차동차</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="linkList">
+                                        <span class="subTitle">건설</span>
+                                        <ul>
+                                            <li><a href="" target="_blank">현대건설</a></li>
+                                            <li><a href="" target="_blank">현대엔지니어링</a></li>
+                                            <li><a href="" target="_blank">현대스틸산업</a></li>
+                                            <li><a href="" target="_blank">현대종합설계</a></li>
+                                            <li><a href="" target="_blank">현대도시개발</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="linkList">
+                                        <span class="subTitle">부품</span>
+                                        <ul>
+                                            <li><a href="" target="_blank">현대모비스</a></li>
+                                            <li><a href="" target="_blank">현대위아</a></li>
+                                            <li><a href="" target="_blank">현대트랜시스</a></li>
+                                            <li><a href="" target="_blank">현대케피코</a></li>
+                                            <li><a href="" target="_blank">현대오트론</a></li>
+                                            <li><a href="" target="_blank">현대엠엔소프트</a></li>
+                                            <li><a href="" target="_blank">현대엠시트</a></li>
+                                            <li><a href="" target="_blank">현대아이에이치엘</a></li>
+                                            <li><a href="" target="_blank">현대피텍스</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="linkList">
+                                        <span class="subTitle">금융</span>
+                                        <ul>
+                                            <li><a href="" target="_blank">현대캐피탈</a></li>
+                                            <li><a href="" target="_blank">현대카드</a></li>
+                                            <li><a href="" target="_blank">현대커머셜</a></li>
+                                            <li><a href="" target="_blank">현대차증권</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="linkList">
+                                        <span class="subTitle">기타</span>
+                                        <ul>
+                                            <li><a href="" target="_blank">현대글로비스</a></li>
+                                            <li><a href="" target="_blank">현대로템</a></li>
+                                            <li><a href="" target="_blank">이노션 월드와이드</a></li>
+                                            <li><a href="" target="_blank">해비치호텔&리조트</a></li>
+                                            <li><a href="" target="_blank">현대오토에버</a></li>
+                                            <li><a href="" target="_blank">현대엔지비</a></li>
+                                            <li><a href="" target="_blank">현대서산농장</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 링크 페이지 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="btmArea">
+                    <div class="info">
+                        <span>고객센터 대표번호 1522-4910</span>
+                        <span>제휴문의 bluewalnut@bluewalnut.co.kr</span>
+                    </div>
+                    <div class="txt">
+                        <span>(주)블루월넛 서울 영등포구 국회대로 66길 3 현대캐피탈빌딩 2관 2층</span>
+                        <span>대표이사 최우홍</span>
+                        <span>사업자번호 678-86-00578</span>
+                        <span>Copyright (C) Bluewalnut All right reserved.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 페밀리사이트 전용 -->
+        <script>
+            $(function(){
+                $(".footer .familyBtn").click(function(){
+                    $(this).toggleClass("on");
+
+                });
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>

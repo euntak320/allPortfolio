@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>퍼블리싱 현황판</title>
+<script type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<style type="text/css">
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0; padding:0; border:0 none;}
+body,th,td,input,select,textarea,button {font-size:12px; line-height:1.5; font-family:'돋움',dotum,sans-serif; color:#666;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary, time {display:block;}
+h1,h2,h3,h4,h5,h6{font-family:"맑은 고딕", "Malgun Gothic"; font-weight:normal;}
+img, fieldset{border:0 none; vertical-align:middle;}
+dl,ul,ol,menu,li {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after ,q:before, q:after {content:''; content:none;}
+input, select, textarea, label, button{vertical-align:middle;}
+label, button{cursor:pointer;}
+button {border:0 none; background-color:transparent; cursor:pointer;}
+table{border-collapse:collapse; border-spacing:0;}
+
+caption {visibility:hidden; overflow:hidden; display:none;}
+legend{position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;}
+
+table {width:100%; }
+.tit {font-size:20px; color:#333; font-weight:bold; height:20px; padding:15px 0 10px; text-align:center;}
+th {height:23px; background-color:#cdcdcd; border:1px solid #b5b5b5; padding:2px 5px 3px; text-align:center; color:#000;}
+td {border-bottom:1px solid #c9c9c9; border-right:1px solid #c9c9c9; height:15px; padding:2px 10px 3px; font-size:12px; word-break:break-all;}
+td.first {border-right:1px solid #c9c9c9; border-bottom:2px solid #c9c9c9; font-weight:bold;}
+td.last {border-bottom:2px solid #c9c9c9;}
+td:first-child{border-left:1px solid #c9c9c9;}
+td:nth-child(7),
+td:nth-child(9),
+td:nth-child(10){text-align: center;}
+
+a{color:#000; text-decoration:none;}
+a:hover,a:active,a:focus{color:#000; text-decoration:underline;}
+.Wrap{min-width:1200px; padding:20px; margin:0 auto;}
+.font_01 {color:#a1a1a1;}
+.font_02 {font-weight:bold;}
+.font_03 {color:#00f;}
+.font_04 {color:#f00;}
+.font_05{color:#909; font-weight:bold;}
+.gride table{border:none;}
+.del td{text-decoration:line-through; color:#ababab; background: #f1f1f1;}
+.del td:last-child{text-decoration: none;}
+.del td.txt{color:#666; text-decoration:none;}
+.dec{text-align:right; width:1705px;}
+.point_bg{background:#FF9;}
+.type_guide{padding:10px; background:#ac1846;  text-align:center; font-size:14px; font-weight:bold;}
+.type_guide a {color:#fff;}
+.red {background:#666;}
+.red > td {color:#CCC;}
+.yellow {color:yellow}
+.new {background:yellow;}
+tr.modify { background:#e2f1ff; }
+tr.modify td { color:#002446;}
+tr.hr td { border-top:2px solid #999;}
+span.ico {display:inline-block; font-size:10px; font-family:Myriad, Verdana; line-height:1; padding:4px; background:#666; color:#fff; border-radius:3px;}
+span.ico.ing { background:#30F;}
+span.ico.done { background:#C0C;}
+span.ico.modify { background:#C39;}
+.tac{text-align: center;}
+.tbl-top{line-height: 1.1; padding-bottom: 10px;}
+.tbl-top:after{display: block; content: ''; clear: both;}
+.tbl-top .fl{float: left;}
+.tbl-top .fr{float: right;}
+iframe {overflow-y:auto; border:1px solid #ccc; width:100%; height:640px; margin-top:10px; background:#fff}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$(".table colgroup").prepend("<col width='50px'>");
+		
+		$(".table thead tr").prepend("<th scope='col'>No</th>");
+		
+		for(i=0; i <= $(".table tbody tr").length; i++){
+			$(".table tbody tr:nth-child("+ i+")").prepend("<td class='tac'>"+i+"</td>");
+		}
+
+		$(".btnIframe").click(function(e){
+			e.preventDefault();
+			var i = $(this).attr("href");
+			console.log(i)
+			$("#frame").attr("src",i);
+		});
+	});
+
+	
+
+</script>
+</head>
+
+<body>
+	<div class="Wrap">
+		<div class="tit">퍼블리싱 현황판 - 관리자</div>
+		<div class="tbl-top">
+			<div class="fl">
+
+			</div>
+			<div class="fr">
+				<strong>[형태]</strong> T:탭, L:레이어 팝업, N:새창, S:스텝
+			</div>
+		</div>
+		<table class="table">
+			<caption>퍼블리싱 메뉴 구조</caption>
+			<colgroup>
+				<col width="200px">
+				<col width="150px">
+				<col width="150px">
+				<col width="140px">
+				<col width="180px">
+				<col width="70px">
+				<col width="100px">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">Depth 1</th>
+					<th scope="col">Depth 2</th>
+					<th scope="col">형태</th>
+					<th scope="col">화면ID</th>
+					<th scope="col">파일명</th>
+					<th scope="col">미리보기</th>
+					<th scope="col">처리여부</th>
+					<th scope="col">Comment</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>로그인</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/login.html" target="_blank">로그인</a></td>
+					<td><a href="html/login.html" class="btnIframe"> 미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>가맹신청여부확인</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/check_page.html" target="_blank">가맹신청여부 확인</a></td>
+					<td><a href="html/check_page.html" class="btnIframe"> 미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>확인실패</td>
+					<td align="center">L</td>
+					<td align="center"></td>
+					<td><a href="html/check_page_layer.html" target="_blank">가맹신청여부확인 확인 실패</a></td>
+					<td><a href="html/check_page_layer.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr class="hr">
+					<td>가맹점 선택</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/member_store.html" target="_blank">가맹점 선택</a></td>
+					<td><a href="html/member_store.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>휴대폰 인증</td>
+					<td align="center">L</td>
+					<td align="center"></td>
+					<td><a href="html/reg_phone.html" target="_blank">휴대폰인증</a></td>
+					<td><a href="html/reg_phone.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr class="hr">
+					<td>신청완료 안내 화면</td>
+					<td>신청완료 상태</td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/checking_com.html" target="_blank">신청완료 상태</a></td>
+					<td><a href="html/checking_com.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>승인완료 상태</td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/complete.html" target="_blank">승인완료 상태</a></td>
+					<td><a href="html/complete.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>승인불가 상태</td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/checking_no.html" target="_blank">승인불가 상태</a></td>
+					<td><a href="html/checking_no.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>신청중 상태</td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/checking.html" target="_blank">신청중 상태</a></td>
+					<td><a href="html/checking.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr class="hr">
+					<td>스타 플랫폼 가입신청</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/join.html" target="_blank">스타 플랫폼 가입신청</a></td>
+					<td><a href="html/join.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>우편번호, 휴대폰 본인 인증, 계좌인증 새창 팝업 추가</td>
+				</tr>
+				<tr>
+					<td>스타 플랫폼 가입신청 레이어</td>
+					<td></td>
+					<td align="center">L</td>
+					<td align="center"></td>
+					<td><a href="html/join_layer.html" target="_blank">스타 플랫폼 가입신청 레이어</a></td>
+					<td><a href="html/join_layer.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>공통레이어, 버튼1개</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center">L</td>
+					<td align="center"></td>
+					<td><a href="html/join_layer_type2.html" target="_blank">스타 플랫폼 가입신청 레이어</a></td>
+					<td><a href="html/join_layer_type2.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>공통레이어, 버튼2개</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>우편번호 검색</td>
+					<td align="center">L</td>
+					<td align="center"></td>
+					<td><a href="html/office_number.html" target="_blank">우편번호 검색</a></td>
+					<td><a href="html/office_number.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>소스內 주석 확인</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>휴대폰 본인인증</td>
+					<td align="center">L</td>
+					<td align="center"></td>
+					<td><a href="html/certify_phone.html" target="_blank">휴대폰 본인인증</a></td>
+					<td><a href="html/certify_phone.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>소스內 주석 확인</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>계좌인증</td>
+					<td align="center">L</td>
+					<td align="center"></td>
+					<td><a href="html/certify_account.html" target="_blank">계좌인증</a></td>
+					<td><a href="html/certify_account.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>소스內 주석 확인</td>
+				</tr>
+				<tr class="hr">
+					<td>고객확인제도</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/client_check.html" target="_blank">고객확인제도</a></td>
+					<td><a href="html/client_check.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr class="hr">
+					<td>신청완료</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/join_complete.html" target="_blank">신청완료</a></td>
+					<td><a href="html/join_complete.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr class="hr">
+					<td>가맹점목록</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/maintain_list.html" target="_blank">가맹점목록</a></td>
+					<td><a href="html/maintain_list.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>가맹점등록</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/reg_company.html" target="_blank">가맹점등록</a></td>
+					<td><a href="html/reg_company.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>가맹점상세</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/detail_company.html" target="_blank">가맹점상세</a></td>
+					<td><a href="html/detail_company.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>가맹점 변경이력</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/search_company.html" target="_blank">가맹점 변경이력</a></td>
+					<td><a href="html/search_company.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>업종 검색</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/change_company.html" target="_blank">업종 검색</a></td>
+					<td><a href="html/change_company.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>공통레이어</td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/layer_type1.html" target="_blank">버튼1개</a></td>
+					<td><a href="html/layer_type1.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/layer_type2.html" target="_blank">버튼2개</a></td>
+					<td><a href="html/layer_type2.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="" target="_blank"></a></td>
+					<td><a href="" class="btnIframe"></a></td>
+					<td align="center"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_110.html" target="_blank">KGO_BO_110</a></td>
+					<td><a href="html/KGO_BO_110.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>변경 및 추가 적용 (2020.04.22)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_111.html" target="_blank">KGO_BO_111</a></td>
+					<td><a href="html/KGO_BO_111.html" class="btnIframe">미리보기</a></td>
+					<td align="center"></td>
+					<td>개발팀에서 처리 (2020.04.22)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_210.html" target="_blank">KGO_BO_210</a></td>
+					<td><a href="html/KGO_BO_210.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.22)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_211.html" target="_blank">KGO_BO_211</a></td>
+					<td><a href="html/KGO_BO_211.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.28)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_212.html" target="_blank">KGO_BO_212</a></td>
+					<td><a href="html/KGO_BO_212.html" class="btnIframe">미리보기</a></td>
+					<td align="center"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_213.html" target="_blank">KGO_BO_213</a></td>
+					<td><a href="html/KGO_BO_213.html" class="btnIframe">미리보기</a></td>
+					<td align="center"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_214.html" target="_blank">KGO_BO_214</a></td>
+					<td><a href="html/KGO_BO_214.html" class="btnIframe">미리보기</a></td>
+					<td align="center"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_220.html" target="_blank">KGO_BO_220</a></td>
+					<td><a href="html/KGO_BO_220.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.23)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_221.html" target="_blank">KGO_BO_221</a></td>
+					<td><a href="html/KGO_BO_221.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.23)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_230.html" target="_blank">KGO_BO_230</a></td>
+					<td><a href="html/KGO_BO_230.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.23)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_231.html" target="_blank">KGO_BO_231</a></td>
+					<td><a href="html/KGO_BO_231.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.24)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_232_1.html" target="_blank">KGO_BO_232_1</a></td>
+					<td><a href="html/KGO_BO_232_1.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.23)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_232_2.html" target="_blank">KGO_BO_232_2</a></td>
+					<td><a href="html/KGO_BO_232_2.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.23)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_234.html" target="_blank">KGO_BO_234</a></td>
+					<td><a href="html/KGO_BO_234.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.24)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_240.html" target="_blank">KGO_BO_240</a></td>
+					<td><a href="html/KGO_BO_240.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.27)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_241.html" target="_blank">KGO_BO_241</a></td>
+					<td><a href="html/KGO_BO_241.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.27)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_250.html" target="_blank">KGO_BO_250</a></td>
+					<td><a href="html/KGO_BO_250.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.27)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_260.html" target="_blank">KGO_BO_260</a></td>
+					<td><a href="html/KGO_BO_260.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.27)</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td align="center"></td>
+					<td align="center"></td>
+					<td><a href="html/KGO_BO_310.html" target="_blank">KGO_BO_310</a></td>
+					<td><a href="html/KGO_BO_310.html" class="btnIframe">미리보기</a></td>
+					<td align="center">완료</td>
+					<td>(2020.04.27)</td>
+				</tr>
+			</tbody>
+		</table>
+		<iframe src="" frameborder="0" id="frame"></iframe>
+	</div>
+	
+</body>
+
+</html>

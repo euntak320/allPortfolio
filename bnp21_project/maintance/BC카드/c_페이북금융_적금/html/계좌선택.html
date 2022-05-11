@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>BC 페이북</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/slick.js"></script>	
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<!-- #wrap -->
+	<div id="wrap" class="savings">
+
+		<!-- 헤더 -->
+		<header>
+			<a href="#" class="back-btn">뒤로가기</a>
+			<h1>계좌 비밀번호</h1>
+			<a href="#" class="close-btn">닫기</a>
+		</header>
+		<!-- //헤더 -->	
+		
+        
+        <!-- 컨텐츠 -->		
+		<section class="container">
+			<p class="result-txt">계좌 비밀번호 인증 후 이용할 수 있습니다.<br>보유하신 수협은행 계좌를 선택하여 비밀번호를 입력해주세요.</p>
+            <div class="auto-transfer-content">
+                <span class="title">계좌번호</span>
+                <div class="send-info-area">
+                    <div class="account-cnt">
+                        <a href="#" class="pop-btn on">026-**-30500[수협은행 it 딴주머니 통장]</a><!-- pop-btn 정보 있을시 글자 활성화 클래스 on// -->
+                    </div>                    
+                </div>                
+            </div>
+            <div class="auto-transfer-content">
+                <span class="title">계좌 비밀번호</span>
+                <div class="send-info-area">
+                    <div class="account-cnt">
+                        <input type="password" placeholder="비밀번호 입력">
+                    </div>                    
+                </div>
+            </div>
+        </section>
+		<!-- //컨텐츠 -->
+
+
+		<!-- 하단 버튼 -->
+		<div class="com-btn-content">
+			<a href="#" class="full disabled">다음</a>
+		</div>
+		<!-- //하단 버튼 -->
+
+	</div>
+	<!-- //#wrap -->
+    
+    <!-- layer pop -->
+	<div id="layer-test-1" class="layer-select-pop on"><!-- 활성화 클래스 on// -->
+		<div class="layer-container">					
+			<div class="middle-area">
+				<div class="top-cnt">
+					<span class="title">계좌 선택</span>
+					<a href="#" class="close-btn" onclick="$(this).parents('.layer-select-pop').toggleClass('on');return false;">팝업 닫기</a>
+				</div>
+				<div class="select-list">
+					<ul>
+						<li><a href="#" class="on">1010-****-0231[보통예금]</a></li>
+						<li><a href="#">1010-****-0231[보통예금]</a></li>						
+					</ul>
+				</div>
+			</div>			
+		</div>
+	</div>
+	<!-- //layer pop -->
+	
+</body>
+</html>

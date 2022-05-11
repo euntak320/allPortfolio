@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>관리자 | 스타 플랫폼 가입신청</title>
+	<!-- 공통 웹자원 : 맨 위에 위치 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+	<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+	<!-- 해당페이지에서만 사용 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/jquery.datetimepicker.css">
+	<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+	<!-- 공통 웹자원 : 맨 마지막 위치 -->
+	<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+	<script type="text/javascript" src="../common/js/extension.js"></script>
+	<script>
+		$(function () {
+			// 파일 업로드시 나오는 경로 텍스트
+			$("#file").on('change', function () {
+				var fileName = $("#file").val();
+				$(".upload-name").val(fileName);
+			});
+			// x버튼 클릭시 삭제
+			$(".addFileList .fileTxt a").click(function () {
+				$(this).closest("div").hide();
+			});
+			// 전화번호 입력시 "-" 자동 입력
+			$('.phoneHypen').keydown(function (event) {
+				var key = event.charCode || event.keyCode || 0;
+				$text = $(this);
+				if (key !== 8 && key !== 9) {
+					if ($text.val().length === 3) {
+						$text.val($text.val() + '-');
+					}
+					if ($text.val().length === 8) {
+						$text.val($text.val() + '-');
+					}
+				}
+				return (key == 8 || key == 9 || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105));
+			});
+		});
+	</script>
+</head>
+<body>
+	<!-- wrap -->
+	<div id="wrap" class="sub">
+		<!-- header -->
+		<header id="header">
+			<div class="inner">
+				<div class="gnbWrap">
+					<div class="fl">
+						<h1 class="logo"><a href="#">스타플랫폼<span>비대면 가맹신청</span></a></h1>
+					</div>
+
+				</div>
+			</div>
+		</header>
+		<!-- //header -->
+
+		<!-- left menu -->
+		<div class="leftMenu">
+			<div class="inner">
+				<ul class="ul">
+					<li class="li">
+						<ul>
+							<!-- 개발 : 페이지 진입시 해당 메뉴가 활성화되어야할때 li에 클래스 on 추가 -->
+							<li><a href="#" class="mm">결제내역 조회</a></li>
+							<li><a href="#" class="mm">정산 조회</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li class="on"><a href="#" class="mm">고객관리</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">회원정보 조회</a></li>
+									<li><a href="#">기업관리</a></li>
+									<li><a href="#">가맹점관리</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">서비스관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">운영 관리</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //left menu -->
+
+
+		<!-- container -->
+		<div id="container">
+			<!-- content -->
+			<div id="maintain" class="content conditionsArea">
+				<h2 class="hTit">가맹점 관리</h2>
+				<div class="joinContent">
+					<div class="tblTopWrap">
+						<span class="fl">
+							<p>1. 사업장 정보</p>
+						</span>
+					</div>
+					<!-- table -->
+					<div class="tbw">
+						<table>
+							<caption>사업장 정보</caption>
+							<colgroup>
+								<col style="width:240px">
+								<col style="width:568px">
+								<col style="width:240px">
+								<col style="width:568px">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>* 소속기업</th>
+									<td>
+										<!-- disalbe 처리 class none 처리 -->
+										<select name="" id="" disabled>
+											<option value="">소속기업 선택</option>
+
+										</select>
+									</td>
+									<th>소속기업 사업자번호</th>
+									<td>
+										<input type="text" name="" id="" disabled>
+									</td>
+								</tr>
+								<tr>
+									<th>* 상호명</th>
+									<td>
+										<div class="fl w30 mr5">
+											<!-- disalbe 처리 class none 처리 -->
+											<select name="" id="" >
+												<option value="">개인</option>
+											</select>
+										</div>
+										<div class="fl w30">
+											<input type="text">
+										</div>
+										<div class="fr">
+											<label class="label fr pt5">
+												<input type="checkbox" class="chk">
+												<span class="ico"></span>
+												<span class="lTxt">본사와 동일</span>
+											</label>
+										</div>
+									</td>
+									<th>* 가맹점명(간판명)한글</th>
+									<td>
+										<input type="text" name="" id="">
+									</td>
+								</tr>
+								<tr>
+									<th>* 사업자등록번호</th>
+									<td>
+										<input type="text" name="" id="" placeholder="-없이 숫자만 입력">
+									</td>
+									<th style="padding-right:13.5%; text-align: right;"> 영문</th>
+									<td>
+										<input type="text" name="" id="">
+									</td>
+								</tr>
+								<tr>
+									<th>법인등록번호</th>
+									<td>
+										<input type="text" name="" id="" placeholder="-없이 숫자만 입력">
+									</td>
+									<th>* 영업개시일</th>
+									<td>
+										<div class="datepickerBox w100">
+											<input type="text" name="" id="" class="datepicker input">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>주소</th>
+									<td colspan="3">
+										<div class="inline w10 pd0">
+											<select name="" id="">
+												<option value="">국가선택</option>
+												<option value="">대한민국</option>
+												<option value="">미국</option>
+											</select>
+										</div>
+										<div class="inline w10">
+											<input type="text">
+										</div>
+										<div class="inline w8">
+											<!-- 20-03-25 수정 -->
+											<a href="#none" class="btn md de"
+												onclick="window.open('office_number.html','우편번호','width=500,height=580,location=no,status=no,scrollbars=yes');">우편번호
+												검색</a>
+											<!-- 20-03-25 수정 -->
+										</div>
+										<div class="inline fr w68">
+											<input type="text">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>* 전화번호</th>
+									<td>
+										<input type="text" class="phoneHypen" maxlength="13" placeholder="- 포함하여 입력">
+									</td>
+									<th>* SMS안내 수신번호</th>
+									<td>
+										<input type="text" name="" id="" placeholder="- 포함하여 입력">
+									</td>
+								</tr>
+								<tr>
+									<th>FAX</th>
+									<td>
+										<input type="text" name="" id="" placeholder="- 포함하여 입력">
+									</td>
+									<th></th>
+									<td></td>
+								</tr>
+								<tr>
+									<th>* E-mail</th>
+									<td class="email">
+										<div class="inline w20 pd0">
+											<input type="text">
+										</div>
+										<div class="inline w4">
+											<span class="dash">@</span>
+										</div>
+										<div class="inline w30">
+											<select name="" id="">
+												<option value="">선택</option>
+												<option value="">naver.com</option>
+												<option value="">gmail.com</option>
+												<option value="">hanmail.net</option>
+												<option value="">kakao.com</option>
+											</select>
+										</div>
+										<div class="inline w43">
+											<input type="text">
+										</div>
+									</td>
+									<th>* 주요 취급항목</th>
+									<td>
+										<input type="text" name="" id="">
+									</td>
+								</tr>
+								<tr>
+									<th>* 업태</th>
+									<td>
+										<input type="text" name="" id="">
+									</td>
+									<th>* 종목</th>
+									<td>
+										<input type="text" name="" id="">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="tblTopWrap mt30">
+						<span class="fl">
+							<p>2. 대표자 정보</p>
+						</span>
+						<span class="button fl">
+							<button type="button">CDD 등록 대상 판별</button>
+							<span>미확인</span>
+						</span>
+					</div>
+
+					<div class="tbw">
+						<table>
+							<caption>사업장 정보</caption>
+							<colgroup>
+								<col style="width:240px">
+								<col style="width:568px">
+								<col style="width:240px">
+								<col style="width:568px">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>* 대표자명</th>
+									<td>
+										<!-- disalbe 처리 class none 처리 -->
+										<input type="text">
+									</td>
+									<th>* 대표자 실명번호</th>
+									<td>
+										<div class="birthNumber">
+											<div>
+												<input type="text" class="phoneHypen" placeholder="생년월일 6자리">
+											</div>
+											<div>
+												<input type="text" placeholder="숫자 7자리">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>* 연락처1</th>
+									<td>
+										<input type="text" class="phoneHypen" placeholder="- 포함하여 입력" maxlength="13">
+									</td>
+									<th>연락처2</th>
+									<td>
+										<input type="text" class="phoneHypen"   placeholder="- 포함하여 입력" maxlength="13">
+									</td>
+								</tr>
+								<tr>
+									<th>자택주소</th>
+									<td colspan="3">
+										<div class="inline w10 pd0">
+											<select name="" id="">
+												<option value="">국가선택</option>
+												<option value="">대한민국</option>
+												<option value="">미국</option>
+											</select>
+										</div>
+										<div class="inline w10">
+											<input type="text">
+										</div>
+										<div class="inline w8">
+											<!-- 20-03-25 수정 -->
+											<a href="#none" class="btn md de"
+												onclick="window.open('office_number.html','우편번호','width=500,height=580,location=no,status=no,scrollbars=yes');">우편번호
+												검색</a>
+											<!-- 20-03-25 수정 -->
+										</div>
+										<div class="inline fr w68">
+											<input type="text">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>* 국적</th>
+									<td>
+										<select name="" id="">
+											<option value="">국가선택</option>
+										</select>
+									</td>
+									<th>E-mail</th>
+									<td class="email">
+										<div class="inline w20 pd0">
+											<input type="text">
+										</div>
+										<div class="inline w4">
+											<span class="dash">@</span>
+										</div>
+										<div class="inline w30">
+											<select name="" id="">
+												<option value="">선택</option>
+												<option value="">naver.com</option>
+												<option value="">gmail.com</option>
+												<option value="">hanmail.net</option>
+												<option value="">kakao.com</option>
+											</select>
+										</div>
+										<div class="inline w43">
+											<input type="text">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="tblTopWrap mt30">
+						<span class="fl">
+							<p>3. 담당자 정보</p>
+						</span>
+					</div>
+					<div class="tbw">
+						<table>
+							<caption>담당자 정보</caption>
+							<colgroup>
+								<col style="width:240px">
+								<col style="width:568px">
+								<col style="width:240px">
+								<col style="width:568px">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>* 실무담당자명</th>
+									<td>
+										<div class="fl w50">
+											<!-- disalbe 처리 class none 처리 -->
+											<input type="text" >
+										</div>
+										<div class="fr">
+											<label class="label fr pt5">
+												<input type="checkbox" class="chk">
+												<span class="ico"></span>
+												<span class="lTxt">대표자와 동일</span>
+											</label>
+										</div>
+									</td>
+									<th>실무담당자 부서/직위</th>
+									<td>
+										<div class="birthNumber">
+											<div>
+												<span>부서</span>
+												<input type="text" name="" id="" class="w85">
+											</div>
+											<div>
+												<input type="text" name="" id="">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>* 실무담당자 연락처1</th>
+									<td>
+										<input type="text" class="phoneHypen"   placeholder="- 포함하여 입력" maxlength="13">
+									</td>
+									<th>실무담당자 연락처2</th>
+									<td>
+										<input type="text" class="phoneHypen"   placeholder="- 포함하여 입력" maxlength="13">
+									</td>
+								</tr>
+
+								<tr>
+									<th>* 실무담당자 Email</th>
+									<td colspan="2" class="email">
+										<div class="inline w20 pd0">
+											<input type="text">
+										</div>
+										<div class="inline w4">
+											<span class="dash">@</span>
+										</div>
+										<div class="inline w30">
+											<select name="" id="">
+												<option value="">선택</option>
+												<option value="">naver.com</option>
+												<option value="">gmail.com</option>
+												<option value="">hanmail.net</option>
+												<option value="" mem>kakao.com</option>
+											</select>
+										</div>
+										<div class="inline w43">
+											<input type="text">
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>정산담당자명</th>
+									<td>
+										<input type="text">
+									</td>
+									<th>정산담당자 부서/직위</th>
+									<td style="border-top:1px solid #ddd;">
+										<div class="birthNumber">
+											<div>
+												<span>부서</span>
+												<input type="text" name="" id="" class="w85">
+											</div>
+											<div>
+												<input type="text" name="" id="">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>정산담당자 연락처</th>
+									<td>
+										<input type="text" class="phoneHypen"   placeholder="- 포함하여 입력" maxlength="13">
+									</td>
+									<th>정산담당자 E-mail</th>
+									<td class="email">
+										<div class="inline w20 pd0">
+											<input type="text">
+										</div>
+										<div class="inline w4">
+											<span class="dash">@</span>
+										</div>
+										<div class="inline w30">
+											<select name="" id="">
+												<option value="">전체</option>
+												<option value="">naver.com</option>
+												<option value="">gmail.com</option>
+												<option value="">hanmail.net</option>
+												<option value="">kakao.com</option>
+											</select>
+										</div>
+										<div class="inline w43">
+											<input type="text">
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="tblTopWrap mt30">
+						<span class="fl">
+							<p>4.정산계좌 정보</p>
+						</span>
+						<span class="button fl">
+							<button type="button">계좌인증</button>
+							<span>계좌인증완료 / 2020.03.05 14:00:00</span>
+						</span>
+					</div>
+					<div class="tbw">
+						<table>
+							<caption>사업장 정보</caption>
+							<colgroup>
+								<col style="width:240px">
+								<col style="width:568px">
+								<col style="width:240px">
+								<col style="width:568px">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>은행</th>
+									<td>국민은행</td>
+									<th>예금주명</th>
+									<td>
+										<input type="text">
+									</td>
+								</tr>
+								<tr>
+									<th>계좌번호</th>
+									<td colspan="3">
+										<input type="text" placeholder="-없이 숫자만 입력">
+									</td>
+								</tr>
+								
+							</tbody>
+						</table>
+					</div>
+
+					<div class="tblTopWrap mt30">
+						<span class="fl">
+							<p>5. 서비스 이용조건</p>
+						</span>
+					</div>
+					<div class="tbw center">
+						<table>
+							<caption>서비스 이용조건</caption>
+							<colgroup>
+								<col style="width:240px">
+								<col style="width:auto">
+								<col style="width:auto">
+								<col style="width:auto">
+								<col style="width:auto">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>구분</th>
+									<th>정산방법</th>
+									<th>결재수수료</th>
+									<th>정산주기</th>
+									<th>거래한도(1일/1회, 단위:원)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>국민은행</th>
+									<td>
+										<select name="" id="">
+											<option value="">정산방법선택</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="w90"> 
+										<!-- 클래스 선택 -->
+										<span class="percent">%</span>
+										<!-- <span class="won">원</span> -->
+									</td>
+									<td>
+										<select name="" id="">
+											<option value="">정산주기선택</option>
+										</select>
+									</td>
+									<td>
+										<input type="text">
+									</td>
+								</tr>
+								<tr>
+									<th>국민은행 외 계좌</th>
+									<td>
+										<select name="" id="">
+											<option value="">정액</option>
+											<option value="">정산방법선택</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="w90">
+										<!-- 클래스 선택 -->
+										<!-- <span class="percent">%</span> -->
+										<span class="won">원</span>
+									</td>
+									<td>
+										<select name="" id="">
+											<option value="">정산주기선택</option>
+										</select>
+									</td>
+									<td>
+										<input type="text">
+									</td>
+								</tr>
+								<tr>
+									<th>국민카드</th>
+									<td>
+										<select name="" id="">
+											<option value="">정산방법선택</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="w90">
+										<!-- 클래스 선택 -->
+										<span class="percent">%</span>
+										<!-- <span class="won">원</span> -->
+									</td>
+									<td>
+										<select name="" id="">
+											<option value="">정산주기선택</option>
+										</select>
+									</td>
+									<td>
+										<input type="text">
+									</td>
+								</tr>
+								<tr>
+									<th>국민카드 외 계좌</th>
+									<td>
+										<select name="" id="">
+											<option value="">정산방법선택</option>
+										</select>
+									</td>
+									<td>
+										<input type="text" class="w90">
+										<!-- 클래스 선택 -->
+										<span class="percent">%</span>
+										<!-- <span class="won">원</span> -->
+									</td>
+									<td>
+										<select name="" id="">
+											<option value="">정산주기선택</option>
+										</select>
+									</td>
+									<td>
+										<input type="text">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="tblTopWrap mt30">
+						<span class="fl">
+							<p>6. 관련 서류 이미지 업로드</p>
+						</span>
+					</div>
+					<div class="tbw upload">
+						<table>
+							<caption>관련 서류 이미지 업로드 테이블</caption>
+							<colgroup>
+								<col style="width:240px">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th>계약서 &middot; 신청서</th>
+									<td>
+										<input type="file" id="file">
+										<div class="addFileList">
+											<div class="fileTxt">
+												<span>BBQ 여의도점 사업자등록증.jpg</span>
+												<a href="#none">X</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th>사업자등록증</th>
+									<td>
+										<input type="file" id="file">
+									</td>
+								</tr>
+								<tr>
+									<th>통장사본</th>
+									<td>
+										<input type="file" id="file">
+
+									</td>
+								</tr>
+								<tr>
+									<th>영업신고&middot;등록&middot;허가증</th>
+									<td>
+										<input type="file" id="file">
+
+									</td>
+								</tr>
+								<tr>
+									<th>대표자&middot;대리인 신분증 사본</th>
+									<td>
+										<input type="file" id="file">
+
+									</td>
+								</tr>
+								<tr>
+									<th>기타이미지</th>
+									<td>
+										<input type="file" id="file">
+										<div class="addFileList">
+											<a class="btn xs gr">+ 이미지추가</a>
+											<div class="fileTxt">
+												<span>홍대반가점_01.jpg</span>
+												<a href="#none">X</a>
+											</div>
+											<div class="fileTxt">
+												<span>홍대반가점_01.jpg</span>
+												<a href="#none">X</a>
+											</div>
+											<div class="fileTxt">
+												<span>홍대반가점_01.jpg</span>
+												<a href="#none">X</a>
+											</div>
+											<div class="fileTxt">
+												<span>홍대반가점_01.jpg</span>
+												<a href="#none">X</a>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- //table -->
+				</div>
+				<div class="fl">
+					<span>* 기타 이미지 필수 첨부 서류</span>
+					<ul>
+						<li>- 개인사업자 : 고객거래확인서(개인&middot;개인사업자)</li>
+						<li>- 법인사업자 : 법인인감증명서, 법인등기부증본, 사용인감계(사용인감 날인 시), 주주명부</li>
+						<li>- 대리인접수 : 위임장, 대표자 개인인감증명서(개인사업자), 고객거래확인서(법인&middot;고유번호나 납세번호가 있는 임의단체)
+						</li>
+					</ul>
+				</div>
+				<div class="fr mt10">
+					<a href="#" class="btn md de">목록</a>
+					<a href="#" class="btn md ye">등록</a>
+				</div>
+			</div>
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+	</div>
+	<!-- //wrap -->
+
+</body>
+
+</html>

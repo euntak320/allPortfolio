@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>기상도표 - 경기도 대기환경</title>
+    <script src="../assets/js/jquery-1.11.0.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+    <!-- 헤더부분 -->
+    <header>
+        <div class="top_area">
+            <h1>
+                <a href="#none">경기도대기환경 진단평가 시스템</a>
+            </h1>
+            <div class="login_area">
+                <a href="#none" class="admin">관리자</a>
+                <a href="#none" class="my_info">내 정보</a>
+                <a href="#none" class="login">로그아웃</a>
+                <!-- <a href="#none" class="login">로그인</a> -->
+            </div>
+        </div>
+        <div class="bottom_area">
+            <div class="menu_area">
+                <span class="menu_txt ">일일진단평가</span>
+                <span class="menu_txt">대기정보</span>
+                <span class="menu_txt on">기상현황</span>
+                <span class="menu_txt ">모델링결과</span>
+                <span class="menu_txt ">사이트맵</span>
+                <a href="#" class="menu_btn">햄버거 메뉴</a>
+            </div>
+        </div>
+    </header>
+    <!-- 헤더부분 -->
+    <section>
+        <div class="content_frame">
+            <div class="left_menu">
+                <span class="menu_title">기상현황</span>
+                <div class="left_area">
+                    <a href="#none">기상</a>
+                    <a href="#none" class="on">기상도표</a>
+                    <a href="#none">위성자료</a>
+                    <a href="#none">분석영상</a>
+                </div>
+            </div>
+            <div class="content_area">
+                <div class="title_area">
+                    <span class="title">기상도표</span>
+                    <div class="nav_area">
+                        <span class="home">처음</span>
+                        <span class="left">기상현황</span>
+                        <span class="left">기상도표</span>
+                    </div>
+                </div>
+                <div class="input_data">
+                    <fieldset>
+                        <legend>검색</legend>
+                        <div class="input_cell">
+                            <span class="hidden"><label for="src2">날짜</label></span>
+                            <div class="com_input mg0">
+                                <input type="text" class="cal" id="src2">
+                            </div>
+                            <div class="select">
+                                <select title="시간 선택">
+                                    <option>1시</option>
+                                    <option>2시</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn">조회</button>
+                        </div>
+                        <div class="input_cell">
+                            <div class="btn_day">
+                                <button type="button" class="prev">1H</button>
+                                <button type="button" class="today">현재</button>
+                                <button type="button" class="next">1H</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="table_area center">
+                    <p class="tit_h3">수도권 지역별 기상상태 표시</p>
+                    <p class="right_txt">관측일시 : 2019-06-29 ｜14:00</p>
+                    <table>
+                        <caption>수도권 지역별 기상상태 표시</caption>
+                        <colgroup>
+                            <col style="width: 10%;">
+                            <col style="width: 13%;">
+                            <col style="width: 11%;">
+                            <col style="width: 11%;">
+                            <col style="width: 11%;">
+                            <col style="width: 11%;">
+                            <col style="width: 11%;">
+                            <col style="width: 11%;">
+                            <col style="width: 11%;">
+                            <col style="width: 11%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">권역</th>
+                                <th scope="col">현재날씨</th>
+                                <th scope="col">기온(℃)</th>
+                                <th scope="col">강수량(mm)</th>
+                                <th scope="col">풍향</th>
+                                <th scope="col">풍속(m/s)</th>
+                                <th scope="col">습도(％)</th>
+                                <th scope="col">기압(hPa)</th>
+                                <th scope="col">시정(㎞)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" class="bgGray">수원</th>
+                                <td>맑음</td>
+                                <td>24</td>
+                                <td>15</td>
+                                <td>남동</td>
+                                <td>4.3</td>
+                                <td>50</td>
+                                <td>1011.8</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">백령도</th>
+                                <td>맑음</td>
+                                <td>24</td>
+                                <td>15</td>
+                                <td>남동</td>
+                                <td>4.3</td>
+                                <td>50</td>
+                                <td>1011.8</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">파주</th>
+                                <td>맑음</td>
+                                <td>24</td>
+                                <td>15</td>
+                                <td>남동</td>
+                                <td>4.3</td>
+                                <td>50</td>
+                                <td>1011.8</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">동두천</th>
+                                <td>맑음</td>
+                                <td>24</td>
+                                <td>15</td>
+                                <td>남동</td>
+                                <td>4.3</td>
+                                <td>50</td>
+                                <td>1011.8</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">양평</th>
+                                <td>맑음</td>
+                                <td>24</td>
+                                <td>15</td>
+                                <td>남동</td>
+                                <td>4.3</td>
+                                <td>50</td>
+                                <td>1011.8</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">이천</th>
+                                <td>맑음</td>
+                                <td>24</td>
+                                <td>15</td>
+                                <td>남동</td>
+                                <td>4.3</td>
+                                <td>50</td>
+                                <td>1011.8</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">서울</th>
+                                <td>맑음</td>
+                                <td>24</td>
+                                <td>15</td>
+                                <td>남동</td>
+                                <td>4.3</td>
+                                <td>50</td>
+                                <td>1011.8</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="bgGray">인천</th>
+                                <td>맑음</td>
+                                <td>24</td>
+                                <td>15</td>
+                                <td>남동</td>
+                                <td>4.3</td>
+                                <td>50</td>
+                                <td>1011.8</td>
+                                <td>15</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+        <span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+    </footer>
+</body>
+
+</html>

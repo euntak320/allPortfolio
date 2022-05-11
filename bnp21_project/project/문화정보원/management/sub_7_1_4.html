@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/script.js"></script>	
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("../include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	 
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("../include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">운영성과관리의 성과지표를 수정합니다.</p>
+				<div class="com-table-enroll">
+					<table>
+						<caption>입력 표</caption>
+						<tbody>
+							<tr>
+								<th>성과지표 명</th>
+								<td colspan="3">
+									<div class="row-form">
+										<input type="text" value="기능활용도" aria-invalid="false">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>산출방법</th>
+								<td colspan="3">
+									<div class="row-form">
+										<textarea name="" id="" cols="30" rows="10">
+사용자의 메뉴이용 실적 통계
+										</textarea>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>산출 식</th>
+								<td colspan="3">
+									<div class="row-form">
+										<textarea name="" id="" cols="30" rows="10">
+기능활용도 = (구현된 전체 기능 수 - 미 활용기능 수) + 저 활용 기능 수) x 30%)) / 구현된 전체 기능 수 ) x 100
+										</textarea>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>사용여부</th>
+								<td colspan="3">
+									<div class="row-form">
+										<select aria-invalid="false">
+											<option value="#">사용</option>
+										</select>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>산출범위</th>
+								<td colspan="3">
+									<div class="com-check">
+										<input type="checkbox" id="inp_check01">
+										<label for="inp_check01">시스템관리자</label>
+									</div>
+									<div class="com-check">
+										<input type="checkbox" id="inp_check02">
+										<label for="inp_check02">업무담당자</label>
+									</div>
+									<div class="com-check">
+										<input type="checkbox" id="inp_check03">
+										<label for="inp_check03">기관관리자</label>
+									</div>
+									<div class="com-check">
+										<input type="checkbox" id="inp_check04">
+										<label for="inp_check04">기관담당자</label>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="com-btn">
+					<a href="#none">삭제</a>
+					<a href="#none" class="send">저장</a>
+				</div>
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("../include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

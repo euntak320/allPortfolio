@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>S2lab</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+</head>
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="headerWrap" >
+                <h1>
+                    <a href="index.html">홈으로</a>
+                </h1>
+                <div class="menuList">
+                    <ul>
+                        <li><a href="index.html">Main</a></li>
+                        <li>
+                            <a href="javascript:void(0);" class="m_btn">Product</a>
+                            <ul class="subList">
+                                <li><a href="02_Products_01Hiware.html">HIWARE</a></li>
+                                <li><a href="02_Products_01Hiware_01.html" class="on">- PSM for System</a></li>
+                                <li><a href="02_Products_01Hiware_02.html">- IM for System</a></li>
+                                <li><a href="02_Products_01Hiware_03.html">- PSM for DBMS</a></li>
+                                <li><a href="02_Products_01Hiware_04.html">- IM for DBMS</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="lab.html">S2Lab</a></li>
+                        <a href="#none" class="mMenuClose">닫기버튼</a>
+                    </ul>
+                </div>
+                <a href="#none" class="mMenuBtn">모바일 버튼</a>
+            </div>
+        </div>
+        <div class="visualArea">
+            <div class="six">
+                <div class="txtArea">
+                    <dl>
+                        <dd class="mediumTxt">Ptrivileged Session Management for Database</dd>
+                        <dd class="smallTxt">There should be the least authority concerning the company’s core information</dd>
+                        <dd class="smallTxt">In an era of explosive data growth, companies are exposed to a threat of diverse forms of data leak accidents such as leak of personal information and confidential documents. With the concentration of DBA authority, in addition, the leak of administrator account can cause a huge damage. HIWARE Privileged Session Management for Database grants access to personal information database and authority differentially by each user and prevents such information leak through SQL audit and log records.</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="txtList">
+                <span class="title">Main Features</span>
+                <div class="txtBoxList">
+                    <div class="txtBox">
+                        <div class="leftArea">
+                            <img src="assets/images/icon-shield.png" alt="">
+                            <span class="txt">Enhanced User<br>Authentication</span>
+                        </div>
+                        <div class="rightArea">
+                            <ul>
+                                <li>·  Blocks unauthenticated IP/MAC address</li>
+                                <li>·  Support OTP authentication at solution login or individual system access</li>
+                                <li>·  Diverse authentication-linked APIs</li>
+                                <li>·  Diverse authentication combinations(RSA OTP, Accredited Certificate, LDAP, etc.) support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="txtBox">
+                        <div class="leftArea">
+                            <img src="assets/images/icon-phone.png" alt="">
+                            <span class="txt">Access Authority<br>Management</span>
+                        </div>
+                        <div class="rightArea">
+                            <ul>
+                                <li>·  Manages each user according to the policy</li>
+                                <li>·  Centralized access authority allocation and management (access IP, access MAC, access time)</li>
+                                <li>·  Important data masking</li>
+                                <li>·  Unifies all remote accesses</li>
+                                <li>·  Alarms the access and automatically blocks it when attempted by an unauthorized user</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="txtBox">
+                        <div class="leftArea">
+                            <img src="assets/images/icon-work.png" alt="">
+                            <span class="txt">DBMS Query <br>Management</span>
+                        </div>
+                        <div class="rightArea">
+                            <ul>
+                                <li>·  Query authority setting and control under diverse conditions such as group/ device</li>
+                                <li>·  Banned keywords(white-list/ black-list)</li>
+                                <li>·  Warns and blocks the session as soon as a banned query is entered</li>
+                                <li>·  Immediately contacts the manager by text or email and requests approval when an important query is entered</li>
+                                <li>·  Manages all history of the query use</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="txtBox">
+                        <div class="leftArea">
+                            <img src="assets/images/icon-result.png" alt="">
+                            <span class="txt">Realtime Session<br>Management</span>
+                        </div>
+                        <div class="rightArea">
+                            <ul>
+                                <li>·  Realtime monitoring on ongoing sessions</li>
+                                <li>·  Sends a one-on-one message to users</li>
+                                <li>·  Auto blocking a session in the event of an illegal activity</li>
+                                <li>·  Sets work hours or idle time by the hour/ day/ etc</li>
+                                <li>·  Blocks an overtime session</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="txtBox v2">
+                        <div class="leftArea">
+                            <img src="assets/images/icon-cctv.png" alt="">
+                            <span class="txt">Log Recording / Audit</span>
+                        </div>
+                        <div class="rightArea">
+                            <ul>
+                                <li> ·  Saves log records on all work details from login to logout</li>
+                                <li>·  Searches the log records which have been stored by user/ system/ query through a inquiry filter</li>
+                                <li>·  Inquires the logs of SQL, SQL result in text format</li>
+                                <li>·  Speed control and split screen replay at save log replay time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="otherArea small">
+            <div class="benefitArea">
+                <span class="title">Benefits</span>
+                <div class="boxList">
+                    <div class="box">
+                        <div class="imgArea">
+                            <img src="assets/images/b-shield.png" alt="">
+                        </div>
+                        <span>Prevents a securty breach</span>
+                        <p>by granting authority differentially to each user and by managing access time </p>
+                    </div>
+                    <div class="box">
+                        <div class="imgArea">
+                            <img src="assets/images/b-report.png" alt="">
+                        </div>
+                        <span>Minimizes a human error</span>
+                        <p>by managing Query inputs</p>
+                    </div>
+                    <div class="box">
+                        <div class="imgArea">
+                            <img src="assets/images/b-report.png" alt="">
+                        </div>
+                        <span>Enhances audit efficiency</span>
+                        <p>by providing an integrated report on all user accesses and activities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footerWrap">
+                <span class="fLogo">
+                    <img src="assets/images/f-logo.png" alt="로고">
+                </span>
+                <div class="infoTxt">
+                    <span>200, 6-7 Gangnam-daero 39-gil, Seocho-gu, Seoul</span>
+                    <span>Tel. 070-8672-8155, Fax. 070-8250-3647</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

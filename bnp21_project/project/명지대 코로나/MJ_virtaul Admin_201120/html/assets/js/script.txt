@@ -1,0 +1,37 @@
+$(function(){
+  imgFrame();
+
+    $( ".datepicker" ).datepicker({
+        showOn: "button",
+        buttonImage: "assets/images/btn_calendar.png",
+        buttonImageOnly: true,
+        buttonText: "Select date"
+      });
+
+      var fileTarget = $('#file'); 
+      fileTarget.on('change', function(){ // 값이 변경되면
+        var cur=$(".file-del-area input[type='file']").val();
+        $(".upload-name").val(cur);
+      }); 
+});
+
+function layerClose (){
+  $(".layerFrame").hide();
+}
+function layerOpen (){
+  $(".layerFrame").show();
+}
+
+// 이미지 사이즈 조절
+function imgFrame(){
+  var imgArea = $(".imgSize");
+  imgArea.each(function(){
+      var imgSrc = $(this).find("img").attr("src");
+      $(this).css({
+          "background" : "url(" + imgSrc + ") no-repeat",
+          "background-size" : "cover",
+          "background-position" : "center"
+      });
+  });
+  
+};

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<title>결제수단관리 | 설정 | KB스타게이트</title>
+<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon" href="">
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 해당 페이지만 사용 -->
+<script type="text/javascript" src="../common/js/drag-arrange.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub bg noBtn">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="tit"><a href="#" class="btnNavi prev"><span class="ico">이전</span></a><h1>결제수단관리</h1></div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- content -->
+		<div class="content">
+			<div class="setPayManBox">
+				<!-- 상단영역 -->
+				<div class="setPayTop">
+					<div class="in">
+						<!-- 버튼영역 -->
+						<div class="infoWrap clearFix">
+							<div class="fl">
+								<span class="tit">등록된 결제수단</span>
+								<span class="txt"><em class="fwb">10</em> / 10</span>
+							</div>
+							<div class="fr">
+								<div class="btnWrap b1">
+									<a href="#" class="btnTxt sm modi"><span class="ico"></span><span>편집</span></a>
+									<a href="#" class="btnTxt sm add"><span class="ico"></span><span>추가</span></a>
+								</div>
+								<div class="btnWrap b2">
+									<a href="#" class="btnTxt sm canc"><span class="ico"></span><span>취소</span></a>
+									<a href="#" class="btnTxt sm save"><span class="ico"></span><span>저장</span></a>
+								</div>
+							</div>
+						</div>
+						<!-- //버튼영역 -->
+					</div>
+				</div>
+				<!-- //상단영역 -->
+
+				<!-- 주카드 영역 -->
+				<div class="primCard">
+					<div class="name">
+						<!-- 개발 : 다음의 로고 이미지는 같은 폴더내에 있음 : sub_logo_코드명.png -->
+						<img src="../common/img/bankLogo/sub_logo_004.png" class="logo" alt="">
+						<span class="txt">국민은행</span>
+					</div>
+					<p class="num">123456*****124</p>
+					<span class="icoOnly"><em class="ico add"></em></span>
+				</div>
+				<!-- //주카드 영역 -->
+
+				<!-- 보유카드 영역 : 개발 : 드래그 기능 넣어주세요. -->
+				<ul class="ulList1 setCardList">
+					<li class="li">
+						<div class="col col1">
+							<span class="dragBtn"><em class="ico"></em></span>
+						</div>
+						<div class="col col2">
+							<p class="name">
+								<img src="../common/img/bankLogo/sub_logo_007.png" class="logo" alt="">
+								<span class="txt">수협중앙회</span>
+							</p>
+							<p class="num">123456*****124</p>
+						</div>
+						<div class="col col3">
+							<ul class="btnArea">
+								<li class="ba1"><a href="#" class="btn add"><span class="ico"></span></a></li>
+								<li class="ba2"><a href="#" class="btn trans"><span class="ico"></span></a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li">
+						<div class="col col1">
+							<span class="dragBtn"><em class="ico"></em></span>
+						</div>
+						<div class="col col2">
+							<p class="name">
+								<img src="../common/img/bankLogo/sub_logo_011.png" class="logo" alt="">
+								<span class="txt">NH농협은행</span>
+							</p>
+							<p class="num">123456*****124</p>
+						</div>
+						<div class="col col3">
+							<ul class="btnArea">
+								<li class="ba1"><a href="#" class="btn add"><span class="ico"></span></a></li>
+								<li class="ba2"><a href="#" class="btn trans"><span class="ico"></span></a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li">
+						<div class="col col1">
+							<span class="dragBtn"><em class="ico"></em></span>
+						</div>
+						<div class="col col2">
+							<p class="name">
+								<img src="../common/img/bankLogo/sub_logo_020.png" class="logo" alt="">
+								<span class="txt">우리은행</span>
+							</p>
+							<p class="num">123456*****124</p>
+						</div>
+						<div class="col col3">
+							<ul class="btnArea">
+								<li class="ba1"><a href="#" class="btn add"><span class="ico"></span></a></li>
+								<li class="ba2"><a href="#" class="btn trans"><span class="ico"></span></a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li">
+						<div class="col col1">
+							<span class="dragBtn"><em class="ico"></em></span>
+						</div>
+						<div class="col col2">
+							<p class="name">
+								<img src="../common/img/bankLogo/sub_logo_023.png" class="logo" alt="">
+								<span class="txt">SC제일은행</span>
+							</p>
+							<p class="num">123456*****124</p>
+						</div>
+						<div class="col col3">
+							<ul class="btnArea">
+								<li class="ba1"><a href="#" class="btn add"><span class="ico"></span></a></li>
+								<li class="ba2"><a href="#" class="btn trans"><span class="ico"></span></a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li">
+						<div class="col col1">
+							<span class="dragBtn"><em class="ico"></em></span>
+						</div>
+						<div class="col col2">
+							<p class="name">
+								<img src="../common/img/bankLogo/sub_logo_002.png" class="logo" alt="">
+								<span class="txt">KDB산업은행</span>
+							</p>
+							<p class="num">123456*****124</p>
+						</div>
+						<div class="col col3">
+							<ul class="btnArea">
+								<li class="ba1"><a href="#" class="btn add"><span class="ico"></span></a></li>
+								<li class="ba2"><a href="#" class="btn trans"><span class="ico"></span></a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li">
+						<div class="col col1">
+							<span class="dragBtn"><em class="ico"></em></span>
+						</div>
+						<div class="col col2">
+							<p class="name">
+								<img src="../common/img/bankLogo/sub_logo_027.png" class="logo" alt="">
+								<span class="txt">한국씨티은행</span>
+							</p>
+							<p class="num">123456*****124</p>
+						</div>
+						<div class="col col3">
+							<ul class="btnArea">
+								<li class="ba1"><a href="#" class="btn add"><span class="ico"></span></a></li>
+								<li class="ba2"><a href="#" class="btn trans"><span class="ico"></span></a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li">
+						<div class="col col1">
+							<span class="dragBtn"><em class="ico"></em></span>
+						</div>
+						<div class="col col2">
+							<p class="name">
+								<img src="../common/img/bankLogo/sub_logo_031.png" class="logo" alt="">
+								<span class="txt"> 대구은행</span>
+							</p>
+							<p class="num">123456*****124</p>
+						</div>
+						<div class="col col3">
+							<ul class="btnArea">
+								<li class="ba1"><a href="#" class="btn add"><span class="ico"></span></a></li>
+								<li class="ba2"><a href="#" class="btn trans"><span class="ico"></span></a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+				<!-- //보유카드 영역 -->
+			</div>
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

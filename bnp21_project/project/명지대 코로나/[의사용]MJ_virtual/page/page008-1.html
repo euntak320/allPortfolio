@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MJ Virtual care center</title>
+	<script type="text/javascript" async="" src="../js/jquery-3.3.1.min.js"></script>	
+	<script type="text/javascript" async="" src="../js/jquery-ui.js"></script>	
+	<link rel="stylesheet" href="../css/jquery-ui.css">	
+	<link rel="stylesheet" href="../css/jquery.scrollbar.css">	
+	<link rel="stylesheet" href="../css/reset.css">	
+	<link rel="stylesheet" href="../css/layout.css">
+
+
+	<script type="text/javascript" async="" src="../js/jquery.scrollbar.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($){                
+			$('.scroll-box').scrollbar();
+		});
+	</script>
+</head>
+<body>
+  
+<div id="wrap" class="scroll-box scrollbar-dynamic">
+	<div id="header">
+		<div class="head">
+			<h1 class="logo"><a href="page008.html"><img src="../images/common/logo.svg" alt=""></a></h1>
+			<button type="button" class="btn-menu">
+				메뉴/닫기
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<div class="gnb">
+				<ul>
+					<li class="menu-actvie"><a href="page008.html">진료현황</a></li>
+					<li><a href="page025.html">스케줄</a></li>
+					<li><a href="#">계좌정보</a></li>
+					<li><a href="page026.html">마이페이지</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="top-my">
+			<div class="user-name"><a href="#">김철민 의사</a></div>
+			<button type="button" class="btn-logout"><i class="ico-logout"></i>로그아웃</button>
+		</div>
+	</div>
+	<div id="container">
+		<div class="content">
+			<div class="head-title">
+				<h2>진료현황</h2>
+				<div class="location">
+					<a href="#"><img src="../images/common/ico_home.svg" alt="홈"></a>
+					<a href="#" class="location-txt">진료현황</a>
+				</div>
+			</div>
+			<div class="section">
+				<div class="search-form">
+					<dl class="search-sec">
+						<dt>문의상태</dt>
+						<dd>
+							<div class="radio-wrap">
+								<div class="radio-area">
+									<input type="radio" id="inquiry-state1" name="inquiry-state"><label for="inquiry-state1">전체</label>
+								</div>
+								<div class="radio-area">
+									<input type="radio" id="inquiry-state2" name="inquiry-state"><label for="inquiry-state2">진료 전</label>
+								</div>
+								<div class="radio-area">
+									<input type="radio" id="inquiry-state3" name="inquiry-state"><label for="inquiry-state3">완료</label>
+								</div>
+								<div class="radio-area">
+									<input type="radio" id="inquiry-state4" name="inquiry-state"><label for="inquiry-state4">취소</label>
+								</div>
+							</div>
+						</dd>
+					</dl>
+					<dl class="search-sec">
+						<dt>예약일</dt>
+						<dd class="p-flex">
+							<div class="form-date-wrap">
+								<div class="date-area"><input type="text" class="default-ip datepicker"></div>
+								<span>~</span>
+								<div class="date-area"><input type="text" class="default-ip datepicker"></div>
+							</div>
+							<div class="search-keyword">
+								<select name="" id="" class="default-slc">
+									<option value="">내용</option>
+									<option value="">환자명</option>
+									<option value="">의사</option>
+								</select>
+								<input type="text" class="default-ip">
+								<button type="button" class="btn-ip">검색</button>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="diagnosis-wrap">
+					<div class="no-list">
+						<dl>
+							<dt><i class="ico_none"></i></dt>
+							<dd>진료현황이 없습니다.</dd>
+						</dl>
+					</div>
+
+					<div class="pagination"> <!-- 모바일에선 5개까지만 -->
+						<button type="button" class="btn-page btn-first">처음으로</button>
+						<button type="button" class="btn-page btn-prev">이전</button>
+						<div class="page-num-list">
+							<button type="button" class="page-num active-num">1</button>
+						</div>
+						<button type="button" class="btn-page btn-next">다음</button>
+						<button type="button" class="btn-page btn-last">마지막으로</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- 첨부파일 보기 -->
+<div id="file-big" class="popup">
+	<div class="popup-wrap">
+		<div class="popup-box">
+			<div class="pop-head">첨부파일 <button type="button" class="btn-pop-close">닫기</button></div>
+			<div class="pop-content">
+				<!--<img src="../images/big-img.png" alt="">-->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //첨부파일 보기 -->
+
+<!-- 처방전 보기 -->
+<div id="prescription-view" class="popup">
+	<div class="popup-wrap">
+		<div class="popup-box">
+			<div class="pop-head">처방전 <button type="button" class="btn-pop-close">닫기</button></div>
+			<div class="pop-content">
+				<!--<img src="../images/big-img.png" alt="">-->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //처방전 보기 -->
+
+	<script>
+	$(document).ready(function(){
+		$( ".datepicker" ).datepicker({
+			showOn: "button",
+			buttonImage: "../images/common/ico_calendar.svg",
+			buttonImageOnly: true,
+			buttonText: "Select date"
+		});
+
+		$('.btn-detail').on('click',function(){
+			$(this).parents('.diagnosis-item').toggleClass('open-detail');
+		});
+
+		$('.body-item .btn-more').on('click',function(){
+			$(this).parents('.body-item').toggleClass('open-box');
+		});
+		$('.prescription-box .btn-big-view').on('click',function(){
+			$('#prescription-view').fadeIn();
+		});
+
+		$('.file-list .file-img').on('click',function(){
+			$('#file-big').fadeIn();
+		});
+
+		$('.popup .btn-pop-close').on('click',function(){
+			$(this).parents('.popup').fadeOut();
+		});
+
+
+		$('#header .btn-menu').on('click',function(){
+			$('body').toggleClass('open-menu');
+		});
+
+		//cont-tab 탭 컨트롤
+		$('.cont-tab .btn-tab').click(function(){
+			var tab_id = $(this).attr('data-tab');
+			$('.cont-tab .btn-tab').removeClass('active-tab');
+			$('.cont-area').removeClass('active-area');
+			$(this).addClass('active-tab');
+			$("#"+tab_id).addClass('active-area');
+		});
+		
+	});
+	</script>
+</body>
+</html>

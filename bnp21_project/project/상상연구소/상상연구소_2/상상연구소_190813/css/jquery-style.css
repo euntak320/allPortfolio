@@ -1,0 +1,21 @@
+.jconfirm .jconfirm-box div.jconfirm-title-c {
+    background-color: #00548f;
+    color: #fff;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons {
+	float: none;
+	text-align: center;
+}
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons button {
+	padding: 8px 25px;
+	
+}
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons button.btn-default {
+	background-color: #00aeef;
+	color: #fff;
+}
+.jconfirm.jconfirm-light .jconfirm-box .jconfirm-buttons button.btn-default:hover {
+   color: #000;
+}

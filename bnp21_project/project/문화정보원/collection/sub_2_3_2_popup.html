@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+
+	<div id="wrap" class="sub">
+
+		<!-- 헤더 include 영역 (./include/header.html) -->		
+		<div class="header-load"></div>
+		<script type="text/javascript">
+			$(".header-load").load("../include/header.html" , function(){});
+		</script>		
+		<!-- //헤더 include 영역 (./include/header.html) -->
+		
+		<!-- 컨텐츠 -->
+		<section class="containers">	
+			
+			<!-- LNB include 영역 (./include/lnb.html) -->			
+			<div class="lnb-load"></div>
+			<script type="text/javascript">
+				$(".lnb-load").load("../include/lnb.html" , function(){});
+			</script>			
+			<!-- //LNB include 영역 (./include/lnb.html) -->
+
+			<!-- 본문 -->
+			<div class="sub-container">
+				<p class="top-info-txt">수집 실행 프로세스 및 상태 모니터링을 상세 보기합니다.</p>
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">수집&middot;연계 처리 결과 상세 보기</h4>
+						<div class="table-top-btn">
+							<a href="#none" class="list-btn">목록</a>
+						</div>
+					</div>
+				</div>
+				<div class="com-table-search">
+					<table>
+						<caption>내용 표</caption>
+						<tbody>
+							<tr>
+								<th>Seed 프로파일 ID</th>
+								<td>XX00-001-001-SD001</td>
+								<th>Seed 프로파일 명</th>
+								<td>OOOO 공연정보 일별 수신</td>
+							</tr>
+							<tr>
+								<th>작업일자</th>
+								<td>2018-06-25</td>
+								<th>작업상태</th>
+								<td>작업처리 완료</td>
+							</tr>
+							<tr>
+								<th>수집데이터 건수</th>
+								<td>1,000 건</td>
+								<th>정상/오류처리 건수</th>
+								<td>980 건 (정상) / 20 건 (오류)</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 181119 수정 -->
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">수집&middot;연계 항목 처리 결과 <span class="unit">(정상처리) : 980 건</span></h4>
+						<div class="table-top-btn">
+							<a href="#none" class="view-btn" onclick="openLayer($('#result-normal-opener'))">상세보기</a>
+							<a href="#none" class="down-btn">엑셀다운로드</a>
+						</div>
+					</div>
+				</div>
+				<!-- // 181119 수정 -->
+				<!-- 리얼 그리드 영역 -->
+				<div class="realgrid">
+					<table>
+						<caption>목록 표</caption>	
+						<colgroup>
+							<col style="width:6.5%">
+							<col style="width:17.5%">
+							<col style="width:29%">
+							<col style="width:14%">
+							<col style="width:12%">
+							<col style="width:13.5%">
+							<col style="width:7.5%">				
+						</colgroup>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>분류</th>
+								<th>요청내역</th>
+								<th>기관명</th>
+								<th>회원아이디</th>
+								<th>요청일</th>
+								<th>상태</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>20</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>19</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>17</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //리얼 그리드 영역 -->
+				<!-- 181119 수정 -->
+				<div class="table-header">
+					<div class="inner">
+						<h4 class="title">수집&middot;연계 항목 처리 결과 <span class="unit">(오류처리) : 20 건</span></h4>
+						<div class="table-top-btn">
+							<a href="#none" class="view-btn" onclick="openLayer($('#result-error-opener'))">상세보기</a>
+							<a href="#none" class="down-btn">엑셀다운로드</a>
+						</div>
+					</div>
+				</div>
+				<!-- // 181119 수정 -->
+				<!-- 리얼 그리드 영역 -->
+				<div class="realgrid">
+					<table>
+						<caption>목록 표</caption>	
+						<colgroup>
+							<col style="width:6.5%">
+							<col style="width:17.5%">
+							<col style="width:29%">
+							<col style="width:14%">
+							<col style="width:12%">
+							<col style="width:13.5%">
+							<col style="width:7.5%">				
+						</colgroup>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>분류</th>
+								<th>요청내역</th>
+								<th>기관명</th>
+								<th>회원아이디</th>
+								<th>요청일</th>
+								<th>상태</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>20</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>19</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>18</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>17</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>15</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>14</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>13</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>에이전트 재설치</td>
+								<td class="left">데이터연계가 안되고있는것같아 방법..</td>
+								<td>한국문화정보원</td>
+								<td>hermesoh</td>
+								<td>2018-08-22</td>
+								<td>대기</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //리얼 그리드 영역 -->
+				<!-- 수집결과-세부 상세 결과 보기(정상) -->
+				<div class="layer-pop" role="dialog" id="result-normal-opener" aria-labelledby="result-normal-popup" aria-modal="true" aria-hidden="true" tabindex="1"  style="display:block;">
+					<div class="content-large">
+						<div class="top-area">
+							<span class="title">수집결과-세부 상세 결과 보기 - 식별파일 명 [XX00-001-001_20180625_SD001_0001]</span>
+							<a href="#none" class="btn-close close-layer">팝업 닫기</a>
+						</div>
+						<div class="view-area">
+							<div class="com-table-view">
+								<table>
+									<caption>내용 표</caption>
+									<tbody>
+										<tr>
+											<th>수집연계작업 일련번호</th>
+											<td>XX00-001-001-SD001</td>
+											<th>수집연계작업 순번</th>
+											<td>00001</td>
+										</tr>
+										<tr>
+											<th>등록 일시</th>
+											<td>2011-11-20 14:04:36</td>
+											<th>등록자</th>
+											<td>TORNADO</td>
+										</tr>
+										<tr>
+											<th>작업처리상태코드</th>
+											<td>작업완료</td>
+											<th>작업처리량(KB)</th>
+											<td>24</td>
+										</tr>
+										<tr>
+											<th>연계유형</th>
+											<td>웹 크롤링(Web-Crawling)</td>
+											<th>수집연계오류유형</th>
+											<td>채널[정상]/데이터[값 누락(VM)]</td>
+										</tr>
+										<tr>
+											<th>비고</th>
+											<td colspan="3">&quot;position&quot; 항목의 값이 누랍됨.</td>
+										</tr>
+										<tr>
+											<th>원시데이터 내용</th>
+											<td colspan="3">
+												<pre>
+{
+    "_id" : ObjectId("5bea8fb01a51ea49ced24bdf"),
+    "agentid" : 36,
+    "title" : "[천안]태학사",
+    "type" : "종교/사찰/성지",
+    "url" : "http://tour.chungnam.go.kr/_prog/tourist/index.php?mode=V&mng_no=50561&site_dvs_cd=kr&menu_dvs_cd=0201&func_dvs_cd=tourist",
+    "description" : "태학사는 충청남도 천안시 동남구 풍세면에 위치하고 있다. 춘담화상은 1931년 이곳 삼태마애불을 친견한 후 불심이 통하였다. 후에 공주 마곡사에서 득도수계한 후 이곳에서 무가무인하며 최초 태학사를 창건시켰다. …
+를 간직한 조각입상으로, 다가가는 이의 마음을 절로 경건하게 해주는 동양 최대의 마애석불이다.",
+    "address" : "충청남도 천안시 동남구 풍세면 삼대리",
+    "tel" : "천안시 문화관광과 041-521-2031~5",
+    “position”: “”,
+    “…
+}
+
+												</pre>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="com-btn">
+								<a href="#none" class="close-layer">닫기</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 수집결과-세부 상세 결과 보기(정상) -->
+				<!-- 수집결과-세부 상세 결과 보기(오류) -->
+				<div class="layer-pop" role="dialog" id="result-error-opener" aria-labelledby="result-error-popup" aria-modal="true" aria-hidden="true" tabindex="1"  style="display:block;">
+					<div class="content-large">
+						<div class="top-area">
+							<span class="title">수집결과-세부 상세 결과 보기 - 식별파일 명 [XX00-001-001_20180625_SD001_0001]</span>
+							<a href="#none" class="btn-close close-layer">팝업 닫기</a>
+						</div>
+						<div class="view-area">
+							<div class="com-table-view">
+								<table>
+									<caption>내용 표</caption>
+									<tbody>
+										<tr>
+											<th>수집연계작업 일련번호</th>
+											<td>XX00-001-001-SD001</td>
+											<th>수집연계작업 순번</th>
+											<td>00001</td>
+										</tr>
+										<tr>
+											<th>등록 일시</th>
+											<td>2011-11-20 14:04:36</td>
+											<th>등록자</th>
+											<td>TORNADO</td>
+										</tr>
+										<tr>
+											<th>작업처리상태코드</th>
+											<td>작업완료</td>
+											<th>작업처리량(KB)</th>
+											<td>24</td>
+										</tr>
+										<tr>
+											<th>연계유형</th>
+											<td>웹 크롤링(Web-Crawling)</td>
+											<th>수집연계오류유형</th>
+											<td>채널[정상]/데이터[값 누락(VM)]</td>
+										</tr>
+										<tr>
+											<th>비고</th>
+											<td colspan="3">&quot;position&quot; 항목의 값이 누랍됨.</td>
+										</tr>
+										<tr>
+											<th>원시데이터 내용</th>
+											<td colspan="3">
+												<pre>
+{
+    "_id" : ObjectId("5bea8fb01a51ea49ced24bdf"),
+    "agentid" : 36,
+    "title" : "[천안]태학사",
+    "type" : "종교/사찰/성지",
+    "url" : "http://tour.chungnam.go.kr/_prog/tourist/index.php?mode=V&mng_no=50561&site_dvs_cd=kr&menu_dvs_cd=0201&func_dvs_cd=tourist",
+    "description" : "태학사는 충청남도 천안시 동남구 풍세면에 위치하고 있다. 춘담화상은 1931년 이곳 삼태마애불을 친견한 후 불심이 통하였다. 후에 공주 마곡사에서 득도수계한 후 이곳에서 무가무인하며 최초 태학사를 창건시켰다. …
+를 간직한 조각입상으로, 다가가는 이의 마음을 절로 경건하게 해주는 동양 최대의 마애석불이다.",
+    "address" : "충청남도 천안시 동남구 풍세면 삼대리",
+    "tel" : "천안시 문화관광과 041-521-2031~5",
+    “position”: “”,
+    “…
+}
+
+												</pre>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<div class="com-btn">
+								<a href="#none" class="close-layer">닫기</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- // 수집결과-세부 상세 결과 보기(오류) -->
+			</div>
+			<!-- //본문 -->		
+			
+		</section>
+		<!-- //컨텐츠 -->	
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("../include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <!-- <script>
+        $(function(){
+
+            $("#top #allCheck").click(function(){
+                console.log("aaaa");
+                if($("#top #allCheck").is(":checked")){
+                    $(".checkArea .chk").prop("checked", true);
+                }else{
+                    $(".checkArea .chk").prop("checked", false);
+                }
+            });
+
+        });
+    </script> -->
+
+</head>
+
+<body>
+    <div id="subPage">
+        <div id="header">
+            <button class="back">뒤로가기</button>
+            <span class="title">회원가입</span>
+        </div>
+        <div id="content" class="join">
+            <div class="normalTxt">
+                <span>홍길동님</span>
+                <span>기업회원이신가요?</span>
+            </div>
+            <div class="pagingArea">
+                <ul>
+                    <li class="before">1</li>
+                    <li class="before">2</li>
+                    <li class="before">3</li>
+                    <li class="active">4</li>
+                </ul>
+            </div>
+            <div class="joinBtn">
+                <button type="button">아니오, 개인회원입니다.</button>
+                <button type="button" class="bizbtn on">네, 기업회원입니다. <span>*기업코드 입력필수</span></button>
+            </div>
+            <div class="bizInput">
+                <span class="title">기업코드</span>
+                <div class="input">
+                    <input type="text" placeholder="코드를 입력해주세요.">
+                    <div class="repeatArea">
+                        <button type="button">코드인증</button>
+                        <!-- <button type="button">인증성공</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

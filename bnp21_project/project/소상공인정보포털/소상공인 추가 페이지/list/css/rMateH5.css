@@ -1,0 +1,351 @@
+.rMateH5__Button {
+	padding: 3px 8px 3px 8px;
+	margin: 0px;
+	border: 1px solid #AAB3B3;
+	display: block;
+	float: left;
+	cursor: pointer;
+	text-decoration: none;
+	outline: none;
+	white-space: nowrap;
+	overflow: visible;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+.rMateH5__Button .rMateH5__Label {
+	white-space: pre;
+}
+
+.rMateH5__ToolTip {
+	font-family: 留묒� 怨좊뵓,�뗭�,Verdana;
+	font-size: 11px;
+	padding: 2px 5px 2px 5px;
+	margin: 0px;
+	color: #FFFFFF;
+	background-color: #000000;
+	border: 1px solid #222222;
+	display: block;
+	overflow: hidden;
+	border-radius: 3px;
+	cursor: default;
+
+	user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+
+.rMateH5__ErrorTip {
+	font-family: 留묒� 怨좊뵓,�뗭�,Verdana;
+	font-size: 11px;
+	padding: 1px 5px 3px 5px;
+	margin: 0px;
+	color: #FFFFFF;
+	background-color: #FF0000;
+	border: 1px solid #F54444;
+	display: block;
+	overflow: hidden;
+	border-radius: 3px;
+	cursor: default;
+
+	user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+
+.rMateH5__DataGrid {
+	
+	font-size: 13px;
+	background-color: #FFFFFF;
+	border: 1px solid #ddd;
+	border-top: #adc7d9 solid 1px;
+	color: #31393F;
+	outline:none;
+	cursor: default;
+
+	user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+
+.rMateH5__DataGridHeaderRenderer {
+	color: #FFFFFF;
+	cursor: default;
+	padding-left: 2px;
+	padding-right: 2px;
+	white-space: nowrap;
+}
+.rMateH5__DataGridHeaderRenderer .rMateH5__UITextField {
+	overflow: hidden;
+	padding-left: 2px;
+	text-overflow: clip;
+}
+.rMateDataGridHeaderStyles {
+	color: #333333;
+	font-weight: bold;	
+}
+
+.rMateH5__DataGridGroupItemRenderer {
+	cursor: default;
+	white-space: nowrap;
+}
+.rMateH5__DataGridGroupItemRenderer .rMateH5__UITextField {
+	padding-left: 2px;
+	text-overflow: clip;
+}
+
+.rMateH5__DataGridLineH {
+	border-top: solid 1px;
+	height: 0px;
+	padding: 0px;
+	position: absolute;
+	line-height: 0px;
+}
+
+.rMateH5__DataGridLineV {
+	width: 0px;
+	border-left: solid 1px;
+	padding: 0px;
+	position: absolute;
+}
+
+.rMateH5__DataGridBackground {
+	padding: 0px;
+	position: absolute;
+}
+
+.rMateH5__DataGridHeaderBackgroundSkin {
+	border: none;
+	border-top: #adc7d9 solid 1px;
+	border-bottom: #ddd solid 1px;
+}
+
+.rMateH5__DataGridHeaderSeparator {
+	border-right: 1px solid #ddd;
+}
+
+.rMateH5__DataGridHeaderHorizontalSeparator {
+	border-left: none;
+	border-bottom: 1px solid #AAB3B3;
+	line-height: 1px;
+}
+
+.rMateH5__DataGridColumnResizeSkin {
+	border: solid 1px #999999;
+}
+
+.rMateH5__DataGridSortItemRenderer {
+	color: #0B333C;
+	font-size: 9px;
+	text-align: center;
+	font-weight: normal;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 3px;
+	padding-right: 5px;
+}
+
+.rMateH5__DataGridSortItemRenderer img {
+	width: 7px;
+	height: 7px;
+}
+
+.rMateH5__ComboBoxHeaderRenderer {
+	color: #31393F;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.rMateH5__ScrollBarH {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	background-color: rgba(0,0,0,0);
+}
+
+.rMateH5__HScrollBar {
+	-webkit-overflow-scrolling: touch;
+}
+
+.rMateH5__VScrollBar {
+	-webkit-overflow-scrolling: touch;
+}
+
+.rMateH5__DataGridFooter {
+	overflow: hidden;
+	font-weight: bold;
+}
+
+.rMateH5__TextInput {
+	padding: 1px;
+	border: solid 1px #999999;
+}
+
+.rMateH5__CheckBoxEditor {
+	background-color: #FFFFFF;
+	border: solid 1px #FFFFFF;
+}
+
+.rMateH5__ComboBoxEditor {
+	background-color: #FFFFFF;
+	border-top: solid 1px #999999;
+	border-bottom: solid 1px #999999;
+	border-left: solid 0px #999999;
+	border-right: solid 0px #999999;
+}
+
+.rMateH5__DateChooser_datepicker {
+	cursor: default;
+	color: #31393F;
+
+	user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+
+.rMateH5__ContextMenu {
+	font-family: 留묒� 怨좊뵓,�뗭�,Verdana;
+	font-size: 12px;
+	padding: 4px;
+	border: 1px solid #AAB3B3;
+	cursor: default;
+	background-color: #EEEEEE;
+	color: #31393F;
+
+	user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+}
+
+.rMateH5__ContextMenu span {
+	padding: 2px 8px 2px 8px;
+}
+
+.rMateH5__ContextMenu hr {
+	margin: 7px 1px 1px 1px;
+}
+
+.rMateH5__ExcelCSVImportUtil {
+	padding: 10px;
+	position: absolute;
+	display: block;
+	border: 1px solid #AAB3B3;
+	background-color: #FAFAFA;
+	border-radius: 5px;
+}
+
+.rMateH5__CopyPanel {
+	width: 310px;
+	height: 90px;
+	padding: 10px;
+	position: absolute;
+	display: block;
+	border: 1px solid #AAB3B3;
+	background-color: #FAFAFA;
+	border-radius: 5px;
+}
+
+.rMateH5__CopyPanel span {
+	width: 290px;
+	left: 20px;
+	top: 30px;
+	position: absolute;
+}
+
+.rMateH5__CopyPanel img {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	float: right;
+}
+
+.rMateH5__CopyPanel textarea {
+	width: 290px;
+	height: 25px;
+	left: 20px;
+	top: 60px;
+	position: absolute;
+}
+
+.rMateH5__Preloader {
+	top:0px;
+	left:0px;
+	z-index:2;
+	width:100%;
+	height:100%;
+	opacity:0.7;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70); 
+	background:url("/img/loader.gif") 50% 50% no-repeat #FFF;
+}
+
+.rMateH5__DatePicker TD {
+	border: 1px solid #ece9d8;
+}
+
+.rMateH5__DatePicker_TDHover {
+	background-color: #a3eea1;
+	border: 1px solid #888888;
+	cursor: pointer;
+	color: Green;
+}
+
+.rMateH5__DatePicker_DayHighlightTD {
+	color: #4060ff;
+	font-weight: bold;
+}
+
+.rMateH5__Today Button {
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: gray;
+	background: #d8e8ff;
+	font-weight: bold;
+}
+
+.rMateH5__DatePicker Button {
+	font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: gray;
+	background: #d8e8ff;
+	font-weight: bold;
+	padding: 0px;
+}
+
+.rMateH5__DatePicker_TitleText {
+	font-size: 12px;
+	color: gray;
+	font-weight: bold;
+}
+
+.rMateH5__DatePicker_DayTD {
+	background-color: #CCCCCC;
+	border: 1px solid #AAAAAA;
+	color: white;
+}
+
+.rMateH5__DayHighlightTD {
+	background-color: #CCCCCC;
+	border: 1px solid #AAAAAA;
+}
+
+.rMateH5__DatePicker {
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-align: center;
+	color: #505050;
+	background-color: #ece9d8;
+	border: 1px solid #AAAAAA;
+}

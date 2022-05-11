@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>결제내역조회 | 관리자 | KB스타게이트</title>
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 반응형 제작시 필요한 meta 태그 20-08-24 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 해당페이지에서만 사용 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery.datetimepicker.css">
+<script type="text/javascript" src="../common/js/jquery.datetimepicker.full.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="sub">
+    <!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="gnbWrap">
+				<div class="fl"><h1 class="logo"><a href="#">스타플랫폼<span>관리시스템</span></a></h1></div>
+			</div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- left menu -->
+		<div class="leftMenu">
+			<div class="inner">
+				<ul class="ul">
+					<li class="li">
+						<ul><!-- 개발 : 페이지 진입시 해당 메뉴가 활성화되어야할때 li에 클래스 on 추가 -->
+							<li><a href="#" class="mm">결제내역 조회</a></li>
+							<li><a href="#" class="mm">정산 조회</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li  class="on"><a href="#" class="mm">고객관리</a>
+								<!-- 서브메뉴 -->
+								<ul class="sub">
+									<li><a href="#">회원정보 조회</a></li>
+									<li><a href="#">기업관리</a></li>
+									<li><a href="#">가맹점관리</a></li>
+								</ul>
+								<!-- //서브메뉴 -->
+							</li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">서비스관리</a></li>
+						</ul>
+					</li>
+					<li class="li">
+						<ul>
+							<li><a href="#" class="mm">운영 관리</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //left menu -->
+
+		<!-- content -->
+		<div id="maintain" class="content" >
+			<h2 class="hTit">캐시백 상세내역</h2>
+
+			<!-- table top -->
+			<div class="tblTopWrap">
+				<div class="fl">
+					<span>총 55건</span>
+				</div>
+				<div class="fr">
+					<a href="#" class="btn sm de">엑셀 다운로드</a>
+				</div>
+			</div>
+			<!-- //table top -->
+
+			<!-- table -->
+			<div class="tbl scroll-x">
+				<table>
+					<caption></caption>
+					<colgroup>
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:px;">
+						<col style="width:auto;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">No</th>
+							<th scope="col">결재(취소)일자</th>
+							<th scope="col">구분</th>
+							<th scope="col">결제고유번호</th>
+							<th scope="col">회원관리번호</th>
+							<th scope="col">회원명</th>
+							<th scope="col">계좌</th>
+							<th scope="col">결제(취소)금액</th>
+							<th scope="col">캐시백</th>
+							<th scope="col">정산결과</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2020.05.15</td>
+							<td>승인</td>
+							<td>A00000000001111111111</td>
+							<td>A000000000123</td>
+							<td>홍*동</td>
+							<td>국민은행/123*****0000</td>
+							<td class="right">25,000</td>
+							<td class="right">100</td>
+							<td>불능</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>2020.05.15</td>
+							<td>승인</td>
+							<td>A00000000001111111111</td>
+							<td>A000000000123</td>
+							<td>홍*동</td>
+							<td>국민은행/123*****0000</td>
+							<td class="right">25,000</td>
+							<td class="right">100</td>
+							<td>불능</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>2020.05.15</td>
+							<td>승인</td>
+							<td>A00000000001111111111</td>
+							<td>A000000000123</td>
+							<td>홍*동</td>
+							<td>국민은행/123*****0000</td>
+							<td class="right">25,000</td>
+							<td class="right">100</td>
+							<td>불능</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- //table -->
+			<div class="mt10" style="text-align: right; margin-top:30px;">
+				<!-- 20-05-27 수정 -->
+				<a href="#" class="btn md de">목록</a>
+				<!-- 20-05-27 수정 -->
+			</div>
+			<!-- pagingWrap -->
+			<div class="pagingWrap">
+                <a href="#" class="p_btn first ico">처음으로</a><a href="#" class="p_btn prev ico">이전</a>
+                <div class="number"><!-- page selected일때 a태그에 class "on"을 넣어주세요. -->
+                    <a href="#" class="num on">1</a><a href="#" class="num">2</a><a href="#" class="num">3</a><a href="#" class="num">4</a><a href="#" class="num">5</a><a href="#" class="num">6</a><a href="#" class="num">7</a><a href="#" class="num">8</a><a href="#" class="num">9</a><a href="#" class="num">10</a>
+                </div>
+                <a href="#" class="p_btn next ico">다음</a><a href="#" class="p_btn end ico">맨끝</a>
+            </div>
+			<!-- //pagingWrap -->
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

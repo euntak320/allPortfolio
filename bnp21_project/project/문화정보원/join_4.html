@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>문화정보 다부처 연계서비스 플랫폼</title>
+	<meta charset="utf-8">	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover">
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+	<script src="./assets/js/jquery-1.11.0.min.js"></script>
+	<script src="./assets/js/script.js"></script>	
+</head>
+
+<body>
+
+	<div id="wrap" class="join">
+		
+		<!-- 본문 -->		
+		<div class="join-container">
+			<div class="middle-content">
+				<h2>회원가입</h2>
+				<div class="step-area">
+					<span>1. 약관동의</span>
+					<span class="on">2. 실명인증</span>
+					<span>3. 회원정보입력</span>
+					<span>4. 신청완료</span>
+				</div>				
+				<ul class="dash-txt-list">
+					<li>- 통합관리시스템은 개인정보에 대한 유출 및 도용을 방지하기 위해 실명 인증을 시행하고 있습니다.</li>
+					<li>- 정보통신망 이용 촉진 및 정보보호 등에 관한 법률 제23조 2(주민등록번호의 사용 제한)에 의거하여 웹사이트 내 주민등록번호 수집 · 이용이 금지되어 주민번호 입력 기반의 인증서비스 사용이 제한됩니다.</li>
+					<li>- 현재 통합관리시스템에서는 본인을 확인할 수 있도록 휴대폰 본인확인 서비스를 제공하고 있습니다.</li>
+				</ul>
+				<div class="com-table-search">
+					<table>
+						<caption>가입 입력 표</caption>						
+						<tbody>
+							<tr>
+								<th>이름</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="" placeholder="" class="name" aria-invalid="false" />
+									</div>
+								</td>
+								<th>생년월일</th>
+								<td>
+									<div class="row-form">
+										<input type="text" value="" placeholder="YYYYMMDD" class="year" aria-invalid="false" />
+									</div>
+								</td>
+							</tr>		
+							<tr>
+								<th>성별</th>
+								<td>									
+									<div class="com-radio">
+										<input type="radio" name="radio-1" id="radio-1" checked />
+										<label for="radio-1">남자</label>
+									</div>
+									<div class="com-radio">
+										<input type="radio" name="radio-1" id="radio-2" />
+										<label for="radio-2">여자</label>
+									</div>
+								</td>
+								<th>휴대폰</th>
+								<td>
+									<div class="row-form phone-input">
+										<select>
+											<option value="#">010</option>
+											<option value="#">016</option>
+										</select>
+										<input type="text" value="" placeholder="-없이 입력" aria-invalid="false" />
+									</div>
+								</td>
+							</tr>		
+						</tbody>
+					</table>
+				</div>
+				<ul class="agree-view-list">
+					<li>
+						<div class="com-check">
+							<input type="checkbox" id="check-1" />
+							<label for="check-1">개인정보 이용 및 제공에 동의합니다.</label>
+						</div>
+						<a href="#none" role="button" class="view-btn open-layer" aria-haspopup="dialog" id="clause-list-popup01" aria-controls="clause-list-opener01">전문보기</a>
+					</li>
+					<li>
+						<div class="com-check">
+							<input type="checkbox" id="check-2" />
+							<label for="check-2">고유식별 정보 처리에 동의합니다.</label>
+						</div>
+						<a href="#none" role="button" class="view-btn open-layer" aria-haspopup="dialog" id="clause-list-popup02" aria-controls="clause-list-opener02">전문보기</a>
+					</li>
+					<li>
+						<div class="com-check">
+							<input type="checkbox" id="check-3" />
+							<label for="check-3">통신사 이용약관에 동의합니다.</label>
+						</div>
+						<a href="#none" role="button" class="view-btn open-layer" aria-haspopup="dialog" id="clause-list-popup03" aria-controls="clause-list-opener03">전문보기</a>
+					</li>
+					<li>
+						<div class="com-check">
+							<input type="checkbox" id="check-4" />
+							<label for="check-4">휴대폰 본인 확인 이용 약관에 동의합니다.</label>
+						</div>
+						<a href="#none" role="button" class="view-btn open-layer" aria-haspopup="dialog" id="clause-list-popup04" aria-controls="clause-list-opener04">전문보기</a>
+					</li>
+				</ul>
+				<div class="com-btn">
+					<a href="#none" class="send">확인</a>
+				</div>
+			</div>			
+		</div>
+		<!-- //본문 -->			
+		
+		<!-- footer include 영역 (./include/footer.html) -->			
+		<div class="footer-load"></div>
+		<script type="text/javascript">
+			$(".footer-load").load("./include/footer.html" , function(){});
+		</script>			
+		<!-- //footer include 영역 (./include/footer.html) -->
+	</div>
+
+	<!-- 팝업 -->
+	<div class="layer-pop" role="dialog" id="clause-list-opener01" aria-labelledby="clause-list-popup01" aria-modal="true" aria-hidden="true" tabindex="1" style="display:block">
+		<div class="content">
+			<div class="top-area">
+				<span class="title">개인정보 이용 및 제공</span>
+				<a href="#none" class="btn-close close-layer">팝업 닫기</a>
+			</div>
+			<div class="view-area">
+				<div class="scroll">
+					㈜코리아크레딧뷰로(이하 “회사”라고 한다)가 제공하는 “본인확인서비스” 의 휴대폰 본인 확인과 관련하여 본인으로부터 취득한 개인정보는 "정보통신망이용촉진 및 정보보호등에 관한 법률" 및 신용정보의 이용 및 보호에 관한 법률에 따라 본인의 동의를 얻어 다음의 목적을 위해 제공 및 이용됩니다.<br><br>
+					
+					<strong>[개인정보 이용 및 제공 목적]</strong><br><br>
+					
+					“회사”는 생년월일과 휴대폰번호 일치 여부 및 휴대폰 점유 확인과 휴대폰 번호보호 서비스를 안내하기 위한 목적으로 아래의 회사에 다음의 정보를 이용 및 제공합니다.<br><br>
+					
+					① 이용 및 제공 정보 <br>
+					- 휴대폰번호, 통신사정보, 생년월일, 성명, 성별, 내외국인 정보<br><br>
+					
+					② 제공사
+				</div>	
+				<div class="com-btn">
+					<a href="#none">동의하지 않음</a>
+					<a href="#none" class="send">동의</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 팝업 -->
+
+	<!-- 팝업 -->
+	<div class="layer-pop" role="dialog" id="clause-list-opener02" aria-labelledby="clause-list-popup02" aria-modal="true" aria-hidden="true" tabindex="1" style="display:block">
+		<div class="content">
+			<div class="top-area">
+				<span class="title">2개인정보 이용 및 제공</span>
+				<a href="#none" class="btn-close close-layer">팝업 닫기</a>
+			</div>
+			<div class="view-area">
+				<div class="scroll">
+					㈜코리아크레딧뷰로(이하 “회사”라고 한다)가 제공하는 “본인확인서비스” 의 휴대폰 본인 확인과 관련하여 본인으로부터 취득한 개인정보는 "정보통신망이용촉진 및 정보보호등에 관한 법률" 및 신용정보의 이용 및 보호에 관한 법률에 따라 본인의 동의를 얻어 다음의 목적을 위해 제공 및 이용됩니다.<br><br>
+					
+					<strong>[개인정보 이용 및 제공 목적]</strong><br><br>
+					
+					“회사”는 생년월일과 휴대폰번호 일치 여부 및 휴대폰 점유 확인과 휴대폰 번호보호 서비스를 안내하기 위한 목적으로 아래의 회사에 다음의 정보를 이용 및 제공합니다.<br><br>
+					
+					① 이용 및 제공 정보 <br>
+					- 휴대폰번호, 통신사정보, 생년월일, 성명, 성별, 내외국인 정보<br><br>
+					
+					② 제공사
+				</div>	
+				<div class="com-btn">
+					<a href="#none">동의하지 않음</a>
+					<a href="#none" class="send">동의</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 팝업  -->
+
+	<!-- 팝업 -->
+	<div class="layer-pop" role="dialog" id="clause-list-opener03" aria-labelledby="clause-list-popup03" aria-modal="true" aria-hidden="true" tabindex="1" style="display:block">
+		<div class="content">
+			<div class="top-area">
+				<span class="title">3개인정보 이용 및 제공</span>
+				<a href="#none" class="btn-close close-layer">팝업 닫기</a>
+			</div>
+			<div class="view-area">
+				<div class="scroll">
+					㈜코리아크레딧뷰로(이하 “회사”라고 한다)가 제공하는 “본인확인서비스” 의 휴대폰 본인 확인과 관련하여 본인으로부터 취득한 개인정보는 "정보통신망이용촉진 및 정보보호등에 관한 법률" 및 신용정보의 이용 및 보호에 관한 법률에 따라 본인의 동의를 얻어 다음의 목적을 위해 제공 및 이용됩니다.<br><br>
+					
+					<strong>[개인정보 이용 및 제공 목적]</strong><br><br>
+					
+					“회사”는 생년월일과 휴대폰번호 일치 여부 및 휴대폰 점유 확인과 휴대폰 번호보호 서비스를 안내하기 위한 목적으로 아래의 회사에 다음의 정보를 이용 및 제공합니다.<br><br>
+					
+					① 이용 및 제공 정보 <br>
+					- 휴대폰번호, 통신사정보, 생년월일, 성명, 성별, 내외국인 정보<br><br>
+					
+					② 제공사
+				</div>	
+				<div class="com-btn">
+					<a href="#none">동의하지 않음</a>
+					<a href="#none" class="send">동의</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 팝업 -->
+
+	<!-- 팝업 -->
+	<div class="layer-pop" role="dialog" id="clause-list-opener04" aria-labelledby="clause-list-popup04" aria-modal="true" aria-hidden="true" tabindex="1" style="display:block">
+		<div class="content">
+			<div class="top-area">
+				<span class="title">4개인정보 이용 및 제공</span>
+				<a href="#none" class="btn-close close-layer">팝업 닫기</a>
+			</div>
+			<div class="view-area">
+				<div class="scroll">
+					㈜코리아크레딧뷰로(이하 “회사”라고 한다)가 제공하는 “본인확인서비스” 의 휴대폰 본인 확인과 관련하여 본인으로부터 취득한 개인정보는 "정보통신망이용촉진 및 정보보호등에 관한 법률" 및 신용정보의 이용 및 보호에 관한 법률에 따라 본인의 동의를 얻어 다음의 목적을 위해 제공 및 이용됩니다.<br><br>
+					
+					<strong>[개인정보 이용 및 제공 목적]</strong><br><br>
+					
+					“회사”는 생년월일과 휴대폰번호 일치 여부 및 휴대폰 점유 확인과 휴대폰 번호보호 서비스를 안내하기 위한 목적으로 아래의 회사에 다음의 정보를 이용 및 제공합니다.<br><br>
+					
+					① 이용 및 제공 정보 <br>
+					- 휴대폰번호, 통신사정보, 생년월일, 성명, 성별, 내외국인 정보<br><br>
+					
+					② 제공사
+				</div>	
+				<div class="com-btn">
+					<a href="#none">동의하지 않음</a>
+					<a href="#none" class="send">동의</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 팝업 -->
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>위성자료 - 경기도 대기환경</title>
+    <script src="../assets/js/jquery-1.11.0.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+    <!-- 헤더부분 -->
+    <header>
+        <div class="top_area">
+            <h1>
+                <a href="#none">경기도대기환경 진단평가 시스템</a>
+            </h1>
+            <div class="login_area">
+                <a href="#none" class="admin">관리자</a>
+                <a href="#none" class="my_info">내 정보</a>
+                <a href="#none" class="login">로그아웃</a>
+                <!-- <a href="#none" class="login">로그인</a> -->
+            </div>
+        </div>
+        <div class="bottom_area">
+            <div class="menu_area">
+                <span class="menu_txt ">일일진단평가</span>
+                <span class="menu_txt">대기정보</span>
+                <span class="menu_txt on">기상현황</span>
+                <span class="menu_txt ">모델링결과</span>
+                <span class="menu_txt ">사이트맵</span>
+                <a href="#" class="menu_btn">햄버거 메뉴</a>
+            </div>
+        </div>
+    </header>
+    <!-- 헤더부분 -->
+    <section>
+        <div class="content_frame">
+            <div class="left_menu">
+                <span class="menu_title">기상현황</span>
+                <div class="left_area">
+                    <a href="#none">기상</a>
+                    <a href="#none">기상도표</a>
+                    <a href="#none" class="on">위성자료</a>
+                    <a href="#none">분석영상</a>
+                </div>
+            </div>
+            <div class="content_area">
+                <div class="title_area">
+                    <span class="title">기상도표</span>
+                    <div class="nav_area">
+                        <span class="home">처음</span>
+                        <span class="left">기상현황</span>
+                        <span class="left">위성자료</span>
+                    </div>
+                </div>
+                <div class="input_data">
+                    <fieldset>
+                        <legend>검색</legend>
+                        <div class="input_cell">
+                            <span class="hidden"><label for="src2">날짜</label></span>
+                            <div class="com_input mg0">
+                                <input type="text" class="cal" id="src2">
+                            </div>
+                            <div class="select">
+                                <select title="시간 선택">
+                                    <option>1시</option>
+                                    <option>2시</option>
+                                </select>
+                            </div>
+                            <button type="button" class="btn">조회</button>
+                        </div>
+                        <div class="input_cell">
+                            <div class="btn_day">
+                                <button type="button" class="prev">15</button>
+                                <button type="button" class="today">현재</button>
+                                <button type="button" class="next">15</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- 이미지 플레이어 -->
+                <div class="image_player" id="imagePlayer">
+                    <div class="timeLine">
+                        <div class="time">
+                            <div class="list">
+                                <span class="on"><a href="#n">00:30</a></span>
+                                <span><a href="#n">10:30</a></span>
+                                <span><a href="#n">11:30</a></span>
+                                <span><a href="#n">12:30</a></span>
+                                <span><a href="#n">13:30</a></span>
+                                <span><a href="#n">14:30</a></span>
+                                <span><a href="#n">15:30</a></span>
+                                <span><a href="#n">16:30</a></span>
+                                <div class="progress" id="progBar"></div>
+                            </div>
+                        </div>
+                        <ul class="control">
+                            <li><a href="#n" onclick="imgCtrlFirst()"><img src="../assets/images/btn_ctrl_first.png" alt="처음"></a></li>
+                            <li><a href="#n" onclick="imgCtrl(-1)"><img src="../assets/images/btn_ctrl_prev.png" alt="이전"></a></li>
+                            <li><a href="#n" onclick="move()" class="movePlay"><img src="../assets/images/btn_ctrl_play.png" alt="재생"></a></li>
+                            <li><a href="#n" onclick="moveStop()" class="moveStop"><img src="../assets/images/btn_ctrl_stop.png" alt="정지"></a></li>
+                            <li><a href="#n" onclick="imgCtrl(1)"><img src="../assets/images/btn_ctrl_next.png" alt="다음"></a></li>
+                            <li><a href="#n" onclick="imgCtrlLast()"><img src="../assets/images/btn_ctrl_last.png" alt="마지막"></a></li>
+                        </ul>
+                    </div>
+                    <div class="img_play">
+                        <ul>
+                            <li>
+                                <div class="img_area">
+                                    <p class="tit">적외선영상</p>
+                                    <div class="img"><img src="../assets/images/temp/temp_img1.jpg" alt="적외선영상"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_area">
+                                    <p class="tit">가시영상</p>
+                                    <div class="img"><img src="../assets/images/temp/temp_img2.jpg" alt="가시영상"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_area">
+                                    <p class="tit">합성영상</p>
+                                    <div class="img"><img src="../assets/images/temp/temp_img3.jpg" alt="합성영상"></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="img_area">
+                                    <p class="tit">적외선강조영상</p>
+                                    <div class="img"><img src="../assets/images/temp/temp_img4.jpg" alt="적외선강조영상"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- // 이미지 플레이어 -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+        <span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+    </footer>
+</body>
+
+</html>

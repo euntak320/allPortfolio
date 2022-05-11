@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<title>시계열 - 경기도 대기환경</title>
+	<script src="../assets/js/jquery-1.11.0.min.js"></script>
+	<script src="../assets/js/jquery-ui.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+	<!-- 헤더부분 -->
+	<header>
+		<div class="top_area">
+			<h1>
+				<a href="#none">경기도대기환경 진단평가 시스템</a>
+			</h1>
+			<div class="login_area">
+				<a href="#none" class="admin">관리자</a>
+				<a href="#none" class="my_info">내 정보</a>
+				<a href="#none" class="login">로그아웃</a>
+				<!-- <a href="#none" class="login">로그인</a> -->
+			</div>
+		</div>
+		<div class="bottom_area">
+			<div class="menu_area">
+				<span class="menu_txt ">일일진단평가</span>
+				<span class="menu_txt">대기정보</span>
+				<span class="menu_txt">기상현황</span>
+				<span class="menu_txt on">모델링결과</span>
+				<span class="menu_txt ">사이트맵</span>
+				<a href="#" class="menu_btn">햄버거 메뉴</a>
+			</div>
+		</div>
+	</header>
+	<!-- 헤더부분 -->
+	<section>
+		<div class="content_frame">
+			<div class="left_menu">
+				<span class="menu_title">모델링결과</span>
+				<div class="left_area">
+					<a href="#none">공간분포</a>
+					<a href="#none">과학원 모델결과</a>
+					<a href="#none">모델간 비교</a>
+					<a href="#none" class="on">시계열</a>
+					<a href="#none">일평균 시계열</a>
+					<a href="#none">연직단면</a>
+					<a href="#none">기여도</a>
+					<a href="#none">종합기여도</a>
+					<a href="#none">정합도분석</a>
+				</div>
+			</div>
+			<div class="content_area">
+				<div class="title_area">
+					<span class="title">시계열</span>
+					<div class="nav_area">
+						<span class="home">처음</span>
+						<span class="left">모델링결과</span>
+						<span class="left">시계열</span>
+					</div>
+				</div>
+
+				<div class="tab_area">
+					<a href="#none" class="on">물질별 시계열</a>
+					<a href="#none">기상별 시계열</a>
+				</div>
+
+				<div class="input_data">
+					<fieldset>
+						<legend>검색</legend>
+						<div class="input_cell">
+							<span class="hidden"><label for="src1">모델</label></span>
+							<select id="src1">
+								<option>모델(CMAQ)</option>
+							</select>
+						</div>
+						<div class="input_cell">
+							<span class="hidden"><label for="src1">선택</label></span>
+							<select id="src1" class="small">
+								<option>00UTC</option>
+							</select>
+						</div>
+						<div class="input_cell">
+							<span class="hidden"><label for="src2">기간</label></span>
+							<div class="com_input mg0">
+								<input type="text" class="cal" id="src2">
+							</div>
+							<div class="mid">~</div>
+							<div class="com_input mg0">
+								<input type="text" class="cal" id="src3">
+							</div>
+							<button type="button" class="btn">조회</button>
+						</div>
+						<div class="input_cell">
+							<div class="btn_day">
+								<button type="button" class="prev">1D</button>
+								<button type="button" class="today">현재</button>
+								<button type="button" class="next">1D</button>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+				<div class="air_district ty2">
+					<div class="air_area">
+						<p class="tit_h3">시군별 선택버튼</p>
+						<div class="area_list">
+							<button type="button" class="btnXS allTogl off">경기도</button>
+							<ul>
+								<li>
+									<button type="button" class="btnXS">남부권</button>
+									<ul>
+										<li><a href="#n" class="on">안성시</a></li>
+										<li><a href="#n" class="on">여주시</a></li>
+										<li><a href="#n" class="on">이천시</a></li>
+										<li><a href="#n" class="on">평택시</a></li>
+									</ul>
+								</li>
+								<li>
+									<button type="button" class="btnXS">중부권</button>
+									<ul>
+										<li><a href="#n">과천시</a></li>
+										<li><a href="#n">광명시</a></li>
+										<li><a href="#n">군포시</a></li>
+										<li><a href="#n">부천시</a></li>
+										<li><a href="#n">수원시</a></li>
+										<li><a href="#n">시흥시</a></li>
+										<li><a href="#n">안산시</a></li>
+										<li><a href="#n">안양시</a></li>
+										<li><a href="#n">오산시</a></li>
+										<li><a href="#n">의왕시</a></li>
+										<li><a href="#n">화성시</a></li>
+									</ul>
+								</li>
+								<li>
+									<button type="button" class="btnXS">북부권</button>
+									<ul>
+										<li><a href="#n">고양시</a></li>
+										<li><a href="#n">김포시</a></li>
+										<li><a href="#n">동두천시</a></li>
+										<li><a href="#n">양주시</a></li>
+										<li><a href="#n">연천군</a></li>
+										<li><a href="#n">의정부시</a></li>
+										<li><a href="#n">파주시</a></li>
+										<li><a href="#n">포천시</a></li>
+									</ul>
+								</li>
+								<li>
+									<button type="button" class="btnXS">동부권</button>
+									<ul>
+										<li><a href="#n">가평군</a></li>
+										<li><a href="#n">광주시</a></li>
+										<li><a href="#n">구리시</a></li>
+										<li><a href="#n">남양주시</a></li>
+										<li><a href="#n">성남시</a></li>
+										<li><a href="#n">양평군</a></li>
+										<li><a href="#n">하남시</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 시계열 그래프 20191023 수정 -->
+					<div class="air_graph">
+						<p class="tit_h3">시계열 그래프</p>
+						<div class="graph">
+							<table>
+								<caption>시계열 그래프</caption>
+								<colgroup>
+									<col style="width:50%">
+									<col style="width:50%">
+								</colgroup>
+								<tbody>
+									<tr>
+										<td><a href="#graphDetail" onclick="window.open('winpop_modeling_04.html','','width=1030,height=600');"><img src="../assets/images/temp/temp_graph8_1.jpg" alt="그래프샘플"></a></td>
+										<td><a href="#graphDetail" onclick="window.open('winpop_modeling_04.html','','width=1030,height=600');"><img src="../assets/images/temp/temp_graph8_1.jpg" alt="그래프샘플"></a></td>
+									</tr>
+									<tr>
+										<td><a href="#graphDetail" onclick="window.open('winpop_modeling_04.html','','width=1030,height=600');"><img src="../assets/images/temp/temp_graph8_1.jpg" alt="그래프샘플"></a></td>
+										<td><a href="#graphDetail" onclick="window.open('winpop_modeling_04.html','','width=1030,height=600');"><img src="../assets/images/temp/temp_graph8_1.jpg" alt="그래프샘플"></a></td>
+									</tr>
+									<tr>
+										<td><a href="#graphDetail" onclick="window.open('winpop_modeling_04.html','','width=1030,height=600');"><img src="../assets/images/temp/temp_graph8_1.jpg" alt="그래프샘플"></a></td>
+										<td><a href="#graphDetail" onclick="window.open('winpop_modeling_04.html','','width=1030,height=600');"><img src="../assets/images/temp/temp_graph8_1.jpg" alt="그래프샘플"></a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<span>경기도보건환경연구원 경기도 수원시 장안구 파천로95</span>
+		<span>Copyright©GYEONGGI-DO INSTITUTE OF HEALTH & ENVIRONMENT. All Rights Reserved.</span>
+	</footer>
+</body>
+
+</html>

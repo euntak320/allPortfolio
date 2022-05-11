@@ -1,0 +1,158 @@
+.bg_gray:after {content: ""; position: absolute; top:340px; left:0; right:0; height:934px; background:#f5f5f5; z-index: -1;}
+.bg_gray.v2:after {height:1000px;}
+
+#trand .page_title_wrapper {padding:75px 0 65px;} 
+#trand .top_title {display:block; font-size:20px; line-height: 29px;}
+#trand .main_title {font-size:40px; line-height: 59px; font-weight: bold;}
+#trand .content_wrapper > span {display: block; text-align: right; font-size:14px; line-height: 20px; color:#666;}
+
+#trand .result_area {position: relative; padding:40px 0;}
+#trand .result_area::after {content: ""; clear: both; display: block;}
+#trand .trand_box {float: left; width: calc(100% / 3 - 20px); margin-right:30px; margin-top:40px;  transition: 0.3s; cursor: pointer;}
+#trand .trand_box:hover {transform: scale(1.1); transition: 0.3s;}
+#trand .trand_box:hover .box_area {box-shadow: 5px 5px 5px #ccc; }
+#trand .trand_box:nth-child(3n) {margin-right:0;}
+#trand .trand_box .title{display: inline-block; padding:11px 20px; border:1px solid #ddd; border-bottom:0; border-radius: 6px 6px 0 0; background:#f9f9f9; font-size:16px; color:#666;}
+#trand .trand_box .box_area {border-radius: 6px; border:1px solid #ddd;}
+#trand .trand_box .counting {text-align: center;}
+#trand .trand_box .blue {color:#5255cc}
+#trand .trand_box .pink {color:#f73883}
+#trand .trand_box .mid_area {overflow: hidden; background:#fff; border-radius: 0 6px 0 0;}
+#trand .trand_box .mid_area span {display: block;}
+#trand .trand_box .mid_area .name {font-size:26px; font-weight: bold;}
+#trand .trand_box .mid_area .number {font-size:22px;}
+#trand .trand_box .mid_area .number img {width:15px;}
+#trand .trand_box .mid_area .counting {position: relative; float: left; width:50%; padding:37px 0;}
+#trand .trand_box .mid_area .counting::after {content: ""; position: absolute; right:0; top:50%; width:1px; height:10px; transform: translateY(-50%); background: #fff;}
+#trand .trand_box .mid_area .counting:first-child {border-right: 1px solid #ddd;;}
+#trand .trand_box .mid_area .counting span:last-child {margin-top:8px;}
+#trand .trand_box .btm_area {overflow: hidden; padding:3px 0; border-radius: 0 0 6px 6px; background:#f5f5f5;}
+#trand .trand_box .btm_area .counting {float: left; width:25%; padding:5px;}
+#trand .trand_box .btm_area .counting:nth-child(2) {border-right:1px solid #fff;}
+#trand .trand_box .btm_area .counting span {overflow: hidden; display: block; font-size:14px; text-align: center; white-space: nowrap; text-overflow: ellipsis;}
+#trand .trand_box .btm_area .counting .circle {display: inline-block; margin-top:4px; padding:0 10px; border-radius: 12px; background:rgba(0,0,0,0.1);line-height: 20px; font-size:14px;}
+#trand .trand_box .btm_area .counting .circle > * {display: inline-block; vertical-align: middle;}
+#trand .trand_box .btm_area .counting .circle img {width:16px;}
+#trand .trand_box .btm_area .counting .circle span { letter-spacing: 0.14px; }
+#trand .trand_box.v2 {margin-top:15px;}
+#trand .trand_box.v2 .cont_area {position: relative; padding :21px 10px 13px; border-radius: 0 6px 0 0; border-bottom:1px solid #ddd;  background: #fff;}
+#trand .trand_box.v2 .cont_area::after {content: ""; display: block; clear: both;}
+#trand .trand_box.v2 .cont_area + .cont_area {border-bottom:0;}
+#trand .trand_box.v2 .left_area {float: left; width:50%; padding:15px 0;}
+#trand .trand_box.v2 .left_area > * {display: inline-block; vertical-align: middle;}
+#trand .trand_box.v2 .right_area {float: right; width:50%;}
+#trand .trand_box.v2 .right_area li {overflow: hidden; padding:8px; border-radius: 6px 21px 21px 6px; background:#f5f5f5;}
+#trand .trand_box.v2 .right_area li + li {margin-top:6px;}
+#trand .trand_box.v2 .right_area li > * {display: inline-block; vertical-align: middle;}
+#trand .trand_box.v2 .right_area li span {font-size:14px; letter-spacing: 0.14px; line-height: 16px;}
+#trand .trand_box.v2 .right_area li span:first-child {overflow: hidden; width:50%; text-overflow: ellipsis; white-space: nowrap; }
+#trand .trand_box.v2 .right_area li > span:last-child {float: right; width:80px; padding:2px 5px; border-radius: 17px; background:#fff; color:#333;}
+#trand .trand_box.v2 .right_area li span:last-child > * {display: inline-block; vertical-align: middle;}
+#trand .trand_box.v2 .right_area li span:last-child img {width:15px;}
+#trand .trand_box.v2 .arrow_area {width:60px; height: 60px; margin-right:1%; border-radius: 50%; background:#f5f5f5 url(/bigdata/images/trand/ico_arrowDown_blue.png) no-repeat center; text-indent: -9999px;}
+#trand .trand_box.v2 .arrow_area.blue {background:#f5f5f5 url(/bigdata/images/trand/ico_arrowDown_blue.png) no-repeat center; }
+#trand .trand_box.v2 .arrow_area.pink {background:#f5f5f5 url(/bigdata/images/trand/ico_arrowDown_pink.png) no-repeat center; }
+#trand .trand_box.v2 .big_title span {display: block; font-size: 26px; line-height: 20px; font-weight: bold; text-align: center; }
+#trand .trand_box.v2 .big_title span:last-child {font-size:22px; font-weight: normal; line-height: normal; margin-top:5px; text-align: left;}
+#trand .trand_box.v2 .big_title span img {width:20px; height: 20px;}
+#trand .result_area.graph::after {content: ""; display: block; clear: both;}
+#trand .result_area.graph .trand_box {float: left; margin-top: 0;}
+#trand .result_area.graph .trand_box:hover {transform: none;}
+#trand .result_area.graph .trand_box:hover .box_area {box-shadow: none;}
+#trand .result_area.graph .trand_box .btn_area {overflow: hidden;}
+#trand .result_area.graph .trand_box .btn_area .blue {border:1px solid #5255cc;}
+#trand .result_area.graph .trand_box .btn_area .pink {border:1px solid #f73883;}
+#trand .result_area.graph .trand_box .btn_area > div {width:50%; padding:0 10px;}
+#trand .result_area.graph .trand_box .btn_area button {display: block; width:100%; line-height: 40px; margin-top:15px; border-radius: 5px; background:#fff; text-align: center; font-size:16px; cursor: pointer;}
+#trand .result_area.graph .trand_box .btn_area .left_btn {float: left;}
+#trand .result_area.graph .trand_box .btn_area .right_btn {float: right;}
+#trand .result_area.graph .graph_area {position: relative; float:right; width: 65%; height:637px;max-height:637px; background:#fff;}
+#trand .result_area.graph .graph_area .temp_txt {position: absolute; top:50%; left:50%; font-size:32px; transform: translate(-50%, -50%); color:rgba(0,0,0,0.3); font-weight: bold;}
+#trand .result_area.graph .graph_area.v2 {width:100%;}
+#trand .result_area.graph .trand_box.v2 {position: relative; margin-left: -200px;}
+#trand .result_area.graph .trand_box.v2 .btnArea {position: absolute; top:50%; right:-200px; transform: translateY(-50%);}
+#trand .result_area.graph .trand_box.v2 .btnArea button {width:80px; height: 80px; margin: 10px 5px;border-radius: 50%; background:#fff; font-weight: bold; cursor: pointer;}
+#trand .result_area.graph .trand_box.v2 .btnArea .blue {border:1px solid #5255cc;}
+#trand .result_area.graph .trand_box.v2 .btnArea .pink {border:1px solid #f73883;}
+#trand .result_area.graph .trand_box.v2 .btnArea .blue:hover  {background: #5255cc; color:#fff;}
+#trand .result_area.graph .trand_box.v2 .btnArea .pink:hover  {background: #f73883; color:#fff;}
+
+#trand .list_area {display: flex; align-items: center; justify-content: space-between; margin:0 -100px;}
+#trand .list_area .box_list {width:16%; margin-right:2%;}
+#trand .list_area .box_list:last-child {margin-right:0;}
+#trand .list_area .date_txt {display: block; line-height: 60px; background:#f5f5f5; color:#333; text-align: center; font-weight: bold; font-size:18px;}
+#trand .list_area ul li {position: relative; padding:15px 10px; cursor: pointer;}
+#trand .list_area ul li:nth-child(2n) {background:#f5f5f5;}
+#trand .list_area ul li > * {display: inline-block; vertical-align: middle;}
+#trand .list_area ul li span {font-size:16px; color:#222;}
+#trand .list_area ul li .number {padding:5px; margin-right:5%; background:#eee; border-radius: 3px; color:#666}
+#trand .list_area ul li.on:after {content: ""; position: absolute; left:0; top:-1px; bottom:0; right:0; width:auto; height:100%; box-shadow: inset 0 0 0 3px #5255cc;}
+#trand .list_area ul li.on span {color:#5255cc;}
+#trand .list_area ul li.on .number {background:#5255cc; color:#fff;}
+
+@media all and (max-width:1700px) {
+    #trand .result_area.graph .trand_box.v2 {margin-left:0;}
+    #trand .result_area.graph .trand_box.v2 .btnArea {position: static; transform: unset;}
+}
+
+
+@media all and (max-width: 1274px) {
+    .bg_gray:after {display: none;}
+    #trand .result_area {padding:20px 10px 20px; background: #f5f5f5; margin:0 -15px;}
+    #trand .trand_box {width:47%; margin:0; margin-top:20px;}
+    #trand .trand_box:nth-child(3n) {margin-right:0;}
+    #trand .trand_box:nth-child(2n-1) {float: left;}
+    #trand .trand_box:nth-child(2n) {float: right;}
+    #trand .trand_box:hover {transform: unset; transition: 0.3s;}
+    #trand .trand_box:hover .box_area {box-shadow: 5px 5px 5px #ccc; }
+    #trand .result_area.graph .trand_box {float: none; width:100%;}
+    #trand .result_area.graph .graph_area {margin-top:30px; width:100%;}
+    #trand .list_area {margin:0;}
+    #trand .list_area ul li {padding:15px 5px;}
+    #trand .list_area ul li span {font-size:14px;}
+    #trand .list_area .box_list {margin-right:1%;}
+    #trand .list_area .date_txt {font-size:16px;}
+    
+}
+
+@media all and (max-width: 1110px) {
+    #trand .list_area {overflow: hidden; display: block;}
+    #trand .list_area .box_list {float: left; width:32.6%; margin-top:30px;} 
+    #trand .list_area .box_list:nth-child(3n) {margin-right: 0;}
+}
+
+@media all and (max-width: 960px) {
+    #trand .main_title {font-size:30px; line-height: normal;} 
+    #trand .top_title {font-size:18px;}
+    #trand .result_area {padding:20px 10px;}
+    #trand .trand_box {width:100%;}
+    #trand .trand_box:nth-child(2n-1) {float: none;}
+    #trand .trand_box:nth-child(2n) {float: none;}
+    #trand .list_area .box_list {width:49%;}
+    #trand .list_area .box_list:nth-child(3n) {margin-right: 0;}
+    #trand .list_area .box_list:nth-child(3) {clear: both;}
+    #trand .list_area .box_list:nth-child(5) {clear: both;}
+    #trand .list_area .box_list:nth-child(2n-1) {float: left;}
+    #trand .list_area .box_list:nth-child(2n) {float: right;}
+    #trand .trand_box.v2 .cont_area {padding: 10px 5px 6px;}
+    #trand .trand_box.v2 .big_title span {font-size:20px;}
+    #trand .trand_box.v2 .big_title span:last-child {font-size:16px;}
+}
+
+@media all and (max-width: 500px) {
+    #trand .trand_box .title {padding:5px 10px; font-size:14px;}
+    #trand .trand_box .mid_area .name {font-size:20px;}
+    #trand .trand_box .mid_area .number {font-size:18px;}
+    #trand .trand_box .mid_area .number img {width:18px;}
+    #trand .trand_box .btm_area .counting {width:50%; border-right: 1px solid #ddd;}
+    #trand .trand_box .btm_area .counting:last-child {border-right:0;}
+    #trand .list_area .box_list {width:100%;}
+    #trand .list_area .box_list:nth-child(3) {clear: unset;}
+    #trand .list_area .box_list:nth-child(5) {clear: unset;}
+    #trand .list_area .box_list:nth-child(2n-1) {float: none;}
+    #trand .list_area .box_list:nth-child(2n) {float: none;}
+
+    #trand .trand_box.v2 .left_area {float: none; width:100%; padding:6px 0; text-align: center;}
+    #trand .trand_box.v2 .right_area {float: none; width:100%;}
+    #trand .result_area.graph .trand_box.v2 .btnArea {display: flex; align-items: center; justify-content: space-around;}
+}

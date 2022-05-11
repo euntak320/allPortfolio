@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(function(){
+            $(".accordian li a").click(function(e){
+                e.preventDefault();
+                if($(this).hasClass("on")){
+                    slideUp();
+                }
+                else {
+                    slideUp();
+                    $(this).addClass("on").next().slideDown();
+                }
+            });
+            function slideUp() {
+                $(".accordian li a").removeClass("on").next().slideUp();
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="subPage">
+        <div id="header">
+            <button type="button" class="back">뒤로가기</button>
+            <span class="title">자주묻는질문</span>
+        </div>
+        <div id="content" class="reset"> 
+            <div class="questionArea">
+                <div class="tab">
+                    <ul>
+                        <li class="on">의료상담 문의</li>
+                        <li>앱 이용문의</li>
+                    </ul>
+                    <div class="viewArea">
+                        <div class="policyList accordian view on">
+                            <ul>
+                                <li>
+                                    <a href="">MJ Virtual 의료상담은 어떤 서비스인가요?</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">의료상담 서비스는 어떻게 진행되나요?</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">서비스 이용 비용은 어떻게 되나요?</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">언제든지 상담이 가능한가요?</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">상담 내용은 어떻게 보호되나요?</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">처방전은 어떻게 받나요?</a>
+                                    <p>내용</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="policyList accordian view">
+                            <ul>
+                                <li>
+                                    <a href="">앱에 접속이 되지 않고 있습니다.</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">의료 상담 중 상담이 갑자기 종료되었습니다.</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">해외에서 사용하려고 합니다. <br>예약 시간은 한국시간이 기준인가요?</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">예약한 상담을 취소하고 싶어요.</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">예약 변경을 하고 싶은데<br>본인이 직접 변경 할 수 있나요?</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">MJ Virtual에서 검사 처방 및<br>진행이 가능한가요?</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">명지병원 외래진료 예약하고 싶습니다.</a>
+                                    <p>내용</p>
+                                </li>
+                                <li>
+                                    <a href="">명지병원 종합 검진이 필요합니다.</a>
+                                    <p>내용</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div id="footer">
+            <ul>
+                <li><a href="" class="home ">홈</a></li>
+                <li><a href="" class="spot ">약국등록</a></li>
+                <li><a href="" class="care ">진료</a></li>
+                <li><a href="" class="list ">진료내역</a></li>
+                <li><a href="" class="mypage on">마이페이지</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

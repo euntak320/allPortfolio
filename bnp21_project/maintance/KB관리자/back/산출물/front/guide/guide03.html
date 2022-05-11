@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<title>퍼블 가이드 | KB스타게이트</title>
+<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon" href="">
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 해당페이지만 사용 : 슬라이드  -->
+<link type="text/css" rel="stylesheet" href="../common/css/slick.css">
+<script type="text/javascript" src="../common/js/slick.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<link rel="stylesheet" type="text/css" href="../common/css/guide.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	var _valueTit = $(".guideMenu li.on").text();
+	$(".guideMenu .gmTit").text(_valueTit);
+
+	$(".gmTit").on("click", function(){
+		$(this).siblings("div").toggle();
+	});
+
+	$(".guideMenu li").on("click", function(){
+		$(this).addClass("on").siblings().removeClass("on");
+		var _valueTit = $(this).text();
+		$(".guideMenu .gmTit").text(_valueTit);
+	});
+});
+</script>
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="guide">
+	<!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="fl"><h1 class="logo"><a href="#">Publishing Guide</a></h1></div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<div class="guideMenu">
+			<a href="#" class="gmTit"></a>
+			<div>
+				<ul>
+					<li><a href="guide.html">텍스트</a></li>
+					<li><a href="guide02.html">폼</a></li>
+					<li class="on"><a href="guide03.html">버튼</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- content -->
+		<div class="content">
+			<h2 class="g_tit2">버튼</h2>
+
+			<h3 class="g_tit3">1. 클래스 네임 규칙</h3>
+			<h4 class="g_tit4">- 디폴트</h4>
+			<div class="g_box">
+				<p>① 일반 버튼 : btn</p>
+				<p>② 텍스트 버튼 : btnTxt</p>
+			</div>
+
+			<h4 class="g_tit4">- 사이즈</h4>
+			<div class="g_box">
+				<p>① 중간 사이즈 : md</p>
+				<p>② 제일 큰 사이즈 : lg</p>
+			</div>
+
+			<h4 class="g_tit4">- 색상</h4>
+			<div class="g_box">
+				<p>① 기본색상 : de</p>
+				<p>② 기본색상의 포인트 : de point1</p>
+				<p>③ 투명 : wh</p>
+				<p>④ 회색 : gr</p>
+			</div>
+
+			<h3 class="g_tit3">2. 유형</h3>
+			<h4 class="g_tit4">- 중간버튼 : 컨텐츠 버튼</h4>
+			<div class="g_box">
+				<a href="#" class="btn md de">버튼</a>
+				<a href="#" class="btn md de point1">버튼</a>
+				<a href="#" class="btn md wh">버튼</a>
+				<a href="#" class="btn md gr">버튼</a>
+			</div>
+
+			<h4 class="g_tit4">- 큰버튼 : 페이지 버튼</h4>
+			<div class="g_box">
+				<a href="#" class="btn lg de">버튼</a>
+				<a href="#" class="btn lg de point1">버튼</a>
+				<a href="#" class="btn lg wh">버튼</a>
+				<a href="#" class="btn lg gr">버튼</a>
+			</div>
+
+			<h4 class="g_tit4">- 텍스트 + 아이콘 버튼</h4>
+			<div class="g_box">
+				<a href="#" class="btnTxt sm modi"><span class="ico"></span><span>편집</span></a>
+				<a href="#" class="btnTxt sm add"><span class="ico"></span><span>추가</span></a>
+				<a href="#" class="btnTxt sm canc"><span class="ico"></span><span>취소</span></a>
+				<a href="#" class="btnTxt sm save"><span class="ico"></span><span>저장</span></a>
+			</div>
+
+			<h4 class="g_tit4">- 텍스트 + 화살표 아이콘</h4>
+			<div class="g_box">
+				<a href="#" class="btnTxt"><span>버튼명</span><span class="ico arr"></span></a>
+			</div>
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //container -->
+
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

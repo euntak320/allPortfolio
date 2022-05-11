@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="texthtml; charset=utf-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>[환자용] MJ_virtual</title>
+	<style type="text/css">
+	*{box-sizing:border-box}
+	#wrap{overflow:hidden;width:100%;min-width:1024px}
+	#header{overflow:hidden;padding:50px;width:100%}
+	#header .tit_area{position:relative;overflow:hidden}
+	#header .tit_area h1{overflow:hidden;margin-bottom:20px;font-size:40px}
+	#header .tit_area strong{display:inline-block;overflow:hidden;width:169px;line-height:23px;text-align:center;font-size:15px;color:#fff;text-align:center;background:#000}
+	#header .tit_area strong:before{display:block;overflow:hidden;position:absolute;top:60px;left:0;content:"";width:100%;border-top:2px solid #000}
+	#header .tit_area strong span{overflow:hidden}
+	#header .intro{position:absolute;top:60px;right:50px;overflow:hidden}
+	#header .intro p{overflow:hidden;font-size:10px;line-height:15px;text-align:right}
+
+	#contents{overflow:hidden;padding:0 50px}
+	#contents .table_style01{overflow:hidden;width:100%;border-top:3px solid #f00;border-bottom:1px solid #000}
+	#contents .table_style01 table{overflow:hidden;width:100%; text-align: center;}
+	#contents .table_style01 table thead{border-left:1px solid #444}
+	#contents .table_style01 table tr th{padding:10px 0 10px 10px;border-right:1px solid #444;font-size:13px;text-align:left;color:#fff;background:#000}
+	#contents .table_style01 table tr td{padding:10px 0 10px 10px;border-top:1px solid #eaeaea;border-right:1px solid #eaeaea;font-size:13px;text-align:center;color:#000}
+	#contents .table_style01 table tr td:first-child{border-left:1px solid #eaeaea}
+	#contents .table_style01 table tr td + td + td + td + td + td + td + td{color:#a60a0a}
+	#contents .table_style01 table tr td + td + td + td + td + td + td + td + td{color:#000}
+	#contents .table_style01 table tr.depth td{border-top:1px solid #f00}/* 메뉴 구분 */
+	#contents .table_style01 table tr.point td{border:1px solid #f8b9b9;background:#ffe7e7} /* 중요 내용 */
+	</style>
+</head>
+
+<body>
+	<!-- wrap -->
+	<div id="wrap">
+		
+		<!-- header -->
+		<header id="header">
+			<div class="tit_area">
+				<h1>[환자용] MJ_virtual</h1>
+			</div>
+			<div class="intro">
+				<p>HTML5 / utf-8</p>
+			</div>
+		</header>
+		<!--// header -->
+
+		<!-- section -->
+		<section id="contents">
+
+			<!-- <div class="info">
+				<div class="box">
+					
+				</div>
+			</div> -->
+
+			<!-- 메뉴 구조도 -->
+			<div class="table_style01">
+				<table summary="1depth, 2depth, 3depth, 4depth, 폴더명, URL, 완료날짜, 수정날짜, 진행상태, 기타사항 항목으로 구성된 IA 표입니다.">
+					<colgroup>
+						<col style="width:7%"/>
+						<col style="width:10%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:5%"/>
+						<col style="width:10%"/>
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col">구분</th>
+							<th scope="col">페이지명</th>
+							<th scope="col">URL</th>
+							<th scope="col">완료날짜</th>
+							<th scope="col">수정날짜</th>
+							<th scope="col">진행상태</th>
+							<th scope="col">전달사항</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>인트로</td>
+							<td>스플래시</td></td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>일반진료, 심리상담선택</td>
+							<td>
+								<a href="html/app-002-1.html" target="_blank">app-002-1.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>인트로페이지</td>
+							<td>
+								<a href="html/app-003.html" target="_blank">app-003.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td>APP-003, APP-004, APP-005 포함되어 있음</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>본인인증 API</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>이미 가입알림</td>
+							<td>
+								<a href="html/app-007.html" target="_blank">app-007.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td>공통 레이어 팝업</td>
+						</tr>
+						<tr>
+							<td>로그인</td>
+							<td>휴대전화번호 입력</td>
+							<td>
+								<a href="html/app-008.html" target="_blank">app-008.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>휴대전화번호 오류 레이어 팝업</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>X</td>
+							<td>app-007.html 참고</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>SMS 인증번호 입력 및 확인</td></td>
+							<td>
+								<a href="html/app-011.html" target="_blank">app-011.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>pr150 클래스 추가, app-012.html 포함</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>인증번호 오류 체크</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>app-007.html 참고</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>내국인, 외국인 선택</td>
+							<td>
+								<a href="html/app-013-2.html" target="_blank">app-013-2.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>내국인, 외국인, 한인회 선택</td>
+							<td>
+								<a href="html/app-013-3.html" target="_blank">app-013-3.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>회원가입</td>
+							<td>본인인증 - 휴대전화번호 확인</td>
+							<td>
+								<a href="html/app-014.html" target="_blank">app-014.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>본인인증 - 주민번호 입력</td>
+							<td>
+								<a href="html/app-015.html" target="_blank">app-015.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td>app-016.html 포함</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>본인인증 - 외국인등록번호, 여권번호 입력입력</td>
+							<td>
+								<a href="html/app-015-1.html" target="_blank">app-015.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td>app-016.html 포함</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>본인인증 - 사회보장번호, 여권번호, 한인회코드 입력</td>
+							<td>
+								<a href="html/app-015-2.html" target="_blank">app-015.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td>app-016.html 포함</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>회원가입 약관동의</td>
+							<td>
+								<a href="html/app-016.html" target="_blank">app-016.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td>app-018.html 포함</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>약관내용</td>
+							<td>
+								<a href="html/app-019.html" target="_blank">app-019.html</a>
+							</td>
+							<td> </td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기업회원, 개인회원 선택</td>
+							<td>
+								<a href="html/app-020.html" target="_blank">app-020.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>app-020.html, app-021.html 포함, app-026.html</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>신용카드 정보</td>
+							<td>
+								<a href="html/app-027.html" target="_blank">app-027.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>app-027-2.html, app-028.html 포함</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기초정보 안내문구</td>
+							<td>
+								<a href="html/app-031.html" target="_blank">app-031.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>기초정보 작성</td>
+							<td>
+								<a href="html/app-032.html" target="_blank">app-032.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>app-033.html, app-034-1.html, app-034-2.html, app-034-3.html 포함</td>
+						</tr>
+						<tr>
+							<td>메인</td>
+							<td>메인</td>
+							<td>
+								<a href="html/app-042.html" target="_blank">app-042.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>진료예약현황</td>
+							<td>
+								<a href="html/app-043.html" target="_blank">app-043.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>진료과목 선택</td>
+							<td>
+								<a href="html/app-045.html" target="_blank">app-045.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>의사목록</td>
+							<td>
+								<a href="html/app-046.html" target="_blank">app-046.html</a>
+							</td>
+							<td></td>
+							<td>20-11-17</td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>의사프로필</td>
+							<td>
+								<a href="html/app-047.html" target="_blank">app-047.html</a>
+							</td>
+							<td></td>
+							<td>20-11-17</td>
+							<td></td>
+							<td>app-048.html, app-049.html 포함</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>나의 주치의</td>
+							<td>
+								<a href="html/app-050.html" target="_blank">app-050.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>문진표 작성</td>
+							<td>
+								<a href="html/app-051.html" target="_blank">app-051.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>app-052.html, app-051.html 포함</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>문진표 작성</td>
+							<td>
+								<a href="html/app-055.html" target="_blank">app-055.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>최종 진료예약확인</td>
+							<td>
+								<a href="html/app-060.html" target="_blank">app-060.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>최종 진료예약확인안내</td>
+							<td>
+								<a href="html/app-062.html" target="_blank">app-062.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>예약환형보기</td>
+							<td>
+								<a href="html/app-063.html" target="_blank">app-063.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>채팅상담 신규</td>
+							<td>
+								<a href="html/app-065-1.html" target="_blank">app-065-1.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>채팅상담</td>
+							<td>
+								<a href="html/app-065-2.html" target="_blank">app-065-2.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>화상채팅</td>
+							<td>
+								<a href="html/app-067.html" target="_blank">app-067.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>약국등록</td>
+							<td>
+								<a href="html/app-068.html" target="_blank">app-068.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>약국검색</td>
+							<td>
+								<a href="html/app-069.html" target="_blank">app-069.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>약국등록</td>
+							<td>
+								<a href="html/app-070.html" target="_blank">app-070.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>진료내역 없을때</td>
+							<td>
+								<a href="html/app-071.html" target="_blank">app-071.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>진료내역</td>
+							<td>
+								<a href="html/app-072.html" target="_blank">app-072.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>처방전 팝업</td>
+							<td>
+								<a href="html/app-072-1.html" target="_blank">app-072-1.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>진료내역</td>
+							<td>
+								<a href="html/app-073.html" target="_blank">app-073.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>app-073-1.html 포함</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>리뷰등록</td>
+							<td>
+								<a href="html/app-074.html" target="_blank">app-074.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>마이페이지</td>
+							<td>
+								<a href="html/app-075.html" target="_blank">app-075.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>고객센터</td>
+							<td>
+								<a href="html/app-075-3.html" target="_blank">app-075-3.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>자주묻는질문</td>
+							<td>
+								<a href="html/app-075-4.html" target="_blank">app-075-4.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>app-075-5.html</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>마이페이지 카드이용</td>
+							<td>
+								<a href="html/app-076.html" target="_blank">app-076.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>개인정보변경</td>
+							<td>
+								<a href="html/app-078.html" target="_blank">app-078.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>나의기초정보</td>
+							<td>
+								<a href="html/app-031.html" target="_blank">app-031.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>나의기초정보2</td>
+							<td>
+								<a href="html/app-032.html" target="_blank">app-032.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>이용약관</td>
+							<td>
+								<a href="html/app-082.html" target="_blank">app-082.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>서비스 이용약관</td>
+							<td>
+								<a href="html/app-083.html" target="_blank">app-083.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td>카드 정보 입력</td>
+							<td>
+								<a href="html/app-084.html" target="_blank">app-084.html</a>
+							</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--// 메뉴 구조도 -->
+
+		</section>
+		<!--// section -->
+
+	</div>
+	<!--// wrap -->
+
+</body>
+</html>

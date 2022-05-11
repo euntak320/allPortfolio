@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Meta, title, CSS, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>자영업지원센터 사업관리 시스템</title>
+    <!--[if lt IE 9]>
+			<script src="/js/html5shiv.min.js"></script>
+		<![endif]-->
+    <!-- scripts and styles -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="../../css/rMateGridH5Sample.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/rMateH5.css" />
+    <!-- rMateChartH5 라이센스 -->
+    <script type="text/javascript" src="../../js/rMateGridH5License.js"></script>
+    <!-- rMateGridH5 라이브러리 -->
+    <script type="text/javascript" src="../../js/rMateGridH5.js"></script>
+
+    <!-- smartEditor -->
+    <script type="text/javascript" src="../../smartEditor/js/HuskyEZCreator.js"></script>
+    <!-- smartEditor -->
+    <link rel="stylesheet" type="text/css" href="../../smartEditor/css/smart_editor2.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css" />
+
+    <link rel="apple-touch-icon-precomposed" href="../../ico/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/ico/favicon.ico">
+
+    <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="../../css/jquery/jquery-ui-1.8.16.main.css" />
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="../../js/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery-ui-1.8.16.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery-ui.datepicker.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.number.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.maskedinput-1.3.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.dialog.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery/jquery.numeric.js"></script>
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../../js/common-util.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/sbdcCommon.js"></script>
+    <script type="text/javascript" src="../../js/downloadProgress.js"></script>
+    <script type="text/javascript" src="../../js/default.js"></script>
+    <script type="text/javascript" src="../../js/printThis.js"></script>
+
+    <!-- 트리구조 추가 -->
+    <link rel="stylesheet" type="text/css" href="../../css/jstree.min.css" />
+    <script type="text/javascript" src="../../js/jstree.min.js"></script>
+
+    <!-- 신규 css 추가 -->
+    <link rel="stylesheet" href="../../css/newpage.css">
+
+    <!-- function scripts -->
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="toplink">
+            <a class="navbar-brand" href="/cm/main.do"><img src="/img/logo_2016.png" alt="자영업지원센터"></a>
+            <ul>
+                <li><a href="/cc/SM_10402_SL.do">
+                        <sapn style="text-align: middle;"><img src="/img/icon/sms.JPG"
+                                style="width: 15px; padding-right: 5px; margin-top: 3px;" align="top">SMS 발송</sapn>
+                    </a></li>
+                <li><i class="fa fa-user"></i>개발테스트님 환영합니다.</li>
+                <li><a href="/cm/CMLogout.do"><i class="fa fa-power-off"></i>로그아웃</a></li>
+                <li><a href="/sso/SSO_10100.do" target="_blank"> <i class="fa fa-home"></i>소상공인 종합지원포털 홈페이지</a></li>
+            </ul>
+        </div>
+        <nav class="topnav-wrap">
+            <ul class="topnav" id="topMenu">
+                <li><a href="/cs/CS_10100_SL.do">고객&amp;상담</a></li>
+                <li><a href="/cn/CN_10300_SL.do">창업지원</a></li>
+                <li><a href="/pm/PM_20101_SL.do">사후관리</a></li>
+                <li><a href="/fs/FS_10000_SL.do">시설개선</a></li>
+                <li class="active"><a href="/cg/CG_70101_SL_NEW.do">경영지원</a></li>
+                <li><a href="/st/ST_10201_FORM.do">경영지원통계</a></li>
+                <li><a href="/cc/CC_10301_SL.do">전문가관리</a></li>
+                <li><a href="/ed/ED_10101_SL.do">교육관리</a></li>
+                <li><a href="/bt/BT_10100_SL.do">직원알림방</a></li>
+                <li><a href="/bs/BS_10100_SL.do">공지&amp;알림</a></li>
+                <li><a href="/bm/MasterList.do">게시판관리</a></li>
+                <li><a href="/sm/SM_10101_SL.do">시스템관리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-content">
+        <div class="sidenav-wrap">
+            <ul class="nav sidenav" id="leftMenu">
+                <li class="active"><a href=""><i class="fa fa-file-text-o"></i>컨설팅 관리(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>사업신청서 등록(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>온라인신청서접수(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>전문가 배정(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>멘토링 배정</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>과거 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>컨설팅 정보 조회</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>접수부서별 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>경영지원 해피콜</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험신청서 접수</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>크리에이터 교육관리</a></li>
+            </ul>
+        </div>
+        <div class="content-wrap">
+            <div class="content">
+                <div class="content">
+                    <h3>발송템플릿 관리</h3>
+                    <div class="search-wrap">
+                        <div class="form-group mr20">
+                            <label for="csNm">템플릿 제목</label>
+                            <input type="text" id="csNm" name="csNm" class="form-control schInput">
+                        </div>
+                        <div class="form-group mr20">
+                            <label for="csId">템플릿 내용</label>
+                            <input type="text" id="csId" name="csId" class="form-control schInput">
+                        </div>
+                        
+                        <a href="#none" id="btnSelect" class="btn btn-point"><i class="fa fa-search"></i>검색</a>
+                        <a href="#none" id="btnCancel" class="btn btn-default"><i class="fa fa-repeat"></i>초기화</a>
+                    </div>
+                    <p class="clearfix"></p>
+                    <p class="clearfix"></p>
+                    <div class="sms-list-wrap new">
+                        <div class="pull-left">
+                            <select id="pageSize" name="pageSize" title="목록 개수 선택">
+                                <option value="10">10개씩 보기</option>
+                                <option value="15">15개씩 보기</option>
+                                <option value="25">25개씩 보기</option>
+                                <option value="50">50개씩 보기</option>
+                                <option value="100">100개씩 보기</option>
+                                <option value="200">200개씩 보기</option>
+                                <option value="2068">전체 보기</option>		    
+                            </select>
+                        </div>
+                        <div class="pull-right" id="pageInfo">2068건[1/207 페이지]</div>
+                        <p class="clearfix"></p>
+                        <table class="table table-bordered table-hover">
+                            <colgroup>
+                                <col style="width:5%;">
+                                <col style="width:10%;">
+                                <col style="width:12%;">
+                                <col style="width:12%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id=" "></th>
+                                    <th>템플릿 제목</th>
+                                    <th>등록자</th>
+                                    <th>등록일시</th>
+                                </tr>
+                            </thead>
+                            <tbody id="memberListTbody">
+                                <tr>
+                                    <td><input type="checkbox" id=" "></td>
+                                    <td>고객설문참여요청1</td>
+                                    <td>홍길동</td>
+                                    <td>2020-09-15 15:15</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav class="text-center" id="gridPageNavigationDiv">
+                            <ul class="pagination"><li><a href="javascript:;"><strong>1</strong></a></li>
+                                <li><a href="javascript:movePage('2')">2</a></li>
+                                <li><a href="javascript:movePage('3')">3</a></li>
+                                <li><a href="javascript:movePage('4')">4</a></li>
+                                <li><a href="javascript:movePage('5')">5</a></li>
+                                <li><a href="javascript:movePage('6')">6</a></li>
+                                <li><a href="javascript:movePage('7')">7</a></li>
+                                <li><a href="javascript:movePage('8')">8</a></li>
+                                <li><a href="javascript:movePage('9')">9</a></li>
+                                <li><a href="javascript:movePage('10')">10</a></li>
+                                <li class="ico"><a href="javascript:movePage('11')"><i class="fa fa-angle-right fa-lg"></i></a></li>
+                                <li class="ico"><a href="javascript:movePage('207')"><i class="fa fa-angle-double-right fa-lg"></i></a></li>
+                            </ul>
+                        </nav>
+                        <div class="control-button">	
+                            <span class="fr">
+                                <a href="#none" id=" " name=" " class="btn btn-pop">추가</a>
+                                <a href="#none" id=" " name=" " class="btn btn-primary">저장</a>
+                                <a href="#none" id=" " name=" " class="btn btn-danger">삭제</a>
+                                <a href="#none" id=" " class="btn btn-primary">엑셀다운로드</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="sms-wrap new">
+                        <div class="sms-top"></div>
+                        <div class="sms-bdy">
+                            <div class="sms-screen">
+                                <textarea id="smsText" onkeyup="javascript:fn_TextAreaInputLimit('smsText','smsByte');" class="sms-text" style="height:200px;"></textarea>
+                            </div>
+                            <div class="sms-info">
+                                <label id="smsByte">0 bytes </label>
+                            </div>
+                        </div>
+                        <div class="sms-btm">
+                            <a href="#" id=" " class="btn btn-point btn-block sms-btn-send">SMS</a>
+                            <a href="#" id=" " class="btn btn-point btn-block sms-btn-send">보내기</a>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

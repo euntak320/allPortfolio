@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>MJ Virtaul Admin</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- js -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    
+</head>
+
+<body>
+    <div id="subPage">
+        <!-- header -->
+        <div class="header">
+            <div class="topArea">
+                <h1><a href="">logo</a></h1>
+                <div class="topBtm">
+                    <span>고객센터 담당자 2님</span>
+                    <button>로그아웃</button>
+                </div>
+            </div>
+            <div class="bottomArea">
+                <span>
+                    <a href="" class="on">병원등록</a>
+                </span>
+                <span>
+                    <a href="">기업등록</a>
+                </span>
+                <span>
+                    <a href="">의료진관리</a>
+                </span>
+                <span>
+                    <a href="">병원관리</a>
+                </span>
+            </div>
+        </div>
+        <!-- header -->
+
+        <!-- content -->
+        <div class="contentArea">
+            <div class="comLayout">
+                <div class="filterArea">
+                    <div class="top">
+                        <span class="title">병원등록</span>
+                    </div>
+                    <div class="bottom">
+                        <div class="fl">
+                            <div class="select">
+                                <select name="" id="">
+                                    <option value="">문의일</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+
+                                </select>
+                            </div>
+                            <div class="date">
+                                <div class="input">
+                                    <input type="text" placeholder="YYYY-MM-DD" class="datepicker">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fr">
+                            <div class="select">
+                                <select name="" id="">
+                                    <option value="">전체</option>
+                                    <option value="">병원명</option>
+                                    <option value=""></option>
+
+                                </select>
+                            </div>
+                            <div class="input">
+                                <input type="text" placeholder="검색어를 입력해주세요">
+                                <button>검색</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comTableArea">
+                    <div class="topTxt">
+                        <span class="fl">총 0,000건</span>
+                        <div class="fr">
+                            <span>목록 개수</span>
+                            <div class="select">
+                                <select name="" id="">
+                                    <option value="">10</option>
+                                    <option value="">9</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table">
+                        <table>
+                            <caption>해당 테이블은 병원코드, 병원명, 연락처, 사업자번호 병원주소로 구성되어 있습니다.</caption>
+                            <colgroup>
+                                <col style="width:15%">
+                                <col style="width:15%">
+                                <col style="width:15%">
+                                <col style="width:10%">
+                                <col style="width:45%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>병원코드</th>
+                                    <th>병원명</th>
+                                    <th>연락처</th>
+                                    <th>사업자번호</th>
+                                    <th>병원주소</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                                <tr>
+                                    <td>H00001</td>
+                                    <td>명지병원</td>
+                                    <td>031-234-2456</td>
+                                    <td>201-81-98805</td>
+                                    <td>일산 화정동</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagingArea">
+                        <!-- 남은 페이지가 있을땐 on 클래스 추가 -->
+                        <a href="" class="arrow prev">전 10페이지</a>
+                        <a href="" class="arrow before">전 페이지</a>
+                        <a href="" class="txt">1</a>
+                        <a href="" class="txt">2</a>
+                        <a href="" class="txt">3</a>
+                        <a href="" class="txt">4</a>
+                        <a href="" class="txt">5</a>
+                        <a href="" class="arrow after on">다음 페이지</a>
+                        <a href="" class="arrow next on">다음 10페이지</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- content -->
+
+        <!-- footer -->
+        <div class="footer">
+            <span>2020 &copy; MJ. All Rights Reserved.</span>
+        </div>
+        <!-- footer -->
+    </div>
+    <!-- layer -->
+    <div class="layerFrame">
+        <div class="layerArea">
+            <div class="topTitle">
+                <span>병원등록</span>
+            </div>
+            <div class="bottomArea">
+                <div class="comTable">
+                    <table>
+                        <colgroup>
+                            <col style="width:20%;">
+                            <col style="width:80%;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>병원코드</th>
+                                <td>
+                                    <div class="input">
+                                        <input type="text" placeholder="병원코드를 적어주세요.">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>병원명</th>
+                                <td>
+                                    <div class="input">
+                                        <input type="text" placeholder="병원명을 적어주세요.">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사업자등록번호</th>
+                                <td>
+                                    <div class="input">
+                                        <input type="text" placeholder="사업자등록번호를 적어주세요.">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>연락처</th>
+                                <td>
+                                    <div class="input">
+                                        <input type="text" placeholder="연락처를 적어주세요.">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>입금계좌</th>
+                                <td>
+                                    <div class="input bank">
+                                        <input type="text" placeholder="은행을 적어주세요.">
+                                        <input type="text" placeholder="계좌번호를 적어주세요.">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>주소</th>
+                                <td>
+                                    <div class="btn">
+                                        <input type="text" readonly>
+                                        <button type="button">주소찾기</button>
+                                    </div>
+                                    <div class="input mt10">
+                                        <input type="text" readonly>
+                                    </div>
+                                    <div class="input mt10">
+                                        <input type="text" placeholder="나머지 주소를 적어주세요.">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>메모</th>
+                                <td>
+                                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                                </td>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="layerbtn">
+                    <button type="button" class="del">삭제</button>
+                    <button type="button" class="blue">저장</button>
+                    <button type="button" onclick="layerOpen();">닫기</button>
+                </div>
+            </div>
+            
+            <button type="button" class="closeBtn" onclick="layerOpen();">닫기</button>
+        </div>
+    </div>
+</body>
+
+</html>

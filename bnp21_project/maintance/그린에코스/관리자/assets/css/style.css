@@ -1,0 +1,552 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'noto-kr';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../font/notokr-regular.eot');
+    src: url('../font/notokr-regular.eot?#iefix') format('embedded-opentype'), /* ie 6,7,8 적용 embedded-opentype ie 8,9 적용 */
+    url('../font/notokr-regular.woff') format('woff'), /* ie 제외한 나머지 */
+    url('../font/notokr-regular.ttf') format('truetype');
+  }
+
+/* 초기화 코드 */
+*{-webkit-text-size-adjust:none;box-sizing:border-box;}article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block}html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure,footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video{margin:0;padding:0;border:0;outline:0;}body{-webkit-tap-highlight-color:rgba(0,0,0,0);font-size:16px;line-height:1.3;letter-spacing: -0.07em; font-family:'noto-kr','Malgun Gothic',Dotum ,sans-serif;font-weight:normal;color:#666;}ul, ol, li{list-style:none}fieldset, img{border:0}br{letter-spacing:normal}p{letter-spacing:normal}hr{display:none}address, caption, em, var{padding:0;margin:0;font-style:normal;font-weight:normal}a{text-decoration:none;color:#666;}a[href^="tel"]{font-style:normal}a:hover, a:active, a:focus{text-decoration:none}input, textarea, select{width:100%;letter-spacing:normal}img{border:0;vertical-align:top}legend, caption{position:absolute;left:-1000%;top:0;width:1px;height:1px;font-size:0;line-height:0;overflow:hidden}table{width:100%;border:0;border-spacing:0;border-collapse:collapse;}
+
+/* header */
+header {position: relative; z-index: 10;}
+header .top_area{position: relative; width: 1200px; height: 80px; margin:0 auto;}
+header .top_area h1{position: absolute; top:50%; left:0; width:528px; height:28px; margin-top:-14px; background: url("../images/logo.jpg") no-repeat center;}
+header .top_area h1 a{display: block; width:100%; text-indent: -9999px;}
+header .top_area .login_area{position: absolute; top:50%; right: 0; margin-top:-10px;}
+header .top_area .login_area a{padding-left:25px;  margin-left:10px; font-size:14px; color:#333;}
+header .top_area .login_area .admin{background: url("../images/admin.jpg") no-repeat left;}
+header .top_area .login_area .my_info{background: url("../images/info.jpg") no-repeat left;}
+header .top_area .login_area .login{background: #666; padding:7px 15px; color:#fff;}
+/* 19-11-27 gnb 수정 */
+header .bottom_area {position: relative;background: #345bb4; line-height: 50px; color:#fff; text-align: center;height: 50px;}
+header .bottom_area .gnb {width: 100%;margin: 0 auto;max-width: 1200px;}
+header .bottom_area .gnb .menu_area {position:relative; width: 1200px; z-index: 100; }
+header .bottom_area .gnb .menu_area:after {content:''; clear:both; display:block; height:0;}
+header .bottom_area .gnb .menu_area > li {float: left;width:19%; cursor: pointer; position: relative;}
+header .bottom_area .gnb .menu_area > li::before {content: ""; position: absolute; top:50%; width:1px; height:15px; left:0; margin-top:-7.5px; background: #ccc;}
+header .bottom_area .gnb .menu_area > li:first-child::before {display: none;}
+header .bottom_area .gnb .menu_area > li > .depth2 {position: absolute; left: 0; width: 100%; text-align: center;}
+header .bottom_area .gnb .menu_area > li > .depth2 ul {display:none;}
+header .bottom_area .gnb .menu_area > li > .depth2 ul:before {content:''; position:absolute; top:10px; right:0; height:370px; width:1px; background-color:#ddd;}
+header .bottom_area .gnb.on .menu_area > li > .depth2 ul {display:block;}
+header .bottom_area .gnb .menu_area > li > .depth2 ul > li {height: 40px;}
+header .bottom_area .gnb .menu_area > li > .depth2 ul > li > a:hover {font-weight: bold; color:#345bb4; text-decoration:underline;} /* 2019-12-16 수정 */
+header .bottom_area .gnb .menu_area > li > header .bottom_area .gnb .menu_area > li > .depth2 > ul {max-width:1000px;margin:0 auto}
+header .bottom_area .gnb .menu_area > li > a {color: #fff;}
+header .bottom_area .gnb .menu_area > li > a.on, header .bottom_area .menu_area li > a:hover {color:#ffc800;}
+header .bottom_area .menu_area > a {position: absolute; display: block;top: 24px; right: 0; width:30px; height: 18px; margin-top:-9px; background: url("../images/m_menu.png") no-repeat center; text-indent: -9999px;}
+header .gnb .menu_bg {display: none; position:absolute; top:50px; left:0; right:0; height:400px; background-color:#f4f4f4; border-bottom:1px solid #ccc;}
+header .gnb.on .menu_bg {display: block;}
+/* 19-11-27 gnb 수정 end */
+/* header */
+
+/* footer */
+footer{height: 60px; padding:30px 0; border-top:1px solid #ccc; text-align: center;}
+footer span{display: block; font-size:14px; margin-top:5px;}
+/* footer */
+
+/* common */
+.content_frame{position: relative; overflow: hidden; width:1200px; min-height: 720px; margin:0 auto; padding-top:40px; padding-left:240px;}
+input, select{height: 40px;  padding-left:10px;}
+.mg0{margin:0!important;}
+.content_area{padding-bottom:50px;}
+
+/* 달력부분 */
+input.cal{position: relative;}
+.ui-datepicker-trigger{position: absolute; display: block; top:50%; right:0; width:25px; height: 25px; margin-top:-10px; border:0; background: url("../images/calendar.png") no-repeat; text-indent: -9999px;}
+
+/* 왼쪽메뉴 */
+.left_menu{position: absolute; left:0; width:180px; height: 100%; background:#f4f4f4; }
+.left_menu .menu_title{display: block; width: 100%; height:100px; background: url("../images/left_bg.jpg") no-repeat center; line-height: 100px; color:#fff; font-size:20px; text-align: center;}
+.left_menu .left_area a{display: block; width:100%; padding-left:20px; color:#333; border-bottom:1px solid #ccc; line-height: 50px;}
+.left_menu .left_area a.on{background: #fff; color:#004791; font-weight: bold;}
+
+/* 타이틀 부분 */
+.content_area .title_area{position: relative; padding-bottom: 20px; border-bottom: 1px solid #ccc;}
+.content_area .title_area .title{display: block; color:#333; font-size:34px; font-weight: bold;}
+.content_area .nav_area{position: absolute; right: 0; bottom:20px;}
+.content_area .nav_area span{position: relative; display: inline-block; padding:0 15px; font-size:13px;}
+.content_area .nav_area .home{width:16px; height:13px; padding-right: 20px; background: url("../images/nav_home.png") no-repeat center; text-indent: -9999px;} 
+.content_area .nav_area .left::after{content: ""; position: absolute; top:50%; left:0; width:7px; height:13px; margin-top:-6.5px; background: url("../images/nav_left.png") no-repeat right;} 
+
+/* 테이블 부분 */
+.table_area{margin-top:50px;}
+.table_area table{border-top:1px solid #ccc;}
+.table_area table th, .table_area table td{padding:15px 0; border-bottom:1px solid #ccc;}
+.table_area table th{background: #54607c; color:#fff;}
+.table_area table td{padding-left:35px;}
+.table_area.center table td{text-align: center; padding-left:0;}
+.table_area.center table td, .table_area.center table th{border-left:1px solid #ccc;}
+.table_area.center table td:first-child, .table_area.center table th:first-child{border-left:0;}
+.table_area.text thead th{font-weight: normal; background: #374566;}
+.table_area.text thead th:first-child{padding-left:50px; text-align: left;}
+.table_area.text thead th:last-child{padding-right: 50px; text-align: right}
+.table_area.text tbody tr.light_navy{background: #54607c;}
+.table_area.text tbody tr.light_gray{background: #f4f4f4;}
+.table_area.text tbody tr.light_navy td{color:#fff;}
+.table_area.text tbody tr.light_navy td:first-child{padding-left:50px; text-align: left;}
+.table_area.text tbody tr.light_navy td:last-child{padding-right: 50px; text-align: right}
+.table_area.text tbody tr.light_gray td:first-child{padding-left:50px; text-align: left;}
+.table_area.text tbody tr.light_gray td:last-child{padding-right: 50px; text-align: right}
+.table_area.text tbody tr td:first-child{padding-left:80px; text-align: left;}
+.table_area.text tbody tr td:last-child{padding-right: 50px; text-align: right}
+
+
+/* 테이블 인풋 */
+table .input_area{overflow: hidden; line-height: 35px;}
+table .input_area span{display: block; float: left; width:12%;}
+table .input_area .input{float: left; margin-left:10px; }
+table .input_area .input input{height: 35px;}
+
+/* 버튼종류 */
+.btn_area{overflow: hidden; margin-top:10px; text-align: right;}
+.btn_area a{display: inline-block; border:1px solid #ccc; padding:10px 35px; margin-right:10px; background: #707070; color:#fff;}
+.btn_area a:last-child{margin-right: 0;}
+.btn_area .navy{background: #374566;}
+
+/* 탭메뉴
+.tab_area{overflow: hidden; position: relative; margin-top:30px; }
+.tab_area::after{content:""; position: absolute; left:320px; bottom:0; width:100%; height: 1px; background: #ccc;}
+.tab_area a{position: relative; display: block; float: left; width:160px; line-height: 50px; border:1px solid #ccc; background:#f4f4f4; text-align: center; }
+.tab_area a.on, .tab_area a:hover{background: #fff; color:#333; border:0; border-right:1px solid #ccc;}
+.tab_area a.on, .tab_area a:hover{}
+.tab_area a.on:before, .tab_area a:hover:before{content:""; position: absolute; top:0; left:0; width:100%; height: 3px; background: #0050a3;}
+.tab_area a.on:after, .tab_area a:hover:after{content:""; position: absolute; bottom:0; left:0; width:100%; height: 3px; background: #fff;}
+ */
+
+/* 각종 인풋 */
+.input_data{overflow: hidden; width:100%; margin-top:30px;}
+.input_data .left_input{float: left; width:50%; line-height: 35px;}
+.input_data .left_input span{float: left; margin-right: 10px; color:#333; font-weight: bold;}
+.input_data .right_input{float: right; width:50%; text-align: right;}
+.input_data .right_input button.excel{height: 40px; padding-left: 30px; border:1px solid #54607c;  background: #fbfbfb url("../images/excel.png") no-repeat 10px center; color:#54607c; font-weight: bold; cursor: pointer;}
+.input_data .left_input > div{position: relative; display: block; float: left; margin-right: 10px;}
+.input_data .com_select{width:100px;}
+.input_data .com_input{width:170px;}
+.input_data .btn{width:80px; line-height: 38px; border:#ccc; background:#707070; color:#fff;  font-weight: bold; font-size:16px; /*margin-left: -10px;*/}
+
+
+
+
+
+
+
+
+
+/* 20191002 kps 추가 ------------------------------------------------------------------*/
+
+/* common */
+html, body {height:100%}
+caption {position:relative}
+
+input.small, select.small {width:100px}
+input.medium, select.medium {width:250px}
+select.lineNone {border:0}
+
+.hidden {position:absolute;left:-1000%;top:0;width:1px;height:1px;font-size:0;line-height:0;overflow:hidden}
+.fs24 {font-size:24px}
+.fs18 {font-size:18px}
+button {cursor: pointer; font-family:'noto-kr','Malgun Gothic',Dotum ,sans-serif;}
+.t_center {text-align:center !important}
+.t_left {text-align:left !important}
+.t_right {text-align:right !important}
+
+
+/* 타이틀 */
+.tit_h3 {margin-bottom:15px; font-size:22px; color:#333; font-weight:bold}
+.tit_h3 small {padding-left:15px; font-weight:500; font-size:16px; color:#666; letter-spacing:-1px}
+.tit_h4 {margin-bottom:9px; font-size:18px; color:#333; font-weight:bold}
+
+.right_txt {position:absolute; right:0; margin-top:-24px; font-size:14px; color:#666; letter-spacing:-1px}
+
+/* 이미지형 체크박스 */
+.chStyle {display:inline-block;vertical-align:middle}
+.chStyle input[type="checkbox"]		{ opacity: 0; width: 0; height: 0; }
+.chStyle input[type="checkbox"] + label		{position:relative; padding:0 0 2px 35px; font-size:14px; line-height:24px; color:#333333; font-weight:300;   }
+.chStyle input[type="checkbox"] + label:before	{position:absolute; left:0; content:"";  width:25px; height:25px; padding-bottom:2px; border: 1px dotted rgba(0, 0, 0, 0); font-size:14px; line-height:24px; color:#333333; font-weight:300; background:url('../images/bg_check.png') no-repeat 0 0px;}
+.chStyle input[type="checkbox"]:focus + label:before { border: 1px dotted rgba(0, 0, 0, 0.25); } 
+.chStyle input[type="checkbox"]:checked + label:before { background:url('../images/bg_check_ck.png') no-repeat 0 0px;  }
+
+.chStyle.chOnly input[type="checkbox"] + label {font-size:0}
+
+/* 버튼 */
+.btnXS,
+.btnS {display: inline-block; border:1px solid #aaa; margin-left:6px; padding:9px 14px; color:#fff; vertical-align:middle; font-size:16px; background: #374566;}
+.btnXS {padding:5px 24px;}
+
+.btn_day {display:inline-block; border-collapse: collapse;}
+.btn_day > button {display:inline-block; width:60px; height:38px; line-height:38px; border:1px solid #58647f; font-weight:bold; font-size:14px; color:#54607c; background-color:#f6f6f6}
+.btn_day > button:nth-child(n+2) {margin-left:-4px}
+.btn_day > button.prev::before {content:""; display:inline-block; width:12px; height:12px; margin-right:6px; background:url('../images/arr2_right.png') no-repeat 0 50%;}
+.btn_day > button.today {color:#fff; background-color:#54607c}
+.btn_day > button.next::after {content:""; display:inline-block; width:12px; height:12px; margin-left:6px; background:url('../images/arr2_left.png') no-repeat 0 50%;}
+
+.btn_day + .btn_day {margin-left:10px}
+
+
+.btnXS.close::after {content:"열기"; display:inline-block; padding-right:20px;  background:url('../images/tg_arr_open.png') no-repeat right 50%; }
+.btnXS.open::after {content:"접기"; display:inline-block; padding-right:20px; background:url('../images/tg_arr_close.png') no-repeat right 50%; }
+
+
+/* 각종 인풋 */
+.input_data .input_cell {float: left; margin-right:15px; line-height: 35px;}
+.input_data .input_cell:last-child {margin-right:0}
+.input_data .input_cell span {float: left; margin-right: 10px; color:#333; font-weight: bold;}
+.input_data .input_cell > div {position: relative; display: block; float: left; margin-right: 10px;}
+.input_data .input_cell > .mid {margin:0 10px}
+.input_data .input_cell + .right_input {width:auto}
+.input_data .input_cell .select {width:100px; margin-left:-1px}
+.input_data .right_input button.doc {height: 40px; padding-left: 30px; border:1px solid #54607c;  background: #fbfbfb url("../images/icon_download.png") no-repeat 10px center; color:#54607c; font-weight: bold; cursor: pointer}
+.input_data .input_cell select {padding-right:10px}
+
+/* 테이블 */
+.table_area {position:relative}
+.table_area table tbody th {border-right:1px solid #ccc; color:#666; background-color: #fff}
+.table_area table .bgNavy {color:#fff; background-color: #54607c}
+.table_area table .bgGray {background-color: #f3f3f3}
+.table_area table .bgBlue {background-color: #8991a5; color:#fff}
+.table_area table .bgBlack {background-color: #182130; color:#fff}
+
+.table_area .t_left {padding-left:20px !important}
+.table_area .t_right {padding-right:20px !important}
+
+.table_area.form table td {padding:5px 0 5px 20px}
+
+.table_area.meun_ctrl thead th{font-weight:500; background: #374566; border-left:1px solid #cbcbcb}
+.table_area.meun_ctrl thead th:first-child {border-left:0}
+.table_area.meun_ctrl thead th.bgGray {color:#666; background-color:#f4f4f4}
+.table_area.meun_ctrl tbody tr td {height:45px;padding:7px 0}
+.table_area.meun_ctrl tbody tr td:first-child{padding-left:60px; text-align: left;}
+.table_area.meun_ctrl tbody tr td:last-child{text-align: center}
+.table_area.meun_ctrl tbody tr.light_navy{background: #54607c;}
+.table_area.meun_ctrl tbody tr.light_navy td{padding-left:30px; text-align:left; font-weight:bold; color:#fff;}
+.table_area.meun_ctrl .cell {position:relative}
+.table_area.meun_ctrl .cell .menu_float {position:absolute;left:30px}
+.table_area.formula tbody th {padding:0}
+
+.dataTable_wrap, 
+.air_district .air_dataTable {position:relative; margin-top:50px}
+.dataTable_wrap .btn_zone, 
+.air_district .air_dataTable .btn_zone {position:absolute; top:0; right:0; width:100%; padding-bottom:10px; text-align:right; border-bottom:1px solid #ccc}
+.data_table {display:none; margin-top:40px;}
+.data_table .date {margin-bottom:10px}
+.data_table .tb_wrap {margin-bottom:35px}
+.data_table .tb_wrap:last-child {margin-bottom:0}
+.data_table .tb_wrap table thead th {height:44px; border:1px solid #ccc; border-left:0; text-align:center; font-size:14px; color:#fff; font-weight:normal; background-color:#54607c}
+.data_table .tb_wrap table tbody th {height:35px; border:1px solid #ccc; border-left:0; text-align:center; font-size:14px; color:#333; background-color:#f3f3f3}
+.data_table .tb_wrap table tbody tr.total th {color:#fff; background-color:#374566}
+.data_table .tb_wrap table tbody tr.province th {color:#fff; background-color:#54607c}
+.data_table .tb_wrap table tbody td {height:35px; border:1px solid #ccc; text-align:center}
+.data_table .tb_wrap .tb_left {position:absolute;left:0;}
+.data_table .tb_wrap .tb_right {overflow-y:hidden; overflow-x:scroll; margin-left:79px;}
+.data_table .tb_wrap .tb_right table {table-layout:fixed;}
+/* 19-11-26 수정 */
+.data_table .tb_wrap .tb_right span {display:block; overflow:hidden; width:100%; max-height:34px; padding:7px 0; box-sizing:border-box;color:#fff; /* text-indent: -9999px; font-size:0 */}
+.data_table .tb_wrap .tb_right span.v1 {background-color:#0080ff}
+.data_table .tb_wrap .tb_right span.v2 {background-color:#00bf00}
+.data_table .tb_wrap .tb_right span.v3 {background-color:#ff7f00}
+.data_table .tb_wrap .tb_right span.v4 {background-color:#ff0000}
+
+
+/* pagination */
+.pagination {margin-top:50px; text-align:center}
+.pagination > a {overflow:hidden; display:inline-block; width:35px; height:35px; margin:0 3px; font-size:0; text-indent:-99999px; vertical-align:middle}
+.pagination .first {background:url('../images/page_btn_first.png') no-repeat 0 0;}
+.pagination .prev {margin-right:17px; background:url('../images/page_btn_prev.png') no-repeat 0 0;}
+.pagination .next {margin-left:17px; background:url('../images/page_btn_next.png') no-repeat 0 0;}
+.pagination .last {background:url('../images/page_btn_last.png') no-repeat 0 0;}
+.pagination .num {display:inline-block;margin:0 0;vertical-align:middle}
+.pagination .num a, 
+.pagination .num span {display:inline-block; width:35px; height:35px; line-height:35px; margin:0 3px; color:#999; font-size:18px; box-sizing:border-box}
+.pagination .num span {color:#0050a3; text-decoration:underline}
+/*.pagination .num span::after {content:"";position:relative;top:-6px;display:block;width:50%;height:1px;margin:0 auto;background-color:#0050a3}*/
+
+/* 사이트맵 */
+.sitemap_area {margin-top:50px}
+.sitemap_area > ul {}
+.sitemap_area > ul > li {float:left; width:20%; height:460px}
+.sitemap_area > ul > li .tit {color:#333; font-weight:bold; font-size:18px;}
+.sitemap_area > ul > li .tit::before {content:""; position:relative; top:2px; display:inline-block; width:5px; height:17px; margin-right:10px; background-color:#345bb4}
+.sitemap_area > ul > li > ul {}
+.sitemap_area > ul > li > ul > li {margin-top:35px}
+.sitemap_area > ul > li > ul > li a {display:inline-block; padding-left:20px; color:#555; background:url('../images/arr_left.png') no-repeat 0 50%;}
+.sitemap_area > ul > li:last-child {height:auto}
+
+
+
+/* 대기정보 */
+.air_quality {overflow:hidden; clear:both; margin-top:50px}
+.air_quality .sec_left {float:left; width:490px}
+.air_quality .sec_right {float:right; width:400px}
+.air_quality .sec_right .graph_area {margin-top:40px}
+.air_quality .table_area {margin-top:0}
+
+.map_area {position:relative}
+
+/* 19-11-19 라벨위치수정 */
+.map_area .unit {position:absolute; bottom:0; left:0; top:580px;color:#333}
+/* 19-11-26 레이어 수정 */
+.map_area .area_info {position:absolute; min-width:70px; padding:5px; border:2px solid #0050a3; border-radius:2px; text-align:center; font-size:12px; font-weight:bold; background-color:#fff}
+.map_area .area_info::after {position:absolute; left:50%; bottom:-14px; content:""; display:block; width:15px; height:14px; margin-left:-7px; background:url('../images/bg_arr.png') no-repeat 0 0;}
+.map_area .area_info .area {font-size:13px; color:#181818; font-weight:bold}
+.map_area .area_info .info {display:none; position:absolute; top:-55px; left:-10px; min-width:70px; padding:5px; border:2px solid #0050a3; border-radius:2px; text-align:center; font-size:12px; font-weight:bold; background-color:#fff}
+.map_area .area_info .info::after {position:absolute; left:50%; bottom:-14px; content:""; display:block; width:15px; height:14px; margin-left:-7px; background:url('../images/bg_arr.png') no-repeat 0 0;}
+.map_area .area_info .info .name {color:#333}
+.map_area .area_info .info .level {color:#0050a3}
+.map_area .level .v1 {color:#1eb9ef}
+.map_area .level .v2 {color:#a9ce05}
+.map_area .level .v3 {color:#f8b51e}
+.map_area .level .v4 {color:#eb79ac}
+.map_area .level .v5 {color:#54607c}
+/* 19-11-27 위치값 수정 */
+.map_area .area_info.a1 {left:153px; top:30px;} /* 연천 */
+.map_area .area_info.a2 {left:230px; top:75px;} /* 포천 */
+.map_area .area_info.a3 {left:175px; top:95px} /* 동두천 */
+.map_area .area_info.a4 {left:76px; top:130px} /* 파주 */
+.map_area .area_info.a5 {left:153px; top:133px} /* 양주 */
+.map_area .area_info.a6 {left:174px; top:171px} /* 의정부 */
+.map_area .area_info.a7 {left:6px; top:190px} /* 김포 */
+.map_area .area_info.a8 {left:94px; top:204px} /* 고양 */
+
+.map_area .area_info.a9 {left:294px; top:143px} /* 가평 */
+.map_area .area_info.a10 {left:241px; top:200px} /* 남양주 */
+.map_area .area_info.a11 {left:201px; top:221px} /* 구리 */
+.map_area .area_info.a12 {left:223px; top:258px} /* 하남 */
+.map_area .area_info.a13 {left:186px; top:307px} /* 성남 */
+.map_area .area_info.a14 {left:255px; top:302px} /* 광주 */
+.map_area .area_info.a15 {left:348px; top:262px} /* 양평 */
+
+.map_area .area_info.a16 {left:76px; top:261px} /* 부천 */
+.map_area .area_info.a17 {left:72px; top:309px} /* 시흥 */
+.map_area .area_info.a18 {left:102px; top:286px} /* 광명 */
+.map_area .area_info.a19 {left:125px; top:304px} /* 안양 */
+.map_area .area_info.a20 {left:150px; top:290px} /* 과천 */
+.map_area .area_info.a21 {left:102px; top:334px} /* 군포 */
+.map_area .area_info.a22 {left:72px; top:348px} /* 안산 */
+.map_area .area_info.a23 {left:145px; top:321px} /* 의왕 */
+.map_area .area_info.a24 {left:152px; top:349px} /* 수원 */
+.map_area .area_info.a25 {left:95px; top:413px} /* 화성 */
+.map_area .area_info.a29 {left:167px; top:424px} /* 오산 */
+
+.map_area .area_info.a26 {left:227px; top:375px} /* 용인 */
+.map_area .area_info.a27 {left:304px; top:375px} /* 이천 */
+.map_area .area_info.a28 {left:370px; top:352px} /* 여주 */
+.map_area .area_info.a30 {left:150px; top:465px} /* 평택 */
+.map_area .area_info.a31 {left:252px; top:465px} /* 안성 */
+/* 19-11-27 위치값 수정 end */
+
+/* 19-11-07 권역별 대기정보 */
+.north img {position: absolute;top: 0;left: 0;}
+.east img {position: absolute;top: 0;left: 0;}
+.central img {position: absolute;top: 0;left: 0;}
+.south img {position: absolute;top: 0;left: 0;}
+
+/* 19-11-19 대기정보라벨 위치수정*/
+.air_grade {position: absolute;top: 925px;}
+
+
+.air_grade .icon_air {margin-right:5px}
+.icon_air {display:inline-block; font-size:14px; color:#333; line-height:18px;}
+.icon_air::before {content:""; display:inline-block; width:18px; height:18px; margin-right:5px; border-radius:100%; vertical-align:middle}
+.icon_air.v1::before {background-color:#1eb9ef}
+.icon_air.v2::before {background-color:#a9ce05}
+.icon_air.v3::before {background-color:#f8b51e}
+.icon_air.v4::before {background-color:#eb79ac}
+.icon_air.v5::before {background-color:#54607c}
+
+
+.air_district {margin-top:50px}
+.air_district .air_area {position:relative}
+.air_district .air_area .btn_zone {position:absolute; top:0; right:0}
+.air_district .area_list {position:relative; background-color:#f4f4f4}
+.air_district .area_list > ul > li {padding:12px 15px; border-top:1px solid #ddd}
+.air_district .area_list > ul > li:first-child {border-top:0}
+.air_district .area_list > ul > li > ul {display:inline-block; margin-left:20px}
+.air_district .area_list > ul > li > ul > li {display:inline-block;}
+.air_district .area_list > ul > li > ul > li::before {content:""; display:inline-block; width:1px; height:13px; background-color:#ccc}
+.air_district .area_list > ul > li > ul > li:first-child::before {display:none}
+.air_district .area_list > ul > li > ul > li a {display:inline-block; width:64px; text-align:center}
+.air_district .area_list .on {color:#6090ff}
+.air_district .area_list.city {position:relative; padding-left:110px}
+.air_district .area_list.city button {position:absolute; left:12px; top:15px; width:79px; height:80px; padding:0; text-align:center}
+.air_district .area_list.city > ul > li {padding:18px 0}
+.air_district .area_list.city > ul > li > ul {margin-left:0}
+.air_district .area_list.city > ul > li > ul > li {margin-right:-4px}
+.air_district .area_list.city > ul > li > ul > li:first-child a {width:45px; text-align:left}
+.air_district .air_graph {position:relative; margin-top:50px}
+.air_district .air_dataTable .data_table .tb_wrap table thead th {color:#333; background-color:#f3f3f3}
+
+.air_district .area_list2 {position:relative; border-bottom:1px solid #ddd; background-color:#f4f4f4}
+.air_district .area_list2 > ul {display:table; width:100%}
+.air_district .area_list2 > ul > li {display:table-cell; width:14.285%}
+.air_district .area_list2 > ul > li::before {position:absolute; top:20px;content:""; display:block; width:1px; height:13px; background-color:#ccc}
+.air_district .area_list2 > ul > li:first-child::before {display:none}
+.air_district .area_list2 > ul > li a {display:block; padding:20px 0; text-align:center; font-size:14px}
+.air_district .area_list2 .on {color:#6090ff}
+
+.air_district.ty2 {}
+.air_district.ty2 .area_list > button.btnXS {position:absolute; top:12px; left:12px; width:90px; height:211px; padding:0; margin:0;}
+.air_district.ty2 .area_list > ul {margin-left:108px}
+.air_district.ty2 .area_list > ul > li {padding:12px 0}
+.air_district.ty2 .area_list > ul > li > ul {margin-left:0}
+
+/* 일일진단평가 */
+.table_area.dayForm table td {border:1px solid #ccc; text-align:center; padding:5px 0 5px 0}
+.table_area.dayForm table td .txt {padding:15px 20px; line-height:26px; text-align:left;}
+.table_area.dayForm table td select {width:90%; height:20px; border:0}
+
+/* 기상현황 */
+.graph_wrap {position:relative; margin-top:50px}
+
+
+
+/* login */
+.login_body {display:table; width:100%; height:100%; background-color:#dbe6ff}
+.login_wrap {display:table-cell; vertical-align:middle}
+.login_container {width:618px; margin:0 auto; padding:433px 9px 0; background:url('../images/bg_login.png') no-repeat 50% 0;}
+.login_container h1 {border:1px solid #aaa; line-height:60px; text-align:center; font-size:22px; color:#fff; background-color:#54607c}
+.login_container .login_box {position:relative; padding:33px 174px 32px 50px; border:1px solid #ccc; background-color:#fff}
+.login_container .login_box .item {padding:7px 0 8px 0}
+.login_container .login_box .item label {display:inline-block; width:74px; font-size:16px; color:#333}
+.login_container .login_box .item input {width:300px; height:43px; border:1px solid #aaa; border-radius:2px; background-color:#f4f4f4}
+.login_container .login_box .btn_login {position:absolute; top:40px; right:49px; display: inline-block; width:105px; height:101px; line-height:101px;  margin-left:6px; border:1px solid #aaa; border-radius:2px; color:#fff; text-align:center; vertical-align:middle; font-size:16px; font-weight:500; background: #374566;}
+.login_container .login_cont {position:relative; padding:20px 50px; border:1px solid #ccc; background-color:#fff}
+.login_container .login_cont h2 {margin-bottom:25px; font-size:28px; color:333; text-align:center}
+.login_container .login_cont .txt {text-align:center; line-height:26px; color:#333}
+.login_container .login_cont .btn_area {margin-top:20px; text-align:center}
+.login_container .login_cont .btn_area a {border-radius:2px}
+.login_container .footer {padding:40px 0 10px; letter-spacing:-0.5px; text-align:center; font-size:14px; color:#666}
+
+
+/* main */
+.main_visual {display:none;background-color:#d5e4ed}/* 삭제요청 20191023 */
+.main_visual .inner {width:1200px; height:210px; margin:0 auto; background:url('../images/main_visual.png') no-repeat right 0;}
+.main_visual .inner .txt {padding-top: 66px; font-size:26px; color:#2b5c79; line-height:36px; letter-spacing:-1px}
+.main_content {position: relative; overflow: hidden; width:1200px; min-height: 720px; margin:0 auto; padding:50px 0}
+.main_content h2 {font-size:34px; color:#202020}
+.main_content h2:nth-of-type(n+2) {margin-top:95px}
+.main_content h3 {margin-bottom:15px; font-size:22px; color:#333}
+.main_content h3 small {margin-left:5px; font-size:16px; line-height:16px; color:#666; font-weight:normal}
+.main_content h3::before {content:""; display:inline-block; width:4px; height:20px; margin-right:10px; background-color:#0050a3}
+.main_content .m_row {display:table; width:100%; margin-top:50px}
+.main_content .m_row .col {display:table-cell}
+.main_content .m_row .col.table_left .table_area {float:left; width:350px; margin-top:0}
+.main_content .m_row .col.table_left .table_area + .table_area {margin-left:10px}
+.main_content .m_row .col.table_right {width:440px}
+.main_content .m_row .col.table_right .table_area {margin-top:0}
+
+.main_content .map_area .m_info {position:absolute; min-width:70px; padding:5px; border:2px solid #0050a3; border-radius:2px; text-align:center; font-size:12px; font-weight:bold; background-color:#fff}
+.main_content .map_area .m_info::after {position:absolute; left:50%; bottom:-14px; content:""; display:block; width:15px; height:14px; margin-left:-7px; background:url('../images/bg_arr.png') no-repeat 0 0;}
+.main_content .map_area .m_info.north {left:48px; top:54px;}
+.main_content .map_area .m_info.east {left:251px; top:145px;}
+.main_content .map_area .m_info.center {left:2px; top:228px;}
+.main_content .map_area .m_info.south {left:216px; top:309px;}
+.main_content .map_area .m_info.checking {left:216px; top:50px;}
+.main_content .map_area .m_info.south::after {bottom:auto; top:-14px; background:url('../images/bg_arr2.png') no-repeat 0 0;}
+
+/* 이미지 컨터롤 */
+.image_player {margin-top:40px}
+.image_player .timeLine {}
+.image_player .timeLine .time {position:relative; height:100px; padding:10px 50px; border:1px solid #dfdfdf}
+.image_player .timeLine .time .list::before {position:relative; top:14px; content:""; display:block; width:100%; height:5px; background-color:#dfdfdf}
+.image_player .timeLine .time .progress {position:absolute; top:14px; z-index:5; content:""; display:block; height:5px; background-color:#0050a3}
+.image_player .timeLine .time .list {position:relative; top:20px}
+.image_player .timeLine .time .list span {position:absolute; z-index:10; width:40px; display:block; margin-left:-20px; padding-top:25px; text-align:center;}
+.image_player .timeLine .time .list span::before {content:""; position:absolute; left:50%; top:14px; display:block; width:1px; height:10px; background-color:#000000}
+.image_player .timeLine .time .list span a::before {display:none; content:""; position:absolute; left:50%; top:4px; margin-left:-7px; width:13px; height:13px; border:1px solid #0553a4; border-radius:100%; background-color:#fff}
+.image_player .timeLine .time .list span.on a::before {display:block}
+.image_player .timeLine .control { text-align:center; background-color:#2a3137}
+.image_player .timeLine .control li {display:inline-block;}
+.image_player .timeLine .control li .moveStop {display:none}
+
+.image_player .timeLine .time .list span:first-child a::before,
+.image_player .timeLine .time .list span:last-of-type a::before {content:""; position:absolute; left:50%; top:4px; margin-left:-7px; display:block; width:13px; height:13px; border:1px solid #ccc; border-radius:100%; background-color:#fff}
+.image_player .timeLine .time .list span.on:first-child a::before,
+.image_player .timeLine .time .list span.on:last-of-type a::before {border:1px solid #0553a4;}
+
+/*
+.image_player .timeLine .time .list span:nth-child(1) {left:0;}
+.image_player .timeLine .time .list span:nth-child(2) {left:14.28%}
+.image_player .timeLine .time .list span:nth-child(3) {left:28.56%}
+.image_player .timeLine .time .list span:nth-child(4) {left:42.845%}
+.image_player .timeLine .time .list span:nth-child(5) {left:57.12%}
+.image_player .timeLine .time .list span:nth-child(6) {left:71.4%}
+.image_player .timeLine .time .list span:nth-child(7) {left:85.5%}
+.image_player .timeLine .time .list span:nth-child(8) {left:99.9%} */
+
+.image_player .img_play {margin-top:50px}
+.image_player .img_play ul {overflow:hidden; font-size:0;}/* 2019-12-16 수정 */
+.image_player .img_play ul li {display:inline-block; vertical-align:top; width:50%; font-size:16px; text-align:center;}/* 2019-12-16 수정 */
+.image_player .img_play ul li:nth-child(n+3) {margin-top:30px;}
+.image_player .img_play ul li .img_area {width:420px; display:inline-block;} /* 2019-12-16 수정 */
+.image_player .img_play ul li .img_area .tit {height:45px;padding:0 15px; line-height:45px; color:#fff; font-size:16px; font-weight:bold; text-align:center; background-color:#54607c}
+.image_player .img_play ul li .img_area .tit > span {float:left}
+.image_player .img_play ul li .img_area .tit > small {float:right; font-weight:normal}
+.image_player .img_play.col3 ul li {width:33.3333333%; margin-top:0}
+.image_player .img_play.col3 ul li:nth-child(n+4) {margin-top:30px;}
+.image_player .img_play.col3 ul li:first-child {text-align:left}
+.image_player .img_play.col3 ul li:last-child {text-align:right}
+.image_player .img_play.col3 ul li .img_area {width:300px;}/* 2019-12-16 추가 */
+.image_player .img_play.col3 ul li .img {text-align:center;}/* 2019-12-16 추가 */
+.image_player .img_play .table_area {margin-top:0}
+
+
+/* 레이어 팝업 */
+.layerPopupWrap {display:none; position:fixed; top:0; right:0; bottom:0; left:0; background-color:rgba(0,0,0,0.5)}
+.layerPopupWrap .lyPopCont {position:absolute; left:50%; top:5%; height:90%; margin-left:-480px; background-color:#fff}
+.layerPopupWrap .lyPopCont h1 {height:50px; line-height:50px; text-align:center; color:#fff; font-size:20px; background-color:#0050a3}
+.layerPopupWrap .lyPopCont .contArea {overflow-x:auto; height:calc(100% - 50px); padding:30px}
+.layerPopupWrap .lyPopCont .contArea .contInner {width:960px}
+.layerPopupWrap .lyPopCont .contArea .contInner .input_data {margin-top:0}
+.layerPopupWrap .lyPopCont .contArea .contInner .lyFoot .btn_area {padding:20px 0 1px; text-align:center}
+.layerPopupWrap .lyPopCont .lyClose {position:absolute; top:17px; right:30px}
+.layerPopupWrap .lyPopCont .lyClose button {background-color:#}
+
+/* 윈도우 팝업 */
+.winPopupWrap {}
+.winPopupWrap .winPopCont {background-color:#fff}
+.winPopupWrap .winPopCont h1 {position:fixed;top:0;z-index:99;width:100%;height:50px; line-height:50px; text-align:center; color:#fff; font-size:20px; background-color:#0050a3}
+.winPopupWrap .winPopCont .contArea {padding:80px 30px 30px}
+.winPopupWrap .winPopCont .contArea .contInner {width:960px;margin:0 auto}
+.winPopupWrap .winPopCont .contArea .contInner .input_data {margin-top:0}
+.winPopupWrap .winPopCont .contArea .contInner .lyFoot .btn_area {padding:20px 0 1px; text-align:center}
+.winPopupWrap .winPopCont .winClose {display:none;position:fixed;z-index:100;top:17px; right:30px}
+.winPopupWrap .winPopCont .winClose button {background-color:#}
+
+/* 탭 메뉴 */
+.tab_area {margin-top:30px;}
+.tab_area:after {content:"";display:block; clear:both; width:100%; height:1px; background-color:#eaeaea }
+.tab_area > a {display: block; float: left; width:160px; height:50px; line-height: 50px; border-left:1px solid #eaeaea; border-top:1px solid #eaeaea; background:#f4f4f4; text-align: center; }
+.tab_area > a:first-child {border-left:0}
+.tab_area > a.on:first-child {border-left:1px solid #eaeaea}
+.tab_area > a:last-child {border-right:1px solid #eaeaea}
+.tab_area > a.on {position:relative; top:1px; height:50px; line-height:47px; border-top:3px solid #0050a3; border-right:1px solid #eaeaea; background-color:#fff}
+.tab_area > a.on + a {border-left:0}
+.tab_area.col8 > a {width:12.5%}
+.tab_area.col9 > a {width:11.1111111111%}
+
+.tab_small > a {display:inline-block; width:65px; text-align:center; font-size:14px; color:#666}
+.tab_small > a::before {content:"|"; display:inline-block; font-size:12px; float:left; color:#ccc; vertical-align:middle}
+.tab_small > a:first-child::before {display:none}
+.tab_small > a.on {color:#6090ff; font-weight:bold}
+
+
+.cont_row {overflow:hidden; width:100%; margin-top:50px}
+.cont_row .table_area {margin-top:0}
+.cont_row > .col_left {float:left; width:50%; padding-right:30px}
+.cont_row > .col_right {float:right; width:50%;}
+
+.cont_row.ty1 > .col_left {width:60%}
+.cont_row.ty1 > .col_right {width:40%}
+
+/* 2019-12-16 추가 */
+body.load {height:100%; overflow:hidden; }
+.loadgin-ing {position:absolute; top:0; left:0; right:0; bottom:0; z-index:101;}
+.loadgin-ing:before {content:''; position:absolute; top:0; left:0; right:0; bottom:0; background-color:#fff; opacity:.75;}
+.loadgin-ing .load-img {position:absolute; top:50%; left:50%; margin-left:-64px; margin-top:-64px;}

@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <!-- Meta, title, CSS, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>자영업지원센터 사업관리 시스템</title>
+    <!--[if lt IE 9]>
+			<script src="/js/html5shiv.min.js"></script>
+		<![endif]-->
+    <!-- scripts and styles -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="../../../css/rMateGridH5Sample.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/rMateH5.css" />
+    <!-- rMateChartH5 라이센스 -->
+    <script type="text/javascript" src="../../../js/rMateGridH5License.js"></script>
+    <!-- rMateGridH5 라이브러리 -->
+    <script type="text/javascript" src="../../../js/rMateGridH5.js"></script>
+
+    <!-- smartEditor -->
+    <script type="text/javascript" src="../../../smartEditor/js/HuskyEZCreator.js"></script>
+    <!-- smartEditor -->
+    <link rel="stylesheet" type="text/css" href="../../../smartEditor/css/smart_editor2.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../../../css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/font-awesome.min.css" />
+
+    <link rel="apple-touch-icon-precomposed" href="../../../ico/apple-touch-icon-precomposed.png">
+    <link rel="icon" href="/ico/favicon.ico">
+
+    <!-- JQuery -->
+    <link rel="stylesheet" type="text/css" href="../../../css/jquery/jquery-ui-1.8.16.main.css" />
+
+    <!-- JQuery -->
+    <script type="text/javascript" src="../../../js/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.16.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui-1.8.19.custom.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery-ui.datepicker.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.number.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.maskedinput-1.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.dialog.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.popupWindow.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.form.min.js"></script>
+    <script type="text/javascript" src="../../../js/jquery/jquery.numeric.js"></script>
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="../../../js/common-util.js"></script>
+    <script type="text/javascript" src="../../../js/common.js"></script>
+    <script type="text/javascript" src="../../../js/sbdcCommon.js"></script>
+    <script type="text/javascript" src="../../../js/downloadProgress.js"></script>
+    <script type="text/javascript" src="../../../js/default.js"></script>
+    <script type="text/javascript" src="../../../js/printThis.js"></script>
+
+    <!-- 트리구조 추가 -->
+    <link rel="stylesheet" type="text/css" href="../../../css/jstree.min.css" />
+    <script type="text/javascript" src="../../../js/jstree.min.js"></script>
+
+    <!-- 신규 css 추가 -->
+    <link rel="stylesheet" href="../../../css/newpage.css">
+
+    <!-- function scripts -->
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="toplink">
+            <a class="navbar-brand" href="/cm/main.do"><img src="/img/logo_2016.png" alt="자영업지원센터"></a>
+            <ul>
+                <li><a href="/cc/SM_10402_SL.do">
+                        <sapn style="text-align: middle;"><img src="/img/icon/sms.JPG"
+                                style="width: 15px; padding-right: 5px; margin-top: 3px;" align="top">SMS 발송</sapn>
+                    </a></li>
+                <li><i class="fa fa-user"></i>개발테스트님 환영합니다.</li>
+                <li><a href="/cm/CMLogout.do"><i class="fa fa-power-off"></i>로그아웃</a></li>
+                <li><a href="/sso/SSO_10100.do" target="_blank"> <i class="fa fa-home"></i>소상공인 종합지원포털 홈페이지</a></li>
+            </ul>
+        </div>
+        <nav class="topnav-wrap">
+            <ul class="topnav" id="topMenu">
+                <li><a href="/cs/CS_10100_SL.do">고객&amp;상담</a></li>
+                <li><a href="/cn/CN_10300_SL.do">창업지원</a></li>
+                <li><a href="/pm/PM_20101_SL.do">사후관리</a></li>
+                <li><a href="/fs/FS_10000_SL.do">시설개선</a></li>
+                <li class="active"><a href="/cg/CG_70101_SL_NEW.do">경영지원</a></li>
+                <li><a href="/st/ST_10201_FORM.do">경영지원통계</a></li>
+                <li><a href="/cc/CC_10301_SL.do">전문가관리</a></li>
+                <li><a href="/ed/ED_10101_SL.do">교육관리</a></li>
+                <li><a href="/bt/BT_10100_SL.do">직원알림방</a></li>
+                <li><a href="/bs/BS_10100_SL.do">공지&amp;알림</a></li>
+                <li><a href="/bm/MasterList.do">게시판관리</a></li>
+                <li><a href="/sm/SM_10101_SL.do">시스템관리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container-content">
+        <div class="sidenav-wrap">
+            <ul class="nav sidenav" id="leftMenu">
+                <li class="active"><a href=""><i class="fa fa-file-text-o"></i>컨설팅 관리(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>사업신청서 등록(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>온라인신청서접수(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>전문가 배정(N)</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>멘토링 배정</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>과거 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>컨설팅 정보 조회</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>접수부서별 컨설팅 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>경영지원 해피콜</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험신청서 접수</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>고용보험 관리</a></li>
+                <li><a href=""><i class="fa fa-file-text-o"></i>크리에이터 교육관리</a></li>
+            </ul>
+        </div>
+        <div class="content-wrap">
+            <div class="content">
+                <div class="content">
+                    <h3>컨설팅 관리</h3>
+                    <ul class="process">
+                        <li id="" class="process3 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #fff;">신청</a></span></li>       
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">승인</a></span></li>
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">지원금신청</a></span></li>
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">완료확인</a></span></li>
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">사후관리</a></span></li>
+                        <li id="" class="process1 ifrmAddTap"><em></em><span><a href="#none" id="" rel="" style="color: #444;">사업종료</a></span></li>
+                    </ul>
+                    <p class="text-right">
+                        <a href="#none" id="cstmrHist" name="cstmrHist" class="btn btn-default">고객이력</a> &nbsp;
+            <!-- 			<a href="#none" id="cstmrEdu" name="cstmrEdu" class="btn btn-default">교육현황</a> &nbsp;  -->
+                        <a href="#none" id="btnList" name="btnList" class="btn btn-default">목록</a>
+                    </p>
+                    <ul id="tabs" class="nav nav-tabs">
+                        <li class="active"><a class="tab" id="floatTab1" href="#"><span><i class="fa fa-tag"></i>시설개선신청</span></a><a href="#" class="remove"><i class="fa fa-close"></i></a></li>
+                    </ul>
+                    <p class="print" style="margin: 15px 0px 0px 0px; text-align: right;">
+                        <a href="#none" class="btn btn-point" id="btnPrint">출력</a>
+                    </p>
+                    <p class="clearfix"></p>
+                    <h3>추진주체</h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>신청 업체명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="cmpnm" name="cmpnm" style="width: 90%;" value="">
+                                </td>
+                                <th>사업자등록번호</th>
+                                <td>
+                                    <label for="bsnmRegistNo1" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:30px;" id="bsnmNo1" name="bsnmNo1" value="" maxlength="3"  >
+                                    <span class="input-text">- </span>
+                                    <label for="bsnmRegistNo2" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:20px;" id="bsnmNo2" name="bsnmNo2" value="" maxlength="2" >
+                                    <label for="bsnmRegistNo3" class="invisible">사업자등록번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bsnmNo3" name="bsnmNo3" value="" maxlength="5">
+                                </td>
+                                <th>설립일</th>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="bsnsBeginDe" class="invisible">개업년월일</label>
+                                        <input type="text" class="form-control input-sm hasDatepicker" id="bsnsBeginDe" name="bsnsBeginDe" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상시 종업원수(4대보험 가입종업원)</th>
+                                <td>
+                                    <input type="text" class="form-control input-xs integer" id="emplyCo" name="emplyCo" value="" maxlength="3">
+                                    <span class="input-text">명</span>
+                                </td>
+                                <th>업태</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="induty" name="induty" value="" readonly="readonly">
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-default" href="#none" id="btnIndutyCd"><i class="fa fa-search" ></i></a>
+                                    </span>
+                                    <label for="indutyNm" class="invisible">업종</label>
+                                    <input type="text" class="form-control input-lg" id="indutyConm" name="indutyConm" value="" disabled="">
+                                </td>
+                                <th>종목</th>
+                                <td>
+                                    <input type="text" class="form-control input-full" id="trtmntPrdlst" name="trtmntPrdlst" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">사업장주소</th>
+                                <td rowspan="2" colspan="3">								
+                                    <div class="input-group">
+                                        <label for="bplcZipCode" class="invisible">우편번호</label>
+                                        <input type="text" class="form-control input-sm" id="postNo" name="postNo" value="" readonly="readonly">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="#none" id="btnGetZipCode"><i class="fa fa-search" ></i></a>
+                                        </span>
+                                        <label for="bplcBaseAdres" class="invisible">기본주소</label>
+                                        <input type="text" class="form-control input-lg" id="bassAdres" name="bassAdres" value="" readonly="readonly">
+                                    </div>
+                                    <label for="detailAdres" class="invisible">상세주소</label>
+                                    <input type="text" class="form-control input-lg" id="detailAdres" name="detailAdres" value="">
+                                </td>
+                                <th>전화번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="bplcNo1" name="bplcNo1">
+                                        
+                                            <option value="02" selected="">서울(02)</option>
+                                        
+                                            <option value="051">부산(051)</option>
+                                        
+                                            <option value="032">인천(032)</option>
+                                        
+                                            <option value="053">대구(053)</option>
+                                        
+                                            <option value="062">광주(062)</option>
+                                        
+                                            <option value="042">대전(042)</option>
+                                        
+                                            <option value="052">울산(052)</option>
+                                        
+                                            <option value="044">세종(044)</option>
+                                        
+                                            <option value="031">경기(031)</option>
+                                        
+                                            <option value="033">강원(033)</option>
+                                        
+                                            <option value="043">충북(043)</option>
+                                        
+                                            <option value="041">충남(041)</option>
+                                        
+                                            <option value="054">경북(054)</option>
+                                        
+                                            <option value="055">경남(055)</option>
+                                        
+                                            <option value="063">전북(063)</option>
+                                        
+                                            <option value="061">전남(061)</option>
+                                        
+                                            <option value="064">제주(064)</option>
+                                        
+                                            <option value="0502">KT(0502)</option>
+                                        
+                                            <option value="0503">온세(0503)</option>
+                                        
+                                            <option value="0504">온세(0504)</option>
+                                        
+                                            <option value="0505">Dacom(0505)</option>
+                                        
+                                            <option value="070">인터넷(070)</option>
+                                        
+                                            <option value="080">착신과금(080)</option>
+                                        
+                                            <option value="010">이동전화(010)</option>
+                                        
+                                            <option value="011">이동전화(011)</option>
+                                        
+                                            <option value="016">이동전화(016)</option>
+                                        
+                                            <option value="017">이동전화(017)</option>
+                                        
+                                            <option value="019">이동전화(019)</option>
+                                        
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo2" name="bplcNo2" value="" maxlength="4">
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo3" name="bplcNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>FAX번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="faxNo1" name="faxNo1">
+                                        
+                                            <option value="02" selected="">서울(02)</option>
+                                        
+                                            <option value="051">부산(051)</option>
+                                        
+                                            <option value="032">인천(032)</option>
+                                        
+                                            <option value="053">대구(053)</option>
+                                        
+                                            <option value="062">광주(062)</option>
+                                        
+                                            <option value="042">대전(042)</option>
+                                        
+                                            <option value="052">울산(052)</option>
+                                        
+                                            <option value="044">세종(044)</option>
+                                        
+                                            <option value="031">경기(031)</option>
+                                        
+                                            <option value="033">강원(033)</option>
+                                        
+                                            <option value="043">충북(043)</option>
+                                        
+                                            <option value="041">충남(041)</option>
+                                        
+                                            <option value="054">경북(054)</option>
+                                        
+                                            <option value="055">경남(055)</option>
+                                        
+                                            <option value="063">전북(063)</option>
+                                        
+                                            <option value="061">전남(061)</option>
+                                        
+                                            <option value="064">제주(064)</option>
+                                        
+                                            <option value="0502">KT(0502)</option>
+                                        
+                                            <option value="0503">온세(0503)</option>
+                                        
+                                            <option value="0504">온세(0504)</option>
+                                        
+                                            <option value="0505">Dacom(0505)</option>
+                                        
+                                            <option value="070">인터넷(070)</option>
+                                        
+                                            <option value="080">착신과금(080)</option>
+                                        
+                                            <option value="010">이동전화(010)</option>
+                                        
+                                            <option value="011">이동전화(011)</option>
+                                        
+                                            <option value="016">이동전화(016)</option>
+                                        
+                                            <option value="017">이동전화(017)</option>
+                                        
+                                            <option value="019">이동전화(019)</option>
+                                        
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo2" name="faxNo2" value="" maxlength="4"  >
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo3" name="faxNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>대표자명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="rprsntvNm" name="rprsntvNm" value="">
+                                </td>
+                                <th>휴대번호</th>
+                                <td colspan="3">
+                                    <select class="form-control input-sm" id="memMobile1" name="memMobile1">
+                                        <option value="010" selected="">010</option>
+                                        <option value="011">011</option>
+                                        <option value="016">016</option>
+                                        <option value="017">017</option>
+                                        <option value="018">018</option>
+                                        <option value="019">019</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="phone5" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile2" name="memMobile2" value="" maxlength="4" onkeyup="fn.autoNextFocus(this, 4, 'memMobile3')">
+                                    <label for="phone6" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile3" name="memMobile3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="clearfix"></p>
+                    <h3>
+                        <div class="titleCheck">
+                            <label for="chk_1"> 참가업체1</label>
+                            <input type="checkbox" id="chk_1">
+                        </div>
+                    </h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>신청 업체명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="cmpnm" name="cmpnm" style="width: 90%;" value="">
+                                </td>
+                                <th>사업자등록번호</th>
+                                <td>
+                                    <label for="bsnmRegistNo1" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:30px;" id="bsnmNo1" name="bsnmNo1" value="" maxlength="3"  >
+                                    <span class="input-text">- </span>
+                                    <label for="bsnmRegistNo2" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:20px;" id="bsnmNo2" name="bsnmNo2" value="" maxlength="2" >
+                                    <label for="bsnmRegistNo3" class="invisible">사업자등록번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bsnmNo3" name="bsnmNo3" value="" maxlength="5">
+                                </td>
+                                <th>설립일</th>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="bsnsBeginDe" class="invisible">개업년월일</label>
+                                        <input type="text" class="form-control input-sm hasDatepicker" id="bsnsBeginDe" name="bsnsBeginDe" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상시 종업원수(4대보험 가입종업원)</th>
+                                <td>
+                                    <input type="text" class="form-control input-xs integer" id="emplyCo" name="emplyCo" value="" maxlength="3">
+                                    <span class="input-text">명</span>
+                                </td>
+                                <th>업태</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="induty" name="induty" value="" readonly="readonly">
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-default" href="#none" id="btnIndutyCd"><i class="fa fa-search" ></i></a>
+                                    </span>
+                                    <label for="indutyNm" class="invisible">업종</label>
+                                    <input type="text" class="form-control input-lg" id="indutyConm" name="indutyConm" value="" disabled="">
+                                </td>
+                                <th>종목</th>
+                                <td>
+                                    <input type="text" class="form-control input-full" id="trtmntPrdlst" name="trtmntPrdlst" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">사업장주소</th>
+                                <td rowspan="2" colspan="3">								
+                                    <div class="input-group">
+                                        <label for="bplcZipCode" class="invisible">우편번호</label>
+                                        <input type="text" class="form-control input-sm" id="postNo" name="postNo" value="" readonly="readonly">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="#none" id="btnGetZipCode"><i class="fa fa-search" ></i></a>
+                                        </span>
+                                        <label for="bplcBaseAdres" class="invisible">기본주소</label>
+                                        <input type="text" class="form-control input-lg" id="bassAdres" name="bassAdres" value="" readonly="readonly">
+                                    </div>
+                                    <label for="detailAdres" class="invisible">상세주소</label>
+                                    <input type="text" class="form-control input-lg" id="detailAdres" name="detailAdres" value="">
+                                </td>
+                                <th>전화번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="bplcNo1" name="bplcNo1">
+                                        <option value="02" selected="">서울(02)</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo2" name="bplcNo2" value="" maxlength="4">
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo3" name="bplcNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>FAX번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="faxNo1" name="faxNo1">
+                                        <option value="02" selected="">서울(02)</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo2" name="faxNo2" value="" maxlength="4"  >
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo3" name="faxNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>대표자명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="rprsntvNm" name="rprsntvNm" value="">
+                                </td>
+                                <th>휴대번호</th>
+                                <td colspan="3">
+                                    <select class="form-control input-sm" id="memMobile1" name="memMobile1">
+                                        <option value="010" selected="">010</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="phone5" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile2" name="memMobile2" value="" maxlength="4" onkeyup="fn.autoNextFocus(this, 4, 'memMobile3')">
+                                    <label for="phone6" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile3" name="memMobile3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="clearfix"></p>
+                    <h3>
+                        <div class="titleCheck">
+                            <label for="chk_2"> 참가업체2</label>
+                            <input type="checkbox" id="chk_2">
+                        </div>
+                    </h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>신청 업체명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="cmpnm" name="cmpnm" style="width: 90%;" value="">
+                                </td>
+                                <th>사업자등록번호</th>
+                                <td>
+                                    <label for="bsnmRegistNo1" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:30px;" id="bsnmNo1" name="bsnmNo1" value="" maxlength="3"  >
+                                    <span class="input-text">- </span>
+                                    <label for="bsnmRegistNo2" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:20px;" id="bsnmNo2" name="bsnmNo2" value="" maxlength="2" >
+                                    <label for="bsnmRegistNo3" class="invisible">사업자등록번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bsnmNo3" name="bsnmNo3" value="" maxlength="5">
+                                </td>
+                                <th>설립일</th>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="bsnsBeginDe" class="invisible">개업년월일</label>
+                                        <input type="text" class="form-control input-sm hasDatepicker" id="bsnsBeginDe" name="bsnsBeginDe" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상시 종업원수(4대보험 가입종업원)</th>
+                                <td>
+                                    <input type="text" class="form-control input-xs integer" id="emplyCo" name="emplyCo" value="" maxlength="3">
+                                    <span class="input-text">명</span>
+                                </td>
+                                <th>업태</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="induty" name="induty" value="" readonly="readonly">
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-default" href="#none" id="btnIndutyCd"><i class="fa fa-search" ></i></a>
+                                    </span>
+                                    <label for="indutyNm" class="invisible">업종</label>
+                                    <input type="text" class="form-control input-lg" id="indutyConm" name="indutyConm" value="" disabled="">
+                                </td>
+                                <th>종목</th>
+                                <td>
+                                    <input type="text" class="form-control input-full" id="trtmntPrdlst" name="trtmntPrdlst" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">사업장주소</th>
+                                <td rowspan="2" colspan="3">								
+                                    <div class="input-group">
+                                        <label for="bplcZipCode" class="invisible">우편번호</label>
+                                        <input type="text" class="form-control input-sm" id="postNo" name="postNo" value="" readonly="readonly">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="#none" id="btnGetZipCode"><i class="fa fa-search" ></i></a>
+                                        </span>
+                                        <label for="bplcBaseAdres" class="invisible">기본주소</label>
+                                        <input type="text" class="form-control input-lg" id="bassAdres" name="bassAdres" value="" readonly="readonly">
+                                    </div>
+                                    <label for="detailAdres" class="invisible">상세주소</label>
+                                    <input type="text" class="form-control input-lg" id="detailAdres" name="detailAdres" value="">
+                                </td>
+                                <th>전화번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="bplcNo1" name="bplcNo1">
+                                        <option value="02" selected="">서울(02)</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo2" name="bplcNo2" value="" maxlength="4">
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo3" name="bplcNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>FAX번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="faxNo1" name="faxNo1">
+                                        <option value="02" selected="">서울(02)</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo2" name="faxNo2" value="" maxlength="4"  >
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo3" name="faxNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>대표자명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="rprsntvNm" name="rprsntvNm" value="">
+                                </td>
+                                <th>휴대번호</th>
+                                <td colspan="3">
+                                    <select class="form-control input-sm" id="memMobile1" name="memMobile1">
+                                        <option value="010" selected="">010</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="phone5" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile2" name="memMobile2" value="" maxlength="4" onkeyup="fn.autoNextFocus(this, 4, 'memMobile3')">
+                                    <label for="phone6" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile3" name="memMobile3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="clearfix"></p>
+                    <h3>
+                        <div class="titleCheck">
+                            <label for="chk_3"> 참가업체3</label>
+                            <input type="checkbox" id="chk_3">
+                        </div>
+                    </h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>신청 업체명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="cmpnm" name="cmpnm" style="width: 90%;" value="">
+                                </td>
+                                <th>사업자등록번호</th>
+                                <td>
+                                    <label for="bsnmRegistNo1" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:30px;" id="bsnmNo1" name="bsnmNo1" value="" maxlength="3"  >
+                                    <span class="input-text">- </span>
+                                    <label for="bsnmRegistNo2" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:20px;" id="bsnmNo2" name="bsnmNo2" value="" maxlength="2" >
+                                    <label for="bsnmRegistNo3" class="invisible">사업자등록번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bsnmNo3" name="bsnmNo3" value="" maxlength="5">
+                                </td>
+                                <th>설립일</th>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="bsnsBeginDe" class="invisible">개업년월일</label>
+                                        <input type="text" class="form-control input-sm hasDatepicker" id="bsnsBeginDe" name="bsnsBeginDe" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상시 종업원수(4대보험 가입종업원)</th>
+                                <td>
+                                    <input type="text" class="form-control input-xs integer" id="emplyCo" name="emplyCo" value="" maxlength="3">
+                                    <span class="input-text">명</span>
+                                </td>
+                                <th>업태</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="induty" name="induty" value="" readonly="readonly">
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-default" href="#none" id="btnIndutyCd"><i class="fa fa-search" ></i></a>
+                                    </span>
+                                    <label for="indutyNm" class="invisible">업종</label>
+                                    <input type="text" class="form-control input-lg" id="indutyConm" name="indutyConm" value="" disabled="">
+                                </td>
+                                <th>종목</th>
+                                <td>
+                                    <input type="text" class="form-control input-full" id="trtmntPrdlst" name="trtmntPrdlst" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">사업장주소</th>
+                                <td rowspan="2" colspan="3">								
+                                    <div class="input-group">
+                                        <label for="bplcZipCode" class="invisible">우편번호</label>
+                                        <input type="text" class="form-control input-sm" id="postNo" name="postNo" value="" readonly="readonly">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="#none" id="btnGetZipCode"><i class="fa fa-search" ></i></a>
+                                        </span>
+                                        <label for="bplcBaseAdres" class="invisible">기본주소</label>
+                                        <input type="text" class="form-control input-lg" id="bassAdres" name="bassAdres" value="" readonly="readonly">
+                                    </div>
+                                    <label for="detailAdres" class="invisible">상세주소</label>
+                                    <input type="text" class="form-control input-lg" id="detailAdres" name="detailAdres" value="">
+                                </td>
+                                <th>전화번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="bplcNo1" name="bplcNo1">
+                                        <option value="02" selected="">서울(02)</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo2" name="bplcNo2" value="" maxlength="4">
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo3" name="bplcNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>FAX번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="faxNo1" name="faxNo1">
+                                        <option value="02" selected="">서울(02)</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo2" name="faxNo2" value="" maxlength="4"  >
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo3" name="faxNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>대표자명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="rprsntvNm" name="rprsntvNm" value="">
+                                </td>
+                                <th>휴대번호</th>
+                                <td colspan="3">
+                                    <select class="form-control input-sm" id="memMobile1" name="memMobile1">
+                                        <option value="010" selected="">010</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="phone5" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile2" name="memMobile2" value="" maxlength="4" onkeyup="fn.autoNextFocus(this, 4, 'memMobile3')">
+                                    <label for="phone6" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile3" name="memMobile3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="clearfix"></p>
+                    <h3>
+                        <div class="titleCheck">
+                            <label for="chk_4"> 참가업체4</label>
+                            <input type="checkbox" id="chk_4">
+                        </div>
+                    </h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                            <col style="width:130px">
+                            <col style="width:calc(33% - 132px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>신청 업체명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="cmpnm" name="cmpnm" style="width: 90%;" value="">
+                                </td>
+                                <th>사업자등록번호</th>
+                                <td>
+                                    <label for="bsnmRegistNo1" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:30px;" id="bsnmNo1" name="bsnmNo1" value="" maxlength="3"  >
+                                    <span class="input-text">- </span>
+                                    <label for="bsnmRegistNo2" class="invisible">사업자등록번호</label>
+                                    <input type="text" class="form-control integer" style="width:20px;" id="bsnmNo2" name="bsnmNo2" value="" maxlength="2" >
+                                    <label for="bsnmRegistNo3" class="invisible">사업자등록번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bsnmNo3" name="bsnmNo3" value="" maxlength="5">
+                                </td>
+                                <th>설립일</th>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="bsnsBeginDe" class="invisible">개업년월일</label>
+                                        <input type="text" class="form-control input-sm hasDatepicker" id="bsnsBeginDe" name="bsnsBeginDe" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>상시 종업원수(4대보험 가입종업원)</th>
+                                <td>
+                                    <input type="text" class="form-control input-xs integer" id="emplyCo" name="emplyCo" value="" maxlength="3">
+                                    <span class="input-text">명</span>
+                                </td>
+                                <th>업태</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="induty" name="induty" value="" readonly="readonly">
+                                    <span class="input-group-btn">
+                                        <a class="btn btn-default" href="#none" id="btnIndutyCd"><i class="fa fa-search" ></i></a>
+                                    </span>
+                                    <label for="indutyNm" class="invisible">업종</label>
+                                    <input type="text" class="form-control input-lg" id="indutyConm" name="indutyConm" value="" disabled="">
+                                </td>
+                                <th>종목</th>
+                                <td>
+                                    <input type="text" class="form-control input-full" id="trtmntPrdlst" name="trtmntPrdlst" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">사업장주소</th>
+                                <td rowspan="2" colspan="3">								
+                                    <div class="input-group">
+                                        <label for="bplcZipCode" class="invisible">우편번호</label>
+                                        <input type="text" class="form-control input-sm" id="postNo" name="postNo" value="" readonly="readonly">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="#none" id="btnGetZipCode"><i class="fa fa-search" ></i></a>
+                                        </span>
+                                        <label for="bplcBaseAdres" class="invisible">기본주소</label>
+                                        <input type="text" class="form-control input-lg" id="bassAdres" name="bassAdres" value="" readonly="readonly">
+                                    </div>
+                                    <label for="detailAdres" class="invisible">상세주소</label>
+                                    <input type="text" class="form-control input-lg" id="detailAdres" name="detailAdres" value="">
+                                </td>
+                                <th>전화번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="bplcNo1" name="bplcNo1">
+                                        <option value="02" selected="">서울(02)</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo2" name="bplcNo2" value="" maxlength="4">
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="bplcNo3" name="bplcNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>FAX번호</th>
+                                <td>
+                                    <label for="telNo1" class="invisible">지역번호</label>
+                                    <select class="form-control input-sm" id="faxNo1" name="faxNo1">
+                                        <option value="02" selected="">서울(02)</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="telNo2" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo2" name="faxNo2" value="" maxlength="4"  >
+                                    <label for="phone3" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="faxNo3" name="faxNo3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>대표자명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="rprsntvNm" name="rprsntvNm" value="">
+                                </td>
+                                <th>휴대번호</th>
+                                <td colspan="3">
+                                    <select class="form-control input-sm" id="memMobile1" name="memMobile1">
+                                        <option value="010" selected="">010</option>
+                                    </select>
+                                    <span class="input-text">- </span>
+                                    <label for="phone5" class="invisible">국번</label>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile2" name="memMobile2" value="" maxlength="4" onkeyup="fn.autoNextFocus(this, 4, 'memMobile3')">
+                                    <label for="phone6" class="invisible">전화번호</label>
+                                    <span class="input-text"> - </span>
+                                    <input type="text" class="form-control input-xs integer" id="memMobile3" name="memMobile3" value="" maxlength="4">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="clearfix"></p>
+                    <h3>지원 신청내용</h3>
+                    <table class="table table-bordered write">
+                        <colgroup>
+                            <col style="width:200px">
+                            <col style="width:calc(33% - 100px)">
+                            <col style="width:200px">
+                            <col style="width:calc(33% - 100px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>협업 사업명</th>
+                                <td>
+                                    <input type="text" class="form-control input-sm" id="cmpnm" name="cmpnm" style="width: 90%;" value="">
+                                </td>
+                                <th>사업기간</th>
+                                <td>
+                                    <div class="input-group">
+                                        <label for="bsnsBeginDe" class="invisible">개업년월일</label>
+                                        <input type="text" class="form-control input-sm hasDatepicker" id="bsnsBeginDe" name="bsnsBeginDe" value="">
+                                        ~
+                                        <label for="bsnsBeginDe" class="invisible">개업년월일</label>
+                                        <input type="text" class="form-control input-sm hasDatepicker" id="bsnsBeginDe" name="bsnsBeginDe" value="">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>협업사업장주소</th>
+                                <td colspan="3">								
+                                    <div class="input-group">
+                                        <label for="bplcZipCode" class="invisible">우편번호</label>
+                                        <input type="text" class="form-control input-sm" id="postNo" name="postNo" value="" readonly="readonly">
+                                        <span class="input-group-btn">
+                                            <a class="btn btn-default" href="#none" id="btnGetZipCode"><i class="fa fa-search" ></i></a>
+                                        </span>
+                                        <label for="bplcBaseAdres" class="invisible">기본주소</label>
+                                        <input type="text" class="form-control input-lg" id="bassAdres" name="bassAdres" value="" readonly="readonly">
+                                    </div>
+                                    <label for="detailAdres" class="invisible">상세주소</label>
+                                    <input type="text" class="form-control input-lg" id="detailAdres" name="detailAdres" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>지원내용</th>
+                                <td colspan="3">								
+                                    <input type="checkbox" id="chk_1">
+                                    <label for="chk_1">① 공동이용시설</label>
+                                    <input type="checkbox" id="chk_2">
+                                    <label for="chk_2">② 공동운영시스템</label>
+                                    <input type="checkbox" id="chk_3">
+                                    <label for="chk_3">③ 공동브랜드 개발 및 활용</label>                                        
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>지원 요청금액</th>
+                                <td colspan="3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="clearfix"></p>
+                    <h3>첨부파일</h3>
+                    <table class="table table-bordered write" id="fileTable">
+                        <colgroup>
+                            <col style="width:130px">							
+                            <col style="width:calc(50% - 130px)">
+                            <col style="width:50px">				
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th colspan="2">첨부파일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="tableTr1">
+                                <th style="text-align: center; vertical-align: middle;">사업자등록증</th>
+                                <td><a href="javascript:fn.atchPhotoFileDown('31248', '144291')"><img src="/img/files/file_unknown.png" class="file">사업자등록증.jpg</a></td>
+                                <td><a href="#none" id="btnFileDel" name="btnFileDel" onclick="fn.delFileRow('31248', '144291', 'CNSL_REQST_ATCH_FILE', 'bsnsLicse');" class="btn btn-danger">삭제</a></td>
+                            </tr>
+                            <tr>
+                                <th>부가가치세 과세표준증명</th>
+                                <td colspan="2">
+                                    <input type="file" id="file1" name="bsnsLicse" title="사업자등록증" class="form-control input-lg" style="width:90%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>소상공인 확인서류</th>
+                                <td colspan="2">
+                                    <input type="file" id="file1" name="bsnsLicse" title="사업자등록증" class="form-control input-lg" style="width:90%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>국세, 지방세 납세증명서</th>
+                                <td colspan="2">
+                                    <input type="file" id="file1" name="bsnsLicse" title="사업자등록증" class="form-control input-lg" style="width:90%">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사업추진계획서</th>
+                                <td colspan="2">
+                                    <input type="file" id="file1" name="bsnsLicse" title="사업자등록증" class="form-control input-lg" style="width:90%">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="clearfix"></p>
+                    <h3>처리구분</h3>
+                    <table class="table table-bordered write" id="fileTable">
+                        <colgroup>
+                            <col style="width:130px">
+                            <col style="width:calc(50% - 130px)">
+                            <col style="width:130px">
+                            <col style="width:calc(50% - 130px)">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>처리구분</th>
+                                <td colspan="3">
+                                    <input type="radio" id="confmYN1" name="confmYN" value="Y"> 접수
+                                    <input type="radio" id="confmYN2" name="confmYN" value="N"> 반려
+                                </td>
+                            </tr>
+                            <tr id="returnResnDiv" style="display:none;">
+                                <th>반려사유</th>
+                                <td colspan="3">
+                                    <label for="returnResn" class="invisible">반려</label>
+                                    <textarea class="form-control input-full" id="returnResn" name="returnResn"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="control-button">	
+                        <span class="fr">
+                            <a href="#none" id=" " name=" " class="btn btn-pop">저장</a>
+                            <a href="#none" id=" " name=" " class="btn btn-pop">수정</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-copy">© Seoul Credit Guarantee Foundation, All Rights Reserved.</div>
+    </footer>
+
+
+</body>
+
+</html>

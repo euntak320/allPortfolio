@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <defs>
+        <style>
+            .cls-1,.cls-3,.cls-4{fill:none}.cls-2{fill:#929292}.cls-3,.cls-4{stroke:#929292;stroke-miterlimit:10}.cls-3{stroke-width:2.4px}.cls-4{stroke-linecap:round;stroke-width:2.8px}
+        </style>
+    </defs>
+    <g id="icon_b_employee" transform="translate(-194.741 -269.676)">
+        <path id="사각형_1086" d="M0 0h30v30H0z" class="cls-1" data-name="사각형 1086" transform="translate(194.741 269.676)"/>
+        <circle id="타원_1" cx="2.963" cy="2.963" r="2.963" class="cls-2" data-name="타원 1" transform="translate(206.77 278.835)"/>
+        <path id="패스_11" d="M212.422 284.05a4.7 4.7 0 0 1-6.462 0c-1.587.906-2.661 3.544-2.661 5.288v.056a7.642 7.642 0 0 0 1.364 1.163 8 8 0 0 0 10.408-1.353c-.077-1.704-1.117-4.282-2.649-5.154z" class="cls-2" data-name="패스 11" transform="translate(.552 1.202)"/>
+        <circle id="타원_2" cx="11.146" cy="11.146" r="11.146" class="cls-3" data-name="타원 2" transform="translate(198.62 273.86)"/>
+        <path id="선_13" d="M0 0l2.996 2.996" class="cls-4" data-name="선 13" transform="translate(219.157 291.837)"/>
+    </g>
+</svg>

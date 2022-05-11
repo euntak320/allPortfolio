@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpi">
+<meta name="format-detection" content="telephone=no">
+<title>KB스타게이트</title>
+<link rel="shortcut icon" href="">
+<link rel="apple-touch-icon" href="">
+<!-- 공통 웹자원 : 맨 위에 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/jquery-confirm.css">
+<script type="text/javascript" src="../common/js/jquery-1.12.4.min.js"></script>
+
+<!-- 해당페이지만 사용 : 슬라이드  -->
+<link type="text/css" rel="stylesheet" href="../common/css/slick.css">
+<script type="text/javascript" src="../common/js/slick.js"></script>
+
+<!-- 공통 웹자원 : 맨 마지막 위치 -->
+<link type="text/css" rel="stylesheet" href="../common/css/css.css">
+<script type="text/javascript" src="../common/js/extension.js"></script>
+
+</head>
+
+<body>
+<!-- wrap -->
+<div id="wrap" class="main after"><!-- 카드등록전 클래스 추가 : before, 카드 등록후면 클래스 추가 : after -->
+	<!-- header -->
+	<header id="header">
+		<div class="inner">
+			<div class="tit"><h1>BBQ Pay</h1></div>
+			<div class="fr"><a href="#" class="btnNavi home"><span class="ico">BBQ 앱 홈</span></a><a href="#" class="btnNavi menu"><span class="ico">메뉴</span></a></div>
+		</div>
+	</header>
+	<!-- //header -->
+
+	<!-- container -->
+	<div id="container">
+		<!-- 캐시백 적립 정보 -->
+		<ul class="useCashInfo">
+			<li>
+				<strong class="tit">다음달 예정 캐시백</strong>
+				<p class="txt"><a href="#"><span>1,500</span><span class="won">원</span></a></p>
+			</li>
+			<li>
+				<strong class="tit">올해 받은 캐시백</strong>
+				<p class="txt"><a href="#"><span>12,500</span><span class="won">원</span></a></p>
+			</li>
+		</ul>
+		<!-- //캐시백 적립 정보 -->
+
+		<!-- vbSlider -->
+		<div class="mainVbWrap">
+			<div class="mainVbIn">
+				<!-- title -->
+				<h2 class="titleWrap">
+					<strong>결제수단</strong>
+					<p><a href="#" class="btn">결제내역</a></p>
+				</h2>
+				<!-- //title -->
+
+				<!-- visual -->
+				<div class="vbWrap">
+					<div class="vbSlider">
+						<!-- item -->
+						<!-- 개발 : - 주카드일때 다음(클래스 item) div에 클래스 on 추가,
+								   - 은행에 따른 아이디 매칭 : id명의 _숫자를 해당 코드로 매칭
+					   -->
+
+					   <div class="item">
+					       <div class="in">
+					           <div class="text">
+					               <a href="#" class="btn add"><span class="ico"></span></a>
+					               <p class="txt">결제수단 추가</p>
+					           </div>
+					       </div>
+					   </div>
+					   <!-- //item -->
+					   <!-- item -->
+					   <div class="item on" data-id="bn_004">
+						   <div class="in">
+							   <div class="bankLogo">
+								   <!-- 개발 : 다음의 로고 이미지는 같은 폴더내에 있음 : slider_logo_은행 코드_off.png -->
+								   <img src="../common/img/bankLogo/slider_logo_004_off.png" alt="">
+							   </div>
+							   <div class="text">
+								   <a href="#" class="btn star" tabindex="0"><span class="ico"></span></a>
+								   <div class="bank">
+									   <p class="name">국민은행</p>
+									   <p class="num">605821*****088</p>
+								   </div>
+							   </div>
+						   </div>
+					   </div>
+					   <!-- //item -->
+					   <!-- item -->
+					   <div class="item" data-id="bn_034">
+						   <div class="in">
+							   <div class="bankLogo"><img src="../common/img/bankLogo/slider_logo_034_off.png" alt=""></div>
+							   <div class="text">
+								   <a href="#" class="btn star" tabindex="0"><span class="ico"></span></a>
+								   <div class="bank">
+									   <p class="name">광주은행</p>
+									   <p class="num">605821*****088</p>
+								   </div>
+							   </div>
+						   </div>
+					   </div>
+					   <!-- //item -->
+					   <!-- item -->
+					   <div class="item" data-id="bn_027">
+						   <div class="in">
+							   <div class="bankLogo"><img src="../common/img/bankLogo/slider_logo_027_off.png" alt=""></div>
+							   <div class="text">
+								   <a href="#" class="btn star" tabindex="0"><span class="ico"></span></a>
+								   <div class="bank">
+									   <p class="name">한국씨티은행</p>
+									   <p class="num">605821*****088</p>
+								   </div>
+							   </div>
+						   </div>
+					   </div>
+					   <!-- //item -->
+					</div>
+					<div class="slick-nav"><div class="dot"></div></div>
+				</div>
+				<!-- //visual -->
+
+				<!-- guideList : 계좌 등록전에 노출
+				<ul class="guideList">
+					<li>현재는 계좌 등록만 가능합니다.</li>
+				</ul>
+				 //guideList -->
+			</div>
+		</div>
+		<!-- //vbSlider -->
+
+		<!-- banner -->
+		<div class="mainBanWrap">
+			<div class="vbSlider2">
+				<!-- item -->
+				<div class="item">
+					<a href="#" class="in">
+						<img src="../common/img/banner/img_banner_01.png" class="im">
+					</a>
+				</div>
+				<!-- //item -->
+				<!-- item -->
+				<div class="item">
+					<a href="#" class="in">
+						<img src="../common/img/banner/img_banner_02.png" class="im">
+					</a>
+				</div>
+			 <!-- //item -->
+			</div>
+			<div class="slick-nav"><div class="dot"></div></div>
+		</div>
+		<!-- //banner -->
+
+		<!-- copyright -->
+		<div class="copyright">Powered by KB</div>
+		<!-- //copyright -->
+	</div>
+	<!-- //container -->
+
+</div>
+<!-- //wrap -->
+
+<!-- all menu -->
+<nav class="allMenuWrap">
+	<div class="allHd">
+		<h1 class="tit">나의 BBQ Pay</h1>
+		<a href="#" class="btnNavi close"><span class="ico">닫기</span></a>
+	</div>
+
+	<div class="allCnt">
+		<ul class="menu">
+			<li class="li">
+				<dl>
+					<dt>이용내역</dt>
+					<dd>
+						<ul class="ul">
+							<li><a href="#">결제내역</a></li>
+							<li><a href="#">캐시백내역</a></li>
+						</ul>
+					</dd>
+				</dl>
+			</li>
+			<li class="li">
+				<dl>
+					<dt>설정</dt>
+					<dd>
+						<ul class="ul">
+							<li><a href="#">회원정보관리</a></li>
+						</ul>
+					</dd>
+					<dd>
+						<ul class="ul">
+							<li><a href="#">간편비밀번호변경</a></li>
+							<li><a href="#">결제수단관리</a></li>
+							<li>
+								<a href="#">
+									<p>현금영수증 설정</p>
+									<!-- 미설정 일 때 노출 -->
+									<p class="txt">미사용</p>
+									<!-- 설정일 때 노출
+									<p class="txt"><span>사업자</span><span>01012**34**</span></p>
+									-->
+								</a>
+							</li>
+						</ul>
+					</dd>
+				</dl>
+			</li>
+			<li class="li">
+				<dl>
+					<dt>Pay고객센터</dt>
+					<dd>
+						<ul class="ul">
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">FAQ</a></li>
+							<li><a href="#">서비스제안</a></li>
+							<li><a href="#">이용약관</a></li>
+							<li><a href="#">개인정보취급방침</a></li>
+						</ul>
+					</dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+</nav>
+<!-- //all menu -->
+
+<!-- loading 개발:원할때 노출
+<div class="loadingWrap">
+    <span class="loading"></span>
+</div>
+//loading -->
+
+<script type="text/javascript">
+$(function(){
+	var vbSlider1 = $('.vbSlider').slick({
+		arrows:false,
+		autoplay:false,
+		infinite: false,
+		dots:true,
+		fade: false,
+		slidesToShow: 1,
+		variableWidth: true,
+		initialSlide: 1,
+	});
+
+	var vbSlider2 = $('.vbSlider2').slick({
+		dots: true,
+		infinite: false,
+		arrows: false,
+		slidesToShow: 1,
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+mobile 관련 사항
+
+공통 <head ></head>
+  viewport 부분 아래 줄로 변경
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width">
+   
+layout 부분
+
+<div id="subPage>
+	<div class="contentArea">
+		 컨텐츠 내용
+	</div>
+</div>
+
+로그인 페이지를 제외한 나머지 페이지에 id="subPage"로 감싸주시기 바랍니다.
+
+
+
+관리자 쪽은 
+
+css와 이미지 덮어쓰기 부탁
+
+pc/page_1.html == /smadm/req/req_list.do
+
+css가 업데이트 되지 않은거 같습니다.

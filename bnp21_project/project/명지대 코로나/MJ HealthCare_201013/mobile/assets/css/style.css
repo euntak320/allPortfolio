@@ -1,0 +1,180 @@
+/* login */
+#login {position: relative; height:100vh;}
+.loginArea {position: absolute; width:100%; height:100%; padding:16px; box-sizing: border-box;}
+.loginArea h1 {width: 90px; height:25px;}
+.loginArea h1 a {display: block; width:100%; height:100%; background:url(../images/logo.png) no-repeat left center; text-indent: -9999px; background-size:cover;}
+.loginArea .titleArea {margin-top:40px;}
+.loginArea .titleArea img {width:240px;}
+.loginArea .btmSelect {position: relative; width:100%;}
+.loginArea .btmSelect .select select, 
+.loginArea .btmSelect .input input {height:100%; padding: 5px 12px; border-radius: 20px; background:#f6f6f6;  line-height:normal;}
+.loginArea .btmSelect .input {height:50px;}
+.loginArea .btmSelect .select { height:50px;}
+.loginArea .btmSelect .select select{background:#f6f6f6 url(../images/ico_down.png) no-repeat 95% center;}
+.loginArea .btmSelect .input {margin-top:8px;}
+.loginArea button {width:100%; margin-top:8px; border-radius: 20px; line-height:40px; color:#fff;letter-spacing: -0.48px; background: #ccc;}
+.loginArea button.on {background:#0090da}
+.loginArea .linkTxt {display: block; margin-top:20px; text-align: center;  font-size:10px;}
+.loginArea .copyright {display: block; margin-top:5px;  text-align: center; color:#0C2E68; opacity: 0.3; font-size:10px;}
+
+
+/* comm */
+#subPage {position: relative; overflow: hidden; background:#f6f6f6}
+.contentArea {overflow: auto; padding:12px 16px 85px 16px;}
+
+/* layer */
+.layerFrame {position: fixed; top:0; left:0; bottom:0; right:0; background:rgba(0,0,0,0.5); z-index: 10;}
+.layerFrame .layerArea {position: absolute; top:50%; left:50%; width:95%; border-radius: 4px; transform: translate(-50%, -50%); background:#fff;}
+.layerFrame .layerArea .topTitle {display: block; padding:14px 0; border-bottom:1px solid #ccc; font-size:20px; color:#111; text-align: center ;font-weight:bold;}
+.layerFrame .layerArea .txtArea {overflow:auto; min-height: 150px; padding:10px 20px;}
+.layerFrame .layerArea .txtArea textarea {width:100%;}
+.layerFrame .layerArea button {width:100%; height:48px; background:#ddd; color:#fff;}
+.layerFrame .layerArea button.on {background:#0090da}
+.layerFrame .layerArea .closeBtn {display: block; position: absolute; top:15px; right:30px; width:30px; height:30px; background:url(../images/ico_close.png) no-repeat; background-size: 100%; text-indent: -9999px;}
+
+/* 20-10-20 추가 */
+.layerFrame .layerArea.img {width:85%; padding-bottom:25px;}
+.layerFrame .layerArea.img button {top:auto; bottom:2px; right:12px; background: none; text-indent: 0; color:#0090da}
+.layerFrame .layerArea .imgArea {width:95%; height:300px; margin:10px;}
+.layerFrame .layerArea .imgArea .imgSize {width:100%; }
+.layerFrame .layerArea .imgArea img {opacity: 0!important;}
+
+
+
+/* 20-09-03  시작*/
+/* header */
+.header {position: relative; width:100%; height:56px; border-bottom:1px solid #ddd; background:#fff;}
+.header h1 {position: absolute; top:50%; left:50%; width:170px; text-align:center; transform: translate(-50%, -50%); background:url(../images/subTopTxt.png) no-repeat center; text-indent: -9999px; background-size:100%;}
+.header a.home {position: absolute; top:50%; left:22px; display: block;  width:20px; height:22px; background:url(../images/btn_home.png) no-repeat center; background-size: 100%; transform: translateY(-50%);}
+.header a.logout {position: absolute; top:50%; right:22px; display: block;  width:20px; height:22px; background:url(../images/btn_logout.png) no-repeat center; background-size: 100%; transform: translateY(-50%); text-indent: -9999px;}
+/* 20-09-03  끝*/
+
+
+
+/* 20-09-03  시작*/
+/* comBtm */
+.comBtm {position: fixed; bottom:0; left:0;  width:100%; height:65px; padding:10px; background:#f6f6f6;}
+.comBtm button {width:100%; height: 100%; border-radius: 20px;  background:#0c2e68; color:#fff; letter-spacing: -0.48px;}
+.comBtm .gray {background: #ccc;}
+/* 20-09-03  끝*/
+
+/* 20-09-04 수정 */
+/* radio */
+.radio input[type="radio"]{opacity: 0;}
+.radio input[type="radio"] + label{position: relative; display:inline-block; font-size:14px;}
+.radio input[type="radio"] + label::before{content: ""; position: absolute; left:-25px; width:18px; height:18px; background:url(../images/radio_off.png) no-repeat 0 0; background-size: cover;}
+.radio input[type="radio"]:checked + label::before { background:url(../images/radio_on.png) no-repeat 0 0; background-size: cover;}
+
+/* content */
+.searchBox input {padding-left:20px; border-radius: 20px; background:#fff;}
+.listBox {margin-top:12px;  border-radius: 2px;}
+.listBox .box {position: relative; padding:16px 0 8px; background:#fff;}
+.listBox .box + .box {margin-top:16px;}
+.listBox .box .date {padding:0 16px;}
+.listBox .box .date span {display: inline-block; font-size:12px; letter-spacing: -0.36px; line-height: 18px; color:#999;}
+/* 20-09-03  시작 */
+.listBox .box .date > * {display: inline-block; vertical-align: middle;}
+.listBox .box .date .state, 
+.listBox .box .date span:nth-child(2) {margin-right:6px;}
+.listBox .box .date .state {width:40px;  padding:6px 0 5px; line-height:normal; color:#fff; font-size:12px; letter-spacing: -0.36px; text-align:center; border-radius: 20px; font-size: 10px;}
+.listBox .box .date .state.blue {background:#0090da;}
+.listBox .box .date .state.gray {background:#666}
+.listBox .box .questionTxt {padding:6px 16px 12px;}
+.listBox .box .questionTxt span {color:#111; letter-spacing: -0.48px; line-height:24px; }
+.listBox .box .counting {padding:8px 16px 0; border-top:1px solid #eee;}
+.listBox .box .counting span {color:#999; font-size:12px;}
+.listBox .box .counting .red {color:#ff0000;}
+.listBox .box .modifyArea {position: absolute; top:16px; right:16px;}
+.listBox .box .modifyArea > * {display: inline-block; width: 40px; padding:4px 0 3px; font-size:10px; letter-spacing: -0.36px; border:1px solid #ddd; text-align: center; vertical-align: middle;}
+.listBox .box .modifyArea .mod.on, .listBox .box .modifyArea .mod:hover{background:#0c2e68; color:#fff;}
+.listBox .box .modifyArea .del.on, .listBox .box .modifyArea .del:hover{background:#ccc; color:#fff;}
+/* 20-09-03  끝 */
+
+/* 20-09-03  시작*/
+.listBox .box .askArea {display: none; margin-top:10px; padding:0 16px;}
+.listBox .box .askArea .title span {font-size:12px; letter-spacing: -0.36px; line-height:18px;}
+.listBox .box .askArea .title .small {font-size:10px; color:#999;}
+.listBox .box .askArea .talkBox {display: inline-block; padding:7px 16px; }
+.listBox .box .askArea .leftArea .talkBox {border-radius:0 20px 20px 20px; background:#f6f6f6;}
+.listBox .box .askArea .rightArea {text-align: right;}
+.listBox .box .askArea .rightArea .title > * {display: inline-block; vertical-align: middle;}
+.listBox .box .askArea .rightArea .title .control {font-size:12px; letter-spacing: -0.36px;}
+.listBox .box .askArea .rightArea .title button {position: relative; padding:0 4px; font-size:12px; letter-spacing: -0.36px;}
+.listBox .box .askArea .rightArea .title button:first-child:after {content:""; position: absolute; right:0; top:50%; width:1px; height:9px; background:#ccc; transform: translateY(-50%);}
+.listBox .box .askArea .rightArea .title button:last-child {padding:0; padding-left:4px;}
+.listBox .box .askArea .talkBox {display: inline-block; padding: 7px 16px;}
+.askArea .rightArea .talkBox { background: #02caff; border-radius: 20px 0 20px 20px;}
+.listBox .box .askArea .rightArea .talkBox span {color:#fff;}
+.listBox .box .askArea .rightArea .talkBox .modBtn {display: none;}
+.listBox .box .askArea .rightArea .writing {display: none;}
+.listBox .box .askArea .rightArea.on .talkBox {width:100%; background:rgba(255,175,94,0.2);}
+.listBox .box .askArea .rightArea.on .talkBox span {color:#111;}
+.listBox .box .askArea .rightArea.on .talkBox .modBtn {display: inline-block; width:auto; margin-top:6px; text-align: right;}
+.listBox .box .askArea .rightArea.on .talkBox .modBtn button {width:auto; min-width: 58px; line-height: 32px; color:#fff; border-radius: 20px; background:#ffaf5e}
+.listBox .box .askArea .rightArea.on .txt {display: none;}
+.listBox .box .askArea .rightArea.on .writing {display: block;}
+.listBox .box .askArea .rightArea.on .writing input[type="text"] {width:100%; height:100%; padding:0 5px; }
+.listBox .box .askArea .rightArea.on .writing textarea {width:100%;}
+.listBox .box .askArea .inputTxt {position: relative; width:100%; margin-top:16px;}
+/* 20-10-04 */
+.listBox .box .askArea .inputTxt textarea {width:85%; height:40px; padding :10px 25px 0 45px; border-radius: 20px 0 0 20px; background:#f6f6f6 }
+.listBox .box .askArea .inputTxt button {position: absolute; right: 0; top:0; min-width: 72px; height:40px; border-radius: 20px; background:#ccc; color:#fff;}
+/* 20-10-19 */
+.listBox .box .askArea .inputTxt .camera {position: absolute; left: 0; top:0; width:45px; background:url(../images/ico_camera.png) no-repeat center; background-size: 30px; text-indent: -9999px;}
+.listBox .box .askArea .picArea img { display: inline-block; width:40px; height:40px; margin:10px 0;}
+
+/* infoArea */
+.infoArea {margin-top:24px;}
+.infoArea > .title {display: block; padding-left:15px; letter-spacing: -0.48px; line-height: 24px; color:#111; background:url(../images/ico_arrow.png) no-repeat left center; background-size:10px;}
+.infoArea .infoInput {padding:16px; margin-top:8px; background:#fff;}
+.infoArea .infoInput .txtBox + .txtBox {margin-top:16px;}
+.infoArea .infoInput .txtBox input {padding-left:15px; border-radius: 0; background:#ebf6fc;}
+.infoArea .infoInput .txtBox input[type="radio"] {padding-left:35px;}
+.infoArea .infoInput .txtBox input.tel {background:#fff; border:1px solid #ddd;}
+.infoArea .infoInput .txtBox .title {display: block; margin-bottom:8px; color:#111; font-size:14px; letter-spacing: -0.42px; line-height: 20px;}
+.infoArea .infoInput .txtBox .title > span {margin-left:4px; color:#0090da; font-size:10px; letter-spacing: -0.3px; line-height: 15px;}
+.infoArea .infoInput .txtBox .title > span:nth-child(2) {color:#666;}
+.infoArea .infoInput .txtBox .number {position: relative;}
+.infoArea .infoInput .txtBox .number + .number {margin-top:10px;}
+.infoArea .infoInput .txtBox .number input {width: 70%;}
+.infoArea .infoInput .txtBox .number button {position: absolute; right:0; top:0; width:80px; line-height: 40px; border:1px solid #ccc;  color:#999; font-size:14px; text-align: center;}
+.infoArea .infoInput .txtBox .buttonArea {display: flex; align-content: center; justify-content: center;}
+.infoArea .infoInput .txtBox .buttonArea button {width:50%; line-height: 40px; color:#999; letter-spacing: -0.42px; background:#f6f6f6}
+.infoArea .infoInput .txtBox .buttonArea button.on {background:#0090da; color:#fff;}
+.infoArea .infoInput textarea {width: 100%; height: 100px; padding:5px; border:1px solid #ddd; font-size:14px; color:#999; letter-spacing: -0.42px;}
+.infoArea.v2 .infoInput .txtBox {overflow: hidden;}
+.infoArea.v2 .infoInput .txtBox .buttonArea {float: right; text-align: right;}
+.infoArea.v2 .infoInput .txtBox .buttonArea .raido
+.infoArea.v2 .infoInput .txtBox .boxTxt {padding:16px 21px; margin-bottom:8px; border-radius: 4px;}
+.infoArea.v2 .infoInput .txtBox .boxTxt.blue {background: rgba(0,144,218,0.08);}
+.infoArea.v2 .infoInput .txtBox .boxTxt.lightblue {background: rgba(2,202,255,0.08);}
+.infoArea.v2 .infoInput .txtBox .boxTxt ul li {display: block; padding-left:10px; color:#0090da; line-height: 19px; text-indent: -10px;}
+.infoArea.v2 .infoInput .txtBox .boxTxt ul > li {font-size:13px; letter-spacing: -0.39px; font-weight: bold;}
+.infoArea.v2 .infoInput .txtBox .boxTxt ul > li + li {margin-top:10px;}
+.infoArea.v2 .infoInput .txtBox .boxTxt ul > li > ul > li {margin-top:0; font-weight: normal;}
+
+
+/* 20-10-05 추가 */
+#intro .loginArea{background:#0090da url(../images/introBg.png) no-repeat 0 132%; background-size: 118%;}
+#intro .loginArea h1 a {background: url(../images/w-logo.png) no-repeat; background-size: 100%;}
+/* 20-10-13 수정 */
+#intro .loginArea .btnArea {display: flex; align-items: center; justify-content: center; margin:23px auto 0;}
+/* 20-10-13 수정 */
+#intro .loginArea .btnArea a {width: 30%; height:100%; padding:3px; margin-right:17px; border-radius:45px; background: #fff; color:#0090da;text-align: center; letter-spacing: -0.48px; }
+#intro .loginArea .btnArea a:last-child {margin-right:0;}
+#intro .loginArea .btnArea a:last-child span {margin:11px 0;}
+#intro .loginArea .btnArea a img {width:100%;}
+#intro .loginArea .btnArea a span {display: block; margin-top:5px;}
+#intro .loginArea .btnArea button {display: inline-block; width:24px; height:24px; background: #0090da url(../images/w-right.png) no-repeat center; background-size: 6px;}
+
+/* 20-10-20 추가 */
+#policy {padding: 10px;  background:#efefef;}
+#policy .text h1 {font-size:20px; color:#333;}
+#policy .text .withDot {font-size:12px; margin-top:10px;}
+#policy .text table {margin-top:10px; border-top:1px solid #333;}
+#policy .text table th {height:30px; border-bottom:1px solid #ccc; background :#fff; color:#333;}
+#policy .text table td {border-left:1px solid #ccc; border-bottom:1px solid #ccc;}
+#policy .text table td:first-child {border-left:0;}
+
+
+

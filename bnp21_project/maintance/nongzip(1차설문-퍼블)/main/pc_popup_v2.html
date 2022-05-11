@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/mainRenew.css">
+	<link rel="stylesheet" type="text/css" href="../css/NotoSansKR.css">
+	<link rel="stylesheet" type="text/css" href="../css/Tmon.css">
+	<style>
+	.layer_pop {overflow: hidden; width: 480px;}
+	.main_layer_popup_check {position: relative; height: 36px; margin-top:20px; border-radius:20px; background-color: #1dbfd7;}
+	.main_layer_popup_check .popup_check {position: absolute; top: 11px; left: 14px; }
+	.main_layer_popup_check .popup_check .checkbox_type01 label {color: #fff;}
+	.main_layer_popup_check a.pop_close_btn {position: absolute; top: 11px; right: 14px; font-size: 14px; color: #fff;}
+	</style>
+</head>
+
+<body>
+	<!-- layer_pop -->
+	<div class="layer_pop" style="position: absolute; top: 10px; left: 10px;">
+		<img src="../img/popup_img2.png" usemap="#movesurvey" alt="농집 홈페이지 이용자 만족도 설문조사" />
+		<map name="movesurvey" id="movesurvey">
+			<area shape="rect" coords="116,489,358,549" href="pc1.html" target="_blank">
+		</map>
+		<div class="main_layer_popup_check">
+			<div class="popup_check">
+				<div class="checkbox_type01">
+					<input type="checkbox" id="check" class="" name="checkgroup_message">
+					<label for="check">오늘하루 열지않음</label>
+				</div>
+			</div>
+			<a href="javascript:;" class="pop_close_btn" title="닫기">
+				<span>닫기</span>
+			</a>
+		</div>
+	</div>
+	<!--// layer_pop -->
+</body>
+</html>

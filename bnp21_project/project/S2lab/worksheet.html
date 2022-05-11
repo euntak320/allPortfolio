@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>S2lab 퍼블리싱 현황판</title>
+<script type="text/javascript" src="common/js/jquery-1.12.4.min.js"></script>
+<style type="text/css">
+/* reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button{margin:0; padding:0; border:0 none;}
+body,th,td,input,select,textarea,button {font-size:12px; line-height:1.5; font-family:'돋움',dotum,sans-serif; color:#666;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary, time {display:block;}
+h1,h2,h3,h4,h5,h6{font-family:"맑은 고딕", "Malgun Gothic"; font-weight:normal;}
+img, fieldset{border:0 none; vertical-align:middle;}
+dl,ul,ol,menu,li {list-style:none;}
+blockquote, q {quotes:none;}
+blockquote:before, blockquote:after ,q:before, q:after {content:''; content:none;}
+input, select, textarea, label, button{vertical-align:middle;}
+label, button{cursor:pointer;}
+button {border:0 none; background-color:transparent; cursor:pointer;}
+table{border-collapse:collapse; border-spacing:0;}
+
+caption {visibility:hidden; overflow:hidden; display:none;}
+legend{position:absolute; top:0; left:0; width:0; height:0; overflow:hidden; visibility:hidden; font-size:0; line-height:0;}
+
+table {width:100%; }
+.tit {font-size:20px; color:#333; font-weight:bold; height:20px; padding:15px 0 10px; text-align:center;}
+th {height:23px; background-color:#cdcdcd; border:1px solid #b5b5b5; padding:2px 5px 3px; text-align:center; color:#000;}
+td {border-bottom:1px solid #c9c9c9; border-right:1px solid #c9c9c9; height:15px; padding:2px 10px 3px; font-size:12px; word-break:break-all;}
+td.first {border-right:1px solid #c9c9c9; border-bottom:2px solid #c9c9c9; font-weight:bold;}
+td.last {border-bottom:2px solid #c9c9c9;}
+td:first-child{border-left:1px solid #c9c9c9;}
+td:nth-child(7),
+td:nth-child(9),
+td:nth-child(10){text-align: center;}
+
+a{color:#000; text-decoration:none;}
+a:hover,a:active,a:focus{color:#000; text-decoration:underline;}
+.Wrap{ padding:20px; margin:0 auto; box-sizing: border-box;}
+.font_01 {color:#a1a1a1;}
+.font_02 {font-weight:bold;}
+.font_03 {color:#00f;}
+.font_04 {color:#f00;}
+.font_05{color:#909; font-weight:bold;}
+.gride table{border:none;}
+.del td{text-decoration:line-through; color:#ababab; background: #f1f1f1;}
+.del td:last-child{text-decoration: none;}
+.del td.txt{color:#666; text-decoration:none;}
+.dec{text-align:right; width:1705px;}
+.point_bg{background:#FF9;}
+.type_guide{padding:10px; background:#ac1846;  text-align:center; font-size:14px; font-weight:bold;}
+.type_guide a {color:#fff;}
+.red {background:#666;}
+.red > td {color:#CCC;}
+.yellow {color:yellow}
+.new {background:yellow;}
+tr.modify { background:#e2f1ff; }
+tr.modify td { color:#002446;}
+tr.hr td { border-top:2px solid #999;}
+span.ico {display:inline-block; font-size:10px; font-family:Myriad, Verdana; line-height:1; padding:4px; background:#666; color:#fff; border-radius:3px;}
+span.ico.ing { background:#30F;}
+span.ico.done { background:#C0C;}
+span.ico.modify { background:#C39;}
+.tac{text-align: center;}
+.tbl-top{line-height: 1.1; padding-bottom: 10px;}
+.tbl-top:after{display: block; content: ''; clear: both;}
+.tbl-top .fl{float: left;}
+.tbl-top .fr{float: right;}
+iframe {overflow-y:auto; border:1px solid #ccc; width:100%; height:640px; margin-top:10px; background:#fff}
+</style>
+<script type="text/javascript">
+	$(function(){
+		$(".table colgroup").prepend("<col width='50px'>");
+		
+		$(".table thead tr").prepend("<th scope='col'>No</th>");
+		
+		for(i=0; i <= $(".table tbody tr").length; i++){
+			$(".table tbody tr:nth-child("+ i+")").prepend("<td class='tac'>"+i+"</td>");
+		}
+
+		$(".btnIframe").click(function(e){
+			e.preventDefault();
+			var i = $(this).attr("href");
+			console.log(i)
+			$("#frame").attr("src",i);
+		});
+	});
+
+	
+
+</script>
+</head>
+
+<body>
+	<div class="Wrap" style="width:100%;">
+		<div class="tit">퍼블리싱 현황판 - 관리자</div>
+		<table class="table" style="width:100%; margin-top:20px;">
+			<caption>퍼블리싱 메뉴 구조</caption>
+			<colgroup>
+				<col width="5%">
+				<col width="10%">
+				<col width="10%">
+				<col width="15%">
+				<col width="20%">
+				<col width="20%">
+				<col width="10%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">구분</th>
+					<th scope="col">Depth 1</th>
+					<th scope="col">Depth 2</th>
+					<th scope="col">Depth 3</th>
+					<th scope="col">화면ID</th>
+					<th scope="col">파일명</th>
+					<th scope="col">Comment</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>main</td>
+					<td> - </td>
+					<td>-</td>
+					<td><a href="html/main.html" target="_blank" style="text-align: center;">Main</a></td>
+					<td>Main</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="5">2</td>
+					<td rowspan="5">products</td>
+					<td rowspan="5">01Hiware</td>
+					<td>-</td>
+					<td><a href="html/02Products_01Hiware.html" target="_blank" style="text-align: center;">02 Products_01Hiware</a></td>
+					<td>02 Products_01Hiware</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>01PSMforSystem</td>
+					<td><a href="html/02Products_01Hiware.html" target="_blank" style="text-align: center;">02 Products_01Hiware_01</a></td>
+					<td>02 Products_01Hiware_01</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>02IMforSystem</td>
+					<td><a href="html/02Products_01Hiware_02.html" target="_blank" style="text-align: center;">02Products_01Hiware_02</a></td>
+					<td>02 Products_01Hiware_02</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>03PSMforDBMS</td>
+					<td><a href="html/03PSMforDBMS.html" target="_blank" style="text-align: center;">03PSMforDBMS</a></td>
+					<td>03 PSMforDBMS</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>04IMforDBMS</td>
+					<td><a href="html/04IMforDBMS.html" target="_blank" style="text-align: center;">04IMforDBMS</a></td>
+					<td>04 IMforDBMS</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Support</td>
+					<td>-</td>
+					<td>03Support</td>
+					<td><a href="html/03Support.html" target="_blank" style="text-align: center;">03Support</a></td>
+					<td>03Support</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>-</td>
+					<td>-</td>
+					<td>04S2Lab</td>
+					<td><a href="html/04S2Lab.html" target="_blank" style="text-align: center;">04S2Lab</a></td>
+					<td>04S2Lab</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+</body>
+
+</html>

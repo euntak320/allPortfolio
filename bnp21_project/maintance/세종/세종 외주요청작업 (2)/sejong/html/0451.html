@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <!-- E : mobile -->
+        <title>아이디/비번찾기_찾기</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <script type="text/javascript" src="../js/jquery-2.2.4.js"></script>
+        <script type="text/javascript" src="../js/jquery.mCustomScrollbar.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/common.js"></script>
+
+        <!-- <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="js/selectivizr.js">
+ -->
+        <!--[if lte IE 9]>
+</script>
+<![endif]-->
+    </head>
+
+    <body>
+        <!-- mypage -->
+        <div id="mypage">
+            <!-- signupWrap -->
+            <div class="signupWrap bgGray">
+                <div>
+                    <!-- signupTop -->
+                    <div class="signupTop">
+                        <a href="">누리세종학당</a>
+                        <h1><strong>세종학당</strong> 아이디/비밀번호찾기</h1>
+                    </div>
+                    <!--// signupTop -->
+
+                    <!-- tabArea -->
+                    <div class="findTab">
+                        <ul>
+                            <li class="curr"><a href="">아이디</a></li>
+                            <li><a href="">비밀번호</a></li>
+                        </ul>
+                        <div class="tabContArea">
+                            <!-- 아이디 -->
+                            <div>
+                                <!-- loginForm -->
+                                <div class="loginForm">
+                                    <div class="inner">
+                                        <p class="cRed tabTit">입력된 정보로 확인된 아이디입니다</p>
+                                        <dl>
+                                            <dt>이름</dt>
+                                            <dd><input type="text" title="이름 입력" placeholder="이름을 입력해 주세요."></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>국적</dt>
+                                            <dd>
+                                                <div class="selectBox countrySelect">
+                                                    <label for="select01">KOREA, REPUBLC OF</label>
+                                                    <select id="counSelect">
+                                                        <option value="korea" selected="selected">KOREA, REPUBLC OF</option>
+                                                        <option value="">01</option>
+                                                        <option value="">02</option>
+                                                    </select>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>생년월일</dt>
+                                            <dd>
+                                                <div class="input3">
+                                                    <div class="selectBox">
+                                                        <label for="select">년</label>
+                                                        <select id="select">
+                                                            <option value="">년</option>
+                                                            <option value="">01</option>
+                                                            <option value="">02</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="selectBox">
+                                                        <label for="select">월</label>
+                                                        <select id="select">
+                                                            <option value="">월</option>
+                                                            <option value="">01</option>
+                                                            <option value="">02</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="selectBox">
+                                                        <label for="select">일</label>
+                                                        <select id="select">
+                                                            <option value="">일</option>
+                                                            <option value="">01</option>
+                                                            <option value="">02</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>※ 회원가입 및 회원정보 찾기 관련 문의</dt>
+                                            <dd>
+                                                <div class="findQna">
+                                                    <dl>
+                                                        <dt><span>전화</span></dt>
+                                                        <dd>02-3276-0792</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt><span>전자우편 주소</span></dt>
+                                                        <dd>
+                                                            <p>로그인 및 시스템 관련 문의 : system@sejonghakdang.org</p>
+                                                            <p>콘텐츠 및 기타 문의 : nurisejong@sejonghakdang.org</p>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <!--// loginForm -->
+                                <!-- btnArea -->
+                                <div class="btnArea pB100">
+                                    <button type="button" class="btn loginBtn">아이디 찾기</button>
+                                </div>
+                                <!--// btnArea -->
+                            </div>
+                            <!--// 아이디 -->
+                            <!-- 비밀번호 -->
+                            <div style="display:none;">
+                                <!-- loginForm -->
+                                <div class="loginForm">
+                                    <div class="inner">
+                                        <!-- 계정정보 -->
+                                        <p class="cRed tabTit">회원님의 전자우편 주소로 임시 비밀번호를 발송해 드립니다.<br /> 들어가기 후 개인정보 수정 페이지에서 비밀번호를 변경해 주시기 바랍니다.</p>
+                                        <dl>
+                                            <dt>아이디</dt>
+                                            <dd><input type="text" title="아이디 입력" placeholder="아이디를 입력해 주세요."></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>이름</dt>
+                                            <dd><input type="text" title="이름 입력" placeholder="이름을 입력해 주세요."></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>국적</dt>
+                                            <dd>
+                                                <div class="selectBox countrySelect">
+                                                    <label for="select01">KOREA, REPUBLC OF</label>
+                                                    <select id="counSelect">
+                                                        <option value="korea" selected="selected">KOREA, REPUBLC OF</option>
+                                                        <option value="">01</option>
+                                                        <option value="">02</option>
+                                                    </select>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>생년월일</dt>
+                                            <dd>
+                                                <div class="input3">
+                                                    <div class="selectBox">
+                                                        <label for="select">년</label>
+                                                        <select id="select">
+                                                            <option value="">년</option>
+                                                            <option value="">01</option>
+                                                            <option value="">02</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="selectBox">
+                                                        <label for="select">월</label>
+                                                        <select id="select">
+                                                            <option value="">월</option>
+                                                            <option value="">01</option>
+                                                            <option value="">02</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="selectBox">
+                                                        <label for="select">일</label>
+                                                        <select id="select">
+                                                            <option value="">일</option>
+                                                            <option value="">01</option>
+                                                            <option value="">02</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>※ 회원가입 및 회원정보 찾기 관련 문의</dt>
+                                            <dd>
+                                                <div class="findQna">
+                                                    <dl>
+                                                        <dt><span>전화</span></dt>
+                                                        <dd>02-3276-0792</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt><span>전자우편 주소</span></dt>
+                                                        <dd>
+                                                            <p>로그인 및 시스템 관련 문의 : system@sejonghakdang.org</p>
+                                                            <p>콘텐츠 및 기타 문의 : nurisejong@sejonghakdang.org</p>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <!--// loginForm -->
+                                <!-- btnArea -->
+                                <div class="btnArea pB100">
+                                    <button type="button" class="btn loginBtn">임시 비밀번호 발송</button>
+                                </div>
+                                <!--// btnArea -->
+                            </div>
+                            <!--// 비밀번호 -->
+                        </div>
+                    </div>
+                    <!--// tabArea -->
+                </div>
+            </div>
+            <!--// signupWrap -->
+        </div>
+        <!--// mypage -->
+
+    </body>
+
+</html>

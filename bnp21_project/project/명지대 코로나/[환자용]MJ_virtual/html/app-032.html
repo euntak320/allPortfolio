@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MJ Virtual | 환자용</title>
+    <link rel="stylesheet" href="../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/css/swiper.min.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+    <script>
+        $(function(){
+            $(".infoBox button").click(function(){
+                $(".infoBox button").removeClass("on");
+                $(".infoBox button").eq($(this).index()).addClass("on");
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="subPage">
+        <div id="header">
+            <button class="back">뒤로가기</button>
+            <span class="title">기초정보 작성</span>
+        </div>
+        <div id="content" class="join">
+            <div class="infoInput">
+                <div class="infoBox">
+                    <span>키가 어떻게 되시나요?</span>
+                    <div class="input">
+                        <input type="text" placeholder="000">
+                        <span class="degree">cm</span>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>체중이 어떻게 되시나요 ?</span>
+                    <div class="input">
+                        <input type="text" placeholder="000">
+                        <span class="degree">kg</span>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>과거 병력이 있으신가요?</span>
+                    <div class="btn">
+                        <button type="button" class="fl on">없음</button>
+                        <button type="button" class="fr">있음</button>
+                    </div>
+                    <div class="writeArea" style="display: none;">
+                        <textarea name="" id="" cols="30" rows="4" placeholder="예) 고혈압, 당뇨병, 폐결핵 등..."></textarea>
+                        <span class="count">0/200</span>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>복용중인 약물이 있으신가요 ?</span>
+                    <div class="btn">
+                        <button type="button" class="fl on">없음</button>
+                        <button type="button" class="fr">있음</button>
+                    </div>
+                    <div class="writeArea" style="display: none;">
+                        <textarea name="" id="" cols="30" rows="4" placeholder="예) 고혈압, 당뇨병, 폐결핵 등..."></textarea>
+                        <span class="count">0/200</span>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>입원 및 수술경험이 있으신가요?</span>
+                    <div class="btn">
+                        <button type="button" class="fl on">없음</button>
+                        <button type="button" class="fr">있음</button>
+                    </div>
+                    <div class="writeArea" style="display: none;">
+                        <textarea name="" id="" cols="30" rows="4" placeholder="예) 고혈압, 당뇨병, 폐결핵 등..."></textarea>
+                        <span class="count">0/200</span>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>하루에 흡연을 얼마나 하시나요?</span>
+                    <div class="btn">
+                        <button type="button" class="fl on">흡연 안함</button>
+                        <button type="button" class="fr">반갑 미만</button>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="fl">반갑~한갑이상</button>
+                        <button type="button" class="fr">한갑~두갑이상</button>
+                    </div>
+                </div>
+                <div class="infoBox">
+                    <span>일주일에 음주를 얼마나 하시나요?</span>
+                    <div class="btn">
+                        <button type="button" class="fl on">음주 안함</button>
+                        <button type="button" class="fr">주 1회</button>
+                    </div>
+                    <div class="btn">
+                        <button type="button" class="fl">주 2~5회</button>
+                        <button type="button" class="fr">매일</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comBtn">
+        <button type="button" class="bgGray w100">기초정보 작성하기</button>
+    </div>
+</body>
+
+</html>

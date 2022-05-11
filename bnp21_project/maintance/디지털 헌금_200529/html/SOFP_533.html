@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes"> 
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no" />
+<title>디지털 헌금 바구니</title>
+<!-- //<![CDATA[ -->
+<link rel="stylesheet" href="../css/style.css" />
+<script src="../js/jquery-2.2.4.js"></script>
+<script src="../js/common.js"></script>
+</head>
+<body>
+<!-- wrap -->
+<div id="wrap">
+	<!-- subHeader -->
+	<div id="subHeader">
+		<div class="inner">
+			<h1><a href=""><img src="../images/common/logo01.png" alt="사랑의 교회"></a></h1>
+			<!-- menuArea -->
+			<ul class="menuArea">
+				<li><button>헌금하기</li>
+				<li><button>설정</button></li>
+				<li><button>조회</button></li>
+			</ul>
+			<!--// menuArea -->
+		</div>
+		<h2>추가 헌금자 관리</h2>
+		<button class="btnClose">페이지 닫기</button>
+	</div>
+	<!--// subHeader -->
+	<!-- container -->
+	<div id="container">
+		<div class="content">
+			<button class="btn btnYellow" onclick="fn_layer('layer1','400')">대리 헌금자 등록 팝업 버튼</button>
+		</div>
+	</div>
+	<!--// container -->
+</div>
+<!--// wrap -->
+<!-- 대리 헌금자 등록 팝업 팝업 -->
+<div class="layer layer1">
+	<div class="inner">
+		<p class="tit">대리 헌금자 등록</p>
+		<!-- popCont --> 
+		<div class="popCont">
+			<div class="inputList">
+				<input type="text" title="이름 입력" placeholder="이름을 입력해 주세요.">
+				<input type="text" title="생년월일 입력" placeholder="생년월일 숫자 6자리 입력해주세요.">
+				<input type="text" title="휴대전화 번호 입력" placeholder="휴대전화 번호를 입력해 주세요.">
+			</div>
+			<p class="msg">이름을 입력해 주십시오.</p>
+		</div>
+		<!--// popCont -->
+		<!-- btnArea -->
+		<div class="btnArea close">
+			<button class="btn btnGray" onclick="fn_layer_close(this)"><span class="icoClose">닫기</span></button>
+			<button class="btn btnYellow" onclick="fn_layer_close(this)">등록</button>
+		</div>
+		<!--// btnArea -->
+	</div>
+</div>
+<!--// 대리 헌금자 등록 팝업 팝업 -->
+</body>
+</html>

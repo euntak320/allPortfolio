@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0, user-scalable=yes" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <!--[if lt IE 9]><script src=js/html5.js"></script><![endif]-->
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/jquery.placeholder.js"></script>
+	<script src="../js/tableHeadFixer.js"></script>
+	<script src="../js/jquery-ui.min.js"></script>
+	<script src="../js/datepicker-ko.js"></script>
+    <title>경기도 대기배출원 관리시스템</title>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <div class="header_top">
+            <div class="wrap">
+                <h1><img src="../images/top_logo.png" alt="새로운 경기 공정한 세상" />경기도 대기배출원 관리시스템</h1>
+                <ul class="gnb">
+                    <li class="info"><a href="">***님 로그인</a></li>
+                    <li class="logout"><a href="">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lnb">
+            <ul>
+                <li><a href="">사업장 정보</a></li>
+                <li><a href="" class="on">배출량 정보</a></li>
+                <li><a href="">굴뚝측정정보</a></li>
+                <li><a href="">통계</a></li>
+                <li><a href="">사업장 신규등록</a></li>
+                <li><a href="">게시판</a></li>
+                <li><a href="">관리자</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- //header -->
+    <div class="wrap clearfix">
+        <div class="path">
+            <span class="home">홈</span>
+            <span>배출량 정보</span>
+            <strong>사업장 배출량 목록</strong>
+        </div>
+        <h2>사업장 배출량 목록</h2>
+        <div class="searchBiz">
+            <div>
+                <select style="width:150px">
+                    <option>시군 선택</option>
+                </select>
+                <select style="width:150px">
+                    <option>읍면동</option>
+                </select>
+                <input type="text" title="사업장명" placeholder="사업장명" style="width:138px" />
+                <h3>조사연도</h3>
+                <select style="width:150px">
+                    <option>2017</option>
+                </select>
+            </div>
+            <div>
+                <h3 class="margin_l0">물질별</h3>
+                <select style="width:150px">
+                    <option>물질 선택</option>
+                </select>
+                <h3>배출량</h3>
+                <input type="text" style="width:138px" /> 톤 ~ <input type="text" style="width:138px" /> 톤
+            </div>
+        </div>
+        <div class="txtCenter">
+            <a href="" class="btn blue">검색</a><a href="" class="btn gray">엑셀</a>
+        </div>
+        <div class="bbsInfo">
+            <span class="bbsTxt pt15">자료등급&nbsp;&nbsp;&nbsp;&nbsp;M : 실측기반 배출량,&nbsp;&nbsp;A : 활동자료*배출계수,&nbsp;&nbsp;B : 매출규모별 원단위 적용,&nbsp;&nbsp;C : 업종별 원단위 적용,&nbsp;&nbsp;D : 전체 평균 원단위적용</span>
+            <span class="bbsCount"><em>##</em>건</span>
+            <br>
+            <span class="bbsCount">단위 : ton/yr</span>
+        </div>
+        <div class="tbl_extend">
+            <table id="fixTable3" class="bbsList">
+                <caption>사업장정보를 나타낸 표입니다.</caption>
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2">번호</th>
+                        <th scope="col" rowspan="2">시군</th>
+                        <th scope="col" rowspan="2">사업장명 </th>
+                        <th scope="col" rowspan="2"> 종별</th>
+                        <th scope="col" rowspan="2" class="addr">주소</th>
+                        <th scope="col" rowspan="2">사업자등록번호</th>
+                        <th scope="col" colspan="4" >베출량(ton/yr)</th>
+                        <th scope="col" rowspan="2">구분</th>
+                        <th scope="col" rowspan="2">수정</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">먼지</th>
+                        <th scope="col">황산화물</th>
+                        <th scope="col">질소산화물</th>
+                        <th scope="col">휘발성 유기화합물</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td >안산시</td>
+                        <td >(주)광명*기동 제 2공장 제 3공장 제 4공장</td>
+                        <td>1종</td>
+                        <td>경기도 안산시 단원구 목내로 160(목내동)</td>
+                        <td>123-456-78910</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>3.333</td>
+                        <td>구분</td>
+                        <td>
+                            <a href="#none">수정</a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <span class="btn prev_group">
+                <a href="">처음 페이지로</a>
+                <a href="">이전 페이지로</a>
+            </span>
+            <span class="numList">
+                <strong>1</strong>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">5</a>
+                <a href="">6</a>
+                <a href="">7</a>
+                <a href="">8</a>
+                <a href="">9</a>
+                <a href="">10</a>
+            </span>
+            <span class="btn next_group">
+                <a href="">다음 페이지로</a>
+                <a href="">마지막 페이지로</a>
+            </span>
+        </div>
+    </div>
+    <!-- //wrap -->
+</div>
+<!-- //container -->
+<hr />
+
+<div id="footer">
+    <div class="wrap">
+        <div class="addr">
+            <address>[ 경기도청 ] 16444 수원시 팔달구 효원로 1 (매산로3가)</address>
+            <span class="tell">031-120</span>
+            <span class="copy">Copyrightⓒ 2015 GRI. All rights reserved.</span>
+        </div>
+    </div>
+</div>
+<!-- //footer -->
+</body>
+</html>

@@ -1,0 +1,640 @@
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" type="x-icon" href="favicon.ico"/>
+	<link rel="shortcut icon" type="image/svg+xml" href="favicon.svg">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="assets/css/fullpage.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	
+	<script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="assets/js/slick.min.js"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+	
+	<!-- JSTL Library -->
+	
+	
+	
+	
+	<title>GDS_CONSULTING</title>
+	
+	
+	
+
+	<script type="text/javascript">
+	    function goHome(){
+	      document.location.href="#area_home";
+	    }
+	    function goFirst(){
+	      	location.href="#area_first";
+	    }
+	    function goSecond(){
+	      document.location.href="#area_second";
+	    }
+	    function goThrid(){
+	      document.location.href="#area_third";
+	    }
+	    function goForth(){
+	      document.location.href="#area_fourth";
+	    }
+	    function goFifth(){
+	      document.location.href="#area_fifth";
+	    }
+	    function gosixth(){
+	      document.location.href="#area_sixth";
+	    }
+  </script>
+	
+</head>
+
+<body>
+	<!-- header -->
+	<header>
+		<div class="header_area">
+			<div class="logo_area">
+				<h1 onclick="goHome()"><a href="#home">로고</a></h1>
+			</div>
+			<div class="menu_list_area">
+				<ul>
+					<li><a href="#first_area">Company</a></li>
+					<li><a href="#second_area">Business</a></li>
+					<li><a href="#third_area">Reference</a></li>
+					<li><a href="#forth_area">Clients</a></li>
+					<li><a href="#fifth_area">News</a></li>
+					<li><a href="#sixth_area">Contacts</a></li>
+				</ul>
+				<span class="m_menu">햄버거메뉴</span>
+			</div>
+		</div>
+		<div class="m_menu_list">
+			<span><a href="javascript:goFirst();">Company</a></span> 
+			<span><a href="javascript:goSecond();">Business</a></span> 
+			<span><a href="javascript:goThrid();">Reference</a></span> 
+			<span><a href="javascript:goForth();">Clients</a></span> 
+			<span><a href="javascript:goFifth();">News</a></span> 
+			<span><a href="javascript:gosixth();">Contacts</a></span>
+		</div>
+	</header>
+
+<script type="text/javascript">
+
+	function fn_movepage(pageNo){
+	    var comSubmit = new ComSubmit();
+	    comSubmit.setUrl("/nia/member-list.do");
+	   
+		comSubmit.addParam("stDate", $("input[name='stDate']").val());
+		comSubmit.addParam("edDate", $("input[name='edDate']").val());
+		comSubmit.addParam("searchType", $("#searchType option:selected").val());
+	    comSubmit.addParam("currentPageNo", pageNo);
+	    comSubmit.submit();
+	}
+	
+	function fn_showDetail(pIndex) {
+		
+		var vBoardIdx ;
+		
+		vBoardIdx = $("#BOARD_IDX_" +pIndex ).val() ;
+		
+		$.ajax({
+			url : "/show-news-pop.do",
+			type : "POST",
+			data : {
+				BOARD_IDX : vBoardIdx
+			},
+			dataType : "json",
+			success : function(data){
+				if (data.result == "false"){
+					alert("News 상세를 가져올 수 없습니다. 관리자에게 문의하세요!") ;
+				} else {
+					//마스킹 처리
+					var vBoardTitle = data.BOARD_TITLE ;
+					var vBoardContent = data.BOARD_CONTENT ;
+					var vArticlInputDt = data.ARTICLE_INPUT_DT ;
+					
+					$("#BOARD_TITLE").html(vBoardTitle) ;
+					$("#BOARD_CONTENT").html(vBoardContent) ;
+					$("#ARTICLE_INPUT_DT").html(vArticlInputDt)
+					
+					$(".layer_frame").show();
+				}
+			},
+			error : function(data) {}
+		});
+	}
+	
+</script>
+
+	<!-- section -->
+	<section>
+    	<div class="fullpage">
+      <div class="section num_1" id="area_home" data-anchor="home">
+        <div class="txt_area">Who controls the data will <br> <span class="big">Lead the next 100 years</span></div>
+        <!-- <span class="txt_pos one">비즈니스 인사이트 제공</span>
+        <span class="txt_pos two">빅데이터 분석을 통한 비즈니스 예측</span>
+        <span class="txt_pos three">직관적인 시각화 서비스</span>
+        <span class="txt_pos four">고객성향 예측과 이상징후 탐지</span> -->
+      </div>
+      <div class="section num_2" id="area_first" data-anchor="first_area">
+        <div class="content_frame">
+          <div class="title">
+            <span class="title_txt">Company <span class="sub_txt"> : 회사소개 및 연혁</span></span>
+            <span class="title_sub_txt">2003년 이래, 데이터 가공/분석 및 유통의 신시장 개척에 주력하였습니다. 
+            </span>
+          </div>
+          <div class="list_txt_area">
+            <div class="left_list">
+              <div class="list_area">
+                <div class="txt_box">
+                  <span class="sub_title">회사명</span>
+                  <span class="txt">㈜지디에스컨설팅그룹</span>
+                </div>
+                <div class="txt_box">
+                  <span class="sub_title">설립일</span>
+                  <span class="txt">2015년 2월</span>
+                </div>
+                <div class="txt_box">
+                  <span class="sub_title">대표이사</span>
+                  <span class="txt">김은석</span>
+                </div>
+                <div class="txt_box">
+                  <span class="sub_title">업종</span>
+                  <span class="txt">데이터베이스, 소프트웨어 자문, 개발 및 공급, 전자상거래업</span>
+                </div>
+                <div class="txt_box">
+                  <span class="sub_title">주소</span>
+                  <span class="txt">서울 성동구 광나루로 228, 9층(성수동2가, 렉스모터스)</span>
+                </div>
+                <div class="txt_box">
+                  <span class="sub_title">연락처</span>
+                  <span class="txt">Tel: 02-2135-8895(대표) <br />Fax: 02-2135-8896</span>
+                </div>
+              </div>
+            </div>
+            <div class="right_list">
+              <div class="date_box">
+                <span class="date">2018.07</span>
+                <span class="txt">고려대 ‘데이터 사이언스 센터’ 업무 제휴 (교육 및 인턴쉽)</span>
+              </div>
+              <div class="date_box">
+                <span class="date">2017.07</span>
+                <span class="txt">KB국민카드 ‘빅데이터 센터’ 업무 제휴 (카드 데이터 상품개발)</span>
+              </div>
+              <div class="date_box">
+                <span class="date">2016.09</span>
+                <span class="txt">KT ‘빅데이터 지원단’ 업무 제휴 (빅데이터 가공, 중개, 서비스 분야)</span>
+              </div>
+              <div class="date_box">
+                <span class="date">2016.08</span>
+                <span class="txt">데이터 거래 중개 사업 개시 (미래창조과학부 ICT 기금사업)</span>
+                <span class="txt">부설연구소 ‘한국공공정보개발원’ 설립 (산기협 2016113799호)</span>
+              </div>
+              <div class="date_box">
+                <span class="date">2016.07</span>
+                <span class="txt">빅데이터 분석 사업 개시 (지속가능한 빅데이터 사업, 경기도)</span>
+              </div>
+              <div class="date_box">
+                <span class="date">2015.04</span>
+                <span class="txt">국가 DB 구축 사업 개시 (유동인구 실사 DB 구축, NIA)</span>
+              </div>
+              <div class="date_box">
+                <span class="date">2015.02</span>
+                <span class="txt">㈜지디에스컨설팅그룹 설립</span>
+                <span class="txt">(㈜지디에스케이 內 컨설팅 사업본부의 법인 분할)</span>
+              </div>
+              <div class="date_box">
+                <span class="date">2004.10</span>
+                <span class="txt">벤처기업 등록 (041134221-1-01033호)</span>
+              </div>
+              <div class="date_box">
+                <span class="date">2003.02</span>
+                <span class="txt">㈜지디에스케이 설립 (대표이사 김은석 外)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section num_3" id="area_second" data-anchor="second_area">
+        <div class="content_frame">
+          <div class="title">
+            <span class="title_txt">Business <span class="sub_txt">: 사업 영역</span></span>
+            <span class="title_sub_txt">데이터 활용 및 유통의 일관된 서비스 제공!! </span>
+          </div>
+          <div class="list_area_frame">
+            <div class="title_area">
+              <span class="title_box one">사업영역</span>
+              <span class="title_box two">상품 및 서비스</span>
+              <span class="title_box three">사업사례</span>
+<!--               <span class="title_box four">담당자 연락처</span> -->
+            </div>
+            <div class="m_slide_area">
+              <div class="list_area">
+                <div class="list_box">
+                  <div class="list_title">
+                    <span class="left_txt">빅데이터<br>분석 컨설팅</span>
+<!--                     <a href="#" class="right_txt">자세히 보기</a> -->
+                  </div>
+                  <span class="sub_title">데이터 관련 ISP 및 계획수립</span>
+                  <span class="sub_title">주요 빅데이터 (통신, 카드) 공급 및 활용</span>
+                  <span class="sub_title">공공 데이터 활용 서비스</span>
+                  <span class="sub_title">데이터 분석 및 시각화 서비스</span>
+                </div>
+                <div class="list_sub_box">
+                  <span class="sub_txt">국방기술품질원, 빅데이터 시범사업 (‘17~)</span>
+                  <span class="sub_txt">경기도, 지속가능한 빅데이터 분석 (‘16)</span>
+                  <span class="sub_txt">서울시, GRDP 분석 모델링 구축 (‘16)</span>
+                  <span class="sub_txt lt2">건강보험공단, 빅데이터 노인질환 모델 구축 (‘14)</span>
+                  <span class="sub_txt">서울시, 유동인구 DB 구축 및 모델링 (‘15)</span>
+                </div>
+<!--                 <div class="email_area"> -->
+<!--                   <a href="mailto:aaa@gdsconsulting.co.kr">aaa@gdsconsulting.co.kr</a> -->
+<!--                 </div> -->
+              </div>
+              <div class="list_area">
+                <div class="list_box">
+                  <div class="list_title">
+                    <span class="left_txt">데이터 가공</span>
+<!--                     <a href="#" class="right_txt">자세히 보기</a> -->
+                  </div>
+                  <span class="sub_title">공공 개방 정보의 정제, 가공 및 제공</span>
+                  <span class="sub_title">통신, 카드 등 빅데이터 정제, 결합 및 제공</span>
+                  <span class="sub_title">비정형 데이터 가공 및 제공</span>
+                </div>
+                <div class="list_sub_box">
+                  <span class="sub_txt">삼성전자, 법인영업 데이터 제공 (‘15~)</span>
+                  <span class="sub_txt">한샘, 가구판매 고객 데이터 제공 (‘15~)</span>
+                  <span class="sub_txt">코웨이, 고객정보 관리 데이터 제공 (‘06~)</span>
+                  <span class="sub_txt">KT, 지사 관리 데이터 제공 (‘10~)</span>
+                  <span class="sub_txt">기업은행, 영업점 관리 데이터 제공 (‘10~)</span>
+                </div>
+<!--                 <div class="email_area"> -->
+<!--                   <a href="mailto:bbb@gdsconsulting.co.kr">bbb@gdsconsulting.co.kr</a> -->
+<!--                 </div> -->
+              </div>
+              <div class="list_area">
+                <div class="list_box">
+                  <div class="list_title">
+                    <span class="left_txt">빅데이터<br>플랫폼 구축</span>
+                    <a href="/Alteryx/" class="right_txt" target="_blank">자세히 보기</a>
+                  </div>
+                  <span class="sub_title">통계분석 도구 (알트릭스) 판매</span>
+                  <span class="sub_title">데이터 융복합 및 통합 시스템 구축</span>
+                  <span class="sub_title">빅데이터 분석 시스템 구축</span>
+                </div>
+                <div class="list_sub_box">
+                  <span class="sub_txt">창원시, 빅데이터 분석시스템 구축 (‘17)</span>
+                  <span class="sub_txt">KT, AI 조류독감 시각화 시스템 구축 (‘16)</span>
+                  <span class="sub_txt">경상북도, 통계정보시스템 구축 (‘15)</span>
+                  <span class="sub_txt">KT, 지사 관리 데이터 제공 (‘10~현재)</span>
+                  <span class="sub_txt">서울시, 도시통계 시스템 구축 (‘14, ‘15)</span>
+                </div>
+<!--                 <div class="email_area"> -->
+<!--                   <a href="mailto:ccc@gdsconsulting.co.kr">ccc@gdsconsulting.co.kr</a> -->
+<!--                 </div> -->
+              </div>
+              <div class="list_area">
+                <div class="list_box">
+                  <div class="list_title">
+                    <span class="left_txt">데이터<br>판매/유통</span>
+                    <a href="http://biz-data.co.kr/" class="right_txt" target="_blank">자세히 보기</a>
+                  </div>
+                  <span class="sub_title">데이터 사용영역별 데이터 판매</span>
+                  <span class="sub_title">업무 영역별 맞춤형 데이터 구축 및 제공</span>
+                  <span class="sub_title">주제별 맞춤형 데이터 제공</span>
+                </div>
+                <div class="list_sub_box sub">
+                  <span class="sub_txt lt_8">한국정보화진흥원, 데이터 거래 중개 플랫폼 구축 (‘16)</span>
+                  <span class="sub_txt lt_5">한국정보화진흥원, 소상공인 데이터 제공 플랫폼 (‘17)</span>
+                  <span class="sub_txt lt2">경상북도, 서비스 인구 구축을 위한 데이터 (‘16)</span>
+                  <span class="sub_txt lt2">코웨이, 고객정보 관리를 위한 데이터 (‘16) 외 다수</span>
+                </div>
+<!--                 <div class="email_area mt26"> -->
+<!--                   <a href="mailto:ddd@gdsconsulting.co.kr">ddd@gdsconsulting.co.kr</a> -->
+<!--                 </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section num_4" id="area_third" data-anchor="third_area">
+        <div class="content_frame m_w94">
+          <div class="title">
+            <span class="title_txt">Reference <span class="sub_txt"> : 주요 사업실적</span></span>
+          </div>
+          <div class="tab_area">
+            <span class="tab_txt on">2018년</span>
+            <span class="tab_txt">2017년</span>
+            <span class="tab_txt">2016년</span>
+            <span class="tab_txt">2015년</span>
+          </div>
+          <!--2018년도 -->
+          <div class="content_display on">
+            <div class="tab_content_area" id="slide_area">
+              <div class="content_slide_area" >
+                <div class="content_box">
+                  <span class="company_img two">kb 국민카드 </span>
+                  <span class="company_txt">KB국민카드 공공데이터 구축 용역</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img one">kt commerce 이미지</span>
+                  <span class="company_txt">디지털 성범죄 예방서비스 개발을 위한 생활인구 Base Cell 데이터 구매</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img seven">한국정보화진흥원 이미지</span>
+                  <span class="company_txt">빅데이터 네트워크 전문센터 구축사업 - 스마트인구분야</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img eight">한국관광공사 이미지</span>
+                  <span class="company_txt">한국관광공사 2018 통신사 카드사 <br> 빅데이터 활용 여행 트렌트 분석</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img three">세종특별자치시 이미지</span>
+                  <span class="company_txt">세종시 생활인구 모델링 및 데이터 구축</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img nine">양주시 이미지</span>
+                  <span class="company_txt">2018 양주시 빅데이터 분석 사업</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img four">한국교통연구원 이미지</span>
+                  <span class="company_txt">한국교통연구원 기종점통행량 데이터 추출</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img five">울산반전연구원 이미지</span>
+                  <span class="company_txt">데이터 분석 용역</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img six">한국기상산업기술원 이미지</span>
+                  <span class="company_txt">"폭염영향도 예보를 위한 유동인구 <br> 빅데이터 분석" 데이터 구매</span>
+                </div>
+              </div>
+              <div class="content_slide_area">
+                 <div class="content_box">
+                  <span class="company_img eleven">창원시 이미지</span>
+                  <span class="company_txt">빅데이터 통합 공유 시스템 구축</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img twelve">의정부시 이미지</span>
+                  <span class="company_txt">2018 빅데이터 분석 및 공유활용기반 구축 용역</span>
+                  <!-- 추가 -->
+                </div>
+                <div class="content_box">
+                  <span class="company_img thridteen">경상북도 이미지</span>
+                  <span class="company_txt">경상북도 통계정보시스템 고도화 사업 용역</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img ten">경기콘텐츠 진흥원</span>
+                  <span class="company_txt">경기도 빅데이터 분석서비스 모델 구축사업</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--2018년도 -->
+          <!--2017년도 -->
+          <div class="content_display">
+            <div class="tab_content_area">
+              <div class="content_slide_visible">
+                <div class="content_box">
+                  <span class="company_img fifteen">한국정보화진흥원/ 미래부 이미지</span>
+                  <span class="company_txt">데이터 중개 거래 사업(2차)</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img eight">한국관광공사 이미지</span>
+                  <span class="company_txt">외국인 관광객<br>이동패턴 분석</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img eight">한국관광공사 이미지</span>
+                  <span class="company_txt">빅데이터 활용<br>여행트렌드 분석</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img fourteen">서울시 이미지 </span>
+                  <span class="company_txt">빅데이터 기반<br>생활인구 구축</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img seventeen">경상남도 이미지</span>
+                  <span class="company_txt">빅데이터 분석 및 서비스 개발</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img eighteen">군포시/영덕군 이미지</span>
+                  <span class="company_txt">빅데이터를 활용한 과학적<br>축제분석 용역</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img twentyone">창원시 이미지</span>
+                  <span class="company_txt">빅데이터 분석 시스템 구축</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img nineteen">국방기술품질원 이미지</span>
+                  <span class="company_txt">빅데이터 주제 발굴 및 시범사업</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img sixteen">한국재난연구원 이미지</span>
+                  <span class="company_txt">빅데이터 기반 재난피해 규모 추정 기술개발</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--2017년도 -->
+          <!--2016년도 -->
+          <div class="content_display">
+            <div class="tab_content_area">
+              <div class="content_slide_visible">
+                <div class="content_box">
+                  <span class="company_img fifteen">한국정보화진흥원 미래부 이미지</span>
+                  <span class="company_txt">데이터 중개 거래 사업(1차)</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img fourteen">서울시 로고 이미지 </span>
+                  <span class="company_txt">GRDP 분석 모델링 구축</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img twenty">경기도 이미지</span>
+                  <span class="company_txt">지속가능한 빅데이터 분석</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img thridteen">경상북도 이미지</span>
+                  <span class="company_txt">통계시스템 구축</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--2016년도 -->
+          <!--2015년도 -->
+          <div class="content_display">
+            <div class="tab_content_area">
+              <div class="content_slide_visible">
+                <div class="content_box">
+                  <span class="company_img fourteen">서울시 이미지</span>
+                  <span class="company_txt">도시통계시스템 구축</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img fourteen">서울시 이미지</span>
+                  <span class="company_txt">유동인구 구축 및 모델링</span>
+                </div>
+                <div class="content_box">
+                  <span class="company_img twentyone">건강보험공단 로고</span>
+                  <span class="company_txt">빅데이터 기반 노인성질환<br>예측모형 구축</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--2015년도 -->
+        </div>
+      </div>
+      <div class="section num_5" id="area_fourth" data-anchor="forth_area">
+        <div class="content_frame">
+          <div class="title">
+            <span class="title_txt">Clients <span class="sub_txt">: 고객사 현황</span></span>
+          </div>
+          <div class="customer_area">
+            <div class="customer_box_list">
+              <span class="box_title">공공기관</span>
+              <div class="box_list_area">
+                <span class="box_img one">서울특별시 이미지</span>
+                <span class="box_img two">경기도 이미지</span>
+                <span class="box_img three">경남 이미지</span>
+                <span class="box_img four">경북 이미지</span>
+                <span class="box_img five">군포시 이미지</span>
+                <span class="box_img six">양주시 이미지</span>
+                <span class="box_img seven">창원시 이미지</span>
+                <span class="box_img eight">한국정보화진흥원 이미지</span>
+                <span class="box_img nine">국민건강보험 이미지</span>
+                <span class="box_img ten">한국관광공사 이미지</span>
+                <span class="box_img eleven">국집재난안전연구원 이미지</span>
+                <span class="box_img twleve">국방기술품질원 이미지</span>
+                <span class="box_img nineteen">과기부 이미지</span>
+                <span class="box_img twenty">농림식품기술기획평가원 이미지</span>
+                <span class="box_img twentyone">중소기업기술정보진흥원 이미지</span>
+                <span class="box_img twentytwo">전라북도 이미지</span>
+                <span class="box_img twentythree">의정부시 이미지</span>
+                <span class="box_img twentyfour">강릉시 이미지</span>
+                <span class="box_img twentyfive">철원군 이미지</span>
+                <span class="box_img twentysix">공주시 이미지</span>
+                <span class="box_img twentyseven">나주시 이미지</span>
+                <span class="box_img twentyeight">군산시 이미지</span>
+                <span class="box_img twentynine">고령군 이미지</span>
+                <span class="box_img thirty">영덕군 이미지</span>
+                <span class="box_img thirtyone">의성군 이미지</span>
+                <span class="box_img thirtytwo">거창군 이미지</span>
+                <span class="box_img thirtythree">홍성군 이미지</span>
+              </div>
+            </div>
+            <div class="customer_box_list">
+              <span class="box_title">기업</span>
+              <div class="box_list_area">
+                <span class="box_img thridteen">KB국민카드 이미지</span>
+                <span class="box_img forthteen">신한카드 이미지</span>
+                <span class="box_img seventeen">KT 이미지</span>
+                <span class="box_img eighteen">KT commerce 이미지</span>
+                <span class="box_img thirtyfour">KT ds</span>
+                <span class="box_img thirtyfive">ibk기업은행 이미지</span>
+                <span class="box_img thirtysix">코웨이 이미지</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section num_6" id="area_fifth" data-anchor="fifth_area">
+      	<div class="content_frame">
+      		<div class="title">
+            	<span class="title_txt">News <span class="sub_txt">: 회사소식</span></span>
+            </div>
+            <div class="customer_area">
+            	<div class="news_area">
+            		<!-- NEWS LIST 표시 -->
+            		
+            			
+            				
+            					<div class="news_box" onclick="fn_showDetail('0'); return false ;">
+									<div class="img_area">
+				                  		<img src="/resource/news_attach/6adb19114b5d4b5dafdbe4b6d1dbe16e.jpg" alt="뉴스이미지">
+				                	</div>
+				                	<div class="txt_left">
+			                			<span class="news_title">유영민 과기정통부 장관, 데이터전문기업 현장방문</span>
+			                			<p class="txt_content">유영민 과학기술정보통신부 장관은 6일 CJ올리브네트웍스를 찾아 데이터 전문기업들과 '데이터 산업 혁신성장 방안 간담회'를 개최했다.
+이번 간담회는 4차 산업혁명 시대 핵심 자본인 데이터 기반 혁신을 촉진하고 데이터 산업계의 애로사항을 청취하기 위해 마련됐다. 올들어 유영민 장관이 데이터 전문기업을 현장방문한 것은 이번이 처음이다.</p>
+			                			<span class="date">2018.04.08</span>
+			                		</div>
+			                		<input type="hidden" id="BOARD_IDX_0" value= "21" />
+			                	</div>	<!-- .news_box -->
+			                
+						
+						
+	                
+	                
+	                <div class="paging_area">
+	                	
+	                		<li><a href="javascript:;" class="on" >1</a></li>
+
+	                	
+	                </div>
+				</div>	<!-- .news_area -->
+			</div>	<!-- .customre_area -->
+		</div>	<!-- .content_frame -->
+	</div>	<!-- fifth_area  -->
+      <div class="section num_7" id="area_sixth" data-anchor="sixth_area" style="background:#efefef;">
+        <div class="content_frame">
+          <div class="title">
+            <span class="title_txt">Contacts <span class="sub_txt">: 오시는 길</span></span>
+          </div>
+          <div class="address_area">
+            <span>서울특별시 성동구 광나루로 228, 9층(성수동2가, 렉스모터스) /</span>
+            <span>Tel. 02-2135-8895(대표) /</span>
+            <span>Fax. 02-2135-8896 /</span>
+            <span>E-mail: contact@gdsconsuting.co.kr</span>
+          </div>
+          <div class="map_area">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.2378586027226!2d127.05282531564775!3d37.54945943286309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4bdc8e45145%3A0x46e767e3289aec22!2z7ISc7Jq47Yq567OE7IucIOyEseuPmeq1rCDshLHsiJgy6rCAM-uPmSDqtJHrgpjro6jroZwgMjI4!5e0!3m2!1sko!2skr!4v1554081564098!5m2!1sko!2skr"
+              width="1200" height="570" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+      <!-- footer -->
+      <div class="section footer fp-auto-height">
+        <div class="content_frame">
+          <div class="left_menu">
+            <span>(04792) 서울특별시 성동구 광나루로 228, 9층(성수동2가, 렉스모터스)</span>
+            <span>㈜지디에스컨설팅그룹</span>
+            <span class="copyright">COPYRIGHT© 2019 GDSCONSULTING, ALL RIGHTS RESERVED</span>
+          </div>
+          <div class="right_menu">
+            <div class="box">
+              <span class="txt">대표전화</span>
+              <span class="tel_txt">02-2135-8895</span>
+            </div>
+            <div class="box">
+              <span class="txt">이메일</span>
+              <span class="mail_txt">contact@gdsconsulting.co.kr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      	<!-- footer -->
+    	</div>	<!-- .fullpage -->
+	</section>	<!-- section -->
+	
+	<div class="layer_frame">
+		<div class="layer_area">
+      		<div class="top_content">
+        		<span class="title">NEWS</span>
+        		<span class="close_btn">닫기버튼</span>
+      		</div>	<!-- .top_content -->
+      		<div class="content_area">
+        		<div class="title_area">
+          			<span class="cotnent_title" id="BOARD_TITLE"></span>
+          			<span class="date" id="ARTICLE_INPUT_DT"></span>
+      			</div>	<!-- .title_area -->
+      			<p id="BOARD_CONTENT"></p>
+    		</div>	<!-- .content_area -->
+		</div>	<!-- .layer_area -->
+	</div>	<!-- .layer_frame -->
+</body>
+
+</html>

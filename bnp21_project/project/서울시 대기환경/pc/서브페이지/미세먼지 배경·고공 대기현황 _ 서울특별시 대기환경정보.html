@@ -1,0 +1,1292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)http://cleanair.seoul.go.kr/air_color.htm?method=measure&grp1=pm10 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko" data-livestyle-extension="available"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- <meta name="robots" content="noindex, nofollow"/> -->
+<meta name="googlebot" content="noindex, nofollow">
+<!-- <meta name="robots" content="noarchive"/> -->
+<meta name="googlebot" content="noarchive">
+	<title>미세먼지 배경·고공 대기현황 : 서울특별시 대기환경정보</title>
+	<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="js/saved_resource" async="" charset="UTF-8"></script>
+	<script type="text/javascript" src="js/AutoEvent.js " async="" charset="utf-8"></script>
+	<script type="text/javascript" src="js/seetoc.js " async="" charset="utf-8"></script>
+	<script type="text/javascript" src="js/wl6.js " async="" charset="utf-8"></script>
+	<script async="" src="js/analytics.js "></script>
+	<script type="text/javascript" src="js/jquery-1.12.4.js "></script>
+<script type="text/javascript">
+//<![CDATA[
+$( function(){
+	//바로가기
+	weatherbg_change();
+
+	function weatherbg_change(){
+		var d = new Date();
+	    	if (d.getHours() > 18 || d.getHours() < 6) {
+	    		$('body').addClass('night');
+	    		$('#skipNav').addClass('night');
+	    	} else {
+	    		$('body').removeClass('night');
+	    		$('#skipNav').removeClass('night');
+	    	}
+	}
+});
+//]]>
+</script>
+<!-- GNB -->
+<script type="text/javascript" src="js/menu_model2.js "></script>
+<!-- LNB -->
+<script type="text/javascript" src="js/subtype.js "></script>
+<!-- QuickMenu/FontTransfrom/Print -->
+<script type="text/javascript">
+//<![CDATA[
+$(function(){
+	var topHtmlVal = "air_color_measure";
+	var topHtmlGroup1 = "pm10";
+	// -------------예보/경보---------------
+	if(topHtmlVal == "forecast_alert_dust") {
+		$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "forecast_alert_dust2") {
+		$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "forecast_alert_ozone") {
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "forecast_alert_ysand") {
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	// -------------대기 통계 ---------------
+	if(topHtmlVal == "air_pollution_average") {  // 평균기대오염도
+		$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "air_pollution_season") {  // 기간별 계절별
+		$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "air_pollution_daily") {  // 기간별 일별
+		$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "air_pollution_month") {  // 기간별 월별
+		$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "air_pollution_period") {  // 기간별 기간별
+		$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "alert_year_dust") { // 경보발령 미세먼지
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "alert_year_dust2") {  // 경보발령 초미세먼지
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "alert_year_ozone") {  // 경보발령 초미세먼지
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "alert_year_ysand") {  // 경보발령 오존
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "air_pollution_longtime") { // 장기추이
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	// -------------대기 현황 ---------------
+	if(topHtmlVal == "air_city_measure") {
+		if(topHtmlGroup1 == "pm10") {
+			$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "pm25") {
+			$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "o3") {
+			$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "ysand") {
+			$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+	};
+
+	// 왼쪽 오염물질 메뉴 선택되게 보여짐
+	if(topHtmlVal == "air_color_measure") {
+		if(topHtmlGroup1 == "pm10") {
+			$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "pm25") {
+			$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+	};
+
+	if(topHtmlVal == "air_city_region") {
+		if(topHtmlGroup1 == "pm10") {
+			$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "pm25") {
+			$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "o3") {
+			$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "ysand") {
+			$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+	};
+	if(topHtmlVal == "air_road_measure") {
+		if(topHtmlGroup1 == "pm10") {
+			$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "pm25") {
+			$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "o3") {
+			$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+		if(topHtmlGroup1 == "ysand") {
+			$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+		};
+	};
+	// -------------행동요령-----------
+	if(topHtmlVal == "safety_guide_dust") {
+		$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "safety_guide_dust2") {
+		$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "safety_guide_ozone") {
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "safety_guide_ysand") {
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	// ------------- 대기통계 기후 시작---------------
+	if(topHtmlVal == "climate_extremum") {
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "climate_gradient") {
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "climate_map_temp") {
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "climate_map_rainfall") {
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "climate_map_wind") {
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	//------------- 대기통계 기후 종료---------------
+	// ------------- 날씨기후 -----------
+	if(topHtmlVal == "forecast_alert_weather"){
+		$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	 if(topHtmlVal == "inform_weather_factor_01"){
+		$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "climate_year"){
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "climate_map_temp"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	// ------------- 날씨기후 // -----------
+	// -------------정보마당-----------
+
+
+	if(topHtmlVal == "inform_standards"){
+		$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_air_pollutant"){
+		$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_air_quality_standard"){
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_effect_01"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:1,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_effect_02"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:1,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_effect_03"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:1,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_effect_04"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:1,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_effect_05"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:1,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_adaptation_01"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:2,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_adaptation_02"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:2,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_adaptation_03"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:2,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_adaptation_04"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:2,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_adaptation_05"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:2,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_adaptation_06"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:2,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_climate_adaptation_07"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:2,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_monitoring_post"){
+		$('#lnb').menuModel2({hightLight:{level_1:5,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_monitoring"){
+		$('#lnb').menuModel2({hightLight:{level_1:6,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_materials"){
+		$('#lnb').menuModel2({hightLight:{level_1:7,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_materials_view"){
+		$('#lnb').menuModel2({hightLight:{level_1:7,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "inform_glossary"){
+		$('#lnb').menuModel2({hightLight:{level_1:8,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	}
+	if(topHtmlVal == "inform_cai"){
+    $('#lnb').menuModel2({hightLight:{level_1:9,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+  };
+
+	// -------------정보마당 끝-----------
+	// ------------- 시민광장 -----------
+	if(topHtmlVal == "citizen_notice"){
+		$('#lnb').menuModel2({hightLight:{level_1:1,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "citizen_qna" || topHtmlVal == "citizen_qna_view"){
+		$('#lnb').menuModel2({hightLight:{level_1:2,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "citizen_site_link"){
+		$('#lnb').menuModel2({hightLight:{level_1:3,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "citizen_hp_info"){
+		$('#lnb').menuModel2({hightLight:{level_1:4,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "citizen_way"){
+		$('#lnb').menuModel2({hightLight:{level_1:5,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	if(topHtmlVal == "citizen_sitemap"){
+		$('#lnb').menuModel2({hightLight:{level_1:6,level_2:0,level_3:0},target_obj:'',showOps:{display:'block'}, hideOps:{display:'none'}});
+	};
+	// -------------시민광장 끝-----------
+});
+//]]>
+</script>
+<script type="text/javascript" src="js/common.js "></script>
+<script type="text/javascript">
+//<![CDATA[
+	// 팝업이미지 롤링
+	var intnum = 0;
+	var intnum1 = 0;
+	var intnum2=0;
+	// var banplay=1;
+	var totalcoverimg = 5;
+	var totalcoverimg1 = 1;
+	var totalbancount = 16;
+	var sliderIntervalID = "";
+	var sliderIntervalID1  = "";
+	var sliderIntervalID2 = "";
+//]]>
+</script>
+<script id="js" type="text/javascript">
+//<![CDATA[
+/* Class */
+function hasClass(element,value) {
+    var re = new RegExp("(^|\\s)" + value + "(\\s|$)");
+    return re.test(element.className);
+}
+function addClass(element,value) {
+    if (!element.className)
+		element.className = value;
+    else
+        if (!hasClass(element,value)) element.className += " " + value;
+}
+function removeClass(element,value) {
+    if (element.className && hasClass(element,value)) {
+        var re = new RegExp("(^|\\s)" + value);
+        element.className = element.className.replace(re,"");
+    }
+}
+
+/* getElementsByClass('노드/생략[윈도우]', '태그/생략[*]', '클래스명'); */
+function getElementsByClass(node, tagName, srchClass) {
+    node = node || window.document;
+    tagName = tagName ? tagName.toUpperCase() : "*";
+    var eles = node.getElementsByTagName(tagName);
+
+	if(!srchClass) return eles;
+
+    var arr = new Array;
+    for (var i=0; i<eles.length; i++) {
+        if (hasClass(eles[i],srchClass)) arr.push(eles[i]);
+    }
+    return arr;
+}
+
+/* 자신을 덮고있는태그 선택하기(클래스명 분류가능) */
+function parentEle(ele, tagName, srchClass){
+	if(typeof tagName=="number"){
+		for(var i=0; i<tagName; i++){
+			if(ele!=null) ele = ele.parentNode;
+		}
+		return ele;
+	}
+
+	tagName = tagName ? tagName.toUpperCase() : "*";
+	if(srchClass){
+		if(tagName!="*"){
+			while((ele.nodeName!=tagName || !hasClass(ele,srchClass)) && ele.nodeName!="BODY")
+				ele = ele.parentNode;
+		}else{
+			while(!hasClass(ele,srchClass) && ele.nodeName!="BODY")
+				ele = ele.parentNode;
+		}
+	}else{
+		if(tagName!="*"){
+			while(ele.nodeName!=tagName && ele.nodeName!="BODY")
+				ele = ele.parentNode;
+		}else{
+			ele = ele.parentNode;
+		}
+	}
+	return ele;
+}
+
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var cc=0
+function showHide(id) {
+    if (cc==0) {
+        cc=1
+        document.getElementById(id).style.display="block";
+    } else {
+        cc=0
+        document.getElementById(id).style.display="none";
+    }
+}
+//]]>
+</script>
+<script type="text/javascript">
+	//<![CDATA[
+		// section : forecast : 물질
+		// pollutant : 물질
+		// param1 : method
+		// param2 : pollutant
+				function comm_top_air_side_link(self_url,param1,param2) {
+					 var str = $("#commonAirSearchForm").serialize();
+					 var paramObj = {};
+					 $.each($('#commonAirSearchForm').serializeArray(), function(_, kv) {
+					   if (paramObj.hasOwnProperty(kv.name)) {
+					     paramObj[kv.name] = $.makeArray(paramObj[kv.name]);
+					     paramObj[kv.name].push(kv.value);
+					   }
+					   else {
+					     paramObj[kv.name] = kv.value;
+					   }
+					 });
+//		 			 var paramObj = {};
+//		 			 $.each($('#myForm').serializeArray(), function(_, kv) {
+//		 			   paramObj[kv.name] = kv.value;
+//		 			 });
+
+//		 			 paramObj.bodyCommonMethod;
+//		 			 paramObj.bodyCommonHtml;
+//		 			 paramObj.msrntwCode;
+//		 			 paramObj.grp1;
+//		 			 paramObj.lGroup;
+//		 			 paramObj.mGroup;
+//		 			 paramObj.sGroup;
+//		 			 paramObj.cal2;
+//		 			 paramObj.cal2Month;
+//		 			 paramObj.cal2Day;
+//		 			 paramObj.time;
+
+				 var $form = $('<form><\/form>');
+			     $form.attr('action', self_url);
+			     $form.attr('method', 'post');
+			     $form.attr('id', 'move_air_url');
+//			     $form.attr('name', 'post');
+			//     $form.attr('target', 'iFrm');
+			 $form.appendTo('body');
+		     var bodyCommonMethod = $("<input name='bodyCommonMethod' type='hidden' value='" + paramObj.bodyCommonMethod + "'/>");
+//		     var bodyCommonMethod = $("<input name='bodyCommonMethod' type='hidden' value='" + param1 + "'/>");
+
+		     var bodyCommonHtml = $("<input name='bodyCommonHtml' type='hidden' value='" + paramObj.bodyCommonHtml + "'/>");
+		     var msrntwCode = $("<input name='msrntwCode' type='hidden' value='" + paramObj.msrntwCode + "'/>");
+		     var grp1 = $("<input name='grp1' type='hidden' value='" + param2 + "'/>");
+		     var lGroup = $("<input name='lGroup' type='hidden' value='" + paramObj.lGroup + "'/>");
+		     var mGroup = $("<input name='mGroup' type='hidden' value='" + paramObj.mGroup + "'/>");
+		     var sGroup = $("<input name='sGroup' type='hidden' value='" + paramObj.sGroup + "'/>");
+		     var cal2 = $("<input name='cal2' type='hidden' value='" + paramObj.cal2 + "'/>");
+		     var cal2Month = $("<input name='cal2Month' type='hidden' value='" + paramObj.cal2Month + "'/>");
+		     var cal2Day = $("<input name='cal2Day' type='hidden' value='" + paramObj.cal2Day + "'/>");
+		     var time = $("<input name='time' type='hidden' value='" + paramObj.time + "'/>");
+		     var pNum = $("<input name='pNum' type='hidden' value='" + paramObj.pNum + "'/>");
+		     var method2 = $("<input name='method' type='hidden' value='" + param1 + "'/>");
+
+		     var scroll_val = $(document).scrollTop();
+		     var scrollTopVal = $("<input name='scrollTopVal' type='hidden' value='" + scroll_val + "'/>");
+
+		     $form.append(bodyCommonMethod);
+		     $form.append(bodyCommonHtml);
+		     $form.append(msrntwCode);
+		     $form.append(grp1);
+		     $form.append(lGroup);
+		     $form.append(mGroup);
+		     $form.append(sGroup);
+		     $form.append(cal2);
+		     $form.append(cal2Month);
+		     $form.append(cal2Day);
+		     $form.append(time);
+		     $form.append(pNum);
+		     $form.append(method2);
+		     $form.append(scrollTopVal);
+		     $form.submit();
+
+			};
+				// 페이징 처리 작업
+				function comm_top_air_side_link_paging(page_no) {
+//					alert("comm_top_air_side_link_pagingparam1==>[" + page_no + "]");
+					$("#commonAirSearchForm").find('input[name="pNum"]').val(page_no);
+					$('#commonAirSearchFormSearchButton').trigger("click"); //실행하자마자 click 이벤트를 트리거함....
+				};
+
+				function comm_top_common_exceldownload(param_val) {
+					if(param_val == "aircity_common_excel_down") {
+						 var action_val = $("#commonAirSearchForm").attr("action");
+						 var inx_road = -1; //도로변인지 여부를 구하기 위한 부분
+
+						 if(action_val !== undefined) {
+							 inx_road = action_val.indexOf("citySection=ROAD");
+						 }
+
+						 var str = $("#commonAirSearchForm").serialize();
+						 var paramObj = {};
+						 $.each($('#commonAirSearchForm').serializeArray(), function(_, kv) {
+						   if (paramObj.hasOwnProperty(kv.name)) {
+						     paramObj[kv.name] = $.makeArray(paramObj[kv.name]);
+						     paramObj[kv.name].push(kv.value);
+						   }
+						   else {
+						     paramObj[kv.name] = kv.value;
+						   }
+						 });
+
+
+						 var $form = $('<form><\/form>');
+					     $form.attr('action', "air_city_common.htm");
+					     $form.attr('method', 'post');
+
+						 $form.appendTo('body');
+					     var bodyCommonMethod = $("<input name='bodyCommonMethod' type='hidden' value=''/>");
+					     var bodyCommonHtml = $("<input name='bodyCommonHtml' type='hidden' value=''/>");
+					     var msrntwCode = $("<input name='msrntwCode' type='hidden' value='" + paramObj.msrntwCode + "'/>");
+//					     var grp1 = $("<input name='grp1' type='hidden' value='" + param2 + "'/>");
+					     var lGroup = $("<input name='lGroup' type='hidden' value='" + paramObj.lGroup + "'/>");
+					     var mGroup = $("<input name='mGroup' type='hidden' value='" + paramObj.mGroup + "'/>");
+					     var sGroup = $("<input name='sGroup' type='hidden' value='" + paramObj.sGroup + "'/>");
+					     var cal2 = $("<input name='cal2' type='hidden' value='" + paramObj.cal2 + "'/>");
+					     var cal2Month = $("<input name='cal2Month' type='hidden' value='" + paramObj.cal2Month + "'/>");
+					     var cal2Day = $("<input name='cal2Day' type='hidden' value='" + paramObj.cal2Day + "'/>");
+					     var time = $("<input name='time' type='hidden' value='" + paramObj.time + "'/>");
+					     var pNum = $("<input name='pNum' type='hidden' value='" + paramObj.pNum + "'/>");
+					     var method2 = $("<input name='method' type='hidden' value='exceldownload'/>");
+
+					     $form.append(bodyCommonMethod);
+					     $form.append(bodyCommonHtml);
+					     $form.append(msrntwCode);
+//					     $form.append(grp1);
+					     $form.append(lGroup);
+					     $form.append(mGroup);
+					     $form.append(sGroup);
+					     $form.append(cal2);
+					     $form.append(cal2Month);
+					     $form.append(cal2Day);
+					     $form.append(time);
+					     $form.append(pNum);
+					     $form.append(method2);
+
+					     if(inx_road != -1) {
+						     var  citySection = $("<input name='citySection' type='hidden' value='ROAD'/>");
+						     $form.append(citySection);
+					     }
+					     $form.submit();
+
+					};
+				};
+
+				$(document).ready(function() {
+					var scroll_top_val = "";
+					if(scroll_top_val !== undefined) {
+						$(document).scrollTop(scroll_top_val);
+					};
+				});
+		//]]>
+	</script>
+<script type="text/javascript" src="js/jquery-ui.min.js "></script><script type="text/javascript">
+	max_year="";
+	min_year="2008";
+
+	$(function() {
+		var max_year = "2019";
+		if(max_year === "") {
+			var dt = new Date();
+			var year = dt.getFullYear();
+			max_year = year + "";
+		}
+
+		$('#common_air_search_schedule').bind('click', function() {
+			return false;
+		});
+
+		$("#common_air_search_schedule").datepicker({
+			showButtonPanel: true,
+			currentText: '오늘 날짜',
+			closeText: '닫기',
+			dateFormat: "yymmdd",
+			changeMonth: true,
+			changeYear: true,
+			yearRange: "2008:" + max_year,
+			dayNames: ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일'],
+			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+			monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+			monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+			onSelect: function (dateText, inst) {
+				var i_offset= $("#common_air_search_schedule").offset();
+				$('.ui-datepicker').css("top", i_offset.top);
+				$('.ui-datepicker').css("left",i_offset.left);
+				$("#common_air_search_schedule").val("달력");
+				if(dateText.length == 8) {
+					var str = dateText;
+					if(inst.id == "common_air_search_schedule") {
+						$("#measure_cal2").val(dateText.substring(0,4));
+						$("#measure_cal2Month").val(dateText.substring(4,6));
+						$("#measure_cal2Day").val(dateText.substring(6,8));
+					}
+				}
+			}
+		});
+
+		$.datepicker.setDefaults($.datepicker.regional['ko']);
+		var i_offset= $("#common_air_search_schedule").offset();
+		$('.ui-datepicker').css("top", i_offset.top + 10);
+		$('.ui-datepicker').css("left",i_offset.left);
+		$('.ui-datepicker').css("left",i_offset.left);
+
+		$('#commonAirSearchFormSearchButton').bind('click', function() {
+			try {
+				if($("#label1").val() != $("#lGroup").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#label2").val() != $("#mGroup").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#measure_cal2").val() != $("#cal2").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#measure_cal2Month").val() != $("#cal2Month").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#measure_cal2Day").val() != $("#cal2Day").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#label4").val() != $("#time").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+			} catch (error) {
+
+			}
+
+			var scroll_val = $(document).scrollTop();
+			$("#commonAirSearchForm").find('input[name="scrollTopVal"]').val(scroll_val);
+			$('#commonAirSearchFormSearchButton').submit();
+		});
+
+		$("#commonAirSearchFormSearch_lGroup,#commonAirSearchFormSearch_mGroup,#commonAirSearchFormSearch_sGroup").bind('click', function() {
+			try {
+				if($("#label1").val() != $("#lGroup").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#label2").val() != $("#mGroup").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#measure_cal2").val() != $("#cal2").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#measure_cal2Month").val() != $("#cal2Month").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#measure_cal2Day").val() != $("#cal2Day").val()) {
+					$("#commonAirSearchFormPnum").val("1");
+				};
+				if($("#label4").val() != $("#time").val()) {
+				  $("#commonAirSearchFormPnum").val("1");
+				};
+			} catch (error) {
+
+			}
+
+			$('#commonAirSearchFormSearchButton').trigger("click");
+		});
+	});
+</script><link rel="stylesheet" type="text/css" media="all" href="css/seoul-common-gnb.css"></head>
+  <!-- header top-->
+
+
+
+<body>
+
+<dl id="skipNav">
+  <dt>바로가기</dt>
+  <dd><a href="http://cleanair.seoul.go.kr/air_color.htm?method=measure&amp;grp1=pm10#contents">본문영역 바로가기</a></dd>
+  <dd><a href="http://cleanair.seoul.go.kr/air_color.htm?method=measure&amp;grp1=pm10#lnb">사이드영역 바로가기</a></dd>
+  <dd><a href="http://cleanair.seoul.go.kr/air_color.htm?method=measure&amp;grp1=pm10#footer">하단영역 바로가기</a></dd>
+</dl><div id="wrap" class="sub01">
+		<!-- 웹로그 주석처리 -->
+<script type="text/javascript" src="js/makePCookie.js "></script>
+<script type="text/javascript" src="js/tabcontent.js "></script>
+<script type="text/javascript" src="js/gnb.js "></script>
+<script type="text/javascript">
+//<![CDATA[
+
+
+function faqList(objs){
+	var obj = document.getElementById(objs);
+	var menuLink = getElementsByClass(obj, "A", "language"); // A태그 추출
+
+	var currentMenu = obj.currentMenu = null;
+	for(var i=0; i<menuLink.length; i++){
+		thismenu = menuLink[i];
+		thismenu.container = obj;
+		thismenu.targetName = document.getElementById(menuLink[i].href.split("#")[1]);
+		thismenu.targetName.style.display = "none";
+		thismenu.dt = parentEle(thismenu, "dt");
+		thismenu.img = thismenu.getElementsByTagName("IMG")[0];
+
+		thismenu.onclick = function(){
+			if(currentMenu){
+				if(this == currentMenu && currentMenu.targetName.style.display == "none"){
+					currentMenu.targetName.style.display = "";
+					addClass(currentMenu.dt, "current");
+					if(currentMenu.img) currentMenu.img.src = currentMenu.img.src.replace(".gif", "_on.gif");
+				} else {
+					currentMenu.targetName.style.display = "none";
+					removeClass(currentMenu.dt, "current");
+					if(currentMenu.img) currentMenu.img.src = currentMenu.img.src.replace("_on.gif", ".gif");
+				}
+			}
+
+			if(currentMenu != this){
+				this.targetName.style.display = "";
+				addClass(this.dt, "current");
+				if(this.img) this.img.src = this.img.src.replace(".gif", "_on.gif");
+			}
+
+			currentMenu = this;
+			return false;
+		}
+	}
+}
+//]]>
+</script>
+<script type="text/javascript">
+// GNB 로딩 스크립트
+// Yjs.Gnb.init('사이트코드', 'GNB 표출영역 ID');
+window.onload = function() {
+Yjs.Gnb.init('G024', 'seoul-common-gnb');
+};
+</script>
+
+<div id="seoul-common-gnb">	<div id="seoul-gnb-plugin">		<div class="seoul-gnb-holder">			<p class="seoul-gnb-link"><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=logo&amp;link=https://www.seoul.go.kr" target="_blank" title="새창열림" class="seoul-gnb-icon-link wise-link" data-kind="logo">서울특별시</a></p>			<dl class="seoul-gnb-news">				<dt><a href="https://www.seoul.go.kr/realmnews/in/list.do" target="_blank" title="새창열림(서울소식)" class="seoul-gnb-icon-notice">서울소식</a></dt>				<dd><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=hotissue&amp;link=http://news.seoul.go.kr/gov/archives/505398" target="_blank" title="새창열림">서울시 친환경 식생활교육 학부모강사 양성과정 수강생 모집</a></dd>			</dl>			<dl class="seoul-gnb-menu">				<dt>주요메뉴</dt>				<dd><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=seoulnews&amp;link=https://www.seoul.go.kr/realmnews/in/list.do" target="_blank" title="새창열림" class="seoul-gnb-icon-menu1 wise-link" data-kind="seoulnews">서울소식</a></dd>				<dd><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=eungdapso&amp;link=http://eungdapso.seoul.go.kr" target="_blank" title="새창열림" class="seoul-gnb-icon-menu2 wise-link" data-kind="eungdapso">응답소</a></dd>				<dd><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=opengov&amp;link=http://opengov.seoul.go.kr" target="_blank" title="새창열림" class="seoul-gnb-icon-menu3 wise-link" data-kind="opengov">정보공개</a></dd>				<dd>					<button type="button" class="seoul-gnb-icon-menu4">분야별정보</button>					<div class="seoul-gnb-menu-section" style="display: none;">						<dl>							<dt>분야별정보</dt>							<dd>								<ul>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=citybuild&amp;link=http://news.seoul.go.kr/citybuild/" target="_blank" title="새창열림" class="wise-link" data-kind="citybuild">주택</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=economy&amp;link=http://news.seoul.go.kr/economy/" target="_blank" title="새창열림" class="wise-link" data-kind="economy">경제</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=traffic&amp;link=http://news.seoul.go.kr/traffic/" target="_blank" title="새창열림" class="wise-link" data-kind="traffic">교통</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=env&amp;link=http://news.seoul.go.kr/env/" target="_blank" title="새창열림" class="wise-link" data-kind="env">환경</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=welfare&amp;link=http://news.seoul.go.kr/welfare/" target="_blank" title="새창열림" class="wise-link" data-kind="welfare">복지</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=safe&amp;link=http://news.seoul.go.kr/safe/" target="_blank" title="새창열림" class="wise-link" data-kind="safe">안전</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=culture&amp;link=http://news.seoul.go.kr/culture/" target="_blank" title="새창열림" class="wise-link" data-kind="culture">문화</a></li>									<li><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=gov&amp;link=http://news.seoul.go.kr/gov/" target="_blank" title="새창열림" class="wise-link" data-kind="gov">행정</a></li>								</ul>							</dd>						</dl>						<p><a href="http://www.seoul.go.kr/sgnb/seoulgnblog.do?gid=G024&amp;kind=allservice&amp;link=https://www.seoul.go.kr/service/all.do" target="_blank" title="새창열림" class="wise-link" data-kind="allservice"><span class="seoul-gnb-icon-service"></span> 서비스 전체보기</a></p>						<button type="button"><span class="seoul-gnb-icon-service-close"></span><span class="hd-element">분야별 정보 닫기</span></button>					</div>				</dd>			</dl>		</div>	</div></div>
+
+<div id="header">
+    <div id="logo">
+      <h1><a href="http://cleanair.seoul.go.kr/main.htm"><img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/top_logo.gif" width="225" height="29" alt="서울특별시 대기환경정보"></a></h1>
+    <div id="globalmenu">
+      <!--
+      <iframe src="//www.seoul.go.kr/seoul-common-gnb/seoul-common-gnb-type-b.html?gid=cleanair" width="470" height="28" frameborder="0" scrolling="no" title="서울시 새소식"></iframe>
+      -->
+
+	<!-- <div id='seoul-common-gnb'> </div> -->
+      	<!--  -->
+        <ul id="social">
+          <li><a href="https://twitter.com/search?q=seoulcleanair" target="_blank" title="새창열림"><img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/twitter.gif" width="24" height="24" alt="트위터"></a></li>
+          <li><a href="https://www.facebook.com/seoul.kr" target="_blank" title="새창열림"><img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/facebook.gif" width="24" height="24" alt="페이스북"></a></li>
+        </ul>
+      	<div id="sitemap"><a href="http://cleanair.seoul.go.kr/citizen.htm?method=sitemap">사이트맵</a></div>
+        <dl id="lang">
+          <dt><a href="http://cleanair.seoul.go.kr/air_color.htm?method=measure&amp;grp1=pm10#tab_grp" class="language">LANGUAGE</a></dt>
+          <dd id="tab_grp" style="display: none;">
+            <p><a href="http://english.seoul.go.kr/policy-information/environment-energy/air-quality-information/1-air-quality-information/" target="_blank" title="go to new window">ENGLISH</a></p>
+            <p><a href="http://chinese.seoul.go.kr/%E6%94%BF%E7%AD%96%E4%BF%A1%E6%81%AF/%E7%8E%AF%E5%A2%83%E8%83%BD%E6%BA%90/%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F%E4%BF%A1%E6%81%AF/1-%E7%A9%BA%E6%B0%94%E8%B4%A8%E9%87%8F%E4%BF%A1%E6%81%AF/" target="_blank" title="go to new window">簡体中文</a></p>
+            <p><a href="http://tchinese.seoul.go.kr/%E6%94%BF%E7%AD%96%E8%B3%87%E8%A8%8A/%E7%92%B0%E5%A2%83%E8%83%BD%E6%BA%90/%E7%A9%BA%E6%B0%A3%E7%92%B0%E5%A2%83%E8%B3%87%E8%A8%8A/1-%E7%A9%BA%E6%B0%A3%E7%92%B0%E5%A2%83%E8%B3%87%E8%A8%8A/" target="_blank" title="go to new window">繁体中文</a></p>
+            <p><a href="http://japanese.seoul.go.kr/%E6%94%BF%E7%AD%96%E6%83%85%E5%A0%B1/%E7%92%B0%E5%A2%83-%E3%82%A8%E3%83%8D%E3%83%AB%E3%82%AE%E3%83%BC/%E5%A4%A7%E6%B0%97%E7%92%B0%E5%A2%83%E6%83%85%E5%A0%B1/1-%E5%A4%A7%E6%B0%97%E7%92%B0%E5%A2%83%E6%83%85%E5%A0%B1/" target="_blank" title="go to new window">日本語</a></p>
+            <p><a href="http://spanish.seoul.go.kr/informacion-sobre-politicas/medio-ambiente-energia/informations-sur-la-qualite-de-lair/1-informacion-de-ambiente-atmosferico/" target="_blank" title="go to new window">Español</a></p>
+            <p><a href="http://french.seoul.go.kr/infos-politiques/environnement-energy/informations-sur-la-qualite-de-lair/1-informations-sur-la-qualite-de-lair/" target="_blank" title="go to new window">Français</a></p>
+          </dd>
+        </dl>
+        <script type="text/javascript">faqList("lang");</script>
+
+
+      </div>
+    </div>
+    <div id="gnb_wrap">
+      <div class="gnb_section">
+        <ul class="gnb">
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=pm10">대기현황</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=pm10">미세먼지</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=pm25">초미세먼지</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=o3">오존</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=ysand">황사</a></dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/air_pollution.htm?method=average">대기통계</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/air_pollution.htm?method=average">평균대기오염도</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/air_pollution.htm?method=season">기간별</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/alert_year.htm?method=dust">경보발령</a></dd>
+              <!-- <dd><a href="air_pollution.htm?method=longtime">장기간추이</a></dd> -->
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=weather">날씨·기후</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=weather">날씨</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=weatherFactor01">기상지수</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/climate.htm?method=year">기후</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/climate_map.htm?method=temp">기후지도</a></dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/inform.htm?method=standards">정보마당</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=standards">대기환경기준</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=airPollutant">대기오염물질</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=airQualityStandard">대기질개선정책</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=climateEffect01">기후변화</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=monitoringpost">측정소정보</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=monitoring">대기오염전광판</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=materials">자료실</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=glossary">용어사전</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/inform.htm?method=cai">통합대기환경지수</a></dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt><a href="http://cleanair.seoul.go.kr/citizen.htm?method=notice">시민광장</a></dt>
+              <dd><a href="http://cleanair.seoul.go.kr/citizen.htm?method=notice">공지사항</a></dd>
+              <!-- <dd><a href="citizen.htm?method=qna">묻고답하기</a></dd> -->
+              <!-- <dd><a href="citizen.htm?method=siteLink">사이트링크</a></dd>
+              <dd><a href="citizen.htm?method=hpInfo">홈페이지소개</a></dd> -->
+              <dd><a href="http://cleanair.seoul.go.kr/citizen.htm?method=way">찾아오시는길</a></dd>
+              <dd><a href="http://cleanair.seoul.go.kr/citizen.htm?method=sitemap">사이트맵</a></dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div><div id="container">
+			<div id="subwrap" class="bg">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- lnb 링크 화면 -->
+        <div id="sidebar">
+          <h2>대기현황</h2>
+          <ul id="lnb">
+            <li><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=pm10" class="hover">미세먼지</a></li>
+            <li><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=pm25">초미세먼지 </a></li>
+            <li><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=o3">오존 </a></li>
+            <li><a href="http://cleanair.seoul.go.kr/forecast_alert.htm?method=ysand">황사 </a></li>
+          </ul>
+        </div>
+        <!-- lnb 링크 화면 -->
+
+
+
+
+<hr>
+				<div id="contents">
+					<dl id="path">
+						<dd>
+							<a href="http://cleanair.seoul.go.kr/main.htm" target="_self">
+								<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/home_18x15.gif" width="18" height="15" alt="메인바로가기">
+							</a>
+						</dd>
+						<dd>대기현황</dd>
+						<dd>
+							 미세먼지 </dd>
+						<dt>배경고공</dt>
+					</dl>
+
+<h2>미세먼지
+							<span class="pad">
+								<a href="http://cleanair.seoul.go.kr/air_color.htm?method=measure&amp;grp1=pm10#pop_info" onclick="showHide(&#39;pop_info&#39;);return false;">
+									<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/btn_info_pm10.gif" width="85" height="21" alt="미세먼지란">
+								</a>
+							</span>
+						</h2>
+						<div id="pop_info">
+							<p class="fl mgr15">
+								<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/img_adaptation_1.jpg" width="200" height="170" alt="대기 중 미세먼지">
+							</p>
+							<p>
+							 미세먼지(PM-10)는 대기 중 고체상태의 입자와 액적상태의 입자의 혼합물로 공기역학직경이 10㎛ 이하인 부분을
+							 의미한다. 미세먼지는 주로 산업, 운송, 주거활동 등에 의한 연소나 기타 공정에서 직접 배출되는 1차 먼지와
+							 황산염, 질산염과 같이 대기 중 반응에 의해 생성된 2차 먼지로 구분된다. 인위적 발생원에는 산업시설, 자동차 등이
+							 있으며 자연적 발생원으로는 화재, 황사, 화산폭발 등을 들 수 있다. <br> <br> 미세먼지는 천식
+							 등과 같은 호흡기계 질환 및 심혈관계 질환을 일으키고 그에 따른 발병, 입원율 증가를 가져오며 사망률을 높이기도
+							 하며 저체중이나 조기출산 같은 생식이상과도 연관성이 있는 것으로 보고되고 있다. 또한 시정을 악화시키고, 식물의 잎
+							 표면에 침적되어 신진대사를 방해하며, 건축물에 퇴적되어 부식을 일으킨다.
+							</p>
+							<span class="cls">
+								<a href="http://cleanair.seoul.go.kr/air_color.htm?method=measure&amp;grp1=pm10#layer" onclick="showHide(&#39;pop_info&#39;);return false;">
+									<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/btn_cls.gif" width="9" height="9" alt="닫기">
+								</a>
+							</span>
+						</div>
+					<ul class="tabNavi">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- 탭메뉴 -->
+        <li><a href="http://cleanair.seoul.go.kr/air_city.htm?method=measure&amp;grp1=pm10"> <span>도시대기</span>
+        </a></li>
+        <li><a href="http://cleanair.seoul.go.kr/air_road.htm?method=measure&amp;grp1=pm10"> <span>도로변</span>
+
+        </a></li>
+
+        <li><a class="on"> <span>배경ㆍ경계</span>
+
+        </a></li>
+				<!--2019-05-01  -->
+				<li><a><span>입체</span>
+
+				</a></li>
+				<!--2019-05-01  -->
+
+        <!-- 탭메뉴 //-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+					<div class="mapimg5">
+							<div class="map">
+								<p class="namsan_back">
+									<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/point_2.png" width="17" height="17" alt="남산 고공측정소 미세먼지 보통">
+								</p>
+								<p class="Haengju_back">
+									<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/point_2.png" width="17" height="17" alt="행주 배경측정소 미세먼지 보통">
+								</p>
+								<p class="bukhansan_back">
+									<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/point_2.png" width="17" height="17" alt="북한산 고공측정소 미세먼지 보통">
+								</p>
+								<p class="gungdong_back">
+									<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/point_2.png" width="17" height="17" alt="궁동 배경측정소 미세먼지 보통">
+								</p>
+								<p class="gwanak_back">
+									<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/point_2.png" width="17" height="17" alt="관악산 고공측정소 미세먼지 보통">
+								</p>
+								<p class="segok_back">
+									<img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/point_2.png" width="17" height="17" alt="세곡 배경측정소 미세먼지 보통">
+								</p>
+							</div>
+
+							<div class="mapdata">
+								<!-- 범례테이블 -->
+								<div class="notes_t">미세먼지 <span class="s">(PM-10)</span></div>
+								<div class="notes_m">
+									<table width="100%" cellspacing="0" cellpadding="0" summary="미세먼지 범례를 표로 보여줍니다. 파란색은 좋음, 연두색은 보통, 노랑색은 나쁨, 빨간색은 매우나쁨 , 흰색은 점검중을 의미합니다.">
+										<caption>미세먼지 범례</caption>
+										<colgroup>
+											<col width="50%">
+											<col width="50%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">범례</th>
+												<td>지수범위</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th scope="row" class="num_01" style="text-align:left;padding-left:5px;">① 좋음</th>
+												<td>0~30</td>
+											</tr>
+											<tr>
+												<th scope="row" class="num_02" style="text-align:left;padding-left:5px;">② 보통</th>
+												<td>31~80</td>
+											</tr>
+											<tr>
+												<th scope="row" class="num_03" style="text-align:left;padding-left:5px;">③ 나쁨</th>
+												<td>81~150</td>
+											</tr>
+											<tr>
+												<th scope="row" class="num_04" style="text-align:left;padding-left:5px;">④ 매우나쁨</th>
+												<td>151~</td>
+											</tr>
+											<tr class="bdr_none">
+												<th scope="row" class="num_05" style="text-align:left;padding-left:5px;">ⓞ 점검중</th>
+												<td>&nbsp;</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="notes_b"></div>
+								<!-- 범례테이블// -->
+							</div>
+						</div>
+					<div class="sch2 mgb10">
+						<form id="commonAirSearchForm" name="commonAirSearchForm" method="post" action="http://cleanair.seoul.go.kr/air_color.htm?method=measure&amp;citySection=COLOR">
+							<input type="hidden" name="bodyCommonMethod" value="measure">
+							<input type="hidden" name="bodyCommonHtml" value="air_color.htm">
+							<input type="hidden" name="msrntwCode" value="G">
+							<input type="hidden" name="grp1" value="pm10">
+							<input type="hidden" name="pNum" value="1" id="commonAirSearchFormPnum">
+							<input type="hidden" name="scrollTopVal" value="">
+							<fieldset>
+								<legend>도시대기측정소 오염도 기간 검색</legend>
+								<p class="slt1">
+									<label for="label2">측정소명</label>
+									<select name="mGroup" class="w100" id="label2">
+										<option value="">측정소 선택</option>
+										<option value="555553">북한산</option>
+										<option value="555552">남산</option>
+										<option value="555554">관악산</option>
+										<option value="555550">궁동</option>
+										<option value="555556">세곡</option>
+										<option value="555555">행주</option>
+										</select>
+									<input id="commonAirSearchFormSearch_mGroup" type="image" src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/btn_select.gif" alt="선택" title="선택">
+								</p>
+								<p class="slt2">
+									<label for="label3">측정단위</label>
+									<select name="sGroup" class="w120" id="label3">
+										<option value="TIME" selected="selected">시간평균</option>
+										<option value="DAY">일평균</option>
+									</select>
+									<input type="image" id="commonAirSearchFormSearch_sGroup" src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/btn_select.gif" alt="선택" title="선택">
+								</p>
+								<div class="time">
+									<label for="label4">측정일자</label>
+									<span>
+										<input type="text" class="w30" name="cal2" id="measure_cal2" value="2019" maxlength="4" title="년">년
+									</span>
+									<span>
+										<input type="text" class="w20" name="cal2Month" id="measure_cal2Month" value="05" maxlength="2" title="월">월
+									</span>
+									<span>
+										<input type="text" class="w20" name="cal2Day" id="measure_cal2Day" value="07" maxlength="2" title="일">일
+									</span>
+									<input type="image" id="common_air_search_schedule" src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/btn_schedule.gif" alt="달력새창" title="날짜선택" class="hasDatepicker">
+									<span> &nbsp; &nbsp; &nbsp; &nbsp;
+										<select name="time" class="w70" id="label4">
+											<option value="99">시간선택</option>
+											<option value="01">01:00
+												</option>
+											<option value="02">02:00
+												</option>
+											<option value="03">03:00
+												</option>
+											<option value="04">04:00
+												</option>
+											<option value="05">05:00
+												</option>
+											<option value="06">06:00
+												</option>
+											<option value="07">07:00
+												</option>
+											<option value="08">08:00
+												</option>
+											<option value="09">09:00
+												</option>
+											<option value="10">10:00
+												</option>
+											<option value="11">11:00
+												</option>
+											<option value="12">12:00
+												</option>
+											<option value="13" selected="selected">13:00
+												</option>
+											<option value="14">14:00
+												</option>
+											<option value="15">15:00
+												</option>
+											<option value="16">16:00
+												</option>
+											<option value="17">17:00
+												</option>
+											<option value="18">18:00
+												</option>
+											<option value="19">19:00
+												</option>
+											<option value="20">20:00
+												</option>
+											<option value="21">21:00
+												</option>
+											<option value="22">22:00
+												</option>
+											<option value="23">23:00
+												</option>
+											<option value="24">24:00
+												</option>
+											</select>
+									</span>
+								</div>
+								<p class="schBtn1">
+									<input type="image" id="commonAirSearchFormSearchButton" src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/btn_sch.gif" alt="검색" title="검색">
+								</p>
+							</fieldset>
+						</form>
+					</div>
+					<label>※ 0 ~ 10분 사이에는 대기오염측정소에서 자료수집 중이므로 이전 시간의 자료가 조회됩니다.</label><br>
+					<h4 class="mgb10 mgt20">[표3] 실시간 도시배경 측정소 측정소명:
+						전체
+						측정단위:
+						시간평균
+						측정일자: 2019.05.07&nbsp;13:00</h4>
+					<!-- <table class="tbl2" summary="실시간 도시배경측정소별 미세먼지,오존, 이산화질소, 일산화탄소, 아황산가스를 알려드립니다.:측정소 전체 시간평균"> -->
+					<table class="tbl1" summary="미세먼지, 초미세먼지, 오존, 이산화질소, 일산화탄소, 아황산가스의 측정소별 실시간 측정값">
+						<caption>[표] 실시간 도시배경측정소 대기오염정보</caption>
+						<colgroup>
+							<col width="20%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
+							<col width="10%">
+						</colgroup>
+			            <thead>
+							<tr>
+								<th rowspan="2" scope="col">날짜</th>
+								<th rowspan="2" scope="col">구분</th>
+								<th rowspan="2" scope="col">측정소명</th>
+								<th scope="col">미세먼지<br><span class="other">PM-10(㎍/㎥)</span></th>
+								<th scope="col">초미세먼지<br><span class="other">PM-2.5(㎍/㎥)</span></th>
+								<th scope="col">오존<br><span class="other">O<sub>3</sub>(ppm)</span></th>
+								<th scope="col">이산화질소<br><span class="other">NO<sub>2</sub>(ppm)</span></th>
+								<th scope="col">일산화탄소<br><span class="other">CO(ppm)</span></th>
+								<th scope="col">아황산가스<br><span class="other">SO<sub>2</sub>(ppm)</span></th>
+							</tr>
+							<tr class="ft_b">
+								<td>1시간</td>
+									<td>1시간</td>
+									<td>1시간</td>
+									<td>1시간</td>
+									<td>1시간</td>
+									<td>1시간</td>
+								</tr>
+						</thead>
+						<tbody>
+							<!-- 2018.11.13 관악산은 일산화탄소 미측정이라고 한다. -->
+									<tr>
+										<th scope="row">2019-05-07 13:00</th>
+										<td>배경</td>
+										<td>북한산</td>
+										<td class="num_color_2">65</td>
+										<td class="num_color_2">21</td>
+										<td class="num_color_2">0.046</td>
+										<td class="num_color_1">0.014</td>
+										<td class="num_color_1">0.7</td>
+										<td class="num_color_1">0.004</td>
+									</tr>
+								<!-- 2018.11.13 관악산은 일산화탄소 미측정이라고 한다. -->
+									<tr>
+										<th scope="row">2019-05-07 13:00</th>
+										<td>배경</td>
+										<td>남산</td>
+										<td class="num_color_2">64</td>
+										<td class="num_color_2">22</td>
+										<td class="num_color_2">0.061</td>
+										<td class="num_color_1">0.018</td>
+										<td class="num_color_1">0.8</td>
+										<td class="num_color_1">0.006</td>
+									</tr>
+								<!-- 2018.11.13 관악산은 일산화탄소 미측정이라고 한다. -->
+									<tr>
+										<th scope="row">2019-05-07 13:00</th>
+										<td>배경</td>
+										<td>관악산</td>
+										<td class="num_color_2">65</td>
+										<td class="num_color_2">22</td>
+										<td class="num_color_2">0.057</td>
+										<td class="num_color_1">0.010</td>
+										<td class="num_color_1">0.4</td>
+										<td class="num_color_1">0.005</td>
+									</tr>
+								<!-- 2018.11.13 관악산은 일산화탄소 미측정이라고 한다. -->
+									<tr>
+										<th scope="row">2019-05-07 13:00</th>
+										<td>경계</td>
+										<td>궁동</td>
+										<td class="num_color_2">69</td>
+										<td class="num_color_2">22</td>
+										<td class="num_color_2">0.040</td>
+										<td class="num_color_1">0.029</td>
+										<td class="num_color_1">0.7</td>
+										<td class="num_color_1">0.005</td>
+									</tr>
+								<!-- 2018.11.13 관악산은 일산화탄소 미측정이라고 한다. -->
+									<tr>
+										<th scope="row">2019-05-07 13:00</th>
+										<td>경계</td>
+										<td>세곡</td>
+										<td class="num_color_2">32</td>
+										<td class="num_color_2">22</td>
+										<td class="num_color_2">0.045</td>
+										<td class="num_color_1">0.024</td>
+										<td class="num_color_1">0.5</td>
+										<td class="num_color_1">0.004</td>
+									</tr>
+								<!-- 2018.11.13 관악산은 일산화탄소 미측정이라고 한다. -->
+									<tr>
+										<th scope="row">2019-05-07 13:00</th>
+										<td>경계</td>
+										<td>행주</td>
+										<td class="num_color_2">53</td>
+										<td class="num_color_2">17</td>
+										<td class="num_color_2">0.051</td>
+										<td class="num_color_1">0.012</td>
+										<td class="num_color_1">0.7</td>
+										<td class="num_color_1">0.006</td>
+									</tr>
+								</tbody>
+					</table>
+					<div class="bxtype1">
+						<p> - 본 시스템의 대기오염도 자료는 확정 전 실시간 자료 입니다.</p>
+						<p> - 본 측정 자료는 참고용으로만 활용 가능하며, 행정목적으로 사용 할 수 없습니다.</p>
+						<p> - 통신장애, 장비점검, 전원단절, 가동중지, 동작불량 등의 원인으로 대기오염측정소에서 자료가 수집되지 않은 항목은 "점검중"으로 출력됩니다.</p>
+						<p class="ft_point5"> - 초미세먼지(PM-2.5)는 자동측정(β선-흡수법)자료입니다.</p>
+						<p> - 초미세먼지(PM-2.5)의 표출기준이  2018년 3월 27일자로 변경되었습니다. </p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+<div id="footer">
+	<div class="container">
+		<p id="footerlogo">서울특별시 기후환경본부</p>
+		<address>서울특별시청 서소문청사 (04515) 서울특별시 중구 덕수궁길 15 대기정책과	<br>도시대기 측정망 관련 문의 : 02) 570-3371<br>대기오염 예보 문자메세지 관련문의 : 02) 570-3406<br>내용 문의 : 02) 2133-3669</address>
+		<p id="wa">
+			<a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110">
+      <img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/logo_wa.png" border="0" alt="과학기술정보통신부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" title="국가 공인 인증기관 : 웹와치"></a>
+		</p>
+		<p id="ban"><img src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/img_call.gif" width="188" height="41" alt="개인정보 처리방침 문의 전화 120 정보를 못찾으셧나요? 120다산콜센터로 물어보세요!"></p>
+	</div>
+</div>
+<script type="text/javascript">
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-46997250-3', 'auto');
+
+	ga('send', 'pageview');
+</script></div>
+
+<!-- 웹로그 주석처리 -->
+<script type="text/javascript" src="./미세먼지 배경·고공 대기현황 _ 서울특별시 대기환경정보_files/install.js "></script>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="top: 635.844px; left: 648.875px;"></div></body></html>
